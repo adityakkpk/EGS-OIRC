@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eventify- Event And Conference Theme</title>
+
+		<!--=====FAB ICON=======-->
+		<link rel="shortcut icon" href="assets/img/logo/fav-logo1.png" />
+
+		<!--===== CSS LINK =======-->
+		<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/vendor/aos.css" />
+		<link rel="stylesheet" href="assets/css/vendor/fontawesome.css" />
+		<link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
+		<link rel="stylesheet" href="assets/css/vendor/mobile.css" />
+		<link rel="stylesheet" href="assets/css/vendor/owlcarousel.min.css" />
+		<link rel="stylesheet" href="assets/css/vendor/sidebar.css" />
+		<link rel="stylesheet" href="assets/css/vendor/slick-slider.css" />
+		<link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
+		<link rel="stylesheet" href="assets/css/vendor/odometer.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<style>
+			.step-number {
+            width: 40px;
+            height: 40px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .step-container {
+            position: relative;
+        }
+        
+        .step-container::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            height: calc(100% - 40px);
+            border-left: 2px dashed #dee2e6;
+        }
+        
+        .step-container:last-child::after {
+            display: none;
+        }
+        
+        .speaker-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .form-section {
+            transition: all 0.3s ease;
+        }
+        
+        .form-section:hover {
+            transform: translateX(10px);
+        }
+        
+        .required-field::after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+        
+        .custom-file-upload {
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-file-upload:hover {
+            border-color: #0d6efd;
+            background-color: #f8f9fa;
+        }
+		</style>
+
+		<!--=====  JS SCRIPT LINK =======-->
+		<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+	</head>
+	<body class="homepage1-body">
+		<!-- Popup Section -->
+		<div id="popup" class="popup-overlay d-none">
+			<div class="popup-content">
+				<span class="close-btn" id="close-popup">&times;</span>
+				<div class="popup-icon">
+					<img src="assets/img/logo/popup-logo.png" alt="" />
+				</div>
+				<div class="space32"></div>
+				<div class="heading2">
+					<h2>Grow your business with our agency</h2>
+					<div class="space8"></div>
+					<ul>
+						<li><img src="assets/img/icons/check3.svg" alt="" />Elevate User Experience Expertise</li>
+						<li><img src="assets/img/icons/check3.svg" alt="" /> Elevate Your UI/UX Skills Designer</li>
+						<li><img src="assets/img/icons/check3.svg" alt="" />Join Leading UI/UX Event the Year</li>
+					</ul>
+				</div>
+				<div class="space50"></div>
+				<a class="vl-btn2" href="contact.html"
+					><span class="demo">Buy Ticket Now</span><span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+				</a>
+				<p class="no-thanks">No thanks</p>
+			</div>
+		</div>
+		<!--===== PRELOADER STARTS =======-->
+		<div class="preloader">
+			<div class="loading-container">
+				<div class="loading"></div>
+				<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+			</div>
+		</div>
+		<!--===== PRELOADER ENDS =======-->
+
+		<!--===== PAGE PROGRESS START=======-->
+		<div class="paginacontainer">
+			<div class="progress-wrap">
+				<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+					<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+				</svg>
+			</div>
+		</div>
+		<!--===== PAGE PROGRESS END=======-->
+
+		<!--=====HEADER START=======-->
+		<header>
+			<div class="header-area homepage1 header header-sticky d-none d-lg-block" id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="header-elements">
+								<div class="site-logo">
+									<a href="index.html"><img src="assets/img/logo/logo1.png" alt="" /></a>
+								</div>
+								<div class="main-menu">
+									<ul>
+										<li>
+											<a href="/">Home </a>
+										</li>
+										<li><a href="about.html">About Event</a></li>
+										<li>
+											<a href="#">Speakers <i class="fa-solid fa-angle-down"></i></a>
+											<ul class="dropdown-padding">
+												<li><a href="speakers.html">Speakers</a></li>
+												<li><a href="speakers-single.html">Speakers Details</a></li>
+											</ul>
+										</li>
+
+										<li>
+											<a href="#">Schedule <i class="fa-solid fa-angle-down"></i></a>
+											<ul class="dropdown-padding">
+												<li><a href="event.html">Our Event</a></li>
+												<li><a href="event-schedule.html">Event Schedule</a></li>
+												<li><a href="event-single.html">Event Details</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Blogs <i class="fa-solid fa-angle-down"></i></a>
+											<ul class="dropdown-padding">
+												<li><a href="blog.html">Our Blog</a></li>
+												<li><a href="blog-single.html">Blog Details</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Pages <i class="fa-solid fa-angle-down"></i></a>
+											<ul class="dropdown-padding">
+												<li><a href="memories.html">Our Memories</a></li>
+												<li><a href="pricing-plan.html">Pricing Plan</a></li>
+												<li><a href="faq.html">FAQ,s</a></li>
+												<li><a href="contact.html">Contact Us</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-area">
+									<div class="search-icon header__search header-search-btn">
+										<a href="#"><img src="assets/img/icons/search1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="header-search-form-wrapper">
+									<div class="tx-search-close tx-close"><i class="fa-solid fa-xmark"></i></div>
+									<div class="header-search-container">
+										<form role="search" class="search-form">
+											<input type="search" class="search-field" placeholder="Search …" value="" name="s" />
+											<button type="submit" class="search-submit"><img src="assets/img/icons/search1.svg" alt="" /></button>
+										</form>
+									</div>
+								</div>
+								<div class="body-overlay"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--=====HEADER END =======-->
+
+		<!--===== MOBILE HEADER STARTS =======-->
+		<div class="mobile-header mobile-haeder1 d-block d-lg-none">
+			<div class="container-fluid">
+				<div class="col-12">
+					<div class="mobile-header-elements">
+						<div class="mobile-logo">
+							<a href="index.html"><img src="assets/img/logo/logo1.png" alt="" /></a>
+						</div>
+						<div class="mobile-nav-icon dots-menu">
+							<i class="fa-solid fa-bars-staggered"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mobile-sidebar mobile-sidebar1">
+			<div class="logosicon-area">
+				<div class="logos">
+					<img src="assets/img/logo/logo2.png" alt="" />
+				</div>
+				<div class="menu-close">
+					<i class="fa-solid fa-xmark"></i>
+				</div>
+			</div>
+			<div class="mobile-nav mobile-nav1">
+				<ul class="mobile-nav-list nav-list1">
+					<li>
+						<a href="/">Home </a>
+					</li>
+					<li><a href="about.html">About Event</a></li>
+					<li>
+						<a href="features.html">Speakers</a>
+						<ul class="sub-menu">
+							<li><a href="speakers.html">Speakers</a></li>
+							<li><a href="speakers-single.html">Speakers Details</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="features.html">Schedule</a>
+						<ul class="sub-menu">
+							<li><a href="event.html">Our Event</a></li>
+							<li><a href="event-schedule.html">Event Schedule</a></li>
+							<li><a href="event-single.html">Event Details</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Blogs</a>
+						<ul class="sub-menu">
+							<li><a href="blog.html">Our Blog</a></li>
+							<li><a href="blog-single.html">Blog Details</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Pages</a>
+						<ul class="sub-menu">
+							<li><a href="memories.html">Our Memories</a></li>
+							<li><a href="pricing-plan.html">Pricing Plan</a></li>
+							<li><a href="faq.html">FAQ,s</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+				<div class="allmobilesection">
+					<a href="contact.html" class="vl-btn1">Contact Now</a>
+					<div class="single-footer">
+						<h3>Contact Info</h3>
+						<div class="footer1-contact-info">
+							<div class="contact-info-single">
+								<div class="contact-info-icon">
+									<span><i class="fa-solid fa-phone-volume"></i></span>
+								</div>
+								<div class="contact-info-text">
+									<a href="tel:+3(924)4596512">+3(924)4596512</a>
+								</div>
+							</div>
+							<div class="contact-info-single">
+								<div class="contact-info-icon">
+									<span><i class="fa-solid fa-envelope"></i></span>
+								</div>
+								<div class="contact-info-text">
+									<a href="mailto:info@example.com">info@example.com</a>
+								</div>
+							</div>
+							<div class="single-footer">
+								<h3>Our Location</h3>
+								<div class="contact-info-single">
+									<div class="contact-info-icon">
+										<span><i class="fa-solid fa-location-dot"></i></span>
+									</div>
+									<div class="contact-info-text">
+										<a href="mailto:info@example.com"
+											>55 East Birchwood Ave.Brooklyn, <br />
+											New York 11201,United States</a
+										>
+									</div>
+								</div>
+							</div>
+							<div class="single-footer">
+								<h3>Social Links</h3>
+								<div class="social-links-mobile-menu">
+									<ul>
+										<li>
+											<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#"><i class="fa-brands fa-youtube"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== MOBILE HEADER STARTS =======-->
+
+		<!--===== HERO AREA STARTS =======-->
+		<div class="inner-page-header" style="background-image: url(assets/img/bg/header-bg6.png)">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 m-auto">
+						<div class="heading1 text-center">
+							<h1>Become a Speakers</h1>
+							<div class="space20"></div>
+							<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Our Speakers</span> <i class="fa-solid fa-angle-right"></i> <span>Become a Speaker</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== HERO AREA ENDS =======-->
+
+    <!--===== SPEAKER AREA STARTS =======-->
+    <div id="speaker-page" class="container my-5">
+      <div class="row mb-5 animate__animated animate__fadeInDown">
+        <div class="col-12 text-center">
+          <div class="row">
+            <div class="col-lg-5 m-auto">
+              <div class="brand-header heading2 space-margin60 text-center">
+                <div class="space16"></div>
+                <h2 class="text-anime-style-3 mb-2">Become a Speaker</h2>
+                <p class="lead">Share your expertise and shape the future at ICMMCS 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-8 m-auto">
+            <!-- Steps -->
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-container mb-5 animate__animated animate__fadeInLeft">
+                    <div class="d-flex align-items-start">
+                        <div class="step-number">1</div>
+                        <div class="d-flex flex-column gap-2">
+                            <h3>Apply</h3>
+                            <p>Submit your expertise and proposed topic</p>
+                            <a href="#become-speaker-form">
+                              <button class="btn btn-outline-primary mb-3">Start Application</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-container mb-5 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s">
+                    <div class="d-flex align-items-start">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h3>Review</h3>
+                            <p>Expert committee evaluates applications</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-container mb-5 animate__animated animate__fadeInLeft" style="animation-delay: 0.4s">
+                    <div class="d-flex align-items-start">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3>Prepare</h3>
+                            <p>Develop your presentation with our support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-container mb-5 animate__animated animate__fadeInLeft" style="animation-delay: 0.6s">
+                    <div class="d-flex align-items-start">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h3>Inspire</h3>
+                            <p>Share insights and shape the future at ICMMCS 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== SPEAKER AREA ENDS =======-->
+
+    <!--===== SPEAKER FORM AREA STARTS =======-->
+    <div class="container my-5" id="become-speaker-form">
+      <form class="needs-validation" novalidate>
+          <!-- Personal Information -->
+          <div class="card mb-4 shadow-sm animate__animated animate__fadeIn">
+              <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Personal Information</h3>
+              </div>
+              <div class="card-body form-section">
+                  <div class="row g-3">
+                      <div class="col-md-6">
+                          <label for="firstName" class="form-label required-field">First Name</label>
+                          <input type="text" class="form-control" id="firstName" required>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="lastName" class="form-label required-field">Last Name</label>
+                          <input type="text" class="form-control" id="lastName" required>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="email" class="form-label required-field">Email</label>
+                          <input type="email" class="form-control" id="email" required>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="phone" class="form-label">Phone Number</label>
+                          <input type="tel" class="form-control" id="phone">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Professional Information -->
+          <div class="card mb-4 shadow-sm animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+              <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Professional Information</h3>
+              </div>
+              <div class="card-body form-section">
+                  <div class="row g-3">
+                      <div class="col-md-6">
+                          <label for="organization" class="form-label required-field">Organization</label>
+                          <input type="text" class="form-control" id="organization" required>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="jobTitle" class="form-label required-field">Job Title</label>
+                          <input type="text" class="form-control" id="jobTitle" required>
+                      </div>
+                      <div class="col-12">
+                          <label for="expertise" class="form-label required-field">Areas of Expertise</label>
+                          <select class="form-select" id="expertise" multiple required>
+                              <option value="ai">Artificial Intelligence</option>
+                              <option value="ml">Machine Learning</option>
+                              <option value="cloud">Cloud Computing</option>
+                              <option value="security">Cybersecurity</option>
+                              <option value="data">Data Science</option>
+                              <option value="blockchain">Blockchain</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Presentation Details -->
+          <div class="card mb-4 shadow-sm animate__animated animate__fadeIn" style="animation-delay: 0.4s">
+              <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Presentation Details</h3>
+              </div>
+              <div class="card-body form-section">
+                  <div class="row g-3">
+                      <div class="col-12">
+                          <label for="presentationTitle" class="form-label required-field">Presentation Title</label>
+                          <input type="text" class="form-control" id="presentationTitle" required>
+                      </div>
+                      <div class="col-12">
+                          <label for="abstract" class="form-label required-field">Abstract</label>
+                          <textarea class="form-control" id="abstract" rows="4" required></textarea>
+                          <div class="form-text">Brief description of your presentation (max 500 words)</div>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="presentationType" class="form-label required-field">Presentation Type</label>
+                          <select class="form-select" id="presentationType" required>
+                              <option value="">Select type...</option>
+                              <option value="keynote">Keynote</option>
+                              <option value="technical">Technical Session</option>
+                              <option value="workshop">Workshop</option>
+                              <option value="panel">Panel Discussion</option>
+                          </select>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="duration" class="form-label required-field">Preferred Duration</label>
+                          <select class="form-select" id="duration" required>
+                              <option value="">Select duration...</option>
+                              <option value="30">30 minutes</option>
+                              <option value="45">45 minutes</option>
+                              <option value="60">60 minutes</option>
+                              <option value="90">90 minutes</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Supporting Materials -->
+          <div class="card mb-4 shadow-sm animate__animated animate__fadeIn" style="animation-delay: 0.6s">
+              <div class="card-header bg-primary text-white">
+                  <h3 class="mb-0">Supporting Materials</h3>
+              </div>
+              <div class="card-body form-section">
+                  <div class="row g-3">
+                      <div class="col-12">
+                          <label for="cv" class="form-label required-field">Resume/CV</label>
+                          <div class="custom-file-upload">
+                              <input type="file" class="form-control" id="cv" required>
+                              <div class="form-text">Upload your CV (PDF format, max 5MB)</div>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <label for="previousTalks" class="form-label">Previous Speaking Experience</label>
+                          <textarea class="form-control" id="previousTalks" rows="3"></textarea>
+                          <div class="form-text">List any relevant speaking engagements, including dates and events</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center animate__animated animate__fadeIn" style="animation-delay: 0.8s">
+              <button type="submit" class="btn btn-primary btn-lg px-5">Submit Application</button>
+          </div>
+      </form>
+    </div>
+    <!--===== SPEAKER FORM AREA ends =======-->
+    
+		<!--===== FOOTER AREA STARTS =======-->
+		<div class="footer1-sertion-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="footer-logo-area">
+							<img src="assets/img/logo/logo2.png" alt="" />
+							<div class="space16"></div>
+							<p>We are committed to creating a platform where business leaders, innovators, and professionals can come together to exchange ideas</p>
+							<div class="space24"></div>
+							<ul>
+								<li>
+									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa-brands fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+								</li>
+								<li>
+									<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6">
+						<div class="link-content">
+							<h3>Quick Links</h3>
+							<ul>
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="blog.html">Our Blogs</a></li>
+								<li><a href="event.html">Event Listing</a></li>
+								<li><a href="pricing-plan.html">Pricing Plan</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="link-content2">
+							<h3>Contact Us</h3>
+							<ul>
+								<li>
+									<a href="tel:+11234567890"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
+								</li>
+								<li>
+									<a href="#"><img src="assets/img/icons/location1.svg" alt="" />Secret Location In The UK</a>
+								</li>
+								<li>
+									<a href="mailto:eventifyevent@gmail.com"><img src="assets/img/icons/mail1.svg" alt="" />eventifyevent@gmail.com</a>
+								</li>
+								<li>
+									<a href="#"> <img src="assets/img/icons/world1.svg" alt="" />eventifyevent.com</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="footer-social-box">
+							<h3>Our Recent Event Gallery</h3>
+							<div class="space12"></div>
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-4">
+									<div class="img1">
+										<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
+										<div class="icons">
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-4">
+									<div class="img1">
+										<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
+										<div class="icons">
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-4">
+									<div class="img1">
+										<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
+										<div class="icons">
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-4">
+									<div class="img1">
+										<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
+										<div class="icons">
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-4">
+									<div class="img1">
+										<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
+										<div class="icons">
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-4">
+									<div class="img1">
+										<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
+										<div class="icons">
+											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="space60"></div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="copyright">
+							<p>&copy; Copyright 2024 -Eventify. All Right Reserved</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== FOOTER AREA ENDS =======-->
+
+		<!--===== JS SCRIPT LINK =======-->
+		<script src="assets/js/vendor/bootstrap.min.js"></script>
+		<script src="assets/js/vendor/fontawesome.js"></script>
+		<script src="assets/js/vendor/aos.js"></script>
+		<script src="assets/js/vendor/jquery.appear.js"></script>
+		<script src="assets/js/vendor/jquery.odometer.min.js"></script>
+		<script src="assets/js/vendor/sidebar.js"></script>
+		<script src="assets/js/vendor/magnific-popup.js"></script>
+		<script src="assets/js/vendor/gsap.min.js"></script>
+		<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+		<script src="assets/js/vendor/Splitetext.js"></script>
+		<script src="assets/js/vendor/mobilemenu.js"></script>
+		<script src="assets/js/vendor/owlcarousel.min.js"></script>
+		<script src="assets/js/vendor/nice-select.js"></script>
+		<script src="assets/js/vendor/waypoints.js"></script>
+		<script src="assets/js/vendor/slick-slider.js"></script>
+		<script src="assets/js/vendor/circle-progress.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

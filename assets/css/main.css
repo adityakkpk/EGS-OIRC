@@ -618,6 +618,9 @@ Author URI: https://themeforest.net/user/alithemes/portfolio
 Location:
 ============================
 */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
 /*============= HEDAER CSS AREA ===============*/
 /*============= HERO CSS AREA ===============*/
 /*============= MOBILE-MENU CSS AREA ===============*/
@@ -2790,7 +2793,7 @@ Location:
   z-index: 1;
   overflow: hidden;
   background: #F8F7F3;
-  padding: 210px 0 100px;
+  padding: 150px 0 100px;
 }
 @media (max-width: 767px) {
   .hero4-section-area {
