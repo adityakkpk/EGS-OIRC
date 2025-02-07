@@ -2807,10 +2807,10 @@ body {
 .hero4-section-area .hero4-header h5 {
   color: var(--ztc-text-text-13);
   font-family: var(--ztc-family-font1);
-  font-size: var(--ztc-font-size-font-s20);
+  font-size: var(--ztc-font-size-font-s14);
   font-style: normal;
   font-weight: var(--ztc-weight-medium);
-  line-height: 20px;
+  line-height: 16px;
   text-transform: uppercase;
   display: inline-block;
   padding: 8px 12px;
@@ -2833,10 +2833,10 @@ body {
 .hero4-section-area .hero4-header h1 {
   color: var(--ztc-text-text-11);
   font-family: var(--ztc-family-font1);
-  font-size: var(--ztc-font-size-font-s64);
+  font-size: var(--ztc-font-size-font-s48);
   font-style: normal;
   font-weight: var(--ztc-weight-bold);
-  line-height: 74px; /* 115.625% */
+  line-height: 58px; /* 115.625% */
   text-transform: uppercase;
 }
 @media (max-width: 767px) {
@@ -2880,8 +2880,8 @@ body {
   padding: 20px;
   display: inline-block;
   position: absolute;
-  top: 50px;
-  left: -150px;
+  top: 70px;
+  left: -50px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hero4-section-area .hero-content-images .content-area {
@@ -14384,10 +14384,11 @@ body {
   width: 50px;
   bottom: 0;
   right: 0;
-  background-color: transparent;
+  background-color: rgb(95, 95, 255);
   color: #9F9F9F;
   font-size: 24px;
   border: none;
+  border-radius: 0 6px 6px 0;
   color: #2B495A;
 }
 

@@ -797,10 +797,10 @@
         h5 {
             color: var(--ztc-text-text-13);
             font-family: var(--ztc-family-font1);
-            font-size: var(--ztc-font-size-font-s20);
+            font-size: var(--ztc-font-size-font-s14);
             font-style: normal;
             font-weight: var(--ztc-weight-medium);
-            line-height: 20px;
+            line-height: 16px;
             text-transform: uppercase;
             display: inline-block;
             padding: 8px 12px;
@@ -820,10 +820,10 @@
         h1 {
             color: var(--ztc-text-text-11);
             font-family: var(--ztc-family-font1);
-            font-size: var(--ztc-font-size-font-s64);
+            font-size: var(--ztc-font-size-font-s40);
             font-style: normal;
             font-weight: var(--ztc-weight-bold);
-            line-height: 74px; /* 115.625% */
+            line-height: 60px; /* 115.625% */
             text-transform: uppercase;
             @media #{$xs} {
                 font-size: var(--ztc-font-size-font-s32);
