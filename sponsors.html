@@ -1,245 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICMMCS 2025 Sponsors</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #1a1f3d 0%, #2d1b4e 100%);
-            color: white;
-            min-height: 100vh;
-        }
-        
-        .sponsor-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .sponsor-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .platinum-header {
-            color: #E5E4E2;
-            border-bottom: 2px solid #E5E4E2;
-        }
-        
-        .gold-header {
-            color: #FFD700;
-            border-bottom: 2px solid #FFD700;
-        }
-        
-        .media-header {
-            color: #87CEEB;
-            border-bottom: 2px solid #87CEEB;
-        }
-        
-        .sponsor-logo {
-            background: linear-gradient(45deg, #2c3e50, #3498db);
-            border-radius: 10px;
-            width: 100px;
-            height: 100px;
-            margin-bottom: 1rem;
-        }
-        
-        .category-label {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .company-name {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICMMCS 2025 Sponsors</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"> -->
+
+  <!--=====FAB ICON=======-->
+  <link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
+
+  <!--===== CSS LINK =======-->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/vendor/aos.css" />
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome.css" />
+  <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
+  <link rel="stylesheet" href="assets/css/vendor/mobile.css" />
+  <link rel="stylesheet" href="assets/css/vendor/owlcarousel.min.css" />
+  <link rel="stylesheet" href="assets/css/vendor/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/vendor/slick-slider.css" />
+  <link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
+  <link rel="stylesheet" href="assets/css/vendor/odometer.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    body {
+      /* background: linear-gradient(135deg, #1a1f3d 0%, #2d1b4e 100%); */
+      color: black;
+      min-height: 100vh;
+    }
+
+    .sponsor-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .platinum-header {
+      color: #fbb221;
+      border-bottom: 2px solid #E5E4E2;
+    }
+
+    .producers {
+      color: #215ffb;
+      border-bottom: 2px solid #E5E4E2;
+    }
+
+    .gold-header {
+      color: #FFD700;
+      border-bottom: 2px solid #FFD700;
+    }
+
+    .media-header {
+      color: #41bbeb;
+      border-bottom: 2px solid #87CEEB;
+    }
+
+    .sponsor-logo {
+      background: linear-gradient(45deg, #2c3e50, #3498db);
+      border-radius: 10px;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .category-label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .company-name {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+
+  <!--=====  JS SCRIPT LINK =======-->
+  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 </head>
-<body>
-    <div class="container py-5">
-        <!-- Hero Section -->
-        <div class="text-center mb-5 animate__animated animate__fadeIn">
-            <h1 class="display-4 mb-4">Our Sponsors</h1>
-            <p class="lead">Proud partners making ICMMCS 2025 possible</p>
-        </div>
 
-        <!-- Producers Section -->
-        <div class="mb-5 animate__animated animate__fadeIn">
-          <h2 class="platinum-header pb-2 mb-4">Produced By:</h2>
-          <div class="row g-4">
-              <!-- Ministry -->
-              <div class="col-md-4">
-                  <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
-                      <img src="/assets/img/squ/moe.jpg" alt="Ministry of Higher Education" class="img-fluid rounded" style="width: 100%; height: 250px;">
-                      <div class="producer-name my-2">Ministry of Higher Education, Research, and Innovation – Oman</div>
-                  </div>
+<body class="homepage4-body">
+  <!--===== PRELOADER STARTS =======-->
+  <div class="preloader">
+    <div class="loading-container">
+      <div class="loading"></div>
+      <div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+    </div>
+  </div>
+  <!--===== PRELOADER ENDS =======-->
+  
+  <!--===== PAGE PROGRESS START=======-->
+  <div class="paginacontainer">
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+  </div>
+  <!--===== PAGE PROGRESS END=======-->
+
+  <!--=====HEADER START=======-->
+  <header>
+    <div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="header-elements">
+              <div class="site-logo">
+                <a href="/">
+                  <h3 id="logo-text">ICMMCS 2025</h3> 
+                </a>
               </div>
-              
-              <!-- Sultan Qaboos University -->
-              <div class="col-md-4">
-                <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
-                  <img src="/assets/img/squ/SQU_Aerial_Admin_Bldg.JPG" alt="Ministry of Higher Education" class="img-fluid rounded" style="width: 100%; height: 250px;">
-                  <div class="producer-name my-2">Sultan Qaboos University</div>
-                  </div>
+              <div class="main-menu">
+                <ul>
+                  <li>
+                    <a href="/">Home </a>
+                  </li>
+                  <li><a href="about.html">About Event</a></li>
+                  <li>
+                    <a href="#">Speakers <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-padding">
+                      <li><a href="speakers.html">Speakers</a></li>
+                      <li><a href="speakers-single.html">Speakers Details</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Schedule <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-padding">
+                      <li><a href="event.html">Our Event</a></li>
+                      <li><a href="event-schedule.html">Event Schedule</a></li>
+                      <li><a href="event-single.html">Event Details</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Blogs <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-padding">
+                      <li><a href="blog.html">Our Blog</a></li>
+                      <li><a href="blog-single.html">Blog Details</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Pages <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-padding">
+                      <li><a href="memories.html">Our Memories</a></li>
+                      <li><a href="pricing-plan.html">Pricing Plan</a></li>
+                      <li><a href="faq.html">FAQ,s</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-              
-              <!-- Xclusive Oman -->
-              <div class="col-md-4">
-                  <div class="producer-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-                      <div class="rounded my-2" style="background-color: #00a89e; padding: 2rem; height: 250px; display: flex; align-items: center; justify-content: center;">
-                          <h3 style="color: #ffd700; font-family: 'Arial', sans-serif;">Xclusive Oman</h3>
-                      </div>
-                      <div class="producer-name my-2">Xclusive Oman</div>
-                  </div>
+              <div class="btn-area">
+                <div class="search-icon header__search header-search-btn">
+                  <a href="#"><img src="assets/img/icons/search1.svg" alt="" /></a>
+                </div>
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
+                  </li>
+                </ul>
               </div>
+
+              <div class="header-search-form-wrapper">
+                <div class="tx-search-close tx-close"><i class="fa-solid fa-xmark"></i></div>
+                <div class="header-search-container">
+                  <form role="search" class="search-form">
+                    <input type="search" class="search-field" placeholder="Search …" value="" name="s" />
+                    <button type="submit" class="search-submit"><img src="assets/img/icons/search1.svg" alt="" /></button>
+                  </form>
+                </div>
+              </div>
+              <div class="body-overlay"></div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
+  </header>
+  <!--=====HEADER END =======-->
 
-        <!-- Platinum Sponsors -->
-        <div class="mb-5 animate__animated animate__fadeInUp">
-            <h2 class="platinum-header pb-2 mb-4">Platinum Sponsors</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo mb-3"></div>
-                        <div class="category-label">Tech Giants</div>
-                        <div class="company-name">Infoline LLC</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo mb-3"></div>
-                        <div class="category-label">Banking & Financial Institutions</div>
-                        <div class="company-name">Bank Muscat</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo mb-3"></div>
-                        <div class="category-label">Telecom & IT Services</div>
-                        <div class="company-name">Omantel</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <div class="sponsor-logo mb-3"></div>
-                        <div class="category-label">Energy & Infrastructure</div>
-                        <div class="company-name">PDO, Shell Oman</div>
-                    </div>
-                </div>
+  <!--===== MOBILE HEADER STARTS =======-->
+  <div class="mobile-header mobile-haeder4 d-block d-lg-none">
+    <div class="container-fluid">
+      <div class="col-12">
+        <div class="mobile-header-elements">
+          <div class="mobile-logo">
+            <a href="index.html">
+              <!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
+              <h3 id="logo-text">ICMMCS 2025</h3> 
+            </a>
+          </div>
+          <div class="mobile-nav-icon dots-menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-sidebar mobile-sidebar4">
+    <div class="logosicon-area">
+      <div class="logos">
+        <!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
+        <h3 id="logo-text">ICMMCS 2025</h3> 
+      </div>
+      <div class="menu-close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+    <div class="mobile-nav mobile-nav1">
+      <ul class="mobile-nav-list nav-list1">
+        <li>
+          <a href="#">Home </a>
+        </li>
+        <li><a href="about.html">About Event</a></li>
+        <li>
+          <a href="features.html">Speakers</a>
+          <ul class="sub-menu">
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="speakers-single.html">Speakers Details</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="features.html">Schedule</a>
+          <ul class="sub-menu">
+            <li><a href="event.html">Our Event</a></li>
+            <li><a href="event-schedule.html">Event Schedule</a></li>
+            <li><a href="event-single.html">Event Details</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Blogs</a>
+          <ul class="sub-menu">
+            <li><a href="blog.html">Our Blog</a></li>
+            <li><a href="blog-single.html">Blog Details</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Pages</a>
+          <ul class="sub-menu">
+            <li><a href="memories.html">Our Memories</a></li>
+            <li><a href="pricing-plan.html">Pricing Plan</a></li>
+            <li><a href="faq.html">FAQ,s</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="allmobilesection">
+        <a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
+        <div class="single-footer">
+          <h3>Contact Info</h3>
+          <div class="footer1-contact-info">
+            <div class="contact-info-single">
+              <div class="contact-info-icon">
+                <span><i class="fa-solid fa-phone-volume"></i></span>
+              </div>
+              <div class="contact-info-text">
+                <a href="tel:+3(924)4596512">+3(924)4596512</a>
+              </div>
             </div>
+            <div class="contact-info-single">
+              <div class="contact-info-icon">
+                <span><i class="fa-solid fa-envelope"></i></span>
+              </div>
+              <div class="contact-info-text">
+                <a href="mailto:info@example.com">info@example.com</a>
+              </div>
+            </div>
+            <div class="single-footer">
+              <h3>Our Location</h3>
+              <div class="contact-info-single">
+                <div class="contact-info-icon">
+                  <span><i class="fa-solid fa-location-dot"></i></span>
+                </div>
+                <div class="contact-info-text">
+                  <a href="mailto:info@example.com"
+                    >55 East Birchwood Ave.Brooklyn, <br />
+                    New York 11201,United States</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="single-footer">
+              <h3>Social Links</h3>
+              <div class="social-links-mobile-menu">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== MOBILE HEADER ENDS =======-->
+
+  <!--===== HERO AREA STARTS =======-->
+  <div class="inner-page-header" style="background-image: url(assets/img/bg/header-bg10.png)">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 m-auto">
+          <div class="heading1 text-center">
+            <h1>Our Sponsors</h1>
+            <div class="space20"></div>
+            <a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Sponsors</span></a>
+            <div class="space20"></div>
+            <div>
+              <div class="">
+                <a href="sponsor-register.html" class="vl-btn1">Become a Sponsor</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== HERO AREA ENDS =======-->
+  
+  <div class="container py-5" style="border-bottom: 1px solid gray;">
+    <!-- Producers Section -->
+    <div class="mb-5 animate__animated animate__fadeIn">
+      <h2 class="producers pb-2 mb-4">Produced By:</h2>
+      <div class="row g-4">
+        <!-- Ministry -->
+        <div class="col-md-4">
+          <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
+            <img src="/assets/img/squ/moe.jpg" alt="Ministry of Higher Education" class="img-fluid rounded"
+              style="width: 100%; height: 250px;">
+            <div class="producer-name my-2">Ministry of Higher Education, Research, and Innovation – Oman
+            </div>
+          </div>
         </div>
 
-        <!-- Gold Sponsors -->
-        <div class="mb-5 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-            <h2 class="gold-header pb-2 mb-4">Gold Sponsors</h2>
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="accordion" id="goldSponsors">
-                        <div class="sponsor-card mb-3">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">1</div>
-                                <div>
-                                    <div class="category-label">Consulting Firms</div>
-                                    <div class="company-name">Deloitte, EY, KPMG</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sponsor-card mb-3">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">2</div>
-                                <div>
-                                    <div class="category-label">Hospitality & Travel</div>
-                                    <div class="company-name">Oman Air</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sponsor-card mb-3">
-                          <div class="d-flex align-items-center">
-                              <div class="me-3">3</div>
-                              <div>
-                                  <div class="category-label">Innovation & Research Centers</div>
-                                  <div class="company-name">The Research Council of Oman</div>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="sponsor-card mb-3">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">2</div>
-                                <div>
-                                    <div class="category-label">Education & Training Institutions</div>
-                                    <div class="company-name">Pearson, Wiley, Springer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Sultan Qaboos University -->
+        <div class="col-md-4">
+          <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
+            <img src="/assets/img/squ/SQU_Aerial_Admin_Bldg.JPG" alt="Ministry of Higher Education"
+              class="img-fluid rounded" style="width: 100%; height: 250px;">
+            <div class="producer-name my-2">Sultan Qaboos University</div>
+          </div>
         </div>
 
-        <!-- Media Partners -->
-        <div class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-            <h2 class="media-header pb-2 mb-4">Media Partners</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <!-- <div class="sponsor-logo mb-3"></div> -->
-                        <div class="category-label">Academic & Research Publications</div>
-                        <p class="small" style="color: #a8a8a8;">Disseminating research findings to a global audience.</p>
-                        <ul>
-                          <li>Springer</li>
-                          <li>IEEE</li>
-                          <li>Elsevier</li>
-                          <li>Taylor & Francis</li>
-                        </ul>
-                    </div>
+        <!-- Xclusive Oman -->
+        <div class="col-md-4">
+          <div class="producer-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+            <div class="rounded my-2"
+              style="background-color: #00a89e; padding: 2rem; height: 250px; display: flex; align-items: center; justify-content: center;">
+              <h3 style="color: #ffd700; font-family: 'Arial', sans-serif;">Xclusive Oman</h3>
+            </div>
+            <div class="producer-name my-2">Xclusive Oman</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platinum Sponsors -->
+    <div class="mb-5 animate__animated animate__fadeInUp">
+      <h2 class="platinum-header pb-2 mb-4">Platinum Sponsors</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="sponsor-card">
+            <div class="sponsor-logo mb-3"></div>
+            <div class="category-label">Tech Giants</div>
+            <div class="company-name">Infoline LLC</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sponsor-card">
+            <div class="sponsor-logo mb-3"></div>
+            <div class="category-label">Banking & Financial Institutions</div>
+            <div class="company-name">Bank Muscat</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sponsor-card">
+            <div class="sponsor-logo mb-3"></div>
+            <div class="category-label">Telecom & IT Services</div>
+            <div class="company-name">Omantel</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sponsor-card">
+            <div class="sponsor-logo mb-3"></div>
+            <div class="category-label">Energy & Infrastructure</div>
+            <div class="company-name">PDO, Shell Oman</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold Sponsors -->
+    <div class="mb-5 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+      <h2 class="gold-header pb-2 mb-4">Gold Sponsors</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="accordion" id="goldSponsors">
+            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+              <div class="d-flex align-items-center">
+                <div class="me-3">1</div>
+                <div>
+                  <div class="category-label">Consulting Firms</div>
+                  <div class="company-name">Deloitte, EY, KPMG</div>
                 </div>
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <!-- <div class="sponsor-logo mb-3"></div> -->
-                        <div class="category-label">News & Business Media</div>
-                        <p class="small" style="color: #a8a8a8;">Keeping the world information about the conference's impact</p>
-                        <ul>
-                          <li>Times of Oman</li>
-                          <li>Oman Observer</li>
-                          <li>Gulf News</li>
-                        </ul>
-                    </div>
+              </div>
+            </div>
+            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+              <div class="d-flex align-items-center">
+                <div class="me-3">2</div>
+                <div>
+                  <div class="category-label">Hospitality & Travel</div>
+                  <div class="company-name">Oman Air</div>
                 </div>
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <!-- <div class="sponsor-logo mb-3"></div> -->
-                        <div class="category-label">Tech & Industry Magazines</div>
-                        <p class="small" style="color: #a8a8a8;">Highlighting innovation and Technology Trends</p>
-                        <ul>
-                          <li>CIO Middle East</li>
-                          <li>Arabian Business</li>
-                          <li>TeachRadar Middle East</li>
-                        </ul>
-                    </div>
+              </div>
+            </div>
+            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+              <div class="d-flex align-items-center">
+                <div class="me-3">3</div>
+                <div>
+                  <div class="category-label">Innovation & Research Centers</div>
+                  <div class="company-name">The Research Council of Oman</div>
                 </div>
-                <div class="col-md-3">
-                    <div class="sponsor-card">
-                        <!-- <div class="sponsor-logo mb-3"></div> -->
-                        <div class="category-label">Conference & Event Platforms</div>
-                        <p class="small" style="color: #a8a8a8;">Ensuring widespread reach and engagement.</p>
-                        <ul>
-                          <li>Eventbrite</li>
-                          <li>Conference Alerts</li>
-                          <li>ResearchGate</li>
-                        </ul>
+              </div>
+            </div>
+            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+              <div class="d-flex align-items-center">
+                <div class="me-3">2</div>
+                <div>
+                  <div class="category-label">Education & Training Institutions</div>
+                  <div class="company-name">Pearson, Wiley, Springer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Media Partners -->
+    <div class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+      <h2 class="media-header pb-2 mb-4">Media Partners</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
+            <!-- <div class="sponsor-logo mb-3"></div> -->
+            <div class="category-label">Academic & Research Publications</div>
+            <p class="small" style="color: #a8a8a8; margin: 12px 0">Disseminating research findings to a global audience.
+            </p>
+            <ul>
+              <li>Springer</li>
+              <li>IEEE</li>
+              <li>Elsevier</li>
+              <li>Taylor & Francis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
+            <!-- <div class="sponsor-logo mb-3"></div> -->
+            <div class="category-label">News & Business Media</div>
+            <p class="small" style="color: #a8a8a8; margin: 12px 0">Keeping the world information about the conference's
+              impact</p>
+            <ul>
+              <li>Times of Oman</li>
+              <li>Oman Observer</li>
+              <li>Gulf News</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
+            <!-- <div class="sponsor-logo mb-3"></div> -->
+            <div class="category-label">Tech & Industry Magazines</div>
+            <p class="small" style="color: #a8a8a8; margin: 12px 0">Highlighting innovation and Technology Trends</p>
+            <ul>
+              <li>CIO Middle East</li>
+              <li>Arabian Business</li>
+              <li>TeachRadar Middle East</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
+            <!-- <div class="sponsor-logo mb-3"></div> -->
+            <div class="category-label">Conference & Event Platforms</div>
+            <p class="small" style="color: #a8a8a8; margin: 12px 0">Ensuring widespread reach and engagement.</p>
+            <ul>
+              <li>Eventbrite</li>
+              <li>Conference Alerts</li>
+              <li>ResearchGate</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="card speaker-card animate__animated animate__fadeIn shadow-sm" style="width: 80%; margin: 0 auto;">
+        <div class="row g-0 my-5 mx-2">
+            <div class="col-md-4">
+                <img src="assets/img/all-images/team/team-img12.png" class="img-fluid rounded-start" alt="Conference speaker">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title mb-3 fw-bold" style="font-size: 24px; line-height: 24px;">Share Your Expertise at ICMMCS 2025</h5>
+                    <p class="card-text my-4">Join our distinguished lineup of speakers and share your insights with industry professionals and thought leaders.</p>
+                    <div class="btn-area1">
+                      <a href="become-speaker.html" class="vl-btn1">Become a Sponsor</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!--===== FOOTER AREA STARTS =======-->
+  <div class="footer4-sertion-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-logo-area">
+            <!-- <img src="assets/img/logo/logo2.png" alt="" /> -->
+            <a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
+            <h3 id="logo-text">ICMMCS 2025</h3> 
+            </a>
+            <div class="space16"></div>
+            <p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and Technological Innovation.</p>
+            <div class="space24"></div>
+            <ul>
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              </li>
+              <li>
+                <a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="link-content">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="blog.html">Our Blogs</a></li>
+              <li><a href="event.html">Event Listing</a></li>
+              <li><a href="pricing-plan.html">Pricing Plan</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="link-content2">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>
+                <a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
+              </li>
+              <li>
+                <a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg" alt="" />info@icmmcs.org</a>
+              </li>
+              <li>
+                <a href="https://www.icmmcs.org" target="_blank"><img src="assets/img/icons/world1.svg" alt="" />www.icmmcs.org</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-social-box">
+            <h3>Our Recent Event Gallery</h3>
+            <div class="space12"></div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-4">
+                <div class="img1">
+                  <img src="assets/img/all-images/footer/footer-img1.png" alt="" />
+                  <div class="icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-4">
+                <div class="img1">
+                  <img src="assets/img/all-images/footer/footer-img2.png" alt="" />
+                  <div class="icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-4">
+                <div class="img1">
+                  <img src="assets/img/all-images/footer/footer-img3.png" alt="" />
+                  <div class="icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-4">
+                <div class="img1">
+                  <img src="assets/img/all-images/footer/footer-img4.png" alt="" />
+                  <div class="icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-4">
+                <div class="img1">
+                  <img src="assets/img/all-images/footer/footer-img5.png" alt="" />
+                  <div class="icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-4">
+                <div class="img1">
+                  <img src="assets/img/all-images/footer/footer-img6.png" alt="" />
+                  <div class="icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space60"></div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>&copy; Copyright 2025- Xclusive Oman. All Right Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== FOOTER AREA ENDS =======-->
+
+  <!--===== JS SCRIPT LINK =======-->
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/fontawesome.js"></script>
+  <script src="assets/js/vendor/aos.js"></script>
+  <script src="assets/js/vendor/jquery.appear.js"></script>
+  <script src="assets/js/vendor/jquery.odometer.min.js"></script>
+  <script src="assets/js/vendor/sidebar.js"></script>
+  <script src="assets/js/vendor/magnific-popup.js"></script>
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/Splitetext.js"></script>
+  <script src="assets/js/vendor/mobilemenu.js"></script>
+  <script src="assets/js/vendor/owlcarousel.min.js"></script>
+  <script src="assets/js/vendor/nice-select.js"></script>
+  <script src="assets/js/vendor/waypoints.js"></script>
+  <script src="assets/js/vendor/slick-slider.js"></script>
+  <script src="assets/js/vendor/circle-progress.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

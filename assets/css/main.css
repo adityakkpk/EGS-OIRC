@@ -1107,7 +1107,7 @@ body {
 }
 
 .vl-btn1 {
-  color: var(--ztc-text-text-2);
+  color: var(--ztc-text-text-1);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s20);
   font-style: normal;
@@ -1117,7 +1117,7 @@ body {
   transition: all 0.4s;
   position: relative;
   z-index: 1;
-  background: var(--ztc-bg-bg-3);
+  background: var(--ztc-bg-bg-9);
   padding: 16px 20px;
   display: inline-block;
   border-radius: 8px;
@@ -2833,10 +2833,10 @@ body {
 .hero4-section-area .hero4-header h1 {
   color: var(--ztc-text-text-11);
   font-family: var(--ztc-family-font1);
-  font-size: var(--ztc-font-size-font-s48);
+  font-size: var(--ztc-font-size-font-s44);
   font-style: normal;
   font-weight: var(--ztc-weight-bold);
-  line-height: 58px; /* 115.625% */
+  line-height: 50px;
   text-transform: uppercase;
 }
 @media (max-width: 767px) {
@@ -2848,7 +2848,7 @@ body {
 .hero4-section-area .hero4-header p {
   color: var(--ztc-text-text-12);
   font-family: var(--ztc-family-font1);
-  font-size: var(--ztc-font-size-font-s18);
+  font-size: var(--ztc-font-size-font-s16);
   font-style: normal;
   font-weight: var(--ztc-weight-medium);
   line-height: 26px;
@@ -2877,10 +2877,10 @@ body {
 .hero4-section-area .hero-content-images .content-area {
   background: var(--ztc-bg-bg-1);
   border-radius: 8px;
-  padding: 20px;
+  padding: 12px;
   display: inline-block;
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: -50px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -6607,7 +6607,7 @@ body {
   position: relative;
   z-index: 1;
   background: #F8F7F3;
-  padding: 200px 0 32px;
+  padding: 100px 0 32px;
 }
 .footer4-sertion-area .footer-logo-area img {
   width: 150px;
@@ -14054,9 +14054,9 @@ body {
   margin: 0 auto;
 }
 
-.brands5-section-area {
-  /* Keyframes for scrolling effect */
-}
+/* .brands5-section-area {
+  /* Keyframes for scrolling effect
+} */
 .brands5-section-area .marquee-container {
   overflow: hidden;
   white-space: nowrap;
