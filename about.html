@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Eventify- Event And Conference Theme</title>
+		<title>About | ICMMSC 2025</title>
 
 		<!--=====FAB ICON=======-->
 		<link rel="shortcut icon" href="assets/img/logo/fav-logo1.png" />
@@ -23,16 +23,140 @@
 
 		<style>
 			#logo-text {
-        color: #daddec;
+        color: #2e4dfd;
         transition: color 0.3s ease;
 				width: 200px;
       }
+			:root {
+            --primary-orange: #FFA500;
+            --deep-purple: #1a1a2e;
+            --light-purple: #4a148c;
+        }
+
+        .highlight {
+            color: var(--primary-orange);
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #2a2a40, #1a1a2e);
+            border-left: 4px solid var(--primary-orange);
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+						color: wheat;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 165, 0, 0.1),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.2);
+        }
+
+        .counter-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 20px;
+            border-left: 2px solid var(--primary-orange);
+            margin-left: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 24px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary-orange);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .speaker-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stats-section {
+            padding: 60px 0;
+						background-color: #f2f2f2;
+        }
+
+        .feature-number {
+            color: var(--primary-orange);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .hero-section {
+            background: linear-gradient(to bottom, rgba(26,26,46,0.9), rgba(26,26,46,1)),
+                        url('/api/placeholder/1920/1080') no-repeat center center;
+            background-size: cover;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .feature-title {
+            color: var(--primary-orange);
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 		</style>
 
 		<!--=====  JS SCRIPT LINK =======-->
 		<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 	</head>
-	<body class="homepage1-body">
+	<body class="homepage4-body">
 		<!-- Popup Section -->
 		<div id="popup" class="popup-overlay d-none">
 			<div class="popup-content">
@@ -78,28 +202,25 @@
 
 		<!--=====HEADER START=======-->
 		<header>
-			<div class="header-area homepage1 header header-sticky d-none d-lg-block" id="header">
+			<div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="header-elements">
 								<div class="site-logo">
-									<a href="index.html"><h3 id="logo-text">ICMMCS 2025</h3></a>
+									<a href="index.html">
+                    <h3 id="logo-text">ICMMCS 2025</h3> 
+                  </a>
 								</div>
 								<div class="main-menu">
 									<ul>
 										<li>
-											<a href="/">Home </a>
+											<a href="/index.html">Home </a>
 										</li>
 										<li><a href="about.html">About Event</a></li>
 										<li>
-											<a href="#">Speakers <i class="fa-solid fa-angle-down"></i></a>
-											<ul class="dropdown-padding">
-												<li><a href="speakers.html">Speakers</a></li>
-												<li><a href="speakers-single.html">Speakers Details</a></li>
-											</ul>
+											<a href="speakers.html">Speakers</a>
 										</li>
-
 										<li>
 											<a href="#">Schedule <i class="fa-solid fa-angle-down"></i></a>
 											<ul class="dropdown-padding">
@@ -136,12 +257,14 @@
 		<!--=====HEADER END =======-->
 
 		<!--===== MOBILE HEADER STARTS =======-->
-		<div class="mobile-header mobile-haeder1 d-block d-lg-none">
+		<div class="mobile-header mobile-haeder4 d-block d-lg-none">
 			<div class="container-fluid">
 				<div class="col-12">
 					<div class="mobile-header-elements">
 						<div class="mobile-logo">
-							<a href="index.html"><h3 id="logo-text">ICMMCS 2025</h3></a>
+							<a href="index.html">
+                <h3 id="logo-text">ICMMCS 2025</h3> 
+              </a>
 						</div>
 						<div class="mobile-nav-icon dots-menu">
 							<i class="fa-solid fa-bars-staggered"></i>
@@ -151,11 +274,11 @@
 			</div>
 		</div>
 
-		<div class="mobile-sidebar mobile-sidebar1">
+		<div class="mobile-sidebar mobile-sidebar4">
 			<div class="logosicon-area">
 				<div class="logos">
 					<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-          <h3 id="logo-text">ICMMCS 2025</h3>
+          <h3 id="logo-text">ICMMCS 2025</h3> 
 				</div>
 				<div class="menu-close">
 					<i class="fa-solid fa-xmark"></i>
@@ -164,15 +287,11 @@
 			<div class="mobile-nav mobile-nav1">
 				<ul class="mobile-nav-list nav-list1">
 					<li>
-						<a href="/">Home </a>
+						<a href="/index.html">Home </a>
 					</li>
 					<li><a href="about.html">About Event</a></li>
 					<li>
-						<a href="features.html">Speakers</a>
-						<ul class="sub-menu">
-							<li><a href="speakers.html">Speakers</a></li>
-							<li><a href="speakers-single.html">Speakers Details</a></li>
-						</ul>
+						<a href="speakers.html">Speakers</a>
 					</li>
 					<li>
 						<a href="features.html">Schedule</a>
@@ -201,7 +320,7 @@
 					<li><a href="contact.html">Contact Us</a></li>
 				</ul>
 				<div class="allmobilesection">
-					<a href="contact.html" class="vl-btn1">Contact Now</a>
+					<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
 					<div class="single-footer">
 						<h3>Contact Info</h3>
 						<div class="footer1-contact-info">
@@ -239,17 +358,17 @@
 				</div>
 			</div>
 		</div>
-		<!--===== MOBILE HEADER STARTS =======-->
+		<!--===== MOBILE HEADER ENDS =======-->
 
 		<!--===== HERO AREA STARTS =======-->
 		<div class="inner-page-header" style="background-image: url(assets/img/bg/header-bg5.png)">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 m-auto">
+					<div class="col-lg-8 m-auto">
 						<div class="heading1 text-center">
-							<h1>About Event</h1>
+							<h1>About ICMMCS 2025</h1>
 							<div class="space20"></div>
-							<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>About Us</span></a>
+							<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>About</span></a>
 						</div>
 					</div>
 				</div>
@@ -257,136 +376,238 @@
 		</div>
 		<!--===== HERO AREA ENDS =======-->
 
-		<!--===== ABOUT AREA STARTS =======-->
-		<div class="about1-section-area sp1">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<div class="about-imges">
-							<div class="img1 reveal image-anime">
-								<img src="assets/img/all-images/about/about-img1.png" alt="" />
+		<!-- Main Content -->
+		<div class="container py-5">
+				<!-- Conference Description -->
+				<div class="row mb-5">
+						<div class="col-lg-8 m-auto">
+							<div class="brand-header heading2 space-margin60 text-center">
+									<div class="space16"></div>
+									<h2 class="text-anime-style-3 mb-4">About ICMMCS 2025</h2>
+									<p class="lead">Welcome to the International Conference on Mathematics, Management, and Computer Science (ICMMCS 2025)</>
 							</div>
-							<div class="row">
-								<div class="col-lg-6 col-md-6">
-									<div class="space30"></div>
-									<div class="img1 reveal image-anime">
-										<img src="assets/img/all-images/about/about-img2.png" alt="" />
+						</div>
+						<div class="about1-section-area sp1">
+							<div class="container">
+								<div class="row align-items-center">
+									<div class="col-lg-5">
+										<div class="about-imges">
+											<div class="img1 reveal image-anime">
+												<img src="assets/img/all-images/about/about-img1.png" alt="" />
+											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="space30"></div>
+													<div class="img1 reveal image-anime">
+														<img src="assets/img/all-images/about/about-img2.png" alt="" />
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="space30"></div>
+													<div class="img1 reveal image-anime">
+														<img src="assets/img/all-images/about/about-img3.png" alt="" />
+													</div>
+												</div>
+											</div>
+											<div class="about-btnarea">
+												<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none" class="keyframe5">
+													<path
+														d="M93.8771 2.53621C96.8982 1.28483 98.4087 0.659138 100 0.659138C101.591 0.659138 103.102 1.28483 106.123 2.5362L164.588 26.7531C167.609 28.0045 169.119 28.6302 170.245 29.7554C171.37 30.8806 171.995 32.3912 173.247 35.4123L197.464 93.8771C198.715 96.8982 199.341 98.4087 199.341 100C199.341 101.591 198.715 103.102 197.464 106.123L173.247 164.588C171.995 167.609 171.37 169.119 170.245 170.245C169.119 171.37 167.609 171.995 164.588 173.247L106.123 197.464C103.102 198.715 101.591 199.341 100 199.341C98.4087 199.341 96.8982 198.715 93.8771 197.464L35.4123 173.247C32.3912 171.995 30.8806 171.37 29.7554 170.245C28.6302 169.119 28.0045 167.609 26.7531 164.588L2.53621 106.123C1.28483 103.102 0.659138 101.591 0.659138 100C0.659138 98.4087 1.28483 96.8982 2.5362 93.8771L26.7531 35.4123C28.0045 32.3912 28.6302 30.8806 29.7554 29.7554C30.8806 28.6302 32.3912 28.0045 35.4123 26.7531L93.8771 2.53621Z"
+														fill="#FFBA00"
+													/>
+												</svg>
+												<a href="conference-register.html">
+													<span><i class="fa-solid fa-arrow-right"></i></span>
+													<br />
+													<div class="space12"></div>
+													Register Now
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-5 m-auto">
+										<div class="">
+											<h5 data-aos="fade-left" data-aos-duration="800">about our Business conferences</h5>
+											<div class="space16"></div>										
+											<p style="text-align: justify;" class="mb-4"  data-aos="fade-left" data-aos-duration="900">
+												Set to unfold in the mesmerizing city of Muscat, Sultanate of Oman, from November 12-14, 2025, ICMMCS 2025 offers a platform to present groundbreaking research, publish your papers, showcase your ideas through engaging poster presentations, establish global partnerships, and explore innovative solutions to modern challenges.
+											</p>
+											<p style="text-align: justify;" class="mb-4"  data-aos="fade-left" data-aos-duration="1000">
+													Our conference draws a varied audience, including researchers, scholars, academics, industry professionals, exhibitors and enthusiasts, all converging to exchange ideas and insights across the vast landscape of diverse yet inter-connected fields.
+											</p>
+											<p style="text-align: justify;"  data-aos="fade-left" data-aos-duration="1100">
+													Under the theme "Bridging Disciplines, Inspiring Innovation," ICMMCS 2025 provides a dynamic convergence of knowledge, research, and industry expertise. Participants will have the opportunity to present groundbreaking research, publish their papers in prestigious ESCI and SCOPUS-indexed journals, and showcase their ideas through engaging poster presentations. The conference also serves as a hub for global networking, promoting collaborations, and exploring innovative solutions to modern challenges.
+											</p>	
+										</div>
+				
 									</div>
 								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="space30"></div>
-									<div class="img1 reveal image-anime">
-										<img src="assets/img/all-images/about/about-img3.png" alt="" />
-									</div>
-								</div>
-							</div>
-							<div class="about-btnarea">
-								<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none" class="keyframe5">
-									<path
-										d="M93.8771 2.53621C96.8982 1.28483 98.4087 0.659138 100 0.659138C101.591 0.659138 103.102 1.28483 106.123 2.5362L164.588 26.7531C167.609 28.0045 169.119 28.6302 170.245 29.7554C171.37 30.8806 171.995 32.3912 173.247 35.4123L197.464 93.8771C198.715 96.8982 199.341 98.4087 199.341 100C199.341 101.591 198.715 103.102 197.464 106.123L173.247 164.588C171.995 167.609 171.37 169.119 170.245 170.245C169.119 171.37 167.609 171.995 164.588 173.247L106.123 197.464C103.102 198.715 101.591 199.341 100 199.341C98.4087 199.341 96.8982 198.715 93.8771 197.464L35.4123 173.247C32.3912 171.995 30.8806 171.37 29.7554 170.245C28.6302 169.119 28.0045 167.609 26.7531 164.588L2.53621 106.123C1.28483 103.102 0.659138 101.591 0.659138 100C0.659138 98.4087 1.28483 96.8982 2.5362 93.8771L26.7531 35.4123C28.0045 32.3912 28.6302 30.8806 29.7554 29.7554C30.8806 28.6302 32.3912 28.0045 35.4123 26.7531L93.8771 2.53621Z"
-										fill="#FFBA00"
-									/>
-								</svg>
-								<a href="pricing-plan.html">
-									<span><i class="fa-solid fa-arrow-right"></i></span>
-									<br />
-									<div class="space12"></div>
-									Buy Ticket
-								</a>
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="about-header-area heading2">
-							<h5 data-aos="fade-left" data-aos-duration="800">about our Business conferences</h5>
-							<div class="space16"></div>
-							<h2 class="text-anime-style-3">Explore Future Of Design At Our Yearly Conference</h2>
-							<div class="space16"></div>
-							<p data-aos="fade-left" data-aos-duration="900">The Yearly Designer Conferences designed to challenge, Event inspire, and push the boundaries of what is possible in design. From emerging technologies to sustainable design practices.</p>
-							<div class="space32"></div>
-							<div class="about-counter-area">
-								<div class="counter-box">
-									<h2><span class="odometer" data-count="250"></span>+</h2>
-									<div class="space18"></div>
-									<p>Our Journalist</p>
-								</div>
-
-								<div class="counter-box box2">
-									<h2><span class="odometer" data-count="15"></span>+</h2>
-									<div class="space18"></div>
-									<p>Our Speaker</p>
-								</div>
-
-								<div class="counter-box box3" style="border: none">
-									<h2><span class="odometer" data-count="7"></span>K+</h2>
-									<div class="space18"></div>
-									<p>Attendees</p>
-								</div>
-							</div>
-							<div class="space32"></div>
-							<div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
-								<a href="contact.html" class="vl-btn1">Become an Attendee</a>
-							</div>
-						</div>
-					</div>
 				</div>
-			</div>
-		</div>
-		<!--===== ABOUT AREA ENDS =======-->
 
-		<!--===== OTHERS AREA STARTS =======-->
-		<div class="brands3-section-area sp2">
+				<!-- Key Features -->
+				<div class="row">
+					<div class="col-lg-8 m-auto">
+						<div class="brand-header heading2 space-margin60 text-center">
+								<div class="space16"></div>
+								<h2 class="text-anime-style-3">Features</h2>
+						</div>
+					</div>
+						<div class="col-lg-8 m-auto">
+								<!-- Feature 1 -->
+								<div class="feature-card p-4">
+										<div class="d-flex align-items-center">
+												<span class="feature-number">1</span>
+												<div>
+														<h3 class="feature-title">Present your papers</h3>
+														<p class="mb-0">Showcase your research via presentations, posters & journal publications.</p>
+												</div>
+										</div>
+								</div>
+
+								<!-- Feature 2 -->
+								<div class="feature-card p-4">
+										<div class="d-flex align-items-center">
+												<span class="feature-number">2</span>
+												<div>
+														<h3 class="feature-title">Thought-Provoking Discussions</h3>
+														<p class="mb-0">Participate in expert panels and workshops.</p>
+												</div>
+										</div>
+								</div>
+
+								<!-- Feature 3 -->
+								<div class="feature-card p-4">
+										<div class="d-flex align-items-center">
+												<span class="feature-number">3</span>
+												<div>
+														<h3 class="feature-title">Global Networking</h3>
+														<p class="mb-0">Connect with leading professionals, academics, and industry pioneers.</p>
+												</div>
+										</div>
+								</div>
+
+								<!-- Feature 4 -->
+								<div class="feature-card p-4">
+										<div class="d-flex align-items-center">
+												<span class="feature-number">4</span>
+												<div>
+														<h3 class="feature-title">Vibrant location</h3>
+														<p class="mb-0">Experience Muscat's rich heritage and stunning landscapes.</p>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+
+		<!-- New Conference Statistics Section -->
+		<section class="stats-section my-5 m-auto">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 m-auto">
-						<div class="brand-header heading4 space-margin60 text-center">
-							<h3>Join 4,000+ companies already growing</h3>
-						</div>
+					<h2 class="text-center mb-5" data-aos="fade-up">Conference Statistics</h2>
+					<div class="row">
+							<div class="col-md-3 col-6 mb-4">
+									<div class="counter-box" data-aos="zoom-in" data-aos-delay="100">
+											<h3 class="highlight counter">500+</h3>
+											<p>Expected Attendees</p>
+									</div>
+							</div>
+							<div class="col-md-3 col-6 mb-4">
+									<div class="counter-box" data-aos="zoom-in" data-aos-delay="200">
+											<h3 class="highlight counter">50+</h3>
+											<p>Countries Represented</p>
+									</div>
+							</div>
+							<div class="col-md-3 col-6 mb-4">
+									<div class="counter-box" data-aos="zoom-in" data-aos-delay="300">
+											<h3 class="highlight counter">100+</h3>
+											<p>Research Presentations</p>
+									</div>
+							</div>
+							<div class="col-md-3 col-6 mb-4">
+									<div class="counter-box" data-aos="zoom-in" data-aos-delay="400">
+											<h3 class="highlight counter">30+</h3>
+											<p>Expert Speakers</p>
+									</div>
+							</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12" data-aos="zoom-in" data-aos-duration="800">
-						<div class="brand-slider-area owl-carousel">
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img1.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img2.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img3.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img4.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img5.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img6.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img7.png" alt="" />
-							</div>
-							<div class="brand-box">
-								<img src="assets/img/elements/brand-img8.png" alt="" />
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
-		</div>
-		<!--===== OTHERS AREA ENDS =======-->
+		</section>
+
+		<!-- New Conference Timeline Section -->
+		<section class="container my-5 m-auto">
+				<h2 class="text-center mb-5" data-aos="fade-up">Conference Timeline</h2>
+				<div class="timeline">
+						<div class="timeline-item" data-aos="fade-left">
+								<h4 class="highlight">Day 1 - November 12</h4>
+								<p>Opening Ceremony & Keynote Speeches</p>
+						</div>
+						<div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+								<h4 class="highlight">Day 2 - November 13</h4>
+								<p>Research Presentations & Workshops</p>
+						</div>
+						<div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+								<h4 class="highlight">Day 3 - November 14</h4>
+								<p>Panel Discussions & Closing Ceremony</p>
+						</div>
+				</div>
+		</section>
+
+		<!-- New Topics Section -->
+		<section class="py-5" style="background: rgb(245, 245, 245);">
+				<div class="container">
+						<h2 class="text-center mb-5" data-aos="fade-up">Conference Topics</h2>
+						<div class="row">
+								<div class="col-md-4 mb-4" data-aos="zoom-in">
+										<div class="feature-card p-4">
+												<h4 class="highlight">Mathematics</h4>
+												<ul class="list-unstyled">
+														<li>Applied Mathematics</li>
+														<li>Mathematical Modeling</li>
+														<li>Statistical Analysis</li>
+												</ul>
+										</div>
+								</div>
+								<div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+										<div class="feature-card p-4">
+												<h4 class="highlight">Management</h4>
+												<ul class="list-unstyled">
+														<li>Business Strategy</li>
+														<li>Operations Management</li>
+														<li>Project Management</li>
+												</ul>
+										</div>
+								</div>
+								<div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+										<div class="feature-card p-4">
+												<h4 class="highlight">Computer Science</h4>
+												<ul class="list-unstyled">
+														<li>Artificial Intelligence</li>
+														<li>Data Science</li>
+														<li>Cloud Computing</li>
+												</ul>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
 
 		<!--===== OTHERS AREA STARTS =======-->
 		<div class="choose-section-area sp2">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 m-auto">
+					<div class="col-lg-10 m-auto">
 						<div class="heading2 text-center space-margin60">
 							<h5>why choose us</h5>
 							<div class="space18"></div>
-							<h2>Why Attend Event?</h2>
+							<div class="row">
+								<div class="col-lg-10 m-auto">
+									<div class="brand-header heading2 text-center">
+										<h2 class="text-anime-style-3">Why Attend ICMMCS 2025?</h2>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -491,100 +712,6 @@
 		</div>
 		<!--===== OTHERS AREA ENDS =======-->
 
-		<!--===== CTA AREA STARTS =======-->
-		<div class="cta1-section-area d-lg-block d-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 m-auto">
-						<div class="cta1-main-boxarea">
-							<div class="timer-btn-area">
-								<div class="timer">
-									<div class="time-box">
-										<span id="days1" class="time-value">119</span>
-										<br />
-									</div>
-									<div class="space14"></div>
-									<div class="time-box">
-										<span id="hours1" class="time-value">22</span>
-										<br />
-									</div>
-									<div class="space14"></div>
-									<div class="time-box">
-										<span id="minutes1" class="time-value">18</span>
-										<br />
-									</div>
-									<div class="space14"></div>
-									<div class="time-box" style="margin: 0 26px 0 0">
-										<span id="seconds1" class="time-value">44</span>
-										<br />
-									</div>
-								</div>
-								<div class="btn-area1">
-									<a href="pricing-plan.html" class="vl-btn1">Buy Ticket</a>
-								</div>
-							</div>
-							<ul>
-								<li>
-									<a href="#"><img src="assets/img/icons/calender1.svg" alt="" />30 January 2025 - 6pm to 11:30pm</a>
-								</li>
-								<li class="m-0">
-									<a href="#"><img src="assets/img/icons/location1.svg" alt="" />Secret Location In The UK</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--===== CTA AREA ENDS =======-->
-
-		<!--===== CTA AREA STARTS =======-->
-		<div class="cta1-section-area d-lg-none d-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 m-auto">
-						<div class="cta1-main-boxarea">
-							<div class="timer-btn-area">
-								<div class="timer">
-									<div class="time-box">
-										<span id="days" class="time-value">119</span>
-										<br />
-									</div>
-									<div class="space14"></div>
-									<div class="time-box">
-										<span id="hours" class="time-value">22</span>
-										<br />
-									</div>
-									<div class="space14"></div>
-									<div class="time-box">
-										<span id="minutes" class="time-value">18</span>
-										<br />
-									</div>
-									<div class="space14"></div>
-									<div class="time-box" style="margin: 0 26px 0 0">
-										<span id="seconds" class="time-value">44</span>
-										<br />
-									</div>
-								</div>
-								<div class="btn-area1">
-									<a href="pricing-plan.html" class="vl-btn1">Buy Ticket</a>
-								</div>
-							</div>
-							<ul>
-								<li>
-									<a href="#"><img src="assets/img/icons/calender1.svg" alt="" />30 January 2025 - 6pm to 11:30pm</a>
-								</li>
-								<li class="m-0">
-									<a href="#"><img src="assets/img/icons/location1.svg" alt="" />Secret Location In The UK</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--===== CTA AREA ENDS =======-->
-
 		<!--===== FOOTER AREA STARTS =======-->
 		<div class="footer1-sertion-area">
 			<div class="container">
@@ -617,8 +744,8 @@
 							<ul>
 								<li><a href="about.html">About Us</a></li>
 								<li><a href="blog.html">Our Blogs</a></li>
-								<li><a href="event.html">Event Listing</a></li>
-								<li><a href="pricing-plan.html">Pricing Plan</a></li>
+								<li><a href="event.html">Events</a></li>
+								<li><a href="conference-register.html">Register</a></li>
 								<li><a href="contact.html">Contact Us</a></li>
 							</ul>
 						</div>
@@ -629,17 +756,17 @@
 							<h3>Contact Us</h3>
 							<ul>
 								<li>
-									<a href="tel:+11234567890"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
+									<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
 								</li>
 								<li>
-									<a href="#"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
+									<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
 									</a>
 								</li>
 								<li>
-									<a href="mailto:eventifyevent@gmail.com"><img src="assets/img/icons/mail1.svg" alt="" />info@icmmcs.org</a>
+									<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg" alt="" />info@icmmcs.org</a>
 								</li>
 								<li>
-									<a href="#"> <img src="assets/img/icons/world1.svg" alt="" />www.icmmcs.org</a>
+									<a href="https://www.icmmcs.org" target="_blank"><img src="assets/img/icons/world1.svg" alt="" />www.icmmcs.org</a>
 								</li>
 							</ul>
 						</div>
@@ -653,7 +780,7 @@
 									<div class="img1">
 										<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
 										<div class="icons">
-											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 										</div>
 									</div>
 								</div>
@@ -661,7 +788,7 @@
 									<div class="img1">
 										<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
 										<div class="icons">
-											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 										</div>
 									</div>
 								</div>
@@ -669,7 +796,7 @@
 									<div class="img1">
 										<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
 										<div class="icons">
-											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 										</div>
 									</div>
 								</div>
@@ -677,7 +804,7 @@
 									<div class="img1">
 										<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
 										<div class="icons">
-											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 										</div>
 									</div>
 								</div>
@@ -685,7 +812,7 @@
 									<div class="img1">
 										<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
 										<div class="icons">
-											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 										</div>
 									</div>
 								</div>
@@ -693,7 +820,7 @@
 									<div class="img1">
 										<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
 										<div class="icons">
-											<a href="#"><i class="fa-brands fa-instagram"></i></a>
+											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 										</div>
 									</div>
 								</div>
@@ -705,7 +832,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="copyright">
-							<p>&copy; CCopyright 2025- Xclusive Oman. All Right Reservedd</p>
+							<p>&copy; Copyright 2025- Xclusive Oman. All Right Reserved</p>
 						</div>
 					</div>
 				</div>
@@ -731,5 +858,32 @@
 		<script src="assets/js/vendor/slick-slider.js"></script>
 		<script src="assets/js/vendor/circle-progress.js"></script>
 		<script src="assets/js/main.js"></script>
+
+		<script>
+			AOS.init({
+					duration: 1000,
+					once: true
+			});
+
+			// Add number counter animation
+			const counters = document.querySelectorAll('.counter');
+			counters.forEach(counter => {
+					const target = counter.innerText;
+					const increment = parseInt(target) / 40;
+					let current = 0;
+					
+					const updateCounter = () => {
+							current += increment;
+							if(current < parseInt(target)) {
+									counter.innerText = Math.ceil(current) + '+';
+									setTimeout(updateCounter, 50);
+							} else {
+									counter.innerText = target;
+							}
+					};
+					
+					updateCounter();
+			});
+	</script>
 	</body>
 </html>

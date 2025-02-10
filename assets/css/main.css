@@ -1599,16 +1599,16 @@ body {
 
 /*============= COMMON CSS AREA ENDS===============*/
 .sp1 {
-  padding: 100px 0 100px;
+  padding: 50px 0 100px;
 }
 @media (max-width: 767px) {
   .sp1 {
-    padding: 50px 0 50px;
+    padding: 25px 0 50px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .sp1 {
-    padding: 50px 0 50px;
+    padding: 25px 0 50px;
   }
 }
 
@@ -5949,7 +5949,7 @@ body {
   position: relative;
   z-index: 1;
   background: #FBF9F4;
-  padding: 200px 0 32px;
+  padding: 100px 0 32px;
 }
 .footer1-sertion-area .footer-logo-area p {
   color: #544E51;
