@@ -23,21 +23,21 @@
 
     <style>
       #logo-text {
-        color: #2e4dfd;
+        color: #019087;
         transition: color 0.3s ease;
 				width: 200px;
       }
       #logo-text:hover {
-        color: #002466;
+        color: #00dfd0;
       }
 			.bg-theme {
-            background-color: #2e4dfd;
+            background-color: #019087;
         }
         .text-theme {
-            color: #2e4dfd;
+            color: #019087;
         }
         .border-theme {
-            border-color: #2e4dfd !important;
+            border-color: #019087 !important;
         }
 				.bg-custom-dark {
             background-color: #1a1f3d;
@@ -80,6 +80,60 @@
             border-radius: 15px;
             padding: 3rem;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+				.fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-float {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-float:hover {
+            transform: translateY(-5px);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .badge-animated {
+            animation: badgePop 0.5s ease-out;
+        }
+
+        @keyframes badgePop {
+            0% { transform: scale(0); }
+            70% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
     </style>
 
@@ -267,28 +321,29 @@
 		<!--===== MOBILE HEADER ENDS =======-->
 
 		<!--===== HERO AREA STARTS =======-->
-		<div class="hero4-section-area">
+		<div class="hero4-section-area" style="background-image: url(assets/img/squ/img2.jpg); background-repeat: no-repeat; background-size: cover;">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<div class="hero4-header">
-							<h5 data-aos="fade-left" data-aos-duration="800">
-                Bridging Disciplines, Driving Innovation
-              </h5>
+					<div class="col-lg-12 m-auto" style="background-color: rgba(45, 45, 45, 0.5); margin: 4px;">
+						<div class="hero4-header" style=" padding: 24px; display: flex;flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
 							<div class="space20"></div>
-							<h1 class="text-anime-style-3">International Conference on Mathematics, Management, and Computer Science</h1>
+							<h1 class="text-anime-style-3" style="color: white; text-align: center;">International Conference on Mathematics, Management, and Computer Science</h1>
 							<div class="space20"></div>
-							<p data-aos="fade-left" data-aos-duration="900">
-								Welcome to ICMMSC 2025: The Intersection of <br class="d-lg-block d-none" />
-								Mathematical Insight,  Management Excellence, <br> and Technological Innovation.
+							<p data-aos="fade-left" data-aos-duration="900" style="width: 90%; color: white; text-align: center;">
+								Welcome to ICMMSC 2025: The Intersection of Mathematical Insight,  Management Excellence, and Technological Innovation.
 							</p>
 							<div class="space32"></div>
-							<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-								<a href="conference-register.html" class="vl-btn4">Register Now</a>
+							<div class="" style="display: flex;flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;">
+								<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+									<a href="conference-register.html" class="vl-btn4">Register Now</a>
+								</div>
+								<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+									<a href="sponsors.html" class="vl-btn4">Our Sponsors</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<!-- <div class="col-lg-6">
 						<div class="hero-content-images">
 							<div class="img1 reveal image-anime">
 								<img src="assets/img/squ/img2.jpg" alt="" />
@@ -303,7 +358,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -313,7 +368,7 @@
 		<div class="about4-section-area sp1">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-lg-6">
+					<!-- <div class="col-lg-6">
 						<div class="about-images">
 							<div class="row">
 								<div class="col-lg-6 col-md-6">
@@ -348,33 +403,80 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="about4-heading heading6">
-							<!-- <h5 data-aos="fade-left" data-aos-duration="800">about ICMMSC 2025</h5> -->
+					</div> -->
+					<div class="col-lg-10 m-auto">
+						<div class="about4-heading heading6" style="display: flex;flex-wrap: wrap;  flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+							<h5 data-aos="fade-left" data-aos-duration="800">about ICMMSC 2025</h5>
 							<div class="space18"></div>
-							<h2 class="text-anime-style-3">Computing the Future, Managing the Present, Mastering the Mathematics</h2>
+							<h2 class="text-anime-style-3" style="text-align: center;">Computing the Future, Managing the Present, Mastering the Mathematics</h2>
 							<div class="space18"></div>
 
-              <!-- Theme Section -->
-              <div class="theme-section">
-                <h5 data-aos="fade-left" data-aos-duration="800">Theme</h5>
-                <div class="space18"></div>
-                <p data-aos="fade-left" data-aos-duration="900">"Bridging Disciplines, Inspiring Innovation" - ICMMSC provides a dynamic convergence of knowledge, research, and industry expertise across interconnected fields.</p>
-              </div>
+              <div class="" style="display: flex;flex-wrap: wrap; gap: 24px; flex-direction: column; align-items: center; justify-content: center; margin: 0 6px;">
+								<!-- Theme Section -->
+								<div class="rounded animate__animated animate__fadeInUp custom-card" style="display: flex; flex-wrap: wrap; padding: 24px;border: 1px solid gray; gap: 40px; justify-content: center; align-items: center; width: fit-content;">
+									<div style="min-width: 230px; width: 40%;">
+										<img src="assets/img/squ/img4.jpg" style="min-width: 230px;" data-aos="fade-right" data-aos-duration="900" class="rounded">
+									</div>
+									<div class="theme-section" style="min-width: 230px; width: 50%;">
+										<h5 data-aos="fade-left" data-aos-duration="800">Theme</h5>
+										<div class="space18"></div>
+										<p data-aos="fade-left" data-aos-duration="900" style="text-align: justify;">"Bridging Disciplines, Inspiring Innovation" - ICMMSC provides a dynamic convergence of knowledge, research, and industry expertise across interconnected fields.</p>
+									</div>
+								</div>
+	
+								<!-- Opportunities Section -->
+								<div class="rounded animate__animated animate__fadeInUp custom-card" style="display: flex; flex-wrap: wrap; padding: 24px;border: 1px solid gray; gap: 40px; justify-content: center; align-items: center; width: fit-content;">
+									<div style="min-width: 230px; width: 40%;">
+										<img src="assets/img/squ/img3.jpg" style="min-width: 230px;" data-aos="fade-right" data-aos-duration="900" class="rounded">
+									</div>
+									<div class="theme-section" style="min-width: 230px; width: 50%;">
+										<h5 data-aos="fade-left" data-aos-duration="800">Opportunities</h5>
+										<div class="space18"></div>
+										<p data-aos="fade-left" data-aos-duration="900" style="text-align: justify;">Present research and publish in ESCI and SCOPUS-indexed journals, showcasing ideas through poster presentations, and establish global partnerships.</p>
+									</div>
+								</div>
 
-              <div class="space32"></div>
-
-              <!-- Opportunities Section -->
-              <div class="opportunities-section">
-                <h5 data-aos="fade-left" data-aos-duration="800">Opportunities</h5>
-                <div class="space18"></div>
-                <p data-aos="fade-left" data-aos-duration="900">Present research and publish in ESCI and SCOPUS-indexed journals, showcasing ideas through poster presentations, and establish global partnerships.</p>
-              </div>
-
-							<div class="space32"></div>
 							<div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
-								<a href="conference-register.html" class="vl-btn4">Reserve My Seat</a>
+								<a href="conference-register.html" class="vl-btn4 mb-5">Register now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+			<div class="" style="background-image: url(assets/img/squ/img2.jpg);background-repeat: no-repeat; background-size: cover;">
+				<div class="" style="background-color: rgba(255, 255, 255, 0.7);">
+					<div class="container py-5">
+						<h2 class="fw-bold mb-5 text-center" data-aos="fade-up">Who Attends?</h2>
+						<div class="row g-4">
+							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen mb-3"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
+									<h5 class="fw-bold">Researchers</h5>
+									<p style="color: black;">Academic scholars presenting groundbreaking studies</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school mb-3"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>
+									<h5 class="fw-bold">Academics</h5>
+									<p style="color: black;">Thought leaders sharing insights and expertise</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pen-tool mb-3"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>
+									<h5 class="fw-bold">Professionals</h5>
+									<p style="color: black;">Industry experts exploring latest trends and innovations</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen mb-3"><path d="M11.5 15H7a4 4 0 0 0-4 4v2"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="7" r="4"/></svg>
+									<h5 class="fw-bold">Students</h5>
+									<p style="color: black;">Emerging innovators eager to learn and network</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -384,12 +486,14 @@
 		<!--===== ABOUT AREA ENDS =======-->
 
     <!--===== VENUE AREA STARTS =======-->
-		<section class="py-5" style="background-color: #e0e0e0;">
+		<section class="py-5" style="background-color: #f0f0f0;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-5 m-auto mt-5">
-						<div class="brand-header heading2 space-margin60 text-center">
+						<div class="brand-header heading6 space-margin60 text-center">
 							<div class="space16"></div>
+							<h5 data-aos="fade-left" data-aos-duration="800" style="background-color: rgba(46, 77, 253, 0.08); color: #019087;">Venue and Timing</h5>
+							<div class="space18"></div>
 							<h2 class="text-anime-style-3">Venue and Timing</h2>
 						</div>
 					</div>
@@ -400,10 +504,10 @@
 						<!-- Location -->
 						<div class="d-flex mb-4">
 							<div class="bg-light p-3 rounded me-3" style="height: 60px;">
-								<i class="fas fa-map-marker-alt text-secondary fs-4"></i>
+								<i class="fas fa-map-marker-alt fs-4" style="color: #019087;"></i>
 							</div>
 							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #002466;">Location</h3>
+								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Location</h3>
 								<p class="text-secondary mb-0">
 									Sultan Qaboos University (SQU), Muscat, Sultanate of Oman
 								</p>
@@ -413,10 +517,10 @@
 						<!-- Dates -->
 						<div class="d-flex mb-4">
 							<div class="bg-light p-3 rounded me-3">
-								<i class="fas fa-calendar text-secondary fs-4"></i>
+								<i class="fas fa-calendar fs-4" style="color: #019087;"></i>
 							</div>
 							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #002466;">Dates</h3>
+								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Dates</h3>
 								<p class="text-secondary mb-0">November 12 - 14, 2025</p>
 							</div>
 						</div>
@@ -424,10 +528,10 @@
 						<!-- Conference Sessions -->
 						<div class="d-flex mb-4">
 							<div class="bg-light p-3 rounded me-3" style="height: 60px;">
-								<i class="fas fa-clock text-secondary fs-4"></i>
+								<i class="fas fa-clock fs-4" style="color: #019087;"></i>
 							</div>
 							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #002466;">Conference Sessions</h3>
+								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Conference Sessions</h3>
 								<p class="text-secondary mb-0">9:00 AM – 5:00 PM (Oman time)</p>
 							</div>
 						</div>
@@ -435,10 +539,10 @@
 						<!-- Gala Dinner -->
 						<div class="d-flex mb-4">
 							<div class="bg-light p-3 rounded me-3" style="height: 60px;">
-								<i class="fas fa-users text-secondary fs-4"></i>
+								<i class="fas fa-users fs-4" style="color: #019087;"></i>
 							</div>
 							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #002466;">Gala Dinner & Networking</h3>
+								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Gala Dinner & Networking</h3>
 								<p class="text-secondary mb-0">7:00 PM onwards</p>
 							</div>
 						</div>
@@ -459,7 +563,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 m-auto">
-						<div class="event-header heading2 space-margin60 text-center">
+						<div class="event-header heading6 space-margin60 text-center">
 							<h5 data-aos="fade-left" data-aos-duration="800">Event Schedule</h5>
 							<div class="space16"></div>
 							<h2 class="text-anime-style-3">Our Events Schedule Plan</h2>
@@ -797,7 +901,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-5">
-						<div class="team2-header heading5 space-margin60">
+						<div class="team2-header heading6 space-margin60">
 							<h5>our 10+ event speakers</h5>
 							<div class="space18"></div>
 							<h2 class="text-anime-style-3">Our Event Speakers</h2>
@@ -1077,671 +1181,198 @@
 		</div>
 		<!--===== TEAM AREA ENDS =======-->
 
-		<!--===== Who Attends STARTS =======-->
-		<section class="attendee-section py-5" style="background-color: #e5e5e5;">
-			<div class="container">
-				<h2 class="fw-bold mb-5 text-center" data-aos="fade-up">Who Attends?</h2>
-				<div class="row g-4">
-					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-						<div class="attendee-card p-4 border border-primary rounded text-center bg-white shadow-sm" style="height: 220px;">
-							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#0a58ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen mb-3"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
-							<h5 class="fw-bold">Researchers</h5>
-							<p>Academic scholars presenting groundbreaking studies</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-						<div class="attendee-card p-4 border border-primary rounded text-center bg-white shadow-sm" style="height: 220px;">
-							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#0a58ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school mb-3"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>
-							<h5 class="fw-bold">Academics</h5>
-							<p>Thought leaders sharing insights and expertise</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-						<div class="attendee-card p-4 border border-primary rounded text-center bg-white shadow-sm" style="height: 220px;">
-							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#0a58ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pen-tool mb-3"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>
-							<h5 class="fw-bold">Professionals</h5>
-							<p>Industry experts exploring latest trends and innovations</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-						<div class="attendee-card p-4 border border-primary rounded text-center bg-white shadow-sm" style="height: 220px;">
-							<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#0a58ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen mb-3"><path d="M11.5 15H7a4 4 0 0 0-4 4v2"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="7" r="4"/></svg>
-							<h5 class="fw-bold">Students</h5>
-							<p>Emerging innovators eager to learn and network</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--===== Who Attends ENDS =======-->
-
-    <!--===== MEMORY AREA STARTS =======-->
-		<!-- <div class="memory4-section-area sp1">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<div class="memory4-header heading6 space-margin60">
-							<h5>last year memory</h5>
-							<div class="space18"></div>
-							<h2 class="text-anime-style-3">Recent Memories 2025</h2>
-						</div>
-					</div>
-					<div class="col-lg-3"></div>
-					<div class="col-lg-3">
-						<div class="btn-area1">
-							<a href="memories.html" class="vl-btn4">See Recent Photos</a>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="memory-team-slider2 owl-carousel">
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img1.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Event Conferences</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img2.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Event Conferences</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img3.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Event Conferences</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img1.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Event Conferences</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img2.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Event Conferences</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img3.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Event Conferences</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		
-		<!-- <div class="memory3-section-area sp1"  style="background-color: #f4f4f4;">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 m-auto">
-						<div class="memory3-header text-center heading5 space-margin60">
-							<h5>recent year Memories</h5>
-							<div class="space18"></div>
-							<h2 class="text-anime-style-3">Recent Memories 2024</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="memory-team-slider owl-carousel">
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img4.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Freelancer Meetup</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img5.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Freelancer Meetup</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img6.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Freelancer Meetup</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img4.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Freelancer Meetup</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img5.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Freelancer Meetup</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="memory3-boxarea">
-								<div class="img1">
-									<img src="assets/img/all-images/memory/memory-img6.png" alt="" />
-								</div>
-								<div class="content-area">
-									<p>Event 2024</p>
-									<div class="space12"></div>
-									<a href="memories.html">Freelancer Meetup</a>
-									<div class="plus">
-										<a href="memories.html"><i class="fa-solid fa-plus"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-    <!--===== MEMORY AREA ENDS =======-->
-
-    <!--===== TESTIMONIALS AREA STARTS =======-->
-    <!-- <div class="testimonials7-section-area sp1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="testimonial-header heading10 space-margin60">
-              <h2 class="text-anime-style-3">In Their Words Feedback That Drives Change</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="testimonial-content-slider7 owl-carousel">
-              <div class="testimonial-widget-box">
-                <div class="list-display">
-                  <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li>(5) Rating</li>
-                  </ul>
-                  <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                      <path d="M15.3469 5.73963C15.3469 7.2063 15.7303 8.43797 16.4969 9.43463C17.0403 10.1213 17.7775 10.5724 18.7086 10.788C19.6253 11.0013 20.4919 11.0163 21.2753 10.8346C21.5419 12.418 21.1086 14.0946 20.0086 15.8713C18.9064 17.6469 17.4853 18.9819 15.7453 19.8763L18.3803 23.668C19.7136 23.008 20.9803 22.1713 22.1469 21.1596C23.3303 20.148 24.3803 18.9846 25.3136 17.6696C26.2469 16.3546 26.9469 14.8696 27.3969 13.1863C27.8469 11.503 27.9719 9.7863 27.7569 8.01963C27.4769 5.6863 26.7236 3.81963 25.4969 2.4363C24.2714 1.03519 22.7447 0.334633 20.9169 0.334633C19.3086 0.334633 17.9736 0.817966 16.9169 1.79797C15.8714 2.75797 15.3492 4.07352 15.3503 5.74463L15.3469 5.73963ZM0.140263 5.73963C0.140263 7.2063 0.523598 8.43797 1.29026 9.43463C1.83471 10.1346 2.57193 10.5885 3.50193 10.7963C4.43526 11.0019 5.29082 11.0141 6.06859 10.833C6.33526 12.3996 5.9186 14.083 4.81526 15.8663C3.71526 17.633 2.29526 18.9663 0.555264 19.8663L3.1836 23.668C4.51804 23.008 5.7736 22.1719 6.95026 21.1596C8.14426 20.1329 9.20475 18.9604 10.1069 17.6696C11.0336 16.353 11.7236 14.8696 12.1736 13.1863C12.6307 11.5043 12.7536 9.74894 12.5353 8.01963C12.2586 5.6863 11.5086 3.81963 10.2853 2.4363C9.06304 1.04519 7.53915 0.349634 5.7136 0.349634C4.10248 0.347412 2.76804 0.834633 1.71026 1.8113C0.664705 2.7713 0.141375 4.08685 0.140263 5.75797V5.73963Z" fill="#FFBA00"/>
-                      </svg>
-                  </div>
-                </div>
-                <div class="space22"></div>
-                <p>“Attending Economy Events was a transformative experience that provided invaluable insights into the complexities of today’s global.”</p>
-              <div class="space24"></div>
-                <div class="auhtor-area">
-                  <div class="name-area">
-                    <div class="img1">
-                      <img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="">
-                    </div>
-                    <div class="text">
-                      <a href="speakers.html">Gabriel Krajcik</a>
-                      <div class="space12"></div>
-                      <p>Businessman</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="testimonial-widget-box">
-                <div class="list-display">
-                  <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li>(5) Rating</li>
-                  </ul>
-                  <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                      <path d="M15.3469 5.73963C15.3469 7.2063 15.7303 8.43797 16.4969 9.43463C17.0403 10.1213 17.7775 10.5724 18.7086 10.788C19.6253 11.0013 20.4919 11.0163 21.2753 10.8346C21.5419 12.418 21.1086 14.0946 20.0086 15.8713C18.9064 17.6469 17.4853 18.9819 15.7453 19.8763L18.3803 23.668C19.7136 23.008 20.9803 22.1713 22.1469 21.1596C23.3303 20.148 24.3803 18.9846 25.3136 17.6696C26.2469 16.3546 26.9469 14.8696 27.3969 13.1863C27.8469 11.503 27.9719 9.7863 27.7569 8.01963C27.4769 5.6863 26.7236 3.81963 25.4969 2.4363C24.2714 1.03519 22.7447 0.334633 20.9169 0.334633C19.3086 0.334633 17.9736 0.817966 16.9169 1.79797C15.8714 2.75797 15.3492 4.07352 15.3503 5.74463L15.3469 5.73963ZM0.140263 5.73963C0.140263 7.2063 0.523598 8.43797 1.29026 9.43463C1.83471 10.1346 2.57193 10.5885 3.50193 10.7963C4.43526 11.0019 5.29082 11.0141 6.06859 10.833C6.33526 12.3996 5.9186 14.083 4.81526 15.8663C3.71526 17.633 2.29526 18.9663 0.555264 19.8663L3.1836 23.668C4.51804 23.008 5.7736 22.1719 6.95026 21.1596C8.14426 20.1329 9.20475 18.9604 10.1069 17.6696C11.0336 16.353 11.7236 14.8696 12.1736 13.1863C12.6307 11.5043 12.7536 9.74894 12.5353 8.01963C12.2586 5.6863 11.5086 3.81963 10.2853 2.4363C9.06304 1.04519 7.53915 0.349634 5.7136 0.349634C4.10248 0.347412 2.76804 0.834633 1.71026 1.8113C0.664705 2.7713 0.141375 4.08685 0.140263 5.75797V5.73963Z" fill="#FFBA00"/>
-                      </svg>
-                  </div>
-                </div>
-                <div class="space22"></div>
-                <p>“The diverse lineup speakers, from policymakers to industry leaders, offered perspectives on economic trends and practical solutions.”</p>
-              <div class="space24"></div>
-                <div class="auhtor-area">
-                  <div class="name-area">
-                    <div class="img1">
-                      <img src="assets/img/all-images/testimonials/testimonial-img1.png" alt="">
-                    </div>
-                    <div class="text">
-                      <a href="speakers.html">Gabriel Krajcik</a>
-                      <div class="space12"></div>
-                      <p>Businessman</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testimonial-widget-box">
-                <div class="list-display">
-                  <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li>(5) Rating</li>
-                  </ul>
-                  <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                      <path d="M15.3469 5.73963C15.3469 7.2063 15.7303 8.43797 16.4969 9.43463C17.0403 10.1213 17.7775 10.5724 18.7086 10.788C19.6253 11.0013 20.4919 11.0163 21.2753 10.8346C21.5419 12.418 21.1086 14.0946 20.0086 15.8713C18.9064 17.6469 17.4853 18.9819 15.7453 19.8763L18.3803 23.668C19.7136 23.008 20.9803 22.1713 22.1469 21.1596C23.3303 20.148 24.3803 18.9846 25.3136 17.6696C26.2469 16.3546 26.9469 14.8696 27.3969 13.1863C27.8469 11.503 27.9719 9.7863 27.7569 8.01963C27.4769 5.6863 26.7236 3.81963 25.4969 2.4363C24.2714 1.03519 22.7447 0.334633 20.9169 0.334633C19.3086 0.334633 17.9736 0.817966 16.9169 1.79797C15.8714 2.75797 15.3492 4.07352 15.3503 5.74463L15.3469 5.73963ZM0.140263 5.73963C0.140263 7.2063 0.523598 8.43797 1.29026 9.43463C1.83471 10.1346 2.57193 10.5885 3.50193 10.7963C4.43526 11.0019 5.29082 11.0141 6.06859 10.833C6.33526 12.3996 5.9186 14.083 4.81526 15.8663C3.71526 17.633 2.29526 18.9663 0.555264 19.8663L3.1836 23.668C4.51804 23.008 5.7736 22.1719 6.95026 21.1596C8.14426 20.1329 9.20475 18.9604 10.1069 17.6696C11.0336 16.353 11.7236 14.8696 12.1736 13.1863C12.6307 11.5043 12.7536 9.74894 12.5353 8.01963C12.2586 5.6863 11.5086 3.81963 10.2853 2.4363C9.06304 1.04519 7.53915 0.349634 5.7136 0.349634C4.10248 0.347412 2.76804 0.834633 1.71026 1.8113C0.664705 2.7713 0.141375 4.08685 0.140263 5.75797V5.73963Z" fill="#FFBA00"/>
-                      </svg>
-                  </div>
-                </div>
-                <div class="space22"></div>
-                <p>“The sessions were both thought-provoking & actionable, equipping with strategies to navigate market uncertainties new opportunities.”</p>
-              <div class="space24"></div>
-                <div class="auhtor-area">
-                  <div class="name-area">
-                    <div class="img1">
-                      <img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="">
-                    </div>
-                    <div class="text">
-                      <a href="speakers.html">Gabriel Krajcik</a>
-                      <div class="space12"></div>
-                      <p>Businessman</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testimonial-widget-box">
-                <div class="list-display">
-                  <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li>(5) Rating</li>
-                  </ul>
-                  <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                      <path d="M15.3469 5.73963C15.3469 7.2063 15.7303 8.43797 16.4969 9.43463C17.0403 10.1213 17.7775 10.5724 18.7086 10.788C19.6253 11.0013 20.4919 11.0163 21.2753 10.8346C21.5419 12.418 21.1086 14.0946 20.0086 15.8713C18.9064 17.6469 17.4853 18.9819 15.7453 19.8763L18.3803 23.668C19.7136 23.008 20.9803 22.1713 22.1469 21.1596C23.3303 20.148 24.3803 18.9846 25.3136 17.6696C26.2469 16.3546 26.9469 14.8696 27.3969 13.1863C27.8469 11.503 27.9719 9.7863 27.7569 8.01963C27.4769 5.6863 26.7236 3.81963 25.4969 2.4363C24.2714 1.03519 22.7447 0.334633 20.9169 0.334633C19.3086 0.334633 17.9736 0.817966 16.9169 1.79797C15.8714 2.75797 15.3492 4.07352 15.3503 5.74463L15.3469 5.73963ZM0.140263 5.73963C0.140263 7.2063 0.523598 8.43797 1.29026 9.43463C1.83471 10.1346 2.57193 10.5885 3.50193 10.7963C4.43526 11.0019 5.29082 11.0141 6.06859 10.833C6.33526 12.3996 5.9186 14.083 4.81526 15.8663C3.71526 17.633 2.29526 18.9663 0.555264 19.8663L3.1836 23.668C4.51804 23.008 5.7736 22.1719 6.95026 21.1596C8.14426 20.1329 9.20475 18.9604 10.1069 17.6696C11.0336 16.353 11.7236 14.8696 12.1736 13.1863C12.6307 11.5043 12.7536 9.74894 12.5353 8.01963C12.2586 5.6863 11.5086 3.81963 10.2853 2.4363C9.06304 1.04519 7.53915 0.349634 5.7136 0.349634C4.10248 0.347412 2.76804 0.834633 1.71026 1.8113C0.664705 2.7713 0.141375 4.08685 0.140263 5.75797V5.73963Z" fill="#FFBA00"/>
-                      </svg>
-                  </div>
-                </div>
-                <div class="space22"></div>
-                <p>“Attending Economy Events was a transformative experience that provided invaluable insights into the complexities of today’s global.”</p>
-              <div class="space24"></div>
-                <div class="auhtor-area">
-                  <div class="name-area">
-                    <div class="img1">
-                      <img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="">
-                    </div>
-                    <div class="text">
-                      <a href="speakers.html">Gabriel Krajcik</a>
-                      <div class="space12"></div>
-                      <p>Businessman</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="testimonial-widget-box">
-                <div class="list-display">
-                  <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li>(5) Rating</li>
-                  </ul>
-                  <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                      <path d="M15.3469 5.73963C15.3469 7.2063 15.7303 8.43797 16.4969 9.43463C17.0403 10.1213 17.7775 10.5724 18.7086 10.788C19.6253 11.0013 20.4919 11.0163 21.2753 10.8346C21.5419 12.418 21.1086 14.0946 20.0086 15.8713C18.9064 17.6469 17.4853 18.9819 15.7453 19.8763L18.3803 23.668C19.7136 23.008 20.9803 22.1713 22.1469 21.1596C23.3303 20.148 24.3803 18.9846 25.3136 17.6696C26.2469 16.3546 26.9469 14.8696 27.3969 13.1863C27.8469 11.503 27.9719 9.7863 27.7569 8.01963C27.4769 5.6863 26.7236 3.81963 25.4969 2.4363C24.2714 1.03519 22.7447 0.334633 20.9169 0.334633C19.3086 0.334633 17.9736 0.817966 16.9169 1.79797C15.8714 2.75797 15.3492 4.07352 15.3503 5.74463L15.3469 5.73963ZM0.140263 5.73963C0.140263 7.2063 0.523598 8.43797 1.29026 9.43463C1.83471 10.1346 2.57193 10.5885 3.50193 10.7963C4.43526 11.0019 5.29082 11.0141 6.06859 10.833C6.33526 12.3996 5.9186 14.083 4.81526 15.8663C3.71526 17.633 2.29526 18.9663 0.555264 19.8663L3.1836 23.668C4.51804 23.008 5.7736 22.1719 6.95026 21.1596C8.14426 20.1329 9.20475 18.9604 10.1069 17.6696C11.0336 16.353 11.7236 14.8696 12.1736 13.1863C12.6307 11.5043 12.7536 9.74894 12.5353 8.01963C12.2586 5.6863 11.5086 3.81963 10.2853 2.4363C9.06304 1.04519 7.53915 0.349634 5.7136 0.349634C4.10248 0.347412 2.76804 0.834633 1.71026 1.8113C0.664705 2.7713 0.141375 4.08685 0.140263 5.75797V5.73963Z" fill="#FFBA00"/>
-                      </svg>
-                  </div>
-                </div>
-                <div class="space22"></div>
-                <p>“The diverse lineup speakers, from policymakers to industry leaders, offered perspectives on economic trends and practical solutions.”</p>
-              <div class="space24"></div>
-                <div class="auhtor-area">
-                  <div class="name-area">
-                    <div class="img1">
-                      <img src="assets/img/all-images/testimonials/testimonial-img1.png" alt="">
-                    </div>
-                    <div class="text">
-                      <a href="speakers.html">Gabriel Krajcik</a>
-                      <div class="space12"></div>
-                      <p>Businessman</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testimonial-widget-box">
-                <div class="list-display">
-                  <ul>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li><i class="fa-solid fa-star"></i></li>
-                    <li>(5) Rating</li>
-                  </ul>
-                  <div class="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
-                      <path d="M15.3469 5.73963C15.3469 7.2063 15.7303 8.43797 16.4969 9.43463C17.0403 10.1213 17.7775 10.5724 18.7086 10.788C19.6253 11.0013 20.4919 11.0163 21.2753 10.8346C21.5419 12.418 21.1086 14.0946 20.0086 15.8713C18.9064 17.6469 17.4853 18.9819 15.7453 19.8763L18.3803 23.668C19.7136 23.008 20.9803 22.1713 22.1469 21.1596C23.3303 20.148 24.3803 18.9846 25.3136 17.6696C26.2469 16.3546 26.9469 14.8696 27.3969 13.1863C27.8469 11.503 27.9719 9.7863 27.7569 8.01963C27.4769 5.6863 26.7236 3.81963 25.4969 2.4363C24.2714 1.03519 22.7447 0.334633 20.9169 0.334633C19.3086 0.334633 17.9736 0.817966 16.9169 1.79797C15.8714 2.75797 15.3492 4.07352 15.3503 5.74463L15.3469 5.73963ZM0.140263 5.73963C0.140263 7.2063 0.523598 8.43797 1.29026 9.43463C1.83471 10.1346 2.57193 10.5885 3.50193 10.7963C4.43526 11.0019 5.29082 11.0141 6.06859 10.833C6.33526 12.3996 5.9186 14.083 4.81526 15.8663C3.71526 17.633 2.29526 18.9663 0.555264 19.8663L3.1836 23.668C4.51804 23.008 5.7736 22.1719 6.95026 21.1596C8.14426 20.1329 9.20475 18.9604 10.1069 17.6696C11.0336 16.353 11.7236 14.8696 12.1736 13.1863C12.6307 11.5043 12.7536 9.74894 12.5353 8.01963C12.2586 5.6863 11.5086 3.81963 10.2853 2.4363C9.06304 1.04519 7.53915 0.349634 5.7136 0.349634C4.10248 0.347412 2.76804 0.834633 1.71026 1.8113C0.664705 2.7713 0.141375 4.08685 0.140263 5.75797V5.73963Z" fill="#FFBA00"/>
-                      </svg>
-                  </div>
-                </div>
-                <div class="space22"></div>
-                <p>“The sessions were both thought-provoking & actionable, equipping with strategies to navigate market uncertainties new opportunities.”</p>
-              <div class="space24"></div>
-                <div class="auhtor-area">
-                  <div class="name-area">
-                    <div class="img1">
-                      <img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="">
-                    </div>
-                    <div class="text">
-                      <a href="speakers.html">Gabriel Krajcik</a>
-                      <div class="space12"></div>
-                      <p>Businessman</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!--===== TESTIMONIALS AREA ENDS =======-->
-		
-    <!--===== BRANDS AREA STARTS =======-->
-		<!-- <div class="brands1-section-area sp2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 m-auto">
-						<div class="brand-header heading2 space-margin60 text-center">
-							<h5 data-aos="fade-left" data-aos-duration="800">general sponsors</h5>
-							<div class="space16"></div>
-							<h2 class="text-anime-style-3">Our Official Sponsors</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="800">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img1.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="900">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img2.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img3.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img4.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="900">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img5.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img6.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img7.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="1200">
-						<div class="brand-box">
-							<img src="assets/img/elements/brand-img8.png" alt="" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!--===== BRANDS AREA ENDS =======-->
-
-		<!--====OBJECTIVES====-->
-		<section class="py-5">
-			<div class="container">
-					<div class="row">
-							<div class="col-lg-8 m-auto">
-									<div class="brand-header heading2 space-margin60 text-center">
-											<div class="space16"></div>
-											<h2 class="text-anime-style-3">Objectives of ICMMCS 2025</h2>
-									</div>
-							</div>
-					</div>
-					
-					<div class="row justify-content-center">
-							<div class="col-lg-8">
-									<!-- Objectives List -->
-									<div class="d-flex flex-column gap-3">
-											<div class="bg-white p-3 rounded shadow-sm border-start border-4 border-theme" data-aos="fade-up" data-aos-duration="800">
-													<div class="d-flex align-items-center">
-															<span class="bg-theme text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">1</span>
-															<h5 class="mb-0">Facilitate Knowledge Exchange</h5>
-													</div>
-											</div>
-
-											<div class="bg-white p-3 rounded shadow-sm border-start border-4 border-theme" data-aos="fade-up" data-aos-duration="900">
-													<div class="d-flex align-items-center">
-															<span class="bg-theme text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">2</span>
-															<h5 class="mb-0">Promote Research & Publication</h5>
-													</div>
-											</div>
-
-											<div class="bg-white p-3 rounded shadow-sm border-start border-4 border-theme" data-aos="fade-up" data-aos-duration="1000">
-													<div class="d-flex align-items-center">
-															<span class="bg-theme text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">3</span>
-															<h5 class="mb-0">Showcase Technological Advancements</h5>
-													</div>
-											</div>
-
-											<div class="bg-white p-3 rounded shadow-sm border-start border-4 border-theme" data-aos="fade-up" data-aos-duration="1100">
-													<div class="d-flex align-items-center">
-															<span class="bg-theme text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">4</span>
-															<h5 class="mb-0">Enhance Global Networking</h5>
-													</div>
-											</div>
-
-											<div class="bg-white p-3 rounded shadow-sm border-start border-4 border-theme" data-aos="fade-up" data-aos-duration="1200">
-													<div class="d-flex align-items-center">
-															<span class="bg-theme text-white rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">5</span>
-															<h5 class="mb-0">Encourage Interdisciplinary Collaboration</h5>
-													</div>
-											</div>
-									</div>
-									<p class="text-center text-muted mt-4 fst-italic">
-											ICMMCS 2025 aims to inspire future innovations by providing a vibrant platform for thought leaders, industry experts, and young researchers to explore challenges and drive forward-thinking solutions.
-									</p>
-							</div>
-					</div>
-			</div>
-		</section>
-
 		<!-- Why Choose ICMMSC -->
-		<div class="bg-custom-dark">
-		<div class="container py-5">
-			<div class="white-box animate__animated animate__fadeIn">
-					<div class="text-center mb-5">
-							<!-- <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Why Attend ICMMCS 2025?</h1> -->
-							<div class="row">
-								<div class="col-lg-7 m-auto">
-									<div class="brand-header heading2 text-center">
-										<h2 class="text-anime-style-3">Why Attend ICMMCS 2025?</h2>
+		<div class="" style="background-color: aliceblue;">
+			<div class="container py-5">
+				<div class="white-box animate__animated animate__fadeIn">
+						<div class="text-center mb-5">
+								<div class="row">
+									<div class="col-lg-7 m-auto">
+										<div class="brand-header heading6 text-center">
+											<h2 class="text-anime-style-3">Why Attend ICMMCS 2025?</h2>
+										</div>
 									</div>
 								</div>
-							</div>
-					</div>
-
-					<div class="row g-4">
-							<!-- Present Research -->
-							<div class="col-md-3">
-									<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-											<div class="image-container mb-3">
-													<img src="./assets/img/all-images/event/event-img1.png" alt="Conference presentation" class="img-fluid">
-											</div>
-											<h5 class="text-center">Present Research</h5>
-									</div>
-							</div>
-
-							<!-- Engage in Discussions -->
-							<div class="col-md-3">
-									<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-											<div class="image-container mb-3">
-													<img src="./assets/img/all-images/event/event-img1.png" alt="Group discussion" class="img-fluid">
-											</div>
-											<h5 class="text-center">Engage in Discussions</h5>
-									</div>
-							</div>
-
-							<!-- Network Globally -->
-							<div class="col-md-3">
-									<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
-											<div class="image-container mb-3">
-													<img src="./assets/img/all-images/event/event-img1.png" alt="Networking event" class="img-fluid">
-											</div>
-											<h5 class="text-center">Network Globally</h5>
-									</div>
-							</div>
-
-							<!-- Experience Muscat -->
-							<div class="col-md-3">
-									<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
-											<div class="image-container mb-3">
-													<img src="./assets/img/all-images/event/event-img1.png" alt="Muscat heritage" class="img-fluid">
-											</div>
-											<h5 class="text-center">Experience Muscat</h5>
-									</div>
-							</div>
-					</div>
-
-					<div class="section-content mt-5 animate__animated animate__fadeIn" style="animation-delay: 1s">
-							<p class="text-center lead">
-									Present your research, engage in thought-provoking discussions, network globally, and experience Muscat's rich heritage. Join us for an enriching and transformative experience where knowledge knows no bounds and new possibilities emerge!
-							</p>
-							<div class="text-center mt-4">
-								<div class="btn-area1">
-									<a href="conference-register.html" class="vl-btn1">Register Now</a>
+						</div>
+	
+						<div class="row g-4">
+								<!-- Present Research -->
+								<div class="col-md-3">
+										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+												<div class="image-container mb-3">
+														<img src="./assets/img/all-images/event/event-img1.png" alt="Conference presentation" class="img-fluid">
+												</div>
+												<h5 class="text-center">Present Research</h5>
+										</div>
 								</div>
-							</div>
-					</div>
+	
+								<!-- Engage in Discussions -->
+								<div class="col-md-3">
+										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+												<div class="image-container mb-3">
+														<img src="./assets/img/all-images/event/event-img5.png" alt="Group discussion" class="img-fluid">
+												</div>
+												<h5 class="text-center">Engage in Discussions</h5>
+										</div>
+								</div>
+	
+								<!-- Network Globally -->
+								<div class="col-md-3">
+										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+												<div class="image-container mb-3">
+														<img src="./assets/img/all-images/event/event-img9.png" alt="Networking event" class="img-fluid">
+												</div>
+												<h5 class="text-center">Network Globally</h5>
+										</div>
+								</div>
+	
+								<!-- Experience Muscat -->
+								<div class="col-md-3">
+										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+												<div class="image-container mb-3">
+														<img src="./assets/img/all-images/event/event-img14.png" alt="Muscat heritage" class="img-fluid">
+												</div>
+												<h5 class="text-center">Experience Muscat</h5>
+										</div>
+								</div>
+						</div>
+	
+						<div class="section-content mt-5 animate__animated animate__fadeIn" style="animation-delay: 1s">
+								<p class="text-center lead">
+										Present your research, engage in thought-provoking discussions, network globally, and experience Muscat's rich heritage. Join us for an enriching and transformative experience where knowledge knows no bounds and new possibilities emerge!
+								</p>
+								<div class="text-center mt-4">
+									<div class="btn-area1">
+										<a href="conference-register.html" class="vl-btn1">Register Now</a>
+									</div>
+								</div>
+						</div>
+				</div>
 			</div>
 		</div>
+
+		<!--===== Objectives and CALL FOR PAPERS====-->
+		<div class="container-fluid bg-light">
+			<!-- Hero Section -->
+			<div class="container py-5">
+					<div class="row align-items-center mb-5">
+							<div class="col-lg-8 mx-auto text-center animate__animated animate__fadeIn">
+									<div class="row">
+										<div class="col-lg-7 m-auto">
+											<div class="brand-header heading6 text-center">
+												<h5 data-aos="fade-left" data-aos-duration="800" style="background-color: rgba(46, 77, 253, 0.08); color: #019087;">Call for Papers</h5>
+												<div class="space18"></div>
+												<h2 class="text-anime-style-3">Call for Papers</h2>
+											</div>
+										</div>
+									</div>
+									<p class="lead text-muted animate__animated animate__fadeIn animate__delay-1s">ICMMCS 2025: Advancing Research in Mathematics, Management, and Computer Science</p>
+							</div>
+					</div>
+
+					<!-- Main Features Section -->
+					<div class="row justify-content-center g-4 mb-5">
+							<div class="col-md-4 fade-in-up">
+									<div class="card border-0 h-100 bg-white rounded-3 shadow-sm hover-float">
+											<div class="card-body p-4">
+													<div class="mb-3">
+															<span class="badge bg-primary p-2 badge-animated">01</span>
+													</div>
+													<h5 class="card-title mb-3">Submit Original Research</h5>
+													<p class="card-text text-muted">Present unpublished or under-review papers in Mathematics, Management, and Computer Science.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4 fade-in-up">
+									<div class="card border-0 h-100 bg-white rounded-3 shadow-sm hover-float">
+											<div class="card-body p-4">
+													<div class="mb-3">
+															<span class="badge bg-success p-2 badge-animated">02</span>
+													</div>
+													<h5 class="card-title mb-3">Global Audience</h5>
+													<p class="card-text text-muted">Engage with international experts and contribute to advancing your field.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4 fade-in-up">
+									<div class="card border-0 h-100 bg-white rounded-3 shadow-sm hover-float">
+											<div class="card-body p-4">
+													<div class="mb-3">
+															<span class="badge bg-info p-2 badge-animated">03</span>
+													</div>
+													<h5 class="card-title mb-3">Prestigious Publication</h5>
+													<p class="card-text text-muted">Accepted papers will be published in ESCI & SCOPUS-indexed journals.</p>
+											</div>
+									</div>
+							</div>
+					</div>
+			</div>
+
+			<!-- Objectives Section with Different Background -->
+			<div class="container-fluid bg-white py-5">
+					<div class="container">
+							<div class="row justify-content-center mb-5">
+									<div class="col-lg-8 text-center fade-in-up">
+											<h2 class="mb-4">Objectives of ICMMCS 2025</h2>
+									</div>
+							</div>
+
+							<div class="row justify-content-center">
+									<div class="col-lg-8">
+											<div class="accordion" id="objectivesAccordion">
+													<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
+															<h3 class="accordion-header">
+																	<button class="accordion-button bg-primary text-white slide-in" type="button">
+																			1. Facilitate Knowledge Exchange
+																	</button>
+															</h3>
+													</div>
+													<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
+															<h3 class="accordion-header">
+																	<button class="accordion-button bg-info text-white slide-in" type="button">
+																			2. Promote Research & Publication
+																	</button>
+															</h3>
+													</div>
+													<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
+															<h3 class="accordion-header">
+																	<button class="accordion-button bg-success text-white slide-in" type="button">
+																			3. Showcase Technological Advancements
+																	</button>
+															</h3>
+													</div>
+													<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
+															<h3 class="accordion-header">
+																	<button class="accordion-button bg-warning slide-in" type="button">
+																			4. Enhance Global Networking
+																	</button>
+															</h3>
+													</div>
+													<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
+															<h3 class="accordion-header">
+																	<button class="accordion-button bg-danger text-white slide-in" type="button">
+																			5. Encourage Interdisciplinary Collaboration
+																	</button>
+															</h3>
+													</div>
+											</div>
+									</div>
+							</div>
+
+							<!-- Call to Action Section -->
+							<div class="row mt-5">
+									<div class="col-12 text-center fade-in-up">
+											<p class="lead mb-4">ICMMCS 2025 aims to inspire future innovations by providing a vibrant platform for thought leaders, industry experts, and young researchers to explore challenges and drive forward-thinking solutions.</p>
+											<div class="d-grid gap-2 d-md-block">
+													<a href="become-speaker.html">
+														<button class="btn btn-primary btn-lg px-5 pulse">Submit Your Paper</button>
+													</a>
+													<!-- <button class="btn btn-outline-primary btn-lg px-5 ms-md-3 mt-3 mt-md-0 hover-float">Learn More</button> -->
+											</div>
+									</div>
+							</div>
+					</div>
+			</div>
 		</div>
 
 		<!--===== FOOTER AREA STARTS =======-->
@@ -1892,5 +1523,20 @@
 		<script src="assets/js/vendor/slick-slider.js"></script>
 		<script src="assets/js/vendor/circle-progress.js"></script>
 		<script src="assets/js/main.js"></script>
+
+		<script>
+			 // Intersection Observer for fade-in-up animation
+			 const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+		</script>
 	</body>
 </html>
