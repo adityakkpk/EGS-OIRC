@@ -608,16 +608,6 @@ img {
   --ztc-family-font2: "Arsenal", serif;
 }
 
-/*
-============================
-Name: Eventify- Event And Conference Templete
-Version: 2.0.0
-Description: Eventify- Event And Conference Templete
-Author: alithemes
-Author URI: https://themeforest.net/user/alithemes/portfolio
-Location:
-============================
-*/
 body {
   font-family: 'Arsenal', serif;
 }
@@ -9867,6 +9857,7 @@ body {
   padding: 15px;
   display: block;
   transform-origin: top;
+  right: 0;
 }
 .homepage4-body .header-area.homepage4 .header-elements .main-menu ul li ul.dropdown-padding li.main-small-menu {
   position: relative;
@@ -21551,30 +21542,30 @@ body {
   opacity: 0;
   transition: all 0.6s;
 }
-.event-sidepage-section-area .shedule-listarea {
+.event-sidepage-section-area .Schedule-listarea {
   padding: 0 0 0 30px;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .shedule-listarea {
+  .event-sidepage-section-area .Schedule-listarea {
     padding: 0;
     margin-top: 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .event-sidepage-section-area .shedule-listarea {
+  .event-sidepage-section-area .Schedule-listarea {
     padding: 0;
     margin-top: 30px;
   }
 }
-.event-sidepage-section-area .shedule-listarea .content-area {
+.event-sidepage-section-area .Schedule-listarea .content-area {
   border-radius: 8px;
   background: #F1F0F0;
   padding: 30px;
 }
-.event-sidepage-section-area .shedule-listarea .content-area ul li {
+.event-sidepage-section-area .Schedule-listarea .content-area ul li {
   display: inline-block;
 }
-.event-sidepage-section-area .shedule-listarea .content-area ul li a {
+.event-sidepage-section-area .Schedule-listarea .content-area ul li a {
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s16);
@@ -21585,20 +21576,20 @@ body {
   transition: all 0.4s;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .shedule-listarea .content-area ul li a {
+  .event-sidepage-section-area .Schedule-listarea .content-area ul li a {
     display: block;
     margin-bottom: 10px;
   }
 }
-.event-sidepage-section-area .shedule-listarea .content-area ul li a img {
+.event-sidepage-section-area .Schedule-listarea .content-area ul li a img {
   filter: brightness(0);
   margin: 0 4px 0 0;
 }
-.event-sidepage-section-area .shedule-listarea .content-area ul li a span {
+.event-sidepage-section-area .Schedule-listarea .content-area ul li a span {
   margin: 0 8px;
   display: inline-block;
 }
-.event-sidepage-section-area .shedule-listarea .content-area .head {
+.event-sidepage-section-area .Schedule-listarea .content-area .head {
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s24);
@@ -21609,46 +21600,46 @@ body {
   transition: all 0.4s;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .shedule-listarea .content-area .head {
+  .event-sidepage-section-area .Schedule-listarea .content-area .head {
     line-height: 32px;
   }
 }
-.event-sidepage-section-area .shedule-listarea .content-area .author-area {
+.event-sidepage-section-area .Schedule-listarea .content-area .author-area {
   display: flex;
   align-items: center;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .shedule-listarea .content-area .author-area {
+  .event-sidepage-section-area .Schedule-listarea .content-area .author-area {
     display: inline-block;
   }
 }
-.event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area {
+.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area {
   display: flex;
   align-items: center;
   padding: 0 12px 0 0;
   border-right: 1px solid #E6E7E8;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .img1 {
+  .event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .img1 {
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .img1 {
+  .event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .img1 {
     margin-bottom: 0;
   }
 }
-.event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .img1 img {
+.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .img1 img {
   height: 56px;
   width: 56px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .text {
+.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text {
   padding-left: 12px;
 }
-.event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .text a {
+.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text a {
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s18);
@@ -21659,11 +21650,11 @@ body {
   transition: all 0.4s;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .text a {
+  .event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text a {
     line-height: 18px;
   }
 }
-.event-sidepage-section-area .shedule-listarea .content-area .author-area .autho-name-area .text p {
+.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text p {
   color: var(--ztc-text-text-3);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s16);
@@ -21673,7 +21664,7 @@ body {
   display: inline-block;
   transition: all 0.4s;
 }
-.event-sidepage-section-area .shedule-listarea .mapouter .gmap_canvas iframe {
+.event-sidepage-section-area .Schedule-listarea .mapouter .gmap_canvas iframe {
   height: 300px;
   width: 100%;
   border-radius: 8px;
