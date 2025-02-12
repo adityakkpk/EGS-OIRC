@@ -1132,7 +1132,7 @@
             }
         }
     }
-    .Schedule-listarea {
+    .Exhibition-listarea {
         padding: 0 0 0 30px;
         @media #{$xs} {
             padding: 0;
@@ -1527,8 +1527,8 @@
     }
 }
 
-.schedule-section-area {
-    .schedule {
+.Exhibition-section-area {
+    .Exhibition {
         width: 100%;
         border-radius: 16px;
     }

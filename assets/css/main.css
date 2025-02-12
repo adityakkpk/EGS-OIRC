@@ -12498,7 +12498,7 @@ body {
   transition: all 0.4s;
   opacity: 0.8;
 }
-.attent10-section-area .schedule-boxarea {
+.attent10-section-area .Exhibition-boxarea {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -12509,46 +12509,46 @@ body {
   padding: 32px 32px 0 32px;
   margin-bottom: 30px;
 }
-.attent10-section-area .schedule-boxarea:hover .images .elements37 {
+.attent10-section-area .Exhibition-boxarea:hover .images .elements37 {
   transform: rotate(-5deg);
   transition: all 0.4s;
 }
-.attent10-section-area .schedule-boxarea:hover .images .elements38 {
+.attent10-section-area .Exhibition-boxarea:hover .images .elements38 {
   left: -15px;
   transform: rotate(-10deg);
   transition: all 0.6s;
 }
-.attent10-section-area .schedule-boxarea:hover .images .elements39 {
+.attent10-section-area .Exhibition-boxarea:hover .images .elements39 {
   left: 195px;
   transform: rotate(10deg);
   transition: all 0.6s;
   z-index: -1;
 }
-.attent10-section-area .schedule-boxarea:hover .images2 .elements37 {
+.attent10-section-area .Exhibition-boxarea:hover .images2 .elements37 {
   transition: all 0.4s;
 }
-.attent10-section-area .schedule-boxarea:hover .images2 .elements38 {
+.attent10-section-area .Exhibition-boxarea:hover .images2 .elements38 {
   left: -50px;
   transition: all 0.6s;
 }
-.attent10-section-area .schedule-boxarea:hover .images2 .elements39 {
+.attent10-section-area .Exhibition-boxarea:hover .images2 .elements39 {
   left: 150px;
   transition: all 0.6s;
   z-index: -1;
 }
-.attent10-section-area .schedule-boxarea:hover .images3 .elements37 {
+.attent10-section-area .Exhibition-boxarea:hover .images3 .elements37 {
   transition: all 0.6s;
   transform: rotate(-20deg);
 }
-.attent10-section-area .schedule-boxarea:hover .images3 .elements38 {
+.attent10-section-area .Exhibition-boxarea:hover .images3 .elements38 {
   transform: rotate(-40deg);
   transition: all 0.4s;
 }
-.attent10-section-area .schedule-boxarea:hover .images3 .elements39 {
+.attent10-section-area .Exhibition-boxarea:hover .images3 .elements39 {
   transform: rotate(-55deg);
   transition: all 0.4s;
 }
-.attent10-section-area .schedule-boxarea h4 {
+.attent10-section-area .Exhibition-boxarea h4 {
   color: var(--ztc-text-text-1);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s40);
@@ -12556,45 +12556,45 @@ body {
   font-weight: 700;
   line-height: 40px;
 }
-.attent10-section-area .schedule-boxarea .images {
+.attent10-section-area .Exhibition-boxarea .images {
   top: 10px;
   position: relative;
 }
-.attent10-section-area .schedule-boxarea .images .elements37 {
+.attent10-section-area .Exhibition-boxarea .images .elements37 {
   position: relative;
   transition: all 0.6s;
   z-index: 1;
 }
-.attent10-section-area .schedule-boxarea .images .elements38 {
+.attent10-section-area .Exhibition-boxarea .images .elements38 {
   position: absolute;
   left: 91px;
   transition: all 0.6s;
   top: 15px;
 }
-.attent10-section-area .schedule-boxarea .images .elements39 {
+.attent10-section-area .Exhibition-boxarea .images .elements39 {
   position: absolute;
   left: 91px;
   transition: all 0.6s;
   z-index: -1;
   top: 7px;
 }
-.attent10-section-area .schedule-boxarea .images2 {
+.attent10-section-area .Exhibition-boxarea .images2 {
   top: 10px;
   position: relative;
 }
-.attent10-section-area .schedule-boxarea .images2 .elements37 {
+.attent10-section-area .Exhibition-boxarea .images2 .elements37 {
   position: relative;
   transition: all 0.6s;
   z-index: 1;
 }
-.attent10-section-area .schedule-boxarea .images2 .elements38 {
+.attent10-section-area .Exhibition-boxarea .images2 .elements38 {
   position: absolute;
   left: 52px;
   transition: all 0.6s;
   top: 7px;
   transform: scale(0.9);
 }
-.attent10-section-area .schedule-boxarea .images2 .elements39 {
+.attent10-section-area .Exhibition-boxarea .images2 .elements39 {
   position: absolute;
   left: 58px;
   transition: all 0.6s;
@@ -12602,16 +12602,16 @@ body {
   top: 7px;
   transform: scale(0.9);
 }
-.attent10-section-area .schedule-boxarea .images3 {
+.attent10-section-area .Exhibition-boxarea .images3 {
   position: relative;
   left: 30px;
 }
-.attent10-section-area .schedule-boxarea .images3 .elements37 {
+.attent10-section-area .Exhibition-boxarea .images3 .elements37 {
   position: relative;
   transition: all 0.6s;
   z-index: 1;
 }
-.attent10-section-area .schedule-boxarea .images3 .elements38 {
+.attent10-section-area .Exhibition-boxarea .images3 .elements38 {
   position: absolute;
   left: 45px;
   transition: all 0.6s;
@@ -12619,7 +12619,7 @@ body {
   top: -13px;
   transform: rotate(-20deg);
 }
-.attent10-section-area .schedule-boxarea .images3 .elements39 {
+.attent10-section-area .Exhibition-boxarea .images3 .elements39 {
   position: absolute;
   left: 11px;
   transition: all 0.6s;
@@ -21542,30 +21542,30 @@ body {
   opacity: 0;
   transition: all 0.6s;
 }
-.event-sidepage-section-area .Schedule-listarea {
+.event-sidepage-section-area .Exhibition-listarea {
   padding: 0 0 0 30px;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .Schedule-listarea {
+  .event-sidepage-section-area .Exhibition-listarea {
     padding: 0;
     margin-top: 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .event-sidepage-section-area .Schedule-listarea {
+  .event-sidepage-section-area .Exhibition-listarea {
     padding: 0;
     margin-top: 30px;
   }
 }
-.event-sidepage-section-area .Schedule-listarea .content-area {
+.event-sidepage-section-area .Exhibition-listarea .content-area {
   border-radius: 8px;
   background: #F1F0F0;
   padding: 30px;
 }
-.event-sidepage-section-area .Schedule-listarea .content-area ul li {
+.event-sidepage-section-area .Exhibition-listarea .content-area ul li {
   display: inline-block;
 }
-.event-sidepage-section-area .Schedule-listarea .content-area ul li a {
+.event-sidepage-section-area .Exhibition-listarea .content-area ul li a {
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s16);
@@ -21576,20 +21576,20 @@ body {
   transition: all 0.4s;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .Schedule-listarea .content-area ul li a {
+  .event-sidepage-section-area .Exhibition-listarea .content-area ul li a {
     display: block;
     margin-bottom: 10px;
   }
 }
-.event-sidepage-section-area .Schedule-listarea .content-area ul li a img {
+.event-sidepage-section-area .Exhibition-listarea .content-area ul li a img {
   filter: brightness(0);
   margin: 0 4px 0 0;
 }
-.event-sidepage-section-area .Schedule-listarea .content-area ul li a span {
+.event-sidepage-section-area .Exhibition-listarea .content-area ul li a span {
   margin: 0 8px;
   display: inline-block;
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .head {
+.event-sidepage-section-area .Exhibition-listarea .content-area .head {
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s24);
@@ -21600,46 +21600,46 @@ body {
   transition: all 0.4s;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .Schedule-listarea .content-area .head {
+  .event-sidepage-section-area .Exhibition-listarea .content-area .head {
     line-height: 32px;
   }
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .author-area {
+.event-sidepage-section-area .Exhibition-listarea .content-area .author-area {
   display: flex;
   align-items: center;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .Schedule-listarea .content-area .author-area {
+  .event-sidepage-section-area .Exhibition-listarea .content-area .author-area {
     display: inline-block;
   }
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area {
+.event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area {
   display: flex;
   align-items: center;
   padding: 0 12px 0 0;
   border-right: 1px solid #E6E7E8;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .img1 {
+  .event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .img1 {
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .img1 {
+  .event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .img1 {
     margin-bottom: 0;
   }
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .img1 img {
+.event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .img1 img {
   height: 56px;
   width: 56px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text {
+.event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .text {
   padding-left: 12px;
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text a {
+.event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .text a {
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s18);
@@ -21650,11 +21650,11 @@ body {
   transition: all 0.4s;
 }
 @media (max-width: 767px) {
-  .event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text a {
+  .event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .text a {
     line-height: 18px;
   }
 }
-.event-sidepage-section-area .Schedule-listarea .content-area .author-area .autho-name-area .text p {
+.event-sidepage-section-area .Exhibition-listarea .content-area .author-area .autho-name-area .text p {
   color: var(--ztc-text-text-3);
   font-family: var(--ztc-family-font1);
   font-size: var(--ztc-font-size-font-s16);
@@ -21664,7 +21664,7 @@ body {
   display: inline-block;
   transition: all 0.4s;
 }
-.event-sidepage-section-area .Schedule-listarea .mapouter .gmap_canvas iframe {
+.event-sidepage-section-area .Exhibition-listarea .mapouter .gmap_canvas iframe {
   height: 300px;
   width: 100%;
   border-radius: 8px;
@@ -21946,22 +21946,22 @@ body {
   }
 }
 
-.schedule-section-area .schedule {
+.Exhibition-section-area .Exhibition {
   width: 100%;
   border-radius: 16px;
 }
-.schedule-section-area table {
+.Exhibition-section-area table {
   width: 100%;
   border-collapse: collapse;
 }
-.schedule-section-area th, .schedule-section-area td {
+.Exhibition-section-area th, .Exhibition-section-area td {
   border: 1px solid rgba(26, 23, 25, 0.1);
   background: #FFF;
   padding: 38px;
   text-align: center;
   vertical-align: middle;
 }
-.schedule-section-area th {
+.Exhibition-section-area th {
   background-color: #f8b500;
   color: var(--ztc-text-text-2);
   text-align: center;
@@ -21973,7 +21973,7 @@ body {
   letter-spacing: -0.48px;
   padding: 18px 0;
 }
-.schedule-section-area td {
+.Exhibition-section-area td {
   color: var(--ztc-text-text-2);
   text-align: center;
   font-family: var(--ztc-family-font1);
@@ -21983,7 +21983,7 @@ body {
   line-height: 20px;
   letter-spacing: -0.4px;
 }
-.schedule-section-area td span {
+.Exhibition-section-area td span {
   color: var(--ztc-text-text-3);
   text-align: center;
   font-family: var(--ztc-family-font2);
@@ -21996,11 +21996,11 @@ body {
   padding-top: 10px;
 }
 @media screen and (max-width: 768px) {
-  .schedule-section-area table, .schedule-section-area thead, .schedule-section-area tbody, .schedule-section-area th, .schedule-section-area td, .schedule-section-area tr {
+  .Exhibition-section-area table, .Exhibition-section-area thead, .Exhibition-section-area tbody, .Exhibition-section-area th, .Exhibition-section-area td, .Exhibition-section-area tr {
     display: block;
     text-align: center;
   }
-  .schedule-section-area th, .schedule-section-area td {
+  .Exhibition-section-area th, .Exhibition-section-area td {
     width: 100%;
     text-align: center;
   }
