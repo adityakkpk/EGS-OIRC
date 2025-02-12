@@ -29,8 +29,14 @@
     }
 
     .sponsor-card {
+      height: 100px;
+      width: 270px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
+      border: 1px solid #019087;
       border-radius: 15px;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
@@ -57,25 +63,28 @@
       border-bottom: 2px solid #FFD700;
     }
 
+    .gold-sponsor-card {
+      background: rgba(208, 208, 208, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid #019087;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
     .media-header {
       color: #41bbeb;
       border-bottom: 2px solid #87CEEB;
     }
 
-    .sponsor-logo {
-      background: linear-gradient(45deg, #2c3e50, #3498db);
-      border-radius: 10px;
-      width: 100px;
-      height: 100px;
-      margin-bottom: 1rem;
-    }
+    
 
-    .category-label {
+    .company-name {
       font-size: 1rem;
       margin-bottom: 0.5rem;
     }
 
-    .company-name {
+    .category-label {
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
@@ -121,6 +130,32 @@
             justify-content: center;
             font-weight: bold;
             margin-bottom: 1rem;
+        }
+        .platinum-card {
+          border: 1px solid #019087;
+          border-radius: 15px;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .media-partners-card {
+          background: #f8f9fa;
+          border: 1px solid #019087;
+          padding: 1.5rem;
+          margin: 1rem 0;
+          transition: all 0.3s ease;
+        }
+
+        .media-partners-card ul {
+          background-color: white;
+          border-radius: 15px;
+          padding: 12px;
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
         }
   </style>
 
@@ -326,10 +361,9 @@
 
         <!-- Xclusive Oman -->
         <div class="col-md-4">
-          <div class="producer-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-            <div class="rounded my-2"
-              style="background-color: #00a89e; padding: 2rem; height: 250px; display: flex; align-items: center; justify-content: center;">
-              <h3 style="color: #ffd700; font-family: 'Arial', sans-serif;">Xclusive Oman</h3>
+          <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
+            <div style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid gray;" class="rounded">
+              <img src="assets/img/brand/xclusive_oman.png" alt="Ministry of Higher Education" class="img-fluid rounded">
             </div>
             <div class="producer-name my-2">Xclusive Oman</div>
           </div>
@@ -342,31 +376,39 @@
       <h2 class="platinum-header pb-2 mb-4">Platinum Sponsors</h2>
       <div class="row g-4">
         <div class="col-md-3">
-          <div class="sponsor-card">
-            <div class="sponsor-logo mb-3"></div>
+          <div class="platinum-card">
             <div class="category-label">Tech Giants</div>
-            <div class="company-name">Infoline LLC</div>
+            <div class="sponsor-card" style="height: 100px;">
+              <img src="assets/img/brand/brand1.svg" alt="brand-logo1">
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="sponsor-card">
-            <div class="sponsor-logo mb-3"></div>
+          <div class="platinum-card">
             <div class="category-label">Banking & Financial Institutions</div>
-            <div class="company-name">Bank Muscat</div>
+            <div class="sponsor-card" style="height: 100px;">
+              <img src="assets/img/brand/brand2.png" alt="brand-logo1">
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="sponsor-card">
-            <div class="sponsor-logo mb-3"></div>
+          <div class="platinum-card">
             <div class="category-label">Telecom & IT Services</div>
-            <div class="company-name">Omantel</div>
+            <div class="sponsor-card" style="height: 100px;">
+              <img src="assets/img/brand/brand3.svg" alt="brand-logo1" style="height: 100px;">
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="sponsor-card">
-            <div class="sponsor-logo mb-3"></div>
+          <div class="platinum-card">
             <div class="category-label">Energy & Infrastructure</div>
-            <div class="company-name">PDO, Shell Oman</div>
+            <div class="sponsor-card" style="height: 100px;">
+              <img src="assets/img/brand/brand4.png" alt="brand-logo1">
+            </div>
+            <div class="sponsor-card" style="height: 100px; display: flex; align-items: center;">
+              <img src="assets/img/brand/brand5.svg" alt="brand-logo1">
+              <p>Shell Oman</p>
+            </div>
           </div>
         </div>
       </div>
@@ -376,41 +418,69 @@
     <div class="mb-5 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
       <h2 class="gold-header pb-2 mb-4">Gold Sponsors</h2>
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12 m-auto">
           <div class="accordion" id="goldSponsors">
-            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+            <div class="gold-sponsor-card mb-3">
               <div class="d-flex align-items-center">
-                <div class="me-3">1</div>
                 <div>
-                  <div class="category-label">Consulting Firms</div>
-                  <div class="company-name">Deloitte, EY, KPMG</div>
+                  <div class="category-label mb-4">Consulting Firms</div>
+                  <!-- <div class="company-name">Deloitte, EY, KPMG</div> -->
+                   <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/deloitte.webp" alt="brand-logo1">
+                    </div>
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/ey.svg" alt="brand-logo1">
+                    </div>
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/kpmg.svg" alt="brand-logo1">
+                    </div>
+                   </div>
                 </div>
               </div>
             </div>
-            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+            <div class="gold-sponsor-card mb-3">
               <div class="d-flex align-items-center">
-                <div class="me-3">2</div>
                 <div>
-                  <div class="category-label">Hospitality & Travel</div>
-                  <div class="company-name">Oman Air</div>
+                  <div class="category-label mb-4">Hospitality & Travel</div>
+                  <!-- <div class="company-name">Oman Air</div> -->
+                   <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+                    </div>
+                   </div>
                 </div>
               </div>
             </div>
-            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+            <div class="gold-sponsor-card mb-3">
               <div class="d-flex align-items-center">
-                <div class="me-3">3</div>
                 <div>
-                  <div class="category-label">Innovation & Research Centers</div>
-                  <div class="company-name">The Research Council of Oman</div>
+                  <div class="category-label mb-4">Innovation & Research Centers</div>
+                  <!-- <div class="company-name">The Research Council of Oman</div> -->
+                   <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/orc.jpg" style="width: 250px; height: 150px;" alt="brand-logo1">
+                    </div>
+                   </div>
                 </div>
               </div>
             </div>
-            <div class="sponsor-card mb-3" style="background-color: rgb(237, 237, 237);">
+            <div class="gold-sponsor-card mb-3">
               <div class="d-flex align-items-center">
-                <div class="me-3">2</div>
                 <div>
-                  <div class="category-label">Education & Training Institutions</div>
-                  <div class="company-name">Pearson, Wiley, Springer</div>
+                  <div class="category-label mb-4">Education & Training Institutions</div>
+                  <!-- <div class="company-name">Pearson, Wiley, Springer</div> -->
+                   <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/pearson.svg" style="background-color: gray; padding: 6px;" alt="brand-logo1" class="rounded">
+                    </div>
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/willy.svg" alt="brand-logo1">
+                    </div>
+                    <div class="sponsor-card">
+                      <img src="assets/img/brand/springer-logo.svg" alt="brand-logo1">
+                    </div>
+                   </div>
                 </div>
               </div>
             </div>
@@ -423,54 +493,92 @@
     <div class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
       <h2 class="media-header pb-2 mb-4">Media Partners</h2>
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
-            <!-- <div class="sponsor-logo mb-3"></div> -->
+        <div class="col-md-6">
+          <div class="media-partners-card rounded">
             <div class="category-label">Academic & Research Publications</div>
             <p class="small" style="color: #a8a8a8; margin: 12px 0">Disseminating research findings to a global audience.
             </p>
             <ul>
-              <li>Springer</li>
-              <li>IEEE</li>
-              <li>Elsevier</li>
-              <li>Taylor & Francis</li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/ieee_logo_white.svg" alt="brand-logo1" class="bg-primary p-2 rounded">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/springer-logo.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/elsevier-logo.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/tylor.svg" alt="brand-logo1" class="bg-primary p-2 rounded">
+              </li>
             </ul>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
-            <!-- <div class="sponsor-logo mb-3"></div> -->
+        <div class="col-md-6">
+          <div class="media-partners-card rounded">
             <div class="category-label">News & Business Media</div>
             <p class="small" style="color: #a8a8a8; margin: 12px 0">Keeping the world information about the conference's
               impact</p>
             <ul>
-              <li>Times of Oman</li>
+              <!-- <li>Times of Oman</li>
               <li>Oman Observer</li>
-              <li>Gulf News</li>
+              <li>Gulf News</li> -->
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
             </ul>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
-            <!-- <div class="sponsor-logo mb-3"></div> -->
+        <div class="col-md-6">
+          <div class="media-partners-card rounded">
             <div class="category-label">Tech & Industry Magazines</div>
             <p class="small" style="color: #a8a8a8; margin: 12px 0">Highlighting innovation and Technology Trends</p>
             <ul>
-              <li>CIO Middle East</li>
+              <!-- <li>CIO Middle East</li>
               <li>Arabian Business</li>
-              <li>TeachRadar Middle East</li>
+              <li>TeachRadar Middle East</li> -->
+              <li class="sponsor-card">
+                <img src="assets/img/brand/cio.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/aben-new-logo.png" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/techradar.svg" alt="brand-logo1"  class="bg-dark p-2 rounded">
+              </li>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="sponsor-card" style="height: 280px; background-color: #f2f2f2;">
-            <!-- <div class="sponsor-logo mb-3"></div> -->
+        <div class="col-md-6">
+          <div class="media-partners-card rounded">
             <div class="category-label">Conference & Event Platforms</div>
             <p class="small" style="color: #a8a8a8; margin: 12px 0">Ensuring widespread reach and engagement.</p>
             <ul>
-              <li>Eventbrite</li>
+              <!-- <li>Eventbrite</li>
               <li>Conference Alerts</li>
-              <li>ResearchGate</li>
+              <li>ResearchGate</li> -->
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
+              <li class="sponsor-card">
+                <img src="assets/img/brand/oman_air.svg" alt="brand-logo1">
+              </li>
             </ul>
           </div>
         </div>
