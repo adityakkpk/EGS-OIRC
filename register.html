@@ -64,6 +64,17 @@
         .registration-includes {
             background-color: #f8f9fa;
         }
+				.policy-card {
+            background: #f8f9fa;
+            border-left: 4px solid #019087;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-card:hover {
+            transform: translateX(5px);
+        }
     </style>
 
 		<!--=====  JS SCRIPT LINK =======-->
@@ -108,7 +119,7 @@
 										</li>
 										<li><a href="about.html">Conference</a></li>
 										<li>
-											<a href="conference-register.html">Register</i></a>
+											<a href="register.html">Register</i></a>
 										</li>
 										<li>
 											<a href="exhibition.html">Exhibition</a>
@@ -165,7 +176,7 @@
 					</li>
 					<li><a href="about.html">Conference</a></li>
 					<li>
-						<a href="conference-register.html">Register</i></a>
+						<a href="register.html">Register</i></a>
 					</li>
 					<li>
 						<a href="exhibition.html">Exhibition</a>
@@ -176,7 +187,7 @@
 					<li>
 						<a href="features.html">Features</a>
 					</li>
-					<li><a href="contact.html">Contact Us</a></li>
+					
 				</ul>
 				<div class="allmobilesection">
 					<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
@@ -225,9 +236,9 @@
 				<div class="row">
 					<div class="col-lg-8 m-auto">
 						<div class="heading1 text-center">
-							<h1>Conference Registration</h1>
+							<h1>Registration</h1>
 							<div class="space20"></div>
-							<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Conference Register</span></a>
+							<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Register</span></a>
 						</div>
 					</div>
 				</div>
@@ -236,13 +247,13 @@
 		<!--===== HERO AREA ENDS =======-->
 
 		<!-- Registration Includes Section -->
-    <section class="registration-includes py-5">
+    <!-- <section class="registration-includes py-5">
 			<div class="container">
 					<div class="row justify-content-center">
 							<div class="col-lg-8">
 									<div class="row">
 										<div class="col-lg-7 m-auto mt-5">
-											<div class="brand-header heading2 space-margin60 text-center">
+											<div class="brand-header heading6 space-margin60 text-center">
 												<div class="space16"></div>
 												<h2 class="text-anime-style-3">Registration Includes</h2>
 											</div>
@@ -286,16 +297,17 @@
 							</div>
 					</div>
 			</div>
-		</section>
+		</section> -->
 
+		<!-- Conference Registration Form -->
 		<div class="container my-5">
       <div class="row justify-content-center">
-          <div class="col-md-8">
+          <div class="col-md-10">
 						<div class="row">
-							<div class="col-lg-7 m-auto mt-3">
-								<div class="brand-header heading2 space-margin60 text-center">
+							<div class="col-lg-10 m-auto mt-3">
+								<div class="brand-header heading6 space-margin60 text-center">
 									<div class="space16"></div>
-									<h2 class="text-anime-style-3">Registration Form</h2>
+									<h2 class="text-anime-style-3">Conference Registration Form</h2>
 								</div>
 							</div>
 						</div>
@@ -375,12 +387,229 @@
       </div>
     </div>
 
+		<!-- sponsor Registration Form -->
+		<div class="container my-5">
+      <div class="row justify-content-center">
+          <div class="col-md-10">
+						<div class="row">
+							<div class="col-lg-10 m-auto mt-3">
+								<div class="brand-header heading6 space-margin60 text-center">
+									<div class="space16"></div>
+									<h2 class="text-anime-style-3">Sponsor Registration Form</h2>
+								</div>
+							</div>
+						</div>
+              <div class="card shadow">
+                  <div class="card-header bg-primary-custom text-white">
+                      <h3 class="mb-0">Sponsor Registration Form</h3>
+                  </div>
+                  <div class="card-body">
+                      <form id="registrationForm" class="needs-validation" novalidate>
+                          <!-- Personal Information -->
+                          <h4 class="mb-3">Personal Information</h4>
+                          <div class="row mb-3">
+                              <div class="col-md-6">
+                                  <label for="firstName" class="form-label">First Name*</label>
+                                  <input type="text" class="form-control" id="firstName" required>
+                              </div>
+                              <div class="col-md-6">
+                                  <label for="lastName" class="form-label">Last Name*</label>
+                                  <input type="text" class="form-control" id="lastName" required>
+                              </div>
+                          </div>
+
+                          <div class="mb-3">
+                              <label for="email" class="form-label">Email Address*</label>
+                              <input type="email" class="form-control" id="email" required>
+                          </div>
+
+                          <!-- Institution Information -->
+                          <h4 class="mb-3">Institution Information</h4>
+                          <div class="mb-3">
+                              <label for="institution" class="form-label">Institution/Organization*</label>
+                              <input type="text" class="form-control" id="institution" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label for="country" class="form-label">Country*</label>
+                              <select class="form-select" id="country" required>
+                                  <option value="">Select Country</option>
+                                  <option value="OM">Oman</option>
+                                  <option value="OTHER">Other Countries</option>
+                              </select>
+                          </div>
+
+                          <!-- Registration Type -->
+                          <h4 class="mb-3">Registration Details</h4>
+                          <div class="mb-3">
+                              <label for="regType" class="form-label">Registration Type*</label>
+                              <select class="form-select" id="regType" required>
+                                  <option value="">Select Registration Type</option>
+                                  <option value="student">Student</option>
+                                  <option value="student-oman">Student (Oman)</option>
+                                  <option value="student-developing">Student (Developing Nations)</option>
+                                  <option value="other">Others</option>
+                              </select>
+                          </div>
+
+                          <div class="mb-3">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" id="earlyBird">
+                                  <label class="form-check-label" for="earlyBird">
+                                      Apply for Early Bird Discount (Valid until 31st March 2025)
+                                  </label>
+                              </div>
+                          </div>
+
+                          <!-- Price Display -->
+                          <div class="alert alert-info" id="priceDisplay">
+                              Registration Fee: <span id="regFee">$0</span>
+                          </div>
+
+                          <!-- Submit Button -->
+                          <button type="submit" class="btn btn-primary-custom w-100">Submit Registration</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+		<!-- Exhibitor Registration Form -->
+		<div class="container my-5">
+      <div class="row justify-content-center">
+          <div class="col-md-10">
+						<div class="row">
+							<div class="col-lg-10 m-auto mt-3">
+								<div class="brand-header heading6 space-margin60 text-center">
+									<div class="space16"></div>
+									<h2 class="text-anime-style-3">Exhibitor Registration Form</h2>
+								</div>
+							</div>
+						</div>
+              <div class="card shadow">
+                  <div class="card-header bg-primary-custom text-white">
+                      <h3 class="mb-0">Exhibitor Registration Form</h3>
+                  </div>
+                  <div class="card-body">
+                      <form id="registrationForm" class="needs-validation" novalidate>
+                          <!-- Personal Information -->
+                          <h4 class="mb-3">Personal Information</h4>
+                          <div class="row mb-3">
+                              <div class="col-md-6">
+                                  <label for="firstName" class="form-label">First Name*</label>
+                                  <input type="text" class="form-control" id="firstName" required>
+                              </div>
+                              <div class="col-md-6">
+                                  <label for="lastName" class="form-label">Last Name*</label>
+                                  <input type="text" class="form-control" id="lastName" required>
+                              </div>
+                          </div>
+
+                          <div class="mb-3">
+                              <label for="email" class="form-label">Email Address*</label>
+                              <input type="email" class="form-control" id="email" required>
+                          </div>
+
+                          <!-- Institution Information -->
+                          <h4 class="mb-3">Institution Information</h4>
+                          <div class="mb-3">
+                              <label for="institution" class="form-label">Institution/Organization*</label>
+                              <input type="text" class="form-control" id="institution" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label for="country" class="form-label">Country*</label>
+                              <select class="form-select" id="country" required>
+                                  <option value="">Select Country</option>
+                                  <option value="OM">Oman</option>
+                                  <option value="OTHER">Other Countries</option>
+                              </select>
+                          </div>
+
+                          <!-- Registration Type -->
+                          <h4 class="mb-3">Registration Details</h4>
+                          <div class="mb-3">
+                              <label for="regType" class="form-label">Registration Type*</label>
+                              <select class="form-select" id="regType" required>
+                                  <option value="">Select Registration Type</option>
+                                  <option value="student">Student</option>
+                                  <option value="student-oman">Student (Oman)</option>
+                                  <option value="student-developing">Student (Developing Nations)</option>
+                                  <option value="other">Others</option>
+                              </select>
+                          </div>
+
+                          <div class="mb-3">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" id="earlyBird">
+                                  <label class="form-check-label" for="earlyBird">
+                                      Apply for Early Bird Discount (Valid until 31st March 2025)
+                                  </label>
+                              </div>
+                          </div>
+
+                          <!-- Price Display -->
+                          <div class="alert alert-info" id="priceDisplay">
+                              Registration Fee: <span id="regFee">$0</span>
+                          </div>
+
+                          <!-- Submit Button -->
+                          <button type="submit" class="btn btn-primary-custom w-100">Submit Registration</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+		<!-- Cancel Policy -->
+		<div class="container my-5">
+      <div class="row justify-content-center">
+          <div class="col-md-10">
+						<div class="row">
+							<div class="col-lg-10 m-auto mt-3">
+								<div class="brand-header heading6 space-margin60 text-center">
+									<div class="space16"></div>
+									<h2 class="text-anime-style-3">Cancellation Policy</h2>
+								</div>
+							</div>
+						</div>
+              <div class="card shadow">
+                  <div class="card-header bg-primary-custom text-white">
+                      <h3 class="mb-0">Cancellation Policy</h3>
+                  </div>
+                  <div class="card-body">
+										<div class="policy-card">
+											<h4>Before January 1, 2025</h4>
+											<p>Full refund minus processing fee (10%)</p>
+										</div>
+										<div class="policy-card">
+												<h4>January 1 - February 28, 2025</h4>
+												<p>50% refund of registration fees</p>
+										</div>
+										<div class="policy-card">
+												<h4>After March 1, 2025</h4>
+												<p>No refunds available</p>
+										</div>
+										<div class="policy-card">
+												<h4>Special Circumstances</h4>
+												<p>Please contact the organizing committee for any special circumstances or considerations.</p>
+										</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+		<!-- VISA and VENUE -->
+		<div>
 		<div class="container my-5">
 			<!-- Visa Section -->
 			<div class="row mb-5">
 				<div class="row">
 					<div class="col-lg-7 m-auto mt-5">
-						<div class="brand-header heading2 space-margin60 text-center">
+						<div class="brand-header heading6 space-margin60 text-center">
 							<div class="space16"></div>
 							<h2 class="text-anime-style-3">Visa, Abstract Submission</h2>
 						</div>
@@ -605,7 +834,7 @@
 		</div>
 
 		<!-- Venue Section -->
-    <section class="venue-section py-5">
+		<section class="venue-section py-5">
 			<div class="container">
 					<div class="row align-items-center">
 							<div class="col-md-6">
@@ -649,6 +878,7 @@
 					</div>
 			</div>
 		</section>
+		</div>
 
 		<!--===== FOOTER AREA STARTS =======-->
 		<div class="footer4-sertion-area">
@@ -682,11 +912,12 @@
 						<div class="link-content">
 							<h3>Quick Links</h3>
 							<ul>
-								<li><a href="about.html">About Us</a></li>
-								<li><a href="blog.html">Our Blogs</a></li>
+								<li><a href="about.html">Conference</a></li>
+								<li><a href="features.html">Features</a></li>
 								<li><a href="exhibition.html">Events</a></li>
-								<li><a href="conference-register.html">Register</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="register.html">Register</a></li>
+              <li><a href="sponsors.html">Sponsors</a></li>
+								
 							</ul>
 						</div>
 					</div>
