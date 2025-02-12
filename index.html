@@ -1,286 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>ICMMSC 2025</title>
 
-		<!--=====FAB ICON=======-->
-		<link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ICMMSC 2025</title>
 
-		<!--===== CSS LINK =======-->
-		<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/css/vendor/aos.css" />
-		<link rel="stylesheet" href="assets/css/vendor/fontawesome.css" />
-		<link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
-		<link rel="stylesheet" href="assets/css/vendor/mobile.css" />
-		<link rel="stylesheet" href="assets/css/vendor/owlcarousel.min.css" />
-		<link rel="stylesheet" href="assets/css/vendor/sidebar.css" />
-		<link rel="stylesheet" href="assets/css/vendor/slick-slider.css" />
-		<link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
-		<link rel="stylesheet" href="assets/css/vendor/odometer.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+	<!--=====FAB ICON=======-->
+	<link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
 
-    <style>
-      #logo-text {
-        color: #019087;
-        transition: color 0.3s ease;
-				width: 200px;
-      }
-      #logo-text:hover {
-        color: #00dfd0;
-      }
-			.bg-theme {
-            background-color: #019087;
-        }
-        .text-theme {
-            color: #019087;
-        }
-        .border-theme {
-            border-color: #019087 !important;
-        }
-				.bg-custom-dark {
-            background-color: #1a1f3d;
-        }
-        
-        .image-container {
-            overflow: hidden;
-            border-radius: 10px;
-            height: 250px;
-        }
-        
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .image-container:hover img {
-            transform: scale(1.1);
-        }
-        
-        .custom-card {
-            border: none;
-            background: transparent;
-            transition: transform 0.3s ease;
-        }
-        
-        .custom-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .section-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .white-box {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-        }
+	<!--===== CSS LINK =======-->
+	<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/vendor/aos.css" />
+	<link rel="stylesheet" href="assets/css/vendor/fontawesome.css" />
+	<link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
+	<link rel="stylesheet" href="assets/css/vendor/mobile.css" />
+	<link rel="stylesheet" href="assets/css/vendor/owlcarousel.min.css" />
+	<link rel="stylesheet" href="assets/css/vendor/sidebar.css" />
+	<link rel="stylesheet" href="assets/css/vendor/slick-slider.css" />
+	<link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
+	<link rel="stylesheet" href="assets/css/vendor/odometer.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 
-				.fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+	<style>
+		#logo-text {
+			color: #019087;
+			transition: color 0.3s ease;
+			width: 200px;
+		}
 
-        .hover-float {
-            transition: transform 0.3s ease;
-        }
-        
-        .hover-float:hover {
-            transform: translateY(-5px);
-        }
+		#logo-text:hover {
+			color: #00dfd0;
+		}
 
-        .pulse {
-            animation: pulse 2s infinite;
-        }
+		.bg-theme {
+			background-color: #019087;
+		}
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+		.text-theme {
+			color: #019087;
+		}
 
-        .slide-in {
-            animation: slideIn 0.5s ease-out forwards;
-        }
+		.border-theme {
+			border-color: #019087 !important;
+		}
 
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
+		.bg-custom-dark {
+			background-color: #1a1f3d;
+		}
 
-        .badge-animated {
-            animation: badgePop 0.5s ease-out;
-        }
+		.image-container {
+			overflow: hidden;
+			border-radius: 10px;
+			height: 250px;
+		}
 
-        @keyframes badgePop {
-            0% { transform: scale(0); }
-            70% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-    </style>
+		.image-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.5s ease;
+		}
 
-		<!--=====  JS SCRIPT LINK =======-->
-		<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-	</head>
-	<body class="homepage4-body">
-		<!--===== PRELOADER STARTS =======-->
-		<div class="preloader">
-			<div class="loading-container">
-				<div class="loading"></div>
-				<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+		.image-container:hover img {
+			transform: scale(1.1);
+		}
+
+		.custom-card {
+			border: none;
+			background: transparent;
+			transition: transform 0.3s ease;
+		}
+
+		.custom-card:hover {
+			transform: translateY(-10px);
+		}
+
+		.section-content {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.white-box {
+			background: white;
+			border-radius: 15px;
+			padding: 3rem;
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+		}
+
+		.fade-in-up {
+			opacity: 0;
+			transform: translateY(20px);
+			transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+		}
+
+		.fade-in-up.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.hover-float {
+			transition: transform 0.3s ease;
+		}
+
+		.hover-float:hover {
+			transform: translateY(-5px);
+		}
+
+		.pulse {
+			animation: pulse 2s infinite;
+		}
+
+		@keyframes pulse {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.05);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.slide-in {
+			animation: slideIn 0.5s ease-out forwards;
+		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateX(-100%);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		.badge-animated {
+			animation: badgePop 0.5s ease-out;
+		}
+
+		@keyframes badgePop {
+			0% {
+				transform: scale(0);
+			}
+
+			70% {
+				transform: scale(1.2);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+
+	<!--=====  JS SCRIPT LINK =======-->
+	<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="homepage4-body">
+	<!--===== PRELOADER STARTS =======-->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+		</div>
+	</div>
+	<!--===== PRELOADER ENDS =======-->
+
+	<!--===== PAGE PROGRESS START=======-->
+	<div class="paginacontainer">
+		<div class="progress-wrap">
+			<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+			</svg>
+		</div>
+	</div>
+	<!--===== PAGE PROGRESS END=======-->
+
+	<!--=====HEADER START=======-->
+	<header>
+		<div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="header-elements">
+							<div class="site-logo">
+								<a href="index.html">
+									<h3 id="logo-text">ICMMCS 2025</h3>
+								</a>
+							</div>
+							<div class="main-menu">
+								<ul>
+									<li>
+										<a href="index.html">Home </a>
+									</li>
+									<li><a href="about.html">Conference</a></li>
+									<li>
+										<a href="register.html">Register</i></a>
+									</li>
+									<li>
+										<a href="exhibition.html">Exhibition</a>
+									</li>
+									<li>
+										<a href="sponsors.html">Sponsors</a>
+									</li>
+									<li>
+										<a href="features.html">Features</a>
+									</li>
+								</ul>
+							</div>
+							<div class="body-overlay"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!--===== PRELOADER ENDS =======-->
+	</header>
+	<!--=====HEADER END =======-->
 
-		<!--===== PAGE PROGRESS START=======-->
-		<div class="paginacontainer">
-			<div class="progress-wrap">
-				<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-					<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-				</svg>
+	<!--===== MOBILE HEADER STARTS =======-->
+	<div class="mobile-header mobile-haeder4 d-block d-lg-none">
+		<div class="container-fluid">
+			<div class="col-12">
+				<div class="mobile-header-elements">
+					<div class="mobile-logo">
+						<a href="index.html">
+							<h3 id="logo-text">ICMMCS 2025</h3>
+						</a>
+					</div>
+					<div class="mobile-nav-icon dots-menu">
+						<i class="fa-solid fa-bars-staggered"></i>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!--===== PAGE PROGRESS END=======-->
+	</div>
 
-		<!--=====HEADER START=======-->
-		<header>
-			<div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="header-elements">
-								<div class="site-logo">
-									<a href="index.html">
-                    <h3 id="logo-text">ICMMCS 2025</h3> 
-                  </a>
-								</div>
-								<div class="main-menu">
-									<ul>
-										<li>
-											<a href="index.html">Home </a>
-										</li>
-										<li><a href="about.html">Conference</a></li>
-										<li>
-											<a href="register.html">Register</i></a>
-										</li>
-										<li>
-											<a href="exhibition.html">Exhibition</a>
-										</li>
-										<li>
-											<a href="sponsors.html">Sponsors</a>
-										</li>
-										<li>
-											<a href="features.html">Features</a>
-										</li>
-									</ul>
-								</div>
-								<div class="body-overlay"></div>
+	<div class="mobile-sidebar mobile-sidebar4">
+		<div class="logosicon-area">
+			<div class="logos">
+				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
+				<h3 id="logo-text">ICMMCS 2025</h3>
+			</div>
+			<div class="menu-close">
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		</div>
+		<div class="mobile-nav mobile-nav1">
+			<ul class="mobile-nav-list nav-list1">
+				<li>
+					<a href="index.html">Home </a>
+				</li>
+				<li><a href="about.html">Conference</a></li>
+				<li>
+					<a href="register.html">Register</i></a>
+				</li>
+				<li>
+					<a href="exhibition.html">Exhibition</a>
+				</li>
+				<li>
+					<a href="sponsors.html">Sponsors</a>
+				</li>
+				<li>
+					<a href="features.html">Features</a>
+				</li>
+
+			</ul>
+			<div class="allmobilesection">
+				<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
+				<div class="single-footer">
+					<h3>Contact Info</h3>
+					<div class="footer1-contact-info">
+						<div class="contact-info-single">
+							<div class="contact-info-icon">
+								<span><i class="fa-solid fa-phone-volume"></i></span>
+							</div>
+							<div class="contact-info-text">
+								<a href="tel:+3(924)4596512">+3(924)4596512</a>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<!--=====HEADER END =======-->
-
-		<!--===== MOBILE HEADER STARTS =======-->
-		<div class="mobile-header mobile-haeder4 d-block d-lg-none">
-			<div class="container-fluid">
-				<div class="col-12">
-					<div class="mobile-header-elements">
-						<div class="mobile-logo">
-							<a href="index.html">
-                <h3 id="logo-text">ICMMCS 2025</h3> 
-              </a>
+						<div class="contact-info-single">
+							<div class="contact-info-icon">
+								<span><i class="fa-solid fa-envelope"></i></span>
+							</div>
+							<div class="contact-info-text">
+								<a href="mailto:info@icmmcs.org">info@icmmcs.org</a>
+							</div>
 						</div>
-						<div class="mobile-nav-icon dots-menu">
-							<i class="fa-solid fa-bars-staggered"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="mobile-sidebar mobile-sidebar4">
-			<div class="logosicon-area">
-				<div class="logos">
-					<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-          <h3 id="logo-text">ICMMCS 2025</h3> 
-				</div>
-				<div class="menu-close">
-					<i class="fa-solid fa-xmark"></i>
-				</div>
-			</div>
-			<div class="mobile-nav mobile-nav1">
-				<ul class="mobile-nav-list nav-list1">
-					<li>
-						<a href="index.html">Home </a>
-					</li>
-					<li><a href="about.html">Conference</a></li>
-					<li>
-						<a href="register.html">Register</i></a>
-					</li>
-					<li>
-						<a href="exhibition.html">Exhibition</a>
-					</li>
-					<li>
-						<a href="sponsors.html">Sponsors</a>
-					</li>
-					<li>
-						<a href="features.html">Features</a>
-					</li>
-					
-				</ul>
-				<div class="allmobilesection">
-					<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
-					<div class="single-footer">
-						<h3>Contact Info</h3>
-						<div class="footer1-contact-info">
+						<div class="single-footer">
+							<h3>Our Location</h3>
 							<div class="contact-info-single">
 								<div class="contact-info-icon">
-									<span><i class="fa-solid fa-phone-volume"></i></span>
+									<span><i class="fa-solid fa-location-dot"></i></span>
 								</div>
 								<div class="contact-info-text">
-									<a href="tel:+3(924)4596512">+3(924)4596512</a>
-								</div>
-							</div>
-							<div class="contact-info-single">
-								<div class="contact-info-icon">
-									<span><i class="fa-solid fa-envelope"></i></span>
-								</div>
-								<div class="contact-info-text">
-									<a href="mailto:info@icmmcs.org">info@icmmcs.org</a>
-								</div>
-							</div>
-							<div class="single-footer">
-								<h3>Our Location</h3>
-								<div class="contact-info-single">
-									<div class="contact-info-icon">
-										<span><i class="fa-solid fa-location-dot"></i></span>
-									</div>
-									<div class="contact-info-text">
-										<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
-											>Muscat, Oman
-										</a>
-									</div>
+									<a
+										href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D">Muscat,
+										Oman
+									</a>
 								</div>
 							</div>
 						</div>
@@ -288,82 +312,103 @@
 				</div>
 			</div>
 		</div>
-		<!--===== MOBILE HEADER ENDS =======-->
+	</div>
+	<!--===== MOBILE HEADER ENDS =======-->
 
-		<!--===== HERO AREA STARTS =======-->
-		<div class="hero4-section-area" style="background-image: url(assets/img/squ/img2.jpg); background-repeat: no-repeat; background-size: cover;">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-12 m-auto" style="background-color: rgba(45, 45, 45, 0.5); margin: 4px;">
-						<div class="hero4-header" style=" padding: 24px; display: flex;flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
-							<div class="space20"></div>
-							<h1 class="text-anime-style-3" style="color: white; text-align: center;">International Conference on Mathematics, Management, and Computer Science</h1>
-							<div class="space20"></div>
-							<p data-aos="fade-left" data-aos-duration="900" style="width: 90%; color: white; text-align: center;">
-								Welcome to ICMMSC 2025: The Intersection of Mathematical Insight,  Management Excellence, and Technological Innovation.
-							</p>
-							<div class="space32"></div>
-							<div class="" style="display: flex;flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;">
-								<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-									<a href="register.html" class="vl-btn4">Register Now</a>
-								</div>
-								<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
-									<a href="sponsors.html" class="vl-btn4">Our Sponsors</a>
-								</div>
+	<!--===== HERO AREA STARTS =======-->
+	<div class="hero4-section-area"
+		style="background-image: url(assets/img/squ/img2.jpg); background-repeat: no-repeat; background-size: cover;">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-12 m-auto" style="background-color: rgba(45, 45, 45, 0.5); margin: 4px;">
+					<div class="hero4-header"
+						style=" padding: 24px; display: flex;flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
+						<div class="space20"></div>
+						<h1 class="text-anime-style-3" style="color: white; text-align: center;">International Conference on
+							Mathematics, Management, and Computer Science</h1>
+						<div class="space20"></div>
+						<p data-aos="fade-left" data-aos-duration="900" style="width: 90%; color: white; text-align: center;">
+							Welcome to ICMMSC 2025: The Intersection of Mathematical Insight, Management Excellence, and Technological
+							Innovation.
+						</p>
+						<div class="space32"></div>
+						<div class=""
+							style="display: flex;flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;">
+							<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+								<a href="register.html" class="vl-btn4">Register Now</a>
+							</div>
+							<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
+								<a href="sponsors.html" class="vl-btn4">Our Sponsors</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--===== HERO AREA ENDS =======-->
+	</div>
+	<!--===== HERO AREA ENDS =======-->
 
-		<!--===== ABOUT AREA STARTS =======-->
-		<div class="about4-section-area sp1">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-10 m-auto">
-						<div class="about4-heading heading6" style="display: flex;flex-wrap: wrap;  flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-							<h2 data-aos="fade-left" data-aos-duration="800">About ICMMSC 2025</h2>
-							<div class="space18"></div>
-              <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: center; margin: 0 4px;">
-								<div class="rounded animate__animated animate__fadeInUp custom-card" style="display: flex; flex-direction: column; padding: 18px; border: 1px solid #019087; gap: 16px; width: 40%; min-width: 280px;">
-									<div>
-										<h2 data-aos="fade-left" data-aos-duration="800" style="font-weight: bolder; background: white; font-size: 30px;margin-bottom: 12px;">Theme</h2>
-										<img src="assets/img/squ/img4.jpg" data-aos="fade-right" data-aos-duration="900" class="rounded">
-									</div>
-									<div class="theme-section" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
-										<p data-aos="fade-left" data-aos-duration="900" style="text-align: justify; height: 180px; font-size: 20px; overflow: hidden;">"Bridging Disciplines, Inspiring Innovation" - ICMMSC provides a dynamic convergence of knowledge, research, and industry expertise across interconnected fields.</p>
-									</div>
+	<!--===== ABOUT AREA STARTS =======-->
+	<div class="about4-section-area sp1">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-10 m-auto">
+					<div class="about4-heading heading6"
+						style="display: flex;flex-wrap: wrap;  flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+						<h2 data-aos="fade-left" data-aos-duration="800">About ICMMSC 2025</h2>
+						<div class="space18"></div>
+						<div
+							style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: center; margin: 0 4px;">
+							<div class="rounded animate__animated animate__fadeInUp custom-card"
+								style="display: flex; flex-direction: column; padding: 18px; border: 1px solid #019087; gap: 16px; width: 40%; min-width: 280px;">
+								<div>
+									<h2 data-aos="fade-left" data-aos-duration="800"
+										style="font-weight: bolder; background: white; font-size: 30px;margin-bottom: 12px;">Theme</h2>
+									<img src="assets/img/squ/img4.jpg" data-aos="fade-right" data-aos-duration="900" class="rounded">
 								</div>
-
-								<div class="rounded animate__animated animate__fadeInUp custom-card" style="display: flex; flex-direction: column; padding: 18px; border: 1px solid #019087; gap: 16px; width: 40%; min-width: 280px;">
-									<div>
-										<h2 data-aos="fade-left" data-aos-duration="800" style="font-weight: bolder; background: white; font-size: 30px;margin-bottom: 12px;">Opportunities</h2>
-										<img src="assets/img/squ/img1.jpg" data-aos="fade-right" data-aos-duration="900" class="rounded">
-									</div>
-									<div class="theme-section" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
-										<p data-aos="fade-left" data-aos-duration="900" style="text-align: justify; height: 180px; font-size: 20px; overflow: hidden;">Present research and publish in ESCI and SCOPUS-indexed journals, showcasing ideas through poster presentations, and establish global partnerships.</p>
-									</div>
+								<div class="theme-section"
+									style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+									<p data-aos="fade-left" data-aos-duration="900"
+										style="text-align: justify; height: 180px; font-size: 20px; overflow: hidden;">"Bridging
+										Disciplines, Inspiring Innovation" - ICMMSC provides a dynamic convergence of knowledge, research,
+										and industry expertise across interconnected fields.</p>
 								</div>
 							</div>
-							<div class="space18"></div>
+
+							<div class="rounded animate__animated animate__fadeInUp custom-card"
+								style="display: flex; flex-direction: column; padding: 18px; border: 1px solid #019087; gap: 16px; width: 40%; min-width: 280px;">
+								<div>
+									<h2 data-aos="fade-left" data-aos-duration="800"
+										style="font-weight: bolder; background: white; font-size: 30px;margin-bottom: 12px;">Opportunities
+									</h2>
+									<img src="assets/img/squ/img1.jpg" data-aos="fade-right" data-aos-duration="900" class="rounded">
+								</div>
+								<div class="theme-section"
+									style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+									<p data-aos="fade-left" data-aos-duration="900"
+										style="text-align: justify; height: 180px; font-size: 20px; overflow: hidden;">Present research and
+										publish in ESCI and SCOPUS-indexed journals, showcasing ideas through poster presentations, and
+										establish global partnerships.</p>
+								</div>
+							</div>
 						</div>
+						<div class="space18"></div>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<!--===== OBJECTIVES =======-->
-			<div class="container-fluid bg-light py-5">
-				<div class="container">
-						<div class="row justify-content-center mb-5">
-								<div class="col-lg-8 text-center heading6 fade-in-up">
-										<h2 class="mb-4">Objectives of ICMMCS 2025</h2>
-								</div>
-						</div>
+		<!--===== OBJECTIVES =======-->
+		<div class="container-fluid bg-light py-5">
+			<div class="container">
+				<div class="row justify-content-center mb-5">
+					<div class="col-lg-8 text-center heading6 fade-in-up">
+						<h2 class="mb-4">Objectives of ICMMCS 2025</h2>
+					</div>
+				</div>
 
-						<div class="row justify-content-center">
-								<!-- <div class="col-lg-8">
+				<div class="row justify-content-center">
+					<!-- <div class="col-lg-8">
 										<div class="accordion" id="objectivesAccordion">
 												<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
 														<h3 class="accordion-header">
@@ -402,539 +447,593 @@
 												</div>
 										</div>
 								</div> -->
-								
-								<div class="col-lg-8">
-									<img src="assets/img/all-images/others/image.png" alt="objectives" class="rounded fade-in-up">
-								</div>
-							</div>
 
-						<!-- Call to Action Section -->
-						<div class="row mt-5">
-								<div class="col-12 text-center fade-in-up" style="width: 70%;margin: auto;">
-										<p class="lead mb-4">ICMMCS 2025 aims to inspire future innovations by providing a vibrant platform for thought leaders, industry experts, and young researchers to explore challenges and drive forward-thinking solutions.</p>
-										<div class="d-grid gap-2 d-md-block">
-												<a href="register.html">
-													<button class="btn btn-primary btn-lg px-5 pulse">Submit Your Paper</button>
-												</a>
-										</div>
-								</div>
+					<div class="col-lg-8">
+						<img src="assets/img/all-images/others/image.png" alt="objectives" class="rounded fade-in-up">
+					</div>
+				</div>
+
+				<!-- Call to Action Section -->
+				<div class="row mt-5">
+					<div class="col-12 text-center fade-in-up" style="width: 70%;margin: auto;">
+						<p class="lead mb-4">ICMMCS 2025 aims to inspire future innovations by providing a vibrant platform for
+							thought leaders, industry experts, and young researchers to explore challenges and drive forward-thinking
+							solutions.</p>
+						<div class="d-grid gap-2 d-md-block">
+							<a href="register.html">
+								<button class="btn btn-primary btn-lg px-5 pulse">Submit Your Paper</button>
+							</a>
 						</div>
+					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="" style="background-image: url(assets/img/squ/img2.jpg);background-repeat: no-repeat; background-size: cover;">
-				<div class="" style="background-color: rgba(255, 255, 255, 0.7);">
-					<div class="container heading6 py-5">
-						<h2 class="fw-bold mb-5 text-center" data-aos="fade-up">Who Attends?</h2>
-						<div class="row g-4">
-							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen mb-3"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
-									<h4 class="fw-bold">Researchers</h5>
+		<div style="background-image: url(assets/img/squ/img2.jpg);background-repeat: no-repeat; background-size: cover;">
+			<div class="" style="background-color: rgba(255, 255, 255, 0.7);">
+				<div class="container heading6 py-5">
+					<h2 class="fw-bold mb-5 text-center" data-aos="fade-up">Who Attends?</h2>
+					<div class="row g-4">
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+							<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+									stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-notebook-pen mb-3">
+									<path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" />
+									<path d="M2 6h4" />
+									<path d="M2 10h4" />
+									<path d="M2 14h4" />
+									<path d="M2 18h4" />
+									<path
+										d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
+								</svg>
+								<h4 class="fw-bold">Researchers</h5>
 									<p style="color: black;">Academic scholars presenting groundbreaking studies</p>
-								</div>
 							</div>
-							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school mb-3"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>
-									<h4 class="fw-bold">Academics</h5>
+						</div>
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+							<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+									stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-school mb-3">
+									<path d="M14 22v-4a2 2 0 1 0-4 0v4" />
+									<path
+										d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10" />
+									<path d="M18 5v17" />
+									<path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6" />
+									<path d="M6 5v17" />
+									<circle cx="12" cy="9" r="2" />
+								</svg>
+								<h4 class="fw-bold">Academics</h5>
 									<p style="color: black;">Thought leaders sharing insights and expertise</p>
-								</div>
 							</div>
-							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pen-tool mb-3"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>
-									<h4 class="fw-bold">Professionals</h5>
+						</div>
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+							<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+									stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-pen-tool mb-3">
+									<path
+										d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z" />
+									<path
+										d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18" />
+									<path d="m2.3 2.3 7.286 7.286" />
+									<circle cx="11" cy="11" r="2" />
+								</svg>
+								<h4 class="fw-bold">Professionals</h5>
 									<p style="color: black;">Industry experts exploring latest trends and innovations</p>
-								</div>
 							</div>
-							<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-								<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen mb-3"><path d="M11.5 15H7a4 4 0 0 0-4 4v2"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="7" r="4"/></svg>
-									<h4 class="fw-bold">Students</h5>
+						</div>
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+							<div class="attendee-card p-4 border border-success rounded text-center shadow-sm" style="height: 220px;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+									stroke="#019087" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-user-pen mb-3">
+									<path d="M11.5 15H7a4 4 0 0 0-4 4v2" />
+									<path
+										d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
+									<circle cx="10" cy="7" r="4" />
+								</svg>
+								<h4 class="fw-bold">Students</h5>
 									<p style="color: black;">Emerging innovators eager to learn and network</p>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--===== ABOUT AREA ENDS =======-->
+	</div>
+	<!--===== ABOUT AREA ENDS =======-->
 
-		<!-- Why Choose ICMMSC -->
-		<div class="" style="background-color: aliceblue;">
-			<div class="container py-5">
-				<div class="white-box animate__animated animate__fadeIn">
-						<div class="text-center mb-5">
-								<div class="row">
-									<div class="col-lg-7 m-auto">
-										<div class="brand-header heading6 text-center">
-											<h2 class="text-anime-style-3">Why Attend?</h2>
-										</div>
-									</div>
-								</div>
-						</div>
-	
-						<div class="row g-4">
-								<!-- Present Research -->
-								<div class="col-md-3">
-										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-												<div class="image-container mb-3">
-														<img src="./assets/img/all-images/event/event-img1.png" alt="Conference presentation" class="img-fluid">
-												</div>
-												<h5 class="text-center">Present Research</h5>
-										</div>
-								</div>
-	
-								<!-- Engage in Discussions -->
-								<div class="col-md-3">
-										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-												<div class="image-container mb-3">
-														<img src="./assets/img/all-images/event/event-img5.png" alt="Group discussion" class="img-fluid">
-												</div>
-												<h5 class="text-center">Engage in Discussions</h5>
-										</div>
-								</div>
-	
-								<!-- Network Globally -->
-								<div class="col-md-3">
-										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
-												<div class="image-container mb-3">
-														<img src="./assets/img/all-images/event/event-img9.png" alt="Networking event" class="img-fluid">
-												</div>
-												<h5 class="text-center">Network Globally</h5>
-										</div>
-								</div>
-	
-								<!-- Experience Muscat -->
-								<div class="col-md-3">
-										<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
-												<div class="image-container mb-3">
-														<img src="./assets/img/all-images/event/event-img14.png" alt="Muscat heritage" class="img-fluid">
-												</div>
-												<h5 class="text-center">Experience Muscat</h5>
-										</div>
-								</div>
-						</div>
-	
-						<div class="section-content mt-5 animate__animated animate__fadeIn" style="animation-delay: 1s; max-width: 990px;">
-								<p class="text-justify lead">
-										Present your research, engage in thought-provoking discussions, network globally, and experience Muscat's rich heritage. Join us for an enriching and transformative experience where knowledge knows no bounds and new possibilities emerge!
-								</p>
-						</div>
-				</div>
-			</div>
-		</div>
-
-    <!--===== VENUE AREA STARTS =======-->
-		<section class="py-5" style="background-color: #f0f0f0;">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 m-auto mt-5">
-						<div class="brand-header heading6 space-margin60 text-center">
-							<div class="space16"></div>
-							<h2 class="text-anime-style-3">Venue and Timing</h2>
+	<!-- Why Choose ICMMSC -->
+	<div class="" style="background-color: aliceblue;">
+		<div class="container py-5">
+			<div class="white-box animate__animated animate__fadeIn">
+				<div class="text-center mb-5">
+					<div class="row">
+						<div class="col-lg-7 m-auto">
+							<div class="brand-header heading6 text-center">
+								<h2 class="text-anime-style-3">Why Attend?</h2>
+							</div>
 						</div>
 					</div>
 				</div>
+
 				<div class="row g-4">
-					<!-- Left Column - Information -->
-					<div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-						<!-- Location -->
-						<div class="d-flex mb-4">
-							<div class="bg-light p-3 rounded me-3" style="height: 60px;">
-								<i class="fas fa-map-marker-alt fs-4" style="color: #019087;"></i>
+					<!-- Present Research -->
+					<div class="col-md-3">
+						<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+							<div class="image-container mb-3">
+								<img src="./assets/img/all-images/event/event-img1.png" alt="Conference presentation" class="img-fluid">
 							</div>
-							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Location</h3>
-								<p class="text-secondary mb-0">
-									Sultan Qaboos University (SQU), Muscat, Sultanate of Oman
-								</p>
-							</div>
-						</div>
-
-						<!-- Dates -->
-						<div class="d-flex mb-4">
-							<div class="bg-light p-3 rounded me-3">
-								<i class="fas fa-calendar fs-4" style="color: #019087;"></i>
-							</div>
-							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Dates</h3>
-								<p class="text-secondary mb-0">November 12 - 14, 2025</p>
-							</div>
-						</div>
-
-						<!-- Conference Sessions -->
-						<div class="d-flex mb-4">
-							<div class="bg-light p-3 rounded me-3" style="height: 60px;">
-								<i class="fas fa-clock fs-4" style="color: #019087;"></i>
-							</div>
-							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Conference Sessions</h3>
-								<p class="text-secondary mb-0">9:00 AM – 5:00 PM (Oman time)</p>
-							</div>
-						</div>
-
-						<!-- Gala Dinner -->
-						<div class="d-flex mb-4">
-							<div class="bg-light p-3 rounded me-3" style="height: 60px;">
-								<i class="fas fa-users fs-4" style="color: #019087;"></i>
-							</div>
-							<div>
-								<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Gala Dinner & Networking</h3>
-								<p class="text-secondary mb-0">7:00 PM onwards</p>
-							</div>
+							<h5 class="text-center">Present Research</h5>
 						</div>
 					</div>
-					<!-- Right Column - Image or other content -->
-					<div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
-						<div class="img1 image-anime reveal">
-							<img src="assets/img/squ/SQU_Aerial_Admin_Bldg.JPG" alt="Venue Image" class="img-fluid rounded shadow-sm" style="height: 320px;">
+
+					<!-- Engage in Discussions -->
+					<div class="col-md-3">
+						<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+							<div class="image-container mb-3">
+								<img src="./assets/img/all-images/event/event-img5.png" alt="Group discussion" class="img-fluid">
+							</div>
+							<h5 class="text-center">Engage in Discussions</h5>
 						</div>
+					</div>
+
+					<!-- Network Globally -->
+					<div class="col-md-3">
+						<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+							<div class="image-container mb-3">
+								<img src="./assets/img/all-images/event/event-img9.png" alt="Networking event" class="img-fluid">
+							</div>
+							<h5 class="text-center">Network Globally</h5>
+						</div>
+					</div>
+
+					<!-- Experience Muscat -->
+					<div class="col-md-3">
+						<div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+							<div class="image-container mb-3">
+								<img src="./assets/img/all-images/event/event-img14.png" alt="Muscat heritage" class="img-fluid">
+							</div>
+							<h5 class="text-center">Experience Muscat</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="section-content mt-5 animate__animated animate__fadeIn"
+					style="animation-delay: 1s; max-width: 990px;">
+					<p class="text-justify lead">
+						Present your research, engage in thought-provoking discussions, network globally, and experience Muscat's
+						rich heritage. Join us for an enriching and transformative experience where knowledge knows no bounds and
+						new possibilities emerge!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--===== VENUE AREA STARTS =======-->
+	<section class="py-5" style="background-color: #f0f0f0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 m-auto mt-5">
+					<div class="brand-header heading6 space-margin60 text-center">
+						<div class="space16"></div>
+						<h2 class="text-anime-style-3">Venue and Timing</h2>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!--===== VENUE AREA ENDS =======-->
+			<div class="row g-4">
+				<!-- Left Column - Information -->
+				<div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+					<!-- Location -->
+					<div class="d-flex mb-4">
+						<div class="bg-light p-3 rounded me-3" style="height: 60px;">
+							<i class="fas fa-map-marker-alt fs-4" style="color: #019087;"></i>
+						</div>
+						<div>
+							<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Location</h3>
+							<p class="text-secondary mb-0">
+								Sultan Qaboos University (SQU), Muscat, Sultanate of Oman
+							</p>
+						</div>
+					</div>
 
-		<!--===== ENGAGEMENT OPPORTUNITY STARTS =======-->
-		<div class="choose-section-area sp2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 m-auto">
-						<div class="heading6 text-center space-margin60">
-							<div class="row">
-								<div class="col-lg-10 m-auto">
-									<div class="brand-header heading2 text-center">
-										<h2 class="text-anime-style-3">Engagement Opportunity</h2>
-									</div>
-								</div>
-							</div>
+					<!-- Dates -->
+					<div class="d-flex mb-4">
+						<div class="bg-light p-3 rounded me-3">
+							<i class="fas fa-calendar fs-4" style="color: #019087;"></i>
+						</div>
+						<div>
+							<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Dates</h3>
+							<p class="text-secondary mb-0">November 12 - 14, 2025</p>
+						</div>
+					</div>
+
+					<!-- Conference Sessions -->
+					<div class="d-flex mb-4">
+						<div class="bg-light p-3 rounded me-3" style="height: 60px;">
+							<i class="fas fa-clock fs-4" style="color: #019087;"></i>
+						</div>
+						<div>
+							<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Conference Sessions</h3>
+							<p class="text-secondary mb-0">9:00 AM – 5:00 PM (Oman time)</p>
+						</div>
+					</div>
+
+					<!-- Gala Dinner -->
+					<div class="d-flex mb-4">
+						<div class="bg-light p-3 rounded me-3" style="height: 60px;">
+							<i class="fas fa-users fs-4" style="color: #019087;"></i>
+						</div>
+						<div>
+							<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Gala Dinner & Networking</h3>
+							<p class="text-secondary mb-0">7:00 PM onwards</p>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<div class="choose-widget-boxarea">
-							<div class="icons">
-								<img src="assets/img/icons/choose-icons1.svg" alt="" />
-							</div>
-							<div class="space24"></div>
-							<div class="content-area">
-								<a href="#" style="color: #019087;">Make Ideas Happen</a>
-								<div class="space16"></div>
-								<p>ICMMCS 2025 brings together the brightest minds and industry leaders for best of transformative business.</p>
-								<div class="space24"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="choose-widget-boxarea">
-							<div class="icons">
-								<img src="assets/img/icons/choose-icons1.svg" alt="" />
-							</div>
-							<div class="space24"></div>
-							<div class="content-area">
-								<a href="#" style="color: #019087;">Great Speakers</a>
-								<div class="space16"></div>
-								<p>Whether you're looking to elevate your business strategy, discover the latest industry trends, or connect.</p>
-								<div class="space24"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="choose-widget-boxarea">
-							<div class="icons">
-								<img src="assets/img/icons/choose-icons1.svg" alt="" />
-							</div>
-							<div class="space24"></div>
-							<div class="content-area">
-								<a href="#" style="color: #019087;">One Day Ticket</a>
-								<div class="space16"></div>
-								<p>We empower businesses to thrive in an ever-evolving marketplace. This conference more than just an event.</p>
-								<div class="space24"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="choose-widget-boxarea">
-							<div class="icons">
-								<img src="assets/img/icons/choose-icons1.svg" alt="" />
-							</div>
-							<div class="space24"></div>
-							<div class="content-area">
-								<a href="#" style="color: #019087;">Develop Your Skills</a>
-								<div class="space16"></div>
-								<p>ICMMCS 2025 is your gateway to future of business. By bringing together best experts from various sectors.</p>
-								<div class="space24"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="choose-widget-boxarea">
-							<div class="icons">
-								<img src="assets/img/icons/choose-icons1.svg" alt="" />
-							</div>
-							<div class="space24"></div>
-							<div class="content-area">
-								<a href="#" style="color: #019087;">Entry Verification</a>
-								<div class="space16"></div>
-								<p>You'll walk away with a deeper best understanding of emerging trends and actionable strategies that can.</p>
-								<div class="space24"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="choose-widget-boxarea">
-							<div class="icons">
-								<img src="assets/img/icons/choose-icons1.svg" alt="" />
-							</div>
-							<div class="space24"></div>
-							<div class="content-area">
-								<a href="#" style="color: #019087;">Workshops Offer</a>
-								<div class="space16"></div>
-								<p>Designed for forward-thinking and professionals, this event delivers the tools, connections, and insights you.</p>
-								<div class="space24"></div>
-							</div>
-						</div>
+				<!-- Right Column - Image or other content -->
+				<div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+					<div class="img1 image-anime reveal">
+						<img src="assets/img/squ/SQU_Aerial_Admin_Bldg.JPG" alt="Venue Image" class="img-fluid rounded shadow-sm"
+							style="height: 320px;">
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--===== ENGAGEMENT OPPORTUNITY ENDS =======-->
+	</section>
+	<!--===== VENUE AREA ENDS =======-->
 
-		<!--===== CONTACT AREA STARTS =======-->
-		<div class="contact-inner-section sp1" style="background-color: antiquewhite;">
-			<div class="container">
-				<div class="row mb-5">
-					<div class="col-lg-7 m-auto">
-						<div class="brand-header heading6 text-center">
-							<h2 class="text-anime-style-3 mb-3">Contact Us</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="img1 image-anime">
-							<img src="assets/img/all-images/contact/contact-img4.png" alt="" />
-						</div>
-					</div>
-
-					<div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
-						<div class="contact4-boxarea">
-							<h3 class="text-anime-style-3" style="color: #019087;">Get In Touch Now</h3>
-							<div class="space8"></div>
-							<div class="row">
-								<div class="col-lg-6 col-md-6">
-									<div class="input-area">
-										<input type="text" placeholder="Name" />
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="input-area">
-										<input type="text" placeholder="Phone" />
-									</div>
-								</div>
-
-								<div class="col-lg-12 col-md-6">
-									<div class="input-area">
-										<input type="email" placeholder="Email" />
-									</div>
-								</div>
-								<div class="col-lg-12 col-md-6">
-									<div class="input-area">
-										<input type="text" placeholder="Subjects" />
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="input-area">
-										<textarea placeholder="Message"></textarea>
-									</div>
-								</div>
-
-								<div class="col-lg-12">
-									<div class="space24"></div>
-									<div class="input-area text-end">
-										<button type="submit" class="vl-btn1">Submit Now</button>
-									</div>
+	<!--===== ENGAGEMENT OPPORTUNITY STARTS =======-->
+	<div class="choose-section-area sp2">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 m-auto">
+					<div class="heading6 text-center space-margin60">
+						<div class="row">
+							<div class="col-lg-10 m-auto">
+								<div class="brand-header heading2 text-center">
+									<h2 class="text-anime-style-3">Engagement Opportunity</h2>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!--===== CONTACT AREA ENDS =======-->
-
-		<!--===== FOOTER AREA STARTS =======-->
-		<div class="footer4-sertion-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="footer-logo-area">
-							 <a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-								<h3 id="logo-text">ICMMCS 2025</h3> 
-							 </a>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Make Ideas Happen</a>
 							<div class="space16"></div>
-							<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and Technological Innovation.</p>
+							<p>ICMMCS 2025 brings together the brightest minds and industry leaders for best of transformative
+								business.</p>
 							<div class="space24"></div>
-							<ul>
-								<li>
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-								<li>
-									<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
-								</li>
-							</ul>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6">
-						<div class="link-content">
-							<h3>Quick Links</h3>
-							<ul>
-								<li><a href="about.html">Conference</a></li>
-								<li><a href="features.html">Features</a></li>
-								<li><a href="exhibition.html">Events</a></li>
-								<li><a href="register.html">Register</a></li>
-              <li><a href="sponsors.html">Sponsors</a></li>
-								
-							</ul>
-						</div>
-					</div>
+				</div>
 
-					<div class="col-lg-3 col-md-6">
-						<div class="link-content2">
-							<h3>Contact Us</h3>
-							<ul>
-								<li>
-									<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
-								</li>
-								<li>
-									<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
-									</a>
-								</li>
-								<li>
-									<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg" alt="" />info@icmmcs.org</a>
-								</li>
-								<li>
-									<a href="https://www.icmmcs.org" target="_blank"><img src="assets/img/icons/world1.svg" alt="" />www.icmmcs.org</a>
-								</li>
-							</ul>
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Great Speakers</a>
+							<div class="space16"></div>
+							<p>Whether you're looking to elevate your business strategy, discover the latest industry trends, or
+								connect.</p>
+							<div class="space24"></div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-social-box">
-							<h3>Our Gallery</h3>
-							<div class="space12"></div>
-							<div class="row">
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">One Day Ticket</a>
+							<div class="space16"></div>
+							<p>We empower businesses to thrive in an ever-evolving marketplace. This conference more than just an
+								event.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Develop Your Skills</a>
+							<div class="space16"></div>
+							<p>ICMMCS 2025 is your gateway to future of business. By bringing together best experts from various
+								sectors.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Entry Verification</a>
+							<div class="space16"></div>
+							<p>You'll walk away with a deeper best understanding of emerging trends and actionable strategies that
+								can.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Workshops Offer</a>
+							<div class="space16"></div>
+							<p>Designed for forward-thinking and professionals, this event delivers the tools, connections, and
+								insights you.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--===== ENGAGEMENT OPPORTUNITY ENDS =======-->
+
+	<!--===== CONTACT AREA STARTS =======-->
+	<div class="contact-inner-section sp1" style="background-color: antiquewhite;">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-lg-7 m-auto">
+					<div class="brand-header heading6 text-center">
+						<h2 class="text-anime-style-3 mb-3">Contact Us</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="img1 image-anime">
+						<img src="assets/img/all-images/contact/contact-img4.png" alt="" />
+					</div>
+				</div>
+
+				<div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
+					<div class="contact4-boxarea">
+						<h3 class="text-anime-style-3" style="color: #019087;">Get In Touch Now</h3>
+						<div class="space8"></div>
+						<div class="row">
+							<div class="col-lg-6 col-md-6">
+								<div class="input-area">
+									<input type="text" placeholder="Name" />
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="input-area">
+									<input type="text" placeholder="Phone" />
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-md-6">
+								<div class="input-area">
+									<input type="email" placeholder="Email" />
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-6">
+								<div class="input-area">
+									<input type="text" placeholder="Subjects" />
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="input-area">
+									<textarea placeholder="Message"></textarea>
+								</div>
+							</div>
+
+							<div class="col-lg-12">
+								<div class="space24"></div>
+								<div class="input-area text-end">
+									<button type="submit" class="vl-btn1">Submit Now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--===== CONTACT AREA ENDS =======-->
+
+	<!--===== FOOTER AREA STARTS =======-->
+	<div class="footer4-sertion-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-logo-area">
+						<a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
+							<h3 id="logo-text">ICMMCS 2025</h3>
+						</a>
+						<div class="space16"></div>
+						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
+							Technological Innovation.</p>
+						<div class="space24"></div>
+						<ul>
+							<li>
+								<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+							</li>
+							<li>
+								<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<div class="link-content">
+						<h3>Quick Links</h3>
+						<ul>
+							<li><a href="about.html">Conference</a></li>
+							<li><a href="features.html">Features</a></li>
+							<li><a href="exhibition.html">Events</a></li>
+							<li><a href="register.html">Register</a></li>
+							<li><a href="sponsors.html">Sponsors</a></li>
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="link-content2">
+						<h3>Contact Us</h3>
+						<ul>
+							<li>
+								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456
+									7890</a>
+							</li>
+							<li>
+								<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
+									target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
+								</a>
+							</li>
+							<li>
+								<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg"
+										alt="" />info@icmmcs.org</a>
+							</li>
+							<li>
+								<a href="https://www.icmmcs.org" target="_blank"><img src="assets/img/icons/world1.svg"
+										alt="" />www.icmmcs.org</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-social-box">
+						<h3>Our Posts</h3>
+						<div class="space12"></div>
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="space60"></div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="copyright">
-							<p>&copy; Copyright 2025- Xclusive Oman. All Right Reserved</p>
-						</div>
+			</div>
+			<div class="space60"></div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="copyright">
+						<p>&copy; Copyright 2025- Xclusive Oman. All Right Reserved</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--===== FOOTER AREA ENDS =======-->
+	</div>
+	<!--===== FOOTER AREA ENDS =======-->
 
-		<!--===== JS SCRIPT LINK =======-->
-		<script src="assets/js/vendor/bootstrap.min.js"></script>
-		<script src="assets/js/vendor/fontawesome.js"></script>
-		<script src="assets/js/vendor/aos.js"></script>
-		<script src="assets/js/vendor/jquery.appear.js"></script>
-		<script src="assets/js/vendor/jquery.odometer.min.js"></script>
-		<script src="assets/js/vendor/sidebar.js"></script>
-		<script src="assets/js/vendor/magnific-popup.js"></script>
-		<script src="assets/js/vendor/gsap.min.js"></script>
-		<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
-		<script src="assets/js/vendor/Splitetext.js"></script>
-		<script src="assets/js/vendor/mobilemenu.js"></script>
-		<script src="assets/js/vendor/owlcarousel.min.js"></script>
-		<script src="assets/js/vendor/nice-select.js"></script>
-		<script src="assets/js/vendor/waypoints.js"></script>
-		<script src="assets/js/vendor/slick-slider.js"></script>
-		<script src="assets/js/vendor/circle-progress.js"></script>
-		<script src="assets/js/main.js"></script>
+	<!--===== JS SCRIPT LINK =======-->
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/fontawesome.js"></script>
+	<script src="assets/js/vendor/aos.js"></script>
+	<script src="assets/js/vendor/jquery.appear.js"></script>
+	<script src="assets/js/vendor/jquery.odometer.min.js"></script>
+	<script src="assets/js/vendor/sidebar.js"></script>
+	<script src="assets/js/vendor/magnific-popup.js"></script>
+	<script src="assets/js/vendor/gsap.min.js"></script>
+	<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+	<script src="assets/js/vendor/Splitetext.js"></script>
+	<script src="assets/js/vendor/mobilemenu.js"></script>
+	<script src="assets/js/vendor/owlcarousel.min.js"></script>
+	<script src="assets/js/vendor/nice-select.js"></script>
+	<script src="assets/js/vendor/waypoints.js"></script>
+	<script src="assets/js/vendor/slick-slider.js"></script>
+	<script src="assets/js/vendor/circle-progress.js"></script>
+	<script src="assets/js/main.js"></script>
 
-		<script>
-			 // Intersection Observer for fade-in-up animation
-			 const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+	<script>
+		// Intersection Observer for fade-in-up animation
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, {
+			threshold: 0.1
+		});
 
-        document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
-		</script>
-	</body>
+		document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+	</script>
+</body>
+
 </html>

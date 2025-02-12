@@ -1,570 +1,938 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Exhibition | ICMMCS 2025</title>
 
-		<!--=====FAB ICON=======-->
-		<link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Exhibition | ICMMCS 2025</title>
 
-		<!--===== CSS LINK =======-->
-		<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/css/vendor/aos.css" />
-		<link rel="stylesheet" href="assets/css/vendor/fontawesome.css" />
-		<link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
-		<link rel="stylesheet" href="assets/css/vendor/mobile.css" />
-		<link rel="stylesheet" href="assets/css/vendor/owlcarousel.min.css" />
-		<link rel="stylesheet" href="assets/css/vendor/sidebar.css" />
-		<link rel="stylesheet" href="assets/css/vendor/slick-slider.css" />
-		<link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
-		<link rel="stylesheet" href="assets/css/vendor/odometer.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+	<!--=====FAB ICON=======-->
+	<link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
 
-		<!--=====  JS SCRIPT LINK =======-->
-		<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+	<!--===== CSS LINK =======-->
+	<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/vendor/aos.css" />
+	<link rel="stylesheet" href="assets/css/vendor/fontawesome.css" />
+	<link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
+	<link rel="stylesheet" href="assets/css/vendor/mobile.css" />
+	<link rel="stylesheet" href="assets/css/vendor/owlcarousel.min.css" />
+	<link rel="stylesheet" href="assets/css/vendor/sidebar.css" />
+	<link rel="stylesheet" href="assets/css/vendor/slick-slider.css" />
+	<link rel="stylesheet" href="assets/css/vendor/nice-select.css" />
+	<link rel="stylesheet" href="assets/css/vendor/odometer.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 
-		<style>
-			#logo-text {
-        color: #2e4dfd;
-        transition: color 0.3s ease;
-				width: 200px;
-      }
-      #logo-text:hover {
-        color: #002466;
-      }
-		</style>
-	</head>
-	<body class="homepage4-body">
-		<!--===== PRELOADER STARTS =======-->
-		<div class="preloader">
-			<div class="loading-container">
-				<div class="loading"></div>
-				<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+	<!--=====  JS SCRIPT LINK =======-->
+	<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+
+	<style>
+		#logo-text {
+			color: #019087;
+			transition: color 0.3s ease;
+			width: 200px;
+		}
+
+		#logo-text:hover {
+			color: #00dfd0;
+		}
+
+		#logo-text:hover {
+			color: #002466;
+		}
+
+		.section-card {
+			transition: transform 0.3s ease;
+			margin-bottom: 20px;
+			height: 100%;
+		}
+
+		.section-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.feature-icon {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+			color: #0d6efd;
+		}
+	</style>
+</head>
+
+<body class="homepage4-body">
+	<!--===== PRELOADER STARTS =======-->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+		</div>
+	</div>
+	<!--===== PRELOADER ENDS =======-->
+
+	<!--===== PAGE PROGRESS START=======-->
+	<div class="paginacontainer">
+		<div class="progress-wrap">
+			<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+			</svg>
+		</div>
+	</div>
+	<!--===== PAGE PROGRESS END=======-->
+
+	<!--=====HEADER START=======-->
+	<header>
+		<div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="header-elements">
+							<div class="site-logo">
+								<a href="index.html">
+									<h3 id="logo-text">ICMMCS 2025</h3>
+								</a>
+							</div>
+							<div class="main-menu">
+								<ul>
+									<li>
+										<a href="index.html">Home </a>
+									</li>
+									<li><a href="about.html">Conference</a></li>
+									<li>
+										<a href="register.html">Register</i></a>
+									</li>
+									<li>
+										<a href="exhibition.html">Exhibition</a>
+									</li>
+									<li>
+										<a href="sponsors.html">Sponsors</a>
+									</li>
+									<li>
+										<a href="features.html">Features</a>
+									</li>
+								</ul>
+							</div>
+							<div class="body-overlay"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!--===== PRELOADER ENDS =======-->
+	</header>
+	<!--=====HEADER END =======-->
 
-		<!--===== PAGE PROGRESS START=======-->
-		<div class="paginacontainer">
-			<div class="progress-wrap">
-				<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-					<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-				</svg>
+	<!--===== MOBILE HEADER STARTS =======-->
+	<div class="mobile-header mobile-haeder4 d-block d-lg-none">
+		<div class="container-fluid">
+			<div class="col-12">
+				<div class="mobile-header-elements">
+					<div class="mobile-logo">
+						<a href="index.html">
+							<h3 id="logo-text">ICMMCS 2025</h3>
+						</a>
+					</div>
+					<div class="mobile-nav-icon dots-menu">
+						<i class="fa-solid fa-bars-staggered"></i>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!--===== PAGE PROGRESS END=======-->
+	</div>
 
-		<!--=====HEADER START=======-->
-		<header>
-			<div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="header-elements">
-								<div class="site-logo">
-									<a href="index.html">
-                    <h3 id="logo-text">ICMMCS 2025</h3> 
-                  </a>
+	<div class="mobile-sidebar mobile-sidebar4">
+		<div class="logosicon-area">
+			<div class="logos">
+				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
+				<h3 id="logo-text">ICMMCS 2025</h3>
+			</div>
+			<div class="menu-close">
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		</div>
+		<div class="mobile-nav mobile-nav1">
+			<ul class="mobile-nav-list nav-list1">
+				<li>
+					<a href="index.html">Home </a>
+				</li>
+				<li><a href="about.html">Conference</a></li>
+				<li>
+					<a href="register.html">Register</i></a>
+				</li>
+				<li>
+					<a href="exhibition.html">Exhibition</a>
+				</li>
+				<li>
+					<a href="sponsors.html">Sponsors</a>
+				</li>
+				<li>
+					<a href="features.html">Features</a>
+				</li>
+
+			</ul>
+			<div class="allmobilesection">
+				<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
+				<div class="single-footer">
+					<h3>Contact Info</h3>
+					<div class="footer1-contact-info">
+						<div class="contact-info-single">
+							<div class="contact-info-icon">
+								<span><i class="fa-solid fa-phone-volume"></i></span>
+							</div>
+							<div class="contact-info-text">
+								<a href="tel:+3(924)4596512">+3(924)4596512</a>
+							</div>
+						</div>
+						<div class="contact-info-single">
+							<div class="contact-info-icon">
+								<span><i class="fa-solid fa-envelope"></i></span>
+							</div>
+							<div class="contact-info-text">
+								<a href="mailto:info@icmmcs.org">info@icmmcs.org</a>
+							</div>
+						</div>
+						<div class="single-footer">
+							<h3>Our Location</h3>
+							<div class="contact-info-single">
+								<div class="contact-info-icon">
+									<span><i class="fa-solid fa-location-dot"></i></span>
 								</div>
-								<div class="main-menu">
+								<div class="contact-info-text">
+									<a
+										href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D">Muscat,
+										Oman
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--===== MOBILE HEADER ENDS =======-->
+
+	<!--===== HERO AREA STARTS =======-->
+	<div class="inner-page-header" style="background-image: url(assets/img/bg/greenbg.avif)">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 m-auto">
+					<div class="heading1 text-center">
+						<h1>Exhibition</h1>
+						<div class="space20"></div>
+						<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Exhibition</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--===== HERO AREA ENDS =======-->
+
+	<!-- <section id="exhibition" class="py-5">
+			<div class="container">
+				<div class="heading6">
+					<h2 class="text-center mb-5" data-aos="fade-up">Exhibition</h2>
+				</div>
+					<div class="row g-4">
+							<div class="col-md-4" data-aos="fade-up">
+									<div class="card section-card">
+											<div class="card-body">
+													<h5 class="card-title">Overview</h5>
+													<p class="card-text">Comprehensive overview of the exhibition, highlighting key attractions and opportunities for participants.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+									<div class="card section-card">
+											<div class="card-body">
+													<h5 class="card-title">Exclusive Exhibitors</h5>
+													<p class="card-text">Featured exhibitors showcasing cutting-edge research and innovations in the field.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+									<div class="card section-card">
+											<div class="card-body">
+													<h5 class="card-title">Floor Plan</h5>
+													<p class="card-text">Interactive floor plan showing exhibition layout and booth locations.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up">
+									<div class="card section-card">
+											<div class="card-body">
+													<h5 class="card-title">Early Bird Opportunities</h5>
+													<p class="card-text">Special rates and exclusive benefits for early registrants.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+									<div class="card section-card">
+											<div class="card-body">
+													<h5 class="card-title">Exhibitor Resource Center</h5>
+													<p class="card-text">Essential resources and guidelines for exhibitors.</p>
+											</div>
+									</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+									<div class="card section-card">
+											<div class="card-body">
+													<h5 class="card-title">Engagement Opportunity</h5>
+													<p class="card-text">Networking and collaboration opportunities for participants.</p>
+											</div>
+									</div>
+							</div>
+					</div>
+			</div>
+		</section> -->
+
+	<!-- OVERVIEW -->
+	<div class="choose-section-area sp2">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 m-auto">
+					<div class="heading6 text-center space-margin60">
+						<div class="row">
+							<div class="col-lg-10 m-auto">
+								<div class="brand-header heading2 text-center">
+									<h2 class="text-anime-style-3">Overview</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Exclusive Exhibitors -->
+	<!--===== SPEAKER AREA STARTS =======-->
+	<div class="team3-section-area sp1" style="background-color: rgb(237, 237, 237);">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="team2-header heading6 space-margin60">
+						<h2 class="text-anime-style-3">Exclusive Exhibitors</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="team-slider-area2 owl-carousel">
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img4.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
 									<ul>
 										<li>
-											<a href="index.html">Home </a>
-										</li>
-										<li><a href="about.html">Conference</a></li>
-										<li>
-											<a href="register.html">Register</i></a>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
 										</li>
 										<li>
-											<a href="exhibition.html">Exhibition</a>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
 										</li>
 										<li>
-											<a href="sponsors.html">Sponsors</a>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
 										</li>
 										<li>
-											<a href="features.html">Features</a>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
 										</li>
 									</ul>
 								</div>
-								<div class="body-overlay"></div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alex Robertson</a>
+								<div class="space16"></div>
+								<p>Finance Consultant</p>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<!--=====HEADER END =======-->
 
-		<!--===== MOBILE HEADER STARTS =======-->
-		<div class="mobile-header mobile-haeder4 d-block d-lg-none">
-			<div class="container-fluid">
-				<div class="col-12">
-					<div class="mobile-header-elements">
-						<div class="mobile-logo">
-							<a href="index.html">
-                <h3 id="logo-text">ICMMCS 2025</h3> 
-              </a>
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alexy Sammo</a>
+								<div class="space16"></div>
+								<p>HR Consultant</p>
+							</div>
 						</div>
-						<div class="mobile-nav-icon dots-menu">
-							<i class="fa-solid fa-bars-staggered"></i>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Andrew Symonds</a>
+								<div class="space16"></div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img7.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Ben Stokes</a>
+								<div class="space16"></div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img4.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alex Robertson</a>
+								<div class="space16"></div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alexy Sammo</a>
+								<div class="space16"></div>
+								<p>HR Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Andrew Symonds</a>
+								<div class="space16"></div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img7.png" alt="" class="team-img4" />
+									<div class="share">
+										<a href="#"><img src="assets/img/icons/share1.svg" alt="" /></a>
+									</div>
+									<ul>
+										<li>
+											<a href="#" class="icon1"><i class="fa-brands fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon2"><i class="fa-brands fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon3"><i class="fa-brands fa-instagram"></i></a>
+										</li>
+										<li>
+											<a href="#" class="icon4"><i class="fa-brands fa-pinterest-p"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Ben Stokes</a>
+								<div class="space16"></div>
+								<p>Finance Consultant</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<!--===== SPEAKER AREA ENDS =======-->
 
-		<div class="mobile-sidebar mobile-sidebar4">
-			<div class="logosicon-area">
-				<div class="logos">
-					<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-          <h3 id="logo-text">ICMMCS 2025</h3> 
-				</div>
-				<div class="menu-close">
-					<i class="fa-solid fa-xmark"></i>
-				</div>
-			</div>
-			<div class="mobile-nav mobile-nav1">
-				<ul class="mobile-nav-list nav-list1">
-					<li>
-						<a href="index.html">Home </a>
-					</li>
-					<li><a href="about.html">Conference</a></li>
-					<li>
-						<a href="register.html">Register</i></a>
-					</li>
-					<li>
-						<a href="exhibition.html">Exhibition</a>
-					</li>
-					<li>
-						<a href="sponsors.html">Sponsors</a>
-					</li>
-					<li>
-						<a href="features.html">Features</a>
-					</li>
-					
-				</ul>
-				<div class="allmobilesection">
-					<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
-					<div class="single-footer">
-						<h3>Contact Info</h3>
-						<div class="footer1-contact-info">
-							<div class="contact-info-single">
-								<div class="contact-info-icon">
-									<span><i class="fa-solid fa-phone-volume"></i></span>
-								</div>
-								<div class="contact-info-text">
-									<a href="tel:+3(924)4596512">+3(924)4596512</a>
-								</div>
-							</div>
-							<div class="contact-info-single">
-								<div class="contact-info-icon">
-									<span><i class="fa-solid fa-envelope"></i></span>
-								</div>
-								<div class="contact-info-text">
-									<a href="mailto:info@icmmcs.org">info@icmmcs.org</a>
-								</div>
-							</div>
-							<div class="single-footer">
-								<h3>Our Location</h3>
-								<div class="contact-info-single">
-									<div class="contact-info-icon">
-										<span><i class="fa-solid fa-location-dot"></i></span>
-									</div>
-									<div class="contact-info-text">
-										<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
-											>Muscat, Oman
-										</a>
-									</div>
+	<!-- Floor Plan -->
+	<div class="choose-section-area sp2">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 m-auto">
+					<div class="heading6 text-center space-margin60">
+						<div class="row">
+							<div class="col-lg-10 m-auto">
+								<div class="brand-header heading2 text-center">
+									<h2 class="text-anime-style-3">Floor Plan</h2>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row">
+				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
 			</div>
 		</div>
-		<!--===== MOBILE HEADER ENDS =======-->
+	</div>
 
-		<!--===== HERO AREA STARTS =======-->
-		<div class="inner-page-header" style="background-image: url(assets/img/bg/greenbg.avif)">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 m-auto">
-						<div class="heading1 text-center">
-							<h1>Event List</h1>
-							<div class="space20"></div>
-							<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Event List</span></a>
+	<!-- Early bird Opportunity -->
+	<div class="choose-section-area sp2" style="background-color: rgb(237, 237, 237);">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 m-auto">
+					<div class="heading6 text-center space-margin60">
+						<div class="row">
+							<div class="col-lg-10 m-auto">
+								<div class="brand-header heading2 text-center">
+									<h2 class="text-anime-style-3">Early Bird Opportunity</h2>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+			</div>
 		</div>
-		<!--===== HERO AREA ENDS =======-->
+	</div>
 
-		<!--===== EVENT AREA STARTS =======-->
-		<div class="event-team-area sp1">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 m-auto">
-						<div class="heading2 text-center space-margin60">
-							<h2>Event History Kireon Pollardy</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12 m-auto">
-						<div class="event-widget-area">
-							<div class="row">
-								<div class="col-lg-10 m-auto">
-									<div class="event2-boxarea box1">
-										<h1 class="active">01</h1>
-										<div class="row align-items-center">
-											<div class="col-lg-5">
-												<div class="img1">
-													<img src="assets/img/all-images/event/event-img4.png" alt="" />
-												</div>
-											</div>
-											<div class="col-lg-1"></div>
-											<div class="col-lg-6">
-												<div class="content-area">
-													<ul>
-														<li>
-															<a href="#"><img src="assets/img/icons/clock1.svg" alt="" />10.00 AM -12.00 PM <span> | </span></a>
-														</li>
-														<li>
-															<a href="#"><img src="assets/img/icons/location1.svg" alt="" />26/C Asana, New York </a>
-														</li>
-													</ul>
-													<div class="space20"></div>
-													<a href="event-single.html" class="head">Elevate User Experience Expertise</a>
-													<div class="space24"></div>
-													<div class="author-area">
-														<div class="autho-name-area">
-															<div class="img1">
-																<img src="assets/img/all-images/testimonials/testimonial-img1.png" alt="" />
-															</div>
-															<div class="text">
-																<a href="speakers-single.html">Alex Roberton</a>
-																<div class="space8"></div>
-																<p>UI/UX Designer</p>
-															</div>
-														</div>
-
-														<div class="autho-name-area" style="padding: 0 0 0 12px; border: none">
-															<div class="img1">
-																<img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="" />
-															</div>
-															<div class="text">
-																<a href="speakers-single.html">Alexys Archer</a>
-																<div class="space8"></div>
-																<p>WP Developer</p>
-															</div>
-														</div>
-													</div>
-													<div class="space24"></div>
-													<div class="btn-area1">
-														<a href="pricing-plan.html" class="vl-btn1"><span class="demo">purchase ticket Now</span></a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+	<!-- Exhibitor Resource -->
+	<div class="choose-section-area sp2">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 m-auto">
+					<div class="heading6 text-center space-margin60">
+						<div class="row">
+							<div class="col-lg-10 m-auto">
+								<div class="brand-header heading2 text-center">
+									<h2 class="text-anime-style-3">Exhibitor Resource Center</h2>
 								</div>
 							</div>
-							<div class="space48"></div>
-							<div class="row">
-								<div class="col-lg-10 m-auto">
-									<div class="event2-boxarea box1">
-										<h1 class="active">02</h1>
-										<div class="row align-items-center">
-											<div class="col-lg-6">
-												<div class="content-area">
-													<ul>
-														<li>
-															<a href="#"><img src="assets/img/icons/clock1.svg" alt="" />10.00 AM -12.00 PM <span> | </span></a>
-														</li>
-														<li>
-															<a href="#"><img src="assets/img/icons/location1.svg" alt="" />26/C Asana, New York </a>
-														</li>
-													</ul>
-													<div class="space20"></div>
-													<a href="event-single.html" class="head">Elevate User Experience Expertise</a>
-													<div class="space24"></div>
-													<div class="author-area">
-														<div class="autho-name-area">
-															<div class="img1">
-																<img src="assets/img/all-images/testimonials/testimonial-img1.png" alt="" />
-															</div>
-															<div class="text">
-																<a href="speakers-single.html">Alex Roberton</a>
-																<div class="space8"></div>
-																<p>UI/UX Designer</p>
-															</div>
-														</div>
-
-														<div class="autho-name-area" style="padding: 0 0 0 12px; border: none">
-															<div class="img1">
-																<img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="" />
-															</div>
-															<div class="text">
-																<a href="speakers-single.html">Alexys Archer</a>
-																<div class="space8"></div>
-																<p>WP Developer</p>
-															</div>
-														</div>
-													</div>
-													<div class="space24"></div>
-													<div class="btn-area1">
-														<a href="pricing-plan.html" class="vl-btn1"><span class="demo">purchase ticket Now</span></a>
-													</div>
-												</div>
-												<div class="space30 d-lg-none d-block"></div>
-											</div>
-
-											<div class="col-lg-5">
-												<div class="img1">
-													<img src="assets/img/all-images/event/event-img5.png" alt="" />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="space30"></div>
-							<div class="row">
-								<div class="col-lg-10 m-auto">
-									<div class="event2-boxarea box1">
-										<h1 class="active">03</h1>
-										<div class="row align-items-center">
-											<div class="col-lg-5">
-												<div class="img1">
-													<img src="assets/img/all-images/event/event-img6.png" alt="" />
-												</div>
-											</div>
-											<div class="col-lg-1"></div>
-											<div class="col-lg-6">
-												<div class="content-area">
-													<ul>
-														<li>
-															<a href="#"><img src="assets/img/icons/clock1.svg" alt="" />10.00 AM -12.00 PM <span> | </span></a>
-														</li>
-														<li>
-															<a href="#"><img src="assets/img/icons/location1.svg" alt="" />26/C Asana, New York </a>
-														</li>
-													</ul>
-													<div class="space20"></div>
-													<a href="event-single.html" class="head">Elevate User Experience Expertise</a>
-													<div class="space24"></div>
-													<div class="author-area">
-														<div class="autho-name-area">
-															<div class="img1">
-																<img src="assets/img/all-images/testimonials/testimonial-img1.png" alt="" />
-															</div>
-															<div class="text">
-																<a href="speakers-single.html">Alex Roberton</a>
-																<div class="space8"></div>
-																<p>UI/UX Designer</p>
-															</div>
-														</div>
-
-														<div class="autho-name-area" style="padding: 0 0 0 12px; border: none">
-															<div class="img1">
-																<img src="assets/img/all-images/testimonials/testimonial-img2.png" alt="" />
-															</div>
-															<div class="text">
-																<a href="speakers-single.html">Alexys Archer</a>
-																<div class="space8"></div>
-																<p>WP Developer</p>
-															</div>
-														</div>
-													</div>
-													<div class="space24"></div>
-													<div class="btn-area1">
-														<a href="pricing-plan.html" class="vl-btn1"><span class="demo">purchase ticket Now</span></a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="space60"></div>
-						<div class="pagination-area">
-							<nav aria-label="Page navigation example">
-								<ul class="pagination">
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Previous">
-											<i class="fa-solid fa-angle-left"></i>
-										</a>
-									</li>
-									<li class="page-item"><a class="page-link active" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">...</a></li>
-									<li class="page-item"><a class="page-link" href="#">12</a></li>
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Next">
-											<i class="fa-solid fa-angle-right"></i>
-										</a>
-									</li>
-								</ul>
-							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+			</div>
 		</div>
-		<!--===== EVENT AREA ENDS =======-->
+	</div>
 
-		<!--===== FOOTER AREA STARTS =======-->
-		<div class="footer4-sertion-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="footer-logo-area">
-							 <a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-								<h3 id="logo-text">ICMMCS 2025</h3> 
-							 </a>
+	<!--===== ENGAGEMENT OPPORTUNITY STARTS =======-->
+	<div class="choose-section-area sp2" style="background-color: rgb(237, 237, 237);">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 m-auto">
+					<div class="heading6 text-center space-margin60">
+						<div class="row">
+							<div class="col-lg-10 m-auto">
+								<div class="brand-header heading2 text-center">
+									<h2 class="text-anime-style-3">Engagement Opportunity</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Make Ideas Happen</a>
 							<div class="space16"></div>
-							<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and Technological Innovation.</p>
+							<p>ICMMCS 2025 brings together the brightest minds and industry leaders for best of transformative
+								business.</p>
 							<div class="space24"></div>
-							<ul>
-								<li>
-									<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-								</li>
-								<li>
-									<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
-								</li>
-							</ul>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6">
-						<div class="link-content">
-							<h3>Quick Links</h3>
-							<ul>
-								<li><a href="about.html">Conference</a></li>
-								<li><a href="features.html">Features</a></li>
-								<li><a href="exhibition.html">Events</a></li>
-								<li><a href="register.html">Register</a></li>
-              <li><a href="sponsors.html">Sponsors</a></li>
-								
-							</ul>
-						</div>
-					</div>
+				</div>
 
-					<div class="col-lg-3 col-md-6">
-						<div class="link-content2">
-							<h3>Contact Us</h3>
-							<ul>
-								<li>
-									<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
-								</li>
-								<li>
-									<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
-									</a>
-								</li>
-								<li>
-									<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg" alt="" />info@icmmcs.org</a>
-								</li>
-								<li>
-									<a href="https://www.icmmcs.org" target="_blank"><img src="assets/img/icons/world1.svg" alt="" />www.icmmcs.org</a>
-								</li>
-							</ul>
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Great Speakers</a>
+							<div class="space16"></div>
+							<p>Whether you're looking to elevate your business strategy, discover the latest industry trends, or
+								connect.</p>
+							<div class="space24"></div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-social-box">
-							<h3>Our Recent Event Gallery</h3>
-							<div class="space12"></div>
-							<div class="row">
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">One Day Ticket</a>
+							<div class="space16"></div>
+							<p>We empower businesses to thrive in an ever-evolving marketplace. This conference more than just an
+								event.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Develop Your Skills</a>
+							<div class="space16"></div>
+							<p>ICMMCS 2025 is your gateway to future of business. By bringing together best experts from various
+								sectors.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Entry Verification</a>
+							<div class="space16"></div>
+							<p>You'll walk away with a deeper best understanding of emerging trends and actionable strategies that
+								can.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="choose-widget-boxarea">
+						<div class="icons">
+							<img src="assets/img/icons/choose-icons1.svg" alt="" />
+						</div>
+						<div class="space24"></div>
+						<div class="content-area">
+							<a href="#" style="color: #019087;">Workshops Offer</a>
+							<div class="space16"></div>
+							<p>Designed for forward-thinking and professionals, this event delivers the tools, connections, and
+								insights you.</p>
+							<div class="space24"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--===== ENGAGEMENT OPPORTUNITY ENDS =======-->
+
+	<!--===== FOOTER AREA STARTS =======-->
+	<div class="footer4-sertion-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-logo-area">
+						<a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
+							<h3 id="logo-text">ICMMCS 2025</h3>
+						</a>
+						<div class="space16"></div>
+						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
+							Technological Innovation.</p>
+						<div class="space24"></div>
+						<ul>
+							<li>
+								<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+							</li>
+							<li>
+								<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<div class="link-content">
+						<h3>Quick Links</h3>
+						<ul>
+							<li><a href="about.html">Conference</a></li>
+							<li><a href="features.html">Features</a></li>
+							<li><a href="exhibition.html">Events</a></li>
+							<li><a href="register.html">Register</a></li>
+							<li><a href="sponsors.html">Sponsors</a></li>
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="link-content2">
+						<h3>Contact Us</h3>
+						<ul>
+							<li>
+								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456
+									7890</a>
+							</li>
+							<li>
+								<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
+									target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Muscat, Oman
+								</a>
+							</li>
+							<li>
+								<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg"
+										alt="" />info@icmmcs.org</a>
+							</li>
+							<li>
+								<a href="https://www.icmmcs.org" target="_blank"><img src="assets/img/icons/world1.svg"
+										alt="" />www.icmmcs.org</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-social-box">
+						<h3>Our Posts</h3>
+						<div class="space12"></div>
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
-								<div class="col-lg-4 col-md-4 col-4">
-									<div class="img1">
-										<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
-										<div class="icons">
-											<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
-										</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-4">
+								<div class="img1">
+									<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
+									<div class="icons">
+										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="space60"></div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="copyright">
-							<p>&copy; Copyright 2025- Xclusive Oman. All Right Reserved</p>
-						</div>
+			</div>
+			<div class="space60"></div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="copyright">
+						<p>&copy; Copyright 2025- Xclusive Oman. All Right Reserved</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--===== FOOTER AREA ENDS =======-->
+	</div>
+	<!--===== FOOTER AREA ENDS =======-->
 
-		<!--===== JS SCRIPT LINK =======-->
-		<script src="assets/js/vendor/bootstrap.min.js"></script>
-		<script src="assets/js/vendor/fontawesome.js"></script>
-		<script src="assets/js/vendor/aos.js"></script>
-		<script src="assets/js/vendor/jquery.appear.js"></script>
-		<script src="assets/js/vendor/jquery.odometer.min.js"></script>
-		<script src="assets/js/vendor/sidebar.js"></script>
-		<script src="assets/js/vendor/magnific-popup.js"></script>
-		<script src="assets/js/vendor/gsap.min.js"></script>
-		<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
-		<script src="assets/js/vendor/Splitetext.js"></script>
-		<script src="assets/js/vendor/mobilemenu.js"></script>
-		<script src="assets/js/vendor/owlcarousel.min.js"></script>
-		<script src="assets/js/vendor/nice-select.js"></script>
-		<script src="assets/js/vendor/waypoints.js"></script>
-		<script src="assets/js/vendor/slick-slider.js"></script>
-		<script src="assets/js/vendor/circle-progress.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+	<!--===== JS SCRIPT LINK =======-->
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/fontawesome.js"></script>
+	<script src="assets/js/vendor/aos.js"></script>
+	<script src="assets/js/vendor/jquery.appear.js"></script>
+	<script src="assets/js/vendor/jquery.odometer.min.js"></script>
+	<script src="assets/js/vendor/sidebar.js"></script>
+	<script src="assets/js/vendor/magnific-popup.js"></script>
+	<script src="assets/js/vendor/gsap.min.js"></script>
+	<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+	<script src="assets/js/vendor/Splitetext.js"></script>
+	<script src="assets/js/vendor/mobilemenu.js"></script>
+	<script src="assets/js/vendor/owlcarousel.min.js"></script>
+	<script src="assets/js/vendor/nice-select.js"></script>
+	<script src="assets/js/vendor/waypoints.js"></script>
+	<script src="assets/js/vendor/slick-slider.js"></script>
+	<script src="assets/js/vendor/circle-progress.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		AOS.init({
+			duration: 1000,
+			once: true
+		});
+	</script>
+</body>
+
 </html>
