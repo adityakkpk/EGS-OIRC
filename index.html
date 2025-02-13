@@ -7,7 +7,7 @@
 	<title>ICMMSC 2025</title>
 
 	<!--=====FAB ICON=======-->
-	<link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
+	<link rel="shortcut icon" href="assets/img/brand/favicon.png" />
 
 	<!--===== CSS LINK =======-->
 	<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
@@ -23,16 +23,6 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		#logo-text {
-			color: #019087;
-			transition: color 0.3s ease;
-			width: 200px;
-		}
-
-		#logo-text:hover {
-			color: #00dfd0;
-		}
-
 		.bg-theme {
 			background-color: #019087;
 		}
@@ -111,6 +101,153 @@
 			animation: pulse 2s infinite;
 		}
 
+		.image-placeholder {
+      min-height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      animation: fadeIn 1s ease-out;
+			align-items: center;
+			justify-content: center;
+    }
+
+    .image-placeholder img {
+			max-height: 800px;
+      border-radius: 8px;
+    }
+
+    .content {
+      padding: 1rem;
+			display: flex;
+			flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #e0e0e0;
+      transform-origin: top;
+      animation: growLine 1.5s ease-out;
+    }
+
+    .step {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 2rem;
+      opacity: 0;
+      animation: fadeSlideIn 0.5s ease-out forwards;
+    }
+
+    .step:nth-child(2) { animation-delay: 0.2s; }
+    .step:nth-child(3) { animation-delay: 0.4s; }
+    .step:nth-child(4) { animation-delay: 0.6s; }
+
+    .step-number {
+      position: absolute;
+      left: -2.5rem;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: white;
+      border: 2px solid #007bff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .step h3 {
+      margin: 0;
+      color: #007bff;
+      font-size: 1.2rem;
+    }
+
+    .step p {
+      margin: 0.5rem 0 0;
+      color: #666;
+    }
+
+    .award {
+      position: absolute;
+      right: 1rem;
+      top: 4rem;
+      width: 250px;
+      height: 250px;
+      background: url('assets/img/all-images/others/award.png') no-repeat center;
+      background-size: contain;
+      animation: rotate360 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes growLine {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes rotate360 {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .image-placeholder {
+        min-height: 200px;
+      }
+      
+      .award {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 1rem auto;
+      }
+    }
+
 		@keyframes pulse {
 			0% {
 				transform: scale(1);
@@ -169,7 +306,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+			<div id="loading-icon"><img src="assets/img/brand/favicon.png" alt="" /></div>
 		</div>
 	</div>
 	<!--===== PRELOADER ENDS =======-->
@@ -193,7 +330,7 @@
 						<div class="header-elements">
 							<div class="site-logo">
 								<a href="index.html">
-									<h3 id="logo-text">ICMMCS 2025</h3>
+									<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 								</a>
 							</div>
 							<div class="main-menu">
@@ -232,7 +369,7 @@
 				<div class="mobile-header-elements">
 					<div class="mobile-logo">
 						<a href="index.html">
-							<h3 id="logo-text">ICMMCS 2025</h3>
+							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 						</a>
 					</div>
 					<div class="mobile-nav-icon dots-menu">
@@ -246,8 +383,7 @@
 	<div class="mobile-sidebar mobile-sidebar4">
 		<div class="logosicon-area">
 			<div class="logos">
-				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-				<h3 id="logo-text">ICMMCS 2025</h3>
+				<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 			</div>
 			<div class="menu-close">
 				<i class="fa-solid fa-xmark"></i>
@@ -321,8 +457,8 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12 m-auto" style="background-color: rgba(45, 45, 45, 0.5); margin: 4px;">
-					<div class="hero4-header"
-						style=" padding: 24px; display: flex;flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
+					<div class="hero4-header" style=" padding: 24px; display: flex;flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
+						<h1 style="color: white; font-size: 60px;">ICMMCS 2025</h1>
 						<div class="space20"></div>
 						<h1 class="text-anime-style-3" style="color: white; text-align: center;">International Conference on
 							Mathematics, Management, and Computer Science</h1>
@@ -369,7 +505,7 @@
 								<div class="theme-section"
 									style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
 									<p data-aos="fade-left" data-aos-duration="900"
-										style="text-align: justify; height: 180px; font-size: 20px; overflow: hidden;">"Bridging
+										style="text-align: justify; font-size: 20px; overflow: hidden;">"Bridging
 										Disciplines, Inspiring Innovation" - ICMMSC provides a dynamic convergence of knowledge, research,
 										and industry expertise across interconnected fields.</p>
 								</div>
@@ -386,7 +522,7 @@
 								<div class="theme-section"
 									style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
 									<p data-aos="fade-left" data-aos-duration="900"
-										style="text-align: justify; height: 180px; font-size: 20px; overflow: hidden;">Present research and
+										style="text-align: justify; font-size: 20px; overflow: hidden;">Present research and
 										publish in ESCI and SCOPUS-indexed journals, showcasing ideas through poster presentations, and
 										establish global partnerships.</p>
 								</div>
@@ -408,62 +544,17 @@
 				</div>
 
 				<div class="row justify-content-center">
-					<!-- <div class="col-lg-8">
-										<div class="accordion" id="objectivesAccordion">
-												<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
-														<h3 class="accordion-header">
-																<button class="accordion-button bg-primary text-white slide-in" type="button">
-																		1. Facilitate Knowledge Exchange
-																</button>
-														</h3>
-												</div>
-												<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
-														<h3 class="accordion-header">
-																<button class="accordion-button bg-info text-white slide-in" type="button">
-																		2. Promote Research & Publication
-																</button>
-														</h3>
-												</div>
-												<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
-														<h3 class="accordion-header">
-																<button class="accordion-button bg-success text-white slide-in" type="button">
-																		3. Showcase Technological Advancements
-																</button>
-														</h3>
-												</div>
-												<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
-														<h3 class="accordion-header">
-																<button class="accordion-button bg-warning slide-in" type="button">
-																		4. Enhance Global Networking
-																</button>
-														</h3>
-												</div>
-												<div class="accordion-item border-0 mb-3 shadow-sm fade-in-up">
-														<h3 class="accordion-header">
-																<button class="accordion-button bg-danger text-white slide-in" type="button">
-																		5. Encourage Interdisciplinary Collaboration
-																</button>
-														</h3>
-												</div>
-										</div>
-								</div> -->
-
-					<div class="col-lg-8">
+					<div class="col-lg-10" style="display: flex; justify-content: center;align-items: center;margin-left: 50px;">
 						<img src="assets/img/all-images/others/image.png" alt="objectives" class="rounded fade-in-up">
 					</div>
 				</div>
 
 				<!-- Call to Action Section -->
-				<div class="row mt-5">
+				<div class="row mt-3">
 					<div class="col-12 text-center fade-in-up" style="width: 70%;margin: auto;">
 						<p class="lead mb-4">ICMMCS 2025 aims to inspire future innovations by providing a vibrant platform for
 							thought leaders, industry experts, and young researchers to explore challenges and drive forward-thinking
 							solutions.</p>
-						<div class="d-grid gap-2 d-md-block">
-							<a href="register.html">
-								<button class="btn btn-primary btn-lg px-5 pulse">Submit Your Paper</button>
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -686,7 +777,7 @@
 	<!--===== VENUE AREA ENDS =======-->
 
 	<!--===== ENGAGEMENT OPPORTUNITY STARTS =======-->
-	<div class="choose-section-area sp2">
+	<!-- <div class="choose-section-area sp2">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 m-auto">
@@ -799,8 +890,44 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!--===== ENGAGEMENT OPPORTUNITY ENDS =======-->
+
+	<!--===== SPEAKERS AREA STARTS =======-->
+	<section class="m-auto py-5">
+		<div class="container" style="display: flex;margin: 2rem auto; gap: 1rem;position: relative;justify-content: center; align-items: center;">
+			<div class="image-placeholder">
+				<img src="assets/img/all-images/others/speaker.png" alt="">
+			</div>
+			<div class="content heading6">
+				<h2 class="mb-5">Become a Speaker</h2>
+				<div class="timeline">
+					<div class="step">
+						<div class="step-number">1</div>
+						<h3>Apply</h3>
+						<p>Submit your expertise and proposed topic</p>
+					</div>
+					<div class="step">
+						<div class="step-number">2</div>
+						<h3>Review</h3>
+						<p>Expert committee evaluates applications</p>
+					</div>
+					<div class="step">
+						<div class="step-number">3</div>
+						<h3>Prepare</h3>
+						<p>Develop your presentation with our support</p>
+					</div>
+					<div class="step">
+						<div class="step-number">4</div>
+						<h3>Inspire</h3>
+						<p>Share insights and shape the future at ICMMCS 2025</p>
+					</div>
+				</div>
+			</div>
+			<div class="award"></div>
+		</div>
+	</section>
+	<!--===== SPEAKERS AREA ENDS =======-->
 
 	<!--===== CONTACT AREA STARTS =======-->
 	<div class="contact-inner-section sp1" style="background-color: antiquewhite;">
@@ -815,7 +942,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="img1 image-anime">
-						<img src="assets/img/all-images/contact/contact-img4.png" alt="" />
+						<img src="assets/img/all-images/contact/home.jpg" alt="" />
 					</div>
 				</div>
 
@@ -872,7 +999,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-logo-area">
 						<a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-							<h3 id="logo-text">ICMMCS 2025</h3>
+							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 						</a>
 						<div class="space16"></div>
 						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
@@ -934,12 +1061,12 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-social-box">
-						<h3>Our Posts</h3>
+						<h3>Images of Muscat</h3>
 						<div class="space12"></div>
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img1.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -947,7 +1074,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img2.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -955,7 +1082,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img3.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -963,7 +1090,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img4.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -971,7 +1098,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img2.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -979,7 +1106,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img1.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
