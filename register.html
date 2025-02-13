@@ -7,7 +7,7 @@
 	<title>Register | ICMMSC 2025</title>
 
 	<!--=====FAB ICON=======-->
-	<link rel="shortcut icon" href="assets/img/logo/fav-logo2.png" />
+	<link rel="shortcut icon" href="assets/img/brand/favicon.png" />
 
 	<!--===== CSS LINK =======-->
 	<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
@@ -23,15 +23,7 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		#logo-text {
-			color: #019087;
-			transition: color 0.3s ease;
-			width: 200px;
-		}
-
-		#logo-text:hover {
-			color: #00dfd0;
-		}
+		
 
 		.bg-primary-custom {
 			background-color: #006666;
@@ -102,7 +94,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="assets/img/logo/preloader.png" alt="" /></div>
+			<div id="loading-icon"><img src="assets/img/brand/favicon.png" alt="" /></div>
 		</div>
 	</div>
 	<!--===== PRELOADER ENDS =======-->
@@ -126,7 +118,7 @@
 						<div class="header-elements">
 							<div class="site-logo">
 								<a href="index.html">
-									<h3 id="logo-text">ICMMCS 2025</h3>
+									<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 								</a>
 							</div>
 							<div class="main-menu">
@@ -165,7 +157,7 @@
 				<div class="mobile-header-elements">
 					<div class="mobile-logo">
 						<a href="index.html">
-							<h3 id="logo-text">ICMMCS 2025</h3>
+							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 						</a>
 					</div>
 					<div class="mobile-nav-icon dots-menu">
@@ -180,7 +172,7 @@
 		<div class="logosicon-area">
 			<div class="logos">
 				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-				<h3 id="logo-text">ICMMCS 2025</h3>
+				<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 			</div>
 			<div class="menu-close">
 				<i class="fa-solid fa-xmark"></i>
@@ -377,7 +369,7 @@
 							<h4 class="mb-3">Registration Details</h4>
 							<div class="mb-3 dropdown-input">
 								<label for="regType" class="form-label">Registration Type*</label>
-								<select class="" id="regType" required>
+								<select class="" onchange={updatePrice()} id="regType" required>
 									<option value="student" selected>Student</option>
 									<option value="student-oman">Student (Oman)</option>
 									<option value="student-developing">Student (Developing Nations)</option>
@@ -396,7 +388,7 @@
 
 							<!-- Price Display -->
 							<div class="alert alert-info" id="priceDisplay">
-								Registration Fee: <span id="regFee">$0</span>
+								Registration Fee: <span id="regFee">$280</span>
 							</div>
 
 							<!-- Submit Button -->
@@ -737,7 +729,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-logo-area">
 						<a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-							<h3 id="logo-text">ICMMCS 2025</h3>
+							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
 						</a>
 						<div class="space16"></div>
 						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
@@ -799,12 +791,12 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-social-box">
-						<h3>Our Posts</h3>
+						<h3>Images of Muscat</h3>
 						<div class="space12"></div>
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img1.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img1.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -812,7 +804,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img2.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img2.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -820,7 +812,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img3.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img3.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -828,7 +820,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img4.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img4.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -836,7 +828,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img5.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img2.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -844,7 +836,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="assets/img/all-images/footer/footer-img6.png" alt="" />
+									<img src="assets/img/all-images/others/vanue-img1.png" alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/xclusive_oman/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -887,18 +879,48 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
-		// Form validation
-		(() => {
+		// Form validation and submission
+		;(() => {
 			'use strict'
 			const forms = document.querySelectorAll('.needs-validation')
 			Array.from(forms).forEach(form => {
-				form.addEventListener('submit', event => {
+				form.addEventListener('submit', async event => {
 					if (!form.checkValidity()) {
 						event.preventDefault()
 						event.stopPropagation()
 					} else {
 						event.preventDefault()
-						alert('Registration submitted successfully!')
+						// Collect form data
+						const formData = {
+							name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+							email: document.getElementById('email').value,
+							registrationType: document.getElementById('regType').value,
+							institution: document.getElementById('institution').value,
+							country: document.getElementById('country').value,
+							earlyBird: document.getElementById('earlyBird').checked,
+							regFee: document.getElementById('regFee').textContent,
+						}
+
+						try {
+							// Send form data to backend
+							const response = await fetch('http://localhost:5000/api/conference/register', {
+								method: 'POST',
+								headers: {
+									'Content-Type': 'application/json'
+								},
+								body: JSON.stringify(formData)
+							})
+
+							const result = await response.json()
+							if (response.ok) {
+								alert('Registration submitted successfully!')
+								form.reset()
+							} else {
+								alert(`Error: ${result.message}`)
+							}
+						} catch (error) {
+							alert(`Error: ${error.message}`)
+						}
 					}
 					form.classList.add('was-validated')
 				})
@@ -924,34 +946,13 @@
 					prices[selected].early :
 					prices[selected].normal
 
-				const currency = selected === 'student-oman' ? 'OMR' : 'USD'
-				regFee.textContent = `${currency} ${price}`
+				regFee.textContent = `$${price}`
 			} else {
-				regFee.textContent = '$0'
+				regFee.textContent = '$280'
 			}
 		}
 
-		regType.addEventListener('change', updatePrice);
-		earlyBird.addEventListener('change', updatePrice);;
-
-			// Form validation for visa assistance
-			(() => {
-				'use strict'
-				const forms = document.querySelectorAll('.needs-validation')
-				Array.from(forms).forEach(form => {
-					form.addEventListener('submit', event => {
-						if (!form.checkValidity()) {
-							event.preventDefault()
-							event.stopPropagation()
-						} else {
-							event.preventDefault()
-							alert('Your query has been submitted successfully!')
-							form.reset()
-						}
-						form.classList.add('was-validated')
-					})
-				})
-			})()
+		earlyBird.addEventListener('change', updatePrice);
 
 		// Contact travel desk function
 		function contactTravelDesk() {
