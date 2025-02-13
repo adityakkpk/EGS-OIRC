@@ -55,6 +55,77 @@
 			margin-bottom: 1rem;
 			color: #0d6efd;
 		}
+		.pricing-container {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .pricing-table {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-row:hover {
+      background-color: #27ff81c5;
+      transform: translateX(4px);
+    }
+
+    .header {
+      background-color: #0d5f4c;
+      color: white;
+      font-weight: bold;
+    }
+
+    .cell {
+      padding: 1rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .early-bird {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .early-bird::after {
+      content: "Early Bird";
+      position: absolute;
+      background: #28a745;
+      color: white;
+      padding: 0.25rem 2rem;
+      right: -2rem;
+      top: 0.5rem;
+      transform: rotate(45deg);
+      font-size: 0.75rem;
+      animation: slide-in 0.6s ease-out;
+    }
+
+    .note {
+      color: #666;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border-left: 3px solid #0d5f4c;
+      background: #f8f9fa;
+    }
+
+    @keyframes slide-in {
+      from {
+        transform: rotate(45deg) translateX(100px);
+      }
+      to {
+        transform: rotate(45deg) translateX(0);
+      }
+    }
 	</style>
 </head>
 
@@ -140,7 +211,6 @@
 	<div class="mobile-sidebar mobile-sidebar4">
 		<div class="logosicon-area">
 			<div class="logos">
-				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
 				<h3 id="logo-text">ICMMCS 2025</h3>
 			</div>
 			<div class="menu-close">
@@ -300,7 +370,17 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+				<div class="d-flex align-items-center border border-2 p-4 rounded-3" style="flex-wrap: wrap;gap: 12px;justify-content:center;">
+					<img src="assets/img/all-images/event/event-img14.png" class="rounded-3" alt="overviewImage" style="width:45%;min-width: 250px;max-height: 300px;">
+					<div class="d-flex flex-column justify-content-center" style="width:50%;min-width: 250px;">
+						<h2 style="text-align: justify; margin-bottom: 4px;">Comprehensive overview of the exhibition, highlighting key attractions and opportunities for participants.</h2>
+						<p style="text-align: justify;">ICMMCS 2025 brings together the brightest minds and industry leaders for best of transformative business.
+							Whether you're looking to elevate your business strategy, discover the latest industry trends, or connect
+							with other industry professionals, ICMMCS 2025 has something for you. Our exhibition features the latest
+							innovations and cutting-edge research in the field, with exclusive exhibitors showcasing their work and
+							engaging with participants. Don't miss this opportunity to be a part of the future of business.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -606,7 +686,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+				<div class="d-flex align-items-center border border-2 p-4 rounded-3" style="flex-wrap: wrap;gap: 12px;justify-content:center;">
+					<div class="d-flex flex-column justify-content-center" style="width:50%;min-width: 250px;">
+						<h2 style="text-align: justify; margin-bottom: 4px;">Interactive floor plan showing exhibition layout and booth locations.</h2>
+						<p style="text-align: justify;font-size: 20px; ">Explore the detailed floor plan of the exhibition to navigate through various booths and sections. The interactive map provides a comprehensive view of the layout, helping you to easily locate exhibitors and plan your visit efficiently. Stay informed about the key areas and make the most out of your exhibition experience.</p>
+					</div>
+					<img src="assets/img/all-images/event/event-img9.png" class="rounded-3" alt="overviewImage" style="width:45%;min-width: 250px;max-height: 300px;">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -628,7 +714,38 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+				<div class="pricing-container col-lg-10 m-auto">
+					<div class="pricing-table">
+						<div class="pricing-row header">
+							<div class="cell">Category</div>
+							<div class="cell">Normal</div>
+							<div class="cell">Early bird</div>
+						</div>
+						<div class="pricing-row">
+							<div class="cell">Students</div>
+							<div class="cell">USD 280</div>
+							<div class="cell early-bird">USD 250</div>
+						</div>
+						<div class="pricing-row">
+							<div class="cell">Student (Oman)</div>
+							<div class="cell">OMR 95</div>
+							<div class="cell early-bird">OMR 80</div>
+						</div>
+						<div class="pricing-row">
+							<div class="cell">Student (Developing Nations*)</div>
+							<div class="cell">USD 265</div>
+							<div class="cell early-bird">USD 235</div>
+						</div>
+						<div class="pricing-row">
+							<div class="cell">Others</div>
+							<div class="cell">USD 325</div>
+							<div class="cell early-bird">USD 295</div>
+						</div>
+					</div>
+					<div class="note">
+						Early Bird Discount valid until 31st March 2025
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -650,7 +767,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="" style="width: 100%; height: 100vh;background-color: #80d1cb;"></div>
+				<div class="d-flex align-items-center border border-2 p-4 rounded-3" style="flex-wrap: wrap;gap: 12px;justify-content:center;">
+					<img src="assets/img/all-images/event/event-img1.png" class="rounded-3" alt="resourceCenterImage" style="width:45%;min-width: 250px;max-height: 300px;">
+					<div class="d-flex flex-column justify-content-center" style="width:50%;min-width: 250px;gap: 12px;">
+						<h2 style="text-align: justify; margin-bottom: 4px;">Essential resources and guidelines for exhibitors.</h2>
+						<p style="text-align: justify;font-size: 20px; ">Our Exhibitor Resource Center provides all the necessary tools and information to ensure a successful exhibition experience. From setup guidelines to marketing materials, we have everything you need to make the most of your participation. Stay organized and prepared with our comprehensive resources. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iste, nihil suscipit cumque porro repellat molestias odio totam incidunt explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium neque fuga tenetur, voluptas dignissimos. </p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
