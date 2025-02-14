@@ -23,8 +23,6 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		
-
 		.bg-primary-custom {
 			background-color: #006666;
 		}
@@ -83,6 +81,104 @@
 			display: flex;
 			flex-direction: column;
 		}
+
+		.fee-section {
+			padding: 40px;
+			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+			overflow: hidden;
+		}
+
+		.fee-table {
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+			overflow: hidden;
+			animation: slideIn 0.8s ease-out;
+		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateY(30px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.table> :not(caption)>*>* {
+			padding: 1rem;
+		}
+
+		.main-header {
+			background-color: #019087;
+			color: white;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+		}
+
+		.main-header th {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.main-header th:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: white;
+			transform: translateX(-100%);
+			transition: transform 0.3s ease;
+		}
+
+		.main-header th:hover:after {
+			transform: translateX(0);
+		}
+
+		.region-header {
+			background-color: #019087;
+			color: white;
+			font-weight: bold;
+			transition: all 0.3s;
+		}
+
+		.region-header:hover {
+			background-color: #016d66;
+			transform: scale(1.005);
+		}
+
+		.country-row {
+			transition: all 0.3s;
+		}
+
+		.country-row:hover {
+			background-color: #e6f7f6;
+			transform: scale(1.002);
+		}
+
+		.section-title {
+			color: #019087;
+			margin-bottom: 30px;
+			font-weight: bold;
+			animation: titleSlide 1s ease-out;
+		}
+
+		@keyframes titleSlide {
+			from {
+				transform: translateX(-30px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -118,7 +214,7 @@
 						<div class="header-elements">
 							<div class="site-logo">
 								<a href="index.html">
-									<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+									<h3 style="color: #019087;">ICMMCS 2025</h3>
 								</a>
 							</div>
 							<div class="main-menu">
@@ -157,7 +253,7 @@
 				<div class="mobile-header-elements">
 					<div class="mobile-logo">
 						<a href="index.html">
-							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+							<h3 style="color: #019087;">ICMMCS 2025</h3>
 						</a>
 					</div>
 					<div class="mobile-nav-icon dots-menu">
@@ -172,7 +268,7 @@
 		<div class="logosicon-area">
 			<div class="logos">
 				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-				<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+				<h3 style="color: #019087;">ICMMCS 2025</h3>
 			</div>
 			<div class="menu-close">
 				<i class="fa-solid fa-xmark"></i>
@@ -241,7 +337,7 @@
 	<!--===== MOBILE HEADER ENDS =======-->
 
 	<!--===== HERO AREA STARTS =======-->
-	<div class="inner-page-header" style="background-image: url(assets/img/bg/greenbg.avif)">
+	<div class="inner-page-header" style="background-color: #019087;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 m-auto">
@@ -255,6 +351,181 @@
 		</div>
 	</div>
 	<!--===== HERO AREA ENDS =======-->
+
+	<!-- Fee Structure -->
+	<section class="fee-section">
+		<div class="container heading6">
+			<h2 class="section-title text-center m-5">Registration Fee Structure</h2>
+
+			<div class="fee-table">
+				<div class="table-responsive">
+					<table class="table table-bordered mb-0">
+						<thead>
+							<tr class="main-header">
+								<th rowspan="2">Region</th>
+								<th colspan="2" class="text-center">Students</th>
+								<th colspan="2" class="text-center">Academicians</th>
+								<th colspan="2" class="text-center">Industrialist</th>
+							</tr>
+							<tr class="main-header">
+								<th>Regular</th>
+								<th>Early Bird</th>
+								<th>Regular</th>
+								<th>Early Bird</th>
+								<th>Regular</th>
+								<th>Early Bird</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="region-header">
+								<td colspan="7">SAARC Nations</td>
+							</tr>
+							<tr class="country-row">
+								<td>Afghanistan</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>Bangladesh</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>Bhutan</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>India</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>Maldives</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>Nepal</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>Pakistan</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+							<tr class="country-row">
+								<td>Sri Lanka</td>
+								<td class="fee-amount">$120</td>
+								<td class="fee-amount">$110</td>
+								<td class="fee-amount">$150</td>
+								<td class="fee-amount">$140</td>
+								<td class="fee-amount">$200</td>
+								<td class="fee-amount">$190</td>
+							</tr>
+
+							<tr class="region-header">
+								<td colspan="7">GCC Nations</td>
+							</tr>
+							<tr class="country-row">
+								<td>Bahrain</td>
+								<td class="fee-amount">$250</td>
+								<td class="fee-amount">$230</td>
+								<td class="fee-amount">$350</td>
+								<td class="fee-amount">$330</td>
+								<td class="fee-amount">$450</td>
+								<td class="fee-amount">$430</td>
+							</tr>
+							<tr class="country-row">
+								<td>Kuwait</td>
+								<td class="fee-amount">$250</td>
+								<td class="fee-amount">$230</td>
+								<td class="fee-amount">$350</td>
+								<td class="fee-amount">$330</td>
+								<td class="fee-amount">$450</td>
+								<td class="fee-amount">$430</td>
+							</tr>
+							<tr class="country-row">
+								<td>Oman</td>
+								<td class="fee-amount">$250</td>
+								<td class="fee-amount">$230</td>
+								<td class="fee-amount">$350</td>
+								<td class="fee-amount">$330</td>
+								<td class="fee-amount">$450</td>
+								<td class="fee-amount">$430</td>
+							</tr>
+							<tr class="country-row">
+								<td>Qatar</td>
+								<td class="fee-amount">$250</td>
+								<td class="fee-amount">$230</td>
+								<td class="fee-amount">$350</td>
+								<td class="fee-amount">$330</td>
+								<td class="fee-amount">$450</td>
+								<td class="fee-amount">$430</td>
+							</tr>
+							<tr class="country-row">
+								<td>Saudi Arabia</td>
+								<td class="fee-amount">$250</td>
+								<td class="fee-amount">$230</td>
+								<td class="fee-amount">$350</td>
+								<td class="fee-amount">$330</td>
+								<td class="fee-amount">$450</td>
+								<td class="fee-amount">$430</td>
+							</tr>
+							<tr class="country-row">
+								<td>United Arab Emirates</td>
+								<td class="fee-amount">$250</td>
+								<td class="fee-amount">$230</td>
+								<td class="fee-amount">$350</td>
+								<td class="fee-amount">$330</td>
+								<td class="fee-amount">$450</td>
+								<td class="fee-amount">$430</td>
+							</tr>
+
+							<tr class="region-header">
+								<td>Rest of the world</td>
+								<td class="fee-amount">$300</td>
+								<td class="fee-amount">$270</td>
+								<td class="fee-amount">$400</td>
+								<td class="fee-amount">$370</td>
+								<td class="fee-amount">$600</td>
+								<td class="fee-amount">$570</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Registration Includes Section -->
 	<section class="registration-includes py-5">
@@ -360,8 +631,210 @@
 							<div class="mb-3 dropdown-input">
 								<label for="country" class="form-label">Country*</label>
 								<select class="" id="country" required>
-									<option value="OM" selected>Oman</option>
-									<option value="OTHER">Other Countries</option>
+									<option value="" disabled selected>Select your country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+									<option value="AR">Argentina</option>
+									<option value="AM">Armenia</option>
+									<option value="AW">Aruba</option>
+									<option value="AU">Australia</option>
+									<option value="AT">Austria</option>
+									<option value="AZ">Azerbaijan</option>
+									<option value="BS">Bahamas</option>
+									<option value="BH">Bahrain</option>
+									<option value="BD">Bangladesh</option>
+									<option value="BB">Barbados</option>
+									<option value="BY">Belarus</option>
+									<option value="BE">Belgium</option>
+									<option value="BZ">Belize</option>
+									<option value="BJ">Benin</option>
+									<option value="BM">Bermuda</option>
+									<option value="BT">Bhutan</option>
+									<option value="BO">Bolivia</option>
+									<option value="BA">Bosnia and Herzegovina</option>
+									<option value="BW">Botswana</option>
+									<option value="BR">Brazil</option>
+									<option value="BN">Brunei Darussalam</option>
+									<option value="BG">Bulgaria</option>
+									<option value="BF">Burkina Faso</option>
+									<option value="BI">Burundi</option>
+									<option value="KH">Cambodia</option>
+									<option value="CM">Cameroon</option>
+									<option value="CA">Canada</option>
+									<option value="CV">Cape Verde</option>
+									<option value="KY">Cayman Islands</option>
+									<option value="CF">Central African Republic</option>
+									<option value="TD">Chad</option>
+									<option value="CL">Chile</option>
+									<option value="CN">China</option>
+									<option value="CO">Colombia</option>
+									<option value="KM">Comoros</option>
+									<option value="CG">Congo</option>
+									<option value="CD">Congo, the Democratic Republic of the</option>
+									<option value="CR">Costa Rica</option>
+									<option value="CI">Côte d'Ivoire</option>
+									<option value="HR">Croatia</option>
+									<option value="CU">Cuba</option>
+									<option value="CY">Cyprus</option>
+									<option value="CZ">Czech Republic</option>
+									<option value="DK">Denmark</option>
+									<option value="DJ">Djibouti</option>
+									<option value="DM">Dominica</option>
+									<option value="DO">Dominican Republic</option>
+									<option value="EC">Ecuador</option>
+									<option value="EG">Egypt</option>
+									<option value="SV">El Salvador</option>
+									<option value="GQ">Equatorial Guinea</option>
+									<option value="ER">Eritrea</option>
+									<option value="EE">Estonia</option>
+									<option value="ET">Ethiopia</option>
+									<option value="FJ">Fiji</option>
+									<option value="FI">Finland</option>
+									<option value="FR">France</option>
+									<option value="GA">Gabon</option>
+									<option value="GM">Gambia</option>
+									<option value="GE">Georgia</option>
+									<option value="DE">Germany</option>
+									<option value="GH">Ghana</option>
+									<option value="GR">Greece</option>
+									<option value="GD">Grenada</option>
+									<option value="GU">Guam</option>
+									<option value="GT">Guatemala</option>
+									<option value="GN">Guinea</option>
+									<option value="GW">Guinea-Bissau</option>
+									<option value="GY">Guyana</option>
+									<option value="HT">Haiti</option>
+									<option value="HN">Honduras</option>
+									<option value="HK">Hong Kong</option>
+									<option value="HU">Hungary</option>
+									<option value="IS">Iceland</option>
+									<option value="IN">India</option>
+									<option value="ID">Indonesia</option>
+									<option value="IR">Iran, Islamic Republic of</option>
+									<option value="IQ">Iraq</option>
+									<option value="IE">Ireland</option>
+									<option value="IL">Israel</option>
+									<option value="IT">Italy</option>
+									<option value="JM">Jamaica</option>
+									<option value="JP">Japan</option>
+									<option value="JO">Jordan</option>
+									<option value="KZ">Kazakhstan</option>
+									<option value="KE">Kenya</option>
+									<option value="KI">Kiribati</option>
+									<option value="KP">Korea, Democratic People's Republic of</option>
+									<option value="KR">Korea, Republic of</option>
+									<option value="KW">Kuwait</option>
+									<option value="KG">Kyrgyzstan</option>
+									<option value="LA">Lao People's Democratic Republic</option>
+									<option value="LV">Latvia</option>
+									<option value="LB">Lebanon</option>
+									<option value="LS">Lesotho</option>
+									<option value="LR">Liberia</option>
+									<option value="LY">Libya</option>
+									<option value="LI">Liechtenstein</option>
+									<option value="LT">Lithuania</option>
+									<option value="LU">Luxembourg</option>
+									<option value="MO">Macao</option>
+									<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+									<option value="MG">Madagascar</option>
+									<option value="MW">Malawi</option>
+									<option value="MY">Malaysia</option>
+									<option value="MV">Maldives</option>
+									<option value="ML">Mali</option>
+									<option value="MT">Malta</option>
+									<option value="MH">Marshall Islands</option>
+									<option value="MR">Mauritania</option>
+									<option value="MU">Mauritius</option>
+									<option value="MX">Mexico</option>
+									<option value="FM">Micronesia, Federated States of</option>
+									<option value="MD">Moldova, Republic of</option>
+									<option value="MC">Monaco</option>
+									<option value="MN">Mongolia</option>
+									<option value="ME">Montenegro</option>
+									<option value="MA">Morocco</option>
+									<option value="MZ">Mozambique</option>
+									<option value="MM">Myanmar</option>
+									<option value="NA">Namibia</option>
+									<option value="NR">Nauru</option>
+									<option value="NP">Nepal</option>
+									<option value="NL">Netherlands</option>
+									<option value="NZ">New Zealand</option>
+									<option value="NI">Nicaragua</option>
+									<option value="NE">Niger</option>
+									<option value="NG">Nigeria</option>
+									<option value="NO">Norway</option>
+									<option value="OM">Oman</option>
+									<option value="PK">Pakistan</option>
+									<option value="PW">Palau</option>
+									<option value="PA">Panama</option>
+									<option value="PG">Papua New Guinea</option>
+									<option value="PY">Paraguay</option>
+									<option value="PE">Peru</option>
+									<option value="PH">Philippines</option>
+									<option value="PL">Poland</option>
+									<option value="PT">Portugal</option>
+									<option value="PR">Puerto Rico</option>
+									<option value="QA">Qatar</option>
+									<option value="RO">Romania</option>
+									<option value="RU">Russian Federation</option>
+									<option value="RW">Rwanda</option>
+									<option value="KN">Saint Kitts and Nevis</option>
+									<option value="LC">Saint Lucia</option>
+									<option value="VC">Saint Vincent and the Grenadines</option>
+									<option value="WS">Samoa</option>
+									<option value="SM">San Marino</option>
+									<option value="ST">Sao Tome and Principe</option>
+									<option value="SA">Saudi Arabia</option>
+									<option value="SN">Senegal</option>
+									<option value="RS">Serbia</option>
+									<option value="SC">Seychelles</option>
+									<option value="SL">Sierra Leone</option>
+									<option value="SG">Singapore</option>
+									<option value="SK">Slovakia</option>
+									<option value="SI">Slovenia</option>
+									<option value="SB">Solomon Islands</option>
+									<option value="SO">Somalia</option>
+									<option value="ZA">South Africa</option>
+									<option value="ES">Spain</option>
+									<option value="LK">Sri Lanka</option>
+									<option value="SD">Sudan</option>
+									<option value="SR">Suriname</option>
+									<option value="SZ">Swaziland</option>
+									<option value="SE">Sweden</option>
+									<option value="CH">Switzerland</option>
+									<option value="SY">Syrian Arab Republic</option>
+									<option value="TW">Taiwan, Province of China</option>
+									<option value="TJ">Tajikistan</option>
+									<option value="TZ">Tanzania, United Republic of</option>
+									<option value="TH">Thailand</option>
+									<option value="TL">Timor-Leste</option>
+									<option value="TG">Togo</option>
+									<option value="TO">Tonga</option>
+									<option value="TT">Trinidad and Tobago</option>
+									<option value="TN">Tunisia</option>
+									<option value="TR">Turkey</option>
+									<option value="TM">Turkmenistan</option>
+									<option value="TV">Tuvalu</option>
+									<option value="UG">Uganda</option>
+									<option value="UA">Ukraine</option>
+									<option value="AE">United Arab Emirates</option>
+									<option value="GB">United Kingdom</option>
+									<option value="US">United States</option>
+									<option value="UY">Uruguay</option>
+									<option value="UZ">Uzbekistan</option>
+									<option value="VU">Vanuatu</option>
+									<option value="VE">Venezuela</option>
+									<option value="VN">Viet Nam</option>
+									<option value="YE">Yemen</option>
+									<option value="ZM">Zambia</option>
+									<option value="ZW">Zimbabwe</option>
 								</select>
 							</div>
 
@@ -369,11 +842,16 @@
 							<h4 class="mb-3">Registration Details</h4>
 							<div class="mb-3 dropdown-input">
 								<label for="regType" class="form-label">Registration Type*</label>
-								<select class="" onchange={updatePrice()} id="regType" required>
-									<option value="student" selected>Student</option>
-									<option value="student-oman">Student (Oman)</option>
-									<option value="student-developing">Student (Developing Nations)</option>
-									<option value="other">Others</option>
+								<select class="" onchange="updatePrice()" id="regType" required>
+									<option value="student-saarc">Student (SAARC Nations)</option>
+									<option value="academician-saarc">Academician (SAARC Nations)</option>
+									<option value="industrialist-saarc">Industrialist (SAARC Nations)</option>
+									<option value="student-gcc">Student (GCC Nations)</option>
+									<option value="academician-gcc">Academician (GCC Nations)</option>
+									<option value="industrialist-gcc">Industrialist (GCC Nations)</option>
+									<option value="student-world">Student (Rest of the World)</option>
+									<option value="academician-world">Academician (Rest of the World)</option>
+									<option value="industrialist-world">Industrialist (Rest of the World)</option>
 								</select>
 							</div>
 
@@ -692,7 +1170,7 @@
 							<div class="mt-4">
 								<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1721266,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
 									class="btn btn-light">View Location Map</a>
-								<a href="contact.html" class="btn btn-outline-light ms-2">Contact Organizer</a>
+
 							</div>
 						</div>
 					</div>
@@ -729,7 +1207,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-logo-area">
 						<a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+							<h3 style="color: #019087;">ICMMCS 2025</h3>
 						</a>
 						<div class="space16"></div>
 						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
@@ -880,7 +1358,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
 		// Form validation and submission
-		;(() => {
+		; (() => {
 			'use strict'
 			const forms = document.querySelectorAll('.needs-validation')
 			Array.from(forms).forEach(form => {
@@ -934,11 +1412,16 @@
 
 		function updatePrice() {
 			const prices = {
-				'student': { normal: 280, early: 250 },
-				'student-oman': { normal: 95, early: 80 },
-				'student-developing': { normal: 265, early: 235 },
-				'other': { normal: 325, early: 295 }
-			}
+				'student-saarc': { normal: 120, early: 110 },
+				'academician-saarc': { normal: 150, early: 140 },
+				'industrialist-saarc': { normal: 200, early: 190 },
+				'student-gcc': { normal: 250, early: 230 },
+				'academician-gcc': { normal: 350, early: 330 },
+				'industrialist-gcc': { normal: 450, early: 430 },
+				'student-world': { normal: 300, early: 270 },
+				'academician-world': { normal: 400, early: 370 },
+				'industrialist-world': { normal: 600, early: 570 }
+			};
 
 			const selected = regType.value
 			if (selected) {
@@ -948,7 +1431,7 @@
 
 				regFee.textContent = `$${price}`
 			} else {
-				regFee.textContent = '$280'
+				regFee.textContent = '$0'
 			}
 		}
 

@@ -121,7 +121,7 @@
     .number-badge {
       width: 30px;
       height: 30px;
-      background-color: #4338ca;
+      background-color: #019087;
       color: white;
       border-radius: 50%;
       display: flex;
@@ -158,6 +158,79 @@
       justify-content: center;
       align-items: center;
     }
+
+    .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #019087;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-content {
+            padding: 15px;
+            position: relative;
+        }
+        
+        .number {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 2px solid #019087;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: -55px;
+            transform: translateY(-50%);
+            text-align: center;
+            line-height: 26px;
+            font-weight: bold;
+            color: #019087;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even) .number {
+            left: -55px;
+        }
+        
+        h1 {
+            color: #019087;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+        
+        .timeline-content p {
+            margin: 0;
+            color: #292929;
+            line-height: 1.5;
+        }
   </style>
 
   <!--=====  JS SCRIPT LINK =======-->
@@ -193,7 +266,7 @@
             <div class="header-elements">
               <div class="site-logo">
                 <a href="index.html">
-                  <img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+                  <h3 style="color: #019087;">ICMMCS 2025</h3>
                 </a>
               </div>
               <div class="main-menu">
@@ -232,7 +305,7 @@
         <div class="mobile-header-elements">
           <div class="mobile-logo">
             <a href="index.html">
-              <img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+              <h3 style="color: #019087;">ICMMCS 2025</h3>
             </a>
           </div>
           <div class="mobile-nav-icon dots-menu">
@@ -247,7 +320,7 @@
     <div class="logosicon-area">
       <div class="logos">
         <!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-        <img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+        <h3 style="color: #019087;">ICMMCS 2025</h3>
       </div>
       <div class="menu-close">
         <i class="fa-solid fa-xmark"></i>
@@ -316,18 +389,15 @@
   <!--===== MOBILE HEADER ENDS =======-->
 
   <!--===== HERO AREA STARTS =======-->
-  <div class="inner-page-header" style="background-image: url(assets/img/bg/greenbg.avif)">
+  <div class="inner-page-header" style="background-color: #019087;">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 m-auto">
           <div class="heading1 text-center">
             <h1>Our Sponsors</h1>
-            <div class="space20"></div>
-            <a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Sponsors</span></a>
-            <div class="space20"></div>
             <div>
               <div class="">
-                <a href="sponsor-register.html" class="vl-btn1">Become a Sponsor</a>
+                <a href="sponsor-register.html" class="vl-btn1" style="background-color: #16e9db;">Become a Sponsor</a>
               </div>
             </div>
           </div>
@@ -340,13 +410,17 @@
   <div class="container py-5" style="border-bottom: 1px solid gray;">
     <!-- Producers Section -->
     <div class="mb-5 animate__animated animate__fadeIn">
-      <h2 class="producers pb-2 mb-4">Produced By:</h2>
+      <h2 class="producers pb-2 mb-4" style="color: #019087;">Hosted & Endorsed By:</h2>
       <div class="row g-4">
         <!-- Ministry -->
         <div class="col-md-4">
           <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
-            <img src="assets/img/squ/moe.jpg" alt="Ministry of Higher Education" class="img-fluid rounded"
-              style="width: 100%; height: 250px;">
+            <div
+              style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid gray;"
+              class="rounded">
+              <img src="assets/img/brand/ministry.png" alt="Ministry of Higher Education"
+                class="img-fluid rounded">
+            </div>
             <div class="producer-name my-2">Ministry of Higher Education, Research, and Innovation – Oman
             </div>
           </div>
@@ -355,8 +429,12 @@
         <!-- Sultan Qaboos University -->
         <div class="col-md-4">
           <div class="producer-card animate__animated animate__fadeInUp rounded p-2" style="overflow: hidden;">
-            <img src="assets/img/squ/SQU_Aerial_Admin_Bldg.JPG" alt="Ministry of Higher Education"
-              class="img-fluid rounded" style="width: 100%; height: 250px;">
+            <div
+              style="width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid gray;"
+              class="rounded">
+              <img src="assets/img/brand/EnglishSQUlogo-100.png" alt="Ministry of Higher Education"
+                class="img-fluid rounded">
+            </div>
             <div class="producer-name my-2">Sultan Qaboos University</div>
           </div>
         </div>
@@ -378,7 +456,7 @@
 
     <!-- Platinum Sponsors -->
     <div class="mb-5 animate__animated animate__fadeInUp">
-      <h2 class="platinum-header pb-2 mb-4">Platinum Sponsors</h2>
+      <h2 class="platinum-header pb-2 mb-4" style="color: #019087;">Platinum Sponsors</h2>
       <div class="row g-4">
         <div class="col-md-3">
           <div class="platinum-card">
@@ -423,7 +501,7 @@
 
     <!-- Gold Sponsors -->
     <div class="mb-5 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-      <h2 class="gold-header pb-2 mb-4">Gold Sponsors</h2>
+      <h2 class="gold-header pb-2 mb-4" style="color: #019087;">Gold Sponsors</h2>
       <div class="row">
         <div class="col-lg-12 m-auto">
           <div class="accordion" id="goldSponsors">
@@ -499,12 +577,12 @@
 
     <!-- Media Partners -->
     <div class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-      <h2 class="media-header pb-2 mb-4">Media Partners</h2>
+      <h2 class="media-header pb-2 mb-4" style="color: #019087;">Media Partners</h2>
       <div class="row g-4">
         <div class="col-md-6">
           <div class="media-partners-card rounded">
             <div class="category-label">Academic & Research Publications</div>
-            <p class="small" style="color: #a8a8a8; margin: 12px 0">Disseminating research findings to a global
+            <p class="small" style="color: #2d2d2d; margin: 12px 0">Disseminating research findings to a global
               audience.
             </p>
             <ul>
@@ -526,7 +604,7 @@
         <div class="col-md-6">
           <div class="media-partners-card rounded">
             <div class="category-label">News & Business Media</div>
-            <p class="small" style="color: #a8a8a8; margin: 12px 0">Keeping the world information about the conference's
+            <p class="small" style="color: #2d2d2d; margin: 12px 0">Keeping the world information about the conference's
               impact</p>
             <ul>
               <li class="sponsor-card">
@@ -544,7 +622,7 @@
         <div class="col-md-6">
           <div class="media-partners-card rounded">
             <div class="category-label">Tech & Industry Magazines</div>
-            <p class="small" style="color: #a8a8a8; margin: 12px 0">Highlighting innovation and Technology Trends</p>
+            <p class="small" style="color: #2d2d2d; margin: 12px 0">Highlighting innovation and Technology Trends</p>
             <ul>
               <li class="sponsor-card">
                 <img src="assets/img/brand/cio.svg" alt="brand-logo1">
@@ -562,7 +640,7 @@
         <div class="col-md-6">
           <div class="media-partners-card rounded">
             <div class="category-label">Conference & Event Platforms</div>
-            <p class="small" style="color: #a8a8a8; margin: 12px 0">Ensuring widespread reach and engagement.</p>
+            <p class="small" style="color: #2d2d2d; margin: 12px 0">Ensuring widespread reach and engagement.</p>
             <ul>
               <li class="sponsor-card">
                 <img src="assets/img/brand/eventbyte-log.png" alt="brand-logo1">
@@ -583,7 +661,9 @@
   <!-- Why Sponsor Section -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">Why Sponsor the Oman International Research Conference</h2>
+      <div class="heading6">
+        <h2 class="text-center mb-5 fw-bold">Why Sponsor the Oman International Research Conference</h2>
+      </div>
       <div class="row g-4">
         <div class="col-md-6">
           <div class="reason-card p-4 shadow-sm">
@@ -622,7 +702,9 @@
   <!-- Benefits Section -->
   <section class="py-5 purple-bg">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">Benefits for Sponsors</h2>
+      <div class="heading6">
+        <h2 class="text-center mb-5 fw-bold">Benefits for Sponsors</h2>
+      </div>
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
           <div class="benefits-card p-4 shadow-sm">
@@ -664,6 +746,50 @@
     </div>
   </section>
 
+  <!-- Timeline Section -->
+  <div style="background: linear-gradient(135deg, #f0e6ff 0%, #e6e6ff 100%);padding: 40px 0;">
+    <div class="container" style="background: linear-gradient(135deg, #f0e6ff 0%, #e6e6ff 100%);padding: 40px 0;">
+      <h1 style="color: #019087;">Our Commitment to Success</h1>
+      
+      <div class="timeline">
+          <div class="timeline-item">
+              <div class="timeline-content">
+                  <div class="number">1</div>
+                  <p>Delivering a high-quality conference experience with a focus on knowledge sharing, collaboration, and innovation.</p>
+              </div>
+          </div>
+          
+          <div class="timeline-item">
+              <div class="timeline-content">
+                  <div class="number">2</div>
+                  <p>Providing a platform for researchers to present their latest findings and connect with industry partners.</p>
+              </div>
+          </div>
+          
+          <div class="timeline-item">
+              <div class="timeline-content">
+                  <div class="number">3</div>
+                  <p>Creating a dynamic and engaging environment for attendees to network, learn, and discover new opportunities.</p>
+              </div>
+          </div>
+          
+          <div class="timeline-item">
+              <div class="timeline-content">
+                  <div class="number">4</div>
+                  <p>Fostering a culture of research and innovation in Oman.</p>
+              </div>
+          </div>
+          
+          <div class="timeline-item">
+              <div class="timeline-content">
+                  <div class="number">5</div>
+                  <p>Contribute to the advancement of knowledge and the development of the Omani economy.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
   <!--===== FOOTER AREA STARTS =======-->
   <div class="footer4-sertion-area">
     <div class="container">
@@ -671,7 +797,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="footer-logo-area">
             <a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-              <img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+              <h3 style="color: #019087;">ICMMCS 2025</h3>
             </a>
             <div class="space16"></div>
             <p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
