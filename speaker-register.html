@@ -116,7 +116,7 @@
 						<div class="header-elements">
 							<div class="site-logo">
 								<a href="index.html">
-									<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+									<h3 style="color: #019087;">ICMMCS 2025</h3>
 								</a>
 							</div>
 							<div class="main-menu">
@@ -155,7 +155,7 @@
 				<div class="mobile-header-elements">
 					<div class="mobile-logo">
 						<a href="index.html">
-							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+							<h3 style="color: #019087;">ICMMCS 2025</h3>
 						</a>
 					</div>
 					<div class="mobile-nav-icon dots-menu">
@@ -170,7 +170,7 @@
 		<div class="logosicon-area">
 			<div class="logos">
 				<!-- <img src="assets/img/logo/logo3.png" alt="" /> -->
-				<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+				<h3 style="color: #019087;">ICMMCS 2025</h3>
 			</div>
 			<div class="menu-close">
 				<i class="fa-solid fa-xmark"></i>
@@ -239,12 +239,12 @@
 	<!--===== MOBILE HEADER ENDS =======-->
 
 	<!--===== HERO AREA STARTS =======-->
-	<div class="inner-page-header" style="background-image: url(assets/img/bg/greenbg.avif)">
+	<div class="inner-page-header" style="background-color: #019087;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 m-auto">
 					<div class="heading1 text-center">
-						<h1>Exhibitor Registration</h1>
+						<h1>Speaker Registration</h1>
 						<div class="space20"></div>
 						<!-- <a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Register</span></a> -->
 					</div>
@@ -254,7 +254,7 @@
 	</div>
 	<!--===== HERO AREA ENDS =======-->
 
-	<!-- Exhibitor Registration Form -->
+	<!-- Speaker Registration Form -->
 	<div class="container my-5">
 		<div class="row justify-content-center">
 			<div class="col-md-10">
@@ -262,13 +262,13 @@
 					<div class="col-lg-10 m-auto mt-3">
 						<div class="brand-header heading6 space-margin60 text-center">
 							<div class="space16"></div>
-							<h2 class="text-anime-style-3">Exhibitor Registration Form</h2>
+							<h2 class="text-anime-style-3">Speaker Registration Form</h2>
 						</div>
 					</div>
 				</div>
 				<div class="card shadow">
 					<div class="card-header bg-primary-custom text-white">
-						<h3 class="mb-0">Exhibitor Registration Form</h3>
+						<h3 class="mb-0">Speaker Registration Form</h3>
 					</div>
 					<div class="card-body">
 						<form id="registrationForm" class="needs-validation" novalidate>
@@ -290,6 +290,11 @@
 								<input type="email" class="form-control" id="email" required>
 							</div>
 
+							<div class="mb-3">
+								<label for="email" class="form-label">Phone *</label>
+								<input type="email" class="form-control" id="email" required>
+							</div>
+
 							<!-- Institution Information -->
 							<h4 class="mb-3">Institution Information</h4>
 							<div class="mb-3">
@@ -297,6 +302,21 @@
 								<input type="text" class="form-control" id="institution" required>
 							</div>
 
+							<!-- Information about Research Paper -->
+							<h4 class="mb-3">Information about Research Paper</h4>
+							<div class="mb-3">
+								<label for="paperTitle" class="form-label">Paper Subject*</label>
+								<input type="text" class="form-control" id="paperTitle" required>
+							</div>
+							<div class="mb-3">
+								<label for="paperTitle" class="form-label">Paper Title*</label>
+								<input type="text" class="form-control" id="paperTitle" required>
+							</div>
+							<div class="mb-3">
+								<label for="paperAbstract" class="form-label">Paper Abstract*</label>
+								<textarea class="form-control" id="paperAbstract" rows="3" required></textarea>
+							</div>
+							
 							<div class="mb-3 dropdown-input">
 								<label for="country" class="form-label">Country*</label>
 								<select class="" id="country" required>
@@ -306,75 +326,9 @@
 								</select>
 							</div>
 
-							<!-- Registration Type -->
-							<h4 class="mb-3">Registration Details</h4>
-							<div class="mb-3 dropdown-input">
-								<label for="regType" class="form-label">Registration Type*</label>
-								<select class="" id="regType" required>
-									<option value="">Select Registration Type</option>
-									<option value="student">Student</option>
-									<option value="student-oman">Student (Oman)</option>
-									<option value="student-developing">Student (Developing Nations)</option>
-									<option value="other">Others</option>
-								</select>
-							</div>
-
-							<div class="mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="earlyBird">
-									<label class="form-check-label" for="earlyBird">
-										Apply for Early Bird Discount (Valid until 31st March 2025)
-									</label>
-								</div>
-							</div>
-
-							<!-- Price Display -->
-							<div class="alert alert-info" id="priceDisplay">
-								Registration Fee: <span id="regFee">$0</span>
-							</div>
-
 							<!-- Submit Button -->
-							<button type="submit" class="btn btn-primary-custom w-100">Submit Registration</button>
+							<button type="submit" class="btn btn-primary-custom w-100">Submit</button>
 						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Cancel Policy -->
-	<div class="container my-5">
-		<div class="row justify-content-center">
-			<div class="col-md-10">
-				<div class="row">
-					<div class="col-lg-10 m-auto mt-3">
-						<div class="brand-header heading6 space-margin60 text-center">
-							<div class="space16"></div>
-							<h2 class="text-anime-style-3">Cancellation Policy</h2>
-						</div>
-					</div>
-				</div>
-				<div class="card shadow">
-					<div class="card-header bg-primary-custom text-white">
-						<h3 class="mb-0">Cancellation Policy</h3>
-					</div>
-					<div class="card-body">
-						<div class="policy-card">
-							<h4>Before January 1, 2025</h4>
-							<p>Full refund minus processing fee (10%)</p>
-						</div>
-						<div class="policy-card">
-							<h4>January 1 - February 28, 2025</h4>
-							<p>50% refund of registration fees</p>
-						</div>
-						<div class="policy-card">
-							<h4>After March 1, 2025</h4>
-							<p>No refunds available</p>
-						</div>
-						<div class="policy-card">
-							<h4>Special Circumstances</h4>
-							<p>Please contact the organizing committee for any special circumstances or considerations.</p>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -399,7 +353,7 @@
 						<div class="mt-4">
 							<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1721266,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
 								class="btn btn-light">View Location Map</a>
-							<a href="contact.html" class="btn btn-outline-light ms-2">Contact Organizer</a>
+							
 						</div>
 					</div>
 				</div>
@@ -436,7 +390,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-logo-area">
 						<a href="https://www.icmmcs.org" target="_blank" rel="noopener noreferrer">
-							<img src="assets/img/brand/xclusive_oman.png" alt="xclusive_oman">
+							<h3 style="color: #019087;">ICMMCS 2025</h3>
 						</a>
 						<div class="space16"></div>
 						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
@@ -467,7 +421,6 @@
 							<li><a href="exhibition.html">Events</a></li>
 							<li><a href="register.html">Register</a></li>
 							<li><a href="sponsors.html">Sponsors</a></li>
-
 						</ul>
 					</div>
 				</div>
@@ -477,8 +430,7 @@
 						<h3>Contact Us</h3>
 						<ul>
 							<li>
-								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456
-									7890</a>
+								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
 							</li>
 							<li>
 								<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
