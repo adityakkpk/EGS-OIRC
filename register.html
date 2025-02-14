@@ -45,11 +45,37 @@
 			color: #006666;
 		}
 
-		.benefit-icon {
-			font-size: 1.5rem;
-			color: #006666;
-			margin-right: 1rem;
-		}
+		.registration-includes {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    .benefit-item {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .benefit-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .benefit-icon {
+        font-size: 2rem;
+        color: #019087;
+        margin-right: 20px;
+    }
+
+    .benefit-item h5 {
+        font-size: 1.25rem;
+        color: #333;
+    }
+
+    .benefit-item p {
+        font-size: 1rem;
+        color: #666;
+    }
 
 		.venue-section {
 			background-color: #00a3a3;
@@ -59,10 +85,6 @@
 		.card {
 			border: none;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
-
-		.registration-includes {
-			background-color: #f8f9fa;
 		}
 
 		.policy-card {
@@ -85,14 +107,16 @@
 		.fee-section {
 			padding: 40px;
 			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-			overflow: hidden;
 		}
 
 		.fee-table {
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 			border-radius: 10px;
-			overflow: hidden;
 			animation: slideIn 0.8s ease-out;
+		}
+
+		.fee-amount {
+			background-color: white;
 		}
 
 		@keyframes slideIn {
@@ -121,7 +145,6 @@
 
 		.main-header th {
 			position: relative;
-			overflow: hidden;
 		}
 
 		.main-header th:after {
@@ -141,43 +164,27 @@
 		}
 
 		.region-header {
-			background-color: #019087;
-			color: white;
 			font-weight: bold;
-			transition: all 0.3s;
+			font-size: 20px;
+			position: relative;
 		}
 
-		.region-header:hover {
-			background-color: #016d66;
-			transform: scale(1.005);
+		.nationsList {
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			padding: 10px;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			width: 100%;
+			z-index: 1000;
+			transition: all 0.3s ease;
+			font-weight: normal;
 		}
 
-		.country-row {
-			transition: all 0.3s;
-		}
-
-		.country-row:hover {
-			background-color: #e6f7f6;
-			transform: scale(1.002);
-		}
-
-		.section-title {
-			color: #019087;
-			margin-bottom: 30px;
-			font-weight: bold;
-			animation: titleSlide 1s ease-out;
-		}
-
-		@keyframes titleSlide {
-			from {
-				transform: translateX(-30px);
-				opacity: 0;
-			}
-
-			to {
-				transform: translateX(0);
-				opacity: 1;
-			}
+		.rotate {
+			transform: rotate(180deg);
 		}
 	</style>
 
@@ -358,8 +365,8 @@
 			<h2 class="section-title text-center m-5">Registration Fee Structure</h2>
 
 			<div class="fee-table">
-				<div class="table-responsive">
-					<table class="table table-bordered mb-0">
+				<div class="">
+					<table class="table table-bordered mb-0" style="font-size: 24px;">
 						<thead>
 							<tr class="main-header">
 								<th rowspan="2">Region</th>
@@ -377,11 +384,24 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="region-header">
-								<td colspan="7">SAARC Nations</td>
-							</tr>
-							<tr class="country-row">
-								<td>Afghanistan</td>
+							<tr>
+								<td class="region-header">
+									<div class="d-flex" style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;" onclick="toggleMenu('saarc')">
+										<span style="color: #019087;">SAARC Nations</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-chevron-down"  id="saarc-chevron" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+										</svg>
+									</div>
+									<ul id="saarcNations" class="nationsList d-none">
+										<li>India</li>
+										<li>Pakistan</li>
+										<li>Bangladesh</li>
+										<li>Nepal</li>
+										<li>Bhutan</li>
+										<li>Sri Lanka</li>
+										<li>Maldives</li>
+									</ul>
+								</td>
 								<td class="fee-amount">$120</td>
 								<td class="fee-amount">$110</td>
 								<td class="fee-amount">$150</td>
@@ -389,120 +409,23 @@
 								<td class="fee-amount">$200</td>
 								<td class="fee-amount">$190</td>
 							</tr>
-							<tr class="country-row">
-								<td>Bangladesh</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-							<tr class="country-row">
-								<td>Bhutan</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-							<tr class="country-row">
-								<td>India</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-							<tr class="country-row">
-								<td>Maldives</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-							<tr class="country-row">
-								<td>Nepal</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-							<tr class="country-row">
-								<td>Pakistan</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-							<tr class="country-row">
-								<td>Sri Lanka</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
-							</tr>
-
-							<tr class="region-header">
-								<td colspan="7">GCC Nations</td>
-							</tr>
-							<tr class="country-row">
-								<td>Bahrain</td>
-								<td class="fee-amount">$250</td>
-								<td class="fee-amount">$230</td>
-								<td class="fee-amount">$350</td>
-								<td class="fee-amount">$330</td>
-								<td class="fee-amount">$450</td>
-								<td class="fee-amount">$430</td>
-							</tr>
-							<tr class="country-row">
-								<td>Kuwait</td>
-								<td class="fee-amount">$250</td>
-								<td class="fee-amount">$230</td>
-								<td class="fee-amount">$350</td>
-								<td class="fee-amount">$330</td>
-								<td class="fee-amount">$450</td>
-								<td class="fee-amount">$430</td>
-							</tr>
-							<tr class="country-row">
-								<td>Oman</td>
-								<td class="fee-amount">$250</td>
-								<td class="fee-amount">$230</td>
-								<td class="fee-amount">$350</td>
-								<td class="fee-amount">$330</td>
-								<td class="fee-amount">$450</td>
-								<td class="fee-amount">$430</td>
-							</tr>
-							<tr class="country-row">
-								<td>Qatar</td>
-								<td class="fee-amount">$250</td>
-								<td class="fee-amount">$230</td>
-								<td class="fee-amount">$350</td>
-								<td class="fee-amount">$330</td>
-								<td class="fee-amount">$450</td>
-								<td class="fee-amount">$430</td>
-							</tr>
-							<tr class="country-row">
-								<td>Saudi Arabia</td>
-								<td class="fee-amount">$250</td>
-								<td class="fee-amount">$230</td>
-								<td class="fee-amount">$350</td>
-								<td class="fee-amount">$330</td>
-								<td class="fee-amount">$450</td>
-								<td class="fee-amount">$430</td>
-							</tr>
-							<tr class="country-row">
-								<td>United Arab Emirates</td>
+							
+							<tr>
+								<td class="region-header">
+									<div class="d-flex" style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;" onclick="toggleMenu('gcc')">
+										<span style="color: #019087;">GCC Nations</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-chevron-down" id="gcc-chevron" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+										</svg>
+									</div>
+									<ul id="gccNations" class="nationsList d-none">
+										<li>UAE</li>
+										<li>Saudi Arabia</li>
+										<li>Kuwait</li>
+										<li>Oman</li>
+										<li>Qatar</li>
+										<li>Bahrain</li>
+								</td>
 								<td class="fee-amount">$250</td>
 								<td class="fee-amount">$230</td>
 								<td class="fee-amount">$350</td>
@@ -511,8 +434,8 @@
 								<td class="fee-amount">$430</td>
 							</tr>
 
-							<tr class="region-header">
-								<td>Rest of the world</td>
+							<tr>
+								<td class="region-header" style="color: #019087;">Rest of the world</td>
 								<td class="fee-amount">$300</td>
 								<td class="fee-amount">$270</td>
 								<td class="fee-amount">$400</td>
@@ -525,59 +448,67 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>	
 
 	<!-- Registration Includes Section -->
 	<section class="registration-includes py-5">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<div class="row">
-						<div class="col-lg-7 m-auto mt-5">
-							<div class="brand-header heading6 space-margin60 text-center">
-								<div class="space16"></div>
-								<h2 class="text-anime-style-3">Registration Includes</h2>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-body">
-							<div style="border-bottom: 1px solid gray; padding-bottom: 4px;" class="d-flex align-items-center mb-4">
-								<i class="bi bi-check-circle-fill benefit-icon"></i>
-								<div>
-									<h5 class="mb-0">Access to All Conference Sessions</h5>
-									<p class="mb-0 text-muted">Including poster presentations</p>
-								</div>
-							</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-7 m-auto mt-5">
+                        <div class="brand-header heading6 space-margin60 text-center">
+                            <div class="space16"></div>
+                            <h2 class="text-anime-style-3">Registration Includes</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="benefit-item d-flex align-items-center mb-4">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+													</svg>
+                            <div style="margin-left: 18px;">
+                                <h5 class="mb-0">Access to All Conference Sessions</h5>
+                                <p class="mb-0 text-muted">Including poster presentations</p>
+                            </div>
+                        </div>
 
-							<div style="border-bottom: 1px solid gray; padding-bottom: 4px;" class="d-flex align-items-center mb-4">
-								<i class="bi bi-journal-text benefit-icon"></i>
-								<div>
-									<h5 class="mb-0">Conference Kit</h5>
-									<p class="mb-0 text-muted">Including name tag, Agenda and Abstract Book</p>
-								</div>
-							</div>
+                        <div class="benefit-item d-flex align-items-center mb-4">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+													</svg>
+                            <div style="margin-left: 18px;">
+                                <h5 class="mb-0">Conference Kit</h5>
+                                <p class="mb-0 text-muted">Including name tag, Agenda and Abstract Book</p>
+                            </div>
+                        </div>
 
-							<div style="border-bottom: 1px solid gray; padding-bottom: 4px;" class="d-flex align-items-center mb-4">
-								<i class="bi bi-cup-hot-fill benefit-icon"></i>
-								<div>
-									<h5 class="mb-0">Refreshments</h5>
-									<p class="mb-0 text-muted">2 Coffee breaks and Lunch for all conference days</p>
-								</div>
-							</div>
+                        <div class="benefit-item d-flex align-items-center mb-4">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+													</svg>
+                            <div style="margin-left: 18px;">
+                                <h5 class="mb-0">Refreshments</h5>
+                                <p class="mb-0 text-muted">2 Coffee breaks and Lunch for all conference days</p>
+                            </div>
+                        </div>
 
-							<div style="border-bottom: 1px solid gray; padding-bottom: 4px;" class="d-flex align-items-center">
-								<i class="bi bi-award benefit-icon"></i>
-								<div>
-									<h5 class="mb-0">Certificate</h5>
-									<p class="mb-0 text-muted">Certificate accreditation from Organizing Committee</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                        <div class="benefit-item d-flex align-items-center">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+													</svg>
+                            <div style="margin-left: 18px;">
+                                <h5 class="mb-0">Certificate</h5>
+                                <p class="mb-0 text-muted">Certificate accreditation from Organizing Committee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	</section>
 
 	<!-- Conference Registration Form -->
@@ -1436,6 +1367,20 @@
 		}
 
 		earlyBird.addEventListener('change', updatePrice);
+
+		// Toggle Nations List
+		function toggleMenu(category) {
+			switch (category) {
+				case 'saarc':
+					document.getElementById('saarcNations').classList.toggle('d-none')
+					document.getElementById('saarc-chevron').classList.toggle('rotate')
+					break
+				case 'gcc':
+					document.getElementById('gccNations').classList.toggle('d-none')
+					document.getElementById('gcc-chevron').classList.toggle('rotate')
+					break
+			}
+		}
 
 		// Contact travel desk function
 		function contactTravelDesk() {
