@@ -23,8 +23,6 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		
-
 		:root {
 			--primary-purple: #9137ff;
 			--deep-purple: #1a1a2e;
@@ -395,6 +393,56 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+
+		.agenda-card {
+			background-color: rgba(255, 255, 255, 0.1);
+			border-radius: 15px;
+			margin-bottom: 20px;
+			padding: 15px;
+			animation: fadeIn 0.5s ease-in;
+		}
+
+		.day-header {
+			background-color: white;
+			color: #006d5b;
+			padding: 10px 20px;
+			border-radius: 25px;
+			margin-bottom: 20px;
+			animation: slideIn 0.5s ease-out;
+		}
+
+		.agenda-item {
+			padding: 8px 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			transition: transform 0.3s ease;
+		}
+
+		.agenda-item:hover {
+			transform: translateX(10px);
+			background-color: rgba(255, 255, 255, 0.05);
+		}
+
+		.time {
+			color: #7fffd4;
+			font-weight: bold;
+		}
+
+		h1 {
+			color: #7fffd4;
+			margin-bottom: 30px;
+		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateY(-20px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -438,7 +486,14 @@
 									<li>
 										<a href="index.html">Home </a>
 									</li>
-									<li><a href="about.html">Conference</a></li>
+									<li>
+										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+										<ul class="dropdown-padding">
+											<li><a href="about.html">About Conference</a></li>
+											<li><a href="speakers.html">Our Speakers</a></li>
+											<li><a href="agenda.html">Conference Agenda</a></li>
+										</ul>
+									</li>
 									<li>
 										<a href="register.html">Register</i></a>
 									</li>
@@ -494,7 +549,14 @@
 				<li>
 					<a href="index.html">Home </a>
 				</li>
-				<li><a href="about.html">Conference</a></li>
+				<li>
+					<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+					<ul class="dropdown-padding">
+						<li><a href="about.html">About Conference</a></li>
+						<li><a href="speakers.html">Our Speakers</a></li>
+						<li><a href="agenda.html">Conference Agenda</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="register.html">Register</i></a>
 				</li>
@@ -558,8 +620,8 @@
 				<div class="col-lg-8 m-auto">
 					<div class="heading1 text-center">
 						<h1>About the Conference</h1>
-						<div class="space20"></div>
-						<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Conference</span></a>
+						<!-- <div class="space20"></div>
+						<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Conference</span></a> -->
 					</div>
 				</div>
 			</div>
@@ -1162,9 +1224,9 @@
 	</div>
 	</div>
 	</div>
-				</div>
-			</div>
-		</div>
+	</div>
+	</div>
+	</div>
 	</div>
 	<!--===== SPEAKER AREA ENDS =======-->
 
