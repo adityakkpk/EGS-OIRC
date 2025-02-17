@@ -46,36 +46,36 @@
 		}
 
 		.registration-includes {
-        background-color: #f8f9fa;
-        padding: 60px 0;
-    }
+			background-color: #f8f9fa;
+			padding: 60px 0;
+		}
 
-    .benefit-item {
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
+		.benefit-item {
+			border-bottom: 1px solid #ddd;
+			padding-bottom: 15px;
+			margin-bottom: 15px;
+		}
 
-    .benefit-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
+		.benefit-item:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
 
-    .benefit-icon {
-        font-size: 2rem;
-        color: #019087;
-        margin-right: 20px;
-    }
+		.benefit-icon {
+			font-size: 2rem;
+			color: #019087;
+			margin-right: 20px;
+		}
 
-    .benefit-item h5 {
-        font-size: 1.25rem;
-        color: #333;
-    }
+		.benefit-item h5 {
+			font-size: 1.25rem;
+			color: #333;
+		}
 
-    .benefit-item p {
-        font-size: 1rem;
-        color: #666;
-    }
+		.benefit-item p {
+			font-size: 1rem;
+			color: #666;
+		}
 
 		.venue-section {
 			background-color: #00a3a3;
@@ -241,7 +241,14 @@
 									<li>
 										<a href="index.html">Home </a>
 									</li>
-									<li><a href="about.html">Conference</a></li>
+									<li>
+										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+										<ul class="dropdown-padding">
+											<li><a href="about.html">About Conference</a></li>
+											<li><a href="speakers.html">Our Speakers</a></li>
+											<li><a href="agenda.html">Conference Agenda</a></li>
+										</ul>
+									</li>
 									<li>
 										<a href="register.html">Register</i></a>
 									</li>
@@ -298,7 +305,14 @@
 				<li>
 					<a href="index.html">Home </a>
 				</li>
-				<li><a href="about.html">Conference</a></li>
+				<li>
+					<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+					<ul class="dropdown-padding">
+						<li><a href="about.html">About Conference</a></li>
+						<li><a href="speakers.html">Our Speakers</a></li>
+						<li><a href="agenda.html">Conference Agenda</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="register.html">Register</i></a>
 				</li>
@@ -362,8 +376,8 @@
 				<div class="col-lg-8 m-auto">
 					<div class="heading1 text-center">
 						<h1>Conference Registration</h1>
-						<div class="space20"></div>
-						<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Register</span></a>
+						<!-- <div class="space20"></div>
+						<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Register</span></a> -->
 					</div>
 				</div>
 			</div>
@@ -398,10 +412,14 @@
 						<tbody>
 							<tr>
 								<td class="region-header">
-									<div class="d-flex" style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;" onclick="toggleMenu('saarc')">
+									<div class="d-flex"
+										style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;"
+										onclick="toggleMenu('saarc')">
 										<span style="color: #019087;">SAARC Nations</span>
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-chevron-down"  id="saarc-chevron" viewBox="0 0 16 16">
-											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+											class="bi bi-chevron-down" id="saarc-chevron" viewBox="0 0 16 16">
+											<path fill-rule="evenodd"
+												d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
 										</svg>
 									</div>
 									<ul id="saarcNations" class="nationsList d-none">
@@ -421,13 +439,17 @@
 								<td class="fee-amount">$200</td>
 								<td class="fee-amount">$190</td>
 							</tr>
-							
+
 							<tr>
 								<td class="region-header">
-									<div class="d-flex" style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;" onclick="toggleMenu('gcc')">
+									<div class="d-flex"
+										style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;"
+										onclick="toggleMenu('gcc')">
 										<span style="color: #019087;">GCC Nations</span>
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-chevron-down" id="gcc-chevron" viewBox="0 0 16 16">
-											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+											class="bi bi-chevron-down" id="gcc-chevron" viewBox="0 0 16 16">
+											<path fill-rule="evenodd"
+												d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
 										</svg>
 									</div>
 									<ul id="gccNations" class="nationsList d-none">
@@ -460,67 +482,75 @@
 				</div>
 			</div>
 		</div>
-	</section>	
+	</section>
 
 	<!-- Registration Includes Section -->
 	<section class="registration-includes py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-lg-7 m-auto mt-5">
-                        <div class="brand-header heading6 space-margin60 text-center">
-                            <div class="space16"></div>
-                            <h2 class="text-anime-style-3">Registration Includes</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="benefit-item d-flex align-items-center mb-4">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-													</svg>
-                            <div style="margin-left: 18px;">
-                                <h5 class="mb-0">Access to All Conference Sessions</h5>
-                                <p class="mb-0 text-muted">Including poster presentations</p>
-                            </div>
-                        </div>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-lg-7 m-auto mt-5">
+							<div class="brand-header heading6 space-margin60 text-center">
+								<div class="space16"></div>
+								<h2 class="text-anime-style-3">Registration Includes</h2>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<div class="benefit-item d-flex align-items-center mb-4">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+									class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+									<path
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+								</svg>
+								<div style="margin-left: 18px;">
+									<h5 class="mb-0">Access to All Conference Sessions</h5>
+									<p class="mb-0 text-muted">Including poster presentations</p>
+								</div>
+							</div>
 
-                        <div class="benefit-item d-flex align-items-center mb-4">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-													</svg>
-                            <div style="margin-left: 18px;">
-                                <h5 class="mb-0">Conference Kit</h5>
-                                <p class="mb-0 text-muted">Including name tag, Agenda and Abstract Book</p>
-                            </div>
-                        </div>
+							<div class="benefit-item d-flex align-items-center mb-4">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+									class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+									<path
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+								</svg>
+								<div style="margin-left: 18px;">
+									<h5 class="mb-0">Conference Kit</h5>
+									<p class="mb-0 text-muted">Including name tag, Agenda and Abstract Book</p>
+								</div>
+							</div>
 
-                        <div class="benefit-item d-flex align-items-center mb-4">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-													</svg>
-                            <div style="margin-left: 18px;">
-                                <h5 class="mb-0">Refreshments</h5>
-                                <p class="mb-0 text-muted">2 Coffee breaks and Lunch for all conference days</p>
-                            </div>
-                        </div>
+							<div class="benefit-item d-flex align-items-center mb-4">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+									class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+									<path
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+								</svg>
+								<div style="margin-left: 18px;">
+									<h5 class="mb-0">Refreshments</h5>
+									<p class="mb-0 text-muted">2 Coffee breaks and Lunch for all conference days</p>
+								</div>
+							</div>
 
-                        <div class="benefit-item d-flex align-items-center">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-														<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-													</svg>
-                            <div style="margin-left: 18px;">
-                                <h5 class="mb-0">Certificate</h5>
-                                <p class="mb-0 text-muted">Certificate accreditation from Organizing Committee</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+							<div class="benefit-item d-flex align-items-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+									class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+									<path
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+								</svg>
+								<div style="margin-left: 18px;">
+									<h5 class="mb-0">Certificate</h5>
+									<p class="mb-0 text-muted">Certificate accreditation from Organizing Committee</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- Conference Registration Form -->
@@ -1315,7 +1345,7 @@
 						const formData = {
 							name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
 							email: document.getElementById('email').value,
-							phone: document.getElementById('phone').value,registrationType: document.getElementById('regType').value,
+							phone: document.getElementById('phone').value, registrationType: document.getElementById('regType').value,
 							institutionName: document.getElementById('institutionName').value,
 							country: document.getElementById('country').value,
 							earlyBird: document.getElementById('earlyBird').checked,
@@ -1333,7 +1363,7 @@
 								body: JSON.stringify(formData)
 							})
 
-							
+
 							const result = await response.json()
 							console.log(result)
 							if (response.ok) {

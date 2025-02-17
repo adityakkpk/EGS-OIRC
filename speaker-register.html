@@ -124,7 +124,14 @@
 									<li>
 										<a href="index.html">Home </a>
 									</li>
-									<li><a href="about.html">Conference</a></li>
+									<li>
+										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+										<ul class="dropdown-padding">
+											<li><a href="about.html">About Conference</a></li>
+											<li><a href="speakers.html">Our Speakers</a></li>
+											<li><a href="agenda.html">Conference Agenda</a></li>
+										</ul>
+									</li>
 									<li>
 										<a href="register.html">Register</i></a>
 									</li>
@@ -181,7 +188,14 @@
 				<li>
 					<a href="index.html">Home </a>
 				</li>
-				<li><a href="about.html">Conference</a></li>
+				<li>
+					<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+					<ul class="dropdown-padding">
+						<li><a href="about.html">About Conference</a></li>
+						<li><a href="speakers.html">Our Speakers</a></li>
+						<li><a href="agenda.html">Conference Agenda</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="register.html">Register</i></a>
 				</li>
@@ -316,7 +330,7 @@
 								<label for="paperAbstract" class="form-label">Paper Abstract*</label>
 								<textarea class="form-control" id="paperAbstract" rows="3" required></textarea>
 							</div>
-							
+
 							<div class="mb-3 dropdown-input">
 								<label for="country" class="form-label">Country*</label>
 								<select class="" id="country" required>
@@ -353,7 +367,7 @@
 						<div class="mt-4">
 							<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1721266,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
 								class="btn btn-light">View Location Map</a>
-							
+
 						</div>
 					</div>
 				</div>
@@ -430,7 +444,8 @@
 						<h3>Contact Us</h3>
 						<ul>
 							<li>
-								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</a>
+								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456
+									7890</a>
 							</li>
 							<li>
 								<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
@@ -586,24 +601,24 @@
 		regType.addEventListener('change', updatePrice)
 		earlyBird.addEventListener('change', updatePrice);
 
-			// Form validation for visa assistance
-			(() => {
-				'use strict'
-				const forms = document.querySelectorAll('.needs-validation')
-				Array.from(forms).forEach(form => {
-					form.addEventListener('submit', event => {
-						if (!form.checkValidity()) {
-							event.preventDefault()
-							event.stopPropagation()
-						} else {
-							event.preventDefault()
-							alert('Your query has been submitted successfully!')
-							form.reset()
-						}
-						form.classList.add('was-validated')
-					})
+		// Form validation for visa assistance
+		(() => {
+			'use strict'
+			const forms = document.querySelectorAll('.needs-validation')
+			Array.from(forms).forEach(form => {
+				form.addEventListener('submit', event => {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					} else {
+						event.preventDefault()
+						alert('Your query has been submitted successfully!')
+						form.reset()
+					}
+					form.classList.add('was-validated')
 				})
-			})()
+			})
+		})()
 
 		// Contact travel desk function
 		function contactTravelDesk() {

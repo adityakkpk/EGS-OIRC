@@ -41,71 +41,73 @@
 			margin-bottom: 1rem;
 			color: #0d6efd;
 		}
+
 		.pricing-container {
-      font-family: system-ui, -apple-system, sans-serif;
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
+			font-family: system-ui, -apple-system, sans-serif;
+			max-width: 600px;
+			margin: 2rem auto;
+			padding: 1rem;
+		}
 
-    .pricing-table {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      background: white;
-    }
+		.pricing-table {
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			background: white;
+		}
 
-    .pricing-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      transition: all 0.3s ease;
-    }
+		.pricing-row {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr;
+			transition: all 0.3s ease;
+		}
 
-    .pricing-row:hover {
-      background-color: #27ff81c5;
-      transform: translateX(4px);
-    }
+		.pricing-row:hover {
+			background-color: #27ff81c5;
+			transform: translateX(4px);
+		}
 
-    .cell {
-      padding: 1rem;
-      border-bottom: 1px solid #e9ecef;
-    }
+		.cell {
+			padding: 1rem;
+			border-bottom: 1px solid #e9ecef;
+		}
 
-    .early-bird {
-      position: relative;
-      overflow: hidden;
-    }
+		.early-bird {
+			position: relative;
+			overflow: hidden;
+		}
 
-    .early-bird::after {
-      content: "Early Bird";
-      position: absolute;
-      background: #28a745;
-      color: white;
-      padding: 0.25rem 2rem;
-      right: -2rem;
-      top: 0.5rem;
-      transform: rotate(45deg);
-      font-size: 0.75rem;
-      animation: slide-in 0.6s ease-out;
-    }
+		.early-bird::after {
+			content: "Early Bird";
+			position: absolute;
+			background: #28a745;
+			color: white;
+			padding: 0.25rem 2rem;
+			right: -2rem;
+			top: 0.5rem;
+			transform: rotate(45deg);
+			font-size: 0.75rem;
+			animation: slide-in 0.6s ease-out;
+		}
 
-    .note {
-      color: #666;
-      font-size: 0.875rem;
-      margin-top: 1rem;
-      padding: 0.5rem;
-      border-left: 3px solid #0d5f4c;
-      background: #f8f9fa;
-    }
+		.note {
+			color: #666;
+			font-size: 0.875rem;
+			margin-top: 1rem;
+			padding: 0.5rem;
+			border-left: 3px solid #0d5f4c;
+			background: #f8f9fa;
+		}
 
-    @keyframes slide-in {
-      from {
-        transform: rotate(45deg) translateX(100px);
-      }
-      to {
-        transform: rotate(45deg) translateX(0);
-      }
-    }
+		@keyframes slide-in {
+			from {
+				transform: rotate(45deg) translateX(100px);
+			}
+
+			to {
+				transform: rotate(45deg) translateX(0);
+			}
+		}
 	</style>
 </head>
 
@@ -146,7 +148,14 @@
 									<li>
 										<a href="index.html">Home </a>
 									</li>
-									<li><a href="about.html">Conference</a></li>
+									<li>
+										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+										<ul class="dropdown-padding">
+											<li><a href="about.html">About Conference</a></li>
+											<li><a href="speakers.html">Our Speakers</a></li>
+											<li><a href="agenda.html">Conference Agenda</a></li>
+										</ul>
+									</li>
 									<li>
 										<a href="register.html">Register</i></a>
 									</li>
@@ -202,7 +211,14 @@
 				<li>
 					<a href="index.html">Home </a>
 				</li>
-				<li><a href="about.html">Conference</a></li>
+				<li>
+					<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+					<ul class="dropdown-padding">
+						<li><a href="about.html">About Conference</a></li>
+						<li><a href="speakers.html">Our Speakers</a></li>
+						<li><a href="agenda.html">Conference Agenda</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="register.html">Register</i></a>
 				</li>
@@ -292,11 +308,18 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="d-flex align-items-center border border-2 p-4 rounded-3" style="flex-wrap: wrap;gap: 3rem;justify-content:center;">
-					<img src="assets/img/all-images/event/event-img14.png" class="rounded-3" alt="overviewImage" style="width:35%;min-width: 250px;max-height: 300px;">
+				<div class="d-flex align-items-center border border-2 p-4 rounded-3"
+					style="flex-wrap: wrap;gap: 3rem;justify-content:center;">
+					<img src="assets/img/all-images/event/event-img14.png" class="rounded-3" alt="overviewImage"
+						style="width:35%;min-width: 250px;max-height: 300px;">
 					<div class="d-flex flex-column justify-content-center" style="width:50%;min-width: 250px;">
 						<h2 style="text-align: justify; margin-bottom: 1rem;">Experience Innovation at ICMMCS 2025!</h2>
-						<p style="text-align: justify;font-size: 20px;">Join global industry leaders, visionaries, and pioneers at the ICMMCS 2025 Exhibition. Explore cutting-edge research & development, discover the latest technology, and connect with key stakeholders shaping the future. Exhibitors get an exclusive platform to showcase transformative products and services, while attendees unlock insights into the future of mathematics, management, and computer science. Don't miss this opportunity to engage, collaborate, and shape the future!</p>
+						<p style="text-align: justify;font-size: 20px;">Join global industry leaders, visionaries, and pioneers at
+							the ICMMCS 2025 Exhibition. Explore cutting-edge research & development, discover the latest technology,
+							and connect with key stakeholders shaping the future. Exhibitors get an exclusive platform to showcase
+							transformative products and services, while attendees unlock insights into the future of mathematics,
+							management, and computer science. Don't miss this opportunity to engage, collaborate, and shape the
+							future!</p>
 					</div>
 				</div>
 			</div>
@@ -328,131 +351,131 @@
 							<div class="space28"></div>
 							<div class="content-area">
 								<a href="speakers.html">Alex Robertson</a>
-									<div class=" space16">
-							</div>
-							<p>Finance Consultant</p>
-						</div>
-					</div>
-
-					<div class="our-team-boxarea">
-						<div class="team-widget-area">
-							<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-							<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-							<div class="img1" style="background-color: #019087b8;">
-								<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
+								<div class=" space16">
+								</div>
+								<p>Finance Consultant</p>
 							</div>
 						</div>
-						<div class="space28"></div>
-						<div class="content-area">
-							<a href="speakers.html">Alexy Sammo</a>
-									<div class=" space16">
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alexy Sammo</a>
+								<div class=" space16">
+								</div>
+								<p>HR Consultant</p>
+							</div>
 						</div>
-						<p>HR Consultant</p>
-					</div>
-				</div>
 
-				<div class="our-team-boxarea">
-					<div class="team-widget-area">
-						<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-						<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-						<div class="img1" style="background-color: #019087b8;">
-							<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Andrew Symonds</a>
+								<div class=" space16">
+								</div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img7.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Ben Stokes</a>
+								<div class=" space16">
+								</div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img4.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alex Robertson</a>
+								<div class=" space16">
+								</div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Alexy Sammo</a>
+								<div class=" space16">
+								</div>
+								<p>HR Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Andrew Symonds</a>
+								<div class=" space16">
+								</div>
+								<p>Finance Consultant</p>
+							</div>
+						</div>
+
+						<div class="our-team-boxarea">
+							<div class="team-widget-area">
+								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
+								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
+								<div class="img1" style="background-color: #019087b8;">
+									<img src="assets/img/all-images/team/team-img7.png" alt="" class="team-img4" />
+								</div>
+							</div>
+							<div class="space28"></div>
+							<div class="content-area">
+								<a href="speakers.html">Ben Stokes</a>
+								<div class=" space16">
+								</div>
+								<p>Finance Consultant</p>
+							</div>
 						</div>
 					</div>
-					<div class="space28"></div>
-					<div class="content-area">
-						<a href="speakers.html">Andrew Symonds</a>
-									<div class=" space16">
-					</div>
-					<p>Finance Consultant</p>
-				</div>
-			</div>
-
-			<div class="our-team-boxarea">
-				<div class="team-widget-area">
-					<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-					<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-					<div class="img1" style="background-color: #019087b8;">
-						<img src="assets/img/all-images/team/team-img7.png" alt="" class="team-img4" />
-					</div>
-				</div>
-				<div class="space28"></div>
-				<div class="content-area">
-					<a href="speakers.html">Ben Stokes</a>
-									<div class=" space16">
-				</div>
-				<p>Finance Consultant</p>
-			</div>
-		</div>
-
-		<div class="our-team-boxarea">
-			<div class="team-widget-area">
-				<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-				<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-				<div class="img1" style="background-color: #019087b8;">
-					<img src="assets/img/all-images/team/team-img4.png" alt="" class="team-img4" />
-				</div>
-			</div>
-			<div class="space28"></div>
-			<div class="content-area">
-				<a href="speakers.html">Alex Robertson</a>
-									<div class=" space16">
-			</div>
-			<p>Finance Consultant</p>
-		</div>
-	</div>
-
-	<div class="our-team-boxarea">
-		<div class="team-widget-area">
-			<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-			<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-			<div class="img1" style="background-color: #019087b8;">
-				<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
-			</div>
-		</div>
-		<div class="space28"></div>
-		<div class="content-area">
-			<a href="speakers.html">Alexy Sammo</a>
-									<div class=" space16">
-		</div>
-		<p>HR Consultant</p>
-	</div>
-	</div>
-
-	<div class="our-team-boxarea">
-		<div class="team-widget-area">
-			<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-			<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-			<div class="img1" style="background-color: #019087b8;">
-				<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
-			</div>
-		</div>
-		<div class="space28"></div>
-		<div class="content-area">
-			<a href="speakers.html">Andrew Symonds</a>
-									<div class=" space16">
-		</div>
-		<p>Finance Consultant</p>
-	</div>
-	</div>
-
-	<div class="our-team-boxarea">
-		<div class="team-widget-area">
-			<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-			<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-			<div class="img1" style="background-color: #019087b8;">
-				<img src="assets/img/all-images/team/team-img7.png" alt="" class="team-img4" />
-			</div>
-		</div>
-		<div class="space28"></div>
-		<div class="content-area">
-			<a href="speakers.html">Ben Stokes</a>
-									<div class=" space16">
-		</div>
-		<p>Finance Consultant</p>
-	</div>
-	</div>
-	</div>
 				</div>
 			</div>
 		</div>
@@ -557,11 +580,16 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="d-flex align-items-center border border-2 p-4 rounded-3" style="flex-wrap: wrap;gap: 3rem;justify-content:center;">
-					<img src="assets/img/all-images/event/event-img1.png" class="rounded-3" alt="resourceCenterImage" style="width:35%;min-width: 250px;max-height:230px;">
+				<div class="d-flex align-items-center border border-2 p-4 rounded-3"
+					style="flex-wrap: wrap;gap: 3rem;justify-content:center;">
+					<img src="assets/img/all-images/event/event-img1.png" class="rounded-3" alt="resourceCenterImage"
+						style="width:35%;min-width: 250px;max-height:230px;">
 					<div class="d-flex flex-column justify-content-center" style="width:50%;min-width: 250px;gap: 12px;">
 						<h2 style="text-align: justify; margin-bottom: 4px;">Maximize Your Exhibition Impact</h2>
-						<p style="text-align: justify;font-size: 20px; ">Your one-stop hub for a seamless exhibition experience! The ICMMCS 2025 Exhibitor Resource Center provides essential tools, setup guidelines, administrative support, and key information to help you maximize your presence. Stay organized, prepared, and make the most of your participation with our comprehensive resources.</p>
+						<p style="text-align: justify;font-size: 20px; ">Your one-stop hub for a seamless exhibition experience! The
+							ICMMCS 2025 Exhibitor Resource Center provides essential tools, setup guidelines, administrative support,
+							and key information to help you maximize your presence. Stay organized, prepared, and make the most of
+							your participation with our comprehensive resources.</p>
 					</div>
 				</div>
 			</div>
@@ -587,12 +615,13 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="choose-widget-boxarea">
-						
+
 						<div class="space24"></div>
 						<div class="content-area">
 							<a href="#" style="color: #019087;">Expand Your Market Reach</a>
 							<div class="space16"></div>
-							<p>Connect with a diverse audience and showcase your products and services to potential clients, investors, and partners looking for cutting-edge solutions.</p>
+							<p>Connect with a diverse audience and showcase your products and services to potential clients,
+								investors, and partners looking for cutting-edge solutions.</p>
 							<div class="space24"></div>
 						</div>
 					</div>
@@ -600,12 +629,13 @@
 
 				<div class="col-lg-4 col-md-6">
 					<div class="choose-widget-boxarea">
-						
+
 						<div class="space24"></div>
 						<div class="content-area">
 							<a href="#" style="color: #019087;">Build Strategic Partnerships</a>
 							<div class="space16"></div>
-							<p>Network with global experts and organizations in mathematics, management, and computer science. Strengthen collaborations and unlock new business opportunities.
+							<p>Network with global experts and organizations in mathematics, management, and computer science.
+								Strengthen collaborations and unlock new business opportunities.
 							</p>
 							<div class="space24"></div>
 						</div>
@@ -614,12 +644,13 @@
 
 				<div class="col-lg-4 col-md-6">
 					<div class="choose-widget-boxarea">
-						
+
 						<div class="space24"></div>
 						<div class="content-area">
 							<a href="#" style="color: #019087;">Enhance Brand Visibility</a>
 							<div class="space16"></div>
-							<p>Position your brand at the forefront of industry advancements. Gain exposure through exhibition booths, speaking engagements, and promotional opportunities.</p>
+							<p>Position your brand at the forefront of industry advancements. Gain exposure through exhibition booths,
+								speaking engagements, and promotional opportunities.</p>
 							<div class="space24"></div>
 						</div>
 					</div>
