@@ -183,7 +183,19 @@
 			font-weight: normal;
 		}
 
+		.nationsList li {
+			border-bottom: 1px solid gray;
+			border-radius: 8px;
+			padding: 6px;
+			transition: all 0.3s ease;
+		}
+
+		.nationsList li:hover {
+			background-color: aliceblue;
+		}
+
 		.rotate {
+			transition: all 0.3s ease;
 			transform: rotate(180deg);
 		}
 	</style>
@@ -555,8 +567,8 @@
 							<!-- Institution Information -->
 							<h4 class="mb-3">Institution Information</h4>
 							<div class="mb-3">
-								<label for="institution" class="form-label">Institution/Organization*</label>
-								<input type="text" class="form-control" id="institution" required>
+								<label for="institutionName" class="form-label">Institution/Organization*</label>
+								<input type="text" class="form-control" id="institutionName" required>
 							</div>
 
 							<div class="mb-3 dropdown-input">
@@ -1303,11 +1315,12 @@
 						const formData = {
 							name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
 							email: document.getElementById('email').value,
-							registrationType: document.getElementById('regType').value,
-							institution: document.getElementById('institution').value,
+							phone: document.getElementById('phone').value,registrationType: document.getElementById('regType').value,
+							institutionName: document.getElementById('institutionName').value,
 							country: document.getElementById('country').value,
 							earlyBird: document.getElementById('earlyBird').checked,
 							regFee: document.getElementById('regFee').textContent,
+							isPaid: false
 						}
 
 						try {
@@ -1320,15 +1333,17 @@
 								body: JSON.stringify(formData)
 							})
 
+							
 							const result = await response.json()
+							console.log(result)
 							if (response.ok) {
-								alert('Registration submitted successfully!')
+								console.log('Registration submitted successfully!')
 								form.reset()
 							} else {
-								alert(`Error: ${result.message}`)
+								console.log(`Error: ${result.error}`)
 							}
 						} catch (error) {
-							alert(`Error: ${error.message}`)
+							console.log(`Error: ${error.message}`)
 						}
 					}
 					form.classList.add('was-validated')

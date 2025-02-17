@@ -1,29 +1,30 @@
-import SponsorModel from "../models/sponsorRegisterModel.js";
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export const registerSponsor = async (req, res) => {
-  const { name, level, amount } = req.body;
+  const sponsorsData = req.body;
 
   try {
-    const newSponsor = new SponsorModel({
-      name,
-      level,
-      amount,
+    const newSponsor = await prisma.sponsor.create({
+      data: sponsorsData,
     });
-    await newSponsor.save();
+
     res
       .status(201)
-      .json({ message: "Sponsor registered successfully", user: newSponsor });
+      .json({ message: "Sponsor registered successfully", user: newSponsor, success: true });
   } catch (error) {
     res
       .status(400)
-      .json({ message: "Error registering Sponsor", error: error.message });
+      .json({ message: "Error registering Sponsor", error: error.message, success: false });
   }
 };
 
 export const getSponsors = async (req, res) => {
   try {
-    const sponsors = await SponsorModel.find();
+    const sponsors = await prisma.SponsorModel.findMany();
     res.status(200).json(sponsors);
+
   } catch (error) {
     res
       .status(500)

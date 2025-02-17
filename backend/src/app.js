@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import sponsorRegistrationRoutes from './routes/sponsorRegistrationRoutes.js';
 import conferenceRegistrationRoutes from './routes/conferenceRegistrationRoutes.js';
-import connectDB from './config/db.js';
+import {connectDB} from './config/db.js';
 
 dotenv.config();
 

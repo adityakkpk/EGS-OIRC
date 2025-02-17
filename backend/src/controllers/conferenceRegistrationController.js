@@ -1,21 +1,24 @@
-import RegisterUserModel from "../models/conferenceRegisterModel.js";
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export const registerUser = async (req, res) => {
-    const { name, email, registrationType, institution, country, earlyBird, regFee } = req.body;
+    const registerUSerData = req.body;
 
     try {
-        const newUser = new RegisterUserModel({ name, email, registrationType, institution, country, earlyBird, regFee });
-        await newUser.save();
-        res.status(201).json({ message: 'User registered successfully', user: newUser });
+        const newRegisterUser = await prisma.registerUser.create({
+            data: registerUSerData
+        })
+        res.status(201).json({ message: 'User registered successfully', user: newRegisterUser, success: true });
     } catch (error) {
-        res.status(400).json({ message: 'Error registering user', error: error.message });
+        res.status(400).json({ error: `Error registering user: ${error.message}`, success: false });
     }
 }
 
 export const getUsers = async (req, res) => {
-    try {
-        const users = await RegisterUserModel.find();
-        res.status(200).json(users);
+    try {        
+        const registeredUsers = await prisma.registerUser.findMany();
+        res.status(200).json(registeredUsers);
     } catch (error) {
         res.status(500).json({ message: 'Error retrieving users', error: error.message });
     }

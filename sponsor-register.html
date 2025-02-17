@@ -281,6 +281,11 @@
 								<input type="text" class="form-control" id="sponsorName" required>
 							</div>
 
+							<div class="mb-3">
+								<label for="sponsorEmail" class="form-label">Sponsor Email*</label>
+								<input type="text" class="form-control" id="sponsorEmail" required>
+							</div>
+
 							<div class="mb-3 dropdown-input">
 								<label for="sponsorLevel" class="form-label">Sponsorship Level*</label>
 								<select class="form-control" id="sponsorLevel" onchange={updateAmount()} required>
@@ -554,8 +559,10 @@
 
 					const formData = {
 						name: document.getElementById('sponsorName').value,
+						email: document.getElementById('sponsorEmail').value,
 						level: document.getElementById('sponsorLevel').value,
-						amount: document.getElementById('sponsorAmount').textContent
+						amount: document.getElementById('sponsorAmount').textContent,
+						isPaid: false
 					};
 
 					fetch('http://localhost:5000/api/sponsor/register', {
@@ -567,13 +574,17 @@
 					})
 						.then(response => response.json())
 						.then(data => {
-							alert('Registration successful!');
-							form.reset();
-							form.classList.remove('was-validated');
+							if (data.success) {
+								console.log('Registration successful!');
+								form.reset();
+								form.classList.remove('was-validated');
+							} else {
+								throw new Error(data.error);
+							}
 						})
 						.catch(error => {
+							console.log('Registration failed. Please try again.');
 							console.error('Error:', error);
-							alert('Registration failed. Please try again.');
 						});
 				}
 			}, false);
