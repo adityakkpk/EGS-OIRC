@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import sponsorRegistrationRoutes from './routes/sponsorRegistrationRoutes.js';
 import conferenceRegistrationRoutes from './routes/conferenceRegistrationRoutes.js';
+import speakerRoutes from './routes/speakerRoutes.js';
 import {connectDB} from './config/db.js';
 
 dotenv.config();
@@ -19,6 +20,7 @@ connectDB();
 // Routes
 app.use('/api/conference', conferenceRegistrationRoutes);
 app.use('/api/sponsor', sponsorRegistrationRoutes);
+app.use('/api/speaker', speakerRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
