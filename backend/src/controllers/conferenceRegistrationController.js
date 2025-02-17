@@ -9,9 +9,9 @@ export const registerUser = async (req, res) => {
         const newRegisterUser = await prisma.registerUser.create({
             data: registerUSerData
         })
-        res.status(201).json({ message: 'User registered successfully', user: newRegisterUser });
+        res.status(201).json({ message: 'User registered successfully', user: newRegisterUser, success: true });
     } catch (error) {
-        res.status(400).json({ message: 'Error registering user', error: error.message });
+        res.status(400).json({ error: `Error registering user: ${error.message}`, success: false });
     }
 }
 

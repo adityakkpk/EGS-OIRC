@@ -16,13 +16,14 @@ datasource db {
 model registerUser {
   id               Int      @id @default(autoincrement())
   name             String
-  email            String
+  email            String   @unique
   registrationType String
   institutionName  String
   country          String
-  earlyBird        Boolean 
+  phone            String
+  earlyBird        Boolean
   regFee           String
-  isPaid           Boolean @default(false)
+  isPaid           Boolean  @default(false)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 }
@@ -30,10 +31,10 @@ model registerUser {
 model sponsor {
   id        Int      @id @default(autoincrement())
   name      String
-  email     String
+  email     String   @unique
   level     String
   amount    String
-  isPaid    Boolean @default(false)
+  isPaid    Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

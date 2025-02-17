@@ -1,20 +1,22 @@
-import { prisma } from "../config/db.js";
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export const registerSponsor = async (req, res) => {
   const sponsorsData = req.body;
 
   try {
-    const newSponsor = await prisma.SponsorModel.create({
+    const newSponsor = await prisma.sponsor.create({
       data: sponsorsData,
     });
 
     res
       .status(201)
-      .json({ message: "Sponsor registered successfully", user: newSponsor });
+      .json({ message: "Sponsor registered successfully", user: newSponsor, success: true });
   } catch (error) {
     res
       .status(400)
-      .json({ message: "Error registering Sponsor", error: error.message });
+      .json({ message: "Error registering Sponsor", error: error.message, success: false });
   }
 };
 
