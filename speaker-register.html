@@ -190,14 +190,14 @@
 					<a href="index.html">Home </a>
 				</li>
 				<li>
-										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
-										<ul class="dropdown-padding">
-											<li><a href="about.html">About Conference</a></li>
-											<li><a href="speakers.html">Our Speakers</a></li>
-											<li><a href="agenda.html">Conference Agenda</a></li>
-											<li><a href="faq.html">FAQs</a></li>
-										</ul>
-									</li>
+					<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
+					<ul class="dropdown-padding">
+						<li><a href="about.html">About Conference</a></li>
+						<li><a href="speakers.html">Our Speakers</a></li>
+						<li><a href="agenda.html">Conference Agenda</a></li>
+						<li><a href="faq.html">FAQs</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="register.html">Register</i></a>
 				</li>
@@ -756,24 +756,54 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+
 	<script>
-		// Form validation
-		;(() => {
-			'use strict'
-			const forms = document.querySelectorAll('.needs-validation')
-			Array.from(forms).forEach(form => {
-				form.addEventListener('submit', event => {
-					if (!form.checkValidity()) {
-						event.preventDefault()
-						event.stopPropagation()
-					} else {
-						event.preventDefault()
-						alert('Registration submitted successfully!')
-					}
-					form.classList.add('was-validated')
-				})
-			})
-		})();
+		// Form submission handler
+		document.getElementById('registrationForm').addEventListener('submit', async function (event) {
+			event.preventDefault();
+
+			if (!this.checkValidity()) {
+				event.stopPropagation();
+				this.classList.add('was-validated');
+				return;
+			}
+
+			// Get form data
+			const formData = {
+				name: document.getElementById('firstName').value + " " + document.getElementById('lastName').value,
+				email: document.getElementById('email').value,
+				phone: document.getElementById('phone').value,
+				institutionName: document.getElementById('institution').value,
+				country: document.getElementById('country').value,
+				paperSubject: document.getElementById('paperSubject').value,
+				paperTitle: document.getElementById('paperTitle').value,
+				paperAbstract: document.getElementById('paperAbstract').value
+			};
+
+			try {
+				const response = await fetch('http://localhost:5000/api/speaker/register', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(formData)
+				});
+
+				if (response.ok) {
+					const result = await response.json();
+					// Show success message
+					console.log('Registration successful:');
+					
+					// Reset form
+					this.reset();
+					this.classList.remove('was-validated');
+				} else {
+					throw new Error('Registration failed');
+				}
+			} catch (error) {
+				console.error('Error:', error);
+			}
+		});
 	</script>
 </body>
 
