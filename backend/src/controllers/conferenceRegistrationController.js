@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { sendUserRegisterEmail } from '../services/emailService';
 
 const prisma = new PrismaClient();
 
@@ -9,6 +10,10 @@ export const registerUser = async (req, res) => {
         const newRegisterUser = await prisma.registerUser.create({
             data: registerUSerData
         })
+
+        // send email
+        await sendUserRegisterEmail(registerUSerData);
+
         res.status(201).json({ message: 'User registered successfully', user: newRegisterUser, success: true });
     } catch (error) {
         res.status(400).json({ error: `Error registering user: ${error.message}`, success: false });
