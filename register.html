@@ -393,31 +393,29 @@
 			<h2 class="section-title text-center m-5">Registration Fee Structure</h2>
 
 			<div class="fee-table">
-				<div class="">
-					<table class="table table-bordered mb-0" style="font-size: 18px;">
+				<div class="table-responsive"> <!-- Added table-responsive wrapper -->
+					<table class="table table-bordered mb-0" style="font-size: clamp(14px, 2.5vw, 18px);"> <!-- Using clamp for responsive font size -->
 						<thead>
 							<tr class="main-header">
-								<th rowspan="2">Region</th>
+								<th rowspan="2" class="">Region</th> 
 								<th colspan="2" class="text-center">Students</th>
 								<th colspan="2" class="text-center">Academicians</th>
 								<th colspan="2" class="text-center">Industrialist</th>
 							</tr>
 							<tr class="main-header">
-								<th>Regular</th>
-								<th>Early Bird</th>
-								<th>Regular</th>
-								<th>Early Bird</th>
-								<th>Regular</th>
-								<th>Early Bird</th>
+									<th class="text-nowrap">Regular</th> <!-- Added text-nowrap -->
+									<th class="text-nowrap">Early Bird</th>
+									<th class="text-nowrap">Regular</th>
+									<th class="text-nowrap">Early Bird</th>
+									<th class="text-nowrap">Regular</th>
+									<th class="text-nowrap">Early Bird</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td class="region-header">
-									<div class="d-flex"
-										style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;"
-										onclick="toggleMenu('saarc')">
-										<span style="color: #019087;">SAARC Nations</span>
+									<div class="d-flex flex-wrap align-items-center justify-content-between p-1" onclick="toggleMenu('saarc')"> <!-- Modified flex container -->
+										<span style="color: #019087;" class="me-2">SAARC Nations</span> <!-- Added margin -->
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
 											class="bi bi-chevron-down" id="saarc-chevron" viewBox="0 0 16 16">
 											<path fill-rule="evenodd"
@@ -434,20 +432,18 @@
 										<li>Maldives</li>
 									</ul>
 								</td>
-								<td class="fee-amount">$120</td>
-								<td class="fee-amount">$110</td>
-								<td class="fee-amount">$150</td>
-								<td class="fee-amount">$140</td>
-								<td class="fee-amount">$200</td>
-								<td class="fee-amount">$190</td>
+								<td class="fee-amount text-nowrap">$120</td>
+								<td class="fee-amount text-nowrap">$110</td>
+								<td class="fee-amount text-nowrap">$150</td>
+								<td class="fee-amount text-nowrap">$140</td>
+								<td class="fee-amount text-nowrap">$200</td>
+								<td class="fee-amount text-nowrap">$190</td>
 							</tr>
 
 							<tr>
 								<td class="region-header">
-									<div class="d-flex"
-										style="align-items: center; justify-content: space-between; padding: 0 4px;cursor: pointer;"
-										onclick="toggleMenu('gcc')">
-										<span style="color: #019087;">GCC Nations</span>
+									<div class="d-flex flex-wrap align-items-center justify-content-between p-1" onclick="toggleMenu('gcc')"> <!-- Modified flex container -->
+										<span style="color: #019087;" class="me-2">GCC Nations</span> <!-- Added margin -->
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
 											class="bi bi-chevron-down" id="gcc-chevron" viewBox="0 0 16 16">
 											<path fill-rule="evenodd"
@@ -462,22 +458,22 @@
 										<li>Qatar</li>
 										<li>Bahrain</li>
 								</td>
-								<td class="fee-amount">$250</td>
-								<td class="fee-amount">$230</td>
-								<td class="fee-amount">$350</td>
-								<td class="fee-amount">$330</td>
-								<td class="fee-amount">$450</td>
-								<td class="fee-amount">$430</td>
+								<td class="fee-amount text-nowrap">$250</td>
+								<td class="fee-amount text-nowrap">$230</td>
+								<td class="fee-amount text-nowrap">$350</td>
+								<td class="fee-amount text-nowrap">$330</td>
+								<td class="fee-amount text-nowrap">$450</td>
+								<td class="fee-amount text-nowrap">$430</td>
 							</tr>
 
 							<tr>
 								<td class="region-header" style="color: #019087;">Rest of the world</td>
-								<td class="fee-amount">$300</td>
-								<td class="fee-amount">$270</td>
-								<td class="fee-amount">$400</td>
-								<td class="fee-amount">$370</td>
-								<td class="fee-amount">$600</td>
-								<td class="fee-amount">$570</td>
+								<td class="fee-amount text-nowrap">$300</td>
+								<td class="fee-amount text-nowrap">$270</td>
+								<td class="fee-amount text-nowrap">$400</td>
+								<td class="fee-amount text-nowrap">$370</td>
+								<td class="fee-amount text-nowrap">$600</td>
+								<td class="fee-amount text-nowrap">$570</td>
 							</tr>
 						</tbody>
 					</table>
@@ -485,6 +481,8 @@
 			</div>
 		</div>
 	</section>
+
+	
 
 	<!-- Registration Includes Section -->
 	<section class="registration-includes py-5">
