@@ -2783,11 +2783,11 @@ body {
   z-index: 1;
   overflow: hidden;
   background: #F8F7F3;
-  padding: 180px 0 150px;
+  padding: 120px 0 20px;
 }
 @media (max-width: 767px) {
   .hero4-section-area {
-    padding: 160px 0 190px;
+    padding: 120px 0 20px;
   }
 }
 .hero4-section-area .hero4-header {
@@ -9636,7 +9636,7 @@ body {
 }
 .homepage4-body .header-area.homepage4 .header-elements {
   background: var(--ztc-bg-bg-1);
-  padding: 20px;
+  padding: 8px 20px;
   border-radius: 8px;
   background: #FFF;
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.08);
@@ -9644,8 +9644,8 @@ body {
   z-index: 1;
 }
 .homepage4-body .header-area.homepage4 .header-elements .site-logo img {
-  width: 150px;
-  height: 45px;
+  width: 170px;
+  height: 70px;
   -o-object-fit: contain;
      object-fit: contain;
 }
