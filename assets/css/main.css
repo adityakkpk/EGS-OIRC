@@ -6600,8 +6600,8 @@ body {
   padding: 100px 0 32px;
 }
 .footer4-sertion-area .footer-logo-area img {
-  width: 150px;
-  height: 46px;
+  width: 250px;
+  height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -9645,7 +9645,7 @@ body {
 }
 .homepage4-body .header-area.homepage4 .header-elements .site-logo img {
   width: 170px;
-  height: 70px;
+  height: 60px;
   -o-object-fit: contain;
      object-fit: contain;
 }
