@@ -14883,6 +14883,8 @@ body {
   position: relative;
   z-index: 1;
   padding: 24px;
+  height: 300px;
+  width: 300px;
 }
 .team3-section-area .team-slider-area2 .our-team-boxarea .team-widget-area .elements21 {
   position: absolute;
