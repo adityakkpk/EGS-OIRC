@@ -52,3 +52,27 @@ model speaker {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
+
+model Admin {
+  id        Int   @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      AdminRole
+  referralCode String? @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+}
+
+model User {
+  id        Int   @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  referredBy String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
