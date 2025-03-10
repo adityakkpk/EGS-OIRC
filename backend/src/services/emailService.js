@@ -19,7 +19,7 @@ export async function sendUserRegisterEmail(userRegisterData) {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: userRegisterData.email,
-    subject: "ICMMSC 2025 | Conference Registration Email",
+    subject: "ICMMCS 2025 | Conference Registration Email",
     html: welcomeTemplate(userRegisterData),
   };
 
