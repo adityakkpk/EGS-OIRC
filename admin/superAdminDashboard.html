@@ -4,13 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Admin Dashboard | ICMMCS 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .user-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Super Admin Dashboard</h1>
-    </header>
-    <main>
-        <p>Welcome to the Super Admin Dashboard!</p>
-    </main>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Super Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light" onclick="logout()">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createAdminModal">
+                    <i class="fas fa-plus"></i> Create New Admin
+                </button>
+            </div>
+        </div>
+
+        <div id="adminsList" class="row">
+            <!-- Admin cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Create Admin Modal -->
+    <div class="modal fade" id="createAdminModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createAdminForm">
+                        <div class="mb-3">
+                            <label for="adminEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="adminEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="adminPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="createAdmin()">Create Admin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('adminToken');
+            if (!token) {
+                window.location.href = 'index.html';
+                return;
+            }
+            loadAdmins();
+        });
+
+        async function loadAdmins() {
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/all', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+                    }
+                });
+                const data = await response.json();
+                displayAdmins(data);
+            } catch (error) {
+                console.error('Error loading admins:', error);
+            }
+        }
+
+        function displayAdmins(admins) {
+            const adminsList = document.getElementById('adminsList');
+            adminsList.innerHTML = '';
+
+            admins.forEach(admin => {
+                const adminCard = document.createElement('div');
+                adminCard.className = 'col-md-6 col-lg-4';
+                adminCard.innerHTML = `
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <h5 class="card-title">${admin.email}</h5>
+                            <p class="card-text">
+                                <strong>Referral Code:</strong> ${admin.referralCode}<br>
+                                <strong>Referral Link:</strong> 
+                                <a href="http://localhost:3000/register.html?ref=${admin.referralCode}" target="_blank">
+                                    Registration Link
+                                </a>
+                            </p>
+                            <h6>Referred Users:</h6>
+                            <div class="user-list">
+                                <ul class="list-group">
+                                    ${admin.referredUsers?.map(user => `
+                                        <li class="list-group-item">
+                                            ${user.name} (${user.email})
+                                        </li>
+                                    `).join('') || '<li class="list-group-item">No users yet</li>'}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                adminsList.appendChild(adminCard);
+            });
+        }
+
+        async function createAdmin() {
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert(`Admin created successfully!\nReferral Code: ${data.referralCode}`);
+                    document.getElementById('createAdminForm').reset();
+                    bootstrap.Modal.getInstance(document.getElementById('createAdminModal')).hide();
+                    loadAdmins();
+                } else {
+                    alert(data.message || 'Error creating admin');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error creating admin');
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('adminToken');
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>

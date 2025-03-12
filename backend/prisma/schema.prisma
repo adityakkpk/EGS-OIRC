@@ -54,13 +54,14 @@ model speaker {
 }
 
 model Admin {
-  id        Int   @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  role      AdminRole
-  referralCode String? @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String    @id @default(uuid())
+  email         String    @unique
+  password      String
+  role          AdminRole
+  referralCode  String?   @unique
+  referredUsers User[]    @relation("ReferredUsers")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 }
 
 enum AdminRole {
@@ -69,10 +70,12 @@ enum AdminRole {
 }
 
 model User {
-  id        Int   @id @default(autoincrement())
-  name      String
-  email     String   @unique
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
   referredBy String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  admin      Admin?   @relation("ReferredUsers", fields: [adminId], references: [id])
+  adminId    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }

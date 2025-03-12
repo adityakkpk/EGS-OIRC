@@ -1345,6 +1345,11 @@
 		// Form validation and submission
 		; (() => {
 			'use strict'
+
+			// Get referral code from URL if present
+			const urlParams = new URLSearchParams(window.location.search);
+			const referralCode = urlParams.get('ref');
+			
 			const forms = document.querySelectorAll('.needs-validation')
 			Array.from(forms).forEach(form => {
 				form.addEventListener('submit', async event => {
@@ -1357,12 +1362,14 @@
 						const formData = {
 							name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
 							email: document.getElementById('email').value,
-							phone: document.getElementById('phone').value, registrationType: document.getElementById('regType').value,
+							phone: document.getElementById('phone').value,
+							registrationType: document.getElementById('regType').value,
 							institutionName: document.getElementById('institutionName').value,
 							country: document.getElementById('country').value,
 							earlyBird: document.getElementById('earlyBird').checked,
 							regFee: document.getElementById('regFee').textContent,
-							isPaid: false
+							isPaid: false,
+							referralCode // Add referral code if present
 						}
 
 						try {
@@ -1375,17 +1382,15 @@
 								body: JSON.stringify(formData)
 							})
 
-
 							const result = await response.json()
-							console.log(result)
 							if (response.ok) {
-								console.log('Registration submitted successfully!')
+								alert('Registration submitted successfully!')
 								form.reset()
 							} else {
-								console.log(`Error: ${result.error}`)
+								alert(`Error: ${result.error || result.message}`)
 							}
 						} catch (error) {
-							console.log(`Error: ${error.message}`)
+							alert(`Error: ${error.message}`)
 						}
 					}
 					form.classList.add('was-validated')

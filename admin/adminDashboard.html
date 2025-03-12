@@ -4,13 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | ICMMCS 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .user-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .referral-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .copy-button {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Admin Dashboard</h1>
-    </header>
-    <main>
-        <p>Welcome to the Admin Dashboard!</p>
-    </main>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light" onclick="logout()">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="referral-info">
+            <h4>Your Referral Information</h4>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <p><strong>Referral Code:</strong> <span id="referralCode"></span> 
+                        <i class="fas fa-copy ms-2 copy-button" onclick="copyToClipboard('referralCode')" title="Copy referral code"></i>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Referral Link:</strong> <span id="referralLink"></span>
+                        <i class="fas fa-copy ms-2 copy-button" onclick="copyToClipboard('referralLink')" title="Copy referral link"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Your Referred Users</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive user-list">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Registration Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersList">
+                            <!-- Users will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('adminToken');
+            if (!token) {
+                window.location.href = 'index.html';
+                return;
+            }
+            loadAdminInfo();
+            loadReferredUsers();
+        });
+
+        async function loadAdminInfo() {
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/info', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+                    }
+                });
+                const data = await response.json();
+                document.getElementById('referralCode').textContent = data.referralCode;
+                const referralLink = `http://localhost:5000/register?ref=${data.referralCode}`;
+                document.getElementById('referralLink').textContent = referralLink;
+            } catch (error) {
+                console.error('Error loading admin info:', error);
+            }
+        }
+
+        async function loadReferredUsers() {
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/referred-users', {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+                    }
+                });
+                const users = await response.json();
+                displayUsers(users);
+            } catch (error) {
+                console.error('Error loading referred users:', error);
+            }
+        }
+
+        function displayUsers(users) {
+            const usersList = document.getElementById('usersList');
+            if (users.length === 0) {
+                usersList.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="text-center">No referred users yet</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            usersList.innerHTML = users.map(user => `
+                <tr>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${new Date(user.createdAt).toLocaleDateString()}</td>
+                    <td>
+                        <span class="badge bg-${user.isPaid ? 'success' : 'warning'}">
+                            ${user.isPaid ? 'Paid' : 'Pending'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            try {
+                await navigator.clipboard.writeText(text);
+                alert('Copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('adminToken');
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>

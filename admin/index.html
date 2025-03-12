@@ -432,6 +432,7 @@
 				.then(response => response.json())
 				.then(data => {
 					if (data.role === 'SUPER_ADMIN') {
+						localStorage.setItem('adminToken', data.token);
 						window.location.href = 'superAdminDashboard.html';
 					} else if (data.role === 'ADMIN') {
 						window.location.href = 'adminDashboard.html';
