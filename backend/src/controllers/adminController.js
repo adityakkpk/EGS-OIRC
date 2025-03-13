@@ -11,9 +11,12 @@ export const login = async (req, res) => {
     if (!admin) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
+
+    console.log("db pass: ", admin.password)
+    console.log("pass: ", password)
     
-    // const isPasswordValid = await bcrypt.compare(password, admin.password);
-    const isPasswordValid = password === admin.password;
+    const isPasswordValid = await bcrypt.compare(password, admin.password);
+    // const isPasswordValid = password === admin.password;
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -77,8 +80,8 @@ export const getAllAdmins = async (req, res) => {
             email: true,
             createdAt: true,
           }
-        }
-      }
+        },
+      },
     });
 
     res.json(admins);
