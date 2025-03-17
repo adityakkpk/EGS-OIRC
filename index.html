@@ -330,6 +330,102 @@
 				margin-left: 0px;
 			}
 		}
+		
+		.section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 1.5s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .logo-container {
+      transition: all 0.3s ease;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container img {
+      width: 180px;
+    }
+
+    .main-title {
+      font-weight: bold;
+			/* color: #333; */
+			color: #fff;
+    }
+
+    .organizer-card {
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .organizer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .publisher-logos {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .organizer-section {
+        margin-bottom: 2rem;
+      }
+
+      .publisher-logos .logo-container {
+        margin-bottom: 1rem;
+      }
+    }
+
+		/* About Section */
+		.about-section {
+        padding: 80px 0;
+        /* background: linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 100%); */
+      }
+      
+      .about-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 2.5rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        /* height: 100%; */
+      }
+      
+      .about-image {
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+      }
+      
+      .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #3a51bb;
+      }
+      
+      .info-card h5 {
+        color: #1a3a85;
+        margin-bottom: 0.75rem;
+      }
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -516,81 +612,90 @@
 	<!--===== HERO AREA STARTS =======-->
 	<div class="hero4-section-area"
 		style="background-image: url(assets/img/squ/img2.jpg); background-repeat: no-repeat; background-size: cover;">
-		<div class="row mb-2 d-flex rounded"
-			style="justify-content: center; flex-wrap: wrap; align-items: center; margin: 0 24px;background-color: rgba(45, 45, 45, 0.5);">
-			<div class="col-lg-3" style="border-right: 2px solid gray; padding: 12px;">
-				<h5 class="" style="margin: 4px 0; color: white;">Organized by:</h5>
-				<div class="" style="display: flex; justify-content: center; gap: 4px; align-items: center; height: 100px;">
-					<div class="bg-light"
-						style="height: 80px; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/brand/xclusive_oman.png" class="bg-light rounded" alt="sponsors_logo">
+		<!-- Organizers Section -->
+    <section class=" section">
+      <div class="container">
+        <div class="row" style="background-color: rgba(45, 45, 45, 0.5); padding: 0px 24px; border-radius: 12px;">
+          <div class="col-md-3 col-sm-6 my-4">
+            <div class="organizer-card p-3 border bg-white">
+              <div class="text-center mb-3">
+                <h6>Organized by</h6>
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="logo-container p-2">
+                  <img src="assets/img/brand/xclusive_oman.png" alt="Organizer Logo" class="img-fluid">
+                </div>
+                <!-- <div class="logo-container p-2">
+                  <img src="assets/img/sponsors_logo/DBARC.png" alt="Organizer Logo" class="img-fluid">
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 my-4">
+            <div class="organizer-card p-3 border bg-white">
+              <div class="text-center mb-3">
+                <h6>Academic partner</h6>
+              </div>
+              <div class="d-flex justify-content-center">
+                <!-- <div class="logo-container p-2">
+                  <img src="/api/placeholder/80/40" alt="Organizer Logo" class="img-fluid">
+                </div> -->
+                <div class="logo-container p-2">
+                  <img src="assets/img/sponsors_logo/DBARC.png" alt="Organizer Logo" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 my-4">
+            <div class="organizer-card p-3 border bg-white">
+              <div class="text-center mb-3">
+                <h6>Our Sponsors</h6>
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="logo-container p-2">
+                  <img src="assets/img/brand/xclusive_oman.png" alt="Organizer Logo" class="img-fluid">
+                </div>
+                <div class="logo-container p-2">
+                  <img src="assets/img/sponsors_logo/DBARC.png" alt="Organizer Logo" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 my-4">
+            <div class="organizer-card p-3 border bg-white">
+              <div class="text-center mb-3">
+                <h6>Our Journals</h6>
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="logo-container p-2">
+                  <img src="assets/img/sponsors_logo/j1.jpg" alt="Organizer Logo" class="img-fluid">
+                </div>
+                <div class="logo-container p-2">
+                  <img src="assets/img/sponsors_logo/j2.png" alt="Organizer Logo" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		<!-- Hero Section -->
+    <section class="py-2 section">
+      <div class="container">
+				<div class="row align-items-center"  style="background-color: rgba(45, 45, 45, 0.5); padding: 12px 24px; border-radius: 12px;">
+					<div class="text-center about4-heading heading6 mb-4">
+						<h2 style="color: white; font-size: 60px; font-weight: bolder;">ICMMCS 2025</h2>
 					</div>
-					<!-- <div class="bg-light" style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/sponsors_logo/sp1.jpg" alt="sponsors_logo">
-					</div> -->
-
-				</div>
-			</div>
-			<div class="col-lg-3" style="border-right: 2px solid gray; padding: 12px;">
-				<h5 class="" style="margin: 4px 0; color: white;">Academic Partners:</h5>
-				<div class="" style="display: flex; justify-content: center; gap: 4px; align-items: center; height: 100px;">
-					<!-- <div class="bg-light" style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/brand/xclusive_oman.png" alt="sponsors_logo">
-					</div> -->
-					<div class="bg-light"
-						style="height: 80px; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/sponsors_logo/DBARC.png" class="bg-light rounded" alt="sponsors_logo"
-							style="width: 100%;">
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-3" style="border-right: 2px solid gray; padding: 12px;">
-				<h5 class="" style="margin: 4px 0; color: white;">Our Sponsors:</h5>
-				<div class="" style="display: flex; justify-content: center; gap: 4px; align-items: center; height: 100px;">
-					<div class="bg-light"
-						style="height: 80px;width: 180px; padding: 8px 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/brand/xclusive_oman.png" class=" rounded" alt="sponsors_logo">
-					</div>
-					<div class="bg-light"
-						style="height: 80px;width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/sponsors_logo/DBARC.png" class=" rounded" alt="sponsors_logo">
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-3" style="padding: 12px;">
-				<h5 class="" style="margin: 4px 0; color: white;">Our Journals:</h5>
-				<div class="" style="display: flex; justify-content: center; gap: 4px; align-items: center; height: 100px;">
-					<div class="bg-light"
-						style="height: 80px; width: 180px; padding: 8px 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/sponsors_logo/j2.png" class=" rounded" alt="sponsors_logo">
-					</div>
-					<div class="bg-light"
-						style="height: 80px;width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-						<img src="assets/img/sponsors_logo/j1.jpg" class=" rounded" alt="sponsors_logo">
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12 m-auto" style="background-color: rgba(45, 45, 45, 0.5); margin: 4px;">
-					<div class="hero4-header"
-						style=" padding: 24px; display: flex;flex-wrap: wrap; align-items: center; justify-content: center; flex-direction: column;">
-						<h1 style="color: white; font-size: 60px;">ICMMCS 2025</h1>
-						<div class="space12"></div>
-						<h1 class="text-anime-style-3" style="color: white; text-align: center;">International Conference on
-							Mathematics, Management, and Computer Science</h1>
-						<div class="space12"></div>
-						<p data-aos="fade-left" data-aos-duration="900" style="width: 90%; color: white; text-align: center;">
-							Welcome to ICMMCS 2025: The Intersection of Mathematical Insight, Management Excellence, and Technological
-							Innovation.
-						</p>
-						<div class="space32"></div>
-						<div class=""
-							style="display: flex;flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="text-center">
+              <img src="assets/img/sponsors_logo/new_logo.jpg" alt="Website Logo"
+                class="img-fluid animate__animated animate__fadeIn">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-center text-md-start animate__animated animate__fadeIn" style="animation-delay: 1.15s;">
+              <h1 class="main-title mb-4">International Conference on Mathematics, Management, and Computer Science</h1>
+							<div style="display: flex;flex-wrap: wrap; gap: 12px;">
 							<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
 								<a href="register.html" class="vl-btn4">Register Now</a>
 							</div>
@@ -598,29 +703,112 @@
 								<a href="sponsors.html" class="vl-btn4">Our Sponsors</a>
 							</div>
 						</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<!-- <div class="row my-2 d-flex rounded p-2"
+				style="justify-content: center; align-items: center; margin: 0 24px;background-color: rgba(45, 45, 45, 0.5);">
+				<h5 class="" style="color: white; margin: 4px 0;">Published by:</h5>
+				<div class="col-lg-11 m-auto"
+					style="padding: 10px 24px; display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap; border-radius: 8px;">
+					<div class=""
+						style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray; background-color: #000000;">
+						<div class="d-flex"
+							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
+							<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgb(254, 136, 56);border-radius: 8px;width: 100%;text-align: center;">CJSIM</h3>
+							<a href="https://www.tarupublications.com/journal/CJSIM" target="_blank">
+								<p style="color: white;">Print ISSN: 0973-7766</p>
+								<p style="color: white;">Online ISSN: 2168-930X</p>
+							</a>
+						</div>
+					</div>
+					<div class="bg-light"
+						style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
+						<div class="d-flex"
+							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
+							<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(190, 190, 190, 0.745);border-radius: 8px;width: 100%;text-align: center;">JDMSC</h3>
+							<a href="https://www.tarupublications.com/journal/JDMSC" target="_blank">
+								<p>Print ISSN: 0972-0529</p>
+								<p>Online ISSN: 2169-0065</p>
+							</a>
+						</div>
+					</div>
+					<div class="bg-light"
+						style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
+						<div class="d-flex"
+							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
+							<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(79, 254, 228, 0.847);border-radius: 8px;width: 100%;text-align: center;">JDSGT</h3>
+							<a href="https://www.tarupublications.com/journal/JDSGT" target="_blank">
+								<p>Print ISSN: 1726-037X</p>
+								<p>Online ISSN: 2169-0057</p>
+							</a>
+						</div>
+					</div>
+					<div class="bg-light"
+						style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
+						<div class="d-flex"
+							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
+							<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(190, 190, 190, 0.745);border-radius: 8px;width: 100%;text-align: center;">JIOS</h3>
+							<a href="https://www.tarupublications.com/journal/JIOS" target="_blank">
+								<p>Print ISSN: 0252-2667</p>
+								<p>Online ISSN: 2169-0103</p>
+							</a>
+						</div>
+					</div>
+					<div class="bg-light"
+						style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
+						<div class="d-flex"
+							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
+							<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(79, 254, 228, 0.847);border-radius: 8px;width: 100%;text-align: center;">JIM</h3>
+							<a href="https://www.tarupublications.com/journal/JIM" target="_blank">
+								<p>Print ISSN: 0972-0502</p>
+								<p>Online ISSN: 2169-012X</p>
+							</a>
+						</div>
+					</div>
+					<div class="bg-light"
+						style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
+						<div class="d-flex"
+							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
+							<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(190, 190, 190, 0.745);border-radius: 8px;width: 100%;text-align: center;">JSMS</h3>
+							<a href="https://www.tarupublications.com/journal/CJSIM" target="_blank">
+								<p>Print ISSN: 0973-0510</p>
+								<p>Online ISSN: 2169-0014</p>
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="row my-2 d-flex rounded p-2"
-			style="justify-content: center; align-items: center; margin: 0 24px;background-color: rgba(45, 45, 45, 0.5);">
-			<h5 class="" style="color: white; margin: 4px 0;">Published by:</h5>
-			<div class="col-lg-11 m-auto"
-				style="padding: 10px 24px; display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap; border-radius: 8px;">
-				<div class="bg-light"
-					style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
-					<div class="d-flex"
+		</div> -->
+	</div>
+	<!--===== HERO AREA ENDS =======-->
+
+	<!-- Publishers Section -->
+	<section class="section bg-light py-5">
+		<div class="container">
+			<div class="row publisher-logos">
+				<div class="mb-4">
+					<h5 class="border-bottom pb-2">Published by:</h5>
+				</div>
+				<div class="col-6 col-md-3 col-lg-2 mb-3">
+					<div class="logo-container p-3 border rounded text-center">
+						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
+						<div class="d-flex"
 						style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
-						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(79, 254, 228, 0.847);border-radius: 8px;width: 100%;text-align: center;">CJSIM</h3>
+						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgb(254, 136, 56);border-radius: 8px;width: 100%;text-align: center;">CJSIM</h3>
 						<a href="https://www.tarupublications.com/journal/CJSIM" target="_blank">
 							<p>Print ISSN: 0973-7766</p>
 							<p>Online ISSN: 2168-930X</p>
 						</a>
 					</div>
+					</div>
 				</div>
-				<div class="bg-light"
-					style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
-					<div class="d-flex"
+				<div class="col-6 col-md-3 col-lg-2 mb-3">
+					<div class="logo-container p-3 border rounded text-center">
+						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
+						<div class="d-flex"
 						style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(190, 190, 190, 0.745);border-radius: 8px;width: 100%;text-align: center;">JDMSC</h3>
 						<a href="https://www.tarupublications.com/journal/JDMSC" target="_blank">
@@ -628,10 +816,12 @@
 							<p>Online ISSN: 2169-0065</p>
 						</a>
 					</div>
+					</div>
 				</div>
-				<div class="bg-light"
-					style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
-					<div class="d-flex"
+				<div class="col-6 col-md-3 col-lg-2 mb-3">
+					<div class="logo-container p-3 border rounded text-center">
+						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
+						<div class="d-flex"
 						style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(79, 254, 228, 0.847);border-radius: 8px;width: 100%;text-align: center;">JDSGT</h3>
 						<a href="https://www.tarupublications.com/journal/JDSGT" target="_blank">
@@ -639,10 +829,12 @@
 							<p>Online ISSN: 2169-0057</p>
 						</a>
 					</div>
+					</div>
 				</div>
-				<div class="bg-light"
-					style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
-					<div class="d-flex"
+				<div class="col-6 col-md-3 col-lg-2 mb-3">
+					<div class="logo-container p-3 border rounded text-center">
+						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
+						<div class="d-flex"
 						style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(190, 190, 190, 0.745);border-radius: 8px;width: 100%;text-align: center;">JIOS</h3>
 						<a href="https://www.tarupublications.com/journal/JIOS" target="_blank">
@@ -650,10 +842,12 @@
 							<p>Online ISSN: 2169-0103</p>
 						</a>
 					</div>
+					</div>
 				</div>
-				<div class="bg-light"
-					style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
-					<div class="d-flex"
+				<div class="col-6 col-md-3 col-lg-2 mb-3">
+					<div class="logo-container p-3 border rounded text-center">
+						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
+						<div class="d-flex"
 						style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(79, 254, 228, 0.847);border-radius: 8px;width: 100%;text-align: center;">JIM</h3>
 						<a href="https://www.tarupublications.com/journal/JIM" target="_blank">
@@ -661,10 +855,12 @@
 							<p>Online ISSN: 2169-012X</p>
 						</a>
 					</div>
+					</div>
 				</div>
-				<div class="bg-light"
-					style="height: 100%; width: 180px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid gray;">
-					<div class="d-flex"
+				<div class="col-6 col-md-3 col-lg-2 mb-3">
+					<div class="logo-container p-3 border rounded text-center">
+						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
+						<div class="d-flex"
 						style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 						<h3 style="font-size: 30px;margin-bottom: 4px;font-weight: bold;padding: 4px;background-color: rgba(190, 190, 190, 0.745);border-radius: 8px;width: 100%;text-align: center;">JSMS</h3>
 						<a href="https://www.tarupublications.com/journal/CJSIM" target="_blank">
@@ -672,18 +868,18 @@
 							<p>Online ISSN: 2169-0014</p>
 						</a>
 					</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!--===== HERO AREA ENDS =======-->
+	</section>
 
 	<!--===== ABOUT AREA STARTS =======-->
 	<div class="about4-section-area sp1">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-10 m-auto">
-					<div class="about4-heading heading6"
+				<div class="col-lg-12 m-auto">
+					<!-- <div class="about4-heading heading6"
 						style="display: flex;flex-wrap: wrap;  flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
 						<h2 data-aos="fade-left" data-aos-duration="800">About ICMMCS 2025</h2>
 						<div class="space18"></div>
@@ -722,9 +918,78 @@
 										establish global partnerships.</p>
 								</div>
 							</div>
-						</div>
+						</div>			
 						<div class="space18"></div>
-					</div>
+					</div> -->
+					<!-- About Section -->
+					<section id="about" class="about-section about4-heading heading6">
+						<div class="container">
+							<h2 class="section-title text-center mb-5" data-aos="fade-up" data-aos-duration="500">About the Conference</h2>
+							<div class="row">
+								<div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-duration="500">
+									<div class="about-image">
+										<img src="assets/img/all-images/event/event-img10.png" class="img-fluid rounded" alt="Conference" style="width: 85%;">
+									</div>
+									<div class="about-card">
+										<h4>Join the Premier Academic Event of 2025</h4>
+										<p>The International Conference on Mathematics, Management, and Computer Science (ICMMCS) is a prestigious gathering of researchers, academics, and industry professionals from around the world.</p>
+										<p>This conference provides a platform for sharing cutting-edge research, fostering collaborations, and addressing contemporary challenges across multiple disciplines.</p>
+										<p>With over 500 delegates expected from 50+ countries, ICMMCS 2025 promises to be an enriching experience for all participants.</p>
+										<div class="text-center mt-4">
+											<a href="#" class="btn btn-primary">Download Brochure</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+									<div class="info-card">
+										<h5><i class="fas fa-calendar-alt me-2"></i> Important Dates</h5>
+										<ul class="mb-0">
+											<li><strong>Abstract Submission:</strong> October 15, 2024</li>
+											<li><strong>Paper Submission:</strong> December 1, 2024</li>
+											<li><strong>Notification of Acceptance:</strong> February 10, 2025</li>
+											<li><strong>Early Bird Registration:</strong> March 1, 2025</li>
+										</ul>
+									</div>
+									
+									<div class="info-card">
+										<h5><i class="fas fa-map-marker-alt me-2"></i> Venue</h5>
+										<p class="mb-0">Sultan Qaboos University (SQU),</br> Muscat, Sultanate of Oman</p>
+									</div>
+									
+									<div class="info-card">
+										<h5><i class="fas fa-star me-2"></i> Conference Highlights</h5>
+										<ul class="mb-0">
+											<li>50+ keynote speakers from prestigious institutions</li>
+											<li>200+ research paper presentations</li>
+											<li>Workshops and panel discussions</li>
+											<li>Networking opportunities with industry leaders</li>
+											<li>Publication in Scopus-indexed journals</li>
+										</ul>
+									</div>
+									
+									<!-- <div class="info-card">
+										<h5><i class="fas fa-users me-2"></i> Who Should Attend</h5>
+										<div class="row">
+											<div class="col-6">
+												<ul class="mb-0">
+													<li>Researchers</li>
+													<li>Academicians</li>
+													<li>Students</li>
+												</ul>
+											</div>
+											<div class="col-6">
+												<ul class="mb-0">
+													<li>Industry Professionals</li>
+													<li>Policymakers</li>
+													<li>Entrepreneurs</li>
+												</ul>
+											</div>
+										</div>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -733,20 +998,20 @@
 		<div class="container-fluid bg-light py-5">
 			<div class="container">
 				<div class="row justify-content-center mb-5">
-					<div class="col-lg-8 text-center heading6 fade-in-up">
+					<div class="col-lg-8 text-center heading6">
 						<h2 class="mb-4">Objectives of ICMMCS 2025</h2>
 					</div>
 				</div>
 
 				<div class="row justify-content-center">
 					<div class="col-lg-10 objective-img" style="display: flex; justify-content: center;align-items: center;">
-						<img src="assets/img/all-images/others/image.png" alt="objectives" class="rounded fade-in-up">
+						<img src="assets/img/all-images/others/image.png" alt="objectives" class="rounded">
 					</div>
 				</div>
 
 				<!-- Call to Action Section -->
 				<div class="row mt-3">
-					<div class="col-12 text-center fade-in-up" style="width: 70%;margin: auto;">
+					<div class="col-12 text-center" style="width: 70%;margin: auto;">
 						<p class="lead mb-4">ICMMCS 2025 aims to inspire future innovations by providing a vibrant platform for
 							thought leaders, industry experts, and young researchers to explore challenges and drive forward-thinking
 							solutions.</p>
@@ -847,12 +1112,12 @@
 						<div class="col-lg-4">
 								<div class="text-center p-4 bg-white rounded shadow-sm" data-aos="fade-up" data-aos-duration="800">
 										<div class="mb-4">
-												<img src="assets/img/sponsors_logo/DBAC/Dr Rajbala Gauttam.jpg" alt="Honorary Chair" 
+												<img src="assets/img/proff/bkDas.jpg" alt="Honorary Chair" 
 														class="rounded-circle img-fluid" style="width: 180px; height: 180px; object-fit: cover;">
 										</div>
 										<h3 class="fs-4 fw-bold mb-2" style="color: #019087;">Honorary Chair</h3>
 										<h4 class="fs-5 mb-2">Prof. B.K. Das</h4>
-										<p class="text-muted">Distinguished Professor</p>
+										<p class="text-muted">University of Delhi</p>
 								</div>
 						</div>
 				</div>
@@ -868,11 +1133,11 @@
 							<div class="col-lg-4 col-md-6">
 									<div class="text-center p-4 bg-white rounded shadow-sm" data-aos="fade-up" data-aos-duration="1000">
 											<div class="mb-4">
-													<img src="assets/img/sponsors_logo/DBAC/Dr Rajbala Gauttam.jpg" alt="Conference Chair" 
+													<img src="assets/img/proff/pDas.jpg" alt="Conference Chair" 
 															class="rounded-circle img-fluid" style="width: 160px; height: 160px; object-fit: cover;">
 											</div>
 											<h4 class="fs-5 fw-bold mb-2">Dr. P Das</h4>
-											<p class="text-muted">Conference Chair</p>
+											<p class="text-muted">Delhi University</p>
 									</div>
 							</div>
 	
@@ -880,13 +1145,25 @@
 							<div class="col-lg-4 col-md-6">
 									<div class="text-center p-4 bg-white rounded shadow-sm" data-aos="fade-up" data-aos-duration="1200">
 											<div class="mb-4">
-													<img src="assets/img/sponsors_logo/DBAC/Dr Rajbala Gauttam.jpg" alt="Conference Chair" 
+													<img src="assets/img/proff/rcPoonia.jpg" alt="Conference Chair" 
 															class="rounded-circle img-fluid" style="width: 160px; height: 160px; object-fit: cover;">
 											</div>
 											<h4 class="fs-5 fw-bold mb-2">Prof. R.C. Poonia</h4>
-											<p class="text-muted">Conference Chair</p>
+											<p class="text-muted">Christ University</p>
 									</div>
 							</div>
+
+							<!-- Chair 3 -->
+							<div class="col-lg-4 col-md-6">
+								<div class="text-center p-4 bg-white rounded shadow-sm" data-aos="fade-up" data-aos-duration="1200">
+										<div class="mb-4">
+												<img src="assets/img/proff/dVirmani.jpg" alt="Conference Chair" 
+														class="rounded-circle img-fluid" style="width: 160px; height: 160px; object-fit: cover;">
+										</div>
+										<h4 class="fs-5 fw-bold mb-2">Prof. D. Virmani</h4>
+										<p class="text-muted">GGSIP University</p>
+								</div>
+						</div>
 						</div>
 				</div>
 		</div>
@@ -911,13 +1188,14 @@
 								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 								<div class="img1" style="background-color: #019087b8;">
-									<img src="assets/img/all-images/team/team-img4.png" alt="" class="team-img4" />
+									<img src="assets/img/proff/gAggarwal.jpg" alt="" class="team-img4" />
 								</div>
 							</div>
 							<div class="space28"></div>
 							<div class="content-area">
 								<a href="speakers.html">Dr. G Aggarwal</a>
 									<div class=" space16">
+									<p style="margin-top: 8px;">Amity University</p>
 							</div>
 						</div>
 					</div>
@@ -927,13 +1205,14 @@
 							<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 							<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 							<div class="img1" style="background-color: #019087b8;">
-								<img src="assets/img/all-images/team/team-img5.png" alt="" class="team-img4" />
+								<img src="assets/img/proff/sShakya.jpg" alt="" class="team-img4" />
 							</div>
 						</div>
 						<div class="space28"></div>
 						<div class="content-area">
 							<a href="speakers.html">Prof. S. Shakya</a>
 									<div class=" space16">
+										<p style="margin-top: 8px;">Tribhuvan University</p>
 						</div>
 					</div>
 				</div>
@@ -943,13 +1222,14 @@
 						<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 						<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 						<div class="img1" style="background-color: #019087b8;">
-							<img src="assets/img/all-images/team/team-img6.png" alt="" class="team-img4" />
+							<img src="assets/img/proff/sSebestian.jpg" alt="" class="team-img4" />
 						</div>
 					</div>
 					<div class="space28"></div>
 					<div class="content-area">
 						<a href="speakers.html">Dr. S. Sebastian</a>
 									<div class=" space16">
+										<p style="margin-top: 8px;"> Christ University</p>
 					</div>
 				</div>
 			</div>
@@ -1063,12 +1343,12 @@
 								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 								<div class="img1" style="background-color: #019087b8;">
-									<img src="assets/img/sponsors_logo/DBAC/Prof. Sarla Bhardwaj.jpg" alt="" class="team-img4" />
+									<img src="assets/img/proff/mAhlawat.jpg" alt="" class="team-img4" />
 								</div>
 							</div>
 							<div class="space28"></div>
 							<div class="content-area">
-								<a href="speakers.html" style="color: white;"">Prof. Sarla Bhardwaj</a>
+								<a href="speakers.html" style="color: white;"">Prof. M Ahlawat</a>
 									<div class=" space16">
 							</div>
 							<!-- <p>Finance Consultant</p> -->
@@ -1080,12 +1360,12 @@
 							<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 							<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 							<div class="img1" style="background-color: #019087b8;">
-								<img src="assets/img/sponsors_logo/DBAC/Prof Sujit Kumar.jpg" alt="" class="team-img4" />
+								<img src="assets/img/proff/sBhardwaj.jpg" alt="" class="team-img4" />
 							</div>
 						</div>
 						<div class="space28"></div>
 						<div class="content-area">
-							<a href="speakers.html" style="color: white;"">Prof Sujit Kumar</a>
+							<a href="speakers.html" style="color: white;"">Prof. S. Bhardwaj</a>
 									<div class=" space16">
 						</div>
 						<!-- <p>HR Consultant</p> -->
@@ -1097,12 +1377,12 @@
 						<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 						<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 						<div class="img1" style="background-color: #019087b8;">
-							<img src="assets/img/sponsors_logo/DBAC/Prof Monica Ahlawat.jpg" alt="" class="team-img4" />
+							<img src="assets/img/proff/rGauttam.jpg" alt="" class="team-img4" />
 						</div>
 					</div>
 					<div class="space28"></div>
 					<div class="content-area">
-						<a href="speakers.html" style="color: white;"">Prof Monica Ahlawat</a>
+						<a href="speakers.html" style="color: white;""> Dr. R. Gauttam</a>
 									<div class=" space16">
 					</div>
 					<!-- <p>Finance Consultant</p> -->
@@ -1114,36 +1394,37 @@
 					<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 					<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 					<div class="img1" style="background-color: #019087b8;">
-						<img src="assets/img/sponsors_logo/DBAC/Dr Rajbala Gauttam.jpg" alt="" class="team-img4" />
+						<img src="assets/img/proff/sKumar.jpg" alt="" class="team-img4" />
 					</div>
 				</div>
 				<div class="space28"></div>
 				<div class="content-area">
-					<a href="speakers.html" style="color: white;"">Dr Rajbala Gauttam</a>
+					<a href="speakers.html" style="color: white;"">Prof. S. Kumar</a>
 									<div class=" space16">
 				</div>
 				<!-- <p>Finance Consultant</p> -->
 			</div>
+			
 		</div>
 
-		<!-- <div class="our-team-boxarea">
+		<div class="our-team-boxarea">
 			<div class="team-widget-area">
 				<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 				<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
 				<div class="img1" style="background-color: #019087b8;">
-					<img src="assets/img/all-images/team/team-img4.png" alt="" class="team-img4" />
+					<img src="assets/img/proff/sPrasad.jpg" alt="" class="team-img4" />
 				</div>
 			</div>
 			<div class="space28"></div>
 			<div class="content-area">
-				<a href="speakers.html" style="color: white;"">Alex Robertson</a>
+				<a href="speakers.html" style="color: white;"">Prof. S.prasad</a>
 									<div class=" space16">
 			</div>
-			<p>Finance Consultant</p>
+			<!-- <p>Finance Consultant</p> -->
 		</div>
 	</div>
 
-	<div class="our-team-boxarea">
+	<!-- <div class="our-team-boxarea">
 		<div class="team-widget-area">
 			<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
 			<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
@@ -1716,17 +1997,152 @@
 
 	<script>
 		// Intersection Observer for fade-in-up animation
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('visible');
-				}
-			});
-		}, {
-			threshold: 0.1
-		});
+		// const observer = new IntersectionObserver((entries) => {
+		// 	entries.forEach(entry => {
+		// 		if (entry.isIntersecting) {
+		// 			entry.target.classList.add('visible');
+		// 		}
+		// 	});
+		// }, {
+		// 	threshold: 0.1
+		// });
 
-		document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+		// document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+
+		// Animation for sections
+    function handleScroll() {
+      const sections = document.querySelectorAll('.section');
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight * 0.85) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    // Initialize animations
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add animation to elements when they come into view
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.25
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate__animated');
+          entry.target.classList.add('animate__fadeInUp');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Target elements for intersection observer
+    document.querySelectorAll('.theme-box, .opportunities-box').forEach(element => {
+      observer.observe(element);
+    });
+
+    // Button hover effects
+    const buttons = document.querySelectorAll('.btn-custom');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-5px)';
+        this.style.boxShadow = '0 8px 15px rgba(0,0,0,0.2)';
+      });
+
+      button.addEventListener('mouseleave', function () {
+        this.style.transform = '';
+        this.style.boxShadow = '';
+      });
+    });
+
+    // Logo hover effects
+    const logoContainers = document.querySelectorAll('.logo-container');
+    logoContainers.forEach(container => {
+      container.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.05)';
+      });
+
+      container.addEventListener('mouseleave', function () {
+        this.style.transform = '';
+      });
+    });
+
+    // Add additional pages dynamically
+    function loadPage(pageName) {
+      const pageContainer = document.getElementById('page-container');
+
+      // Here you would typically fetch the content via AJAX
+      // For demo purposes, we'll just toggle visibility
+      const pages = document.querySelectorAll('[id$="-page"]');
+      pages.forEach(page => {
+        page.style.display = 'none';
+      });
+
+      const targetPage = document.getElementById(pageName + '-page');
+      if (targetPage) {
+        targetPage.style.display = 'block';
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Mobile menu toggle
+    const toggleButton = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (toggleButton && navbarCollapse) {
+      toggleButton.addEventListener('click', function () {
+        navbarCollapse.classList.toggle('show');
+      });
+    }
+
+    // Responsive adjustments
+    function handleResponsiveChanges() {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth < 768) {
+        // Mobile adjustments
+        document.querySelectorAll('.organizer-card').forEach(card => {
+          card.classList.add('mb-3');
+        });
+      } else {
+        // Desktop adjustments
+        document.querySelectorAll('.organizer-card').forEach(card => {
+          card.classList.remove('mb-3');
+        });
+      }
+    }
+
+    // Call responsive adjustments on load and resize
+    window.addEventListener('load', handleResponsiveChanges);
+    window.addEventListener('resize', handleResponsiveChanges);
 	</script>
 </body>
 
