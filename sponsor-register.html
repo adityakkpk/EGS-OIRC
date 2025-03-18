@@ -541,81 +541,157 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
+		// Form validation functions
+		function validateEmail(email) {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
+		}
+
+		function showError(message, element) {
+			const errorDiv = document.createElement('div');
+			errorDiv.className = 'invalid-feedback';
+			errorDiv.textContent = message;
+			element.classList.add('is-invalid');
+			element.parentNode.appendChild(errorDiv);
+		}
+
+		function clearErrors() {
+			document.querySelectorAll('.is-invalid').forEach(element => {
+				element.classList.remove('is-invalid');
+				const errorDiv = element.parentNode.querySelector('.invalid-feedback');
+				if (errorDiv) {
+					errorDiv.remove();
+				}
+			});
+		}
+
+		function showSuccessMessage(message) {
+			const alertDiv = document.createElement('div');
+			alertDiv.className = 'alert alert-success alert-dismissible fade show';
+			alertDiv.innerHTML = `
+				${message}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			`;
+			document.querySelector('.card-body').insertBefore(alertDiv, document.getElementById('registrationForm'));
+		}
 
 		function updateAmount() {
 			const sponsorLevel = document.getElementById('sponsorLevel').value;
 			const sponsorAmount = document.getElementById('sponsorAmount');
+			const amountInput = document.getElementById('amount');
 
 			switch (sponsorLevel) {
 				case 'platinum':
 					sponsorAmount.innerText = '$10000';
+					amountInput.value = 10000;
 					break;
 				case 'gold':
 					sponsorAmount.innerText = '$5000';
+					amountInput.value = 5000;
 					break;
 				case 'silver':
 					sponsorAmount.innerText = '$3000';
+					amountInput.value = 3000;
 					break;
 				case 'bronze':
 					sponsorAmount.innerText = '$1000';
+					amountInput.value = 1000;
 					break;
 				default:
 					sponsorAmount.innerText = '$500';
+					amountInput.value = 500;
 					break;
 			}
 		}
 
-		document.getElementById('sponsorLevel').addEventListener('change', updateAmount());
+		// Form submission handler
+		document.getElementById('registrationForm').addEventListener('submit', async function (event) {
+			event.preventDefault();
+			clearErrors();
 
-		document.addEventListener('DOMContentLoaded', function () {
-			const form = document.getElementById('registrationForm');
-
-			form.addEventListener('submit', function (event) {
-				event.preventDefault();
+			// Basic form validation
+			if (!this.checkValidity()) {
 				event.stopPropagation();
+				this.classList.add('was-validated');
+				return;
+			}
 
-				if (form.checkValidity() === false) {
-					form.classList.add('was-validated');
+			// Get form elements
+			const sponsorName = document.getElementById('sponsorName');
+			const sponsorEmail = document.getElementById('sponsorEmail');
+			const sponsorLevel = document.getElementById('sponsorLevel');
+			const amount = document.getElementById('amount');
+
+			// Validate email
+			if (!validateEmail(sponsorEmail.value)) {
+				showError('Please enter a valid email address', sponsorEmail);
+				return;
+			}
+
+			// Validate minimum amount based on level
+			const minAmounts = {
+				platinum: 10000,
+				gold: 5000,
+				silver: 3000,
+				bronze: 1000
+			};
+
+			if (parseInt(amount.value) < minAmounts[sponsorLevel.value]) {
+				showError(`Minimum amount for ${sponsorLevel.value} level is $${minAmounts[sponsorLevel.value]}`, amount);
+				return;
+			}
+
+			// Get form data
+			const formData = {
+				name: sponsorName.value,
+				email: sponsorEmail.value,
+				level: sponsorLevel.value,
+				amount: parseInt(amount.value),
+				isPaid: false
+			};
+
+			try {
+				const response = await fetch('http://localhost:5000/api/sponsor/register', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(formData)
+				});
+
+				const result = await response.json();
+
+				if (response.ok) {
+					showSuccessMessage('Registration successful! We will contact you soon for payment details.');
+					this.reset();
+					this.classList.remove('was-validated');
+					updateAmount();
 				} else {
-					const sponsorAmount = document.getElementById('sponsorAmount').value;
-					if (sponsorAmount < 1000) {
-						alert('Sponsorship amount must be at least $1000.');
-						return;
-					}
-
-					const formData = {
-						name: document.getElementById('sponsorName').value,
-						email: document.getElementById('sponsorEmail').value,
-						level: document.getElementById('sponsorLevel').value,
-						amount: document.getElementById('sponsorAmount').textContent,
-						isPaid: false
-					};
-
-					fetch('http://localhost:5000/api/sponsor/register', {
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json'
-						},
-						body: JSON.stringify(formData)
-					})
-						.then(response => response.json())
-						.then(data => {
-							if (data.success) {
-								console.log('Registration successful!');
-								form.reset();
-								form.classList.remove('was-validated');
-							} else {
-								throw new Error(data.error);
-							}
-						})
-						.catch(error => {
-							console.log('Registration failed. Please try again.');
-							console.error('Error:', error);
-						});
+					throw new Error(result.error || 'Registration failed');
 				}
-			}, false);
+			} catch (error) {
+				showError(error.message, sponsorEmail);
+				console.error('Error:', error);
+			}
 		});
 
+		// Real-time validation
+		document.querySelectorAll('input, select').forEach(element => {
+			element.addEventListener('input', function() {
+				if (this.classList.contains('is-invalid')) {
+					this.classList.remove('is-invalid');
+					const errorDiv = this.parentNode.querySelector('.invalid-feedback');
+					if (errorDiv) {
+						errorDiv.remove();
+					}
+				}
+			});
+		});
+
+		// Initialize amount on page load
+		document.addEventListener('DOMContentLoaded', function() {
+			updateAmount();
+		});
 	</script>
 </body>
 

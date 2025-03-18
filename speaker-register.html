@@ -771,26 +771,96 @@
 
 
 	<script>
+		// Form validation functions
+		function validateEmail(email) {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
+		}
+
+		function validatePhone(phone) {
+			const phoneRegex = /^\+?[\d\s-]{8,}$/;
+			return phoneRegex.test(phone);
+		}
+
+		function showError(message, element) {
+			const errorDiv = document.createElement('div');
+			errorDiv.className = 'invalid-feedback';
+			errorDiv.textContent = message;
+			element.classList.add('is-invalid');
+			element.parentNode.appendChild(errorDiv);
+		}
+
+		function clearErrors() {
+			document.querySelectorAll('.is-invalid').forEach(element => {
+				element.classList.remove('is-invalid');
+				const errorDiv = element.parentNode.querySelector('.invalid-feedback');
+				if (errorDiv) {
+					errorDiv.remove();
+				}
+			});
+		}
+
+		function showSuccessMessage(message) {
+			const alertDiv = document.createElement('div');
+			alertDiv.className = 'alert alert-success alert-dismissible fade show';
+			alertDiv.innerHTML = `
+				${message}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			`;
+			document.querySelector('.card-body').insertBefore(alertDiv, document.getElementById('registrationForm'));
+		}
+
 		// Form submission handler
 		document.getElementById('registrationForm').addEventListener('submit', async function (event) {
 			event.preventDefault();
+			clearErrors();
 
+			// Basic form validation
 			if (!this.checkValidity()) {
 				event.stopPropagation();
 				this.classList.add('was-validated');
 				return;
 			}
 
+			// Get form elements
+			const firstName = document.getElementById('firstName');
+			const lastName = document.getElementById('lastName');
+			const email = document.getElementById('email');
+			const phone = document.getElementById('phone');
+			const institution = document.getElementById('institution');
+			const country = document.getElementById('country');
+			const paperSubject = document.getElementById('paperSubject');
+			const paperTitle = document.getElementById('paperTitle');
+			const paperAbstract = document.getElementById('paperAbstract');
+
+			// Validate email
+			if (!validateEmail(email.value)) {
+				showError('Please enter a valid email address', email);
+				return;
+			}
+
+			// Validate phone
+			if (!validatePhone(phone.value)) {
+				showError('Please enter a valid phone number', phone);
+				return;
+			}
+
+			// Validate paper abstract length
+			if (paperAbstract.value.length < 100) {
+				showError('Paper abstract must be at least 100 characters long', paperAbstract);
+				return;
+			}
+
 			// Get form data
 			const formData = {
-				name: document.getElementById('firstName').value + " " + document.getElementById('lastName').value,
-				email: document.getElementById('email').value,
-				phone: document.getElementById('phone').value,
-				institutionName: document.getElementById('institution').value,
-				country: document.getElementById('country').value,
-				paperSubject: document.getElementById('paperSubject').value,
-				paperTitle: document.getElementById('paperTitle').value,
-				paperAbstract: document.getElementById('paperAbstract').value
+				name: `${firstName.value} ${lastName.value}`,
+				email: email.value,
+				phone: phone.value,
+				institutionName: institution.value,
+				country: country.value,
+				paperSubject: paperSubject.value,
+				paperTitle: paperTitle.value,
+				paperAbstract: paperAbstract.value
 			};
 
 			try {
@@ -802,20 +872,32 @@
 					body: JSON.stringify(formData)
 				});
 
+				const result = await response.json();
+
 				if (response.ok) {
-					const result = await response.json();
-					// Show success message
-					console.log('Registration successful:');
-					
-					// Reset form
+					showSuccessMessage('Registration successful! We will contact you soon.');
 					this.reset();
 					this.classList.remove('was-validated');
 				} else {
-					throw new Error('Registration failed');
+					throw new Error(result.error || 'Registration failed');
 				}
 			} catch (error) {
+				showError(error.message, email);
 				console.error('Error:', error);
 			}
+		});
+
+		// Real-time validation
+		document.querySelectorAll('input, textarea, select').forEach(element => {
+			element.addEventListener('input', function() {
+				if (this.classList.contains('is-invalid')) {
+					this.classList.remove('is-invalid');
+					const errorDiv = this.parentNode.querySelector('.invalid-feedback');
+					if (errorDiv) {
+						errorDiv.remove();
+					}
+				}
+			});
 		});
 	</script>
 </body>
