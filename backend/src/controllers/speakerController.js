@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { sendSpeakerRegistrationEmail } from "../services/emailService.js";
 
 const prisma = new PrismaClient();
 
@@ -45,9 +46,9 @@ export const registerSpeaker = async (req, res) => {
     }
 
     // Validate paper abstract length
-    if (speakerData.paperAbstract.length < 100) {
+    if (speakerData.paperAbstract.length < 10) {
       return res.status(400).json({
-        message: "Paper abstract must be at least 100 characters long",
+        message: "Paper abstract must be at least 10 characters long",
         success: false
       });
     }
@@ -68,6 +69,9 @@ export const registerSpeaker = async (req, res) => {
     const newSpeaker = await prisma.speaker.create({
       data: speakerData,
     });
+
+    // Send registration confirmation emails
+    await sendSpeakerRegistrationEmail(newSpeaker);
 
     res.status(201).json({
       message: "Speaker registered successfully",

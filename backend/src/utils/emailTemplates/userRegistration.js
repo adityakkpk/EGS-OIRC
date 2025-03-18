@@ -23,3 +23,123 @@ export const adminNotificationTemplate = (userData) => `
     <p>ICMMCS Team</p>
   </div>
 `;
+
+export const speakerConfirmationTemplate = (speakerData) => `
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <h1>Welcome to ICMMCS 2025, ${speakerData.name}!</h1>
+    <p>Thank you for registering as a speaker for ICMMCS 2025. We're excited to have you share your research with us!</p>
+    
+    <h2>Your Registration Details:</h2>
+    <ul>
+      <li>Paper Title: ${speakerData.paperTitle}</li>
+      <li>Subject Area: ${speakerData.paperSubject}</li>
+      <li>Institution: ${speakerData.institutionName}</li>
+    </ul>
+
+    <h2>Important Dates:</h2>
+    <ul>
+      <li>Conference Dates: March 2025</li>
+      <li>Paper Submission Deadline: January 15, 2025</li>
+      <li>Review Notification: February 1, 2025</li>
+    </ul>
+
+    <p>Next Steps:</p>
+    <ol>
+      <li>Prepare your full paper according to the conference guidelines</li>
+      <li>Submit your paper through our online submission system</li>
+      <li>Wait for the review notification</li>
+    </ol>
+
+    <p>If you have any questions, please don't hesitate to contact us at info@icmmcs.org</p>
+    
+    <br/>
+    <p>Best regards,</p>
+    <p>ICMMCS Team</p>
+  </div>
+`;
+
+export const speakerAdminNotificationTemplate = (speakerData) => `
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <h1>New Speaker Registration</h1>
+    <p>A new speaker has registered for ICMMCS 2025.</p>
+    
+    <h2>Speaker Details:</h2>
+    <ul>
+      <li>Name: ${speakerData.name}</li>
+      <li>Email: ${speakerData.email}</li>
+      <li>Phone: ${speakerData.phone}</li>
+      <li>Institution: ${speakerData.institutionName}</li>
+      <li>Country: ${speakerData.country}</li>
+    </ul>
+
+    <h2>Paper Information:</h2>
+    <ul>
+      <li>Title: ${speakerData.paperTitle}</li>
+      <li>Subject: ${speakerData.paperSubject}</li>
+    </ul>
+
+    <h3>Abstract:</h3>
+    <p>${speakerData.paperAbstract}</p>
+
+    <p>Please review the registration and follow up with the speaker if needed.</p>
+    
+    <br/>
+    <p>Best regards,</p>
+    <p>ICMMCS System</p>
+  </div>
+`;
+
+export const sponsorConfirmationTemplate = (sponsorData) => `
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <h1>Welcome to ICMMCS 2025, ${sponsorData.name}!</h1>
+    <p>Thank you for registering as a ${sponsorData.level} sponsor for ICMMCS 2025. We're thrilled to have you as our partner!</p>
+    
+    <h2>Sponsorship Details:</h2>
+    <ul>
+      <li>Level: ${sponsorData.level.toUpperCase()}</li>
+      <li>Amount: ${sponsorData.amount}</li>
+    </ul>
+
+    <h2>Next Steps:</h2>
+    <ol>
+      <li>Our team will contact you shortly with payment instructions</li>
+      <li>Once payment is confirmed, we'll send you the sponsorship package</li>
+      <li>We'll work with you to ensure your brand gets maximum visibility at the conference</li>
+    </ol>
+
+    <h2>Sponsorship Benefits:</h2>
+    <ul>
+      <li>Brand visibility at the conference</li>
+      <li>Logo placement on conference materials</li>
+      <li>Complimentary conference passes</li>
+      <li>Exhibition space (as per sponsorship level)</li>
+    </ul>
+
+    <p>If you have any questions, please contact us at info@icmmcs.org</p>
+    
+    <br/>
+    <p>Best regards,</p>
+    <p>ICMMCS Team</p>
+  </div>
+`;
+
+export const sponsorAdminNotificationTemplate = (sponsorData) => `
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <h1>New Sponsor Registration</h1>
+    <p>A new sponsor has registered for ICMMCS 2025.</p>
+    
+    <h2>Sponsor Details:</h2>
+    <ul>
+      <li>Organization Name: ${sponsorData.name}</li>
+      <li>Email: ${sponsorData.email}</li>
+      <li>Sponsorship Level: ${sponsorData.level.toUpperCase()}</li>
+      <li>Amount: ${sponsorData.amount}</li>
+    </ul>
+
+    <p><strong>Action Required:</strong> Please follow up with payment instructions and sponsorship package details.</p>
+    
+    <br/>
+    <p>Best regards,</p>
+    <p>ICMMCS System</p>
+  </div>
+`;

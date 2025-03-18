@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { sendSponsorRegistrationEmail } from "../services/emailService.js";
 
 const prisma = new PrismaClient();
 
@@ -28,7 +29,7 @@ export const registerSponsor = async (req, res) => {
 
   try {
     // Validate required fields
-    const requiredFields = ['name', 'email', 'sponsorshipLevel', 'amount'];
+    const requiredFields = ['name', 'email', 'level', 'amount'];
     const missingFields = requiredFields.filter(field => !sponsorData[field]);
     
     if (missingFields.length > 0) {
@@ -47,7 +48,7 @@ export const registerSponsor = async (req, res) => {
     }
 
     // Validate sponsorship level
-    if (!validateSponsorshipLevel(sponsorData.sponsorshipLevel)) {
+    if (!validateSponsorshipLevel(sponsorData.level)) {
       return res.status(400).json({
         message: "Invalid sponsorship level. Must be one of: platinum, gold, silver, bronze",
         success: false
@@ -55,10 +56,10 @@ export const registerSponsor = async (req, res) => {
     }
 
     // Validate minimum amount based on sponsorship level
-    const minimumAmount = getMinimumAmount(sponsorData.sponsorshipLevel);
+    const minimumAmount = getMinimumAmount(sponsorData.level);
     if (sponsorData.amount < minimumAmount) {
       return res.status(400).json({
-        message: `Minimum amount for ${sponsorData.sponsorshipLevel} sponsorship is $${minimumAmount}`,
+        message: `Minimum amount for ${sponsorData.level} sponsorship is $${minimumAmount}`,
         success: false
       });
     }
@@ -75,13 +76,13 @@ export const registerSponsor = async (req, res) => {
       });
     }
 
-    // Set initial payment status
-    sponsorData.paymentStatus = 'pending';
-
     // Create new sponsor
     const newSponsor = await prisma.sponsor.create({
       data: sponsorData,
     });
+
+    // Send registration confirmation emails
+    await sendSponsorRegistrationEmail(newSponsor);
 
     res.status(201).json({
       message: "Sponsor registered successfully",

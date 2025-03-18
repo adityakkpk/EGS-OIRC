@@ -578,28 +578,28 @@
 		function updateAmount() {
 			const sponsorLevel = document.getElementById('sponsorLevel').value;
 			const sponsorAmount = document.getElementById('sponsorAmount');
-			const amountInput = document.getElementById('amount');
+			// const amountInput = document.getElementById('amount');
 
 			switch (sponsorLevel) {
 				case 'platinum':
 					sponsorAmount.innerText = '$10000';
-					amountInput.value = 10000;
+					// amountInput.value = 10000;
 					break;
 				case 'gold':
 					sponsorAmount.innerText = '$5000';
-					amountInput.value = 5000;
+					// amountInput.value = 5000;
 					break;
 				case 'silver':
 					sponsorAmount.innerText = '$3000';
-					amountInput.value = 3000;
+					// amountInput.value = 3000;
 					break;
 				case 'bronze':
 					sponsorAmount.innerText = '$1000';
-					amountInput.value = 1000;
+					// amountInput.value = 1000;
 					break;
 				default:
 					sponsorAmount.innerText = '$500';
-					amountInput.value = 500;
+					// amountInput.value = 500;
 					break;
 			}
 		}
@@ -620,7 +620,7 @@
 			const sponsorName = document.getElementById('sponsorName');
 			const sponsorEmail = document.getElementById('sponsorEmail');
 			const sponsorLevel = document.getElementById('sponsorLevel');
-			const amount = document.getElementById('amount');
+			const amount = document.getElementById('sponsorAmount');
 
 			// Validate email
 			if (!validateEmail(sponsorEmail.value)) {
@@ -646,9 +646,11 @@
 				name: sponsorName.value,
 				email: sponsorEmail.value,
 				level: sponsorLevel.value,
-				amount: parseInt(amount.value),
+				amount: amount.innerText,
 				isPaid: false
 			};
+
+			console.log(formData);
 
 			try {
 				const response = await fetch('http://localhost:5000/api/sponsor/register', {
