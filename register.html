@@ -5,6 +5,15 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Register | ICMMCS 2025</title>
+	<meta name="description" content="Register for the ICMMCS 2025 conference. Join us in Muscat, Oman for a transformative experience in mathematics, management, and computer science.">
+	<meta property="og:image" content="assets/img/sponsors_logo/footer_logo.png" />
+	<meta property="og:title" content="Register | ICMMCS 2025" />
+	<meta property="og:description" content="Register for the ICMMCS 2025 conference. Join us in Muscat, Oman for a transformative experience in mathematics, management, and computer science." />
+	<meta property="og:url" content="https://www.icmmcs.org/register.html" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Register | ICMMCS 2025" />
+	<meta name="twitter:description" content="Register for the ICMMCS 2025 conference. Join us in Muscat, Oman for a transformative experience in mathematics, management, and computer science." />
+	<meta name="twitter:image" content="assets/img/sponsors_logo/footer_logo.png" />
 
 	<!--=====FAB ICON=======-->
 	<link rel="shortcut icon" href="assets/img/sponsors_logo/favicon.png" />
@@ -1233,8 +1242,8 @@
 						<h3>Contact Us</h3>
 						<ul>
 							<li>
-								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+1 123 456
-									7890</a>
+								<a href="tel:+11234567890" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+968 93391308, <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91-9540111207</a>
 							</li>
 							<li>
 								<a href="https://www.google.com/maps/place/Sultan+Qaboos+University/@23.5912214,58.1695517,17z/data=!3m1!4b1!4m6!3m5!1s0x3e8de2c15540870d:0x2ce06efa9952a6e!8m2!3d23.5912214!4d58.1721266!16zL20vMDcybmgx?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D"
@@ -1352,12 +1361,17 @@
 			
 			const forms = document.querySelectorAll('.needs-validation')
 			Array.from(forms).forEach(form => {
+				let isSubmitting = false; // Debounce flag
+
 				form.addEventListener('submit', async event => {
 					if (!form.checkValidity()) {
 						event.preventDefault()
 						event.stopPropagation()
 					} else {
 						event.preventDefault()
+						if (isSubmitting) return; // Prevent multiple submissions
+						isSubmitting = true;
+
 						// Collect form data
 						const formData = {
 							name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
@@ -1384,13 +1398,18 @@
 
 							const result = await response.json()
 							if (response.ok) {
-								alert('Registration submitted successfully!')
+								// Handle successful submission
 								form.reset()
+								document.getElementById('priceDisplay').textContent = 'Registration Fee: $0';
+								showMessage('Registration submitted successfully!', 'success');
 							} else {
-								alert(`Error: ${result.error || result.message}`)
+								// Handle error response
+								showMessage(`Error: ${result.error || result.message}`, 'danger');
 							}
 						} catch (error) {
-							alert(`Error: ${error.message}`)
+							showMessage(`Error: ${error.message}`, 'danger');
+						} finally {
+							isSubmitting = false; // Reset debounce flag
 						}
 					}
 					form.classList.add('was-validated')
@@ -1417,8 +1436,11 @@
 			};
 
 			const selected = regType.value
+			const earlyBirdDate = new Date('2025-03-31');
+			const currentDate = new Date();
+
 			if (selected) {
-				const price = earlyBird.checked ?
+				const price = (earlyBird.checked && currentDate <= earlyBirdDate) ?
 					prices[selected].early :
 					prices[selected].normal
 
@@ -1429,6 +1451,7 @@
 		}
 
 		earlyBird.addEventListener('change', updatePrice);
+		regType.addEventListener('change', updatePrice);
 
 		// Toggle Nations List
 		function toggleMenu(category) {
@@ -1447,12 +1470,23 @@
 		// Contact travel desk function
 		function contactTravelDesk() {
 			const email = 'travel@conference2025.com'
-			alert(`Please email your registration details to ${email} for exclusive airfare rates.`)
+			showMessage(`Please email your registration details to ${email} for exclusive airfare rates.`, 'info')
 		}
 
 		// Check hotel availability function
 		function checkAvailability(hotel) {
-			alert(`Checking availability for ${hotel}...\nPlease contact our travel desk for immediate assistance with booking.`)
+			showMessage(`Checking availability for ${hotel}...\nPlease contact our travel desk for immediate assistance with booking.`, 'info')
+		}
+
+		// Function to show messages to the user
+		function showMessage(message, type) {
+			const messageContainer = document.createElement('div');
+			messageContainer.className = `alert alert-${type}`;
+			messageContainer.textContent = message;
+			document.body.prepend(messageContainer);
+			setTimeout(() => {
+				messageContainer.remove();
+			}, 5000);
 		}
 	</script>
 </body>
