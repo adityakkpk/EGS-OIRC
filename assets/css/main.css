@@ -6769,7 +6769,7 @@ body {
   visibility: hidden;
 }
 .footer4-sertion-area .footer-social-box .img1 img {
-  height: 100%;
+  height: 100px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
