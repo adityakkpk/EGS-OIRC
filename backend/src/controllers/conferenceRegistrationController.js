@@ -36,11 +36,16 @@ export const registerUser = async (req, res) => {
 
         // If referral code exists, create the user record with admin reference
         if (referralCode) {
+            const admin = await prisma.admin.findUnique({
+                where: { referralCode }
+            });
+
             await prisma.user.create({
                 data: {
                     name: registerUserData.name,
                     email: registerUserData.email,
-                    referredBy: referralCode
+                    referredBy: referralCode,
+                    adminId: admin.id
                 }
             });
         }

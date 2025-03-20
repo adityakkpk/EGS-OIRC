@@ -207,6 +207,24 @@
 			transition: all 0.3s ease;
 			transform: rotate(180deg);
 		}
+
+		.alert-danger {
+			background-color: #fa7270;
+      color: white;
+      border: 1px solid red;
+		}
+
+		.alert-success {
+      background-color: #5cb85c;
+      color: white;
+      border: 1px solid green;
+    }
+
+		.alert-inform {
+			background-color: #5bc0de;
+      color: white;
+      border: 1px solid lightblue;
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -862,7 +880,7 @@
 							</div>
 
 							<!-- Submit Button -->
-							<button type="submit" class="btn btn-primary-custom w-100">Submit Registration</button>
+							<button type="submit" class="btn btn-primary-custom w-100 mb-2">Submit Registration</button>
 						</form>
 					</div>
 				</div>
@@ -1399,8 +1417,7 @@
 							const result = await response.json()
 							if (response.ok) {
 								// Handle successful submission
-								form.reset()
-								document.getElementById('priceDisplay').textContent = 'Registration Fee: $0';
+								form.reset();
 								showMessage('Registration submitted successfully!', 'success');
 							} else {
 								// Handle error response
@@ -1470,12 +1487,12 @@
 		// Contact travel desk function
 		function contactTravelDesk() {
 			const email = 'travel@conference2025.com'
-			showMessage(`Please email your registration details to ${email} for exclusive airfare rates.`, 'info')
+			alert(`Please email your registration details to ${email} for exclusive airfare rates.`)
 		}
 
 		// Check hotel availability function
 		function checkAvailability(hotel) {
-			showMessage(`Checking availability for ${hotel}...\nPlease contact our travel desk for immediate assistance with booking.`, 'info')
+			alert(`Checking availability for ${hotel}...\nPlease contact our travel desk for immediate assistance with booking.`)
 		}
 
 		// Function to show messages to the user
@@ -1483,7 +1500,7 @@
 			const messageContainer = document.createElement('div');
 			messageContainer.className = `alert alert-${type}`;
 			messageContainer.textContent = message;
-			document.body.prepend(messageContainer);
+			document.getElementById('registrationForm').append(messageContainer);
 			setTimeout(() => {
 				messageContainer.remove();
 			}, 5000);

@@ -11,9 +11,6 @@ export const login = async (req, res) => {
     if (!admin) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
-
-    console.log("db pass: ", admin.password)
-    console.log("pass: ", password)
     
     const isPasswordValid = await bcrypt.compare(password, admin.password);
     // const isPasswordValid = password === admin.password;
@@ -123,7 +120,6 @@ export const getReferredUsers = async (req, res) => {
             name: true,
             email: true,
             createdAt: true,
-            isPaid: true
           }
         }
       }
