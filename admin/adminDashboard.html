@@ -502,7 +502,7 @@
 
 		async function loadAdminInfo() {
 			try {
-				const response = await fetch('http://localhost:5000/api/admin/info', {
+				const response = await fetch('https://egs-conference-backend.onrender.com/api/admin/info', {
 					headers: {
 						'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
 					}
@@ -518,7 +518,7 @@
 
 		async function loadReferredUsers() {
 			try {
-				const response = await fetch('http://localhost:5000/api/admin/referred-users', {
+				const response = await fetch('https://egs-conference-backend.onrender.com/api/admin/referred-users', {
 					headers: {
 						'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
 					}
