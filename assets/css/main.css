@@ -14855,12 +14855,16 @@ body {
 .team3-section-area .team-slider-area2 .our-team-boxarea {
   text-align: center;
   margin-bottom: 30px;
+  width: fit-content;
+}
+.team3-section-area .team-slider-area2 .our-team-boxarea .content-area {
+  width: fit-content;
 }
 .team3-section-area .team-slider-area2 .our-team-boxarea .content-area a {
   color: var(--ztc-text-text-8);
   text-align: center;
   font-family: var(--ztc-family-font1);
-  font-size: var(--ztc-font-size-font-s24);
+  font-size: var(--ztc-font-size-font-s16);
   font-style: normal;
   font-weight: var(--ztc-weight-bold);
   line-height: 24px; /* 100% */
@@ -14871,7 +14875,7 @@ body {
   color: var(--ztc-text-text-9);
   text-align: center;
   font-family: var(--ztc-family-font1);
-  font-size: var(--ztc-font-size-font-s18);
+  font-size: var(--ztc-font-size-font-s16);
   font-style: normal;
   font-weight: var(--ztc-weight-regular);
   line-height: 18px;
@@ -14882,9 +14886,9 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 1;
-  padding: 24px;
-  height: 300px;
-  width: 300px;
+  padding: 20px;
+  height: 150px;
+  width: 150px;
 }
 .team3-section-area .team-slider-area2 .our-team-boxarea .team-widget-area .elements21 {
   position: absolute;

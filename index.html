@@ -5,14 +5,17 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>ICMMCS 2025</title>
-	<meta name="description" content="Join us at ICMMCS 2025 in Muscat, Oman for a transformative conference exploring the latest advancements in mathematics, management, and computer science.">
+	<meta name="description"
+		content="Join us at ICMMCS 2025 in Muscat, Oman for a transformative conference exploring the latest advancements in mathematics, management, and computer science.">
 	<meta property="og:image" content="assets/img/sponsors_log/3.png" />
 	<meta property="og:title" content="ICMMCS 2025" />
-	<meta property="og:description" content="Join us at ICMMCS 2025 in Muscat, Oman for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
+	<meta property="og:description"
+		content="Join us at ICMMCS 2025 in Muscat, Oman for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
 	<meta property="og:url" content="https://www.icmmcs.org/index.html" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="ICMMCS 2025" />
-	<meta name="twitter:description" content="Join us at ICMMCS 2025 in Muscat, Oman for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
+	<meta name="twitter:description"
+		content="Join us at ICMMCS 2025 in Muscat, Oman for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
 	<meta name="twitter:image" content="assets/img/sponsors_logo/3.png" />
 
 	<!--=====FAB ICON=======-->
@@ -32,21 +35,6 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		.bg-theme {
-			background-color: #019087;
-		}
-
-		.text-theme {
-			color: #019087;
-		}
-
-		.border-theme {
-			border-color: #019087 !important;
-		}
-
-		.bg-custom-dark {
-			background-color: #1a1f3d;
-		}
 
 		.image-container {
 			overflow: hidden;
@@ -447,7 +435,7 @@
 
 		.leadership-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(200px, 230px));
 			gap: 30px;
 		}
 
@@ -525,6 +513,7 @@
 			overflow: hidden;
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
 			height: 100%;
+			width: 100%;
 		}
 
 		.chair-card:hover {
@@ -614,7 +603,66 @@
 			}
 
 			.leadership-grid {
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				grid-template-columns: repeat(auto-fit, minmax(200px, 230px));
+			}
+		}
+
+		/* Carousal */
+		.carousel-container {
+			width: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.carousel-track {
+			display: flex;
+			animation: carousel 15s linear infinite;
+		}
+
+		.carousel-slide {
+			min-width: 200px;
+			width: 250px;
+			height: 250px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin-right: 10px;
+			border-radius: 4px;
+			flex: 0 0 auto;
+		}
+
+		@keyframes carousel {
+			0% {
+				transform: translateX(0);
+			}
+
+			100% {
+				transform: translateX(-50%);
+				/* Move by half of the duplicated content */
+			}
+		}
+
+		/* Pause animation on hover */
+		.carousel-container:hover .carousel-track {
+			animation-play-state: paused;
+		}
+
+		/* Responsive adjustments */
+		@media (max-width: 768px) {
+			.carousel-slide {
+				height: 250px;
+				min-width: 160px;
+				font-size: 1.2rem;
+			}
+
+			.carousel-track {
+				animation: carousel 5s linear infinite;
 			}
 		}
 	</style>
@@ -660,15 +708,6 @@
 									<li>
 										<a href="index.html">Home </a>
 									</li>
-									<!-- <li>
-										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
-										<ul class="dropdown-padding">
-											<li><a href="about.html">About Conference</a></li>
-											<li><a href="speakers.html">Our Speakers</a></li>
-											<li><a href="agenda.html">Conference Agenda</a></li>
-											<li><a href="faq.html">FAQs</a></li>
-										</ul>
-									</li> -->
 									<li>
 										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
 										<ul class="dropdown-padding">
@@ -816,9 +855,6 @@
 								<div class="logo-container p-2">
 									<img src="assets/img/brand/xclusive_oman.png" alt="Organizer Logo" class="img-fluid">
 								</div>
-								<!-- <div class="logo-container p-2">
-                  <img src="assets/img/sponsors_logo/DBARC.png" alt="Organizer Logo" class="img-fluid">
-                </div> -->
 							</div>
 						</div>
 					</div>
@@ -829,8 +865,8 @@
 							</div>
 							<div class="d-flex justify-content-center">
 								<div class="logo-container p-2">
-                  <img src="assets/img/sponsors_logo/uon.jpg" alt="Organizer Logo" class="img-fluid">
-                </div>
+									<img src="assets/img/sponsors_logo/uon.jpg" alt="Organizer Logo" class="img-fluid">
+								</div>
 								<div class="logo-container p-2">
 									<img src="assets/img/sponsors_logo/DBARC.png" alt="Organizer Logo" class="img-fluid">
 								</div>
@@ -863,9 +899,6 @@
 			<div class="container">
 				<div class="row align-items-center"
 					style="background-color: rgba(45, 45, 45, 0.5); padding: 12px 24px; border-radius: 12px;">
-					<!-- <div class="text-center about4-heading heading6 mb-4">
-						<h2 style="color: white; font-size: 52px; font-weight: bolder;">ICMMCS 2025</h2>
-					</div> -->
 					<div class="col-md-4 mb-4 mb-md-0">
 						<div class="text-center">
 							<img src="assets/img/sponsors_logo/3.png" alt="Website Logo"
@@ -874,10 +907,12 @@
 					</div>
 					<div class="col-md-8">
 						<div class="text-center text-md-start animate__animated animate__fadeIn" style="animation-delay: 1.15s;">
-							<h1 class="main-title mb-4">International Conference on Mathematics, Management, & Computer Science 2025</h1>
+							<h1 class="main-title mb-4">International Conference on Mathematics, Management, & Computer Science 2025
+							</h1>
 						</div>
 					</div>
-					<div style="display: flex;flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin-top: 10px;">
+					<div
+						style="display: flex;flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin-top: 10px;">
 						<div class="btn-area1" data-aos="fade-left" data-aos-duration="1000">
 							<a href="register.html" class="vl-btn4">Register Now</a>
 						</div>
@@ -895,7 +930,7 @@
 					<div class="col-lg-12 my-2">
 						<div class="organizer-card p-3 border bg-white">
 							<div class="text-center mb-1">
-								<h6>Our Journals</h6>
+								<h6>Published Papers Indexed In</h6>
 							</div>
 							<div class="row justify-content-center" style="gap: 4px;">
 								<div class="col-6 col-md-3 col-lg-2 p-2">
@@ -941,7 +976,6 @@
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
 					<div class="logo-container p-3 border rounded text-center">
-						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -956,7 +990,6 @@
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
 					<div class="logo-container p-3 border rounded text-center">
-						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -971,7 +1004,6 @@
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
 					<div class="logo-container p-3 border rounded text-center">
-						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -986,7 +1018,6 @@
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
 					<div class="logo-container p-3 border rounded text-center">
-						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1001,7 +1032,6 @@
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
 					<div class="logo-container p-3 border rounded text-center">
-						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1016,7 +1046,6 @@
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
 					<div class="logo-container p-3 border rounded text-center">
-						<!-- <img src="/api/placeholder/100/60" alt="Publisher Logo" class="img-fluid"> -->
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1038,48 +1067,6 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-12 m-auto">
-					<!-- <div class="about4-heading heading6"
-						style="display: flex;flex-wrap: wrap;  flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-						<h2 data-aos="fade-left" data-aos-duration="800">About ICMMCS 2025</h2>
-						<div class="space18"></div>
-						<div
-							style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: center; margin: 0 4px;">
-							<div class="rounded animate__animated animate__fadeInUp custom-card"
-								style="display: flex; flex-direction: column; padding: 18px; border: 1px solid #019087; gap: 16px; width: 40%; min-width: 280px;">
-								<div>
-									<h2 data-aos="fade-left" data-aos-duration="800"
-										style="font-weight: bolder; background: white; font-size: 30px;margin-bottom: 12px;">Theme</h2>
-									<img src="assets/img/all-images/event/event-img10.png" data-aos="fade-right" data-aos-duration="900"
-										class="rounded">
-								</div>
-								<div class="theme-section"
-									style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
-									<p data-aos="fade-left" data-aos-duration="900"
-										style="text-align: justify; font-size: 20px; overflow: hidden;">"Bridging
-										Disciplines, Inspiring Innovation" - ICMMCS provides a dynamic convergence of knowledge, research,
-										and industry expertise across interconnected fields.</p>
-								</div>
-							</div>
-
-							<div class="rounded animate__animated animate__fadeInUp custom-card"
-								style="display: flex; flex-direction: column; padding: 18px; border: 1px solid #019087; gap: 16px; width: 40%; min-width: 280px;">
-								<div>
-									<h2 data-aos="fade-left" data-aos-duration="800"
-										style="font-weight: bolder; background: white; font-size: 30px;margin-bottom: 12px;">Opportunities
-									</h2>
-									<img src="assets/img/squ/img1.jpg" data-aos="fade-right" data-aos-duration="900" class="rounded">
-								</div>
-								<div class="theme-section"
-									style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
-									<p data-aos="fade-left" data-aos-duration="900"
-										style="text-align: justify; font-size: 20px; overflow: hidden;">Present research and
-										publish in ESCI and SCOPUS-indexed journals, showcasing ideas through poster presentations, and
-										establish global partnerships.</p>
-								</div>
-							</div>
-						</div>			
-						<div class="space18"></div>
-					</div> -->
 					<!-- About Section -->
 					<section id="about" class="about-section about4-heading heading6">
 						<div class="container">
@@ -1088,8 +1075,7 @@
 							<div class="row">
 								<div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-duration="500">
 									<div class="about-image">
-										<img src="assets/img/squ/img2.jpg" class="img-fluid rounded" alt="Conference"
-											style="width: 90%;">
+										<img src="assets/img/squ/img2.jpg" class="img-fluid rounded" alt="Conference" style="width: 90%;">
 									</div>
 									<div class="about-card">
 										<h4>Join the Premier Academic Event of 2025</h4>
@@ -1111,7 +1097,7 @@
 										<h5><i class="fas fa-calendar-alt me-2"></i> Important Dates</h5>
 										<ul class="mb-0">
 											<li><strong>Call for Paper:</strong> April 1, 2025</li>
-											<li><strong>Paper Submission:</strong> August 15, 2025</li>
+											<li><strong>Last Date of Paper Submission:</strong> August 15, 2025</li>
 											<li><strong>Notification of Acceptance:</strong> August 30, 2025</li>
 											<li><strong>Last Date for Camera Ready:</strong> September 15, 2025</li>
 											<li><strong>Last Date of Registration:</strong> September 25, 2025</li>
@@ -1127,32 +1113,12 @@
 									<div class="info-card">
 										<h5><i class="fas fa-star me-2"></i> Conference Highlights</h5>
 										<ul class="mb-0">
-											<li>50+ keynote speakers from prestigious institutions</li>
-											<li>200+ research paper presentations</li>
+											<li>10+ keynote speakers from prestigious institutions</li>
+											<li>500+ research paper presentations</li>
 											<li>Workshops and panel discussions</li>
 											<li>Networking opportunities with industry leaders</li>
 										</ul>
 									</div>
-
-									<!-- <div class="info-card">
-										<h5><i class="fas fa-users me-2"></i> Who Should Attend</h5>
-										<div class="row">
-											<div class="col-6">
-												<ul class="mb-0">
-													<li>Researchers</li>
-													<li>Academicians</li>
-													<li>Students</li>
-												</ul>
-											</div>
-											<div class="col-6">
-												<ul class="mb-0">
-													<li>Industry Professionals</li>
-													<li>Policymakers</li>
-													<li>Entrepreneurs</li>
-												</ul>
-											</div>
-										</div>
-									</div> -->
 								</div>
 							</div>
 						</div>
@@ -1268,8 +1234,8 @@
 	<section class="py-5" style="background-color: #f9f9f9;">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-7 m-auto">
-					<div class="brand-header heading6 text-center space-margin60">
+				<div class="col-lg-12 m-auto">
+					<div class="brand-header heading6 space-margin60">
 						<h2 class="text-anime-style-3 mb-5">Conference Leadership</h2>
 					</div>
 				</div>
@@ -1290,15 +1256,12 @@
 				</div>
 
 				<div class="chairs-section" style="width: 100%;">
-					<div class="section-title">
-						<h3>Conference Chairs</h3>
+					<div class="section-title heading6" style="text-align: start;">
+						<h2>Conference Chairs</h2>
 					</div>
 
 					<div class="leadership-grid">
 						<div class="chair-card">
-							<div class="chair-header">
-								<h4>Conference Chair</h4>
-							</div>
 							<div class="chair-content">
 								<div class="chair-img">
 									<img src="assets/img/proff/sInnamoratti.jpg" alt="Dr. S. innamoratti">
@@ -1311,9 +1274,6 @@
 						</div>
 
 						<div class="chair-card">
-							<div class="chair-header">
-								<h4>Conference Chair</h4>
-							</div>
 							<div class="chair-content">
 								<div class="chair-img">
 									<img src="assets/img/proff/rcPoonia.jpg" alt="Prof. R.C. Poonia">
@@ -1326,9 +1286,6 @@
 						</div>
 
 						<div class="chair-card">
-							<div class="chair-header">
-								<h4>Conference Chair</h4>
-							</div>
 							<div class="chair-content">
 								<div class="chair-img">
 									<img src="assets/img/proff/dCS.jpg" alt="Prof. Dr. Charles Shieh">
@@ -1336,6 +1293,70 @@
 								<div class="chair-info">
 									<h3>Prof. Dr. Charles Shieh</h3>
 									<p>Huaqiao University, China</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="chair-card">
+							<div class="chair-content">
+								<div class="chair-img">
+									<img src="assets/img/proff/ABadawi.jpg" alt="Dr. S. innamoratti">
+								</div>
+								<div class="chair-info">
+									<h3>Dr. A. Badawi</h3>
+									<p>American University of Sharjah, Dubai</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="chair-card">
+							<div class="chair-content">
+								<div class="chair-img">
+									<img src="assets/img/proff/dVirmani.jpg" alt="Prof. R.C. Poonia">
+								</div>
+								<div class="chair-info">
+									<h3>Prof. D. Virmani</h3>
+									<p>GGSIP University, India</p>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+					
+					<div class="leadership-grid mt-5">
+						<div class="chair-card">
+							<div class="chair-content">
+								<div class="chair-img">
+									<img src="assets/img/proff/pDas.jpg" alt="Prof. Dr. Charles Shieh">
+								</div>
+								<div class="chair-info">
+									<h3>Prof. P. Dass</h3>
+									<p>Delhi University, India</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="chair-card">
+							<div class="chair-content">
+								<div class="chair-img">
+									<img src="assets/img/proff/xZhi.jpg" alt="Prof. Dr. Charles Shieh">
+								</div>
+								<div class="chair-info">
+									<h3>Xiao-Zhi Gao</h3>
+									<p>University of Eastern, Finland</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="chair-card">
+							<div class="chair-content">
+								<div class="chair-img">
+									<img src="assets/img/proff/vEmilia.jpeg" alt="Prof. Dr. Charles Shieh">
+								</div>
+								<div class="chair-info">
+									<h3>Valentina Emilia Balas</h3>
+									<p>Aurel Vlaicu University of Arad</p>
 								</div>
 							</div>
 						</div>
@@ -1347,65 +1368,135 @@
 	<!--===== HONORARY CHAIR AREA ENDS =======-->
 
 	<!--===== Conference Co-Chair AREA STARTS =======-->
-	<div class="team3-section-area sp1" style="background-color: #ffffff;">
+	<div class="team3-section-area p-5" style="background-color: #ffffff;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
-					<div class="team2-header heading6 space-margin60">
+					<div class="team2-header heading6 mb-3">
 						<h2 class="text-anime-style-3">Conference Co-Chair</h2>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="team-slider-area2 owl-carousel">
-						<div class="our-team-boxarea">
-							<div class="team-widget-area">
-								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-								<div class="img1" style="background-color: #019087b8;">
-									<img src="assets/img/proff/gAggarwal.jpg" alt="" class="team-img4" />
+					<div id="carousel" class="carousel-container">
+						<div class="carousel-track">
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/gAggarwal.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Dr. G Aggarwal</h3>
+											<p>Amity University, Tashkent</p>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="space28"></div>
-							<div class="content-area">
-								<a href="speakers.html">Dr. G Aggarwal</a>
-								<div class=" space16">
-									<p style="margin-top: 8px;">Amity University, Tashkent</p>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/sShakya.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Prof. S. Shakya</h3>
+											<p>Tribhuvan University, Nepal</p>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-
-						<div class="our-team-boxarea">
-							<div class="team-widget-area">
-								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-								<div class="img1" style="background-color: #019087b8;">
-									<img src="assets/img/proff/sShakya.jpg" alt="" class="team-img4" />
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/sSebestian.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Dr. S. Sebastian</h3>
+											<p>Christ University, India</p>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="space28"></div>
-							<div class="content-area">
-								<a href="speakers.html">Prof. S. Shakya</a>
-								<div class=" space16">
-									<p style="margin-top: 8px;">Tribhuvan University, Nepal</p>
+							<!-- Duplicate slides -->
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/gAggarwal.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Dr. G Aggarwal</h3>
+											<p>Amity University, Tashkent</p>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-
-						<div class="our-team-boxarea">
-							<div class="team-widget-area">
-								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-								<div class="img1" style="background-color: #019087b8;">
-									<img src="assets/img/proff/sSebestian.jpg" alt="" class="team-img4" />
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/sShakya.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Prof. S. Shakya</h3>
+											<p>Tribhuvan University, Nepal</p>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="space28"></div>
-							<div class="content-area">
-								<a href="speakers.html">Dr. S. Sebastian</a>
-								<div class=" space16">
-									<p style="margin-top: 8px;"> Christ University, India</p>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/sSebestian.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Dr. S. Sebastian</h3>
+											<p>Christ University, India</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/gAggarwal.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Dr. G Aggarwal</h3>
+											<p>Amity University, Tashkent</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/sShakya.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Prof. S. Shakya</h3>
+											<p>Tribhuvan University, Nepal</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/sSebestian.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Dr. S. Sebastian</h3>
+											<p>Christ University, India</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1417,106 +1508,146 @@
 	</div>
 	<!--===== Conference Co-Chair AREA ENDS =======-->
 
-	<!--===== Organizing Committee AREA STARTS =======-->
-	<!-- <div class="team3-section-area sp1" style="background-color: #0a0a2e;">
+	<!--===== International Advisory Board STARTS =======-->
+	<div class="team3-section-area p-5" style="background-color: #ffffff;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
-					<div class="team2-header heading6 space-margin60">
-						<h2 class="text-anime-style-3 text-white">Organizing Committee</h2>
+					<div class="team2-header heading6 mb-3">
+						<h2 class="text-anime-style-3">International Advisory Board</h2>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="team-slider-area2 owl-carousel">
-						<div class="our-team-boxarea">
-							<div class="team-widget-area">
-								<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-								<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-								<div class="img1" style="background-color: #019087b8;">
-									<img src="assets/img/proff/mAhlawat.jpg" alt="" class="team-img4" />
+					<div id="carousel" class="carousel-container">
+						<div class="carousel-track">
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pZenn.png" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Prof. Mauro Zannetti</h3>
+											<p>University of L’Aquila, Italy</p>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="space28"></div>
-							<div class="content-area">
-								<a href="speakers.html" style="color: white;"">Prof. M Ahlawat</a>
-									<div class=" space16">
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/aKhurana.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Ashish Khurana</h3>
+											<p>Advisory Board, GALLER India <br> MBA (Boston University)</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pChris.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Chris</h3>
+											<p>Kyoto University, Japan</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Duplicate slides -->
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pZenn.png" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Prof. Mauro Zannetti</h3>
+											<p>University of L’Aquila, Italy</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/aKhurana.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Ashish Khurana</h3>
+											<p>Advisory Board, GALLER India <br> MBA (Boston University)</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pChris.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Chris</h3>
+											<p>Kyoto University, Japan</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pZenn.png" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Prof. Mauro Zannetti</h3>
+											<p>University of L’Aquila, Italy</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/aKhurana.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Ashish Khurana</h3>
+											<p>Advisory Board, GALLER India <br> MBA (Boston University)</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pChris.jpg" alt="Dr. S. innamoratti">
+										</div>
+										<div class="chair-info">
+											<h3>Chris</h3>
+											<p>Kyoto University, Japan</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="our-team-boxarea">
-						<div class="team-widget-area">
-							<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-							<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-							<div class="img1" style="background-color: #019087b8;">
-								<img src="assets/img/proff/sBhardwaj.jpg" alt="" class="team-img4" />
-							</div>
-						</div>
-						<div class="space28"></div>
-						<div class="content-area">
-							<a href="speakers.html" style="color: white;"">Prof. S. Bhardwaj</a>
-									<div class=" space16">
-						</div>
-					</div>
 				</div>
-
-				<div class="our-team-boxarea">
-					<div class="team-widget-area">
-						<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-						<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-						<div class="img1" style="background-color: #019087b8;">
-							<img src="assets/img/proff/rGauttam.jpg" alt="" class="team-img4" />
-						</div>
-					</div>
-					<div class="space28"></div>
-					<div class="content-area">
-						<a href="speakers.html" style="color: white;""> Dr. R. Gauttam</a>
-									<div class=" space16">
-					</div>
-				</div>
-			</div>
-
-			<div class="our-team-boxarea">
-				<div class="team-widget-area">
-					<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-					<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-					<div class="img1" style="background-color: #019087b8;">
-						<img src="assets/img/proff/sKumar.jpg" alt="" class="team-img4" />
-					</div>
-				</div>
-				<div class="space28"></div>
-				<div class="content-area">
-					<a href="speakers.html" style="color: white;"">Prof. S. Kumar</a>
-									<div class=" space16">
-				</div>
-			</div>
-
-		</div>
-
-		<div class="our-team-boxarea">
-			<div class="team-widget-area">
-				<img src="assets/img/elements/lightgreen-semicircle.svg" alt="" class="elements21" />
-				<img src="assets/img/elements/green-semicircle-dark.svg" alt="" class="elements22" />
-				<div class="img1" style="background-color: #019087b8;">
-					<img src="assets/img/proff/sPrasad.jpg" alt="" class="team-img4" />
-				</div>
-			</div>
-			<div class="space28"></div>
-			<div class="content-area">
-				<a href="speakers.html" style="color: white;"">Prof. S. Prasad</a>
-									<div class=" space16">
 			</div>
 		</div>
 	</div>
-
-		</div>
 	</div>
-	</div>
-	</div>
-	</div> -->
-	<!--===== Organizing Committee AREA ENDS =======-->
+	<!--===== International Advisory Board ENDS =======-->
 
 	<!-- Why Choose ICMMCS -->
 	<div class="" style="background-color: aliceblue;">
@@ -1658,43 +1789,6 @@
 	</section>
 	<!--===== VENUE AREA ENDS =======-->
 
-	<!--===== SPEAKERS AREA STARTS =======-->
-	<!-- <section class="m-auto py-5">
-		<div class="container"
-			style="display: flex;margin: 2rem auto; gap: 1rem;position: relative;justify-content: center; align-items: center;">
-			<div class="image-placeholder">
-				<img src="assets/img/all-images/others/speaker.png" alt="">
-			</div>
-			<div class="content heading6">
-				<h2 class="mb-5">Become a Speaker</h2>
-				<div class="timeline">
-					<div class="step">
-						<div class="step-number">1</div>
-						<h3>Apply</h3>
-						<p>Submit your expertise and proposed topic</p>
-					</div>
-					<div class="step">
-						<div class="step-number">2</div>
-						<h3>Review</h3>
-						<p>Expert committee evaluates applications</p>
-					</div>
-					<div class="step">
-						<div class="step-number">3</div>
-						<h3>Prepare</h3>
-						<p>Develop your presentation with our support</p>
-					</div>
-					<div class="step">
-						<div class="step-number">4</div>
-						<h3>Inspire</h3>
-						<p>Share insights and shape the future at ICMMCS 2025</p>
-					</div>
-				</div>
-			</div>
-			<div class="award"></div>
-		</div>
-	</section> -->
-	<!--===== SPEAKERS AREA ENDS =======-->
-
 	<!--===== CONTACT AREA STARTS =======-->
 	<div class="contact-inner-section sp1" style="background-color: antiquewhite;">
 		<div class="container">
@@ -1708,7 +1802,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="img1 image-anime">
-						<img src="assets/img/elements/contact.jpg" alt="" />
+						<img src="assets/img/elements/contactNew.jpeg" alt="" />
 					</div>
 				</div>
 
@@ -1808,7 +1902,8 @@
 						<h3>Contact Us</h3>
 						<ul>
 							<li>
-								<a href="tel:+91-9540111207" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+968 93391308, <br>
+								<a href="tel:+91-9540111207" target="_blank"><img src="assets/img/icons/phn1.svg" alt="" />+968
+									93391308, <br>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91-9540111207</a>
 							</li>
 							<li>
@@ -1916,6 +2011,9 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
+		document.querySelectorAll(".owl-item").forEach((item) => {
+			item.style = "width:fit-content;margin:0 12px"
+		})
 		// Animation for sections
 		function handleScroll() {
 			const sections = document.querySelectorAll('.section');
