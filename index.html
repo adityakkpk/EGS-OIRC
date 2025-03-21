@@ -435,7 +435,7 @@
 
 		.leadership-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 230px));
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 			gap: 30px;
 		}
 
@@ -603,7 +603,7 @@
 			}
 
 			.leadership-grid {
-				grid-template-columns: repeat(auto-fit, minmax(200px, 230px));
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 			}
 		}
 
@@ -620,6 +620,7 @@
 		.carousel-track {
 			display: flex;
 			animation: carousel 15s linear infinite;
+			width: max-content;
 		}
 
 		.carousel-slide {
@@ -632,9 +633,7 @@
 			color: white;
 			font-size: 1.5rem;
 			font-weight: bold;
-			margin-right: 10px;
 			border-radius: 4px;
-			flex: 0 0 auto;
 		}
 
 		@keyframes carousel {
@@ -643,7 +642,7 @@
 			}
 
 			100% {
-				transform: translateX(-50%);
+				transform: translateX(calc(-100% / 2));
 				/* Move by half of the duplicated content */
 			}
 		}
@@ -658,6 +657,7 @@
 			.carousel-slide {
 				height: 250px;
 				min-width: 160px;
+				width: 25vw;
 				font-size: 1.2rem;
 			}
 
@@ -665,6 +665,29 @@
 				animation: carousel 5s linear infinite;
 			}
 		}
+
+		/* Extra small screens */
+    @media (max-width: 480px) {
+      .carousel-slide {
+        height: 250px;
+				width: 50vw;
+        min-width: 100px;
+        font-size: 0.9rem;
+      }
+    }
+
+		@media (min-width: 1024px) {
+      .carousel-slide {
+        width: 20vw; /* Show 5 slides on larger screens */
+      }
+    }
+    
+    @media (max-width: 350px) {
+      .carousel-slide {
+        width: 100vw; /* Show 1 slide on very small mobile */
+        height: 120px;
+      }
+    }
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -1236,7 +1259,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-12 m-auto">
 					<div class="brand-header heading6 space-margin60">
-						<h2 class="text-anime-style-3 mb-5">Conference Leadership</h2>
+						<h2 class="text-anime-style-3 text-center mb-5">Conference Leadership</h2>
 					</div>
 				</div>
 			</div>
@@ -1256,7 +1279,7 @@
 				</div>
 
 				<div class="chairs-section" style="width: 100%;">
-					<div class="section-title heading6" style="text-align: start;">
+					<div class="section-title heading6" style="text-align: center;">
 						<h2>Conference Chairs</h2>
 					</div>
 
@@ -1321,10 +1344,6 @@
 							</div>
 						</div>
 
-						
-					</div>
-					
-					<div class="leadership-grid mt-5">
 						<div class="chair-card">
 							<div class="chair-content">
 								<div class="chair-img">
@@ -1371,9 +1390,9 @@
 	<div class="team3-section-area p-5" style="background-color: #ffffff;">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-5">
-					<div class="team2-header heading6 mb-3">
-						<h2 class="text-anime-style-3">Conference Co-Chair</h2>
+				<div class="col-lg-12">
+					<div class="team2-header text-center heading6 mb-3">
+						<h2 class="text-anime-style-3 text-center">Conference Co-Chair</h2>
 					</div>
 				</div>
 			</div>
@@ -1512,8 +1531,8 @@
 	<div class="team3-section-area p-5" style="background-color: #ffffff;">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-5">
-					<div class="team2-header heading6 mb-3">
+				<div class="col-lg-12">
+					<div class="team2-header text-center heading6 mb-3">
 						<h2 class="text-anime-style-3">International Advisory Board</h2>
 					</div>
 				</div>
