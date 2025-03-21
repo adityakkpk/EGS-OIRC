@@ -428,6 +428,10 @@
 
 			const email = document.getElementById('email').value;
 			const password = document.getElementById('password').value;
+			const submitButton = event.target.querySelector('button[type="submit"]');
+
+			// Disable the submit button
+			submitButton.disabled = true;
 
 			// Simulate login process
 			fetch('https://egs-conference-backend.onrender.com/api/admin/login', {
@@ -449,7 +453,11 @@
 						alert('Invalid credentials');
 					}
 				})
-				.catch(error => console.error('Error:', error));
+				.catch(error => console.error('Error:', error))
+				.finally(() => {
+					// Re-enable the submit button
+					submitButton.disabled = false;
+				});
 		});
 	</script>
 	<!--===== JS SCRIPT LINK =======-->
