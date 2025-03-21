@@ -509,7 +509,12 @@
 				const data = await response.json();
 				document.getElementById('referralCode').textContent = data.referralCode;
 				const referralLink = `${window.location.origin}/register.html?ref=${data.referralCode}`;
-				document.getElementById('referralLink').textContent = referralLink;
+				// document.getElementById('referralLink').textContent = referralLink;
+				let a = document.createElement('a');
+				a.textContent = referralLink;
+				a.href = `/register.html?ref=${data.referralCode}`;
+				a.target = "_blank";
+				document.getElementById('referralLink').appendChild(a);
 			} catch (error) {
 				console.error('Error loading admin info:', error);
 			}
