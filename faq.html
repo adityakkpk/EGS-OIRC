@@ -35,6 +35,100 @@
 	<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 
 	<style>
+		.faq-section {
+			background-color: #f8f9fa;
+			padding: 80px 0;
+		}
+		
+		.faq-item {
+			background: #fff;
+			padding: 25px;
+			border-radius: 8px;
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+			transition: transform 0.3s ease;
+		}
+		
+		.faq-item:hover {
+			transform: translateY(-5px);
+		}
+		
+		.faq-item h4 {
+			color: #333;
+			font-size: 1.2rem;
+			margin-bottom: 15px;
+			font-weight: 600;
+		}
+		
+		.faq-item p {
+			color: #666;
+			margin-bottom: 0;
+			line-height: 1.6;
+		}
+		
+		.faq-item a {
+			color: #019087;
+			text-decoration: none;
+		}
+		
+		.faq-item a:hover {
+			text-decoration: underline;
+		}
+		
+		@media (max-width: 991px) {
+			.faq-grid {
+				margin-top: 30px;
+			}
+			
+			.faq-item {
+				margin-bottom: 20px;
+			}
+		}
+		
+		.accordion-item {
+			border: none;
+			background: transparent;
+		}
+		
+		.accordion-button {
+			background-color: #fff;
+			border: none;
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+			padding: 20px;
+			font-weight: 600;
+			color: #333;
+			border-radius: 8px !important;
+		}
+		
+		.accordion-button:not(.collapsed) {
+			color: #019087;
+			background-color: #fff;
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+		}
+		
+		.accordion-button:focus {
+			border-color: transparent;
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+		}
+		
+		.accordion-body {
+			background-color: #fff;
+			padding: 20px;
+			color: #666;
+			line-height: 1.6;
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+		}
+		
+		.accordion-button::after {
+			background-size: 1rem;
+			transition: transform 0.3s ease;
+		}
+		
+		@media (max-width: 991px) {
+			.col-lg-6:first-child {
+				margin-bottom: 30px;
+			}
+		}
 	</style>
 </head>
 
@@ -232,913 +326,168 @@
 	<!--===== HERO AREA ENDS =======-->
 
 	<!--===== FAQ AREA STARTS =======-->
-	<div class="faq-inner-section-area sp1">
+	<section class="faq-section section-padding">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-7 m-auto">
-					<div class="heading6 text-center space-margin60">
-						<h2>Frequently Asked Question</h2>
+				<div class="col-lg-6">
+					<div class="accordion" id="faqAccordion1">
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+									When and where will the conference be held?
+								</button>
+							</h2>
+							<div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									The ICMMCS will take place from November 11-13, 2025, in Muscat, Oman. The exact venue details will be shared closer to the event date.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+									Who can attend the conference?
+								</button>
+							</h2>
+							<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									The conference is open to researchers, scholars, professionals, and students in the fields of mathematics, management, and computer science. It is also an excellent platform for industry leaders and practitioners to present their work and engage with peers.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+									How can I register for the conference?
+								</button>
+							</h2>
+							<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									To register for the conference, visit the "Registration" section, fill in the required details, and submit the form. Early bird registration offers discounted rates, so be sure to register early!
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+									How do I submit an abstract or paper?
+								</button>
+							</h2>
+							<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									Abstracts and full papers can be submitted via the "Call for Papers" section on our website. Please follow the guidelines for submission, which include formatting requirements and important deadlines. The deadline for paper submission is 30th Aug 2025.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+									What topics will be covered at the conference?
+								</button>
+							</h2>
+							<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									The conference will cover a wide range of topics within mathematics, management, and computer science.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+									Will there be opportunities to present my research?
+								</button>
+							</h2>
+							<div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									Yes, selected papers and abstracts will be presented at the conference through oral sessions. Authors of accepted papers will be notified well in advance with detailed instructions for their presentations.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+									Can I attend without submitting a paper?
+								</button>
+							</h2>
+							<div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
+								<div class="accordion-body">
+									Yes, attendees who are not submitting papers can still participate in the conference by registering as regular participants. You will be able to attend sessions, network with other professionals, and gain insights from the keynote speakers.
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-11">
-					<div class="faq-widget-area">
-						<ul class="nav nav-pills" id="pills-tab" role="tablist">
-							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-									type="button" role="tab" aria-controls="pills-home" aria-selected="true">All</button>
-							</li>
-							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-									type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Event
-									Information</button>
-							</li>
-							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-									type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Registration &
-									Tickets</button>
-							</li>
-
-							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-contact1-tab" data-bs-toggle="pill" data-bs-target="#pills-contact1"
-									type="button" role="tab" aria-controls="pills-contact1" aria-selected="false">Event
-									Experience</button>
-							</li>
-
-							<li class="nav-item" role="presentation">
-								<button class="nav-link m-0" id="pills-contact2-tab" data-bs-toggle="pill"
-									data-bs-target="#pills-contact2" type="button" role="tab" aria-controls="pills-contact2"
-									aria-selected="false">Speakers & Sessions</button>
-							</li>
-						</ul>
-						<div class="space48"></div>
-						<div class="tab-content" id="pills-tabContent">
-							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-								tabindex="0">
-								<div class="faq-section-area">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is
-																ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseOne" class="accordion-collapse collapse show"
-															data-bs-parent="#accordionExample">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">When and
-																where is ICMMCS 2025 2024 taking place?</button>
-														</h2>
-														<div id="collapseTwo" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How
-																much does it cost to attend ICMMCS 2025 2024?</button>
-														</h2>
-														<div id="collapseThree" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Will
-																there be networking opportunities ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseFour" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">How
-																can I access session materials after event?</button>
-														</h2>
-														<div id="collapseFive" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample2">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">What
-																payment are accepted for registration?</button>
-														</h2>
-														<div id="collapseSix" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample2">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">Can
-																I attend only one day of the conference?</button>
-														</h2>
-														<div id="collapseSeven" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample2">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">How
-																can I updated on event announcements?</button>
-														</h2>
-														<div id="collapseEight" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample2">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">How do
-																I download the event app?</button>
-														</h2>
-														<div id="collapseNine" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample2">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">Can I
-																suggest or speakers for future events?</button>
-														</h2>
-														<div id="collapseTen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample2">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+				<div class="col-lg-6">
+					<div class="accordion" id="faqAccordion2">
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+									Is there a conference fee?
+								</button>
+							</h2>
+							<div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+								<div class="accordion-body">
+									Yes, there is a registration fee for participants. The fee includes access to all sessions, conference materials, refreshments, and participation in networking events. Early bird rates will be available, so be sure to register early to secure the best rates.
 								</div>
 							</div>
-							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
-								tabindex="0">
-								<div class="faq-section-area">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample3">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseEleven" aria-expanded="true"
-																aria-controls="collapseEleven">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseEleven" class="accordion-collapse collapse show"
-															data-bs-parent="#accordionExample3">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwelve" aria-expanded="false"
-																aria-controls="collapseTwelve">When and where is ICMMCS 2025 2024 taking place?</button>
-														</h2>
-														<div id="collapseTwelve" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample3">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirteen" aria-expanded="false"
-																aria-controls="collapseThirteen">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseThirteen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample3">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourteen" aria-expanded="false"
-																aria-controls="collapseFourteen">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseFourteen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample3">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFifteen" aria-expanded="false"
-																aria-controls="collapseFifteen">How can I access session materials after event?</button>
-														</h2>
-														<div id="collapseFifteen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample3">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample4">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtysix" aria-expanded="true"
-																aria-controls="collapseThirtysix">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseThirtysix" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample4">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtyseven" aria-expanded="false"
-																aria-controls="collapseThirtyseven">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseThirtyseven" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample4">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtyeight" aria-expanded="false"
-																aria-controls="collapseThirtyeight">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseThirtyeight" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample4">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtynine" aria-expanded="false"
-																aria-controls="collapseThirtynine">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseThirtynine" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample4">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourty" aria-expanded="false"
-																aria-controls="collapseFourty">How can I access session materials after event?</button>
-														</h2>
-														<div id="collapseFourty" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample4">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+									Are there travel packages available?
+								</button>
+							</h2>
+							<div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+								<div class="accordion-body">
+									We offer special travel and accommodation packages for conference attendees. Information on recommended hotels, travel tips, and local attractions will be available on the conference website. Participants are also welcome to arrange their own travel and accommodation.
 								</div>
 							</div>
-							<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
-								tabindex="0">
-								<div class="faq-section-area">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample5">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseSixteen" aria-expanded="true"
-																aria-controls="collapseSixteen">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseSixteen" class="accordion-collapse collapse show"
-															data-bs-parent="#accordionExample5">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseSeventeen" aria-expanded="false"
-																aria-controls="collapseSeventeen">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseSeventeen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample5">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseEightteen" aria-expanded="false"
-																aria-controls="collapseEightteen">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseEightteen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample5">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseNineteen" aria-expanded="false"
-																aria-controls="collapseNineteen">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseNineteen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample5">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwenty" aria-expanded="false"
-																aria-controls="collapseTwenty">How can I access session materials after event?</button>
-														</h2>
-														<div id="collapseTwenty" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample5">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample6">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtyone" aria-expanded="true"
-																aria-controls="collapseFourtyone">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseFourtyone" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample6">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtytwo" aria-expanded="false"
-																aria-controls="collapseFourtytwo">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseFourtytwo" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample6">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtythree" aria-expanded="false"
-																aria-controls="collapseFourtythree">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseFourtythree" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample6">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtyfour" aria-expanded="false"
-																aria-controls="collapseFourtyfour">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseFourtyfour" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample6">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtyfive" aria-expanded="false"
-																aria-controls="collapseFourtyfive">How can I access session materials after
-																event?</button>
-														</h2>
-														<div id="collapseFourtyfive" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample6">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+									How can I contact the organizing committee?
+								</button>
+							</h2>
+							<div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+								<div class="accordion-body">
+									For any inquiries, you can contact the conference organizing committee via email at <a href="mailto:info@icmmcs.com">info@icmmcs.com</a> or visit our "Contact Us" page on the website. We are happy to assist with any questions you may have.
 								</div>
 							</div>
-							<div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact1-tab"
-								tabindex="0">
-								<div class="faq-section-area">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample7">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentyone" aria-expanded="true"
-																aria-controls="collapseTwentyone">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseTwentyone" class="accordion-collapse collapse show"
-															data-bs-parent="#accordionExample7">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentytwo" aria-expanded="false"
-																aria-controls="collapseTwentytwo">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseTwentytwo" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample7">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentythree" aria-expanded="false"
-																aria-controls="collapseTwentythree">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseTwentythree" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample7">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentyfour" aria-expanded="false"
-																aria-controls="collapseTwentyfour">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseTwentyfour" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample7">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentyfive" aria-expanded="false"
-																aria-controls="collapseTwentyfive">How can I access session materials after
-																event?</button>
-														</h2>
-														<div id="collapseTwentyfive" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample7">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample8">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtySix" aria-expanded="true"
-																aria-controls="collapseFourtySix">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseFourtySix" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample8">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtySeven" aria-expanded="false"
-																aria-controls="collapseFourtySeven">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseFourtySeven" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample8">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtyEight" aria-expanded="false"
-																aria-controls="collapseFourtyEight">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseFourtyEight" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample8">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtyNine" aria-expanded="false"
-																aria-controls="collapseFourtyNine">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseFourtyNine" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample8">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseFourtyTen" aria-expanded="false"
-																aria-controls="collapseFourtyTen">How can I access session materials after
-																event?</button>
-														</h2>
-														<div id="collapseFourtyTen" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample8">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+									Will there be networking opportunities?
+								</button>
+							</h2>
+							<div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+								<div class="accordion-body">
+									Yes! The ICMMCS will provide several opportunities for networking, including coffee breaks, social events, and a dedicated networking session. This is an excellent chance to meet other researchers, professionals, and organizations in your field.
 								</div>
 							</div>
-							<div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact2-tab"
-								tabindex="0">
-								<div class="faq-section-area">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample9">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentysix" aria-expanded="true"
-																aria-controls="collapseTwentysix">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseTwentysix" class="accordion-collapse collapse show"
-															data-bs-parent="#accordionExample9">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentyseven" aria-expanded="false"
-																aria-controls="collapseTwentyseven">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseTwentyseven" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample9">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentyeight" aria-expanded="false"
-																aria-controls="collapseTwentyeight">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseTwentyeight" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample9">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseTwentynine" aria-expanded="false"
-																aria-controls="collapseTwentynine">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseTwentynine" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample9">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirty" aria-expanded="false"
-																aria-controls="collapseThirty">How can I access session materials after event?</button>
-														</h2>
-														<div id="collapseThirty" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample9">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-6">
-											<div class="accordian-area">
-												<div class="accordion" id="accordionExample10">
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtyone" aria-expanded="true"
-																aria-controls="collapseThirtyone">What is ICMMCS 2025, and who is it for?</button>
-														</h2>
-														<div id="collapseThirtyone" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample10">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtytwo" aria-expanded="false"
-																aria-controls="collapseThirtytwo">When and where is ICMMCS 2025 2024 taking
-																place?</button>
-														</h2>
-														<div id="collapseThirtytwo" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample10">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtythree" aria-expanded="false"
-																aria-controls="collapseThirtythree">How much does it cost to attend ICMMCS 2025
-																2024?</button>
-														</h2>
-														<div id="collapseThirtythree" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample10">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtyfour" aria-expanded="false"
-																aria-controls="collapseThirtyfour">Will there be networking opportunities
-																ICMMCS 2025?</button>
-														</h2>
-														<div id="collapseThirtyfour" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample10">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-													<div class="space20"></div>
-													<div class="accordion-item">
-														<h2 class="accordion-header">
-															<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-																data-bs-target="#collapseThirtyfive" aria-expanded="false"
-																aria-controls="collapseThirtyfive">How can I access session materials after
-																event?</button>
-														</h2>
-														<div id="collapseThirtyfive" class="accordion-collapse collapse"
-															data-bs-parent="#accordionExample10">
-															<div class="accordion-body">
-																<p>ICMMCS 2025 2024 will be held on 26 at USA , located in New York. Full event details,
-																	including timings and venue information, will be provided after registration.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+									Can I become a sponsor or exhibitor?
+								</button>
+							</h2>
+							<div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+								<div class="accordion-body">
+									Yes, we offer sponsorship and exhibitor opportunities for companies and organizations looking to gain visibility and connect with attendees. For more details, please visit the "Sponsorship" page on our website or contact us directly.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-3">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+									Is there a certificate of attendance?
+								</button>
+							</h2>
+							<div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+								<div class="accordion-body">
+									Yes, all registered participants will receive a certificate of attendance after the conference concludes. This will be issued electronically and can be used for professional development purposes.
 								</div>
 							</div>
 						</div>
@@ -1146,7 +495,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!--===== FAQ AREA ENDS =======-->
 
 	<!--===== FOOTER AREA STARTS =======-->
