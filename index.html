@@ -394,7 +394,11 @@
 			.logo-container {
 				height: 80px;
 			}
+			.academic-partners-logo {
+				flex-wrap: wrap;
+			}
 		}
+
 
 		/* About Section */
 		.about-section {
@@ -667,27 +671,27 @@
 		}
 
 		/* Extra small screens */
-    @media (max-width: 480px) {
-      .carousel-slide {
-        height: 250px;
-				width: 50vw;
-        min-width: 100px;
-        font-size: 0.9rem;
-      }
-    }
+		@media (max-width: 480px) {
+		.carousel-slide {
+			height: 250px;
+					width: 50vw;
+			min-width: 100px;
+			font-size: 0.9rem;
+		}
+		}
 
 		@media (min-width: 1024px) {
-      .carousel-slide {
-        width: 20vw; /* Show 5 slides on larger screens */
-      }
-    }
-    
-    @media (max-width: 350px) {
-      .carousel-slide {
-        width: 100vw; /* Show 1 slide on very small mobile */
-        height: 120px;
-      }
-    }
+			.carousel-slide {
+				width: 20vw; /* Show 5 slides on larger screens */
+			}
+		}
+		
+		@media (max-width: 350px) {
+			.carousel-slide {
+				width: 100vw; /* Show 1 slide on very small mobile */
+				height: 250px;
+			}
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -868,14 +872,14 @@
 		<!-- Organizers Section -->
 		<section class=" section">
 			<div class="container">
-				<div class="row" style="background-color: rgba(45, 45, 45, 0.5); border-radius: 12px;">
+				<div class="row d-flex justify-content-center" style="background-color: rgba(45, 45, 45, 0.5); border-radius: 12px;">
 					<div class="col-md-2 col-sm-4 my-2">
-						<div class="organizer-card p-3 border bg-white">
+						<div class="organizer-card py-3  border bg-white">
 							<div class="text-center mb-1">
 								<h6>Organized by</h6>
 							</div>
 							<div class="d-flex justify-content-center">
-								<div class="logo-container p-2">
+								<div class="logo-container">
 									<img src="assets/img/brand/xclusive_oman.png" alt="Organizer Logo" class="img-fluid">
 								</div>
 							</div>
@@ -886,7 +890,7 @@
 							<div class="text-center mb-1">
 								<h6>Academic Partners</h6>
 							</div>
-							<div class="d-flex justify-content-center">
+							<div class="d-flex justify-content-center academic-partners-logo">
 								<div class="logo-container p-2">
 									<img src="assets/img/sponsors_logo/uon.jpg" alt="Organizer Logo" class="img-fluid">
 								</div>
@@ -998,7 +1002,7 @@
 					<h5 class="border-bottom pb-2">Publication Partners:</h5>
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
-					<div class="logo-container p-3 border rounded text-center">
+					<div class="p-3 border rounded text-center">
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1012,7 +1016,7 @@
 					</div>
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
-					<div class="logo-container p-3 border rounded text-center">
+					<div class="p-3 border rounded text-center">
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1026,7 +1030,7 @@
 					</div>
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
-					<div class="logo-container p-3 border rounded text-center">
+					<div class="p-3 border rounded text-center">
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1040,7 +1044,7 @@
 					</div>
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
-					<div class="logo-container p-3 border rounded text-center">
+					<div class="p-3 border rounded text-center">
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1054,7 +1058,7 @@
 					</div>
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
-					<div class="logo-container p-3 border rounded text-center">
+					<div class="p-3 border rounded text-center">
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -1068,7 +1072,7 @@
 					</div>
 				</div>
 				<div class="col-6 col-md-3 col-lg-2 mb-3">
-					<div class="logo-container p-3 border rounded text-center">
+					<div class="p-3 border rounded text-center">
 						<div class="d-flex"
 							style="justify-content: center; align-items: center; padding: 4px; flex-direction: column;">
 							<h3
@@ -2030,9 +2034,6 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
-		document.querySelectorAll(".owl-item").forEach((item) => {
-			item.style = "width:fit-content;margin:0 12px"
-		})
 		// Animation for sections
 		function handleScroll() {
 			const sections = document.querySelectorAll('.section');
