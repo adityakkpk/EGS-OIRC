@@ -7,6 +7,7 @@ import speakerRoutes from './routes/speakerRoutes.js';
 import { connectDB } from './config/db.js';
 import adminRoutes from './routes/adminRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import contactRoutes from './routes/contact.js';
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use('/api/sponsor', sponsorRegistrationRoutes);
 app.use('/api/speaker', speakerRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
