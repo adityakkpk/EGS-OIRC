@@ -40,17 +40,25 @@ model sponsor {
 }
 
 model speaker {
-  id              Int      @id @default(autoincrement())
+  id              String   @id @default(uuid())
   name            String
   email           String   @unique
   phone           String
   institutionName String
-  paperSubject    String
   paperTitle      String
-  paperAbstract   String
   country         String
+  conferencePlace String
+  conferenceTitle String
+  attendeeType    AttendeeType
+  fileUrl         String?
+  message         String
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+enum AttendeeType {
+  PRESENTER
+  LISTENER
 }
 
 model Admin {

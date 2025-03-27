@@ -27,27 +27,28 @@ export const adminNotificationTemplate = (userData) => `
 export const speakerConfirmationTemplate = (speakerData) => `
   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
     <h1>Welcome to ICMMCS 2025, ${speakerData.name}!</h1>
-    <p>Thank you for registering as a speaker for ICMMCS 2025. We're excited to have you share your research with us!</p>
+    <p>Thank you for submitting your paper for ICMMCS 2025. We're excited to have you share your research with us!</p>
     
-    <h2>Your Registration Details:</h2>
+    <h2>Your Submission Details:</h2>
     <ul>
       <li>Paper Title: ${speakerData.paperTitle}</li>
-      <li>Subject Area: ${speakerData.paperSubject}</li>
       <li>Institution: ${speakerData.institutionName}</li>
+      <li>Conference: ${speakerData.conferenceDate}</li>
+      <li>Attendee Type: ${speakerData.attendeeType}</li>
     </ul>
 
     <h2>Important Dates:</h2>
     <ul>
-      <li>Conference Dates: March 2025</li>
-      <li>Paper Submission Deadline: January 15, 2025</li>
-      <li>Review Notification: February 1, 2025</li>
+      <li>Conference Dates: November 11-13, 2025</li>
+      <li>Paper Submission Deadline: October 1, 2025</li>
+      <li>Review Notification: October 15, 2025</li>
     </ul>
 
     <p>Next Steps:</p>
     <ol>
-      <li>Prepare your full paper according to the conference guidelines</li>
-      <li>Submit Your Papers through our online submission system</li>
-      <li>Wait for the review notification</li>
+      <li>Our team will review your submission</li>
+      <li>You will receive a notification about the status of your paper</li>
+      <li>If accepted, you'll receive further instructions about presentation details</li>
     </ol>
 
     <p>If you have any questions, please don't hesitate to contact us at info@icmmcs.org</p>
@@ -60,8 +61,8 @@ export const speakerConfirmationTemplate = (speakerData) => `
 
 export const speakerAdminNotificationTemplate = (speakerData) => `
   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-    <h1>New Speaker Registration</h1>
-    <p>A new speaker has registered for ICMMCS 2025.</p>
+    <h1>New Paper Submission</h1>
+    <p>A new paper has been submitted for ICMMCS 2025.</p>
     
     <h2>Speaker Details:</h2>
     <ul>
@@ -75,13 +76,15 @@ export const speakerAdminNotificationTemplate = (speakerData) => `
     <h2>Paper Information:</h2>
     <ul>
       <li>Title: ${speakerData.paperTitle}</li>
-      <li>Subject: ${speakerData.paperSubject}</li>
+      <li>Conference: ${speakerData.conferenceDate}</li>
+      <li>Attendee Type: ${speakerData.attendeeType}</li>
+      <li>File: ${speakerData.fileUrl ? 'Attached' : 'Not provided'}</li>
     </ul>
 
-    <h3>Abstract:</h3>
-    <p>${speakerData.paperAbstract}</p>
+    <h3>Message:</h3>
+    <p>${speakerData.message}</p>
 
-    <p>Please review the registration and follow up with the speaker if needed.</p>
+    <p>Please review the submission and follow up with the speaker if needed.</p>
     
     <br/>
     <p>Best regards,</p>
