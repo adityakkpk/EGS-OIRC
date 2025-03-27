@@ -11,17 +11,17 @@ const prisma = new PrismaClient();
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 // Configure multer with Cloudinary storage
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'icmmcs_papers',
-    allowed_formats: ['doc', 'docx', 'pdf'],
-    resource_type: 'raw'
-  }
+    folder: "icmmcs_papers",
+    allowed_formats: ["doc", "docx", "pdf"],
+    resource_type: "raw",
+  },
 });
 
 const upload = multer({ storage: storage });
@@ -40,39 +40,41 @@ const validatePhone = (phone) => {
 export const registerSpeaker = async (req, res) => {
   try {
     // Handle file upload
-    upload.single('file')(req, res, async (err) => {
+    upload.single("file")(req, res, async (err) => {
       if (err) {
         return res.status(400).json({
           message: err.message,
-          success: false
+          success: false,
         });
       }
 
       const speakerData = {
         ...req.body,
-        fileUrl: req.file ? req.file.path : null
+        fileUrl: req.file ? req.file.path : null,
       };
 
       // Validate required fields
       const requiredFields = [
-        'name', 
-        'email', 
-        'phone', 
-        'institutionName', 
-        'paperTitle', 
-        'country',
-        'conferencePlace',
-        'conferenceTitle',
-        'attendeeType',
-        'message'
+        "name",
+        "email",
+        "phone",
+        "institutionName",
+        "paperTitle",
+        "country",
+        "conferencePlace",
+        "conferenceTitle",
+        "attendeeType",
+        "message",
       ];
-      
-      const missingFields = requiredFields.filter(field => !speakerData[field]);
-      
+
+      const missingFields = requiredFields.filter(
+        (field) => !speakerData[field]
+      );
+
       if (missingFields.length > 0) {
         return res.status(400).json({
-          message: `Missing required fields: ${missingFields.join(', ')}`,
-          success: false
+          message: `Missing required fields: ${missingFields.join(", ")}`,
+          success: false,
         });
       }
 
@@ -80,7 +82,7 @@ export const registerSpeaker = async (req, res) => {
       if (!validateEmail(speakerData.email)) {
         return res.status(400).json({
           message: "Invalid email format",
-          success: false
+          success: false,
         });
       }
 
@@ -88,19 +90,19 @@ export const registerSpeaker = async (req, res) => {
       if (!validatePhone(speakerData.phone)) {
         return res.status(400).json({
           message: "Invalid phone number format",
-          success: false
+          success: false,
         });
       }
 
       // Check if email already exists
       const existingSpeaker = await prisma.speaker.findUnique({
-        where: { email: speakerData.email }
+        where: { email: speakerData.email },
       });
 
       if (existingSpeaker) {
         return res.status(400).json({
           message: "Speaker already registered with this email",
-          success: false
+          success: false,
         });
       }
 
@@ -119,7 +121,7 @@ export const registerSpeaker = async (req, res) => {
       });
     });
   } catch (error) {
-    console.error('Speaker registration error:', error);
+    console.error("Speaker registration error:", error);
     res.status(500).json({
       message: "Error registering Speaker",
       error: error.message,
@@ -133,7 +135,7 @@ export const getSpeakers = async (req, res) => {
     const speakers = await prisma.speaker.findMany();
     res.status(200).json({ speakers, success: true });
   } catch (error) {
-    console.error('Error retrieving speakers:', error);
+    console.error("Error retrieving speakers:", error);
     res.status(500).json({
       message: "Error retrieving Speaker",
       error: error.message,

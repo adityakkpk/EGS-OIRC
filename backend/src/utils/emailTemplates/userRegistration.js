@@ -33,7 +33,7 @@ export const speakerConfirmationTemplate = (speakerData) => `
     <ul>
       <li>Paper Title: ${speakerData.paperTitle}</li>
       <li>Institution: ${speakerData.institutionName}</li>
-      <li>Conference: ${speakerData.conferenceDate}</li>
+      <li>Conference: ${speakerData.conferenceTitle}</li>
       <li>Attendee Type: ${speakerData.attendeeType}</li>
     </ul>
 
