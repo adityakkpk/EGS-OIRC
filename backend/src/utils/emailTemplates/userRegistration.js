@@ -46,7 +46,7 @@ export const speakerConfirmationTemplate = (speakerData) => `
     <p>Next Steps:</p>
     <ol>
       <li>Prepare your full paper according to the conference guidelines</li>
-      <li>Submit your paper through our online submission system</li>
+      <li>Submit Your Papers through our online submission system</li>
       <li>Wait for the review notification</li>
     </ol>
 
