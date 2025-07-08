@@ -39,7 +39,7 @@ export const speakerConfirmationTemplate = (speakerData) => `
 
     <h2>Important Dates:</h2>
     <ul>
-      <li>Conference Dates: November 11-13, 2025</li>
+      <li>Conference Dates: November 10-11, 2025</li>
       <li>Paper Submission Deadline: October 1, 2025</li>
       <li>Review Notification: October 15, 2025</li>
     </ul>
