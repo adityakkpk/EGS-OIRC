@@ -34,7 +34,10 @@ export const speakerConfirmationTemplate = (speakerData) => `
       <li>Paper Title: ${speakerData.paperTitle}</li>
       <li>Institution: ${speakerData.institutionName}</li>
       <li>Conference: ${speakerData.conferenceTitle}</li>
+      <li>Conference Date & Location: ${speakerData.placeDate}</li>
       <li>Attendee Type: ${speakerData.attendeeType}</li>
+      <li>Country: ${speakerData.country}</li>
+      ${speakerData.fileUrl ? `<li>Paper File: <a href="${speakerData.fileUrl}">View Uploaded Document</a></li>` : ''}
     </ul>
 
     <h2>Important Dates:</h2>
@@ -76,9 +79,10 @@ export const speakerAdminNotificationTemplate = (speakerData) => `
     <h2>Paper Information:</h2>
     <ul>
       <li>Title: ${speakerData.paperTitle}</li>
-      <li>Conference: ${speakerData.conferenceDate}</li>
+      <li>Conference: ${speakerData.conferenceTitle}</li>
+      <li>Conference Date & Location: ${speakerData.placeDate}</li>
       <li>Attendee Type: ${speakerData.attendeeType}</li>
-      <li>File: ${speakerData.fileUrl ? 'Attached' : 'Not provided'}</li>
+      <li>File: ${speakerData.fileUrl ? `<a href="${speakerData.fileUrl}">View Uploaded Document</a>` : 'Not provided'}</li>
     </ul>
 
     <h3>Message:</h3>

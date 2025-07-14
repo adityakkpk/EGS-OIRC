@@ -15,11 +15,17 @@ const validatePhone = (phone) => {
 };
 
 export const registerSpeaker = async (req, res) => {
-  const speakerData = req.body;
-
   try {
-    // Validate required fields
-    const requiredFields = ['name', 'email', 'phone', 'institutionName', 'paperSubject', 'paperTitle', 'paperAbstract', 'country'];
+    const speakerData = req.body;
+    
+    // Handle file upload URL if file was uploaded
+    let fileUrl = null;
+    if (req.file) {
+      fileUrl = req.file.path; // Cloudinary URL
+    }
+
+    // Validate required fields based on new frontend structure
+    const requiredFields = ['name', 'email', 'phone', 'institutionName', 'paperTitle', 'country', 'conferenceTitle', 'placeDate', 'attendeeType', 'message'];
     const missingFields = requiredFields.filter(field => !speakerData[field]);
     
     if (missingFields.length > 0) {
@@ -45,10 +51,19 @@ export const registerSpeaker = async (req, res) => {
       });
     }
 
-    // Validate paper abstract length
-    if (speakerData.paperAbstract.length < 10) {
+    // Validate message length (replacing paperAbstract validation)
+    if (speakerData.message.length < 10) {
       return res.status(400).json({
-        message: "Paper abstract must be at least 10 characters long",
+        message: "Message must be at least 10 characters long",
+        success: false
+      });
+    }
+
+    // Validate attendee type
+    const validAttendeeTypes = ['presenter', 'listener'];
+    if (!validAttendeeTypes.includes(speakerData.attendeeType)) {
+      return res.status(400).json({
+        message: "Invalid attendee type. Must be 'presenter' or 'listener'",
         success: false
       });
     }
@@ -65,9 +80,24 @@ export const registerSpeaker = async (req, res) => {
       });
     }
 
+    // Prepare data for database insertion
+    const speakerCreateData = {
+      name: speakerData.name,
+      email: speakerData.email,
+      phone: speakerData.phone,
+      institutionName: speakerData.institutionName,
+      paperTitle: speakerData.paperTitle,
+      country: speakerData.country,
+      conferenceTitle: speakerData.conferenceTitle,
+      placeDate: speakerData.placeDate,
+      attendeeType: speakerData.attendeeType,
+      message: speakerData.message,
+      fileUrl: fileUrl
+    };
+
     // Create new speaker
     const newSpeaker = await prisma.speaker.create({
-      data: speakerData,
+      data: speakerCreateData,
     });
 
     // Send registration confirmation emails

@@ -47,7 +47,7 @@ model speaker {
   institutionName String
   paperTitle      String
   country         String
-  conferencePlace String
+  placeDate       String
   conferenceTitle String
   attendeeType    AttendeeType
   fileUrl         String?
@@ -57,8 +57,8 @@ model speaker {
 }
 
 enum AttendeeType {
-  PRESENTER
-  LISTENER
+  presenter
+  listener
 }
 
 model Admin {

@@ -96,6 +96,13 @@ Majan University College for a transformative conference exploring the latest a
 			display: flex;
 			flex-direction: column;
 		}
+
+		.btn-primary-custom:disabled {
+			background-color: #6c757d;
+			border-color: #6c757d;
+			cursor: not-allowed !important;
+			opacity: 0.65;
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -312,9 +319,19 @@ Majan University College for a transformative conference exploring the latest a
 					<div class="card-body">
 						<form id="registrationForm" class="needs-validation" novalidate>
 							<div class="mb-3 dropdown-input">
-								<label for="place-data" class="form-label">Conference place & Date*</label>
-								<select class="" id="place-data" required>
-									<option value="" disabled selected>Select your country</option>
+								<label for="conference-title" class="form-label">Select Conference*</label>
+								<select class="" id="conference-title" required>
+									<option value="" disabled>Select Conference title</option>
+									<option value="ICMMCS" selected>ICMMCS 2025</option>
+								</select>
+							</div>
+							<div class="mb-3 dropdown-input">
+								<label for="place-date" class="form-label">Conference place & Date*</label>
+								<select class="" id="place-date" required>
+									<option value="" disabled>Select your country</option>
+									<option value="MU" selected>Majan University College, Muscat, Oman (10 November 2025)</option>
+									<option value="AC">Dr, Bhim Rao Ambedkar College, Delhi, India (11 November 2025)</option>
+									<!-- <option value="" disabled selected>Select your country</option>
 									<option value="AF">Afghanistan</option>
 									<option value="AL">Albania</option>
 									<option value="DZ">Algeria</option>
@@ -517,14 +534,7 @@ Majan University College for a transformative conference exploring the latest a
 									<option value="VN">Viet Nam</option>
 									<option value="YE">Yemen</option>
 									<option value="ZM">Zambia</option>
-									<option value="ZW">Zimbabwe</option>
-								</select>
-							</div>
-							<div class="mb-3 dropdown-input">
-								<label for="place-date" class="form-label">Select Conference*</label>
-								<select class="" id="place-date" required>
-									<option value="" disabled selected>Select Conference title</option>
-									<option value="ICMMCS">ICMMCS 2025</option>
+									<option value="ZW">Zimbabwe</option> -->
 								</select>
 							</div>
 							<div class="mb-3 dropdown-input">
@@ -542,7 +552,7 @@ Majan University College for a transformative conference exploring the latest a
 								<label for="paperTitle" class="form-label">Paper Title*</label>
 								<input type="text" class="form-control" id="paperTitle" required>
 							</div>
-							<div class="col-md-6">
+							<div class="mb-3">
 								<label for="name" class="form-label">Name*</label>
 								<input type="text" class="form-control" id="name" required>
 							</div>
@@ -637,7 +647,7 @@ Majan University College for a transformative conference exploring the latest a
 									<option value="HK">Hong Kong</option>
 									<option value="HU">Hungary</option>
 									<option value="IS">Iceland</option>
-									<option value="IN">India</option>
+									<option value="IN" selected>India</option>
 									<option value="ID">Indonesia</option>
 									<option value="IR">Iran, Islamic Republic of</option>
 									<option value="IQ">Iraq</option>
@@ -1423,6 +1433,14 @@ Majan University College for a transformative conference exploring the latest a
 			event.preventDefault();
 			clearErrors();
 
+			// Get submit button and prevent multiple submissions
+			const submitButton = this.querySelector('button[type="submit"]');
+			
+			// Check if already submitting
+			if (submitButton.disabled) {
+				return;
+			}
+
 			// Basic form validation
 			if (!this.checkValidity()) {
 				event.stopPropagation();
@@ -1430,16 +1448,24 @@ Majan University College for a transformative conference exploring the latest a
 				return;
 			}
 
+			// Disable submit button and show loading state
+			submitButton.disabled = true;
+			const originalText = submitButton.textContent;
+			submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...';
+			submitButton.style.cursor = 'not-allowed';
+
 			// Get form elements
-			const firstName = document.getElementById('firstName');
-			const lastName = document.getElementById('lastName');
+			const conferenceTitle = document.getElementById('conference-title');
+			const placeDate = document.getElementById('place-date');
+			const attendeeType = document.getElementById('attendee-type');
+			const fileInput = document.getElementById('file-input');
+			const paperTitle = document.getElementById('paperTitle');
+			const name = document.getElementById('name');
+			const institutionName = document.getElementById('institution');
+			const country = document.getElementById('country');
 			const email = document.getElementById('email');
 			const phone = document.getElementById('phone');
-			const institution = document.getElementById('institution');
-			const country = document.getElementById('country');
-			const paperSubject = document.getElementById('paperSubject');
-			const paperTitle = document.getElementById('paperTitle');
-			const paperAbstract = document.getElementById('paperAbstract');
+			const message = document.getElementById('message');
 
 			// Validate email
 			if (!validateEmail(email.value)) {
@@ -1454,30 +1480,33 @@ Majan University College for a transformative conference exploring the latest a
 			}
 
 			// Validate paper abstract length
-			if (paperAbstract.value.length < 10) {
-				showError('Paper abstract must be at least 10 characters long', paperAbstract);
+			if (message.value.length < 10) {
+				showError('Message must be at least 10 characters long', message);
 				return;
 			}
 
-			// Get form data
-			const formData = {
-				name: `${firstName.value} ${lastName.value}`,
-				email: email.value,
-				phone: phone.value,
-				institutionName: institution.value,
-				country: country.value,
-				paperSubject: paperSubject.value,
-				paperTitle: paperTitle.value,
-				paperAbstract: paperAbstract.value
-			};
+					// Get form data using FormData for file upload
+		const formData = new FormData();
+		formData.append('conferenceTitle', conferenceTitle.value);
+		formData.append('placeDate', placeDate.value);
+		formData.append('attendeeType', attendeeType.value);
+		if (fileInput.files[0]) {
+			formData.append('fileInput', fileInput.files[0]);
+		}
+		formData.append('paperTitle', paperTitle.value);
+		formData.append('name', name.value);
+		formData.append('institutionName', institutionName.value);
+		formData.append('country', country.value);
+		formData.append('email', email.value);
+		formData.append('phone', phone.value);
+		formData.append('message', message.value);
 
-			try {
-				const response = await fetch('https://egs-conference-backend.onrender.com/api/speaker/register', {
+					try {
+				// const response = await fetch('https://egs-conference-backend.onrender.com/api/speaker/register', {
+				const response = await fetch('http://localhost:5000/api/speaker/register', {
 					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify(formData)
+					// Remove Content-Type header to let browser set it for FormData
+					body: formData
 				});
 
 				const result = await response.json();
@@ -1492,6 +1521,11 @@ Majan University College for a transformative conference exploring the latest a
 			} catch (error) {
 				showError(error.message, email);
 				console.error('Error:', error);
+			} finally {
+				// Re-enable submit button regardless of success or failure
+				submitButton.disabled = false;
+				submitButton.textContent = originalText;
+				submitButton.style.cursor = 'pointer';
 			}
 		});
 
