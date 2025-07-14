@@ -89,7 +89,7 @@ export const registerSpeaker = async (req, res) => {
       paperTitle: speakerData.paperTitle,
       country: speakerData.country,
       conferenceTitle: speakerData.conferenceTitle,
-      placeDate: speakerData.placeDate,
+      conferencePlace: speakerData.placeDate,
       attendeeType: speakerData.attendeeType,
       message: speakerData.message,
       fileUrl: fileUrl
