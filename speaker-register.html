@@ -1433,7 +1433,7 @@ Majan University College for a transformative conference exploring the latest a
 			event.preventDefault();
 			clearErrors();
 
-			// Get submit button and prevent multiple submissions
+			// Get submit button reference
 			const submitButton = this.querySelector('button[type="submit"]');
 			
 			// Check if already submitting
@@ -1447,12 +1447,6 @@ Majan University College for a transformative conference exploring the latest a
 				this.classList.add('was-validated');
 				return;
 			}
-
-			// Disable submit button and show loading state
-			submitButton.disabled = true;
-			const originalText = submitButton.textContent;
-			submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...';
-			submitButton.style.cursor = 'not-allowed';
 
 			// Get form elements
 			const conferenceTitle = document.getElementById('conference-title');
@@ -1479,13 +1473,19 @@ Majan University College for a transformative conference exploring the latest a
 				return;
 			}
 
-			// Validate paper abstract length
+			// Validate message length
 			if (message.value.length < 10) {
 				showError('Message must be at least 10 characters long', message);
 				return;
 			}
 
-					// Get form data using FormData for file upload
+			// All validations passed - now disable submit button and show loading state
+			submitButton.disabled = true;
+			const originalText = submitButton.textContent;
+			submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Submitting...';
+			submitButton.style.cursor = 'not-allowed';
+
+			// Get form data using FormData for file upload
 		const formData = new FormData();
 		formData.append('conferenceTitle', conferenceTitle.value);
 		formData.append('placeDate', placeDate.value);
