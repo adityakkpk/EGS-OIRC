@@ -1348,74 +1348,297 @@ Majan University College for a transformative conference exploring the latest a
 
   <style>
     .form-section-title {
+      color: #019087;
+      margin-bottom: 25px !important;
+      font-weight: 600;
+      font-size: 1.4rem;
       border-bottom: 2px solid #019087;
-      padding-bottom: 10px;
-      margin-bottom: 20px !important;
+      padding-bottom: 12px;
+      display: flex;
+      align-items: center;
     }
     
     .form-section-title i {
-      margin-right: 10px;
+      margin-right: 12px;
+      font-size: 1.2rem;
     }
     
-    .single-input select {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #e1e1e1;
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: white;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-      background-position: right 12px center;
-      background-repeat: no-repeat;
-      background-size: 16px;
+    .contact-form-area {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e9ecef;
     }
     
+    .single-input {
+      margin-bottom: 25px;
+    }
+    
+    .single-input input,
+    .single-input select,
     .single-input textarea {
       width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #e1e1e1;
-      border-radius: 5px;
-      font-size: 16px;
-      resize: vertical;
-      min-height: 100px;
+      padding: 15px 18px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 15px;
+      background-color: #fafafa;
+      transition: all 0.3s ease;
       font-family: inherit;
     }
     
+    .single-input input:focus,
+    .single-input select:focus,
+    .single-input textarea:focus {
+      outline: none;
+      border-color: #019087;
+      background-color: white;
+      box-shadow: 0 0 0 3px rgba(1, 144, 135, 0.1);
+    }
+    
+    .single-input input::placeholder,
+    .single-input textarea::placeholder {
+      color: #999;
+      font-weight: 400;
+    }
+    
+    .single-input select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 15px center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      cursor: pointer;
+    }
+    
+    .single-input textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.6;
+    }
+    
+    .single-input label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .single-input input[type="file"] {
+      padding: 12px 15px;
+      background-color: white;
+      border: 2px dashed #019087;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .single-input input[type="file"]:hover {
+      border-color: #40c4ba;
+      background-color: rgba(1, 144, 135, 0.02);
+    }
+    
     .checkbox-input {
-      margin: 15px 0;
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
     }
     
     .checkbox-input input[type="checkbox"] {
-      margin-right: 10px;
-      transform: scale(1.2);
+      margin: 0;
+      width: 18px;
+      height: 18px;
+      accent-color: #019087;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
     
     .checkbox-input label {
-      color: #666;
-      line-height: 1.5;
+      color: #555;
+      line-height: 1.6;
       cursor: pointer;
+      font-size: 14px;
+      margin: 0;
+    }
+    
+    .vl-btn4 {
+      background: linear-gradient(135deg, #019087, #40c4ba);
+      color: white;
+      border: none;
+      padding: 16px 40px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(1, 144, 135, 0.3);
+    }
+    
+    .vl-btn4:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(1, 144, 135, 0.4);
+    }
+    
+    .vl-btn4:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
     }
     
     .modal {
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 9999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
     
     .modal.show {
-      display: block !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
     }
     
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .modal-header {
+      border-bottom: 1px solid #e9ecef;
+      padding: 25px 30px 20px;
+    }
+    
+    .modal-body {
+      padding: 20px 30px;
+    }
+    
+    .modal-footer {
+      border-top: 1px solid #e9ecef;
+      padding: 20px 30px 25px;
+      text-align: right;
+    }
+    
+    /* Form section spacing */
+    .form-section {
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .form-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    /* Responsive design */
     @media (max-width: 768px) {
+      .contact-form-area {
+        padding: 25px 20px;
+      }
+      
       .form-section-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
       
       .single-input input,
       .single-input select,
       .single-input textarea {
+        padding: 12px 15px;
         font-size: 14px;
       }
+      
+      .vl-btn4 {
+        padding: 14px 30px;
+        font-size: 15px;
+        width: 100%;
+      }
+      
+      .modal-content {
+        margin: 20px;
+        width: calc(100% - 40px);
+      }
+      
+      .modal-header,
+      .modal-body,
+      .modal-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    
+    /* Enhanced focus states */
+    .single-input input:focus,
+    .single-input select:focus,
+    .single-input textarea:focus {
+      border-color: #019087;
+      box-shadow: 0 0 0 3px rgba(1, 144, 135, 0.1);
+    }
+    
+    /* Loading animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .fa-spinner {
+      animation: spin 1s linear infinite;
+    }
+    
+    /* Success/Error colors for modal */
+    .text-success {
+      color: #28a745 !important;
+    }
+    
+    .text-error {
+      color: #dc3545 !important;
+    }
+    
+    /* Better file input styling */
+    .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .file-input-wrapper input[type="file"] {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    .file-input-label {
+      display: block;
+      padding: 15px 18px;
+      border: 2px dashed #019087;
+      border-radius: 8px;
+      background-color: #fafafa;
+      color: #666;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .file-input-label:hover {
+      border-color: #40c4ba;
+      background-color: rgba(1, 144, 135, 0.05);
+      color: #019087;
+    }
+    
+    .file-input-label i {
+      margin-right: 8px;
+      color: #019087;
     }
   </style>
   <!--===== KEYNOTE SPEAKER REGISTRATION FORM ENDS =======-->
