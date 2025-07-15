@@ -652,7 +652,7 @@
 					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
 				</div>
 				<div class="modal-body">
-					<form id="editSpeakerForm">
+					<form id="editSpeakerForm" enctype="multipart/form-data">
 						<input type="hidden" id="editSpeakerId">
 						<div class="row">
 							<div class="col-md-6">
@@ -689,6 +689,17 @@
 						<div class="mb-3">
 							<label for="editSpeakerPhone" class="form-label">Phone</label>
 							<input type="tel" class="form-control" id="editSpeakerPhone">
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Current Paper File</label>
+							<div class="mb-2" id="currentFileDisplay">
+								<!-- Current file link will be displayed here -->
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="editSpeakerFile" class="form-label">Upload New Paper (Optional)</label>
+							<input type="file" class="form-control" id="editSpeakerFile" name="fileInput" accept=".pdf,.doc,.docx">
+							<small class="text-muted">Leave empty to keep current file. Supported formats: PDF, DOC, DOCX</small>
 						</div>
 					</form>
 				</div>
@@ -1258,7 +1269,7 @@
 			$('#speakersTable').DataTable({
 				data: speakers,
 				columns: [
-					{ data: 'id' },
+					{ data: 'fileUrl' },
 					{ data: 'name' },
 					{ data: 'email' },
 					{ data: 'institutionName' },
@@ -1316,27 +1327,45 @@
 			document.getElementById('editSpeakerCountry').value = speaker.country || '';
 			document.getElementById('editSpeakerPaperTitle').value = speaker.paperTitle || '';
 			document.getElementById('editSpeakerPhone').value = speaker.phone || '';
+			
+			// Display current file
+			const currentFileDisplay = document.getElementById('currentFileDisplay');
+			if (speaker.fileUrl) {
+				currentFileDisplay.innerHTML = `<a href="${speaker.fileUrl}" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-file-pdf"></i> View Current File</a>`;
+			} else {
+				currentFileDisplay.innerHTML = '<span class="text-muted">No file uploaded</span>';
+			}
 
 			new bootstrap.Modal(document.getElementById('editSpeakerModal')).show();
 		}
 
 		async function updateSpeaker() {
-			const formData = {
-				name: document.getElementById('editSpeakerName').value,
-				email: document.getElementById('editSpeakerEmail').value,
-				institutionName: document.getElementById('editSpeakerInstitution').value,
-				country: document.getElementById('editSpeakerCountry').value,
-				paperTitle: document.getElementById('editSpeakerPaperTitle').value,
-				phone: document.getElementById('editSpeakerPhone').value
-			};
+			const form = document.getElementById('editSpeakerForm');
+			const formData = new FormData();
+			
+			// Add form fields to FormData
+			formData.append('name', document.getElementById('editSpeakerName').value);
+			formData.append('email', document.getElementById('editSpeakerEmail').value);
+			formData.append('institutionName', document.getElementById('editSpeakerInstitution').value);
+			formData.append('country', document.getElementById('editSpeakerCountry').value);
+			formData.append('paperTitle', document.getElementById('editSpeakerPaperTitle').value);
+			formData.append('phone', document.getElementById('editSpeakerPhone').value);
+			
+			// Add file if selected
+			const fileInput = document.getElementById('editSpeakerFile');
+			if (fileInput.files.length > 0) {
+				formData.append('fileInput', fileInput.files[0]);
+			}
 
 			try {
 				showLoading();
 				const id = document.getElementById('editSpeakerId').value;
 				const response = await fetch(`${API_BASE}/admin/speakers/${id}`, {
 					method: 'PUT',
-					headers: getAuthHeaders(),
-					body: JSON.stringify(formData)
+					headers: {
+						'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+					},
+					body: formData
 				});
 
 				if (response.ok) {

@@ -26,6 +26,7 @@ import {
   getDashboardStats
 } from "../controllers/adminController.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
+import { upload } from "../config/cloudinary.js";
 
 // Admin authentication routes
 router.post("/login", login);
@@ -47,7 +48,7 @@ router.delete("/registrations/:id", authMiddleware, deleteRegistration);
 // Speaker management routes
 router.get("/speakers", authMiddleware, getAllSpeakers);
 router.get("/speakers/:id", authMiddleware, getSpeakerById);
-router.put("/speakers/:id", authMiddleware, updateSpeaker);
+router.put("/speakers/:id", authMiddleware, upload.single('fileInput'), updateSpeaker);
 router.delete("/speakers/:id", authMiddleware, deleteSpeaker);
 
 // Sponsor management routes

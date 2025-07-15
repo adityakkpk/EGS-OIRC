@@ -390,6 +390,11 @@ export const updateSpeaker = async (req, res) => {
     const { id } = req.params;
     const updateData = req.body;
     
+    // Handle file upload if new file was uploaded
+    if (req.file) {
+      updateData.fileUrl = req.file.path; // Cloudinary URL
+    }
+    
     const speaker = await prisma.speaker.update({
       where: { id },
       data: updateData
