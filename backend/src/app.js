@@ -19,7 +19,20 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://adityakkpk.github.io",
+    "http://localhost:3000",
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+    "https://adityakkpk.github.io/admin",
+    "https://icmmcs.org"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With"],
+  credentials: true,
+  optionsSuccessStatus: 200 // For legacy browser support
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

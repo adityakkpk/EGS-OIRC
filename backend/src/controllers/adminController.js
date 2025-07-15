@@ -7,7 +7,7 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const admin = await prisma.admin.findUnique({ where: { email } });
+    const admin = await prisma.Admin.findUnique({ where: { email } });
     if (!admin) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -43,7 +43,7 @@ export const createAdmin = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const referralCode = Math.random().toString(36).substring(7);
 
-    const newAdmin = await prisma.admin.create({
+    const newAdmin = await prisma.Admin.create({
       data: {
         email,
         password: hashedPassword,
@@ -66,7 +66,7 @@ export const getAllAdmins = async (req, res) => {
       return res.status(403).json({ message: 'Not authorized' });
     }
 
-    const admins = await prisma.admin.findMany({
+    const admins = await prisma.Admin.findMany({
       where: {
         role: 'ADMIN'
       },
@@ -98,8 +98,8 @@ export const deleteAdmin = async (req, res) => {
     const { id } = req.params;
 
     // Check if admin exists and is not a super admin
-    const admin = await prisma.admin.findUnique({
-      where: { id: parseInt(id) }
+    const admin = await prisma.Admin.findUnique({
+      where: { id }
     });
 
     if (!admin) {
@@ -111,8 +111,8 @@ export const deleteAdmin = async (req, res) => {
     }
 
     // Delete the admin
-    await prisma.admin.delete({
-      where: { id: parseInt(id) }
+    await prisma.Admin.delete({
+      where: { id }
     });
 
     res.json({ message: 'Admin deleted successfully' });
@@ -124,7 +124,7 @@ export const deleteAdmin = async (req, res) => {
 
 export const getAdminInfo = async (req, res) => {
   try {
-    const admin = await prisma.admin.findUnique({
+    const admin = await prisma.Admin.findUnique({
       where: { id: req.user.id },
       select: {
         email: true,
@@ -146,7 +146,7 @@ export const getAdminInfo = async (req, res) => {
 
 export const getReferredUsers = async (req, res) => {
   try {
-    const admin = await prisma.admin.findUnique({
+    const admin = await prisma.Admin.findUnique({
       where: { id: req.user.id },
       include: {
         referredUsers: {
@@ -203,7 +203,7 @@ export const getDashboardStats = async (req, res) => {
       prisma.registerUser.count(),
       prisma.speaker.count(),
       prisma.sponsor.count(),
-      prisma.admin.count({ where: { role: 'ADMIN' } })
+      prisma.Admin.count({ where: { role: 'ADMIN' } })
     ]);
 
     // Get recent registrations with safe referral handling
