@@ -24,6 +24,9 @@ model registerUser {
   earlyBird        Boolean
   regFee           String
   isPaid           Boolean  @default(false)
+  referralCode     String?
+  referredById     String?
+  referredBy       Admin?   @relation("UserReferrals", fields: [referredById], references: [id])
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 }
@@ -40,9 +43,9 @@ model sponsor {
 }
 
 model speaker {
-  id              String   @id @default(uuid())
+  id              String       @id @default(uuid())
   name            String
-  email           String   @unique
+  email           String       @unique
   phone           String
   institutionName String
   paperTitle      String
@@ -52,8 +55,11 @@ model speaker {
   attendeeType    AttendeeType
   fileUrl         String?
   message         String
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  referralCode    String?
+  referredById    String?
+  referredBy      Admin?       @relation("SpeakerReferrals", fields: [referredById], references: [id])
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
 }
 
 enum AttendeeType {
@@ -62,14 +68,16 @@ enum AttendeeType {
 }
 
 model Admin {
-  id            String    @id @default(uuid())
-  email         String    @unique
+  id            String         @id @default(uuid())
+  email         String         @unique
   password      String
   role          AdminRole
-  referralCode  String?   @unique
-  referredUsers User[]    @relation("ReferredUsers")
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  referralCode  String?        @unique
+  referredUsers User[]         @relation("ReferredUsers")
+  referredRegistrations registerUser[] @relation("UserReferrals")
+  referredSpeakers speaker[]   @relation("SpeakerReferrals")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
 }
 
 enum AdminRole {

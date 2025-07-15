@@ -206,26 +206,43 @@ export const getDashboardStats = async (req, res) => {
       prisma.admin.count({ where: { role: 'ADMIN' } })
     ]);
 
-    const recentRegistrations = await prisma.registerUser.findMany({
-      take: 5,
-      orderBy: { createdAt: 'desc' },
-      include: {
-        referredBy: {
-          select: {
-            email: true,
-            referralCode: true
+    // Get recent registrations with safe referral handling
+    let recentRegistrations = [];
+    try {
+      recentRegistrations = await prisma.registerUser.findMany({
+        take: 5,
+        orderBy: { createdAt: 'desc' },
+        include: {
+          referredBy: {
+            select: {
+              email: true,
+              referralCode: true
+            }
           }
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          createdAt: true,
+          regFee: true,
+          referredBy: true
         }
-      },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        createdAt: true,
-        regFee: true,
-        referredBy: true
-      }
-    });
+      });
+    } catch (referralError) {
+      console.log('Referral data not available yet, fetching basic registrations');
+      recentRegistrations = await prisma.registerUser.findMany({
+        take: 5,
+        orderBy: { createdAt: 'desc' },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          createdAt: true,
+          regFee: true
+        }
+      });
+    }
 
     res.json({
       registrations: registrationCount,
@@ -235,26 +252,34 @@ export const getDashboardStats = async (req, res) => {
       recentRegistrations
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    console.error('Dashboard stats error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
 
 // Registration Management
 export const getAllRegistrations = async (req, res) => {
   try {
-    const registrations = await prisma.registerUser.findMany({
-      include: {
-        referredBy: {
-          select: {
-            id: true,
-            email: true,
-            referralCode: true
+    let registrations;
+    try {
+      registrations = await prisma.registerUser.findMany({
+        include: {
+          referredBy: {
+            select: {
+              id: true,
+              email: true,
+              referralCode: true
+            }
           }
-        }
-      },
-      orderBy: { createdAt: 'desc' }
-    });
+        },
+        orderBy: { createdAt: 'desc' }
+      });
+    } catch (referralError) {
+      console.log('Referral data not available yet, fetching basic registrations');
+      registrations = await prisma.registerUser.findMany({
+        orderBy: { createdAt: 'desc' }
+      });
+    }
     res.json(registrations);
   } catch (error) {
     console.error(error);
@@ -315,18 +340,26 @@ export const deleteRegistration = async (req, res) => {
 // Speaker Management
 export const getAllSpeakers = async (req, res) => {
   try {
-    const speakers = await prisma.speaker.findMany({
-      include: {
-        referredBy: {
-          select: {
-            id: true,
-            email: true,
-            referralCode: true
+    let speakers;
+    try {
+      speakers = await prisma.speaker.findMany({
+        include: {
+          referredBy: {
+            select: {
+              id: true,
+              email: true,
+              referralCode: true
+            }
           }
-        }
-      },
-      orderBy: { createdAt: 'desc' }
-    });
+        },
+        orderBy: { createdAt: 'desc' }
+      });
+    } catch (referralError) {
+      console.log('Referral data not available yet, fetching basic speakers');
+      speakers = await prisma.speaker.findMany({
+        orderBy: { createdAt: 'desc' }
+      });
+    }
     res.json(speakers);
   } catch (error) {
     console.error(error);
