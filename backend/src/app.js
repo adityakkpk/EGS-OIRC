@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import sponsorRegistrationRoutes from './routes/sponsorRegistrationRoutes.js';
 import conferenceRegistrationRoutes from './routes/conferenceRegistrationRoutes.js';
 import speakerRoutes from './routes/speakerRoutes.js';
+import keynoteSpeakerRoutes from './routes/keynoteSpeakerRoutes.js';
 import { connectDB } from './config/db.js';
 import adminRoutes from './routes/adminRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -47,6 +48,7 @@ app.get('/', (req, res) => {
 app.use('/api/conference', conferenceRegistrationRoutes);
 app.use('/api/sponsor', sponsorRegistrationRoutes);
 app.use('/api/speaker', speakerRoutes);
+app.use('/api/keynote-speaker', keynoteSpeakerRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/contact', contactRoutes);

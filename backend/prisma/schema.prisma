@@ -67,6 +67,76 @@ enum AttendeeType {
   listener
 }
 
+model keynoteSpeaker {
+  id                    String   @id @default(uuid())
+  // Personal Information
+  name                  String
+  email                 String   @unique
+  phone                 String
+  country               String
+  
+  // Professional Information  
+  designation           String
+  institutionName       String
+  department            String?
+  experienceYears       Int
+  expertiseArea         String
+  specialization        String
+  
+  // Academic Credentials
+  highestDegree         String
+  university            String?
+  publicationsCount     Int?
+  notableAchievements   String?
+  
+  // Speaking Experience
+  keynoteExperience     Int?
+  notableConferences    String?
+  
+  // Proposed Keynote Topic
+  keynoteTitle          String
+  keynoteAbstract       String   @db.Text
+  targetAudience        String?  @db.Text
+  
+  // Online Presence
+  linkedinProfile       String?
+  website               String?
+  orcidId               String?
+  googleScholar         String?
+  
+  // Files
+  cvFileUrl             String?
+  photoFileUrl          String?
+  presentationFileUrl   String?
+  
+  // Additional Information
+  preferredSessionTime  String?
+  accommodationNeeded   String?
+  dietaryRestrictions   String?
+  additionalComments    String?  @db.Text
+  
+  // Agreements
+  agreeToTerms          Boolean  @default(false)
+  agreeToMarketing      Boolean  @default(false)
+  
+  // Status and Admin Relations
+  status                KeynoteStatus @default(PENDING)
+  referralCode          String?
+  referredById          String?
+  referredBy            Admin?   @relation("KeynoteReferrals", fields: [referredById], references: [id])
+  
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+enum KeynoteStatus {
+  PENDING
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+  CONFIRMED
+}
+
 model Admin {
   id            String         @id @default(uuid())
   email         String         @unique
@@ -76,6 +146,7 @@ model Admin {
   referredUsers User[]         @relation("ReferredUsers")
   referredRegistrations registerUser[] @relation("UserReferrals")
   referredSpeakers speaker[]   @relation("SpeakerReferrals")
+  referredKeynotes keynoteSpeaker[] @relation("KeynoteReferrals")
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
 }
