@@ -88,6 +88,40 @@ export const getAllAdmins = async (req, res) => {
   }
 };
 
+export const deleteAdmin = async (req, res) => {
+  try {
+    // Check if the requesting user is a super admin
+    if (req.user.role !== 'SUPER_ADMIN') {
+      return res.status(403).json({ message: 'Not authorized' });
+    }
+
+    const { id } = req.params;
+
+    // Check if admin exists and is not a super admin
+    const admin = await prisma.admin.findUnique({
+      where: { id: parseInt(id) }
+    });
+
+    if (!admin) {
+      return res.status(404).json({ message: 'Admin not found' });
+    }
+
+    if (admin.role === 'SUPER_ADMIN') {
+      return res.status(403).json({ message: 'Cannot delete super admin' });
+    }
+
+    // Delete the admin
+    await prisma.admin.delete({
+      where: { id: parseInt(id) }
+    });
+
+    res.json({ message: 'Admin deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
 export const getAdminInfo = async (req, res) => {
   try {
     const admin = await prisma.admin.findUnique({
@@ -156,6 +190,257 @@ export const getUsers = async (req, res) => {
     }
 
     res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Dashboard stats
+export const getDashboardStats = async (req, res) => {
+  try {
+    const [registrationCount, speakerCount, sponsorCount, adminCount] = await Promise.all([
+      prisma.registerUser.count(),
+      prisma.speaker.count(),
+      prisma.sponsor.count(),
+      prisma.admin.count({ where: { role: 'ADMIN' } })
+    ]);
+
+    const recentRegistrations = await prisma.registerUser.findMany({
+      take: 5,
+      orderBy: { createdAt: 'desc' },
+      include: {
+        referredBy: {
+          select: {
+            email: true,
+            referralCode: true
+          }
+        }
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        createdAt: true,
+        regFee: true,
+        referredBy: true
+      }
+    });
+
+    res.json({
+      registrations: registrationCount,
+      speakers: speakerCount,
+      sponsors: sponsorCount,
+      admins: adminCount,
+      recentRegistrations
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Registration Management
+export const getAllRegistrations = async (req, res) => {
+  try {
+    const registrations = await prisma.registerUser.findMany({
+      include: {
+        referredBy: {
+          select: {
+            id: true,
+            email: true,
+            referralCode: true
+          }
+        }
+      },
+      orderBy: { createdAt: 'desc' }
+    });
+    res.json(registrations);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const getRegistrationById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const registration = await prisma.registerUser.findUnique({
+      where: { id: parseInt(id) }
+    });
+    
+    if (!registration) {
+      return res.status(404).json({ message: 'Registration not found' });
+    }
+    
+    res.json(registration);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const updateRegistration = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
+    
+    const registration = await prisma.registerUser.update({
+      where: { id: parseInt(id) },
+      data: updateData
+    });
+    
+    res.json({ message: 'Registration updated successfully', registration });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const deleteRegistration = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    await prisma.registerUser.delete({
+      where: { id: parseInt(id) }
+    });
+    
+    res.json({ message: 'Registration deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Speaker Management
+export const getAllSpeakers = async (req, res) => {
+  try {
+    const speakers = await prisma.speaker.findMany({
+      include: {
+        referredBy: {
+          select: {
+            id: true,
+            email: true,
+            referralCode: true
+          }
+        }
+      },
+      orderBy: { createdAt: 'desc' }
+    });
+    res.json(speakers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const getSpeakerById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const speaker = await prisma.speaker.findUnique({
+      where: { id }
+    });
+    
+    if (!speaker) {
+      return res.status(404).json({ message: 'Speaker not found' });
+    }
+    
+    res.json(speaker);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const updateSpeaker = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
+    
+    const speaker = await prisma.speaker.update({
+      where: { id },
+      data: updateData
+    });
+    
+    res.json({ message: 'Speaker updated successfully', speaker });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const deleteSpeaker = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    await prisma.speaker.delete({
+      where: { id }
+    });
+    
+    res.json({ message: 'Speaker deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Sponsor Management
+export const getAllSponsors = async (req, res) => {
+  try {
+    const sponsors = await prisma.sponsor.findMany({
+      orderBy: { createdAt: 'desc' }
+    });
+    res.json(sponsors);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const getSponsorById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const sponsor = await prisma.sponsor.findUnique({
+      where: { id: parseInt(id) }
+    });
+    
+    if (!sponsor) {
+      return res.status(404).json({ message: 'Sponsor not found' });
+    }
+    
+    res.json(sponsor);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const updateSponsor = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
+    
+    const sponsor = await prisma.sponsor.update({
+      where: { id: parseInt(id) },
+      data: updateData
+    });
+    
+    res.json({ message: 'Sponsor updated successfully', sponsor });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+export const deleteSponsor = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    await prisma.sponsor.delete({
+      where: { id: parseInt(id) }
+    });
+    
+    res.json({ message: 'Sponsor deleted successfully' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

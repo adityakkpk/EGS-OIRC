@@ -17,11 +17,26 @@ const validatePhone = (phone) => {
 export const registerSpeaker = async (req, res) => {
   try {
     const speakerData = req.body;
+    const { referralCode } = speakerData;
     
     // Handle file upload URL if file was uploaded
     let fileUrl = null;
     if (req.file) {
       fileUrl = req.file.path; // Cloudinary URL
+    }
+
+    // If referral code is provided, verify it exists
+    if (referralCode) {
+      const admin = await prisma.admin.findUnique({
+        where: { referralCode }
+      });
+
+      if (!admin) {
+        return res.status(400).json({ 
+          message: 'Invalid referral code',
+          success: false 
+        });
+      }
     }
 
     // Validate required fields based on new frontend structure
@@ -99,6 +114,22 @@ export const registerSpeaker = async (req, res) => {
     const newSpeaker = await prisma.speaker.create({
       data: speakerCreateData,
     });
+
+    // If referral code exists, create the user record with admin reference
+    if (referralCode) {
+      const admin = await prisma.admin.findUnique({
+        where: { referralCode }
+      });
+
+      await prisma.user.create({
+        data: {
+          name: speakerData.name,
+          email: speakerData.email,
+          referredBy: referralCode,
+          adminId: admin.id
+        }
+      });
+    }
 
     // Send registration confirmation emails
     await sendSpeakerRegistrationEmail(newSpeaker);

@@ -5,330 +5,544 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Super Admin Dashboard | ICMMCS 2025</title>
-	<meta name="description" content="Join us at ICMMCS 2025 in 10th November 2025
-Majan University College for a transformative conference exploring the latest advancements in mathematics, management, and computer science.">
-	<meta property="og:image" content="assets/img/sponsors_log/3.png" />
-	<meta property="og:title" content="ICMMCS 2025" />
-	<meta property="og:description" content="Join us at ICMMCS 2025 in 10th November 2025
-Majan University College for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
-	<meta property="og:url" content="https://www.icmmcs.org/admin/superAdminDashboard.html" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="ICMMCS 2025" />
-	<meta name="twitter:description" content="Join us at ICMMCS 2025 in 10th November 2025
-Majan University College for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
-	<meta name="twitter:image" content="assets/img/sponsors_logo/3.png" />
-
-	<!--=====FAB ICON=======-->
+	<meta name="description" content="Super Admin Dashboard for ICMMCS 2025 Conference Management">
 	<link rel="shortcut icon" href="../assets/img/sponsors_logo/favicon.png" />
-
-	<!--===== CSS LINK =======-->
-	<link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/aos.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/fontawesome.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/magnific-popup.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/mobile.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/owlcarousel.min.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/sidebar.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/slick-slider.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/nice-select.css" />
-	<link rel="stylesheet" href="../assets/css/vendor/odometer.css" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-
-	<!--=====  JS SCRIPT LINK =======-->
-	<script src="../assets/js/vendor/jquery-3.7.1.min.js"></script>
+	
+	<!-- CSS Libraries -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css" rel="stylesheet">
 
 	<style>
+		:root {
+			--primary-color: #006666;
+			--secondary-color: #004d4d;
+			--accent-color: #019087;
+			--light-bg: #f8f9fa;
+			--dark-bg: #212529;
+			--border-color: #dee2e6;
+		}
+
 		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
+			background-color: var(--light-bg);
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		.sidebar {
+			background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+			min-height: 100vh;
 			padding: 0;
-			background-color: #f4f4f9;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 280px;
+			z-index: 1000;
+			transition: all 0.3s ease;
+			box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 		}
 
-		.login-container {
-			max-width: 300px;
-			margin: 100px auto;
-			padding: 20px;
-			background-color: #fff;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			text-align: center;
+		.sidebar.collapsed {
+			width: 70px;
 		}
 
-		input {
-			width: 100%;
-			padding: 10px;
-			margin: 10px 0;
-			border: 1px solid #ddd;
-			border-radius: 5px;
+		.sidebar-header {
+			padding: 1.5rem 1rem;
+			border-bottom: 1px solid rgba(255,255,255,0.1);
+			background: rgba(0,0,0,0.1);
 		}
 
-		button {
-			padding: 10px 20px;
-			background-color: #333;
-			color: #fff;
+		.sidebar-header h4 {
+			color: white;
+			margin: 0;
+			font-weight: 600;
+		}
+
+		.sidebar-nav {
+			padding: 1rem 0;
+		}
+
+		.nav-item {
+			margin: 0.25rem 0;
+		}
+
+		.nav-link {
+			color: rgba(255,255,255,0.8) !important;
+			padding: 0.75rem 1rem;
+			border-radius: 0;
+			transition: all 0.3s ease;
+			border-left: 3px solid transparent;
+		}
+
+		.nav-link:hover, .nav-link.active {
+			background: rgba(255,255,255,0.1);
+			color: white !important;
+			border-left-color: white;
+		}
+
+		.nav-link i {
+			width: 20px;
+			margin-right: 0.75rem;
+		}
+
+		.main-content {
+			margin-left: 280px;
+			padding: 2rem;
+			transition: all 0.3s ease;
+		}
+
+		.main-content.expanded {
+			margin-left: 70px;
+		}
+
+		.top-navbar {
+			background: white;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			padding: 1rem 2rem;
+			margin: -2rem -2rem 2rem -2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.stats-card {
+			background: white;
+			border-radius: 15px;
+			padding: 2rem;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+			border-left: 4px solid var(--primary-color);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.stats-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+		}
+
+		.stats-icon {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5rem;
+			color: white;
+		}
+
+		.content-section {
+			background: white;
+			border-radius: 15px;
+			padding: 2rem;
+			margin-bottom: 2rem;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+		}
+
+		.section-title {
+			color: var(--primary-color);
+			font-weight: 600;
+			margin-bottom: 1.5rem;
+			padding-bottom: 0.5rem;
+			border-bottom: 2px solid var(--accent-color);
+		}
+
+		.btn-primary-custom {
+			background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 			border: none;
-			border-radius: 5px;
-			cursor: pointer;
+			border-radius: 8px;
+			padding: 0.5rem 1.5rem;
+			font-weight: 500;
+			transition: all 0.3s ease;
 		}
 
-		header {
-			background-color: #333;
-			color: #fff;
-			padding: 10px 0;
-			text-align: center;
+		.btn-primary-custom:hover {
+			background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+			transform: translateY(-2px);
 		}
 
-		main {
-			padding: 20px;
+		.table th {
+			background-color: var(--primary-color);
+			color: white;
+			border: none;
+			font-weight: 500;
+		}
+
+		.table-responsive {
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+		}
+
+		.modal-header {
+			background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+			color: white;
+			border-radius: 15px 15px 0 0;
+		}
+
+		.badge-status {
+			padding: 0.4rem 0.8rem;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			font-weight: 500;
 		}
 
 		.admin-card {
-			margin-bottom: 20px;
-			border-radius: 10px;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			background: white;
+			border-radius: 15px;
+			padding: 1.5rem;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+			transition: all 0.3s ease;
+			border-left: 4px solid var(--accent-color);
 		}
 
-		.user-list {
-			max-height: 300px;
-			overflow-y: auto;
+		.admin-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+		}
+
+		.loading-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+
+		.spinner {
+			border: 4px solid rgba(255,255,255,0.3);
+			border-radius: 50%;
+			border-top: 4px solid white;
+			width: 50px;
+			height: 50px;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+
+		.toggle-sidebar {
+			background: none;
+			border: none;
+			color: var(--primary-color);
+			font-size: 1.5rem;
+			cursor: pointer;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.sidebar {
+				width: 100%;
+				transform: translateX(-100%);
+			}
+			
+			.sidebar.show {
+				transform: translateX(0);
+			}
+			
+			.main-content {
+				margin-left: 0;
+			}
+		}
+
+		.referral-code {
+			background: var(--light-bg);
+			border: 2px dashed var(--accent-color);
+			border-radius: 8px;
+			padding: 1rem;
+			font-family: 'Courier New', monospace;
+			font-weight: bold;
+			text-align: center;
+			position: relative;
+		}
+
+		.copy-btn {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			background: var(--accent-color);
+			color: white;
+			border: none;
+			border-radius: 4px;
+			padding: 0.25rem 0.5rem;
+			font-size: 0.8rem;
 		}
 	</style>
 </head>
 
-<body class="homepage4-body">
-	<!--===== PRELOADER STARTS =======-->
-	<div class="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="../assets/img/sponsors_logo/favicon.png" alt="" /></div>
-		</div>
-	</div>
-	<!--===== PRELOADER ENDS =======-->
-
-	<!--===== PAGE PROGRESS START=======-->
-	<div class="paginacontainer">
-		<div class="progress-wrap">
-			<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-			</svg>
-		</div>
-	</div>
-	<!--===== PAGE PROGRESS END=======-->
-
-	<!--=====HEADER START=======-->
-	<header>
-		<div class="header-area homepage4 header header-sticky d-none d-lg-block" id="header">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="header-elements">
-							<a href="../index.html">
-								<div class="site-logo">
-									<img src="../assets/img/sponsors_logo/new_logo.jpg" alt="logo">
-								</div>
-							</a>
-							<div class="main-menu">
-								<ul>
-									<li>
-										<a href="../index.html">Home </a>
-									</li>
-									<!-- <li>
-										<a href="../#">Conference <i class="fa-solid fa-angle-down"></i></a>
-										<ul class="dropdown-padding">
-											<li><a href="../about.html">About Conference</a></li>
-											<li><a href="../speakers.html">Our Speakers</a></li>
-											<li><a href="../agenda.html">Conference Agenda</a></li>
-											<li><a href="../faq.html">FAQs</a></li>
-										</ul>
-									</li> -->
-									<li>
-										<a href="../#">Conference <i class="fa-solid fa-angle-down"></i></a>
-										<ul class="dropdown-padding">
-											<li><a href="../about.html">About Conference</a></li>
-											<li><a href="../speakers.html">Our Speakers</a></li>
-											<li><a href="../agenda.html">Conference Agenda</a></li>
-											<li><a href="../faq.html">FAQs</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="../register.html">Register</i></a>
-									</li>
-									<li>
-										<a href="../exhibition.html">Exhibition</a>
-									</li>
-									<li>
-										<a href="../sponsors.html">Sponsors</a>
-									</li>
-									<li>
-										<a href="../features.html">Features</a>
-									</li>
-								</ul>
-							</div>
-							<div class="body-overlay"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!--=====HEADER END =======-->
-
-	<!--===== MOBILE HEADER STARTS =======-->
-	<div class="mobile-header mobile-haeder4 d-block d-lg-none">
-		<div class="container-fluid">
-			<div class="col-12">
-				<div class="mobile-header-elements">
-					<a href="../index.html">
-						<div class="site-logo" style="width: 150px;">
-							<img src="../assets/img/sponsors_logo/new_logo.jpg" alt="logo">
-						</div>
-					</a>
-					<div class="mobile-nav-icon dots-menu">
-						<i class="fa-solid fa-bars-staggered"></i>
-					</div>
-				</div>
-			</div>
-		</div>
+<body>
+	<!-- Loading Overlay -->
+	<div id="loadingOverlay" class="loading-overlay d-none">
+		<div class="spinner"></div>
 	</div>
 
-	<div class="mobile-sidebar mobile-sidebar4">
-		<div class="logosicon-area">
-			<a href="../index.html">
-				<div class="site-logo" style="width: 150px;">
-					<img src="../assets/img/sponsors_logo/new_logo.jpg" alt="logo">
-				</div>
-			</a>
-			<div class="menu-close">
-				<i class="fa-solid fa-xmark"></i>
-			</div>
+	<!-- Sidebar -->
+	<nav class="sidebar" id="sidebar">
+		<div class="sidebar-header">
+			<h4><i class="fas fa-crown me-2"></i>Super Admin</h4>
 		</div>
-		<div class="mobile-nav mobile-nav1">
-			<ul class="mobile-nav-list nav-list1">
-				<li>
-					<a href="../index.html">Home </a>
-				</li>
-				<li>
-					<a href="../#">Conference <i class="fa-solid fa-angle-down"></i></a>
-					<ul class="dropdown-padding">
-						<li><a href="../about.html">About Conference</a></li>
-						<li><a href="../speakers.html">Our Speakers</a></li>
-						<li><a href="../agenda.html">Conference Agenda</a></li>
-						<li><a href="../faq.html">FAQs</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="../register.html">Register</i></a>
-				</li>
-				<li>
-					<a href="../exhibition.html">Exhibition</a>
-				</li>
-				<li>
-					<a href="../sponsors.html">Sponsors</a>
-				</li>
-				<li>
-					<a href="../features.html">Features</a>
-				</li>
-
-			</ul>
-			<div class="allmobilesection">
-				<a class="vl-btn4" href="../contact.html"><span class="demo">Contact Us</span></a>
-				<div class="single-footer">
-					<h3>Contact Info</h3>
-					<div class="footer1-contact-info">
-						<div class="contact-info-single">
-							<div class="contact-info-icon">
-								<span><i class="fa-solid fa-phone-volume"></i></span>
-							</div>
-							<div class="contact-info-text">
-								<a href="tel:+3(924)4596512">+91-9540111207</a>
-							</div>
-						</div>
-						<div class="contact-info-single">
-							<div class="contact-info-icon">
-								<span><i class="fa-solid fa-envelope"></i></span>
-							</div>
-							<div class="contact-info-text">
-								<a href="../mailto:info@icmmcs.org">info@icmmcs.org</a>
-							</div>
-						</div>
-						<div class="single-footer">
-							<h3>Our Location</h3>
-							<div class="contact-info-single">
-								<div class="contact-info-icon">
-									<span><i class="fa-solid fa-location-dot"></i></span>
-								</div>
-								<div class="contact-info-text">
-									<a
-										href="../https://www.google.com/maps/place/Majan+University+College+MUC+%D9%83%D9%84%D9%8A%D8%A9+%D9%85%D8%AC%D8%A7%D9%86+%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D9%8A%D8%A9%E2%80%AD/@23.6156709,58.5441163,17z/data=!3m1!4b1!4m6!3m5!1s0x3e91f82f10586a9d:0xc572cbddbcf467e3!8m2!3d23.6156709!4d58.5466912!16s%2Fg%2F11c5s_16pd?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D">Muscat,
-										Oman
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--===== MOBILE HEADER ENDS =======-->
-
-	<!--===== HERO AREA STARTS =======-->
-	<div class="inner-page-header" style="background-color: #019087;">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9 m-auto">
-					<div class="heading1 text-center">
-						<h1>Super Admin Dashboard</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--===== HERO AREA ENDS =======-->
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container">
-			<a class="navbar-brand" href="#">Super Admin Dashboard</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item">
-						<button class="btn btn-outline-light" onclick="logout()">Logout</button>
-					</li>
-				</ul>
-			</div>
-		</div>
+		<ul class="navbar-nav sidebar-nav">
+			<li class="nav-item">
+				<a class="nav-link active" href="#" onclick="showSection('dashboard')">
+					<i class="fas fa-tachometer-alt"></i>Dashboard
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="showSection('admins')">
+					<i class="fas fa-user-shield"></i>Admin Management
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="showSection('registrations')">
+					<i class="fas fa-users"></i>Registrations
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="showSection('speakers')">
+					<i class="fas fa-microphone"></i>Speakers
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="showSection('sponsors')">
+					<i class="fas fa-handshake"></i>Sponsors
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="showSection('analytics')">
+					<i class="fas fa-chart-bar"></i>Analytics
+				</a>
+			</li>
+		</ul>
 	</nav>
 
-	<div class="container mt-4">
-		<div class="row mb-4">
-			<div class="col">
-				<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createAdminModal">
-					<i class="fas fa-plus"></i> Create New Admin
+	<!-- Main Content -->
+	<main class="main-content" id="mainContent">
+		<!-- Top Navigation -->
+		<div class="top-navbar">
+			<div>
+				<button class="toggle-sidebar" onclick="toggleSidebar()">
+					<i class="fas fa-bars"></i>
+				</button>
+				<span class="ms-3 fw-bold text-dark">ICMMCS 2025 Super Admin Panel</span>
+			</div>
+			<div class="d-flex align-items-center">
+				<span class="me-3 text-muted">Welcome, Super Admin</span>
+				<button class="btn btn-outline-danger btn-sm" onclick="logout()">
+					<i class="fas fa-sign-out-alt me-1"></i>Logout
 				</button>
 			</div>
 		</div>
 
-		<div id="adminsList" class="row">
-			<!-- Admin cards will be dynamically added here -->
+		<!-- Dashboard Section -->
+		<div id="dashboardSection" class="content-section">
+			<h2 class="section-title">Dashboard Overview</h2>
+			<div class="row" id="statsContainer">
+				<!-- Stats cards will be dynamically loaded -->
+			</div>
+			
+			<div class="mt-4">
+				<h4>Recent Activity</h4>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Action</th>
+								<th>Entity</th>
+								<th>Details</th>
+								<th>Timestamp</th>
+							</tr>
+						</thead>
+						<tbody id="recentActivity">
+							<!-- Recent activity will be loaded here -->
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
-	</div>
+
+		<!-- Admin Management Section -->
+		<div id="adminsSection" class="content-section d-none">
+			<h2 class="section-title">Admin Management</h2>
+			<div class="d-flex justify-content-between align-items-center mb-3">
+				<button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#createAdminModal">
+					<i class="fas fa-plus me-2"></i>Create New Admin
+				</button>
+				<button class="btn btn-success" onclick="exportAdmins()">
+					<i class="fas fa-download me-2"></i>Export Admins
+				</button>
+			</div>
+			<div class="row" id="adminsContainer">
+				<!-- Admin cards will be loaded here -->
+			</div>
+		</div>
+
+		<!-- Registrations Section -->
+		<div id="registrationsSection" class="content-section d-none">
+			<h2 class="section-title">Conference Registrations</h2>
+			<div class="d-flex justify-content-between align-items-center mb-3">
+				<div class="d-flex gap-2">
+					<button class="btn btn-success" onclick="exportData('registrations')">
+						<i class="fas fa-download me-2"></i>Export CSV
+					</button>
+					<select class="form-select" style="width: auto;" onchange="filterRegistrations(this.value)">
+						<option value="all">All Registrations</option>
+						<option value="paid">Paid Only</option>
+						<option value="pending">Pending Payment</option>
+					</select>
+				</div>
+				<div class="d-flex align-items-center">
+					<span class="me-2">Total:</span>
+					<span class="badge bg-primary" id="registrationsCount">0</span>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table id="registrationsTable" class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Type</th>
+							<th>Fee</th>
+							<th>Status</th>
+							<th>Referred By</th>
+							<th>Date</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Speakers Section -->
+		<div id="speakersSection" class="content-section d-none">
+			<h2 class="section-title">Conference Speakers</h2>
+			<div class="d-flex justify-content-between align-items-center mb-3">
+				<div class="d-flex gap-2">
+					<button class="btn btn-success" onclick="exportData('speakers')">
+						<i class="fas fa-download me-2"></i>Export CSV
+					</button>
+				</div>
+				<div class="d-flex align-items-center">
+					<span class="me-2">Total:</span>
+					<span class="badge bg-primary" id="speakersCount">0</span>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table id="speakersTable" class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Institution</th>
+							<th>Paper Title</th>
+							<th>Country</th>
+							<th>Referred By</th>
+							<th>Date</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Sponsors Section -->
+		<div id="sponsorsSection" class="content-section d-none">
+			<h2 class="section-title">Conference Sponsors</h2>
+			<div class="d-flex justify-content-between align-items-center mb-3">
+				<div class="d-flex gap-2">
+					<button class="btn btn-success" onclick="exportData('sponsors')">
+						<i class="fas fa-download me-2"></i>Export CSV
+					</button>
+				</div>
+				<div class="d-flex align-items-center">
+					<span class="me-2">Total:</span>
+					<span class="badge bg-primary" id="sponsorsCount">0</span>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table id="sponsorsTable" class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Organization</th>
+							<th>Contact Name</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th>Package</th>
+							<th>Date</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Analytics Section -->
+		<div id="analyticsSection" class="content-section d-none">
+			<h2 class="section-title">Analytics & Reports</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header bg-primary text-white">
+							<h5>Registration Trends</h5>
+						</div>
+						<div class="card-body">
+							<canvas id="registrationChart" width="400" height="200"></canvas>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header bg-success text-white">
+							<h5>Revenue Breakdown</h5>
+						</div>
+						<div class="card-body">
+							<canvas id="revenueChart" width="400" height="200"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header bg-info text-white">
+							<h5>Referral Performance</h5>
+						</div>
+						<div class="card-body">
+							<div id="referralStats">
+								<!-- Referral statistics will be loaded here -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
 	<!-- Create Admin Modal -->
 	<div class="modal fade" id="createAdminModal" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Create New Admin</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					<h5 class="modal-title"><i class="fas fa-user-plus me-2"></i>Create New Admin</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
 				</div>
 				<div class="modal-body">
 					<form id="createAdminForm">
 						<div class="mb-3">
-							<label for="adminEmail" class="form-label">Email</label>
+							<label for="adminEmail" class="form-label">Email Address</label>
 							<input type="email" class="form-control" id="adminEmail" required>
 						</div>
 						<div class="mb-3">
@@ -338,153 +552,226 @@ Majan University College for a transformative conference exploring the latest a
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" onclick="createAdmin()">Create Admin</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary-custom" onclick="createAdmin()">
+						<i class="fas fa-save me-2"></i>Create Admin
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!--===== FOOTER AREA STARTS =======-->
-	<div class="footer4-sertion-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-logo-area">
-						<a href="../index.html">
-							<div class="site-logo">
-								<img src="../assets/img/sponsors_logo/footer_logo.png" alt="logo">
-							</div>
-						</a>
-						<div class="space16"></div>
-						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
-							Technological Innovation.</p>
-						<div class="space24"></div>
-						<ul>
-							<li>
-								<a href="../#"><i class="fa-brands fa-facebook-f"></i></a>
-							</li>
-							<li>
-								<a href="../#"><i class="fa-brands fa-instagram"></i></a>
-							</li>
-							<li>
-								<a href="../#"><i class="fa-brands fa-linkedin-in"></i></a>
-							</li>
-							<li>
-								<a href="../#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
-							</li>
-						</ul>
-					</div>
+	<!-- Edit Registration Modal -->
+	<div class="modal fade" id="editRegistrationModal" tabindex="-1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"><i class="fas fa-edit me-2"></i>Edit Registration</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
 				</div>
-				<div class="col-lg-2 col-md-6">
-					<div class="link-content">
-						<h3>Quick Links</h3>
-						<ul>
-							<li><a href="../about.html">Conference</a></li>
-							<li><a href="../features.html">Features</a></li>
-							<li><a href="../exhibition.html">Events</a></li>
-							<li><a href="../register.html">Register</a></li>
-							<li><a href="../sponsors.html">Sponsors</a></li>
-
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-					<div class="link-content2">
-						<h3>Contact Us</h3>
-						<ul>
-							<li>
-								<a href="../tel:+11234567890" target="_blank"><img src="../assets/img/icons/phn1.svg" alt="" /><a href="tel:+919540111207">+91-9540111207</a></a>
-							</li>
-							<li>
-								<a href="../https://www.google.com/maps/place/Majan+University+College+MUC+%D9%83%D9%84%D9%8A%D8%A9+%D9%85%D8%AC%D8%A7%D9%86+%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D9%8A%D8%A9%E2%80%AD/@23.6156709,58.5441163,17z/data=!3m1!4b1!4m6!3m5!1s0x3e91f82f10586a9d:0xc572cbddbcf467e3!8m2!3d23.6156709!4d58.5466912!16s%2Fg%2F11c5s_16pd?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D"
-									target="_blank"><img src="../assets/img/icons/location1.svg" alt="" />10th November 2025
-Majan University College
-								</a>
-							</li>
-							<li>
-								<a href="../mailto:info@icmmcs.org" target="_blank"><img src="../assets/img/icons/mail1.svg"
-										alt="" />info@icmmcs.org</a>
-							</li>
-							<li>
-								<a href="../https://www.icmmcs.org" target="_blank"><img src="../assets/img/icons/world1.svg"
-										alt="" />www.icmmcs.org</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-social-box">
-						<h3>Images of Host City</h3>
-						<div class="space12"></div>
+				<div class="modal-body">
+					<form id="editRegistrationForm">
+						<input type="hidden" id="editRegId">
 						<div class="row">
-							<div class="col-lg-4 col-md-4 col-4">
-								<div class="img1">
-									<img src="../assets/img/all-images/others/footer_img1.avif" alt="" />
-									<div class="icons">
-										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
-									</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegName" class="form-label">Name</label>
+									<input type="text" class="form-control" id="editRegName" required>
 								</div>
 							</div>
-							<div class="col-lg-4 col-md-4 col-4">
-								<div class="img1">
-									<img src="../assets/img/all-images/others/footer_img2.avif" alt="" />
-									<div class="icons">
-										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-4">
-								<div class="img1">
-									<img src="../assets/img/all-images/others/footer_img3.avif" alt="" />
-									<div class="icons">
-										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-4">
-								<div class="img1">
-									<img src="../assets/img/all-images/others/footer_img4.avif" alt="" />
-									<div class="icons">
-										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-4">
-								<div class="img1">
-									<img src="../assets/img/all-images/others/footer_img5.avif" alt="" />
-									<div class="icons">
-										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-4">
-								<div class="img1">
-									<img src="../assets/img/all-images/others/footer_img6.avif" alt="" />
-									<div class="icons">
-										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
-									</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegEmail" class="form-label">Email</label>
+									<input type="email" class="form-control" id="editRegEmail" required>
 								</div>
 							</div>
 						</div>
-					</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegPhone" class="form-label">Phone</label>
+									<input type="tel" class="form-control" id="editRegPhone">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegType" class="form-label">Registration Type</label>
+									<input type="text" class="form-control" id="editRegType">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegInstitution" class="form-label">Institution</label>
+									<input type="text" class="form-control" id="editRegInstitution">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegCountry" class="form-label">Country</label>
+									<input type="text" class="form-control" id="editRegCountry">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegFee" class="form-label">Registration Fee</label>
+									<input type="text" class="form-control" id="editRegFee">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editRegStatus" class="form-label">Payment Status</label>
+									<select class="form-select" id="editRegStatus">
+										<option value="false">Pending</option>
+										<option value="true">Paid</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
-			</div>
-			<div class="space60"></div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="copyright">
-						<p>&copy; Copyright 2025 - Traveon Ventures LLP. All Right Reserved</p>
-					</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary-custom" onclick="updateRegistration()">
+						<i class="fas fa-save me-2"></i>Save Changes
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--===== FOOTER AREA ENDS =======-->
 
+	<!-- Edit Speaker Modal -->
+	<div class="modal fade" id="editSpeakerModal" tabindex="-1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"><i class="fas fa-edit me-2"></i>Edit Speaker</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<form id="editSpeakerForm">
+						<input type="hidden" id="editSpeakerId">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSpeakerName" class="form-label">Name</label>
+									<input type="text" class="form-control" id="editSpeakerName" required>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSpeakerEmail" class="form-label">Email</label>
+									<input type="email" class="form-control" id="editSpeakerEmail" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSpeakerInstitution" class="form-label">Institution</label>
+									<input type="text" class="form-control" id="editSpeakerInstitution">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSpeakerCountry" class="form-label">Country</label>
+									<input type="text" class="form-control" id="editSpeakerCountry">
+								</div>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="editSpeakerPaperTitle" class="form-label">Paper Title</label>
+							<input type="text" class="form-control" id="editSpeakerPaperTitle">
+						</div>
+						<div class="mb-3">
+							<label for="editSpeakerPhone" class="form-label">Phone</label>
+							<input type="tel" class="form-control" id="editSpeakerPhone">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary-custom" onclick="updateSpeaker()">
+						<i class="fas fa-save me-2"></i>Save Changes
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Edit Sponsor Modal -->
+	<div class="modal fade" id="editSponsorModal" tabindex="-1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"><i class="fas fa-edit me-2"></i>Edit Sponsor</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<form id="editSponsorForm">
+						<input type="hidden" id="editSponsorId">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSponsorOrganization" class="form-label">Organization</label>
+									<input type="text" class="form-control" id="editSponsorOrganization" required>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSponsorContactName" class="form-label">Contact Name</label>
+									<input type="text" class="form-control" id="editSponsorContactName" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSponsorEmail" class="form-label">Email</label>
+									<input type="email" class="form-control" id="editSponsorEmail" required>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="mb-3">
+									<label for="editSponsorPhone" class="form-label">Phone</label>
+									<input type="tel" class="form-control" id="editSponsorPhone">
+								</div>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="editSponsorPackage" class="form-label">Sponsorship Package</label>
+							<input type="text" class="form-control" id="editSponsorPackage">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary-custom" onclick="updateSponsor()">
+						<i class="fas fa-save me-2"></i>Save Changes
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript Libraries -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 	<script>
+		const API_BASE = 'https://egs-conference-backend.onrender.com/api';
+		let currentData = {};
+
 		// Check authentication on page load
 		document.addEventListener('DOMContentLoaded', function () {
 			const token = localStorage.getItem('adminToken');
@@ -492,55 +779,237 @@ Majan University College
 				window.location.href = 'index.html';
 				return;
 			}
-			loadAdmins();
+			loadDashboardData();
 		});
 
+		// Utility Functions
+		function showLoading() {
+			document.getElementById('loadingOverlay').classList.remove('d-none');
+		}
+
+		function hideLoading() {
+			document.getElementById('loadingOverlay').classList.add('d-none');
+		}
+
+		function showAlert(message, type = 'success') {
+			const alertDiv = document.createElement('div');
+			alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+			alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 10000; min-width: 300px;';
+			alertDiv.innerHTML = `
+				${message}
+				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			`;
+			document.body.appendChild(alertDiv);
+			setTimeout(() => alertDiv.remove(), 5000);
+		}
+
+		function getAuthHeaders() {
+			return {
+				'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,
+				'Content-Type': 'application/json'
+			};
+		}
+
+		// Navigation Functions
+		function toggleSidebar() {
+			const sidebar = document.getElementById('sidebar');
+			const mainContent = document.getElementById('mainContent');
+			sidebar.classList.toggle('collapsed');
+			mainContent.classList.toggle('expanded');
+		}
+
+		function showSection(sectionName) {
+			// Hide all sections
+			document.querySelectorAll('.content-section').forEach(section => {
+				section.classList.add('d-none');
+			});
+			
+			// Remove active class from all nav links
+			document.querySelectorAll('.nav-link').forEach(link => {
+				link.classList.remove('active');
+			});
+			
+			// Show selected section
+			document.getElementById(sectionName + 'Section').classList.remove('d-none');
+			
+			// Add active class to clicked nav link
+			event.target.classList.add('active');
+			
+			// Load section-specific data
+			switch(sectionName) {
+				case 'dashboard':
+					loadDashboardData();
+					break;
+				case 'admins':
+					loadAdmins();
+					break;
+				case 'registrations':
+					loadRegistrations();
+					break;
+				case 'speakers':
+					loadSpeakers();
+					break;
+				case 'sponsors':
+					loadSponsors();
+					break;
+				case 'analytics':
+					loadAnalytics();
+					break;
+			}
+		}
+
+		// Dashboard Functions
+		async function loadDashboardData() {
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/dashboard-stats`, {
+					headers: getAuthHeaders()
+				});
+				
+				if (!response.ok) {
+					throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+				}
+				
+				const stats = await response.json();
+				console.log('Super Admin Dashboard stats received:', stats); // Debug log
+				displayDashboardStats(stats);
+				loadRecentActivity();
+			} catch (error) {
+				console.error('Error loading dashboard:', error);
+				showAlert(`Error loading dashboard data: ${error.message}`, 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		function displayDashboardStats(stats) {
+			const statsContainer = document.getElementById('statsContainer');
+			const statsCards = [
+				{ title: 'Total Registrations', value: stats.registrations || 0, icon: 'fas fa-users', color: 'bg-primary' },
+				{ title: 'Total Speakers', value: stats.speakers || 0, icon: 'fas fa-microphone', color: 'bg-success' },
+				{ title: 'Total Sponsors', value: stats.sponsors || 0, icon: 'fas fa-handshake', color: 'bg-warning' },
+				{ title: 'Total Admins', value: stats.admins || 0, icon: 'fas fa-user-shield', color: 'bg-info' }
+			];
+
+			statsContainer.innerHTML = '';
+			statsCards.forEach(card => {
+				const cardHtml = `
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div class="stats-card">
+							<div class="d-flex align-items-center">
+								<div class="stats-icon ${card.color}">
+									<i class="${card.icon}"></i>
+								</div>
+								<div class="ms-3">
+									<h3 class="mb-0">${card.value}</h3>
+									<p class="text-muted mb-0">${card.title}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				`;
+				statsContainer.innerHTML += cardHtml;
+			});
+		}
+
+		async function loadRecentActivity() {
+			// Mock recent activity data
+			const recentActivity = document.getElementById('recentActivity');
+			recentActivity.innerHTML = `
+				<tr>
+					<td><span class="badge bg-success">Registration</span></td>
+					<td>Conference</td>
+					<td>New attendee registered</td>
+					<td>2 hours ago</td>
+				</tr>
+				<tr>
+					<td><span class="badge bg-info">Speaker</span></td>
+					<td>Call for Papers</td>
+					<td>New paper submission</td>
+					<td>4 hours ago</td>
+				</tr>
+				<tr>
+					<td><span class="badge bg-warning">Sponsor</span></td>
+					<td>Sponsorship</td>
+					<td>New sponsor inquiry</td>
+					<td>6 hours ago</td>
+				</tr>
+			`;
+		}
+
+		// Admin Management Functions
 		async function loadAdmins() {
 			try {
-				const response = await fetch('https://egs-conference-backend.onrender.com/api/admin/all', {
-					headers: {
-						'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-					}
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/all`, {
+					headers: getAuthHeaders()
 				});
-				const data = await response.json();
-				displayAdmins(data);
+				const admins = await response.json();
+				displayAdmins(admins);
 			} catch (error) {
 				console.error('Error loading admins:', error);
+				showAlert('Error loading admins', 'danger');
+			} finally {
+				hideLoading();
 			}
 		}
 
 		function displayAdmins(admins) {
-			const adminsList = document.getElementById('adminsList');
-			adminsList.innerHTML = '';
+			const container = document.getElementById('adminsContainer');
+			container.innerHTML = '';
 
 			admins.forEach(admin => {
-				const adminCard = document.createElement('div');
-				adminCard.className = 'col-md-6 col-lg-4';
-				adminCard.innerHTML = `
-                    <div class="card admin-card">
-                        <div class="card-body">
-                            <h5 class="card-title">${admin.email}</h5>
-                            <p class="card-text">
-                                <strong>Referral Code:</strong> ${admin.referralCode}<br>
-                                <strong>Referral Link:</strong> 
-                                <a href="${window.location.origin}/register.html?ref=${admin.referralCode}" target="_blank">
-                                    Registration Link
-                                </a>
-                            </p>
-                            <h6>Referred Users:</h6>
-                            <div class="user-list">
-                                <ul class="list-group">
-                                    ${admin.referredUsers?.map(user => `
-                                        <li class="list-group-item">
-                                            ${user.name} (${user.email})
-                                        </li>
-                                    `).join('') || '<li class="list-group-item">No users yet</li>'}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
-				adminsList.appendChild(adminCard);
+				const adminCard = `
+					<div class="col-md-6 col-lg-4 mb-4">
+						<div class="admin-card">
+							<div class="d-flex justify-content-between align-items-start mb-3">
+								<h5 class="text-primary">${admin.email}</h5>
+								<div class="dropdown">
+									<button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+										<i class="fas fa-ellipsis-v"></i>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#" onclick="deleteAdmin(${admin.id})">
+											<i class="fas fa-trash text-danger me-2"></i>Delete
+										</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="referral-code">
+								${admin.referralCode}
+								<button class="copy-btn" onclick="copyToClipboard('${admin.referralCode}')">
+									<i class="fas fa-copy"></i>
+								</button>
+							</div>
+							<div class="mt-3">
+								<small class="text-muted">Referral Links:</small>
+								<div class="d-grid gap-2 mt-2">
+									<button class="btn btn-sm btn-outline-primary" onclick="copyToClipboard('${window.location.origin}/../register.html?ref=${admin.referralCode}')">
+										<i class="fas fa-link me-1"></i>Conference Registration
+									</button>
+									<button class="btn btn-sm btn-outline-success" onclick="copyToClipboard('${window.location.origin}/../speaker-register.html?ref=${admin.referralCode}')">
+										<i class="fas fa-link me-1"></i>Speaker Registration
+									</button>
+								</div>
+							</div>
+							<div class="mt-3">
+								<small class="text-muted">Referred Users: </small>
+								<span class="badge bg-primary">${admin.referredUsers?.length || 0}</span>
+							</div>
+							${admin.referredUsers?.length > 0 ? `
+								<div class="mt-2">
+									<small class="text-muted">Recent Referrals:</small>
+									<ul class="list-unstyled mt-1" style="max-height: 100px; overflow-y: auto;">
+										${admin.referredUsers.slice(-3).map(user => `
+											<li class="small">${user.name} (${user.email})</li>
+										`).join('')}
+									</ul>
+								</div>
+							` : ''}
+						</div>
+					</div>
+				`;
+				container.innerHTML += adminCard;
 			});
 		}
 
@@ -548,29 +1017,558 @@ Majan University College
 			const email = document.getElementById('adminEmail').value;
 			const password = document.getElementById('adminPassword').value;
 
+			if (!email || !password) {
+				showAlert('Please fill in all fields', 'warning');
+				return;
+			}
+
 			try {
-				const response = await fetch('https://egs-conference-backend.onrender.com/api/admin/create', {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/create`, {
 					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-						'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-					},
+					headers: getAuthHeaders(),
 					body: JSON.stringify({ email, password })
 				});
 
-				const data = await response.json();
+				const result = await response.json();
 				if (response.ok) {
-					alert(`Admin created successfully!\nReferral Code: ${data.referralCode}`);
+					showAlert(`Admin created successfully! Referral Code: ${result.referralCode}`, 'success');
 					document.getElementById('createAdminForm').reset();
 					bootstrap.Modal.getInstance(document.getElementById('createAdminModal')).hide();
 					loadAdmins();
 				} else {
-					alert(data.message || 'Error creating admin');
+					throw new Error(result.message || 'Error creating admin');
 				}
 			} catch (error) {
-				console.error('Error:', error);
-				alert('Error creating admin');
+				console.error('Error creating admin:', error);
+				showAlert(error.message, 'danger');
+			} finally {
+				hideLoading();
 			}
+		}
+
+		async function deleteAdmin(adminId) {
+			if (!confirm('Are you sure you want to delete this admin? This action cannot be undone.')) {
+				return;
+			}
+
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/admins/${adminId}`, {
+					method: 'DELETE',
+					headers: getAuthHeaders()
+				});
+
+				if (response.ok) {
+					showAlert('Admin deleted successfully', 'success');
+					loadAdmins();
+				} else {
+					throw new Error('Error deleting admin');
+				}
+			} catch (error) {
+				console.error('Error deleting admin:', error);
+				showAlert('Error deleting admin', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		// Registration Management Functions
+		async function loadRegistrations() {
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/registrations`, {
+					headers: getAuthHeaders()
+				});
+				const registrations = await response.json();
+				currentData.registrations = registrations;
+				displayRegistrations(registrations);
+			} catch (error) {
+				console.error('Error loading registrations:', error);
+				showAlert('Error loading registrations', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		function displayRegistrations(registrations) {
+			document.getElementById('registrationsCount').textContent = registrations.length;
+			
+			if ($.fn.DataTable.isDataTable('#registrationsTable')) {
+				$('#registrationsTable').DataTable().destroy();
+			}
+
+			$('#registrationsTable').DataTable({
+				data: registrations,
+				columns: [
+					{ data: 'id' },
+					{ data: 'name' },
+					{ data: 'email' },
+					{ data: 'registrationType' },
+					{ data: 'regFee' },
+					{ 
+						data: 'isPaid',
+						render: function(data) {
+							return data ? '<span class="badge bg-success">Paid</span>' : '<span class="badge bg-warning">Pending</span>';
+						}
+					},
+					{ 
+						data: 'referredBy',
+						render: function(data) {
+							return data ? data.email : '-';
+						}
+					},
+					{ 
+						data: 'createdAt',
+						render: function(data) {
+							return new Date(data).toLocaleDateString();
+						}
+					},
+					{
+						data: null,
+						render: function(data, type, row) {
+							return `
+								<div class="btn-group">
+									<button class="btn btn-sm btn-outline-primary" onclick="editRegistration(${row.id})">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button class="btn btn-sm btn-outline-danger" onclick="deleteRegistration(${row.id})">
+										<i class="fas fa-trash"></i>
+									</button>
+								</div>
+							`;
+						}
+					}
+				],
+				responsive: true,
+				pageLength: 25,
+				dom: 'Bfrtip',
+				buttons: [
+					{
+						extend: 'csv',
+						text: '<i class="fas fa-download"></i> CSV',
+						className: 'btn btn-success btn-sm'
+					}
+				]
+			});
+		}
+
+		function editRegistration(registrationId) {
+			const registration = currentData.registrations.find(r => r.id === registrationId);
+			if (!registration) return;
+
+			document.getElementById('editRegId').value = registration.id;
+			document.getElementById('editRegName').value = registration.name;
+			document.getElementById('editRegEmail').value = registration.email;
+			document.getElementById('editRegPhone').value = registration.phone || '';
+			document.getElementById('editRegType').value = registration.registrationType;
+			document.getElementById('editRegInstitution').value = registration.institutionName || '';
+			document.getElementById('editRegCountry').value = registration.country || '';
+			document.getElementById('editRegFee').value = registration.regFee;
+			document.getElementById('editRegStatus').value = registration.isPaid.toString();
+
+			new bootstrap.Modal(document.getElementById('editRegistrationModal')).show();
+		}
+
+		async function updateRegistration() {
+			const formData = {
+				name: document.getElementById('editRegName').value,
+				email: document.getElementById('editRegEmail').value,
+				phone: document.getElementById('editRegPhone').value,
+				registrationType: document.getElementById('editRegType').value,
+				institutionName: document.getElementById('editRegInstitution').value,
+				country: document.getElementById('editRegCountry').value,
+				regFee: document.getElementById('editRegFee').value,
+				isPaid: document.getElementById('editRegStatus').value === 'true'
+			};
+
+			try {
+				showLoading();
+				const id = document.getElementById('editRegId').value;
+				const response = await fetch(`${API_BASE}/admin/registrations/${id}`, {
+					method: 'PUT',
+					headers: getAuthHeaders(),
+					body: JSON.stringify(formData)
+				});
+
+				if (response.ok) {
+					showAlert('Registration updated successfully', 'success');
+					bootstrap.Modal.getInstance(document.getElementById('editRegistrationModal')).hide();
+					loadRegistrations();
+				} else {
+					throw new Error('Error updating registration');
+				}
+			} catch (error) {
+				console.error('Error updating registration:', error);
+				showAlert('Error updating registration', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		async function deleteRegistration(registrationId) {
+			if (!confirm('Are you sure you want to delete this registration?')) return;
+
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/registrations/${registrationId}`, {
+					method: 'DELETE',
+					headers: getAuthHeaders()
+				});
+
+				if (response.ok) {
+					showAlert('Registration deleted successfully', 'success');
+					loadRegistrations();
+				} else {
+					throw new Error('Error deleting registration');
+				}
+			} catch (error) {
+				console.error('Error deleting registration:', error);
+				showAlert('Error deleting registration', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		// Speaker Management Functions
+		async function loadSpeakers() {
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/speakers`, {
+					headers: getAuthHeaders()
+				});
+				const speakers = await response.json();
+				currentData.speakers = speakers;
+				displaySpeakers(speakers);
+			} catch (error) {
+				console.error('Error loading speakers:', error);
+				showAlert('Error loading speakers', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		function displaySpeakers(speakers) {
+			document.getElementById('speakersCount').textContent = speakers.length;
+			
+			if ($.fn.DataTable.isDataTable('#speakersTable')) {
+				$('#speakersTable').DataTable().destroy();
+			}
+
+			$('#speakersTable').DataTable({
+				data: speakers,
+				columns: [
+					{ data: 'id' },
+					{ data: 'name' },
+					{ data: 'email' },
+					{ data: 'institutionName' },
+					{ data: 'paperTitle' },
+					{ data: 'country' },
+					{ 
+						data: 'referredBy',
+						render: function(data) {
+							return data ? data.email : '-';
+						}
+					},
+					{ 
+						data: 'createdAt',
+						render: function(data) {
+							return new Date(data).toLocaleDateString();
+						}
+					},
+					{
+						data: null,
+						render: function(data, type, row) {
+							return `
+								<div class="btn-group">
+									<button class="btn btn-sm btn-outline-primary" onclick="editSpeaker(${row.id})">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button class="btn btn-sm btn-outline-danger" onclick="deleteSpeaker(${row.id})">
+										<i class="fas fa-trash"></i>
+									</button>
+								</div>
+							`;
+						}
+					}
+				],
+				responsive: true,
+				pageLength: 25,
+				dom: 'Bfrtip',
+				buttons: [
+					{
+						extend: 'csv',
+						text: '<i class="fas fa-download"></i> CSV',
+						className: 'btn btn-success btn-sm'
+					}
+				]
+			});
+		}
+
+		function editSpeaker(speakerId) {
+			const speaker = currentData.speakers.find(s => s.id === speakerId);
+			if (!speaker) return;
+
+			document.getElementById('editSpeakerId').value = speaker.id;
+			document.getElementById('editSpeakerName').value = speaker.name;
+			document.getElementById('editSpeakerEmail').value = speaker.email;
+			document.getElementById('editSpeakerInstitution').value = speaker.institutionName || '';
+			document.getElementById('editSpeakerCountry').value = speaker.country || '';
+			document.getElementById('editSpeakerPaperTitle').value = speaker.paperTitle || '';
+			document.getElementById('editSpeakerPhone').value = speaker.phone || '';
+
+			new bootstrap.Modal(document.getElementById('editSpeakerModal')).show();
+		}
+
+		async function updateSpeaker() {
+			const formData = {
+				name: document.getElementById('editSpeakerName').value,
+				email: document.getElementById('editSpeakerEmail').value,
+				institutionName: document.getElementById('editSpeakerInstitution').value,
+				country: document.getElementById('editSpeakerCountry').value,
+				paperTitle: document.getElementById('editSpeakerPaperTitle').value,
+				phone: document.getElementById('editSpeakerPhone').value
+			};
+
+			try {
+				showLoading();
+				const id = document.getElementById('editSpeakerId').value;
+				const response = await fetch(`${API_BASE}/admin/speakers/${id}`, {
+					method: 'PUT',
+					headers: getAuthHeaders(),
+					body: JSON.stringify(formData)
+				});
+
+				if (response.ok) {
+					showAlert('Speaker updated successfully', 'success');
+					bootstrap.Modal.getInstance(document.getElementById('editSpeakerModal')).hide();
+					loadSpeakers();
+				} else {
+					throw new Error('Error updating speaker');
+				}
+			} catch (error) {
+				console.error('Error updating speaker:', error);
+				showAlert('Error updating speaker', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		async function deleteSpeaker(speakerId) {
+			if (!confirm('Are you sure you want to delete this speaker?')) return;
+
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/speakers/${speakerId}`, {
+					method: 'DELETE',
+					headers: getAuthHeaders()
+				});
+
+				if (response.ok) {
+					showAlert('Speaker deleted successfully', 'success');
+					loadSpeakers();
+				} else {
+					throw new Error('Error deleting speaker');
+				}
+			} catch (error) {
+				console.error('Error deleting speaker:', error);
+				showAlert('Error deleting speaker', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		// Sponsor Management Functions
+		async function loadSponsors() {
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/sponsors`, {
+					headers: getAuthHeaders()
+				});
+				const sponsors = await response.json();
+				currentData.sponsors = sponsors;
+				displaySponsors(sponsors);
+			} catch (error) {
+				console.error('Error loading sponsors:', error);
+				showAlert('Error loading sponsors', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		function displaySponsors(sponsors) {
+			document.getElementById('sponsorsCount').textContent = sponsors.length;
+			
+			if ($.fn.DataTable.isDataTable('#sponsorsTable')) {
+				$('#sponsorsTable').DataTable().destroy();
+			}
+
+			$('#sponsorsTable').DataTable({
+				data: sponsors,
+				columns: [
+					{ data: 'id' },
+					{ data: 'organizationName' },
+					{ data: 'contactName' },
+					{ data: 'email' },
+					{ data: 'phone' },
+					{ data: 'sponsorshipPackage' },
+					{ 
+						data: 'createdAt',
+						render: function(data) {
+							return new Date(data).toLocaleDateString();
+						}
+					},
+					{
+						data: null,
+						render: function(data, type, row) {
+							return `
+								<div class="btn-group">
+									<button class="btn btn-sm btn-outline-primary" onclick="editSponsor(${row.id})">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button class="btn btn-sm btn-outline-danger" onclick="deleteSponsor(${row.id})">
+										<i class="fas fa-trash"></i>
+									</button>
+								</div>
+							`;
+						}
+					}
+				],
+				responsive: true,
+				pageLength: 25,
+				dom: 'Bfrtip',
+				buttons: [
+					{
+						extend: 'csv',
+						text: '<i class="fas fa-download"></i> CSV',
+						className: 'btn btn-success btn-sm'
+					}
+				]
+			});
+		}
+
+		function editSponsor(sponsorId) {
+			const sponsor = currentData.sponsors.find(s => s.id === sponsorId);
+			if (!sponsor) return;
+
+			document.getElementById('editSponsorId').value = sponsor.id;
+			document.getElementById('editSponsorOrganization').value = sponsor.organizationName;
+			document.getElementById('editSponsorContactName').value = sponsor.contactName;
+			document.getElementById('editSponsorEmail').value = sponsor.email;
+			document.getElementById('editSponsorPhone').value = sponsor.phone || '';
+			document.getElementById('editSponsorPackage').value = sponsor.sponsorshipPackage || '';
+
+			new bootstrap.Modal(document.getElementById('editSponsorModal')).show();
+		}
+
+		async function updateSponsor() {
+			const formData = {
+				organizationName: document.getElementById('editSponsorOrganization').value,
+				contactName: document.getElementById('editSponsorContactName').value,
+				email: document.getElementById('editSponsorEmail').value,
+				phone: document.getElementById('editSponsorPhone').value,
+				sponsorshipPackage: document.getElementById('editSponsorPackage').value
+			};
+
+			try {
+				showLoading();
+				const id = document.getElementById('editSponsorId').value;
+				const response = await fetch(`${API_BASE}/admin/sponsors/${id}`, {
+					method: 'PUT',
+					headers: getAuthHeaders(),
+					body: JSON.stringify(formData)
+				});
+
+				if (response.ok) {
+					showAlert('Sponsor updated successfully', 'success');
+					bootstrap.Modal.getInstance(document.getElementById('editSponsorModal')).hide();
+					loadSponsors();
+				} else {
+					throw new Error('Error updating sponsor');
+				}
+			} catch (error) {
+				console.error('Error updating sponsor:', error);
+				showAlert('Error updating sponsor', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		async function deleteSponsor(sponsorId) {
+			if (!confirm('Are you sure you want to delete this sponsor?')) return;
+
+			try {
+				showLoading();
+				const response = await fetch(`${API_BASE}/admin/sponsors/${sponsorId}`, {
+					method: 'DELETE',
+					headers: getAuthHeaders()
+				});
+
+				if (response.ok) {
+					showAlert('Sponsor deleted successfully', 'success');
+					loadSponsors();
+				} else {
+					throw new Error('Error deleting sponsor');
+				}
+			} catch (error) {
+				console.error('Error deleting sponsor:', error);
+				showAlert('Error deleting sponsor', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		// Analytics Functions
+		async function loadAnalytics() {
+			try {
+				showLoading();
+				// Load analytics data here
+				showAlert('Analytics feature coming soon!', 'info');
+			} catch (error) {
+				console.error('Error loading analytics:', error);
+				showAlert('Error loading analytics', 'danger');
+			} finally {
+				hideLoading();
+			}
+		}
+
+		// Utility Functions
+		function copyToClipboard(text) {
+			navigator.clipboard.writeText(text).then(() => {
+				showAlert('Copied to clipboard!', 'success');
+			}).catch(() => {
+				showAlert('Failed to copy to clipboard', 'danger');
+			});
+		}
+
+		function exportData(dataType) {
+			// Trigger DataTable export
+			$(`#${dataType}Table`).DataTable().button('.buttons-csv').trigger();
+		}
+
+		function exportAdmins() {
+			// Export admins as JSON
+			const admins = currentData.admins || [];
+			const dataStr = JSON.stringify(admins, null, 2);
+			const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+			
+			const exportFileDefaultName = 'admins_export.json';
+			const linkElement = document.createElement('a');
+			linkElement.setAttribute('href', dataUri);
+			linkElement.setAttribute('download', exportFileDefaultName);
+			linkElement.click();
+		}
+
+		function filterRegistrations(status) {
+			let filteredData = currentData.registrations || [];
+			
+			if (status === 'paid') {
+				filteredData = filteredData.filter(reg => reg.isPaid);
+			} else if (status === 'pending') {
+				filteredData = filteredData.filter(reg => !reg.isPaid);
+			}
+			
+			displayRegistrations(filteredData);
 		}
 
 		function logout() {
@@ -578,24 +1576,6 @@ Majan University College
 			window.location.href = 'index.html';
 		}
 	</script>
-	<!--===== JS SCRIPT LINK =======-->
-	<script src="../assets/js/vendor/bootstrap.min.js"></script>
-	<script src="../assets/js/vendor/fontawesome.js"></script>
-	<script src="../assets/js/vendor/aos.js"></script>
-	<script src="../assets/js/vendor/jquery.appear.js"></script>
-	<script src="../assets/js/vendor/jquery.odometer.min.js"></script>
-	<script src="../assets/js/vendor/sidebar.js"></script>
-	<script src="../assets/js/vendor/magnific-popup.js"></script>
-	<script src="../assets/js/vendor/gsap.min.js"></script>
-	<script src="../assets/js/vendor/ScrollTrigger.min.js"></script>
-	<script src="../assets/js/vendor/Splitetext.js"></script>
-	<script src="../assets/js/vendor/mobilemenu.js"></script>
-	<script src="../assets/js/vendor/owlcarousel.min.js"></script>
-	<script src="../assets/js/vendor/nice-select.js"></script>
-	<script src="../assets/js/vendor/waypoints.js"></script>
-	<script src="../assets/js/vendor/slick-slider.js"></script>
-	<script src="../assets/js/vendor/circle-progress.js"></script>
-	<script src="../assets/js/main.js"></script>
 </body>
 
 </html>

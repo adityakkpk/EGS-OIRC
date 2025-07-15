@@ -781,6 +781,11 @@ Majan University College for a transformative conference exploring the latest a
 								<label for="message" class="form-label">Message*</label>
 								<textarea class="form-control" id="message" rows="3" required></textarea>
 							</div>
+							<div class="mb-3">
+								<label for="referralCode" class="form-label">Referral Code (Optional)</label>
+								<input type="text" class="form-control" id="referralCode" placeholder="Enter referral code if you have one">
+								<small class="form-text text-muted">If you were referred by an admin, please enter their referral code here.</small>
+							</div>
 							<!-- Personal Information -->
 							<!-- <h4 class="mb-3">Personal Information</h4>
 							<div class="row mb-3">
@@ -1389,6 +1394,19 @@ Majan University College for a transformative conference exploring the latest a
 
 
 	<script>
+		// Get referral code from URL if present and populate the field
+		document.addEventListener('DOMContentLoaded', function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const referralCodeFromUrl = urlParams.get('ref');
+			
+			if (referralCodeFromUrl) {
+				const referralCodeInput = document.getElementById('referralCode');
+				if (referralCodeInput) {
+					referralCodeInput.value = referralCodeFromUrl;
+				}
+			}
+		});
+
 		// Form validation functions
 		function validateEmail(email) {
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -1500,6 +1518,12 @@ Majan University College for a transformative conference exploring the latest a
 		formData.append('email', email.value);
 		formData.append('phone', phone.value);
 		formData.append('message', message.value);
+		
+		// Add referral code if provided
+		const referralCode = document.getElementById('referralCode');
+		if (referralCode.value.trim()) {
+			formData.append('referralCode', referralCode.value.trim());
+		}
 
 					try {
 				const response = await fetch('https://egs-conference-backend.onrender.com/api/speaker/register', {
