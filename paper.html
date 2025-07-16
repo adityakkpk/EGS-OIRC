@@ -152,7 +152,7 @@ Majan University College for a transformative conference exploring the latest a
 											<li><a href="about.html">About Conference</a></li>
 											<li><a href="paper.html">Call For Papers</a></li>
 											<li><a href="agenda.html">Conference Agenda</a></li>
-											<li><a href="keynote-paper.html">Keynote Speaker Registration</a></li>
+											<li><a href="keynote-speaker-register.html">Keynote Speaker Registration</a></li>
 											<li><a href="faq.html">FAQs</a></li>
 										</ul>
 									</li> -->
@@ -162,7 +162,7 @@ Majan University College for a transformative conference exploring the latest a
 											<li><a href="about.html">About Conference</a></li>
 											<li><a href="paper.html">Call For Papers</a></li>
 											<li><a href="agenda.html">Conference Agenda</a></li>
-											<li><a href="keynote-paper.html">Keynote Speaker Registration</a></li>
+											<li><a href="keynote-speaker-register.html">Keynote Speaker Registration</a></li>
 											<li><a href="faq.html">FAQs</a></li>
 										</ul>
 									</li>
@@ -229,7 +229,7 @@ Majan University College for a transformative conference exploring the latest a
 						<li><a href="about.html">About Conference</a></li>
 						<li><a href="paper.html">Call For Papers</a></li>
 						<li><a href="agenda.html">Conference Agenda</a></li>
-						<li><a href="keynote-paper.html">Keynote Speaker Registration</a></li>
+						<li><a href="keynote-speaker-register.html">Keynote Speaker Registration</a></li>
 						<li><a href="faq.html">FAQs</a></li>
 					</ul>
 				</li>
@@ -1546,25 +1546,25 @@ Majan University College for a transformative conference exploring the latest a
 			existingAlerts.forEach(alert => alert.remove());
 			
 			const alertDiv = document.createElement('div');
-			alertDiv.className = 'alert alert-success alert-dismissible fade show mb-3';
+			alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
 			alertDiv.innerHTML = `
 				${message}
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			`;
 			
-			// Find the card-body and form elements
-			const cardBody = document.querySelector('.card-body');
+			// Find the form element
 			const form = document.getElementById('registrationForm');
 			
-			if (cardBody && form) {
-				// Insert the alert at the beginning of card-body
-				cardBody.insertBefore(alertDiv, form);
+			if (form) {
+				// Insert the alert after the form (below the submit button)
+				form.parentNode.insertBefore(alertDiv, form.nextSibling);
 			} else {
-				// Fallback: append to card-body or body if elements not found
+				// Fallback: append to card-body if form not found
+				const cardBody = document.querySelector('.card-body');
 				if (cardBody) {
-					cardBody.prepend(alertDiv);
+					cardBody.appendChild(alertDiv);
 				} else {
-					document.body.prepend(alertDiv);
+					document.body.appendChild(alertDiv);
 				}
 			}
 			
