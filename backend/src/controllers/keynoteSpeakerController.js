@@ -210,7 +210,7 @@ export const registerKeynoteSpeaker = async (req, res) => {
     // If referral code exists, set the referred by admin
     if (referralCode) {
       const admin = await prisma.admin.findUnique({
-        where: { referralCode }
+        where: { referralCode: referralCode }
       });
       keynoteData.referredById = admin.id;
     }
