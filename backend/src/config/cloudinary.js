@@ -16,10 +16,11 @@ const storage = new CloudinaryStorage({
     folder: 'conference-papers', // Folder in your Cloudinary account
     resource_type: 'raw', // Use 'raw' for document files like DOCX, LaTeX
     public_id: (req, file) => {
-      // Generate unique filename
+      // Generate unique filename with extension preserved
       const timestamp = Date.now();
       const filename = file.originalname.split('.')[0];
-      return `paper_${timestamp}_${filename}`;
+      const extension = file.originalname.split('.').pop();
+      return `paper_${timestamp}_${filename}.${extension}`;
     },
   },
 });
@@ -90,7 +91,7 @@ const keynoteStorage = new CloudinaryStorage({
     return {
       folder: folder,
       resource_type: resourceType,
-      public_id: `${file.fieldname}_${Date.now()}_${file.originalname.split('.')[0]}`
+      public_id: `${file.fieldname}_${Date.now()}_${file.originalname.split('.')[0]}.${file.originalname.split('.').pop()}`
     };
   }
 });
