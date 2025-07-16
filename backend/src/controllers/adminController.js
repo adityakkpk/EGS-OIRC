@@ -199,9 +199,10 @@ export const getUsers = async (req, res) => {
 // Dashboard stats
 export const getDashboardStats = async (req, res) => {
   try {
-    const [registrationCount, speakerCount, sponsorCount, adminCount] = await Promise.all([
+    const [registrationCount, speakerCount, keynoteSpeakerCount, sponsorCount, adminCount] = await Promise.all([
       prisma.registerUser.count(),
       prisma.speaker.count(),
+      prisma.keynoteSpeaker.count(),
       prisma.sponsor.count(),
       prisma.Admin.count({ where: { role: 'ADMIN' } })
     ]);
@@ -247,6 +248,7 @@ export const getDashboardStats = async (req, res) => {
     res.json({
       registrations: registrationCount,
       speakers: speakerCount,
+      keynoteSpeakers: keynoteSpeakerCount,
       sponsors: sponsorCount,
       admins: adminCount,
       recentRegistrations

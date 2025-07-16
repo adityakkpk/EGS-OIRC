@@ -360,4 +360,234 @@ export const updateKeynoteSpeakerStatus = async (req, res) => {
       success: false
     });
   }
+};
+
+// Admin-specific functions for managing keynote speakers
+
+export const getAllKeynoteSpeakersForAdmin = async (req, res) => {
+  try {
+    const keynoteSpeakers = await prisma.keynoteSpeaker.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        phone: true,
+        country: true,
+        designation: true,
+        institutionName: true,
+        department: true,
+        experienceYears: true,
+        expertiseArea: true,
+        specialization: true,
+        highestDegree: true,
+        university: true,
+        publicationsCount: true,
+        notableAchievements: true,
+        keynoteExperience: true,
+        notableConferences: true,
+        keynoteTitle: true,
+        keynoteAbstract: true,
+        targetAudience: true,
+        linkedinProfile: true,
+        website: true,
+        orcidId: true,
+        googleScholar: true,
+        cvFileUrl: true,
+        photoFileUrl: true,
+        presentationFileUrl: true,
+        preferredSessionTime: true,
+        accommodationNeeded: true,
+        dietaryRestrictions: true,
+        additionalComments: true,
+        agreeToTerms: true,
+        agreeToMarketing: true,
+        status: true,
+        referralCode: true,
+        createdAt: true,
+        updatedAt: true,
+        referredBy: {
+          select: {
+            email: true,
+            referralCode: true
+          }
+        }
+      }
+    });
+
+    res.status(200).json({
+      keynoteSpeakers,
+      success: true
+    });
+  } catch (error) {
+    console.error('Error retrieving keynote speakers for admin:', error);
+    res.status(500).json({ 
+      message: 'Error retrieving keynote speakers', 
+      error: error.message,
+      success: false
+    });
+  }
+};
+
+export const updateKeynoteSpeakerByAdmin = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = req.body;
+
+    // Remove fields that shouldn't be updated via this endpoint
+    delete updateData.id;
+    delete updateData.createdAt;
+    delete updateData.updatedAt;
+    delete updateData.referredBy;
+
+    // Validate email format if email is being updated
+    if (updateData.email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(updateData.email)) {
+        return res.status(400).json({
+          message: "Invalid email format",
+          success: false
+        });
+      }
+
+      // Check if email already exists for another keynote speaker
+      const existingKeynoteSpeaker = await prisma.keynoteSpeaker.findFirst({
+        where: { 
+          email: updateData.email,
+          NOT: { id: id }
+        }
+      });
+
+      if (existingKeynoteSpeaker) {
+        return res.status(400).json({
+          message: "A keynote speaker with this email already exists",
+          success: false
+        });
+      }
+    }
+
+    // Validate status if being updated
+    if (updateData.status) {
+      const validStatuses = ['PENDING', 'UNDER_REVIEW', 'APPROVED', 'REJECTED', 'CONFIRMED'];
+      if (!validStatuses.includes(updateData.status)) {
+        return res.status(400).json({
+          message: "Invalid status provided",
+          success: false
+        });
+      }
+    }
+
+    // Convert string numbers to integers for numeric fields
+    if (updateData.experienceYears) {
+      updateData.experienceYears = parseInt(updateData.experienceYears);
+    }
+    if (updateData.publicationsCount) {
+      updateData.publicationsCount = parseInt(updateData.publicationsCount);
+    }
+    if (updateData.keynoteExperience) {
+      updateData.keynoteExperience = parseInt(updateData.keynoteExperience);
+    }
+
+    const updatedKeynoteSpeaker = await prisma.keynoteSpeaker.update({
+      where: { id },
+      data: updateData,
+      include: {
+        referredBy: {
+          select: {
+            email: true,
+            referralCode: true
+          }
+        }
+      }
+    });
+
+    res.status(200).json({
+      message: 'Keynote speaker updated successfully',
+      keynoteSpeaker: updatedKeynoteSpeaker,
+      success: true
+    });
+  } catch (error) {
+    if (error.code === 'P2025') {
+      return res.status(404).json({
+        message: 'Keynote speaker not found',
+        success: false
+      });
+    }
+    
+    console.error('Error updating keynote speaker:', error);
+    res.status(500).json({
+      message: 'Error updating keynote speaker',
+      error: error.message,
+      success: false
+    });
+  }
+};
+
+export const deleteKeynoteSpeaker = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedKeynoteSpeaker = await prisma.keynoteSpeaker.delete({
+      where: { id },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        keynoteTitle: true
+      }
+    });
+
+    res.status(200).json({
+      message: 'Keynote speaker deleted successfully',
+      keynoteSpeaker: deletedKeynoteSpeaker,
+      success: true
+    });
+  } catch (error) {
+    if (error.code === 'P2025') {
+      return res.status(404).json({
+        message: 'Keynote speaker not found',
+        success: false
+      });
+    }
+    
+    console.error('Error deleting keynote speaker:', error);
+    res.status(500).json({
+      message: 'Error deleting keynote speaker',
+      error: error.message,
+      success: false
+    });
+  }
+};
+
+export const getKeynoteSpeakerStatsForAdmin = async (req, res) => {
+  try {
+    const stats = await prisma.keynoteSpeaker.groupBy({
+      by: ['status'],
+      _count: {
+        status: true
+      }
+    });
+
+    const totalCount = await prisma.keynoteSpeaker.count();
+
+    const statusStats = stats.reduce((acc, stat) => {
+      acc[stat.status.toLowerCase()] = stat._count.status;
+      return acc;
+    }, {});
+
+    res.status(200).json({
+      total: totalCount,
+      statusBreakdown: statusStats,
+      success: true
+    });
+  } catch (error) {
+    console.error('Error retrieving keynote speaker stats:', error);
+    res.status(500).json({
+      message: 'Error retrieving keynote speaker statistics',
+      error: error.message,
+      success: false
+    });
+  }
 }; 

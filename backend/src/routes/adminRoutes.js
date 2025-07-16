@@ -25,6 +25,14 @@ import {
   // Dashboard stats
   getDashboardStats
 } from "../controllers/adminController.js";
+import { 
+  getAllKeynoteSpeakersForAdmin,
+  getKeynoteSpeakerById,
+  updateKeynoteSpeakerByAdmin,
+  updateKeynoteSpeakerStatus,
+  deleteKeynoteSpeaker,
+  getKeynoteSpeakerStatsForAdmin
+} from "../controllers/keynoteSpeakerController.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
 import { upload } from "../config/cloudinary.js";
 
@@ -50,6 +58,14 @@ router.get("/speakers", authMiddleware, getAllSpeakers);
 router.get("/speakers/:id", authMiddleware, getSpeakerById);
 router.put("/speakers/:id", authMiddleware, upload.single('fileInput'), updateSpeaker);
 router.delete("/speakers/:id", authMiddleware, deleteSpeaker);
+
+// Keynote Speaker management routes
+router.get("/keynote-speakers", authMiddleware, getAllKeynoteSpeakersForAdmin);
+router.get("/keynote-speakers/:id", authMiddleware, getKeynoteSpeakerById);
+router.put("/keynote-speakers/:id", authMiddleware, updateKeynoteSpeakerByAdmin);
+router.patch("/keynote-speakers/:id/status", authMiddleware, updateKeynoteSpeakerStatus);
+router.delete("/keynote-speakers/:id", authMiddleware, deleteKeynoteSpeaker);
+router.get("/keynote-speakers/admin/stats", authMiddleware, getKeynoteSpeakerStatsForAdmin);
 
 // Sponsor management routes
 router.get("/sponsors", authMiddleware, getAllSponsors);
