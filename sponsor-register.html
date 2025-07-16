@@ -93,6 +93,32 @@ Majan University College for a transformative conference exploring the latest a
 			display: flex;
 			flex-direction: column;
 		}
+
+		.modal {
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 9999;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.modal.show {
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.modal-content {
+			background: white;
+			border-radius: 12px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+			max-width: 500px;
+			width: 90%;
+			max-height: 80vh;
+			overflow-y: auto;
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -341,9 +367,31 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 
 							<!-- Submit Button -->
-							<button type="submit" class="btn btn-primary-custom w-100">Submit Registration</button>
+							<button type="submit" class="btn btn-primary-custom w-100">
+								<span id="submitText">Submit Registration</span>
+								<span id="loadingText" style="display: none;">
+									<i class="fa-solid fa-spinner fa-spin"></i> Processing...
+								</span>
+							</button>
 						</form>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Success/Error Modal -->
+	<div id="responseModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content" style="border-radius: 10px; border: none;">
+				<div class="modal-header" style="border-bottom: none; padding: 2rem 2rem 1rem;">
+					<h5 id="modalTitle" class="modal-title" style="font-weight: 600;"></h5>
+				</div>
+				<div class="modal-body" style="padding: 1rem 2rem 2rem;">
+					<p id="modalMessage"></p>
+				</div>
+				<div class="modal-footer" style="border-top: none; padding: 1rem 2rem 2rem;">
+					<button type="button" class="btn btn-primary-custom" onclick="closeModal()">Close</button>
 				</div>
 			</div>
 		</div>
@@ -578,14 +626,29 @@ Majan University College for a transformative conference exploring the latest a
 			});
 		}
 
-		function showSuccessMessage(message) {
-			const alertDiv = document.createElement('div');
-			alertDiv.className = 'alert alert-success alert-dismissible fade show';
-			alertDiv.innerHTML = `
-				${message}
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			`;
-			document.querySelector('.card-body').insertBefore(alertDiv, document.getElementById('registrationForm'));
+		function showModal(title, message, type) {
+			const modal = document.getElementById('responseModal');
+			const modalTitle = document.getElementById('modalTitle');
+			const modalMessage = document.getElementById('modalMessage');
+			
+			modalTitle.textContent = title;
+			modalMessage.textContent = message;
+			
+			// Style based on type
+			if (type === 'success') {
+				modalTitle.style.color = '#28a745';
+			} else {
+				modalTitle.style.color = '#dc3545';
+			}
+			
+			modal.style.display = 'block';
+			modal.classList.add('show');
+		}
+		
+		function closeModal() {
+			const modal = document.getElementById('responseModal');
+			modal.style.display = 'none';
+			modal.classList.remove('show');
 		}
 
 		function updateAmount() {
@@ -622,6 +685,11 @@ Majan University College for a transformative conference exploring the latest a
 			event.preventDefault();
 			clearErrors();
 
+			// Get submit button references
+			const submitButton = this.querySelector('button[type="submit"]');
+			const submitText = document.getElementById('submitText');
+			const loadingText = document.getElementById('loadingText');
+
 			// Basic form validation
 			if (!this.checkValidity()) {
 				event.stopPropagation();
@@ -637,22 +705,14 @@ Majan University College for a transformative conference exploring the latest a
 
 			// Validate email
 			if (!validateEmail(sponsorEmail.value)) {
-				showError('Please enter a valid email address', sponsorEmail);
+				showModal('Validation Error', 'Please enter a valid email address.', 'error');
 				return;
 			}
 
-			// Validate minimum amount based on level
-			const minAmounts = {
-				platinum: 10000,
-				gold: 5000,
-				silver: 3000,
-				bronze: 1000
-			};
-
-			if (parseInt(amount.value) < minAmounts[sponsorLevel.value]) {
-				showError(`Minimum amount for ${sponsorLevel.value} level is $${minAmounts[sponsorLevel.value]}`, amount);
-				return;
-			}
+			// Show loading state
+			submitText.style.display = 'none';
+			loadingText.style.display = 'inline';
+			submitButton.disabled = true;
 
 			// Get form data
 			const formData = {
@@ -677,16 +737,23 @@ Majan University College for a transformative conference exploring the latest a
 				const result = await response.json();
 
 				if (response.ok) {
-					showSuccessMessage('Registration successful! We will contact you soon for payment details.');
+					showModal('Registration Successful!', 
+						'Thank you for your sponsorship registration. We will contact you soon with payment details and sponsorship benefits.', 
+						'success');
 					this.reset();
 					this.classList.remove('was-validated');
 					updateAmount();
 				} else {
-					throw new Error(result.error || 'Registration failed');
+					showModal('Registration Failed', result.error || result.message || 'An error occurred during registration. Please try again.', 'error');
 				}
 			} catch (error) {
-				showError(error.message, sponsorEmail);
+				showModal('Network Error', 'Unable to submit registration. Please check your connection and try again.', 'error');
 				console.error('Error:', error);
+			} finally {
+				// Reset button state
+				submitText.style.display = 'inline';
+				loadingText.style.display = 'none';
+				submitButton.disabled = false;
 			}
 		});
 

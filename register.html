@@ -228,6 +228,32 @@ Majan University College for a transformative experience in mathematics, manage
       color: white;
       border: 1px solid lightblue;
 		}
+
+		.modal {
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 9999;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.modal.show {
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.modal-content {
+			background: white;
+			border-radius: 12px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+			max-width: 500px;
+			width: 90%;
+			max-height: 80vh;
+			overflow-y: auto;
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -919,9 +945,31 @@ Majan University College for a transformative experience in mathematics, manage
 							</div>
 
 							<!-- Submit Button -->
-							<button type="submit" class="btn btn-primary-custom w-100 mb-2">Submit Registration</button>
+							<button type="submit" class="btn btn-primary-custom w-100 mb-2">
+								<span id="submitText">Submit Registration</span>
+								<span id="loadingText" style="display: none;">
+									<i class="fa-solid fa-spinner fa-spin"></i> Processing...
+								</span>
+							</button>
 						</form>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Success/Error Modal -->
+	<div id="responseModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content" style="border-radius: 10px; border: none;">
+				<div class="modal-header" style="border-bottom: none; padding: 2rem 2rem 1rem;">
+					<h5 id="modalTitle" class="modal-title" style="font-weight: 600;"></h5>
+				</div>
+				<div class="modal-body" style="padding: 1rem 2rem 2rem;">
+					<p id="modalMessage"></p>
+				</div>
+				<div class="modal-footer" style="border-top: none; padding: 1rem 2rem 2rem;">
+					<button type="button" class="btn btn-primary-custom" onclick="closeModal()">Close</button>
 				</div>
 			</div>
 		</div>
@@ -1433,6 +1481,16 @@ Majan University College for a transformative experience in mathematics, manage
 						if (isSubmitting) return; // Prevent multiple submissions
 						isSubmitting = true;
 
+						// Get submit button references
+						const submitButton = form.querySelector('button[type="submit"]');
+						const submitText = document.getElementById('submitText');
+						const loadingText = document.getElementById('loadingText');
+						
+						// Show loading state
+						submitText.style.display = 'none';
+						loadingText.style.display = 'inline';
+						submitButton.disabled = true;
+
 						// Collect form data
 						const formData = {
 							name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
@@ -1461,14 +1519,20 @@ Majan University College for a transformative experience in mathematics, manage
 							if (response.ok) {
 								// Handle successful submission
 								form.reset();
-								showMessage('Registration submitted successfully!', 'success');
+								showModal('Registration Successful!', 
+									'Thank you for your conference registration. You will receive a confirmation email shortly with payment details.', 
+									'success');
 							} else {
 								// Handle error response
-								showMessage(`Error: ${result.error || result.message}`, 'danger');
+								showModal('Registration Failed', result.error || result.message || 'An error occurred during registration. Please try again.', 'error');
 							}
 						} catch (error) {
-							showMessage(`Error: ${error.message}`, 'danger');
+							showModal('Network Error', 'Unable to submit registration. Please check your connection and try again.', 'error');
 						} finally {
+							// Reset button state
+							submitText.style.display = 'inline';
+							loadingText.style.display = 'none';
+							submitButton.disabled = false;
 							isSubmitting = false; // Reset debounce flag
 						}
 					}
@@ -1538,15 +1602,30 @@ Majan University College for a transformative experience in mathematics, manage
 			alert(`Checking availability for ${hotel}...\nPlease contact our travel desk for immediate assistance with booking.`)
 		}
 
-		// Function to show messages to the user
-		function showMessage(message, type) {
-			const messageContainer = document.createElement('div');
-			messageContainer.className = `alert alert-${type}`;
-			messageContainer.textContent = message;
-			document.getElementById('registrationForm').append(messageContainer);
-			setTimeout(() => {
-				messageContainer.remove();
-			}, 5000);
+		// Function to show modal messages to the user
+		function showModal(title, message, type) {
+			const modal = document.getElementById('responseModal');
+			const modalTitle = document.getElementById('modalTitle');
+			const modalMessage = document.getElementById('modalMessage');
+			
+			modalTitle.textContent = title;
+			modalMessage.textContent = message;
+			
+			// Style based on type
+			if (type === 'success') {
+				modalTitle.style.color = '#28a745';
+			} else {
+				modalTitle.style.color = '#dc3545';
+			}
+			
+			modal.style.display = 'block';
+			modal.classList.add('show');
+		}
+		
+		function closeModal() {
+			const modal = document.getElementById('responseModal');
+			modal.style.display = 'none';
+			modal.classList.remove('show');
 		}
 	</script>
 </body>
