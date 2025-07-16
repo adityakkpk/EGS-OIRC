@@ -211,7 +211,7 @@ const keynoteSpeakerConfirmationTemplate = (keynoteSpeakerData) => `
         <ul>
           <li>Our academic committee will review your keynote proposal</li>
           <li>We will evaluate your credentials and expertise</li>
-          <li>You will receive our decision within 5-7 business days</li>
+          <li>You will receive our decision within 10 business days</li>
           <li>If approved, we will send you detailed speaker guidelines</li>
         </ul>
       </div>

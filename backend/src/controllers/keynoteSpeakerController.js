@@ -229,7 +229,7 @@ export const registerKeynoteSpeaker = async (req, res) => {
     }
 
     res.status(201).json({
-      message: "Keynote speaker registration successful! We will review your proposal and get back to you within 5-7 business days.",
+      message: "Keynote speaker registration successful! We will review your proposal and get back to you within 10 business days.",
       keynoteSpeaker: {
         id: newKeynoteSpeaker.id,
         name: newKeynoteSpeaker.name,

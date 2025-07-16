@@ -9,18 +9,58 @@ import {
   deleteKeynoteSpeaker,
   getKeynoteSpeakerStatsForAdmin
 } from "../controllers/keynoteSpeakerController.js";
-import { upload } from "../config/cloudinary.js";
+import { keynoteUpload } from "../config/cloudinary.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
+// Error handling middleware for file uploads
+const handleUploadError = (err, req, res, next) => {
+  if (err) {
+    if (err.message.includes('CV must be')) {
+      return res.status(400).json({
+        message: "Invalid CV format",
+        error: "CV must be PDF, DOCX, or LaTeX (.tex, .latex) format",
+        success: false
+      });
+    }
+    if (err.message.includes('Photo must be')) {
+      return res.status(400).json({
+        message: "Invalid photo format",
+        error: "Photo must be JPG, JPEG, or PNG format",
+        success: false
+      });
+    }
+    if (err.message.includes('Presentation must be')) {
+      return res.status(400).json({
+        message: "Invalid presentation format",
+        error: "Presentation must be PDF, PPT, or PPTX format",
+        success: false
+      });
+    }
+    if (err.code === 'LIMIT_FILE_SIZE') {
+      return res.status(400).json({
+        message: "File too large",
+        error: "File size must be less than 10MB",
+        success: false
+      });
+    }
+    return res.status(400).json({
+      message: "File upload error",
+      error: err.message,
+      success: false
+    });
+  }
+  next();
+};
+
 // Public routes
 // Keynote speaker registration with file uploads
-router.post("/register", upload.fields([
+router.post("/register", keynoteUpload.fields([
   { name: 'cvFile', maxCount: 1 },
   { name: 'photoFile', maxCount: 1 },
   { name: 'presentationFile', maxCount: 1 }
-]), registerKeynoteSpeaker);
+]), handleUploadError, registerKeynoteSpeaker);
 
 // Get all keynote speakers (public, limited info)
 router.get("/", getKeynoteSpeakers);
