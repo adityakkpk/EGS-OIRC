@@ -4,7 +4,7 @@ export const registerUser = async (req, res) => {
   const { name, email, referralCode } = req.body;
 
   try {
-    const admin = await prisma.admin.findUnique({ where: { referralCode } });
+    const admin = await prisma.Admin.findUnique({ where: { referralCode } });
     if (!admin) {
       return res.status(400).json({ message: 'Invalid referral code' });
     }

@@ -25,7 +25,7 @@ export const registerSpeaker = async (req, res) => {
 
     // If referral code is provided, verify it exists
     if (referralCode) {
-      const admin = await prisma.admin.findUnique({
+      const admin = await prisma.Admin.findUnique({
         where: { referralCode }
       });
 
@@ -115,7 +115,7 @@ export const registerSpeaker = async (req, res) => {
 
     // If referral code exists, create the user record with admin reference
     if (referralCode) {
-      const admin = await prisma.admin.findUnique({
+      const admin = await prisma.Admin.findUnique({
         where: { referralCode }
       });
 
