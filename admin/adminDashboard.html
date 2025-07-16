@@ -149,6 +149,73 @@
 		.modal {
 			z-index: 1050;
 		}
+
+		/* DataTable Responsive Improvements */
+		.dataTables_wrapper {
+			overflow-x: auto;
+		}
+
+		.dataTables_wrapper .dataTables_scroll {
+			overflow-x: auto;
+		}
+
+		.dataTables_wrapper .dataTables_scrollBody {
+			overflow-x: auto;
+			overflow-y: auto;
+		}
+
+		/* Mobile responsive table */
+		@media (max-width: 768px) {
+			.table-responsive {
+				font-size: 0.85rem;
+			}
+			
+			.btn-group .btn {
+				padding: 0.25rem 0.5rem;
+				font-size: 0.75rem;
+			}
+			
+			.dataTables_wrapper .dataTables_length,
+			.dataTables_wrapper .dataTables_filter,
+			.dataTables_wrapper .dataTables_info,
+			.dataTables_wrapper .dataTables_paginate {
+				font-size: 0.85rem;
+			}
+		}
+
+		/* Improve table cell content */
+		.table td {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 200px;
+		}
+
+		.table td.text-wrap {
+			white-space: normal;
+		}
+
+		/* Better button group spacing */
+		.btn-group .btn {
+			margin: 0 1px;
+		}
+
+		/* Responsive priority classes */
+		@media (max-width: 576px) {
+			.d-sm-none { display: none !important; }
+		}
+
+		@media (max-width: 768px) {
+			.d-md-none { display: none !important; }
+		}
+
+		@media (max-width: 992px) {
+			.d-lg-none { display: none !important; }
+		}
+
+		@media (max-width: 1200px) {
+			.d-xl-none { display: none !important; }
+		}
 	</style>
 </head>
 
@@ -313,19 +380,19 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="registrationsTable" class="table table-striped table-hover">
+							<table id="registrationsTable" class="table table-striped table-hover" style="width: 100%;">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Phone</th>
-										<th>Country</th>
-										<th>Institution</th>
-										<th>Type</th>
-										<th>Fee</th>
-										<th>Paid</th>
-										<th>Actions</th>
+										<th style="min-width: 60px;">ID</th>
+										<th style="min-width: 150px;">Name</th>
+										<th style="min-width: 180px;">Email</th>
+										<th style="min-width: 120px;">Phone</th>
+										<th style="min-width: 100px;">Country</th>
+										<th style="min-width: 150px;">Institution</th>
+										<th style="min-width: 120px;">Type</th>
+										<th style="min-width: 100px;">Fee</th>
+										<th style="min-width: 100px;">Paid</th>
+										<th style="min-width: 120px;">Actions</th>
 									</tr>
 								</thead>
 								<tbody></tbody>
@@ -346,19 +413,19 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="speakersTable" class="table table-striped table-hover">
-														<thead>
-							<tr>
-								<th>Paper</th>
-								<th>Name</th>
-								<th>Email</th>
-								<th>Institution</th>
-								<th>Paper Title</th>
-								<th>Country</th>
-								<th>Review Status</th>
-								<th>Actions</th>
-							</tr>
-						</thead>
+							<table id="speakersTable" class="table table-striped table-hover" style="width: 100%;">
+								<thead>
+									<tr>
+										<th style="min-width: 80px;">Paper</th>
+										<th style="min-width: 120px;">Name</th>
+										<th style="min-width: 150px;">Email</th>
+										<th style="min-width: 150px;">Institution</th>
+										<th style="min-width: 200px;">Paper Title</th>
+										<th style="min-width: 100px;">Country</th>
+										<th style="min-width: 130px;">Review Status</th>
+										<th style="min-width: 150px;">Actions</th>
+									</tr>
+								</thead>
 								<tbody></tbody>
 							</table>
 						</div>
@@ -377,16 +444,16 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="keynoteSpeakersTable" class="table table-striped table-hover">
+							<table id="keynoteSpeakersTable" class="table table-striped table-hover" style="width: 100%;">
 								<thead>
 									<tr>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Institution</th>
-										<th>Keynote Title</th>
-										<th>Expertise Area</th>
-										<th>Status</th>
-										<th>Actions</th>
+										<th style="min-width: 150px;">Name</th>
+										<th style="min-width: 180px;">Email</th>
+										<th style="min-width: 150px;">Institution</th>
+										<th style="min-width: 200px;">Keynote Title</th>
+										<th style="min-width: 150px;">Expertise Area</th>
+										<th style="min-width: 100px;">Status</th>
+										<th style="min-width: 120px;">Actions</th>
 									</tr>
 								</thead>
 								<tbody></tbody>
@@ -1020,38 +1087,135 @@
 			})
 			.then(response => response.json())
 			.then(data => {
-				const tbody = document.querySelector('#registrationsTable tbody');
-				tbody.innerHTML = '';
-				
-				data.forEach(reg => {
-					tbody.innerHTML += `
-						<tr>
-							<td>${reg.id}</td>
-							<td>${reg.name}</td>
-							<td>${reg.email}</td>
-							<td>${reg.phone}</td>
-							<td>${reg.country}</td>
-							<td>${reg.institutionName}</td>
-							<td>${reg.registrationType}</td>
-							<td>${reg.regFee}</td>
-							<td>${reg.isPaid ? '<span class="badge bg-success">Paid</span>' : '<span class="badge bg-warning">Pending</span>'}</td>
-							<td>
-								<button class="btn btn-sm btn-primary me-1" onclick="editRecord('registrations', ${reg.id})">
-									<i class="fas fa-edit"></i>
-								</button>
-								<button class="btn btn-sm btn-danger" onclick="deleteRecord('registrations', ${reg.id})">
-									<i class="fas fa-trash"></i>
-								</button>
-							</td>
-						</tr>
-					`;
-				});
-
-				// Initialize DataTable
+				// Initialize DataTable with responsive configuration
 				$('#registrationsTable').DataTable({
-					responsive: true,
+					data: data,
+					columns: [
+						{ 
+							data: 'id',
+							title: 'ID',
+							responsivePriority: 9,
+							className: 'd-none d-xl-table-cell',
+							width: '60px'
+						},
+						{ 
+							data: 'name',
+							title: 'Name',
+							responsivePriority: 1,
+							render: function(data, type, row) {
+								return `<div>
+									<div class="fw-bold">${data}</div>
+									<small class="text-muted d-md-none">${row.email}</small>
+								</div>`;
+							}
+						},
+						{ 
+							data: 'email',
+							title: 'Email',
+							responsivePriority: 3,
+							className: 'd-none d-md-table-cell',
+							render: function(data) {
+								return `<a href="mailto:${data}" class="text-decoration-none">${data}</a>`;
+							}
+						},
+						{ 
+							data: 'phone',
+							title: 'Phone',
+							responsivePriority: 7,
+							className: 'd-none d-lg-table-cell',
+							render: function(data) {
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'country',
+							title: 'Country',
+							responsivePriority: 6,
+							className: 'd-none d-lg-table-cell',
+							render: function(data) {
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'institutionName',
+							title: 'Institution',
+							responsivePriority: 5,
+							className: 'd-none d-xl-table-cell',
+							render: function(data) {
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'registrationType',
+							title: 'Type',
+							responsivePriority: 4,
+							className: 'd-none d-lg-table-cell'
+						},
+						{ 
+							data: 'regFee',
+							title: 'Fee',
+							responsivePriority: 8,
+							className: 'd-none d-xl-table-cell',
+							render: function(data) {
+								return data ? `$${data}` : '-';
+							}
+						},
+						{ 
+							data: 'isPaid',
+							title: 'Status',
+							responsivePriority: 2,
+							render: function(data) {
+								return data ? '<span class="badge bg-success">Paid</span>' : '<span class="badge bg-warning">Pending</span>';
+							}
+						},
+						{
+							data: null,
+							title: 'Actions',
+							responsivePriority: 1,
+							className: 'text-center',
+							orderable: false,
+							render: function(data, type, row) {
+								return `
+									<div class="btn-group">
+										<button class="btn btn-sm btn-primary me-1" onclick="editRecord('registrations', ${row.id})" title="Edit">
+											<i class="fas fa-edit"></i>
+										</button>
+										<button class="btn btn-sm btn-danger" onclick="deleteRecord('registrations', ${row.id})" title="Delete">
+											<i class="fas fa-trash"></i>
+										</button>
+									</div>
+								`;
+							}
+						}
+					],
+					responsive: {
+						details: {
+							type: 'column',
+							target: 'tr'
+						}
+					},
 					pageLength: 25,
-					order: [[0, 'desc']]
+					order: [[0, 'desc']],
+					scrollX: true,
+					autoWidth: false,
+					columnDefs: [
+						{ width: "60px", targets: 0 },
+						{ width: "150px", targets: 1 },
+						{ width: "180px", targets: 2 },
+						{ width: "120px", targets: 3 },
+						{ width: "100px", targets: 4 },
+						{ width: "150px", targets: 5 },
+						{ width: "120px", targets: 6 },
+						{ width: "100px", targets: 7 },
+						{ width: "100px", targets: 8 },
+						{ width: "120px", targets: 9 }
+					],
+					language: {
+						emptyTable: "No registrations found",
+						info: "Showing _START_ to _END_ of _TOTAL_ registrations",
+						infoEmpty: "Showing 0 to 0 of 0 registrations",
+						infoFiltered: "(filtered from _MAX_ total registrations)"
+					}
 				});
 			})
 			.catch(error => {
@@ -1075,50 +1239,141 @@
 					.then(response => response.json())
 		.then(data => {
 			currentSpeakers = data; // Store speakers for reference
-			const tbody = document.querySelector('#speakersTable tbody');
-			tbody.innerHTML = '';
 			
-			data.forEach(speaker => {
-				const reviewStatusBadge = getReviewStatusBadge(speaker.reviewStatus);
-				const canSendToCommittee = !speaker.sentToCommittee && speaker.reviewStatus === 'PENDING';
-				
-				tbody.innerHTML += `
-					<tr>
-						<td>${speaker.fileUrl ? `<a href="${speaker.fileUrl}" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-file"></i></a>` : 'No file'}</td>
-						<td>${speaker.name}</td>
-						<td>${speaker.email}</td>
-						<td>${speaker.institutionName}</td>
-						<td>${speaker.paperTitle}</td>
-						<td>${speaker.country}</td>
-						<td>${reviewStatusBadge}</td>
-						<td>
-							<div class="btn-group">
-								${canSendToCommittee ? 
-									`<button class="btn btn-sm btn-success me-1" onclick="showSendToCommitteeModal('${speaker.id}')" title="Send to Committee">
-										<i class="fas fa-users-cog"></i>
-									</button>` : 
-									`<button class="btn btn-sm btn-info me-1" onclick="showUpdateSpeakerStatusModal('${speaker.id}')" title="Update Status">
-										<i class="fas fa-clipboard-check"></i>
-									</button>`
-								}
-								<button class="btn btn-sm btn-primary me-1" onclick="editRecord('speakers', '${speaker.id}')" title="Edit">
-									<i class="fas fa-edit"></i>
-								</button>
-								<button class="btn btn-sm btn-danger" onclick="deleteRecord('speakers', '${speaker.id}')" title="Delete">
-									<i class="fas fa-trash"></i>
-								</button>
-							</div>
-						</td>
-					</tr>
-				`;
+			// Initialize DataTable with responsive configuration
+			$('#speakersTable').DataTable({
+				data: data,
+				columns: [
+					{ 
+						data: 'fileUrl',
+						title: 'Paper',
+						className: 'text-center',
+						responsivePriority: 5,
+						render: function(data, type, row) {
+							if (data) {
+								return `<a href="${data}" target="_blank" class="btn btn-sm btn-outline-info" title="View Paper">
+									<i class="fas fa-file-pdf"></i>
+								</a>`;
+							}
+							return '<span class="text-muted">-</span>';
+						}
+					},
+					{ 
+						data: 'name',
+						title: 'Name',
+						responsivePriority: 1,
+						render: function(data, type, row) {
+							return `<div class="d-flex align-items-center">
+								<div>
+									<div class="fw-bold">${data}</div>
+									<small class="text-muted d-md-none">${row.email}</small>
+								</div>
+							</div>`;
+						}
+					},
+					{ 
+						data: 'email',
+						title: 'Email',
+						responsivePriority: 4,
+						className: 'd-none d-md-table-cell',
+						render: function(data) {
+							return `<a href="mailto:${data}" class="text-decoration-none">${data}</a>`;
+						}
+					},
+					{ 
+						data: 'institutionName',
+						title: 'Institution',
+						responsivePriority: 6,
+						className: 'd-none d-lg-table-cell',
+						render: function(data) {
+							return data || '-';
+						}
+					},
+					{ 
+						data: 'paperTitle',
+						title: 'Paper Title',
+						responsivePriority: 3,
+						render: function(data, type, row) {
+							if (data && data.length > 50) {
+								return `<span title="${data}">${data.substring(0, 50)}...</span>`;
+							}
+							return data || '-';
+						}
+					},
+					{ 
+						data: 'country',
+						title: 'Country',
+						responsivePriority: 7,
+						className: 'd-none d-xl-table-cell',
+						render: function(data) {
+							return data || '-';
+						}
+					},
+					{ 
+						data: 'reviewStatus',
+						title: 'Review Status',
+						responsivePriority: 2,
+						render: function(data, type, row) {
+							return getReviewStatusBadge(data);
+						}
+					},
+					{
+						data: null,
+						title: 'Actions',
+						responsivePriority: 1,
+						className: 'text-center',
+						orderable: false,
+						render: function(data, type, row) {
+							const canSendToCommittee = !row.sentToCommittee && row.reviewStatus === 'PENDING';
+							
+							return `
+								<div class="btn-group">
+									${canSendToCommittee ? 
+										`<button class="btn btn-sm btn-success me-1" onclick="showSendToCommitteeModal('${row.id}')" title="Send to Committee">
+											<i class="fas fa-users-cog"></i>
+										</button>` : 
+										`<button class="btn btn-sm btn-info me-1" onclick="showUpdateSpeakerStatusModal('${row.id}')" title="Update Status">
+											<i class="fas fa-clipboard-check"></i>
+										</button>`
+									}
+									<button class="btn btn-sm btn-primary me-1" onclick="editRecord('speakers', '${row.id}')" title="Edit">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button class="btn btn-sm btn-danger" onclick="deleteRecord('speakers', '${row.id}')" title="Delete">
+										<i class="fas fa-trash"></i>
+									</button>
+								</div>
+							`;
+						}
+					}
+				],
+				responsive: {
+					details: {
+						type: 'column',
+						target: 'tr'
+					}
+				},
+				pageLength: 25,
+				order: [[0, 'desc']],
+				scrollX: true,
+				autoWidth: false,
+				columnDefs: [
+					{ width: "80px", targets: 0 },
+					{ width: "150px", targets: 1 },
+					{ width: "180px", targets: 2 },
+					{ width: "180px", targets: 3 },
+					{ width: "250px", targets: 4 },
+					{ width: "120px", targets: 5 },
+					{ width: "130px", targets: 6 },
+					{ width: "150px", targets: 7 }
+				],
+				language: {
+					emptyTable: "No speakers found",
+					info: "Showing _START_ to _END_ of _TOTAL_ speakers",
+					infoEmpty: "Showing 0 to 0 of 0 speakers",
+					infoFiltered: "(filtered from _MAX_ total speakers)"
+				}
 			});
-
-				// Initialize DataTable
-				$('#speakersTable').DataTable({
-					responsive: true,
-					pageLength: 25,
-					order: [[0, 'desc']]
-				});
 			})
 			.catch(error => {
 				console.error('Error loading speakers:', error);
@@ -1140,39 +1395,115 @@
 			})
 			.then(response => response.json())
 			.then(data => {
-				const tbody = document.querySelector('#keynoteSpeakersTable tbody');
-				tbody.innerHTML = '';
-				
-				data.keynoteSpeakers.forEach(speaker => {
-					const statusBadge = getStatusBadge(speaker.status);
-					tbody.innerHTML += `
-						<tr>
-							<td>${speaker.name}</td>
-							<td>${speaker.email}</td>
-							<td>${speaker.institutionName}</td>
-							<td>${speaker.keynoteTitle}</td>
-							<td>${speaker.expertiseArea}</td>
-							<td>${statusBadge}</td>
-							<td>
-								<button class="btn btn-sm btn-primary me-1" onclick="editRecord('keynote-speakers', '${speaker.id}')">
-									<i class="fas fa-edit"></i>
-								</button>
-								<button class="btn btn-sm btn-info" onclick="viewKeynoteSpeakerDetails('${speaker.id}')">
-									<i class="fas fa-info-circle"></i>
-								</button>
-								<button class="btn btn-sm btn-danger" onclick="deleteRecord('keynote-speakers', '${speaker.id}')">
-									<i class="fas fa-trash"></i>
-								</button>
-							</td>
-						</tr>
-					`;
-				});
-
-				// Initialize DataTable
+				// Initialize DataTable with responsive configuration
 				$('#keynoteSpeakersTable').DataTable({
-					responsive: true,
+					data: data.keynoteSpeakers,
+					columns: [
+						{ 
+							data: 'name',
+							title: 'Name',
+							responsivePriority: 1,
+							render: function(data, type, row) {
+								return `<div>
+									<div class="fw-bold">${data}</div>
+									<small class="text-muted d-md-none">${row.email}</small>
+								</div>`;
+							}
+						},
+						{ 
+							data: 'email',
+							title: 'Email',
+							responsivePriority: 3,
+							className: 'd-none d-md-table-cell',
+							render: function(data) {
+								return `<a href="mailto:${data}" class="text-decoration-none">${data}</a>`;
+							}
+						},
+						{ 
+							data: 'institutionName',
+							title: 'Institution',
+							responsivePriority: 5,
+							className: 'd-none d-lg-table-cell',
+							render: function(data) {
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'keynoteTitle',
+							title: 'Keynote Title',
+							responsivePriority: 2,
+							render: function(data, type, row) {
+								if (data && data.length > 50) {
+									return `<span title="${data}">${data.substring(0, 50)}...</span>`;
+								}
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'expertiseArea',
+							title: 'Expertise Area',
+							responsivePriority: 6,
+							className: 'd-none d-xl-table-cell',
+							render: function(data) {
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'status',
+							title: 'Status',
+							responsivePriority: 4,
+							render: function(data, type, row) {
+								return getStatusBadge(data);
+							}
+						},
+						{
+							data: null,
+							title: 'Actions',
+							responsivePriority: 1,
+							className: 'text-center',
+							orderable: false,
+							render: function(data, type, row) {
+								return `
+									<div class="btn-group">
+										<button class="btn btn-sm btn-primary me-1" onclick="editRecord('keynote-speakers', '${row.id}')" title="Edit">
+											<i class="fas fa-edit"></i>
+										</button>
+										<button class="btn btn-sm btn-info me-1" onclick="viewKeynoteSpeakerDetails('${row.id}')" title="View Details">
+											<i class="fas fa-info-circle"></i>
+										</button>
+										<button class="btn btn-sm btn-danger" onclick="deleteRecord('keynote-speakers', '${row.id}')" title="Delete">
+											<i class="fas fa-trash"></i>
+										</button>
+									</div>
+								`;
+							}
+						}
+					],
+					responsive: {
+						details: {
+							type: 'column',
+							target: 'tr'
+						}
+					},
 					pageLength: 25,
-					order: [[0, 'asc']] // Sort by name ascending
+					order: [[0, 'asc']], // Sort by name ascending
+					scrollX: true,
+					autoWidth: false,
+					columnDefs: [
+						{ width: "150px", targets: 0 },
+						{ width: "180px", targets: 1 },
+						{ width: "150px", targets: 2 },
+						{ width: "200px", targets: 3 },
+						{ width: "150px", targets: 4 },
+						{ width: "100px", targets: 5 },
+						{ width: "120px", targets: 6 }
+					],
+					language: {
+						emptyTable: "No keynote speakers found",
+						info: "Showing _START_ to _END_ of _TOTAL_ keynote speakers",
+						infoEmpty: "Showing 0 to 0 of 0 keynote speakers",
+						infoFiltered: "(filtered from _MAX_ total keynote speakers)"
+					}
 				});
 			})
 			.catch(error => {

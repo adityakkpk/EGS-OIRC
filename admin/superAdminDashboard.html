@@ -277,6 +277,73 @@
 			padding: 0.25rem 0.5rem;
 			font-size: 0.8rem;
 		}
+
+		/* DataTable Responsive Improvements */
+		.dataTables_wrapper {
+			overflow-x: auto;
+		}
+
+		.dataTables_wrapper .dataTables_scroll {
+			overflow-x: auto;
+		}
+
+		.dataTables_wrapper .dataTables_scrollBody {
+			overflow-x: auto;
+			overflow-y: auto;
+		}
+
+		/* Mobile responsive table */
+		@media (max-width: 768px) {
+			.table-responsive {
+				font-size: 0.85rem;
+			}
+			
+			.btn-group .btn {
+				padding: 0.25rem 0.5rem;
+				font-size: 0.75rem;
+			}
+			
+			.dataTables_wrapper .dataTables_length,
+			.dataTables_wrapper .dataTables_filter,
+			.dataTables_wrapper .dataTables_info,
+			.dataTables_wrapper .dataTables_paginate {
+				font-size: 0.85rem;
+			}
+		}
+
+		/* Improve table cell content */
+		.table td {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 200px;
+		}
+
+		.table td.text-wrap {
+			white-space: normal;
+		}
+
+		/* Better button group spacing */
+		.btn-group .btn {
+			margin: 0 1px;
+		}
+
+		/* Responsive priority classes */
+		@media (max-width: 576px) {
+			.d-sm-none { display: none !important; }
+		}
+
+		@media (max-width: 768px) {
+			.d-md-none { display: none !important; }
+		}
+
+		@media (max-width: 992px) {
+			.d-lg-none { display: none !important; }
+		}
+
+		@media (max-width: 1200px) {
+			.d-xl-none { display: none !important; }
+		}
 	</style>
 </head>
 
@@ -416,18 +483,18 @@
 				</div>
 			</div>
 			<div class="table-responsive">
-				<table id="registrationsTable" class="table table-hover">
+				<table id="registrationsTable" class="table table-hover" style="width: 100%;">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Type</th>
-							<th>Fee</th>
-							<th>Status</th>
-							<th>Referred By</th>
-							<th>Date</th>
-							<th>Actions</th>
+							<th style="min-width: 60px;">ID</th>
+							<th style="min-width: 150px;">Name</th>
+							<th style="min-width: 180px;">Email</th>
+							<th style="min-width: 120px;">Type</th>
+							<th style="min-width: 100px;">Fee</th>
+							<th style="min-width: 100px;">Status</th>
+							<th style="min-width: 150px;">Referred By</th>
+							<th style="min-width: 120px;">Date</th>
+							<th style="min-width: 120px;">Actions</th>
 						</tr>
 					</thead>
 					<tbody></tbody>
@@ -450,18 +517,18 @@
 				</div>
 			</div>
 			<div class="table-responsive">
-				<table id="speakersTable" class="table table-hover">
+				<table id="speakersTable" class="table table-hover" style="width: 100%;">
 					<thead>
 						<tr>
-							<th>Paper</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Institution</th>
-							<th>Paper Title</th>
-							<th>Country</th>
-							<th>Referred By</th>
-							<th>Date</th>
-							<th>Actions</th>
+							<th style="min-width: 200px;">Paper</th>
+							<th style="min-width: 120px;">Name</th>
+							<th style="min-width: 150px;">Email</th>
+							<th style="min-width: 150px;">Institution</th>
+							<th style="min-width: 200px;">Paper Title</th>
+							<th style="min-width: 100px;">Country</th>
+							<th style="min-width: 120px;">Referred By</th>
+							<th style="min-width: 100px;">Date</th>
+							<th style="min-width: 100px;">Actions</th>
 						</tr>
 					</thead>
 					<tbody></tbody>
@@ -1221,6 +1288,7 @@
 				'speakers': 'speakersSection',
 				'keynote-speakers': 'keynoteSpeakersSection',
 				'sponsors': 'sponsorsSection',
+				'reviewing-committee': 'reviewingCommitteeSection',
 				'analytics': 'analyticsSection'
 			};
 			
@@ -1504,38 +1572,87 @@
 			$('#registrationsTable').DataTable({
 				data: registrations,
 				columns: [
-					{ data: 'id' },
-					{ data: 'name' },
-					{ data: 'email' },
-					{ data: 'registrationType' },
-					{ data: 'regFee' },
+					{ 
+						data: 'id',
+						title: 'ID',
+						responsivePriority: 9,
+						className: 'd-none d-xl-table-cell',
+						width: '60px'
+					},
+					{ 
+						data: 'name',
+						title: 'Name',
+						responsivePriority: 1,
+						render: function(data, type, row) {
+							return `<div>
+								<div class="fw-bold">${data}</div>
+								<small class="text-muted d-md-none">${row.email}</small>
+							</div>`;
+						}
+					},
+					{ 
+						data: 'email',
+						title: 'Email',
+						responsivePriority: 3,
+						className: 'd-none d-md-table-cell',
+						render: function(data) {
+							return `<a href="mailto:${data}" class="text-decoration-none">${data}</a>`;
+						}
+					},
+					{ 
+						data: 'registrationType',
+						title: 'Type',
+						responsivePriority: 4,
+						className: 'd-none d-lg-table-cell'
+					},
+					{ 
+						data: 'regFee',
+						title: 'Fee',
+						responsivePriority: 5,
+						className: 'd-none d-lg-table-cell',
+						render: function(data) {
+							return data ? `$${data}` : '-';
+						}
+					},
 					{ 
 						data: 'isPaid',
+						title: 'Status',
+						responsivePriority: 2,
 						render: function(data) {
 							return data ? '<span class="badge bg-success">Paid</span>' : '<span class="badge bg-warning">Pending</span>';
 						}
 					},
 					{ 
 						data: 'referredBy',
+						title: 'Referred By',
+						responsivePriority: 7,
+						className: 'd-none d-xl-table-cell',
 						render: function(data) {
 							return data ? data.email : '-';
 						}
 					},
 					{ 
 						data: 'createdAt',
+						title: 'Date',
+						responsivePriority: 6,
+						className: 'd-none d-lg-table-cell',
 						render: function(data) {
 							return new Date(data).toLocaleDateString();
 						}
 					},
 					{
 						data: null,
+						title: 'Actions',
+						responsivePriority: 1,
+						className: 'text-center',
+						orderable: false,
 						render: function(data, type, row) {
 							return `
 								<div class="btn-group">
-									<button class="btn btn-sm btn-outline-primary" onclick="editRegistration(${row.id})">
+									<button class="btn btn-sm btn-outline-primary" onclick="editRegistration(${row.id})" title="Edit">
 										<i class="fas fa-edit"></i>
 									</button>
-									<button class="btn btn-sm btn-outline-danger" onclick="deleteRegistration(${row.id})">
+									<button class="btn btn-sm btn-outline-danger" onclick="deleteRegistration(${row.id})" title="Delete">
 										<i class="fas fa-trash"></i>
 									</button>
 								</div>
@@ -1543,8 +1660,27 @@
 						}
 					}
 				],
-				responsive: true,
+				responsive: {
+					details: {
+						type: 'column',
+						target: 'tr'
+					}
+				},
 				pageLength: 25,
+				order: [[7, 'desc']], // Sort by date (newest first)
+				scrollX: true,
+				autoWidth: false,
+				columnDefs: [
+					{ width: "60px", targets: 0 },
+					{ width: "150px", targets: 1 },
+					{ width: "180px", targets: 2 },
+					{ width: "120px", targets: 3 },
+					{ width: "100px", targets: 4 },
+					{ width: "100px", targets: 5 },
+					{ width: "150px", targets: 6 },
+					{ width: "120px", targets: 7 },
+					{ width: "120px", targets: 8 }
+				],
 				dom: 'Bfrtip',
 				buttons: [
 					{
@@ -1552,7 +1688,13 @@
 						text: '<i class="fas fa-download"></i> CSV',
 						className: 'btn btn-success btn-sm'
 					}
-				]
+				],
+				language: {
+					emptyTable: "No registrations found",
+					info: "Showing _START_ to _END_ of _TOTAL_ registrations",
+					infoEmpty: "Showing 0 to 0 of 0 registrations",
+					infoFiltered: "(filtered from _MAX_ total registrations)"
+				}
 			});
 		}
 
@@ -1661,33 +1803,102 @@
 			$('#speakersTable').DataTable({
 				data: speakers,
 				columns: [
-					{ data: 'fileUrl' },
-					{ data: 'name' },
-					{ data: 'email' },
-					{ data: 'institutionName' },
-					{ data: 'paperTitle' },
-					{ data: 'country' },
+					{ 
+						data: 'fileUrl',
+						title: 'Paper',
+						className: 'text-center',
+						responsivePriority: 4,
+						render: function(data, type, row) {
+							if (data) {
+								return `<a href="${data}" target="_blank" class="btn btn-sm btn-outline-info" title="View Paper">
+									<i class="fas fa-file-pdf"></i>
+								</a>`;
+							}
+							return '<span class="text-muted">-</span>';
+						}
+					},
+					{ 
+						data: 'name',
+						title: 'Name',
+						responsivePriority: 1,
+						render: function(data, type, row) {
+							return `<div class="d-flex align-items-center">
+								<div>
+									<div class="fw-bold">${data}</div>
+									<small class="text-muted d-md-none">${row.email}</small>
+								</div>
+							</div>`;
+						}
+					},
+					{ 
+						data: 'email',
+						title: 'Email',
+						responsivePriority: 3,
+						className: 'd-none d-md-table-cell',
+						render: function(data) {
+							return `<a href="mailto:${data}" class="text-decoration-none">${data}</a>`;
+						}
+					},
+					{ 
+						data: 'institutionName',
+						title: 'Institution',
+						responsivePriority: 5,
+						className: 'd-none d-lg-table-cell',
+						render: function(data) {
+							return data || '-';
+						}
+					},
+					{ 
+						data: 'paperTitle',
+						title: 'Paper Title',
+						responsivePriority: 2,
+						render: function(data, type, row) {
+							if (data && data.length > 50) {
+								return `<span title="${data}">${data.substring(0, 50)}...</span>`;
+							}
+							return data || '-';
+						}
+					},
+					{ 
+						data: 'country',
+						title: 'Country',
+						responsivePriority: 6,
+						className: 'd-none d-xl-table-cell',
+						render: function(data) {
+							return data || '-';
+						}
+					},
 					{ 
 						data: 'referredBy',
+						title: 'Referred By',
+						responsivePriority: 7,
+						className: 'd-none d-xl-table-cell',
 						render: function(data) {
 							return data ? data.email : '-';
 						}
 					},
 					{ 
 						data: 'createdAt',
+						title: 'Date',
+						responsivePriority: 8,
+						className: 'd-none d-lg-table-cell',
 						render: function(data) {
 							return new Date(data).toLocaleDateString();
 						}
 					},
 					{
 						data: null,
+						title: 'Actions',
+						responsivePriority: 1,
+						className: 'text-center',
+						orderable: false,
 						render: function(data, type, row) {
 							return `
 								<div class="btn-group">
-									<button class="btn btn-sm btn-outline-primary" onclick="editSpeaker(${row.id})">
+									<button class="btn btn-sm btn-outline-primary" onclick="editSpeaker(${row.id})" title="Edit">
 										<i class="fas fa-edit"></i>
 									</button>
-									<button class="btn btn-sm btn-outline-danger" onclick="deleteSpeaker(${row.id})">
+									<button class="btn btn-sm btn-outline-danger" onclick="deleteSpeaker(${row.id})" title="Delete">
 										<i class="fas fa-trash"></i>
 									</button>
 								</div>
@@ -1695,8 +1906,27 @@
 						}
 					}
 				],
-				responsive: true,
+				responsive: {
+					details: {
+						type: 'column',
+						target: 'tr'
+					}
+				},
 				pageLength: 25,
+				order: [[7, 'desc']], // Sort by date (newest first)
+				scrollX: true,
+				autoWidth: false,
+				columnDefs: [
+					{ width: "80px", targets: 0 },
+					{ width: "150px", targets: 1 },
+					{ width: "180px", targets: 2 },
+					{ width: "180px", targets: 3 },
+					{ width: "250px", targets: 4 },
+					{ width: "120px", targets: 5 },
+					{ width: "150px", targets: 6 },
+					{ width: "120px", targets: 7 },
+					{ width: "120px", targets: 8 }
+				],
 				dom: 'Bfrtip',
 				buttons: [
 					{
@@ -1704,7 +1934,13 @@
 						text: '<i class="fas fa-download"></i> CSV',
 						className: 'btn btn-success btn-sm'
 					}
-				]
+				],
+				language: {
+					emptyTable: "No speakers found",
+					info: "Showing _START_ to _END_ of _TOTAL_ speakers",
+					infoEmpty: "Showing 0 to 0 of 0 speakers",
+					infoFiltered: "(filtered from _MAX_ total speakers)"
+				}
 			});
 		}
 
