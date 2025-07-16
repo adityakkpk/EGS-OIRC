@@ -10,7 +10,7 @@ import {
   getKeynoteSpeakerStatsForAdmin
 } from "../controllers/keynoteSpeakerController.js";
 import { upload } from "../config/cloudinary.js";
-import { authenticateToken } from "../middleware/authMiddleware.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -30,18 +30,18 @@ router.get("/:id", getKeynoteSpeakerById);
 
 // Admin-only routes (protected)
 // Get all keynote speakers with full details for admin
-router.get("/admin/all", authenticateToken, getAllKeynoteSpeakersForAdmin);
+router.get("/admin/all", authMiddleware, getAllKeynoteSpeakersForAdmin);
 
 // Get keynote speaker statistics for admin dashboard
-router.get("/admin/stats", authenticateToken, getKeynoteSpeakerStatsForAdmin);
+router.get("/admin/stats", authMiddleware, getKeynoteSpeakerStatsForAdmin);
 
 // Update keynote speaker by admin
-router.put("/admin/:id", authenticateToken, updateKeynoteSpeakerByAdmin);
+router.put("/admin/:id", authMiddleware, updateKeynoteSpeakerByAdmin);
 
 // Update keynote speaker status (for admin)
-router.patch("/admin/:id/status", authenticateToken, updateKeynoteSpeakerStatus);
+router.patch("/admin/:id/status", authMiddleware, updateKeynoteSpeakerStatus);
 
 // Delete keynote speaker (admin only)
-router.delete("/admin/:id", authenticateToken, deleteKeynoteSpeaker);
+router.delete("/admin/:id", authMiddleware, deleteKeynoteSpeaker);
 
 export default router; 
