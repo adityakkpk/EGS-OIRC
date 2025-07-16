@@ -27,7 +27,10 @@ app.use(cors({
     "http://127.0.0.1:5500",
     "http://localhost:5500",
     "https://www.icmmcs.org",
-    "http://127.0.0.1:3000"
+    "https://icmmcs.org",
+    "http://127.0.0.1:3000",
+    "http://icmmcs.org",
+    "http://www.icmmcs.org"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With"],
