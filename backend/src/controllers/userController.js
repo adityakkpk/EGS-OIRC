@@ -1,5 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import { prisma } from '../config/db.js';
 
 export const registerUser = async (req, res) => {
   const { name, email, referralCode } = req.body;

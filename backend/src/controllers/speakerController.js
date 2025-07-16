@@ -1,7 +1,5 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../config/db.js";
 import { sendSpeakerRegistrationEmail } from "../services/emailService.js";
-
-const prisma = new PrismaClient();
 
 // Validation functions
 const validateEmail = (email) => {
