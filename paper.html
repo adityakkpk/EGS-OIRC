@@ -1512,6 +1512,17 @@ Majan University College for a transformative conference exploring the latest a
 		}
 
 		function showError(message, element) {
+			if (!element || !element.parentNode) {
+				console.error('Invalid element provided to showError');
+				return;
+			}
+			
+			// Remove existing error for this element
+			const existingError = element.parentNode.querySelector('.invalid-feedback');
+			if (existingError) {
+				existingError.remove();
+			}
+			
 			const errorDiv = document.createElement('div');
 			errorDiv.className = 'invalid-feedback';
 			errorDiv.textContent = message;
@@ -1530,13 +1541,39 @@ Majan University College for a transformative conference exploring the latest a
 		}
 
 		function showSuccessMessage(message) {
+			// Remove any existing alerts first
+			const existingAlerts = document.querySelectorAll('.alert');
+			existingAlerts.forEach(alert => alert.remove());
+			
 			const alertDiv = document.createElement('div');
-			alertDiv.className = 'alert alert-success alert-dismissible fade show';
+			alertDiv.className = 'alert alert-success alert-dismissible fade show mb-3';
 			alertDiv.innerHTML = `
 				${message}
 				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			`;
-			document.querySelector('.card-body').insertBefore(alertDiv, document.getElementById('registrationForm'));
+			
+			// Find the card-body and form elements
+			const cardBody = document.querySelector('.card-body');
+			const form = document.getElementById('registrationForm');
+			
+			if (cardBody && form) {
+				// Insert the alert at the beginning of card-body
+				cardBody.insertBefore(alertDiv, form);
+			} else {
+				// Fallback: append to card-body or body if elements not found
+				if (cardBody) {
+					cardBody.prepend(alertDiv);
+				} else {
+					document.body.prepend(alertDiv);
+				}
+			}
+			
+			// Auto-hide the alert after 5 seconds
+			setTimeout(() => {
+				if (alertDiv && alertDiv.parentNode) {
+					alertDiv.remove();
+				}
+			}, 5000);
 		}
 
 		// Form submission handler
