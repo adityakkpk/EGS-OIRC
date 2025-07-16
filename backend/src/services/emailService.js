@@ -60,14 +60,14 @@ export async function sendSpeakerRegistrationEmail(speakerData) {
   const speakerMailOptions = {
     from: process.env.EMAIL_USER,
     to: speakerData.email,
-    subject: "ICMMCS 2025 | Speaker Registration Confirmation",
+    subject: "ICMMCS 2025 | Presenter Registration Confirmation",
     html: speakerConfirmationTemplate(speakerData),
   };
 
   const adminMailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.ADMIN_EMAIL,
-    subject: `New Speaker Registration: ${speakerData.name}`,
+    subject: `New Presenter Registration: ${speakerData.name}`,
     html: speakerAdminNotificationTemplate(speakerData),
   };
 
@@ -172,7 +172,7 @@ export async function sendSpeakerToCommitteeEmail(speakerData, committeeMember) 
   const committeeMailOptions = {
     from: process.env.EMAIL_USER,
     to: committeeMember.email,
-    subject: `ICMMCS 2025 | Speaker Review Request: ${speakerData.name}`,
+    subject: `ICMMCS 2025 | Presenter Review Request: ${speakerData.name}`,
     html: speakerReviewCommitteeTemplate(speakerData, committeeMember),
   };
 
@@ -298,19 +298,19 @@ const speakerReviewCommitteeTemplate = (speakerData, committeeMember) => `
 <body>
   <div class="container">
     <div class="header">
-      <h1>📋 Speaker Review Request</h1>
+      <h1>📋 Presenter Review Request</h1>
       <p>ICMMCS 2025 - International Conference on Mathematics, Management & Computer Science</p>
     </div>
     
     <div class="content">
       <h2>Dear ${committeeMember.name},</h2>
       
-      <p>You have been assigned to review a speaker application for ICMMCS 2025. Please find the complete speaker details below for your evaluation.</p>
+      <p>You have been assigned to review a presenter application for ICMMCS 2025. Please find the complete presenter details below for your evaluation.</p>
       
       <div class="priority">⏰ Review Priority: Standard Review Timeline</div>
       
       <div class="section">
-        <h3>👤 Speaker Information</h3>
+        <h3>👤 Presenter Information</h3>
         <div class="grid">
           <div>
             <div class="label">Full Name:</div>
@@ -411,15 +411,15 @@ const speakerReviewCommitteeTemplate = (speakerData, committeeMember) => `
       <div style="text-align: center; margin: 30px 0;">
         <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #019087;">
           <h3 style="color: #019087; margin-bottom: 15px;">Review Actions Required</h3>
-          <p style="margin-bottom: 20px;">Please review the speaker application and provide your recommendation:</p>
+          <p style="margin-bottom: 20px;">Please review the presenter application and provide your recommendation:</p>
           <div>
-            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Speaker Review - APPROVED - ${speakerData.name}&body=Speaker ID: ${speakerData.id}%0D%0ARecommendation: APPROVED%0D%0AComments:" class="cta-button" style="background: #28a745;">
+            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - APPROVED - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: APPROVED%0D%0AComments:" class="cta-button" style="background: #28a745;">
               ✅ APPROVE
             </a>
-            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Speaker Review - NEEDS REVISION - ${speakerData.name}&body=Speaker ID: ${speakerData.id}%0D%0ARecommendation: NEEDS REVISION%0D%0AComments:" class="cta-button" style="background: #ffc107; color: #000;">
+            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - NEEDS REVISION - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: NEEDS REVISION%0D%0AComments:" class="cta-button" style="background: #ffc107; color: #000;">
               📝 NEEDS REVISION
             </a>
-            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Speaker Review - REJECTED - ${speakerData.name}&body=Speaker ID: ${speakerData.id}%0D%0ARecommendation: REJECTED%0D%0AComments:" class="cta-button" style="background: #dc3545;">
+            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - REJECTED - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: REJECTED%0D%0AComments:" class="cta-button" style="background: #dc3545;">
               ❌ REJECT
             </a>
           </div>

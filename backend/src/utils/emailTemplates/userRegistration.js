@@ -242,13 +242,13 @@ export const speakerAdminNotificationTemplate = (speakerData) => `
 <body>
   <div class="container">
     <div class="header">
-      <h1>📄 New Paper Submission</h1>
+      <h1>📄 New Presenter Registration</h1>
       <p>ICMMCS 2025 Conference</p>
     </div>
     
     <div class="content">
       <div class="section">
-        <h2>Author Details</h2>
+        <h2>Presenter Details</h2>
         <span class="status">⏳ PENDING REVIEW</span>
         
         <div class="grid" style="margin-top: 20px;">
