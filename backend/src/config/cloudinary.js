@@ -14,8 +14,7 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: 'conference-papers', // Folder in your Cloudinary account
-    allowed_formats: ['pdf', 'docx', 'tex', 'latex'],
-    resource_type: 'auto',
+    resource_type: 'raw', // Use 'raw' for document files like DOCX, LaTeX
     public_id: (req, file) => {
       // Generate unique filename
       const timestamp = Date.now();
@@ -75,23 +74,22 @@ const keynoteStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: (req, file) => {
     let folder = 'keynote-speakers';
-    let allowedFormats = [];
+    let resourceType = 'raw'; // Default to raw for documents
     
     if (file.fieldname === 'cvFile') {
       folder = 'keynote-speakers/cv';
-      allowedFormats = ['pdf', 'docx', 'tex', 'latex'];
+      resourceType = 'raw'; // Documents
     } else if (file.fieldname === 'photoFile') {
       folder = 'keynote-speakers/photos';
-      allowedFormats = ['jpg', 'jpeg', 'png'];
+      resourceType = 'image'; // Images
     } else if (file.fieldname === 'presentationFile') {
       folder = 'keynote-speakers/presentations';
-      allowedFormats = ['pdf', 'ppt', 'pptx'];
+      resourceType = 'raw'; // Documents
     }
     
     return {
       folder: folder,
-      allowed_formats: allowedFormats,
-      resource_type: 'auto',
+      resource_type: resourceType,
       public_id: `${file.fieldname}_${Date.now()}_${file.originalname.split('.')[0]}`
     };
   }
