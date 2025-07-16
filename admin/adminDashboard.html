@@ -622,7 +622,7 @@
 				// Set up referral links
 				const baseUrl = window.location.origin;
 				document.getElementById('confReferralLink').value = `${baseUrl}/register.html?ref=${data.referralCode}`;
-				document.getElementById('speakerReferralLink').value = `${baseUrl}/speaker-register.html?ref=${data.referralCode}`;
+				document.getElementById('speakerReferralLink').value = `${baseUrl}/paper.html?ref=${data.referralCode}`;
 			})
 			.catch(error => {
 				console.error('Auth error:', error);
