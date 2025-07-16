@@ -58,6 +58,9 @@ model speaker {
   referralCode    String?
   referredById    String?
   referredBy      Admin?       @relation("SpeakerReferrals", fields: [referredById], references: [id])
+  reviewStatus    ReviewStatus @default(PENDING)
+  sentToCommittee Boolean      @default(false)
+  committeeMembers String?     @db.Text // JSON array of committee member IDs who received this speaker
   createdAt       DateTime     @default(now())
   updatedAt       DateTime     @updatedAt
 }
@@ -65,6 +68,15 @@ model speaker {
 enum AttendeeType {
   presenter
   listener
+}
+
+enum ReviewStatus {
+  PENDING
+  SENT_TO_COMMITTEE
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+  NEEDS_REVISION
 }
 
 model keynoteSpeaker {
@@ -165,4 +177,18 @@ model User {
   adminId    String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+}
+
+model ReviewingCommittee {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  designation  String
+  institution  String
+  expertise    String
+  phone        String?
+  isActive     Boolean  @default(true)
+  createdBy    String   // Super Admin ID who created this member
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
