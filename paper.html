@@ -437,728 +437,600 @@ Majan University College for a transformative conference exploring the latest a
 					</div>
 					<div class="card-body">
 						<form id="registrationForm" class="needs-validation" novalidate>
-							<div class="mb-3 dropdown-input">
-								<label for="conference-title" class="form-label">Select Conference*</label>
-								<select class="" id="conference-title" required>
-									<option value="" disabled>Select Conference title</option>
-									<option value="ICMMCS" selected>ICMMCS 2025</option>
-								</select>
-							</div>
-							<div class="mb-3 dropdown-input">
-								<label for="place-date" class="form-label">Conference place & Date*</label>
-								<select class="" id="place-date" required>
-									<option value="" disabled>Select your country</option>
-									<option value="MUC - 10 November 2025" selected>Majan University College, Muscat, Oman (10 November 2025)</option>
-									<!-- <option value="AC">Dr, Bhim Rao Ambedkar College, Delhi, India (11 November 2025)</option> -->
-									<!-- <option value="" disabled selected>Select your country</option>
-									<option value="AF">Afghanistan</option>
-									<option value="AL">Albania</option>
-									<option value="DZ">Algeria</option>
-									<option value="AS">American Samoa</option>
-									<option value="AD">Andorra</option>
-									<option value="AO">Angola</option>
-									<option value="AI">Anguilla</option>
-									<option value="AQ">Antarctica</option>
-									<option value="AG">Antigua and Barbuda</option>
-									<option value="AR">Argentina</option>
-									<option value="AM">Armenia</option>
-									<option value="AW">Aruba</option>
-									<option value="AU">Australia</option>
-									<option value="AT">Austria</option>
-									<option value="AZ">Azerbaijan</option>
-									<option value="BS">Bahamas</option>
-									<option value="BH">Bahrain</option>
-									<option value="BD">Bangladesh</option>
-									<option value="BB">Barbados</option>
-									<option value="BY">Belarus</option>
-									<option value="BE">Belgium</option>
-									<option value="BZ">Belize</option>
-									<option value="BJ">Benin</option>
-									<option value="BM">Bermuda</option>
-									<option value="BT">Bhutan</option>
-									<option value="BO">Bolivia</option>
-									<option value="BA">Bosnia and Herzegovina</option>
-									<option value="BW">Botswana</option>
-									<option value="BR">Brazil</option>
-									<option value="BN">Brunei Darussalam</option>
-									<option value="BG">Bulgaria</option>
-									<option value="BF">Burkina Faso</option>
-									<option value="BI">Burundi</option>
-									<option value="KH">Cambodia</option>
-									<option value="CM">Cameroon</option>
-									<option value="CA">Canada</option>
-									<option value="CV">Cape Verde</option>
-									<option value="KY">Cayman Islands</option>
-									<option value="CF">Central African Republic</option>
-									<option value="TD">Chad</option>
-									<option value="CL">Chile</option>
-									<option value="CN">China</option>
-									<option value="CO">Colombia</option>
-									<option value="KM">Comoros</option>
-									<option value="CG">Congo</option>
-									<option value="CD">Congo, the Democratic Republic of the</option>
-									<option value="CR">Costa Rica</option>
-									<option value="CI">Côte d'Ivoire</option>
-									<option value="HR">Croatia</option>
-									<option value="CU">Cuba</option>
-									<option value="CY">Cyprus</option>
-									<option value="CZ">Czech Republic</option>
-									<option value="DK">Denmark</option>
-									<option value="DJ">Djibouti</option>
-									<option value="DM">Dominica</option>
-									<option value="DO">Dominican Republic</option>
-									<option value="EC">Ecuador</option>
-									<option value="EG">Egypt</option>
-									<option value="SV">El Salvador</option>
-									<option value="GQ">Equatorial Guinea</option>
-									<option value="ER">Eritrea</option>
-									<option value="EE">Estonia</option>
-									<option value="ET">Ethiopia</option>
-									<option value="FJ">Fiji</option>
-									<option value="FI">Finland</option>
-									<option value="FR">France</option>
-									<option value="GA">Gabon</option>
-									<option value="GM">Gambia</option>
-									<option value="GE">Georgia</option>
-									<option value="DE">Germany</option>
-									<option value="GH">Ghana</option>
-									<option value="GR">Greece</option>
-									<option value="GD">Grenada</option>
-									<option value="GU">Guam</option>
-									<option value="GT">Guatemala</option>
-									<option value="GN">Guinea</option>
-									<option value="GW">Guinea-Bissau</option>
-									<option value="GY">Guyana</option>
-									<option value="HT">Haiti</option>
-									<option value="HN">Honduras</option>
-									<option value="HK">Hong Kong</option>
-									<option value="HU">Hungary</option>
-									<option value="IS">Iceland</option>
-									<option value="IN">India</option>
-									<option value="ID">Indonesia</option>
-									<option value="IR">Iran, Islamic Republic of</option>
-									<option value="IQ">Iraq</option>
-									<option value="IE">Ireland</option>
-									<option value="IL">Israel</option>
-									<option value="IT">Italy</option>
-									<option value="JM">Jamaica</option>
-									<option value="JP">Japan</option>
-									<option value="JO">Jordan</option>
-									<option value="KZ">Kazakhstan</option>
-									<option value="KE">Kenya</option>
-									<option value="KI">Kiribati</option>
-									<option value="KP">Korea, Democratic People's Republic of</option>
-									<option value="KR">Korea, Republic of</option>
-									<option value="KW">Kuwait</option>
-									<option value="KG">Kyrgyzstan</option>
-									<option value="LA">Lao People's Democratic Republic</option>
-									<option value="LV">Latvia</option>
-									<option value="LB">Lebanon</option>
-									<option value="LS">Lesotho</option>
-									<option value="LR">Liberia</option>
-									<option value="LY">Libya</option>
-									<option value="LI">Liechtenstein</option>
-									<option value="LT">Lithuania</option>
-									<option value="LU">Luxembourg</option>
-									<option value="MO">Macao</option>
-									<option value="MK">Macedonia, the former Yugoslav Republic of</option>
-									<option value="MG">Madagascar</option>
-									<option value="MW">Malawi</option>
-									<option value="MY">Malaysia</option>
-									<option value="MV">Maldives</option>
-									<option value="ML">Mali</option>
-									<option value="MT">Malta</option>
-									<option value="MH">Marshall Islands</option>
-									<option value="MR">Mauritania</option>
-									<option value="MU">Mauritius</option>
-									<option value="MX">Mexico</option>
-									<option value="FM">Micronesia, Federated States of</option>
-									<option value="MD">Moldova, Republic of</option>
-									<option value="MC">Monaco</option>
-									<option value="MN">Mongolia</option>
-									<option value="ME">Montenegro</option>
-									<option value="MA">Morocco</option>
-									<option value="MZ">Mozambique</option>
-									<option value="MM">Myanmar</option>
-									<option value="NA">Namibia</option>
-									<option value="NR">Nauru</option>
-									<option value="NP">Nepal</option>
-									<option value="NL">Netherlands</option>
-									<option value="NZ">New Zealand</option>
-									<option value="NI">Nicaragua</option>
-									<option value="NE">Niger</option>
-									<option value="NG">Nigeria</option>
-									<option value="NO">Norway</option>
-									<option value="OM">Oman</option>
-									<option value="PK">Pakistan</option>
-									<option value="PW">Palau</option>
-									<option value="PA">Panama</option>
-									<option value="PG">Papua New Guinea</option>
-									<option value="PY">Paraguay</option>
-									<option value="PE">Peru</option>
-									<option value="PH">Philippines</option>
-									<option value="PL">Poland</option>
-									<option value="PT">Portugal</option>
-									<option value="PR">Puerto Rico</option>
-									<option value="QA">Qatar</option>
-									<option value="RO">Romania</option>
-									<option value="RU">Russian Federation</option>
-									<option value="RW">Rwanda</option>
-									<option value="KN">Saint Kitts and Nevis</option>
-									<option value="LC">Saint Lucia</option>
-									<option value="VC">Saint Vincent and the Grenadines</option>
-									<option value="WS">Samoa</option>
-									<option value="SM">San Marino</option>
-									<option value="ST">Sao Tome and Principe</option>
-									<option value="SA">Saudi Arabia</option>
-									<option value="SN">Senegal</option>
-									<option value="RS">Serbia</option>
-									<option value="SC">Seychelles</option>
-									<option value="SL">Sierra Leone</option>
-									<option value="SG">Singapore</option>
-									<option value="SK">Slovakia</option>
-									<option value="SI">Slovenia</option>
-									<option value="SB">Solomon Islands</option>
-									<option value="SO">Somalia</option>
-									<option value="ZA">South Africa</option>
-									<option value="ES">Spain</option>
-									<option value="LK">Sri Lanka</option>
-									<option value="SD">Sudan</option>
-									<option value="SR">Suriname</option>
-									<option value="SZ">Swaziland</option>
-									<option value="SE">Sweden</option>
-									<option value="CH">Switzerland</option>
-									<option value="SY">Syrian Arab Republic</option>
-									<option value="TW">Taiwan, Province of China</option>
-									<option value="TJ">Tajikistan</option>
-									<option value="TZ">Tanzania, United Republic of</option>
-									<option value="TH">Thailand</option>
-									<option value="TL">Timor-Leste</option>
-									<option value="TG">Togo</option>
-									<option value="TO">Tonga</option>
-									<option value="TT">Trinidad and Tobago</option>
-									<option value="TN">Tunisia</option>
-									<option value="TR">Turkey</option>
-									<option value="TM">Turkmenistan</option>
-									<option value="TV">Tuvalu</option>
-									<option value="UG">Uganda</option>
-									<option value="UA">Ukraine</option>
-									<option value="AE">United Arab Emirates</option>
-									<option value="GB">United Kingdom</option>
-									<option value="US">United States</option>
-									<option value="UY">Uruguay</option>
-									<option value="UZ">Uzbekistan</option>
-									<option value="VU">Vanuatu</option>
-									<option value="VE">Venezuela</option>
-									<option value="VN">Viet Nam</option>
-									<option value="YE">Yemen</option>
-									<option value="ZM">Zambia</option>
-									<option value="ZW">Zimbabwe</option> -->
-								</select>
-							</div>
-							<div class="mb-3 dropdown-input">
-								<label for="attendee-type" class="form-label">Select Attendee Type*</label>
-								<select class="" id="attendee-type" required>
-									<option value="presenter" disabled selected>Presenter</option>
-									<option value="listener">Listener</option>
-								</select>
-							</div>
-							<div class="mb-3">
-								<label for="file-input" class="form-label">Attach Your File *</label>
-								<input type="file" accept=".pdf,.docx,.tex,.latex" id="file-input" class="form-control" required />
-							</div>
-							<div class="mb-3">
-								<label for="paperTitle" class="form-label">Paper Title*</label>
-								<input type="text" class="form-control" id="paperTitle" required>
-							</div>
-							<div class="mb-3">
-								<label for="name" class="form-label">Name*</label>
-								<input type="text" class="form-control" id="name" required>
-							</div>
-							<div class="mb-3">
-								<label for="institution" class="form-label">Institution*</label>
-								<input type="text" class="form-control" id="institution" required>
-							</div>
-							<div class="mb-3 dropdown-input">
-								<label for="country" class="form-label">Country*</label>
-								<select class="" id="country" required>
-									<option value="" disabled selected>Select your country</option>
-									<option value="AF">Afghanistan</option>
-									<option value="AL">Albania</option>
-									<option value="DZ">Algeria</option>
-									<option value="AS">American Samoa</option>
-									<option value="AD">Andorra</option>
-									<option value="AO">Angola</option>
-									<option value="AI">Anguilla</option>
-									<option value="AQ">Antarctica</option>
-									<option value="AG">Antigua and Barbuda</option>
-									<option value="AR">Argentina</option>
-									<option value="AM">Armenia</option>
-									<option value="AW">Aruba</option>
-									<option value="AU">Australia</option>
-									<option value="AT">Austria</option>
-									<option value="AZ">Azerbaijan</option>
-									<option value="BS">Bahamas</option>
-									<option value="BH">Bahrain</option>
-									<option value="BD">Bangladesh</option>
-									<option value="BB">Barbados</option>
-									<option value="BY">Belarus</option>
-									<option value="BE">Belgium</option>
-									<option value="BZ">Belize</option>
-									<option value="BJ">Benin</option>
-									<option value="BM">Bermuda</option>
-									<option value="BT">Bhutan</option>
-									<option value="BO">Bolivia</option>
-									<option value="BA">Bosnia and Herzegovina</option>
-									<option value="BW">Botswana</option>
-									<option value="BR">Brazil</option>
-									<option value="BN">Brunei Darussalam</option>
-									<option value="BG">Bulgaria</option>
-									<option value="BF">Burkina Faso</option>
-									<option value="BI">Burundi</option>
-									<option value="KH">Cambodia</option>
-									<option value="CM">Cameroon</option>
-									<option value="CA">Canada</option>
-									<option value="CV">Cape Verde</option>
-									<option value="KY">Cayman Islands</option>
-									<option value="CF">Central African Republic</option>
-									<option value="TD">Chad</option>
-									<option value="CL">Chile</option>
-									<option value="CN">China</option>
-									<option value="CO">Colombia</option>
-									<option value="KM">Comoros</option>
-									<option value="CG">Congo</option>
-									<option value="CD">Congo, the Democratic Republic of the</option>
-									<option value="CR">Costa Rica</option>
-									<option value="CI">Côte d'Ivoire</option>
-									<option value="HR">Croatia</option>
-									<option value="CU">Cuba</option>
-									<option value="CY">Cyprus</option>
-									<option value="CZ">Czech Republic</option>
-									<option value="DK">Denmark</option>
-									<option value="DJ">Djibouti</option>
-									<option value="DM">Dominica</option>
-									<option value="DO">Dominican Republic</option>
-									<option value="EC">Ecuador</option>
-									<option value="EG">Egypt</option>
-									<option value="SV">El Salvador</option>
-									<option value="GQ">Equatorial Guinea</option>
-									<option value="ER">Eritrea</option>
-									<option value="EE">Estonia</option>
-									<option value="ET">Ethiopia</option>
-									<option value="FJ">Fiji</option>
-									<option value="FI">Finland</option>
-									<option value="FR">France</option>
-									<option value="GA">Gabon</option>
-									<option value="GM">Gambia</option>
-									<option value="GE">Georgia</option>
-									<option value="DE">Germany</option>
-									<option value="GH">Ghana</option>
-									<option value="GR">Greece</option>
-									<option value="GD">Grenada</option>
-									<option value="GU">Guam</option>
-									<option value="GT">Guatemala</option>
-									<option value="GN">Guinea</option>
-									<option value="GW">Guinea-Bissau</option>
-									<option value="GY">Guyana</option>
-									<option value="HT">Haiti</option>
-									<option value="HN">Honduras</option>
-									<option value="HK">Hong Kong</option>
-									<option value="HU">Hungary</option>
-									<option value="IS">Iceland</option>
-									<option value="IN" selected>India</option>
-									<option value="ID">Indonesia</option>
-									<option value="IR">Iran, Islamic Republic of</option>
-									<option value="IQ">Iraq</option>
-									<option value="IE">Ireland</option>
-									<option value="IL">Israel</option>
-									<option value="IT">Italy</option>
-									<option value="JM">Jamaica</option>
-									<option value="JP">Japan</option>
-									<option value="JO">Jordan</option>
-									<option value="KZ">Kazakhstan</option>
-									<option value="KE">Kenya</option>
-									<option value="KI">Kiribati</option>
-									<option value="KP">Korea, Democratic People's Republic of</option>
-									<option value="KR">Korea, Republic of</option>
-									<option value="KW">Kuwait</option>
-									<option value="KG">Kyrgyzstan</option>
-									<option value="LA">Lao People's Democratic Republic</option>
-									<option value="LV">Latvia</option>
-									<option value="LB">Lebanon</option>
-									<option value="LS">Lesotho</option>
-									<option value="LR">Liberia</option>
-									<option value="LY">Libya</option>
-									<option value="LI">Liechtenstein</option>
-									<option value="LT">Lithuania</option>
-									<option value="LU">Luxembourg</option>
-									<option value="MO">Macao</option>
-									<option value="MK">Macedonia, the former Yugoslav Republic of</option>
-									<option value="MG">Madagascar</option>
-									<option value="MW">Malawi</option>
-									<option value="MY">Malaysia</option>
-									<option value="MV">Maldives</option>
-									<option value="ML">Mali</option>
-									<option value="MT">Malta</option>
-									<option value="MH">Marshall Islands</option>
-									<option value="MR">Mauritania</option>
-									<option value="MU">Mauritius</option>
-									<option value="MX">Mexico</option>
-									<option value="FM">Micronesia, Federated States of</option>
-									<option value="MD">Moldova, Republic of</option>
-									<option value="MC">Monaco</option>
-									<option value="MN">Mongolia</option>
-									<option value="ME">Montenegro</option>
-									<option value="MA">Morocco</option>
-									<option value="MZ">Mozambique</option>
-									<option value="MM">Myanmar</option>
-									<option value="NA">Namibia</option>
-									<option value="NR">Nauru</option>
-									<option value="NP">Nepal</option>
-									<option value="NL">Netherlands</option>
-									<option value="NZ">New Zealand</option>
-									<option value="NI">Nicaragua</option>
-									<option value="NE">Niger</option>
-									<option value="NG">Nigeria</option>
-									<option value="NO">Norway</option>
-									<option value="OM">Oman</option>
-									<option value="PK">Pakistan</option>
-									<option value="PW">Palau</option>
-									<option value="PA">Panama</option>
-									<option value="PG">Papua New Guinea</option>
-									<option value="PY">Paraguay</option>
-									<option value="PE">Peru</option>
-									<option value="PH">Philippines</option>
-									<option value="PL">Poland</option>
-									<option value="PT">Portugal</option>
-									<option value="PR">Puerto Rico</option>
-									<option value="QA">Qatar</option>
-									<option value="RO">Romania</option>
-									<option value="RU">Russian Federation</option>
-									<option value="RW">Rwanda</option>
-									<option value="KN">Saint Kitts and Nevis</option>
-									<option value="LC">Saint Lucia</option>
-									<option value="VC">Saint Vincent and the Grenadines</option>
-									<option value="WS">Samoa</option>
-									<option value="SM">San Marino</option>
-									<option value="ST">Sao Tome and Principe</option>
-									<option value="SA">Saudi Arabia</option>
-									<option value="SN">Senegal</option>
-									<option value="RS">Serbia</option>
-									<option value="SC">Seychelles</option>
-									<option value="SL">Sierra Leone</option>
-									<option value="SG">Singapore</option>
-									<option value="SK">Slovakia</option>
-									<option value="SI">Slovenia</option>
-									<option value="SB">Solomon Islands</option>
-									<option value="SO">Somalia</option>
-									<option value="ZA">South Africa</option>
-									<option value="ES">Spain</option>
-									<option value="LK">Sri Lanka</option>
-									<option value="SD">Sudan</option>
-									<option value="SR">Suriname</option>
-									<option value="SZ">Swaziland</option>
-									<option value="SE">Sweden</option>
-									<option value="CH">Switzerland</option>
-									<option value="SY">Syrian Arab Republic</option>
-									<option value="TW">Taiwan, Province of China</option>
-									<option value="TJ">Tajikistan</option>
-									<option value="TZ">Tanzania, United Republic of</option>
-									<option value="TH">Thailand</option>
-									<option value="TL">Timor-Leste</option>
-									<option value="TG">Togo</option>
-									<option value="TO">Tonga</option>
-									<option value="TT">Trinidad and Tobago</option>
-									<option value="TN">Tunisia</option>
-									<option value="TR">Turkey</option>
-									<option value="TM">Turkmenistan</option>
-									<option value="TV">Tuvalu</option>
-									<option value="UG">Uganda</option>
-									<option value="UA">Ukraine</option>
-									<option value="AE">United Arab Emirates</option>
-									<option value="GB">United Kingdom</option>
-									<option value="US">United States</option>
-									<option value="UY">Uruguay</option>
-									<option value="UZ">Uzbekistan</option>
-									<option value="VU">Vanuatu</option>
-									<option value="VE">Venezuela</option>
-									<option value="VN">Viet Nam</option>
-									<option value="YE">Yemen</option>
-									<option value="ZM">Zambia</option>
-									<option value="ZW">Zimbabwe</option>
-								</select>
-							</div>
-							<div class="mb-3">
-								<label for="email" class="form-label">Email Address*</label>
-								<input type="email" class="form-control" id="email" required>
-							</div>
-							<div class="mb-3">
-								<label for="phone" class="form-label">Phone *</label>
-								<input type="tel" class="form-control" id="phone" required>
-							</div>
-							<div class="mb-3">
-								<label for="message" class="form-label">Message*</label>
-								<textarea class="form-control" id="message" rows="3" required></textarea>
-							</div>
-							<div class="mb-3">
-								<label for="referralCode" class="form-label">Referral Code (Optional)</label>
-								<input type="text" class="form-control" id="referralCode" placeholder="Enter referral code if you have one">
-								<small class="form-text text-muted">If you were referred by an admin, please enter their referral code here.</small>
-							</div>
-							<!-- Personal Information -->
-							<!-- <h4 class="mb-3">Personal Information</h4>
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label for="firstName" class="form-label">First Name*</label>
-									<input type="text" class="form-control" id="firstName" required>
+							<!-- Conference Information -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-calendar-check me-2"></i>Conference Information
+								</h4>
+								<div class="mb-3 dropdown-input">
+									<label for="conference-title" class="form-label">Select Conference*</label>
+									<select class="" id="conference-title" required>
+										<option value="" disabled>Select Conference title</option>
+										<option value="ICMMCS" selected>ICMMCS 2025</option>
+									</select>
 								</div>
-								<div class="col-md-6">
-									<label for="lastName" class="form-label">Last Name*</label>
-									<input type="text" class="form-control" id="lastName" required>
+								<div class="mb-3 dropdown-input">
+									<label for="place-date" class="form-label">Conference place & Date*</label>
+									<select class="" id="place-date" required>
+										<option value="" disabled>Select your country</option>
+										<option value="MUC - 10 November 2025" selected>Majan University College, Muscat, Oman (10 November 2025)</option>
+									</select>
 								</div>
 							</div>
 
-							<div class="mb-3">
-								<label for="email" class="form-label">Email Address*</label>
-								<input type="email" class="form-control" id="email" required>
+							<!-- Title and Abstract Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-file-text me-2"></i>Title and Abstract
+								</h4>
+								<div class="mb-3">
+									<label for="paperTitle" class="form-label">Paper Title*</label>
+									<input type="text" class="form-control" id="paperTitle" placeholder="Enter the full title of your paper" required>
+									<small class="form-text text-muted">Use a clear, descriptive title that accurately reflects your research</small>
+								</div>
+								<div class="mb-3">
+									<label for="paperAbstract" class="form-label">Abstract*</label>
+									<textarea class="form-control" id="paperAbstract" rows="8" placeholder="Provide a comprehensive summary of your paper including: background, objectives, methodology, results, and conclusions (250-500 words)" required></textarea>
+									<small class="form-text text-muted">Word count: <span id="abstractWordCount">0</span>/500 | <span id="abstractStatus">Please enter your abstract</span></small>
+								</div>
+								<div class="mb-3">
+									<label for="keywords" class="form-label">Keywords*</label>
+									<input type="text" class="form-control" id="keywords" placeholder="Enter keywords separated by commas (e.g., machine learning, data science, algorithms)" required>
+									<small class="form-text text-muted">Enter 3-6 keywords that best describe your paper. These will be used for indexing and search purposes.</small>
+								</div>
 							</div>
 
-							<div class="mb-3">
-								<label for="email" class="form-label">Phone *</label>
-								<input type="tel" class="form-control" id="phone" required>
-							</div> -->
+							<!-- Author Information Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-users me-2"></i>Author Information
+								</h4>
+								
+								<!-- Primary Author -->
+								<div class="card mb-3" style="border-left: 4px solid #019087;">
+									<div class="card-header bg-light">
+										<h5 class="mb-0">Primary Author</h5>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6 mb-3">
+												<label for="authorName" class="form-label">Full Name*</label>
+												<input type="text" class="form-control" id="authorName" placeholder="Enter your full name" required>
+											</div>
+											<div class="col-md-6 mb-3">
+												<label for="authorEmail" class="form-label">Email Address*</label>
+												<input type="email" class="form-control" id="authorEmail" placeholder="Enter your email address" required>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6 mb-3">
+												<label for="authorInstitution" class="form-label">Institution/Affiliation*</label>
+												<input type="text" class="form-control" id="authorInstitution" placeholder="Enter your institution or organization" required>
+											</div>
+											<div class="col-md-6 mb-3">
+												<label for="authorCountry" class="form-label">Country*</label>
+												<select class="form-control" id="authorCountry" required>
+													<option value="" disabled selected>Select your country</option>
+													<option value="IN" selected>India</option>
+													<option value="OM">Oman</option>
+													<option value="US">United States</option>
+													<option value="GB">United Kingdom</option>
+													<option value="CA">Canada</option>
+													<option value="AU">Australia</option>
+													<option value="DE">Germany</option>
+													<option value="FR">France</option>
+													<option value="JP">Japan</option>
+													<option value="CN">China</option>
+													<option value="SG">Singapore</option>
+													<option value="AE">United Arab Emirates</option>
+													<option value="SA">Saudi Arabia</option>
+													<option value="QA">Qatar</option>
+													<option value="KW">Kuwait</option>
+													<option value="BH">Bahrain</option>
+													<option value="AF">Afghanistan</option>
+													<option value="AL">Albania</option>
+													<option value="DZ">Algeria</option>
+													<option value="AS">American Samoa</option>
+													<option value="AD">Andorra</option>
+													<option value="AO">Angola</option>
+													<option value="AI">Anguilla</option>
+													<option value="AQ">Antarctica</option>
+													<option value="AG">Antigua and Barbuda</option>
+													<option value="AR">Argentina</option>
+													<option value="AM">Armenia</option>
+													<option value="AW">Aruba</option>
+													<option value="AT">Austria</option>
+													<option value="AZ">Azerbaijan</option>
+													<option value="BS">Bahamas</option>
+													<option value="BD">Bangladesh</option>
+													<option value="BB">Barbados</option>
+													<option value="BY">Belarus</option>
+													<option value="BE">Belgium</option>
+													<option value="BZ">Belize</option>
+													<option value="BJ">Benin</option>
+													<option value="BM">Bermuda</option>
+													<option value="BT">Bhutan</option>
+													<option value="BO">Bolivia</option>
+													<option value="BA">Bosnia and Herzegovina</option>
+													<option value="BW">Botswana</option>
+													<option value="BR">Brazil</option>
+													<option value="BN">Brunei Darussalam</option>
+													<option value="BG">Bulgaria</option>
+													<option value="BF">Burkina Faso</option>
+													<option value="BI">Burundi</option>
+													<option value="KH">Cambodia</option>
+													<option value="CM">Cameroon</option>
+													<option value="CV">Cape Verde</option>
+													<option value="KY">Cayman Islands</option>
+													<option value="CF">Central African Republic</option>
+													<option value="TD">Chad</option>
+													<option value="CL">Chile</option>
+													<option value="CO">Colombia</option>
+													<option value="KM">Comoros</option>
+													<option value="CG">Congo</option>
+													<option value="CD">Congo, the Democratic Republic of the</option>
+													<option value="CR">Costa Rica</option>
+													<option value="CI">Côte d'Ivoire</option>
+													<option value="HR">Croatia</option>
+													<option value="CU">Cuba</option>
+													<option value="CY">Cyprus</option>
+													<option value="CZ">Czech Republic</option>
+													<option value="DK">Denmark</option>
+													<option value="DJ">Djibouti</option>
+													<option value="DM">Dominica</option>
+													<option value="DO">Dominican Republic</option>
+													<option value="EC">Ecuador</option>
+													<option value="EG">Egypt</option>
+													<option value="SV">El Salvador</option>
+													<option value="GQ">Equatorial Guinea</option>
+													<option value="ER">Eritrea</option>
+													<option value="EE">Estonia</option>
+													<option value="ET">Ethiopia</option>
+													<option value="FJ">Fiji</option>
+													<option value="FI">Finland</option>
+													<option value="GA">Gabon</option>
+													<option value="GM">Gambia</option>
+													<option value="GE">Georgia</option>
+													<option value="GH">Ghana</option>
+													<option value="GR">Greece</option>
+													<option value="GD">Grenada</option>
+													<option value="GU">Guam</option>
+													<option value="GT">Guatemala</option>
+													<option value="GN">Guinea</option>
+													<option value="GW">Guinea-Bissau</option>
+													<option value="GY">Guyana</option>
+													<option value="HT">Haiti</option>
+													<option value="HN">Honduras</option>
+													<option value="HK">Hong Kong</option>
+													<option value="HU">Hungary</option>
+													<option value="IS">Iceland</option>
+													<option value="ID">Indonesia</option>
+													<option value="IR">Iran, Islamic Republic of</option>
+													<option value="IQ">Iraq</option>
+													<option value="IE">Ireland</option>
+													<option value="IL">Israel</option>
+													<option value="IT">Italy</option>
+													<option value="JM">Jamaica</option>
+													<option value="JO">Jordan</option>
+													<option value="KZ">Kazakhstan</option>
+													<option value="KE">Kenya</option>
+													<option value="KI">Kiribati</option>
+													<option value="KP">Korea, Democratic People's Republic of</option>
+													<option value="KR">Korea, Republic of</option>
+													<option value="KG">Kyrgyzstan</option>
+													<option value="LA">Lao People's Democratic Republic</option>
+													<option value="LV">Latvia</option>
+													<option value="LB">Lebanon</option>
+													<option value="LS">Lesotho</option>
+													<option value="LR">Liberia</option>
+													<option value="LY">Libya</option>
+													<option value="LI">Liechtenstein</option>
+													<option value="LT">Lithuania</option>
+													<option value="LU">Luxembourg</option>
+													<option value="MO">Macao</option>
+													<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+													<option value="MG">Madagascar</option>
+													<option value="MW">Malawi</option>
+													<option value="MY">Malaysia</option>
+													<option value="MV">Maldives</option>
+													<option value="ML">Mali</option>
+													<option value="MT">Malta</option>
+													<option value="MH">Marshall Islands</option>
+													<option value="MR">Mauritania</option>
+													<option value="MU">Mauritius</option>
+													<option value="MX">Mexico</option>
+													<option value="FM">Micronesia, Federated States of</option>
+													<option value="MD">Moldova, Republic of</option>
+													<option value="MC">Monaco</option>
+													<option value="MN">Mongolia</option>
+													<option value="ME">Montenegro</option>
+													<option value="MA">Morocco</option>
+													<option value="MZ">Mozambique</option>
+													<option value="MM">Myanmar</option>
+													<option value="NA">Namibia</option>
+													<option value="NR">Nauru</option>
+													<option value="NP">Nepal</option>
+													<option value="NL">Netherlands</option>
+													<option value="NZ">New Zealand</option>
+													<option value="NI">Nicaragua</option>
+													<option value="NE">Niger</option>
+													<option value="NG">Nigeria</option>
+													<option value="NO">Norway</option>
+													<option value="PK">Pakistan</option>
+													<option value="PW">Palau</option>
+													<option value="PA">Panama</option>
+													<option value="PG">Papua New Guinea</option>
+													<option value="PY">Paraguay</option>
+													<option value="PE">Peru</option>
+													<option value="PH">Philippines</option>
+													<option value="PL">Poland</option>
+													<option value="PT">Portugal</option>
+													<option value="PR">Puerto Rico</option>
+													<option value="RO">Romania</option>
+													<option value="RU">Russian Federation</option>
+													<option value="RW">Rwanda</option>
+													<option value="KN">Saint Kitts and Nevis</option>
+													<option value="LC">Saint Lucia</option>
+													<option value="VC">Saint Vincent and the Grenadines</option>
+													<option value="WS">Samoa</option>
+													<option value="SM">San Marino</option>
+													<option value="ST">Sao Tome and Principe</option>
+													<option value="SN">Senegal</option>
+													<option value="RS">Serbia</option>
+													<option value="SC">Seychelles</option>
+													<option value="SL">Sierra Leone</option>
+													<option value="SK">Slovakia</option>
+													<option value="SI">Slovenia</option>
+													<option value="SB">Solomon Islands</option>
+													<option value="SO">Somalia</option>
+													<option value="ZA">South Africa</option>
+													<option value="ES">Spain</option>
+													<option value="LK">Sri Lanka</option>
+													<option value="SD">Sudan</option>
+													<option value="SR">Suriname</option>
+													<option value="SZ">Swaziland</option>
+													<option value="SE">Sweden</option>
+													<option value="CH">Switzerland</option>
+													<option value="SY">Syrian Arab Republic</option>
+													<option value="TW">Taiwan, Province of China</option>
+													<option value="TJ">Tajikistan</option>
+													<option value="TZ">Tanzania, United Republic of</option>
+													<option value="TH">Thailand</option>
+													<option value="TL">Timor-Leste</option>
+													<option value="TG">Togo</option>
+													<option value="TO">Tonga</option>
+													<option value="TT">Trinidad and Tobago</option>
+													<option value="TN">Tunisia</option>
+													<option value="TR">Turkey</option>
+													<option value="TM">Turkmenistan</option>
+													<option value="TV">Tuvalu</option>
+													<option value="UG">Uganda</option>
+													<option value="UA">Ukraine</option>
+													<option value="UY">Uruguay</option>
+													<option value="UZ">Uzbekistan</option>
+													<option value="VU">Vanuatu</option>
+													<option value="VE">Venezuela</option>
+													<option value="VN">Viet Nam</option>
+													<option value="YE">Yemen</option>
+													<option value="ZM">Zambia</option>
+													<option value="ZW">Zimbabwe</option>
+												</select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6 mb-3">
+												<label for="authorOrcid" class="form-label">ORCID ID (Optional)</label>
+												<input type="text" class="form-control" id="authorOrcid" placeholder="e.g., 0000-0000-0000-0000">
+												<small class="form-text text-muted">Your ORCID identifier if you have one</small>
+											</div>
+											<div class="col-md-6 mb-3">
+												<div class="form-check mt-4">
+													<input class="form-check-input" type="checkbox" id="correspondingAuthor" checked>
+													<label class="form-check-label" for="correspondingAuthor">
+														Corresponding Author
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 
-							<!-- Institution Information -->
-							<!-- <h4 class="mb-3">Institution Information</h4>
-							<div class="mb-3">
-								<label for="institution" class="form-label">Institution/Organization*</label>
-								<input type="text" class="form-control" id="institution" required>
-							</div> -->
-
-							<!-- Information about Research Paper -->
-							<!-- <h4 class="mb-3">Information about Research Paper</h4>
-							<div class="mb-3">
-								<label for="paperSubject" class="form-label">Paper Subject*</label>
-								<input type="text" class="form-control" id="paperSubject" required>
-							</div>
-							<div class="mb-3">
-								<label for="paperTitle" class="form-label">Paper Title*</label>
-								<input type="text" class="form-control" id="paperTitle" required>
-							</div>
-							<div class="mb-3">
-								<label for="paperAbstract" class="form-label">Paper Abstract*</label>
-								<textarea class="form-control" id="paperAbstract" rows="3" required></textarea>
+								<!-- Co-authors Section -->
+								<div class="mb-3">
+									<button type="button" class="btn btn-outline-primary btn-sm" id="addCoAuthor">
+										<i class="fa-solid fa-plus me-2"></i>Add Co-author
+									</button>
+									<small class="form-text text-muted d-block mt-1">You can add up to 5 co-authors. Each co-author will receive a copy of the submission confirmation.</small>
+								</div>
+								<div id="coAuthorsContainer"></div>
 							</div>
 
-							<div class="mb-3 dropdown-input">
-								<label for="country" class="form-label">Country*</label>
-								<select class="" id="country" required>
-									<option value="" disabled selected>Select your country</option>
-									<option value="AF">Afghanistan</option>
-									<option value="AL">Albania</option>
-									<option value="DZ">Algeria</option>
-									<option value="AS">American Samoa</option>
-									<option value="AD">Andorra</option>
-									<option value="AO">Angola</option>
-									<option value="AI">Anguilla</option>
-									<option value="AQ">Antarctica</option>
-									<option value="AG">Antigua and Barbuda</option>
-									<option value="AR">Argentina</option>
-									<option value="AM">Armenia</option>
-									<option value="AW">Aruba</option>
-									<option value="AU">Australia</option>
-									<option value="AT">Austria</option>
-									<option value="AZ">Azerbaijan</option>
-									<option value="BS">Bahamas</option>
-									<option value="BH">Bahrain</option>
-									<option value="BD">Bangladesh</option>
-									<option value="BB">Barbados</option>
-									<option value="BY">Belarus</option>
-									<option value="BE">Belgium</option>
-									<option value="BZ">Belize</option>
-									<option value="BJ">Benin</option>
-									<option value="BM">Bermuda</option>
-									<option value="BT">Bhutan</option>
-									<option value="BO">Bolivia</option>
-									<option value="BA">Bosnia and Herzegovina</option>
-									<option value="BW">Botswana</option>
-									<option value="BR">Brazil</option>
-									<option value="BN">Brunei Darussalam</option>
-									<option value="BG">Bulgaria</option>
-									<option value="BF">Burkina Faso</option>
-									<option value="BI">Burundi</option>
-									<option value="KH">Cambodia</option>
-									<option value="CM">Cameroon</option>
-									<option value="CA">Canada</option>
-									<option value="CV">Cape Verde</option>
-									<option value="KY">Cayman Islands</option>
-									<option value="CF">Central African Republic</option>
-									<option value="TD">Chad</option>
-									<option value="CL">Chile</option>
-									<option value="CN">China</option>
-									<option value="CO">Colombia</option>
-									<option value="KM">Comoros</option>
-									<option value="CG">Congo</option>
-									<option value="CD">Congo, the Democratic Republic of the</option>
-									<option value="CR">Costa Rica</option>
-									<option value="CI">Côte d'Ivoire</option>
-									<option value="HR">Croatia</option>
-									<option value="CU">Cuba</option>
-									<option value="CY">Cyprus</option>
-									<option value="CZ">Czech Republic</option>
-									<option value="DK">Denmark</option>
-									<option value="DJ">Djibouti</option>
-									<option value="DM">Dominica</option>
-									<option value="DO">Dominican Republic</option>
-									<option value="EC">Ecuador</option>
-									<option value="EG">Egypt</option>
-									<option value="SV">El Salvador</option>
-									<option value="GQ">Equatorial Guinea</option>
-									<option value="ER">Eritrea</option>
-									<option value="EE">Estonia</option>
-									<option value="ET">Ethiopia</option>
-									<option value="FJ">Fiji</option>
-									<option value="FI">Finland</option>
-									<option value="FR">France</option>
-									<option value="GA">Gabon</option>
-									<option value="GM">Gambia</option>
-									<option value="GE">Georgia</option>
-									<option value="DE">Germany</option>
-									<option value="GH">Ghana</option>
-									<option value="GR">Greece</option>
-									<option value="GD">Grenada</option>
-									<option value="GU">Guam</option>
-									<option value="GT">Guatemala</option>
-									<option value="GN">Guinea</option>
-									<option value="GW">Guinea-Bissau</option>
-									<option value="GY">Guyana</option>
-									<option value="HT">Haiti</option>
-									<option value="HN">Honduras</option>
-									<option value="HK">Hong Kong</option>
-									<option value="HU">Hungary</option>
-									<option value="IS">Iceland</option>
-									<option value="IN">India</option>
-									<option value="ID">Indonesia</option>
-									<option value="IR">Iran, Islamic Republic of</option>
-									<option value="IQ">Iraq</option>
-									<option value="IE">Ireland</option>
-									<option value="IL">Israel</option>
-									<option value="IT">Italy</option>
-									<option value="JM">Jamaica</option>
-									<option value="JP">Japan</option>
-									<option value="JO">Jordan</option>
-									<option value="KZ">Kazakhstan</option>
-									<option value="KE">Kenya</option>
-									<option value="KI">Kiribati</option>
-									<option value="KP">Korea, Democratic People's Republic of</option>
-									<option value="KR">Korea, Republic of</option>
-									<option value="KW">Kuwait</option>
-									<option value="KG">Kyrgyzstan</option>
-									<option value="LA">Lao People's Democratic Republic</option>
-									<option value="LV">Latvia</option>
-									<option value="LB">Lebanon</option>
-									<option value="LS">Lesotho</option>
-									<option value="LR">Liberia</option>
-									<option value="LY">Libya</option>
-									<option value="LI">Liechtenstein</option>
-									<option value="LT">Lithuania</option>
-									<option value="LU">Luxembourg</option>
-									<option value="MO">Macao</option>
-									<option value="MK">Macedonia, the former Yugoslav Republic of</option>
-									<option value="MG">Madagascar</option>
-									<option value="MW">Malawi</option>
-									<option value="MY">Malaysia</option>
-									<option value="MV">Maldives</option>
-									<option value="ML">Mali</option>
-									<option value="MT">Malta</option>
-									<option value="MH">Marshall Islands</option>
-									<option value="MR">Mauritania</option>
-									<option value="MU">Mauritius</option>
-									<option value="MX">Mexico</option>
-									<option value="FM">Micronesia, Federated States of</option>
-									<option value="MD">Moldova, Republic of</option>
-									<option value="MC">Monaco</option>
-									<option value="MN">Mongolia</option>
-									<option value="ME">Montenegro</option>
-									<option value="MA">Morocco</option>
-									<option value="MZ">Mozambique</option>
-									<option value="MM">Myanmar</option>
-									<option value="NA">Namibia</option>
-									<option value="NR">Nauru</option>
-									<option value="NP">Nepal</option>
-									<option value="NL">Netherlands</option>
-									<option value="NZ">New Zealand</option>
-									<option value="NI">Nicaragua</option>
-									<option value="NE">Niger</option>
-									<option value="NG">Nigeria</option>
-									<option value="NO">Norway</option>
-									<option value="OM">Oman</option>
-									<option value="PK">Pakistan</option>
-									<option value="PW">Palau</option>
-									<option value="PA">Panama</option>
-									<option value="PG">Papua New Guinea</option>
-									<option value="PY">Paraguay</option>
-									<option value="PE">Peru</option>
-									<option value="PH">Philippines</option>
-									<option value="PL">Poland</option>
-									<option value="PT">Portugal</option>
-									<option value="PR">Puerto Rico</option>
-									<option value="QA">Qatar</option>
-									<option value="RO">Romania</option>
-									<option value="RU">Russian Federation</option>
-									<option value="RW">Rwanda</option>
-									<option value="KN">Saint Kitts and Nevis</option>
-									<option value="LC">Saint Lucia</option>
-									<option value="VC">Saint Vincent and the Grenadines</option>
-									<option value="WS">Samoa</option>
-									<option value="SM">San Marino</option>
-									<option value="ST">Sao Tome and Principe</option>
-									<option value="SA">Saudi Arabia</option>
-									<option value="SN">Senegal</option>
-									<option value="RS">Serbia</option>
-									<option value="SC">Seychelles</option>
-									<option value="SL">Sierra Leone</option>
-									<option value="SG">Singapore</option>
-									<option value="SK">Slovakia</option>
-									<option value="SI">Slovenia</option>
-									<option value="SB">Solomon Islands</option>
-									<option value="SO">Somalia</option>
-									<option value="ZA">South Africa</option>
-									<option value="ES">Spain</option>
-									<option value="LK">Sri Lanka</option>
-									<option value="SD">Sudan</option>
-									<option value="SR">Suriname</option>
-									<option value="SZ">Swaziland</option>
-									<option value="SE">Sweden</option>
-									<option value="CH">Switzerland</option>
-									<option value="SY">Syrian Arab Republic</option>
-									<option value="TW">Taiwan, Province of China</option>
-									<option value="TJ">Tajikistan</option>
-									<option value="TZ">Tanzania, United Republic of</option>
-									<option value="TH">Thailand</option>
-									<option value="TL">Timor-Leste</option>
-									<option value="TG">Togo</option>
-									<option value="TO">Tonga</option>
-									<option value="TT">Trinidad and Tobago</option>
-									<option value="TN">Tunisia</option>
-									<option value="TR">Turkey</option>
-									<option value="TM">Turkmenistan</option>
-									<option value="TV">Tuvalu</option>
-									<option value="UG">Uganda</option>
-									<option value="UA">Ukraine</option>
-									<option value="AE">United Arab Emirates</option>
-									<option value="GB">United Kingdom</option>
-									<option value="US">United States</option>
-									<option value="UY">Uruguay</option>
-									<option value="UZ">Uzbekistan</option>
-									<option value="VU">Vanuatu</option>
-									<option value="VE">Venezuela</option>
-									<option value="VN">Viet Nam</option>
-									<option value="YE">Yemen</option>
-									<option value="ZM">Zambia</option>
-									<option value="ZW">Zimbabwe</option>
-								</select>
-							</div> -->
+							<!-- Subject Areas Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-tags me-2"></i>Subject Areas / Topics
+								</h4>
+								<div class="mb-3">
+									<label class="form-label">Select Primary Subject Area*</label>
+									<select class="form-control" id="primarySubject" required>
+										<option value="" disabled selected>Choose the primary subject area</option>
+										<option value="mathematics">Mathematics</option>
+										<option value="management">Management</option>
+										<option value="computer_science">Computer Science</option>
+										<option value="artificial_intelligence">Artificial Intelligence</option>
+										<option value="data_science">Data Science</option>
+										<option value="machine_learning">Machine Learning</option>
+										<option value="cybersecurity">Cybersecurity</option>
+										<option value="software_engineering">Software Engineering</option>
+										<option value="database_systems">Database Systems</option>
+										<option value="networks">Computer Networks</option>
+										<option value="optimization">Optimization</option>
+										<option value="statistics">Statistics</option>
+										<option value="operations_research">Operations Research</option>
+										<option value="business_analytics">Business Analytics</option>
+										<option value="information_systems">Information Systems</option>
+										<option value="other">Other</option>
+									</select>
+									<small class="form-text text-muted">This will be used for initial review assignment and session planning</small>
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Additional Subject Areas (Optional)</label>
+									<small class="form-text text-muted d-block mb-2">Select all relevant areas that apply to your research</small>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_ai" value="artificial_intelligence">
+												<label class="form-check-label" for="topic_ai">Artificial Intelligence</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_ml" value="machine_learning">
+												<label class="form-check-label" for="topic_ml">Machine Learning</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_ds" value="data_science">
+												<label class="form-check-label" for="topic_ds">Data Science</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_cs" value="cybersecurity">
+												<label class="form-check-label" for="topic_cs">Cybersecurity</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_se" value="software_engineering">
+												<label class="form-check-label" for="topic_se">Software Engineering</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_db" value="database_systems">
+												<label class="form-check-label" for="topic_db">Database Systems</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_net" value="networks">
+												<label class="form-check-label" for="topic_net">Computer Networks</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_opt" value="optimization">
+												<label class="form-check-label" for="topic_opt">Optimization</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_stat" value="statistics">
+												<label class="form-check-label" for="topic_stat">Statistics</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_or" value="operations_research">
+												<label class="form-check-label" for="topic_or">Operations Research</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_ba" value="business_analytics">
+												<label class="form-check-label" for="topic_ba">Business Analytics</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_is" value="information_systems">
+												<label class="form-check-label" for="topic_is">Information Systems</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_math" value="mathematics">
+												<label class="form-check-label" for="topic_math">Mathematics</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="topic_mgmt" value="management">
+												<label class="form-check-label" for="topic_mgmt">Management</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- File Upload Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-upload me-2"></i>File Upload
+								</h4>
+								<div class="mb-3">
+									<label for="paperFile" class="form-label">Paper File (PDF)*</label>
+									<input type="file" accept=".pdf" id="paperFile" class="form-control" required />
+									<small class="form-text text-muted">Upload your paper in PDF format (max 10MB). Ensure the paper is properly formatted and includes all sections.</small>
+								</div>
+								<div class="mb-3">
+									<label for="supplementaryFile" class="form-label">Supplementary Material (Optional)</label>
+									<input type="file" accept=".pdf,.zip,.rar,.doc,.docx" id="supplementaryFile" class="form-control" />
+									<small class="form-text text-muted">Additional data, code, appendices, or extended results (max 20MB). This will be made available to reviewers.</small>
+								</div>
+								<div class="mb-3">
+									<label for="sourceCodeFile" class="form-label">Source Code / Reproducibility Artifacts (Optional)</label>
+									<input type="file" accept=".zip,.rar,.tar.gz,.py,.java,.cpp,.c,.js,.html,.css" id="sourceCodeFile" class="form-control" />
+									<small class="form-text text-muted">Source code, datasets, or reproducibility materials. This helps reviewers verify your results and promotes open science.</small>
+								</div>
+								<div class="alert alert-info">
+									<i class="fa-solid fa-info-circle me-2"></i>
+									<strong>File Requirements:</strong> All files should be properly named and virus-free. Large files may take longer to upload.
+								</div>
+							</div>
+
+							<!-- Additional Declarations Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-shield-alt me-2"></i>Additional Declarations
+								</h4>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="ethicsCompliance" required>
+										<label class="form-check-label" for="ethicsCompliance">
+											I confirm that this research complies with ethical standards and guidelines, including data privacy and human subject protection where applicable*
+										</label>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="dataAvailability">
+										<label class="form-check-label" for="dataAvailability">
+											I confirm that datasets and code used in this research are available for reproducibility (if applicable)
+										</label>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="preprintPolicy">
+										<label class="form-check-label" for="preprintPolicy">
+											This work has been previously published as a preprint (e.g., on arXiv, bioRxiv, etc.)
+										</label>
+									</div>
+								</div>
+								<div class="mb-3" id="preprintDetails" style="display: none;">
+									<label for="preprintUrl" class="form-label">Preprint URL*</label>
+									<input type="url" class="form-control" id="preprintUrl" placeholder="https://arxiv.org/abs/...">
+									<small class="form-text text-muted">Please provide the direct link to your preprint</small>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="conflictOfInterest">
+										<label class="form-check-label" for="conflictOfInterest">
+											I declare that there are no conflicts of interest related to this submission
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- Supplementary Questions Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-question-circle me-2"></i>Supplementary Questions
+								</h4>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="previouslySubmitted">
+										<label class="form-check-label" for="previouslySubmitted">
+											Has this paper been previously submitted to another conference or journal?
+										</label>
+									</div>
+								</div>
+								<div class="mb-3" id="previousSubmissionDetails" style="display: none;">
+									<label for="previousSubmissionInfo" class="form-label">Please provide details about the previous submission</label>
+									<textarea class="form-control" id="previousSubmissionInfo" rows="3" placeholder="Conference/journal name, submission date, and outcome..."></textarea>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="willingToReview">
+										<label class="form-check-label" for="willingToReview">
+											Are you willing to serve as a reviewer for this conference?
+										</label>
+									</div>
+									<small class="form-text text-muted">Reviewers receive priority consideration for future submissions and conference benefits</small>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="aiGeneratedContent">
+										<label class="form-check-label" for="aiGeneratedContent">
+											Does this submission include any AI-generated content?
+										</label>
+									</div>
+								</div>
+								<div class="mb-3" id="aiContentDetails" style="display: none;">
+									<label for="aiContentDescription" class="form-label">Please describe the AI-generated content*</label>
+									<textarea class="form-control" id="aiContentDescription" rows="3" placeholder="Describe how AI was used in your research, including tools, models, and extent of AI assistance..."></textarea>
+									<small class="form-text text-muted">This information helps ensure transparency and proper attribution</small>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="studentPaper">
+										<label class="form-check-label" for="studentPaper">
+											Is this a student paper (primary author is a student)?
+										</label>
+									</div>
+									<small class="form-text text-muted">Student papers may be eligible for special recognition and reduced fees</small>
+								</div>
+							</div>
+
+							<!-- Agreement Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-handshake me-2"></i>Agreement to Terms
+								</h4>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="agreeTerms" required>
+										<label class="form-check-label" for="agreeTerms">
+											I agree to the submission policies, deadlines, and formatting rules of ICMMCS 2025*
+										</label>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="agreePresentation" required>
+										<label class="form-check-label" for="agreePresentation">
+											I confirm that if accepted, at least one author will present the paper at the conference*
+										</label>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="agreePublication" required>
+										<label class="form-check-label" for="agreePublication">
+											I agree to the publication terms and copyright transfer if the paper is accepted*
+										</label>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="agreeReview" required>
+										<label class="form-check-label" for="agreeReview">
+											I understand that my paper will undergo peer review and I agree to address reviewer comments if requested*
+										</label>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="agreeDataSharing" required>
+										<label class="form-check-label" for="agreeDataSharing">
+											I agree to share anonymized data and code for reproducibility purposes if requested by reviewers*
+										</label>
+									</div>
+								</div>
+								<div class="alert alert-warning">
+									<i class="fa-solid fa-exclamation-triangle me-2"></i>
+									<strong>Important:</strong> By submitting this form, you acknowledge that all information provided is accurate and complete. False or misleading information may result in rejection of your submission.
+								</div>
+							</div>
+
+							<!-- Contact Information Section -->
+							<div class="mb-4">
+								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
+									<i class="fa-solid fa-address-book me-2"></i>Contact Information
+								</h4>
+								<div class="mb-3">
+									<label for="phone" class="form-label">Phone Number*</label>
+									<input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+								</div>
+								<div class="mb-3">
+									<label for="message" class="form-label">Additional Comments (Optional)</label>
+									<textarea class="form-control" id="message" rows="3" placeholder="Any additional information or special requests..."></textarea>
+								</div>
+								<div class="mb-3">
+									<label for="referralCode" class="form-label">Referral Code (Optional)</label>
+									<input type="text" class="form-control" id="referralCode" placeholder="Enter referral code if you have one">
+									<small class="form-text text-muted">If you were referred by an admin, please enter their referral code here.</small>
+								</div>
+							</div>
 
 							<!-- Submit Button -->
 							<button type="submit" class="btn btn-primary-custom w-100">
@@ -1535,6 +1407,9 @@ Majan University College for a transformative conference exploring the latest a
 
 
 	<script>
+		let coAuthorCount = 0;
+		const maxCoAuthors = 5;
+
 		// Get referral code from URL if present and populate the field
 		document.addEventListener('DOMContentLoaded', function() {
 			const urlParams = new URLSearchParams(window.location.search);
@@ -1546,7 +1421,386 @@ Majan University College for a transformative conference exploring the latest a
 					referralCodeInput.value = referralCodeFromUrl;
 				}
 			}
+
+			// Initialize form functionality
+			initializeForm();
 		});
+
+		function initializeForm() {
+			// Abstract word counter with enhanced feedback
+			const abstractTextarea = document.getElementById('paperAbstract');
+			const wordCountSpan = document.getElementById('abstractWordCount');
+			const abstractStatusSpan = document.getElementById('abstractStatus');
+			
+			if (abstractTextarea && wordCountSpan && abstractStatusSpan) {
+				abstractTextarea.addEventListener('input', function() {
+					const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+					const wordCount = words.length;
+					wordCountSpan.textContent = wordCount;
+					
+					if (wordCount === 0) {
+						wordCountSpan.style.color = '#6c757d';
+						abstractStatusSpan.textContent = 'Please enter your abstract';
+						abstractStatusSpan.style.color = '#6c757d';
+					} else if (wordCount < 50) {
+						wordCountSpan.style.color = '#dc3545';
+						abstractStatusSpan.textContent = `Too short (minimum 50 words)`;
+						abstractStatusSpan.style.color = '#dc3545';
+					} else if (wordCount < 250) {
+						wordCountSpan.style.color = '#ffc107';
+						abstractStatusSpan.textContent = `Good length (recommended: 250-500 words)`;
+						abstractStatusSpan.style.color = '#ffc107';
+					} else if (wordCount <= 500) {
+						wordCountSpan.style.color = '#28a745';
+						abstractStatusSpan.textContent = `Perfect length`;
+						abstractStatusSpan.style.color = '#28a745';
+					} else {
+						wordCountSpan.style.color = '#dc3545';
+						abstractStatusSpan.textContent = `Too long (maximum 500 words)`;
+						abstractStatusSpan.style.color = '#dc3545';
+					}
+				});
+			}
+
+			// Co-author functionality
+			const addCoAuthorBtn = document.getElementById('addCoAuthor');
+			if (addCoAuthorBtn) {
+				addCoAuthorBtn.addEventListener('click', addCoAuthor);
+			}
+
+			// Conditional fields
+			const preprintCheckbox = document.getElementById('preprintPolicy');
+			const preprintDetails = document.getElementById('preprintDetails');
+			
+			if (preprintCheckbox && preprintDetails) {
+				preprintCheckbox.addEventListener('change', function() {
+					preprintDetails.style.display = this.checked ? 'block' : 'none';
+					const preprintUrl = document.getElementById('preprintUrl');
+					if (this.checked && preprintUrl) {
+						preprintUrl.required = true;
+					} else if (preprintUrl) {
+						preprintUrl.required = false;
+					}
+				});
+			}
+
+			const aiContentCheckbox = document.getElementById('aiGeneratedContent');
+			const aiContentDetails = document.getElementById('aiContentDetails');
+			
+			if (aiContentCheckbox && aiContentDetails) {
+				aiContentCheckbox.addEventListener('change', function() {
+					aiContentDetails.style.display = this.checked ? 'block' : 'none';
+					const aiDescription = document.getElementById('aiContentDescription');
+					if (this.checked && aiDescription) {
+						aiDescription.required = true;
+					} else if (aiDescription) {
+						aiDescription.required = false;
+					}
+				});
+			}
+
+			// Previous submission details
+			const previouslySubmittedCheckbox = document.getElementById('previouslySubmitted');
+			const previousSubmissionDetails = document.getElementById('previousSubmissionDetails');
+			
+			if (previouslySubmittedCheckbox && previousSubmissionDetails) {
+				previouslySubmittedCheckbox.addEventListener('change', function() {
+					previousSubmissionDetails.style.display = this.checked ? 'block' : 'none';
+				});
+			}
+
+			// Real-time validation
+			document.querySelectorAll('input, textarea, select').forEach(element => {
+				element.addEventListener('input', function() {
+					if (this.classList.contains('is-invalid')) {
+						this.classList.remove('is-invalid');
+						const errorDiv = this.parentNode.querySelector('.invalid-feedback');
+						if (errorDiv) {
+							errorDiv.remove();
+						}
+					}
+				});
+			});
+		}
+
+		function addCoAuthor() {
+			if (coAuthorCount >= maxCoAuthors) {
+				showModal('Limit Reached', `You can only add up to ${maxCoAuthors} co-authors.`, 'error');
+				return;
+			}
+
+			coAuthorCount++;
+			const container = document.getElementById('coAuthorsContainer');
+			
+			const coAuthorDiv = document.createElement('div');
+			coAuthorDiv.className = 'card mb-3';
+			coAuthorDiv.style.borderLeft = '4px solid #00a3a3';
+			coAuthorDiv.innerHTML = `
+				<div class="card-header bg-light d-flex justify-content-between align-items-center">
+					<h5 class="mb-0">Co-author ${coAuthorCount}</h5>
+					<button type="button" class="btn btn-sm btn-outline-danger" onclick="removeCoAuthor(this)">
+						<i class="fa-solid fa-trash"></i>
+					</button>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<label class="form-label">Full Name*</label>
+							<input type="text" class="form-control" name="coAuthorName${coAuthorCount}" placeholder="Enter co-author's full name" required>
+						</div>
+						<div class="col-md-6 mb-3">
+							<label class="form-label">Email Address*</label>
+							<input type="email" class="form-control" name="coAuthorEmail${coAuthorCount}" placeholder="Enter co-author's email address" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<label class="form-label">Institution/Affiliation*</label>
+							<input type="text" class="form-control" name="coAuthorInstitution${coAuthorCount}" placeholder="Enter co-author's institution" required>
+						</div>
+						<div class="col-md-6 mb-3">
+							<label class="form-label">Country*</label>
+							<select class="form-control" name="coAuthorCountry${coAuthorCount}" required>
+								<option value="" disabled selected>Select country</option>
+								<option value="IN">India</option>
+								<option value="OM">Oman</option>
+								<option value="US">United States</option>
+								<option value="GB">United Kingdom</option>
+								<option value="CA">Canada</option>
+								<option value="AU">Australia</option>
+								<option value="DE">Germany</option>
+								<option value="FR">France</option>
+								<option value="JP">Japan</option>
+								<option value="CN">China</option>
+								<option value="SG">Singapore</option>
+								<option value="AE">United Arab Emirates</option>
+								<option value="SA">Saudi Arabia</option>
+								<option value="QA">Qatar</option>
+								<option value="KW">Kuwait</option>
+								<option value="BH">Bahrain</option>
+								<option value="AF">Afghanistan</option>
+								<option value="AL">Albania</option>
+								<option value="DZ">Algeria</option>
+								<option value="AS">American Samoa</option>
+								<option value="AD">Andorra</option>
+								<option value="AO">Angola</option>
+								<option value="AI">Anguilla</option>
+								<option value="AQ">Antarctica</option>
+								<option value="AG">Antigua and Barbuda</option>
+								<option value="AR">Argentina</option>
+								<option value="AM">Armenia</option>
+								<option value="AW">Aruba</option>
+								<option value="AT">Austria</option>
+								<option value="AZ">Azerbaijan</option>
+								<option value="BS">Bahamas</option>
+								<option value="BD">Bangladesh</option>
+								<option value="BB">Barbados</option>
+								<option value="BY">Belarus</option>
+								<option value="BE">Belgium</option>
+								<option value="BZ">Belize</option>
+								<option value="BJ">Benin</option>
+								<option value="BM">Bermuda</option>
+								<option value="BT">Bhutan</option>
+								<option value="BO">Bolivia</option>
+								<option value="BA">Bosnia and Herzegovina</option>
+								<option value="BW">Botswana</option>
+								<option value="BR">Brazil</option>
+								<option value="BN">Brunei Darussalam</option>
+								<option value="BG">Bulgaria</option>
+								<option value="BF">Burkina Faso</option>
+								<option value="BI">Burundi</option>
+								<option value="KH">Cambodia</option>
+								<option value="CM">Cameroon</option>
+								<option value="CV">Cape Verde</option>
+								<option value="KY">Cayman Islands</option>
+								<option value="CF">Central African Republic</option>
+								<option value="TD">Chad</option>
+								<option value="CL">Chile</option>
+								<option value="CO">Colombia</option>
+								<option value="KM">Comoros</option>
+								<option value="CG">Congo</option>
+								<option value="CD">Congo, the Democratic Republic of the</option>
+								<option value="CR">Costa Rica</option>
+								<option value="CI">Côte d'Ivoire</option>
+								<option value="HR">Croatia</option>
+								<option value="CU">Cuba</option>
+								<option value="CY">Cyprus</option>
+								<option value="CZ">Czech Republic</option>
+								<option value="DK">Denmark</option>
+								<option value="DJ">Djibouti</option>
+								<option value="DM">Dominica</option>
+								<option value="DO">Dominican Republic</option>
+								<option value="EC">Ecuador</option>
+								<option value="EG">Egypt</option>
+								<option value="SV">El Salvador</option>
+								<option value="GQ">Equatorial Guinea</option>
+								<option value="ER">Eritrea</option>
+								<option value="EE">Estonia</option>
+								<option value="ET">Ethiopia</option>
+								<option value="FJ">Fiji</option>
+								<option value="FI">Finland</option>
+								<option value="GA">Gabon</option>
+								<option value="GM">Gambia</option>
+								<option value="GE">Georgia</option>
+								<option value="GH">Ghana</option>
+								<option value="GR">Greece</option>
+								<option value="GD">Grenada</option>
+								<option value="GU">Guam</option>
+								<option value="GT">Guatemala</option>
+								<option value="GN">Guinea</option>
+								<option value="GW">Guinea-Bissau</option>
+								<option value="GY">Guyana</option>
+								<option value="HT">Haiti</option>
+								<option value="HN">Honduras</option>
+								<option value="HK">Hong Kong</option>
+								<option value="HU">Hungary</option>
+								<option value="IS">Iceland</option>
+								<option value="ID">Indonesia</option>
+								<option value="IR">Iran, Islamic Republic of</option>
+								<option value="IQ">Iraq</option>
+								<option value="IE">Ireland</option>
+								<option value="IL">Israel</option>
+								<option value="IT">Italy</option>
+								<option value="JM">Jamaica</option>
+								<option value="JO">Jordan</option>
+								<option value="KZ">Kazakhstan</option>
+								<option value="KE">Kenya</option>
+								<option value="KI">Kiribati</option>
+								<option value="KP">Korea, Democratic People's Republic of</option>
+								<option value="KR">Korea, Republic of</option>
+								<option value="KG">Kyrgyzstan</option>
+								<option value="LA">Lao People's Democratic Republic</option>
+								<option value="LV">Latvia</option>
+								<option value="LB">Lebanon</option>
+								<option value="LS">Lesotho</option>
+								<option value="LR">Liberia</option>
+								<option value="LY">Libya</option>
+								<option value="LI">Liechtenstein</option>
+								<option value="LT">Lithuania</option>
+								<option value="LU">Luxembourg</option>
+								<option value="MO">Macao</option>
+								<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+								<option value="MG">Madagascar</option>
+								<option value="MW">Malawi</option>
+								<option value="MY">Malaysia</option>
+								<option value="MV">Maldives</option>
+								<option value="ML">Mali</option>
+								<option value="MT">Malta</option>
+								<option value="MH">Marshall Islands</option>
+								<option value="MR">Mauritania</option>
+								<option value="MU">Mauritius</option>
+								<option value="MX">Mexico</option>
+								<option value="FM">Micronesia, Federated States of</option>
+								<option value="MD">Moldova, Republic of</option>
+								<option value="MC">Monaco</option>
+								<option value="MN">Mongolia</option>
+								<option value="ME">Montenegro</option>
+								<option value="MA">Morocco</option>
+								<option value="MZ">Mozambique</option>
+								<option value="MM">Myanmar</option>
+								<option value="NA">Namibia</option>
+								<option value="NR">Nauru</option>
+								<option value="NP">Nepal</option>
+								<option value="NL">Netherlands</option>
+								<option value="NZ">New Zealand</option>
+								<option value="NI">Nicaragua</option>
+								<option value="NE">Niger</option>
+								<option value="NG">Nigeria</option>
+								<option value="NO">Norway</option>
+								<option value="PK">Pakistan</option>
+								<option value="PW">Palau</option>
+								<option value="PA">Panama</option>
+								<option value="PG">Papua New Guinea</option>
+								<option value="PY">Paraguay</option>
+								<option value="PE">Peru</option>
+								<option value="PH">Philippines</option>
+								<option value="PL">Poland</option>
+								<option value="PT">Portugal</option>
+								<option value="PR">Puerto Rico</option>
+								<option value="RO">Romania</option>
+								<option value="RU">Russian Federation</option>
+								<option value="RW">Rwanda</option>
+								<option value="KN">Saint Kitts and Nevis</option>
+								<option value="LC">Saint Lucia</option>
+								<option value="VC">Saint Vincent and the Grenadines</option>
+								<option value="WS">Samoa</option>
+								<option value="SM">San Marino</option>
+								<option value="ST">Sao Tome and Principe</option>
+								<option value="SN">Senegal</option>
+								<option value="RS">Serbia</option>
+								<option value="SC">Seychelles</option>
+								<option value="SL">Sierra Leone</option>
+								<option value="SK">Slovakia</option>
+								<option value="SI">Slovenia</option>
+								<option value="SB">Solomon Islands</option>
+								<option value="SO">Somalia</option>
+								<option value="ZA">South Africa</option>
+								<option value="ES">Spain</option>
+								<option value="LK">Sri Lanka</option>
+								<option value="SD">Sudan</option>
+								<option value="SR">Suriname</option>
+								<option value="SZ">Swaziland</option>
+								<option value="SE">Sweden</option>
+								<option value="CH">Switzerland</option>
+								<option value="SY">Syrian Arab Republic</option>
+								<option value="TW">Taiwan, Province of China</option>
+								<option value="TJ">Tajikistan</option>
+								<option value="TZ">Tanzania, United Republic of</option>
+								<option value="TH">Thailand</option>
+								<option value="TL">Timor-Leste</option>
+								<option value="TG">Togo</option>
+								<option value="TO">Tonga</option>
+								<option value="TT">Trinidad and Tobago</option>
+								<option value="TN">Tunisia</option>
+								<option value="TR">Turkey</option>
+								<option value="TM">Turkmenistan</option>
+								<option value="TV">Tuvalu</option>
+								<option value="UG">Uganda</option>
+								<option value="UA">Ukraine</option>
+								<option value="UY">Uruguay</option>
+								<option value="UZ">Uzbekistan</option>
+								<option value="VU">Vanuatu</option>
+								<option value="VE">Venezuela</option>
+								<option value="VN">Viet Nam</option>
+								<option value="YE">Yemen</option>
+								<option value="ZM">Zambia</option>
+								<option value="ZW">Zimbabwe</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<label class="form-label">ORCID ID (Optional)</label>
+							<input type="text" class="form-control" name="coAuthorOrcid${coAuthorCount}" placeholder="e.g., 0000-0000-0000-0000">
+						</div>
+						<div class="col-md-6 mb-3">
+							<div class="form-check mt-4">
+								<input class="form-check-input" type="checkbox" name="coAuthorCorresponding${coAuthorCount}">
+								<label class="form-check-label">
+									Corresponding Author
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			`;
+			
+			container.appendChild(coAuthorDiv);
+		}
+
+		function removeCoAuthor(button) {
+			button.closest('.card').remove();
+			coAuthorCount--;
+			
+			// Renumber remaining co-authors
+			const coAuthorCards = document.querySelectorAll('#coAuthorsContainer .card');
+			coAuthorCards.forEach((card, index) => {
+				const header = card.querySelector('.card-header h5');
+				if (header) {
+					header.textContent = `Co-author ${index + 1}`;
+				}
+			});
+		}
 
 		// Form validation functions
 		function validateEmail(email) {
@@ -1557,6 +1811,12 @@ Majan University College for a transformative conference exploring the latest a
 		function validatePhone(phone) {
 			const phoneRegex = /^\+?[\d\s-]{8,}$/;
 			return phoneRegex.test(phone);
+		}
+
+		function validateOrcid(orcid) {
+			if (!orcid) return true; // Optional field
+			const orcidRegex = /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/;
+			return orcidRegex.test(orcid);
 		}
 
 		function showError(message, element) {
@@ -1638,33 +1898,176 @@ Majan University College for a transformative conference exploring the latest a
 			// Get form elements
 			const conferenceTitle = document.getElementById('conference-title');
 			const placeDate = document.getElementById('place-date');
-			const attendeeType = document.getElementById('attendee-type');
-			const fileInput = document.getElementById('file-input');
 			const paperTitle = document.getElementById('paperTitle');
-			const name = document.getElementById('name');
-			const institutionName = document.getElementById('institution');
-			const country = document.getElementById('country');
-			const email = document.getElementById('email');
+			const paperAbstract = document.getElementById('paperAbstract');
+			const keywords = document.getElementById('keywords');
+			const authorName = document.getElementById('authorName');
+			const authorEmail = document.getElementById('authorEmail');
+			const authorInstitution = document.getElementById('authorInstitution');
+			const authorCountry = document.getElementById('authorCountry');
+			const authorOrcid = document.getElementById('authorOrcid');
+			const primarySubject = document.getElementById('primarySubject');
+			const paperFile = document.getElementById('paperFile');
+			const supplementaryFile = document.getElementById('supplementaryFile');
+			const sourceCodeFile = document.getElementById('sourceCodeFile');
+			const ethicsCompliance = document.getElementById('ethicsCompliance');
+			const agreeTerms = document.getElementById('agreeTerms');
+			const agreePresentation = document.getElementById('agreePresentation');
+			const agreePublication = document.getElementById('agreePublication');
 			const phone = document.getElementById('phone');
 			const message = document.getElementById('message');
+			const referralCode = document.getElementById('referralCode');
 
-			// Validate email
-			if (!validateEmail(email.value)) {
+			// Validate required fields
+			if (!paperTitle.value.trim()) {
+				showModal('Validation Error', 'Please enter the paper title.', 'error');
+				return;
+			}
+
+			if (!paperAbstract.value.trim()) {
+				showModal('Validation Error', 'Please enter the paper abstract.', 'error');
+				return;
+			}
+
+			const abstractWords = paperAbstract.value.trim().split(/\s+/).filter(word => word.length > 0);
+			if (abstractWords.length < 50) {
+				showModal('Validation Error', 'Abstract must be at least 50 words long.', 'error');
+				return;
+			}
+
+			if (abstractWords.length > 500) {
+				showModal('Validation Error', 'Abstract must not exceed 500 words.', 'error');
+				return;
+			}
+
+			if (!keywords.value.trim()) {
+				showModal('Validation Error', 'Please enter keywords.', 'error');
+				return;
+			}
+
+			if (!authorName.value.trim()) {
+				showModal('Validation Error', 'Please enter the author name.', 'error');
+				return;
+			}
+
+			if (!validateEmail(authorEmail.value)) {
 				showModal('Validation Error', 'Please enter a valid email address.', 'error');
 				return;
 			}
 
-			// Validate phone
+			if (!authorInstitution.value.trim()) {
+				showModal('Validation Error', 'Please enter the institution/affiliation.', 'error');
+				return;
+			}
+
+			if (!authorCountry.value) {
+				showModal('Validation Error', 'Please select a country.', 'error');
+				return;
+			}
+
+			if (authorOrcid.value && !validateOrcid(authorOrcid.value)) {
+				showModal('Validation Error', 'Please enter a valid ORCID ID format (e.g., 0000-0000-0000-0000).', 'error');
+				return;
+			}
+
+			if (!primarySubject.value) {
+				showModal('Validation Error', 'Please select a primary subject area.', 'error');
+				return;
+			}
+
+			if (!paperFile.files[0]) {
+				showModal('Validation Error', 'Please upload your paper file.', 'error');
+				return;
+			}
+
 			if (!validatePhone(phone.value)) {
 				showModal('Validation Error', 'Please enter a valid phone number.', 'error');
 				return;
 			}
 
-			// Validate message length
-			if (message.value.length < 10) {
-				showModal('Validation Error', 'Message must be at least 10 characters long.', 'error');
+			if (!ethicsCompliance.checked) {
+				showModal('Validation Error', 'You must confirm compliance with ethical standards.', 'error');
 				return;
 			}
+
+			if (!agreeTerms.checked) {
+				showModal('Validation Error', 'You must agree to the submission policies.', 'error');
+				return;
+			}
+
+			if (!agreePresentation.checked) {
+				showModal('Validation Error', 'You must confirm that at least one author will present the paper.', 'error');
+				return;
+			}
+
+			if (!agreePublication.checked) {
+				showModal('Validation Error', 'You must agree to the publication terms.', 'error');
+				return;
+			}
+
+			// Validate new agreement fields
+			const agreeReview = document.getElementById('agreeReview');
+			const agreeDataSharing = document.getElementById('agreeDataSharing');
+			
+			if (!agreeReview.checked) {
+				showModal('Validation Error', 'You must agree to the peer review process.', 'error');
+				return;
+			}
+
+			if (!agreeDataSharing.checked) {
+				showModal('Validation Error', 'You must agree to share anonymized data for reproducibility.', 'error');
+				return;
+			}
+
+			// Validate conditional fields
+			const preprintPolicy = document.getElementById('preprintPolicy');
+			const preprintUrl = document.getElementById('preprintUrl');
+			
+			if (preprintPolicy.checked && !preprintUrl.value.trim()) {
+				showModal('Validation Error', 'Please provide the preprint URL.', 'error');
+				return;
+			}
+
+			const aiGeneratedContent = document.getElementById('aiGeneratedContent');
+			const aiContentDescription = document.getElementById('aiContentDescription');
+			
+			if (aiGeneratedContent.checked && !aiContentDescription.value.trim()) {
+				showModal('Validation Error', 'Please describe the AI-generated content.', 'error');
+				return;
+			}
+
+			// Validate co-authors if any
+			const coAuthorCards = document.querySelectorAll('#coAuthorsContainer .card');
+			coAuthorCards.forEach((card, index) => {
+				const name = card.querySelector(`input[name="coAuthorName${index + 1}"]`);
+				const email = card.querySelector(`input[name="coAuthorEmail${index + 1}"]`);
+				const institution = card.querySelector(`input[name="coAuthorInstitution${index + 1}"]`);
+				const country = card.querySelector(`select[name="coAuthorCountry${index + 1}"]`);
+				const orcid = card.querySelector(`input[name="coAuthorOrcid${index + 1}"]`);
+
+				if (name && email && institution && country) {
+					if (!name.value.trim()) {
+						showModal('Validation Error', `Please enter the name for co-author ${index + 1}.`, 'error');
+						return;
+					}
+					if (!validateEmail(email.value)) {
+						showModal('Validation Error', `Please enter a valid email for co-author ${index + 1}.`, 'error');
+						return;
+					}
+					if (!institution.value.trim()) {
+						showModal('Validation Error', `Please enter the institution for co-author ${index + 1}.`, 'error');
+						return;
+					}
+					if (!country.value) {
+						showModal('Validation Error', `Please select a country for co-author ${index + 1}.`, 'error');
+						return;
+					}
+					if (orcid && orcid.value && !validateOrcid(orcid.value)) {
+						showModal('Validation Error', `Please enter a valid ORCID ID for co-author ${index + 1}.`, 'error');
+						return;
+					}
+				}
+			});
 
 			// Show loading state
 			submitText.style.display = 'none';
@@ -1675,20 +2078,75 @@ Majan University College for a transformative conference exploring the latest a
 			const formData = new FormData();
 			formData.append('conferenceTitle', conferenceTitle.value);
 			formData.append('placeDate', placeDate.value);
-			formData.append('attendeeType', attendeeType.value);
-			if (fileInput.files[0]) {
-				formData.append('fileInput', fileInput.files[0]);
-			}
 			formData.append('paperTitle', paperTitle.value);
-			formData.append('name', name.value);
-			formData.append('institutionName', institutionName.value);
-			formData.append('country', country.value);
-			formData.append('email', email.value);
+			formData.append('paperAbstract', paperAbstract.value);
+			formData.append('keywords', keywords.value);
+			formData.append('authorName', authorName.value);
+			formData.append('authorEmail', authorEmail.value);
+			formData.append('authorInstitution', authorInstitution.value);
+			formData.append('authorCountry', authorCountry.value);
+			formData.append('authorOrcid', authorOrcid.value);
+			formData.append('primarySubject', primarySubject.value);
 			formData.append('phone', phone.value);
 			formData.append('message', message.value);
 			
+			// Add files
+			if (paperFile.files[0]) {
+				formData.append('paperFile', paperFile.files[0]);
+			}
+			if (supplementaryFile.files[0]) {
+				formData.append('supplementaryFile', supplementaryFile.files[0]);
+			}
+			if (sourceCodeFile.files[0]) {
+				formData.append('sourceCodeFile', sourceCodeFile.files[0]);
+			}
+
+			// Add co-authors data
+			const coAuthorCardsForSubmission = document.querySelectorAll('#coAuthorsContainer .card');
+			coAuthorCardsForSubmission.forEach((card, index) => {
+				const name = card.querySelector(`input[name="coAuthorName${index + 1}"]`);
+				const email = card.querySelector(`input[name="coAuthorEmail${index + 1}"]`);
+				const institution = card.querySelector(`input[name="coAuthorInstitution${index + 1}"]`);
+				const country = card.querySelector(`select[name="coAuthorCountry${index + 1}"]`);
+				const orcid = card.querySelector(`input[name="coAuthorOrcid${index + 1}"]`);
+				const corresponding = card.querySelector(`input[name="coAuthorCorresponding${index + 1}"]`);
+
+				if (name && email && institution && country) {
+					formData.append(`coAuthorName${index + 1}`, name.value);
+					formData.append(`coAuthorEmail${index + 1}`, email.value);
+					formData.append(`coAuthorInstitution${index + 1}`, institution.value);
+					formData.append(`coAuthorCountry${index + 1}`, country.value);
+					formData.append(`coAuthorOrcid${index + 1}`, orcid ? orcid.value : '');
+					formData.append(`coAuthorCorresponding${index + 1}`, corresponding ? corresponding.checked : false);
+				}
+			});
+
+			// Add additional subject areas
+			const additionalSubjects = [];
+			document.querySelectorAll('input[type="checkbox"][id^="topic_"]:checked').forEach(checkbox => {
+				additionalSubjects.push(checkbox.value);
+			});
+			formData.append('additionalSubjects', JSON.stringify(additionalSubjects));
+
+			// Add declarations and agreements
+			formData.append('ethicsCompliance', ethicsCompliance.checked);
+			formData.append('dataAvailability', document.getElementById('dataAvailability').checked);
+			formData.append('preprintPolicy', document.getElementById('preprintPolicy').checked);
+			formData.append('preprintUrl', document.getElementById('preprintUrl').value);
+			formData.append('conflictOfInterest', document.getElementById('conflictOfInterest').checked);
+			formData.append('previouslySubmitted', document.getElementById('previouslySubmitted').checked);
+			formData.append('previousSubmissionInfo', document.getElementById('previousSubmissionInfo').value);
+			formData.append('willingToReview', document.getElementById('willingToReview').checked);
+			formData.append('aiGeneratedContent', document.getElementById('aiGeneratedContent').checked);
+			formData.append('aiContentDescription', document.getElementById('aiContentDescription').value);
+			formData.append('studentPaper', document.getElementById('studentPaper').checked);
+			formData.append('agreeTerms', agreeTerms.checked);
+			formData.append('agreePresentation', agreePresentation.checked);
+			formData.append('agreePublication', agreePublication.checked);
+			formData.append('agreeReview', agreeReview.checked);
+			formData.append('agreeDataSharing', agreeDataSharing.checked);
+			
 			// Add referral code if provided
-			const referralCode = document.getElementById('referralCode');
 			if (referralCode.value.trim()) {
 				formData.append('referralCode', referralCode.value.trim());
 			}
@@ -1720,6 +2178,25 @@ Majan University College for a transformative conference exploring the latest a
 						'success');
 					this.reset();
 					this.classList.remove('was-validated');
+					
+					// Reset co-authors
+					document.getElementById('coAuthorsContainer').innerHTML = '';
+					coAuthorCount = 0;
+					
+					// Reset word count and status
+					document.getElementById('abstractWordCount').textContent = '0';
+					document.getElementById('abstractStatus').textContent = 'Please enter your abstract';
+					document.getElementById('abstractWordCount').style.color = '#6c757d';
+					document.getElementById('abstractStatus').style.color = '#6c757d';
+					
+					// Hide conditional fields
+					document.getElementById('preprintDetails').style.display = 'none';
+					document.getElementById('aiContentDetails').style.display = 'none';
+					document.getElementById('previousSubmissionDetails').style.display = 'none';
+					
+					// Reset conditional field requirements
+					document.getElementById('preprintUrl').required = false;
+					document.getElementById('aiContentDescription').required = false;
 				} else {
 					showModal('Registration Failed', result.message || 'An error occurred during registration. Please try again.', 'error');
 				}

@@ -504,9 +504,12 @@
 
 		<!-- Speakers Section -->
 		<div id="speakersSection" class="content-section d-none">
-			<h2 class="section-title">Conference Presenters</h2>
+			<h2 class="section-title">Paper Submissions</h2>
 			<div class="d-flex justify-content-between align-items-center mb-3">
 				<div class="d-flex gap-2">
+					<button class="btn btn-info me-2" onclick="showSpeakerStats()">
+						<i class="fas fa-chart-bar me-2"></i>Statistics
+					</button>
 					<button class="btn btn-success" onclick="exportData('speakers')">
 						<i class="fas fa-download me-2"></i>Export CSV
 					</button>
@@ -516,19 +519,72 @@
 					<span class="badge bg-primary" id="speakersCount">0</span>
 				</div>
 			</div>
+			
+			<!-- Statistics Cards -->
+			<div class="row mb-4" id="speakerStatsCards" style="display: none;">
+				<div class="col-md-2">
+					<div class="card bg-primary text-white">
+						<div class="card-body text-center">
+							<h4 id="totalPapers">0</h4>
+							<small>Total Papers</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card bg-warning text-white">
+						<div class="card-body text-center">
+							<h4 id="pendingPapers">0</h4>
+							<small>Pending</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card bg-info text-white">
+						<div class="card-body text-center">
+							<h4 id="underReviewPapers">0</h4>
+							<small>Under Review</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card bg-success text-white">
+						<div class="card-body text-center">
+							<h4 id="approvedPapers">0</h4>
+							<small>Approved</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card bg-danger text-white">
+						<div class="card-body text-center">
+							<h4 id="rejectedPapers">0</h4>
+							<small>Rejected</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card bg-secondary text-white">
+						<div class="card-body text-center">
+							<h4 id="needsRevisionPapers">0</h4>
+							<small>Needs Revision</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 			<div class="table-responsive">
 				<table id="speakersTable" class="table table-hover" style="width: 100%;">
 					<thead>
 						<tr>
-							<th style="min-width: 200px;">Paper</th>
-							<th style="min-width: 120px;">Name</th>
+							<th style="min-width: 100px;">Files</th>
+							<th style="min-width: 120px;">Author</th>
 							<th style="min-width: 150px;">Email</th>
 							<th style="min-width: 150px;">Institution</th>
 							<th style="min-width: 200px;">Paper Title</th>
+							<th style="min-width: 120px;">Subject Area</th>
 							<th style="min-width: 100px;">Country</th>
-							<th style="min-width: 120px;">Referred By</th>
-							<th style="min-width: 100px;">Date</th>
-							<th style="min-width: 100px;">Actions</th>
+							<th style="min-width: 130px;">Review Status</th>
+							<th style="min-width: 150px;">Actions</th>
 						</tr>
 					</thead>
 					<tbody></tbody>
@@ -1310,6 +1366,27 @@
 		</div>
 	</div>
 
+	<!-- Paper Submission Details Modal -->
+	<div class="modal fade" id="paperSubmissionDetailsModal" tabindex="-1">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"><i class="fas fa-file-alt me-2"></i>Paper Submission Details</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body" id="paperSubmissionDetailsContent">
+					<!-- Paper submission details will be loaded here -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-success" onclick="showUpdateSpeakerStatusModal()">
+						<i class="fas fa-edit me-2"></i>Update Status
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- JavaScript Libraries -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -1957,28 +2034,40 @@
 				data: speakers,
 				columns: [
 					{ 
-						data: 'fileUrl',
-						title: 'Paper',
+						data: null,
+						title: 'Files',
 						className: 'text-center',
 						responsivePriority: 5,
 						render: function(data, type, row) {
-							if (data) {
-								return `<a href="${data}" target="_blank" class="btn btn-sm btn-outline-info" title="View Paper">
+							let filesHtml = '';
+							if (row.paperFileUrl) {
+								filesHtml += `<a href="${row.paperFileUrl}" target="_blank" class="btn btn-sm btn-outline-primary me-1" title="View Paper">
 									<i class="fas fa-file-pdf"></i>
 								</a>`;
 							}
-							return '<span class="text-muted">-</span>';
+							if (row.supplementaryFileUrl) {
+								filesHtml += `<a href="${row.supplementaryFileUrl}" target="_blank" class="btn btn-sm btn-outline-info me-1" title="Supplementary Files">
+									<i class="fas fa-file-archive"></i>
+								</a>`;
+							}
+							if (row.sourceCodeFileUrl) {
+								filesHtml += `<a href="${row.sourceCodeFileUrl}" target="_blank" class="btn btn-sm btn-outline-success" title="Source Code">
+									<i class="fas fa-code"></i>
+								</a>`;
+							}
+							return filesHtml || '<span class="text-muted">-</span>';
 						}
 					},
 					{ 
 						data: 'name',
-						title: 'Name',
+						title: 'Author',
 						responsivePriority: 1,
 						render: function(data, type, row) {
 							return `<div class="d-flex align-items-center">
 								<div>
 									<div class="fw-bold">${data}</div>
 									<small class="text-muted d-md-none">${row.email}</small>
+									${row.coAuthors ? `<small class="text-info d-none d-lg-block">+${JSON.parse(row.coAuthors).length} co-authors</small>` : ''}
 								</div>
 							</div>`;
 						}
@@ -2013,6 +2102,15 @@
 						}
 					},
 					{ 
+						data: 'primarySubject',
+						title: 'Subject Area',
+						responsivePriority: 6,
+						className: 'd-none d-lg-table-cell',
+						render: function(data) {
+							return data ? data.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '-';
+						}
+					},
+					{ 
 						data: 'country',
 						title: 'Country',
 						responsivePriority: 7,
@@ -2029,15 +2127,6 @@
 							return getReviewStatusBadge(data);
 						}
 					},
-					{ 
-						data: 'createdAt',
-						title: 'Date',
-						responsivePriority: 8,
-						className: 'd-none d-lg-table-cell',
-						render: function(data) {
-							return new Date(data).toLocaleDateString();
-						}
-					},
 					{
 						data: null,
 						title: 'Actions',
@@ -2049,17 +2138,17 @@
 							
 							return `
 								<div class="btn-group">
+									<button class="btn btn-sm btn-info me-1" onclick="showPaperSubmissionDetails('${row.id}')" title="View Details">
+										<i class="fas fa-eye"></i>
+									</button>
 									${canSendToCommittee ? 
 										`<button class="btn btn-sm btn-success me-1" onclick="showSendToCommitteeModal('${row.id}')" title="Send to Committee">
 											<i class="fas fa-users-cog"></i>
 										</button>` : 
-										`<button class="btn btn-sm btn-info me-1" onclick="showUpdateSpeakerStatusModal('${row.id}')" title="Update Status">
+										`<button class="btn btn-sm btn-warning me-1" onclick="showUpdateSpeakerStatusModal('${row.id}')" title="Update Status">
 											<i class="fas fa-clipboard-check"></i>
 										</button>`
 									}
-									<button class="btn btn-sm btn-outline-primary" onclick="editSpeaker('${row.id}')" title="Edit">
-										<i class="fas fa-edit"></i>
-									</button>
 									<button class="btn btn-sm btn-outline-danger" onclick="deleteSpeaker('${row.id}')" title="Delete">
 										<i class="fas fa-trash"></i>
 									</button>
@@ -2075,19 +2164,19 @@
 					}
 				},
 				pageLength: 25,
-				order: [[7, 'desc']], // Sort by date (newest first)
+				order: [[0, 'desc']], // Sort by newest first
 				scrollX: true,
 				autoWidth: false,
 				columnDefs: [
-					{ width: "80px", targets: 0 },
+					{ width: "100px", targets: 0 },
 					{ width: "150px", targets: 1 },
 					{ width: "180px", targets: 2 },
 					{ width: "180px", targets: 3 },
 					{ width: "250px", targets: 4 },
-					{ width: "120px", targets: 5 },
-					{ width: "150px", targets: 6 },
-					{ width: "120px", targets: 7 },
-					{ width: "120px", targets: 8 }
+					{ width: "150px", targets: 5 },
+					{ width: "120px", targets: 6 },
+					{ width: "130px", targets: 7 },
+					{ width: "150px", targets: 8 }
 				],
 				dom: 'Bfrtip',
 				buttons: [
@@ -2098,12 +2187,196 @@
 					}
 				],
 				language: {
-					emptyTable: "No presenters found",
-					info: "Showing _START_ to _END_ of _TOTAL_ presenters",
-					infoEmpty: "Showing 0 to 0 of 0 presenters",
-					infoFiltered: "(filtered from _MAX_ total presenters)"
+					emptyTable: "No paper submissions found",
+					info: "Showing _START_ to _END_ of _TOTAL_ submissions",
+					infoEmpty: "Showing 0 to 0 of 0 submissions",
+					infoFiltered: "(filtered from _MAX_ total submissions)"
 				}
 			});
+		}
+
+		// Show paper submission details
+		async function showPaperSubmissionDetails(speakerId) {
+			try {
+				const response = await fetch(`${API_BASE}/admin/speakers/${speakerId}`, {
+					headers: getAuthHeaders()
+				});
+
+				if (!response.ok) {
+					throw new Error('Failed to fetch speaker details');
+				}
+
+				const speaker = await response.json();
+
+				// Parse co-authors if they exist
+				let coAuthors = [];
+				if (speaker.coAuthors) {
+					try {
+						coAuthors = JSON.parse(speaker.coAuthors);
+					} catch (e) {
+						console.error('Error parsing co-authors:', e);
+					}
+				}
+
+				// Parse additional subjects if they exist
+				let additionalSubjects = [];
+				if (speaker.additionalSubjects) {
+					try {
+						additionalSubjects = JSON.parse(speaker.additionalSubjects);
+					} catch (e) {
+						console.error('Error parsing additional subjects:', e);
+					}
+				}
+
+				const content = `
+					<div class="row">
+						<div class="col-md-6">
+							<h6 class="text-primary mb-3">Paper Information</h6>
+							<table class="table table-sm">
+								<tr><td><strong>Paper Title:</strong></td><td>${speaker.paperTitle || '-'}</td></tr>
+								<tr><td><strong>Primary Subject:</strong></td><td>${speaker.primarySubject ? speaker.primarySubject.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '-'}</td></tr>
+								<tr><td><strong>Keywords:</strong></td><td>${speaker.keywords || '-'}</td></tr>
+								<tr><td><strong>Abstract:</strong></td><td>${speaker.paperAbstract ? speaker.paperAbstract.substring(0, 200) + '...' : '-'}</td></tr>
+								${additionalSubjects.length > 0 ? `<tr><td><strong>Additional Subjects:</strong></td><td>${additionalSubjects.map(s => s.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())).join(', ')}</td></tr>` : ''}
+							</table>
+						</div>
+						<div class="col-md-6">
+							<h6 class="text-primary mb-3">Author Information</h6>
+							<table class="table table-sm">
+								<tr><td><strong>Name:</strong></td><td>${speaker.name || '-'}</td></tr>
+								<tr><td><strong>Email:</strong></td><td><a href="mailto:${speaker.email}">${speaker.email || '-'}</a></td></tr>
+								<tr><td><strong>Phone:</strong></td><td>${speaker.phone || '-'}</td></tr>
+								<tr><td><strong>Institution:</strong></td><td>${speaker.institutionName || '-'}</td></tr>
+								<tr><td><strong>Country:</strong></td><td>${speaker.country || '-'}</td></tr>
+								<tr><td><strong>ORCID ID:</strong></td><td>${speaker.orcidId || '-'}</td></tr>
+								<tr><td><strong>Corresponding Author:</strong></td><td>${speaker.isCorrespondingAuthor ? 'Yes' : 'No'}</td></tr>
+							</table>
+						</div>
+					</div>
+
+					${coAuthors.length > 0 ? `
+					<div class="row mt-3">
+						<div class="col-12">
+							<h6 class="text-primary mb-3">Co-authors (${coAuthors.length})</h6>
+							<div class="table-responsive">
+								<table class="table table-sm table-striped">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Email</th>
+											<th>Institution</th>
+											<th>Country</th>
+											<th>ORCID</th>
+											<th>Corresponding</th>
+										</tr>
+									</thead>
+									<tbody>
+										${coAuthors.map(coAuthor => `
+											<tr>
+												<td>${coAuthor.name || '-'}</td>
+												<td><a href="mailto:${coAuthor.email}">${coAuthor.email || '-'}</a></td>
+												<td>${coAuthor.institution || '-'}</td>
+												<td>${coAuthor.country || '-'}</td>
+												<td>${coAuthor.orcidId || '-'}</td>
+												<td>${coAuthor.corresponding ? 'Yes' : 'No'}</td>
+											</tr>
+										`).join('')}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					` : ''}
+
+					<div class="row mt-3">
+						<div class="col-md-6">
+							<h6 class="text-primary mb-3">Files</h6>
+							<table class="table table-sm">
+								<tr><td><strong>Paper File:</strong></td><td>${speaker.paperFileUrl ? `<a href="${speaker.paperFileUrl}" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-file-pdf"></i> View</a>` : 'Not uploaded'}</td></tr>
+								<tr><td><strong>Supplementary Files:</strong></td><td>${speaker.supplementaryFileUrl ? `<a href="${speaker.supplementaryFileUrl}" target="_blank" class="btn btn-sm btn-outline-info"><i class="fas fa-file-archive"></i> View</a>` : 'Not uploaded'}</td></tr>
+								<tr><td><strong>Source Code:</strong></td><td>${speaker.sourceCodeFileUrl ? `<a href="${speaker.sourceCodeFileUrl}" target="_blank" class="btn btn-sm btn-outline-success"><i class="fas fa-code"></i> View</a>` : 'Not uploaded'}</td></tr>
+							</table>
+						</div>
+						<div class="col-md-6">
+							<h6 class="text-primary mb-3">Review Information</h6>
+							<table class="table table-sm">
+								<tr><td><strong>Status:</strong></td><td>${getReviewStatusBadge(speaker.reviewStatus)}</td></tr>
+								<tr><td><strong>Sent to Committee:</strong></td><td>${speaker.sentToCommittee ? 'Yes' : 'No'}</td></tr>
+								<tr><td><strong>Submitted:</strong></td><td>${new Date(speaker.createdAt).toLocaleDateString()}</td></tr>
+								<tr><td><strong>Last Updated:</strong></td><td>${new Date(speaker.updatedAt).toLocaleDateString()}</td></tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="row mt-3">
+						<div class="col-12">
+							<h6 class="text-primary mb-3">Additional Information</h6>
+							<div class="row">
+								<div class="col-md-6">
+									<h6 class="text-secondary">Declarations</h6>
+									<ul class="list-unstyled">
+										<li><i class="fas fa-${speaker.ethicsCompliance ? 'check text-success' : 'times text-danger'}"></i> Ethics Compliance</li>
+										<li><i class="fas fa-${speaker.dataAvailability ? 'check text-success' : 'times text-danger'}"></i> Data Availability</li>
+										<li><i class="fas fa-${speaker.preprintPolicy ? 'check text-success' : 'times text-danger'}"></i> Preprint Policy ${speaker.preprintUrl ? `(<a href="${speaker.preprintUrl}" target="_blank">View</a>)` : ''}</li>
+										<li><i class="fas fa-${speaker.conflictOfInterest ? 'check text-success' : 'times text-danger'}"></i> No Conflict of Interest</li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<h6 class="text-secondary">Supplementary Questions</h6>
+									<ul class="list-unstyled">
+										<li><i class="fas fa-${speaker.previouslySubmitted ? 'check text-success' : 'times text-danger'}"></i> Previously Submitted</li>
+										<li><i class="fas fa-${speaker.willingToReview ? 'check text-success' : 'times text-danger'}"></i> Willing to Review</li>
+										<li><i class="fas fa-${speaker.aiGeneratedContent ? 'check text-success' : 'times text-danger'}"></i> AI-Generated Content</li>
+										<li><i class="fas fa-${speaker.studentPaper ? 'check text-success' : 'times text-danger'}"></i> Student Paper</li>
+									</ul>
+								</div>
+							</div>
+							${speaker.message ? `<div class="mt-2"><strong>Additional Comments:</strong><br>${speaker.message}</div>` : ''}
+						</div>
+					</div>
+				`;
+
+				document.getElementById('paperSubmissionDetailsContent').innerHTML = content;
+				new bootstrap.Modal(document.getElementById('paperSubmissionDetailsModal')).show();
+			} catch (error) {
+				console.error('Error loading paper submission details:', error);
+				showAlert('Error loading paper submission details: ' + error.message, 'danger');
+			}
+		}
+
+		// Show speaker statistics
+		async function showSpeakerStats() {
+			try {
+				const response = await fetch(`${API_BASE}/admin/speakers/stats`, {
+					headers: getAuthHeaders()
+				});
+
+				if (!response.ok) {
+					throw new Error('Failed to fetch speaker statistics');
+				}
+
+				const result = await response.json();
+				const stats = result.stats;
+
+				// Update statistics cards
+				document.getElementById('totalPapers').textContent = stats.total || 0;
+				document.getElementById('pendingPapers').textContent = stats.pending || 0;
+				document.getElementById('underReviewPapers').textContent = stats.underReview || 0;
+				document.getElementById('approvedPapers').textContent = stats.approved || 0;
+				document.getElementById('rejectedPapers').textContent = stats.rejected || 0;
+				document.getElementById('needsRevisionPapers').textContent = stats.needsRevision || 0;
+
+				// Show/hide statistics cards
+				const statsCards = document.getElementById('speakerStatsCards');
+				if (statsCards.style.display === 'none') {
+					statsCards.style.display = 'block';
+				} else {
+					statsCards.style.display = 'none';
+				}
+			} catch (error) {
+				console.error('Error loading speaker statistics:', error);
+				showAlert('Error loading speaker statistics: ' + error.message, 'danger');
+			}
 		}
 
 		// Show send to committee modal

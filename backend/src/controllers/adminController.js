@@ -423,6 +423,48 @@ export const deleteSpeaker = async (req, res) => {
   }
 };
 
+export const getSpeakerStats = async (req, res) => {
+  try {
+    const [
+      total,
+      pending,
+      underReview,
+      approved,
+      rejected,
+      needsRevision,
+      sentToCommittee
+    ] = await Promise.all([
+      prisma.speaker.count(),
+      prisma.speaker.count({ where: { reviewStatus: 'PENDING' } }),
+      prisma.speaker.count({ where: { reviewStatus: 'UNDER_REVIEW' } }),
+      prisma.speaker.count({ where: { reviewStatus: 'APPROVED' } }),
+      prisma.speaker.count({ where: { reviewStatus: 'REJECTED' } }),
+      prisma.speaker.count({ where: { reviewStatus: 'NEEDS_REVISION' } }),
+      prisma.speaker.count({ where: { sentToCommittee: true } })
+    ]);
+
+    res.json({
+      stats: {
+        total,
+        pending,
+        underReview,
+        approved,
+        rejected,
+        needsRevision,
+        sentToCommittee
+      },
+      success: true
+    });
+  } catch (error) {
+    console.error('Error retrieving speaker stats:', error);
+    res.status(500).json({
+      message: "Error retrieving speaker statistics",
+      error: error.message,
+      success: false,
+    });
+  }
+};
+
 // Sponsor Management
 export const getAllSponsors = async (req, res) => {
   try {

@@ -17,6 +17,7 @@ import {
   getSpeakerById,
   updateSpeaker,
   deleteSpeaker,
+  getSpeakerStats,
   // Sponsor management
   getAllSponsors,
   getSponsorById,
@@ -58,6 +59,7 @@ router.get("/speakers", authMiddleware, getAllSpeakers);
 router.get("/speakers/:id", authMiddleware, getSpeakerById);
 router.put("/speakers/:id", authMiddleware, upload.single('fileInput'), updateSpeaker);
 router.delete("/speakers/:id", authMiddleware, deleteSpeaker);
+router.get("/speakers/stats", authMiddleware, getSpeakerStats);
 
 // Keynote Speaker management routes
 router.get("/keynote-speakers", authMiddleware, getAllKeynoteSpeakersForAdmin);
