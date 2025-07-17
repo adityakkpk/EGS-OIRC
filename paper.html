@@ -735,12 +735,12 @@ Majan University College for a transformative conference exploring the latest a
 									</div>
 								</div>
 
-								<!-- Co-authors Section -->
+								<!-- Co-authors Section (Optional) -->
 								<div class="mb-3">
 									<button type="button" class="btn btn-outline-primary btn-sm" id="addCoAuthor">
-										<i class="fa-solid fa-plus me-2"></i>Add Co-author
+										<i class="fa-solid fa-plus me-2"></i>Add Co-author (Optional)
 									</button>
-									<small class="form-text text-muted d-block mt-1">You can add up to 5 co-authors. Each co-author will receive a copy of the submission confirmation.</small>
+									<small class="form-text text-muted d-block mt-1">You can optionally add up to 5 co-authors. Each co-author will receive a copy of the submission confirmation.</small>
 								</div>
 								<div id="coAuthorsContainer"></div>
 							</div>
@@ -846,10 +846,10 @@ Majan University College for a transformative conference exploring the latest a
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
 									<i class="fa-solid fa-upload me-2"></i>File Upload
 								</h4>
-								<div class="mb-3">
-									<label for="paperFile" class="form-label">Paper File (PDF)*</label>
-									<input type="file" accept=".pdf" id="paperFile" class="form-control" required />
-									<small class="form-text text-muted">Upload your paper in PDF format (max 10MB). Ensure the paper is properly formatted and includes all sections.</small>
+								                                <div class="mb-3">
+									<label for="paperFile" class="form-label">Paper File (PDF/DOCX/LaTeX)*</label>
+									<input type="file" accept=".pdf,.docx,.doc,.tex" id="paperFile" class="form-control" required />
+									<small class="form-text text-muted">Upload your paper in PDF, DOCX, or LaTeX format (max 10MB). Ensure the paper is properly formatted and includes all sections.</small>
 								</div>
 								<div class="mb-3">
 									<label for="supplementaryFile" class="form-label">Supplementary Material (Optional)</label>
@@ -1079,7 +1079,7 @@ Majan University College for a transformative conference exploring the latest a
 							<h5 class="mb-0">Organized by: Traveon</h5>
 						</div>
 						<div class="mt-4">
-							<a href="#" target="_blank" class="btn btn-light">View Location on Map</a>
+							<a href="https://www.google.com/maps/place/Majan+University+College/@23.5900001,58.3900001,15z/data=!4m6!3m5!1s0x3e8f900000000000:0x7176092047777777!8m2!3d23.5900001!4d58.3900001!16s%2Fg%2F11c40000000000000000000000000000?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-light">View Location on Map</a>
 
 						</div>
 					</div>
@@ -1299,11 +1299,8 @@ Majan University College for a transformative conference exploring the latest a
 									</div>
 								</a>
 							</li>
-							<li>
-								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />128A D-Mall, NSP, Delhi,
-									India 
+							<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College, Muscat, Sultanate of Oman 
 								</a>
-							</li>
 							<li>
 								<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg"
 										alt="" />info@icmmcs.org</a>
@@ -1557,21 +1554,21 @@ Majan University College for a transformative conference exploring the latest a
 					<div class="row">
 						<div class="col-md-6 mb-3">
 							<label class="form-label">Full Name*</label>
-							<input type="text" class="form-control" name="coAuthorName${coAuthorCount}" placeholder="Enter co-author's full name" required>
+							<input type="text" class="form-control" name="coAuthorName${coAuthorCount}" placeholder="Enter co-author's full name">
 						</div>
 						<div class="col-md-6 mb-3">
-							<label class="form-label">Email Address*</label>
-							<input type="email" class="form-control" name="coAuthorEmail${coAuthorCount}" placeholder="Enter co-author's email address" required>
+							<label class="form-label">Email Address</label>
+							<input type="email" class="form-control" name="coAuthorEmail${coAuthorCount}" placeholder="Enter co-author's email address">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-3">
-							<label class="form-label">Institution/Affiliation*</label>
-							<input type="text" class="form-control" name="coAuthorInstitution${coAuthorCount}" placeholder="Enter co-author's institution" required>
+							<label class="form-label">Institution/Affiliation</label>
+							<input type="text" class="form-control" name="coAuthorInstitution${coAuthorCount}" placeholder="Enter co-author's institution">
 						</div>
 						<div class="col-md-6 mb-3">
-							<label class="form-label">Country*</label>
-							<select class="form-control" name="coAuthorCountry${coAuthorCount}" required>
+							<label class="form-label">Country</label>
+							<select class="form-control" name="coAuthorCountry${coAuthorCount}">
 								<option value="" disabled selected>Select country</option>
 								<option value="IN">India</option>
 								<option value="OM">Oman</option>
@@ -2093,38 +2090,42 @@ Majan University College for a transformative conference exploring the latest a
 				return;
 			}
 
-			// Validate co-authors if any
+			// Validate co-authors only if they are added
 			const coAuthorCards = document.querySelectorAll('#coAuthorsContainer .card');
-			coAuthorCards.forEach((card, index) => {
-				const name = card.querySelector(`input[name="coAuthorName${index + 1}"]`);
-				const email = card.querySelector(`input[name="coAuthorEmail${index + 1}"]`);
-				const institution = card.querySelector(`input[name="coAuthorInstitution${index + 1}"]`);
-				const country = card.querySelector(`select[name="coAuthorCountry${index + 1}"]`);
-				const orcid = card.querySelector(`input[name="coAuthorOrcid${index + 1}"]`);
-
-				if (name && email && institution && country) {
+			for (const card of coAuthorCards) {
+				const inputs = card.querySelectorAll('input[required], select[required]');
+				const hasValue = Array.from(inputs).some(input => input.value.trim());
+				
+				// If any field is filled, validate all required fields
+				if (hasValue) {
+					const name = card.querySelector('input[name^="coAuthorName"]');
+					const email = card.querySelector('input[name^="coAuthorEmail"]');
+					const institution = card.querySelector('input[name^="coAuthorInstitution"]');
+					const country = card.querySelector('select[name^="coAuthorCountry"]');
+					const orcid = card.querySelector('input[name^="coAuthorOrcid"]');
+					
 					if (!name.value.trim()) {
-						showModal('Validation Error', `Please enter the name for co-author ${index + 1}.`, 'error');
+						showModal('Validation Error', 'Please enter the name for all co-authors or remove incomplete entries.', 'error');
 						return;
 					}
 					if (!validateEmail(email.value)) {
-						showModal('Validation Error', `Please enter a valid email for co-author ${index + 1}.`, 'error');
+						showModal('Validation Error', 'Please enter a valid email for all co-authors or remove incomplete entries.', 'error');
 						return;
 					}
 					if (!institution.value.trim()) {
-						showModal('Validation Error', `Please enter the institution for co-author ${index + 1}.`, 'error');
+						showModal('Validation Error', 'Please enter the institution for all co-authors or remove incomplete entries.', 'error');
 						return;
 					}
 					if (!country.value) {
-						showModal('Validation Error', `Please select a country for co-author ${index + 1}.`, 'error');
+						showModal('Validation Error', 'Please select a country for all co-authors or remove incomplete entries.', 'error');
 						return;
 					}
 					if (orcid && orcid.value && !validateOrcid(orcid.value)) {
-						showModal('Validation Error', `Please enter a valid ORCID ID for co-author ${index + 1}.`, 'error');
+						showModal('Validation Error', 'Please enter a valid ORCID ID for all co-authors or remove incomplete entries.', 'error');
 						return;
 					}
 				}
-			});
+			}
 
 			// Show loading state
 			submitText.style.display = 'none';
