@@ -107,9 +107,7 @@ Majan University College for a transformative experience in mathematics, manage
 			transition: all 0.3s ease;
 		}
 
-		.policy-card:hover {
-			transform: translateX(5px);
-		}
+
 
 		.dropdown-input {
 			display: flex;
@@ -117,98 +115,192 @@ Majan University College for a transformative experience in mathematics, manage
 		}
 
 		.fee-section {
-			padding: 40px;
+			padding: 60px 20px;
 			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+			position: relative;
+		}
+
+		.fee-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+			pointer-events: none;
 		}
 
 		.fee-table {
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			background: white;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 			border-radius: 10px;
-			animation: slideIn 0.8s ease-out;
+			overflow: hidden;
+			border: 1px solid rgba(1, 144, 135, 0.1);
+		}
+
+		.fee-table::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: linear-gradient(90deg, #019087, #40c4ba, #019087);
 		}
 
 		.fee-amount {
-			background-color: white;
+			background: #f8f9fa;
+			font-weight: 700;
+			color: #019087;
+			text-align: center;
+			font-size: 1.1rem;
+			border-radius: 8px;
+			margin: 2px;
+			padding: 10px;
+			border: 2px solid #019087;
 		}
 
-		@keyframes slideIn {
-			from {
-				transform: translateY(30px);
-				opacity: 0;
-			}
 
-			to {
-				transform: translateY(0);
-				opacity: 1;
-			}
+
+		.table {
+			margin-bottom: 0;
+			border-collapse: separate;
+			border-spacing: 0;
+			border: 2px solid #019087;
 		}
 
-		.table> :not(caption)>*>* {
-			padding: 1rem;
+		.table > :not(caption) > * > * {
+			padding: 1.25rem 1rem;
+			border: 1px solid #019087;
+			vertical-align: middle;
 		}
+
+
 
 		.main-header {
-			background-color: #019087;
+			background: linear-gradient(135deg, #019087 0%, #40c4ba 100%);
 			color: white;
 			position: sticky;
 			top: 0;
 			z-index: 10;
+			text-align: center;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
 		}
 
 		.main-header th {
 			position: relative;
+			padding: 1.5rem 1rem !important;
+			border: none;
 		}
 
-		.main-header th:after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			background-color: white;
-			transform: translateX(-100%);
-			transition: transform 0.3s ease;
-		}
 
-		.main-header th:hover:after {
-			transform: translateX(0);
-		}
 
 		.region-header {
-			font-weight: bold;
-			font-size: 18px;
+			font-weight: 700;
+			font-size: 1.1rem;
+			background: #f8f9fa;
+			color: #019087;
+			cursor: pointer;
+			position: relative;
+			border: 2px solid #019087;
+		}
+
+
+
+		.region-header .region-title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0.5rem;
+			border-radius: 8px;
 			position: relative;
 		}
 
+
+
 		.nationsList {
-			background-color: white;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 			padding: 10px;
 			position: absolute;
 			top: 100%;
-			right: 0;
+			left: 0;
 			width: 100%;
-			z-index: 10;
-			transition: all 0.3s ease;
+			z-index: 1000;
 			font-weight: normal;
+			border: 1px solid #ddd;
+			max-height: 200px;
+			overflow-y: auto;
 		}
 
 		.nationsList li {
-			border-bottom: 1px solid gray;
-			border-radius: 8px;
-			padding: 6px;
-			transition: all 0.3s ease;
+			border-bottom: 1px solid #e9ecef;
+			padding: 8px 12px;
+			margin-bottom: 2px;
+			font-size: 0.9rem;
 		}
 
-		.nationsList li:hover {
-			background-color: aliceblue;
+		.nationsList li:last-child {
+			border-bottom: none;
 		}
+
+
 
 		.rotate {
-			transition: all 0.3s ease;
 			transform: rotate(180deg);
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.fee-section {
+				padding: 40px 15px;
+			}
+
+			.fee-table {
+				border-radius: 15px;
+			}
+
+			.table > :not(caption) > * > * {
+				padding: 0.75rem 0.5rem;
+				font-size: 0.9rem;
+			}
+
+			.main-header th {
+				padding: 1rem 0.5rem !important;
+				font-size: 0.8rem;
+			}
+
+			.region-header {
+				font-size: 1rem;
+			}
+
+			.fee-amount {
+				font-size: 0.9rem;
+			}
+		}
+
+		@media (max-width: 576px) {
+			.table > :not(caption) > * > * {
+				padding: 0.5rem 0.25rem;
+				font-size: 0.8rem;
+			}
+
+			.main-header th {
+				padding: 0.75rem 0.25rem !important;
+				font-size: 0.7rem;
+			}
+
+			.region-header {
+				font-size: 0.9rem;
+			}
+
+			.fee-amount {
+				font-size: 0.8rem;
+			}
 		}
 
 		.alert-danger {
@@ -458,7 +550,12 @@ Majan University College for a transformative experience in mathematics, manage
 	<!-- Fee Structure -->
 	<section class="fee-section">
 		<div class="container heading6">
-			<h2 class="section-title text-center m-5">Registration Fee Structure</h2>
+			<div class="text-center mb-5">
+				<h2 class="section-title" style="color: #019087; font-weight: 700; margin-bottom: 1rem;">Registration Fee Structure</h2>
+				<p class="text-muted" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+					Choose your registration category based on your region and professional status. Early bird discounts available until October 7, 2025.
+				</p>
+			</div>
 
 			<div class="fee-table">
 				<div class="table-responsive"> <!-- Added table-responsive wrapper -->
@@ -482,66 +579,71 @@ Majan University College for a transformative experience in mathematics, manage
 						<tbody>
 							<tr>
 								<td class="region-header">
-									<div class="d-flex flex-wrap align-items-center justify-content-between p-1" onclick="toggleMenu('saarc')"> <!-- Modified flex container -->
-										<span style="color: #019087;" class="me-2">SAARC Nations</span> <!-- Added margin -->
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+									<div class="region-title" onclick="toggleMenu('saarc')">
+										<span>SAARC Nations</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#019087"
 											class="bi bi-chevron-down" id="saarc-chevron" viewBox="0 0 16 16">
 											<path fill-rule="evenodd"
 												d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
 										</svg>
 									</div>
 									<ul id="saarcNations" class="nationsList d-none">
-										<li>India</li>
-										<li>Pakistan</li>
-										<li>Bangladesh</li>
-										<li>Nepal</li>
-										<li>Bhutan</li>
-										<li>Sri Lanka</li>
-										<li>Maldives</li>
+										<li>🇮🇳 India</li>
+										<li>🇵🇰 Pakistan</li>
+										<li>🇧🇩 Bangladesh</li>
+										<li>🇳🇵 Nepal</li>
+										<li>🇧🇹 Bhutan</li>
+										<li>🇱🇰 Sri Lanka</li>
+										<li>🇲🇻 Maldives</li>
 									</ul>
 								</td>
-								<td class="fee-amount text-nowrap">$120</td>
 								<td class="fee-amount text-nowrap">$110</td>
-								<td class="fee-amount text-nowrap">$150</td>
-								<td class="fee-amount text-nowrap">$140</td>
-								<td class="fee-amount text-nowrap">$200</td>
-								<td class="fee-amount text-nowrap">$190</td>
+								<td class="fee-amount text-nowrap">$100</td>
+								<td class="fee-amount text-nowrap">$145</td>
+								<td class="fee-amount text-nowrap">$125</td>
+								<td class="fee-amount text-nowrap">$180</td>
+								<td class="fee-amount text-nowrap">$170</td>
 							</tr>
 
 							<tr>
 								<td class="region-header">
-									<div class="d-flex flex-wrap align-items-center justify-content-between p-1" onclick="toggleMenu('gcc')"> <!-- Modified flex container -->
-										<span style="color: #019087;" class="me-2">GCC Nations</span> <!-- Added margin -->
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#019087"
+									<div class="region-title" onclick="toggleMenu('gcc')">
+										<span>GCC Nations</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#019087"
 											class="bi bi-chevron-down" id="gcc-chevron" viewBox="0 0 16 16">
 											<path fill-rule="evenodd"
 												d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
 										</svg>
 									</div>
 									<ul id="gccNations" class="nationsList d-none">
-										<li>UAE</li>
-										<li>Saudi Arabia</li>
-										<li>Kuwait</li>
-										<li>Oman</li>
-										<li>Qatar</li>
-										<li>Bahrain</li>
+										<li>🇦🇪 UAE</li>
+										<li>🇸🇦 Saudi Arabia</li>
+										<li>🇰🇼 Kuwait</li>
+										<li>🇴🇲 Oman</li>
+										<li>🇶🇦 Qatar</li>
+										<li>🇧🇭 Bahrain</li>
+									</ul>
 								</td>
-								<td class="fee-amount text-nowrap">$250</td>
-								<td class="fee-amount text-nowrap">$230</td>
-								<td class="fee-amount text-nowrap">$350</td>
-								<td class="fee-amount text-nowrap">$330</td>
-								<td class="fee-amount text-nowrap">$450</td>
-								<td class="fee-amount text-nowrap">$430</td>
+								<td class="fee-amount text-nowrap">$220</td>
+								<td class="fee-amount text-nowrap">$200</td>
+								<td class="fee-amount text-nowrap">$320</td>
+								<td class="fee-amount text-nowrap">$300</td>
+								<td class="fee-amount text-nowrap">$400</td>
+								<td class="fee-amount text-nowrap">$380</td>
 							</tr>
 
 							<tr>
-								<td class="region-header" style="color: #019087;">Rest of the world</td>
+								<td class="region-header">
+									<div class="region-title">
+										<span>🌍 Rest of the World</span>
+									</div>
+								</td>
+								<td class="fee-amount text-nowrap">$280</td>
+								<td class="fee-amount text-nowrap">$250</td>
+								<td class="fee-amount text-nowrap">$320</td>
 								<td class="fee-amount text-nowrap">$300</td>
-								<td class="fee-amount text-nowrap">$270</td>
 								<td class="fee-amount text-nowrap">$400</td>
-								<td class="fee-amount text-nowrap">$370</td>
-								<td class="fee-amount text-nowrap">$600</td>
-								<td class="fee-amount text-nowrap">$570</td>
+								<td class="fee-amount text-nowrap">$380</td>
 							</tr>
 						</tbody>
 					</table>
@@ -941,7 +1043,7 @@ Majan University College for a transformative experience in mathematics, manage
 
 							<!-- Price Display -->
 							<div class="alert alert-info" id="priceDisplay">
-								Registration Fee: <span id="regFee">$120</span>
+								Registration Fee: <span id="regFee">$110</span>
 							</div>
 
 							<!-- Submit Button -->
@@ -1356,7 +1458,7 @@ Majan University College for a transformative experience in mathematics, manage
 								</a>
 							</li>
 							<li>
-								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />128A D-Mall, NSP, Delhi, India 
+								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College, Muscat, Sultanate of Oman 
 								</a>
 							</li>
 							<li>
@@ -1548,15 +1650,15 @@ Majan University College for a transformative experience in mathematics, manage
 
 		function updatePrice() {
 			const prices = {
-				'student-saarc': { normal: 120, early: 110 },
-				'academician-saarc': { normal: 150, early: 140 },
-				'industrialist-saarc': { normal: 200, early: 190 },
-				'student-gcc': { normal: 250, early: 230 },
-				'academician-gcc': { normal: 350, early: 330 },
-				'industrialist-gcc': { normal: 450, early: 430 },
-				'student-world': { normal: 300, early: 270 },
-				'academician-world': { normal: 400, early: 370 },
-				'industrialist-world': { normal: 600, early: 570 }
+				'student-saarc': { normal: 100, early: 100 },
+				'academician-saarc': { normal: 145, early: 125 },
+				'industrialist-saarc': { normal: 180, early: 170 },
+				'student-gcc': { normal: 220, early: 200 },
+				'academician-gcc': { normal: 320, early: 300 },
+				'industrialist-gcc': { normal: 400, early: 380 },
+				'student-world': { normal: 280, early: 250 },
+				'academician-world': { normal: 350, early: 320 },
+				'industrialist-world': { normal: 500, early: 450 }
 			};
 
 			const selected = regType.value

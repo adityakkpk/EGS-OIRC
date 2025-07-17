@@ -1157,7 +1157,7 @@
 							responsivePriority: 8,
 							className: 'd-none d-xl-table-cell',
 							render: function(data) {
-								return data ? `$${data}` : '-';
+								return data ? `${data}` : '-';
 							}
 						},
 						{ 
@@ -1715,6 +1715,17 @@
 										<select class="form-control" name="attendeeType">
 											<option value="presenter" ${data.attendeeType === 'presenter' ? 'selected' : ''}>Presenter</option>
 											<option value="listener" ${data.attendeeType === 'listener' ? 'selected' : ''}>Listener</option>
+										</select>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label class="form-label">Review Status</label>
+										<select class="form-control" name="reviewStatus">
+											<option value="PENDING" ${data.reviewStatus === 'PENDING' ? 'selected' : ''}>Pending</option>
+											<option value="SENT_TO_COMMITTEE" ${data.reviewStatus === 'SENT_TO_COMMITTEE' ? 'selected' : ''}>Sent to Committee</option>
+											<option value="UNDER_REVIEW" ${data.reviewStatus === 'UNDER_REVIEW' ? 'selected' : ''}>Under Review</option>
+											<option value="APPROVED" ${data.reviewStatus === 'APPROVED' ? 'selected' : ''}>Approved</option>
+											<option value="REJECTED" ${data.reviewStatus === 'REJECTED' ? 'selected' : ''}>Rejected</option>
+											<option value="NEEDS_REVISION" ${data.reviewStatus === 'NEEDS_REVISION' ? 'selected' : ''}>Needs Revision</option>
 										</select>
 									</div>
 									<div class="col-12 mb-3">

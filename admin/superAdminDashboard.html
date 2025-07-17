@@ -898,6 +898,18 @@
 							<input type="tel" class="form-control" id="editSpeakerPhone">
 						</div>
 						<div class="mb-3">
+							<label for="editSpeakerReviewStatus" class="form-label">Review Status</label>
+							<select class="form-control" id="editSpeakerReviewStatus">
+								<option value="PENDING">Pending</option>
+								<option value="SENT_TO_COMMITTEE">Sent to Committee</option>
+								<option value="UNDER_REVIEW">Under Review</option>
+								<option value="APPROVED">Approved</option>
+								<option value="REJECTED">Rejected</option>
+								<option value="NEEDS_REVISION">Needs Revision</option>
+							</select>
+							<small class="text-muted">Update the review status based on committee feedback</small>
+						</div>
+						<div class="mb-3">
 							<label class="form-label">Current Paper File</label>
 							<div class="mb-2" id="currentFileDisplay">
 								<!-- Current file link will be displayed here -->
@@ -1701,7 +1713,7 @@
 						responsivePriority: 5,
 						className: 'd-none d-lg-table-cell',
 						render: function(data) {
-							return data ? `$${data}` : '-';
+							return data ? `${data}` : '-';
 						}
 					},
 					{ 
@@ -2045,10 +2057,10 @@
 											<i class="fas fa-clipboard-check"></i>
 										</button>`
 									}
-									<button class="btn btn-sm btn-outline-primary" onclick="editSpeaker(${row.id})" title="Edit">
+									<button class="btn btn-sm btn-outline-primary" onclick="editSpeaker('${row.id}')" title="Edit">
 										<i class="fas fa-edit"></i>
 									</button>
-									<button class="btn btn-sm btn-outline-danger" onclick="deleteSpeaker(${row.id})" title="Delete">
+									<button class="btn btn-sm btn-outline-danger" onclick="deleteSpeaker('${row.id}')" title="Delete">
 										<i class="fas fa-trash"></i>
 									</button>
 								</div>
@@ -2241,6 +2253,7 @@
 			document.getElementById('editSpeakerCountry').value = speaker.country || '';
 			document.getElementById('editSpeakerPaperTitle').value = speaker.paperTitle || '';
 			document.getElementById('editSpeakerPhone').value = speaker.phone || '';
+			document.getElementById('editSpeakerReviewStatus').value = speaker.reviewStatus || 'PENDING';
 			
 			// Display current file
 			const currentFileDisplay = document.getElementById('currentFileDisplay');
@@ -2264,6 +2277,7 @@
 			formData.append('country', document.getElementById('editSpeakerCountry').value);
 			formData.append('paperTitle', document.getElementById('editSpeakerPaperTitle').value);
 			formData.append('phone', document.getElementById('editSpeakerPhone').value);
+			formData.append('reviewStatus', document.getElementById('editSpeakerReviewStatus').value);
 			
 			// Add file if selected
 			const fileInput = document.getElementById('editSpeakerFile');

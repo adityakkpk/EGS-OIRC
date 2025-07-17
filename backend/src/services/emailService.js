@@ -413,10 +413,10 @@ const speakerReviewCommitteeTemplate = (speakerData, committeeMember) => `
           <h3 style="color: #019087; margin-bottom: 15px;">Review Actions Required</h3>
           <p style="margin-bottom: 20px;">Please review the presenter application and provide your recommendation:</p>
           <div>
-            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - APPROVED - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: APPROVED%0D%0AComments:" class="cta-button" style="background: #28a745;">
+            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter%20Review%20-%20APPROVED%20-${speakerData.name}&body=Presenter%20Name:${speakerData.name}%0D%0APaper%20Title:%20${speakerData.paperTitle}%0D%0ARecommendation:APPROVED%0D%0AComments:" class="cta-button" style="background: #28a745;">
               ✅ APPROVE
             </a>
-            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - NEEDS REVISION - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: NEEDS REVISION%0D%0AComments:" class="cta-button" style="background: #ffc107; color: #000;">
+            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter%20Review%20-%20NEEDS%20REVISION%20-${speakerData.name}&body=Presenter%20Name:${speakerData.name}%0D%0APaper%20Title:%20${speakerData.paperTitle}%0D%0ARecommendation:NEEDS%20REVISION%0D%0AComments:" class="cta-button" style="background: #ffc107; color: #000;">
               📝 NEEDS REVISION
             </a>
             <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - REJECTED - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: REJECTED%0D%0AComments:" class="cta-button" style="background: #dc3545;">

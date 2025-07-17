@@ -614,7 +614,7 @@ Majan University College for a transformative conference exploring the latest a
 			}
 		}
 
-		/* Carousal */
+		/* Carousel Styles */
 		.carousel-container {
 			width: 100%;
 			margin: 0 auto;
@@ -626,31 +626,34 @@ Majan University College for a transformative conference exploring the latest a
 
 		.carousel-track {
 			display: flex;
-			animation: carousel 15s linear infinite;
+			gap: 20px;
+			animation: carousel 20s linear infinite;
 			width: max-content;
 		}
 
 		.carousel-slide {
-			min-width: 200px;
-			width: 250px;
-			height: 250px;
+			min-width: 280px;
+			width: 280px;
+			height: auto;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: white;
-			font-size: 1.5rem;
-			font-weight: bold;
-			border-radius: 4px;
+			border-radius: 8px;
+			flex-shrink: 0;
+		}
+
+		.carousel-slide .chair-card {
+			width: 100%;
+			height: 100%;
+			margin: 0;
 		}
 
 		@keyframes carousel {
 			0% {
 				transform: translateX(0);
 			}
-
 			100% {
-				transform: translateX(calc(-100% / 2));
-				/* Move by half of the duplicated content */
+				transform: translateX(calc(-50% - 10px));
 			}
 		}
 
@@ -662,40 +665,50 @@ Majan University College for a transformative conference exploring the latest a
 		/* Responsive adjustments */
 		@media (max-width: 768px) {
 			.carousel-slide {
-				height: 250px;
-				min-width: 160px;
-				width: 25vw;
-				font-size: 1.2rem;
+				min-width: 240px;
+				width: 240px;
 			}
 
 			.carousel-track {
-				animation: carousel 5s linear infinite;
+				animation: carousel 15s linear infinite;
+				gap: 15px;
 			}
 		}
 
-		/* Extra small screens */
 		@media (max-width: 480px) {
 			.carousel-slide {
-				height: 250px;
-				width: 50vw;
-				min-width: 100px;
-				font-size: 0.9rem;
+				min-width: 200px;
+				width: 200px;
+			}
+
+			.carousel-track {
+				animation: carousel 12s linear infinite;
+				gap: 10px;
 			}
 		}
 
 		@media (min-width: 1024px) {
 			.carousel-slide {
-				width: 20vw;
-				/* Show 5 slides on larger screens */
+				min-width: 300px;
+				width: 300px;
+			}
+
+			.carousel-track {
+				animation: carousel 25s linear infinite;
+				gap: 25px;
 			}
 		}
 
 		@media (max-width: 350px) {
 			.carousel-slide {
-				width: 100vw;
-				/* Show 1 slide on very small mobile */
-				height: 250px;
+				min-width: 180px;
+				width: 180px;
 			}
+		}
+
+		#co-chairs-carousel .carousel-track {
+			animation: none !important;
+			will-change: transform;
 		}
 	</style>
 
@@ -1135,7 +1148,7 @@ Majan University College for a transformative conference exploring the latest a
 										<ul class="mb-0">
 											<li><strong>Call For Papers:</strong> July 15, 2025</li>
 											<li><strong>Last Date of Paper Submission:</strong> September 15, 2025</li>
-											<li><strong>Notification of Acceptance:</strong> September 30, 2025</li>
+											<li><strong>Notification of Acceptance:</strong> Within 10 Business Days, after the submission of the paper</li>
 											<li><strong>Last Date for Camera Ready:</strong> October 15, 2025</li>
 											<li><strong>Last Date of Registration:</strong> October 25, 2025</li>
 											<li><strong>Conference Dates:</strong> November 10, 2025</li>
@@ -1300,17 +1313,17 @@ Majan University College for a transformative conference exploring the latest a
 					</div>
 
 					<div class="leadership-grid">
-						<!-- <div class="chair-card">
+						<div class="chair-card">
 							<div class="chair-content">
 								<div class="chair-img">
 									<img src="assets/img/proff/sInnamoratti.jpg" alt="S. innamoratti">
 								</div>
 								<div class="chair-info">
 									<h3>S. Innamoratti</h3>
-									<p>University of L’Aquila, Italy</p>
+									<p>University of L'Aquila, Italy</p>
 								</div>
 							</div>
-						</div> -->
+						</div>
 
 						<!-- <div class="chair-card">
 							<div class="chair-content">
@@ -1429,13 +1442,14 @@ Majan University College for a transformative conference exploring the latest a
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div id="carousel" class="carousel-container">
+					<div id="co-chairs-carousel" class="carousel-container">
 						<div class="carousel-track">
+							<!-- Original slides -->
 							<div class="carousel-slide">
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/gAggarwal.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/gAggarwal.jpg" alt="G Aggarwal">
 										</div>
 										<div class="chair-info">
 											<h3>G Aggarwal</h3>
@@ -1444,11 +1458,11 @@ Majan University College for a transformative conference exploring the latest a
 									</div>
 								</div>
 							</div>
-							<!-- <div class="carousel-slide">
+							<div class="carousel-slide">
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/sShakya.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/sShakya.jpg" alt="S. Shakya">
 										</div>
 										<div class="chair-info">
 											<h3>S. Shakya</h3>
@@ -1456,30 +1470,17 @@ Majan University College for a transformative conference exploring the latest a
 										</div>
 									</div>
 								</div>
-							</div> -->
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/sSebestian.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>S. Sebastian</h3>
-											<p>Christ University, India</p>
-										</div>
-									</div>
-								</div>
 							</div>
-							<!-- Duplicate slides -->
+							<!-- Duplicate slides for seamless loop -->
 							<div class="carousel-slide">
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/gAggarwal.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/gAggarwal.jpg" alt="G Aggarwal">
 										</div>
 										<div class="chair-info">
 											<h3>G Aggarwal</h3>
-											<p>Amity University, Tashkent</p>
+											<p>Amity University Tashkent, Uzbekistan</p>
 										</div>
 									</div>
 								</div>
@@ -1488,63 +1489,11 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/sShakya.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/sShakya.jpg" alt="S. Shakya">
 										</div>
 										<div class="chair-info">
 											<h3>S. Shakya</h3>
 											<p>Tribhuvan University, Nepal</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/sSebestian.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>S. Sebastian</h3>
-											<p>Christ University, India</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/gAggarwal.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>G Aggarwal</h3>
-											<p>Amity University, Tashkent</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/sShakya.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>S. Shakya</h3>
-											<p>Tribhuvan University, Nepal</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/sSebestian.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>S. Sebastian</h3>
-											<p>Christ University, India</p>
 										</div>
 									</div>
 								</div>
@@ -1570,17 +1519,18 @@ Majan University College for a transformative conference exploring the latest a
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div id="carousel" class="carousel-container">
+					<div id="scientific-committee-carousel" class="carousel-container">
 						<div class="carousel-track">
+							<!-- Original slides -->
 							<div class="carousel-slide">
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/pZenn.png" alt="S. innamoratti">
+											<img src="assets/img/proff/pZenn.png" alt="Mauro Zannetti">
 										</div>
 										<div class="chair-info">
 											<h3>Mauro Zannetti</h3>
-											<p>University of L’Aquila, Italy</p>
+											<p>University of L'Aquila, Italy</p>
 										</div>
 									</div>
 								</div>
@@ -1589,11 +1539,11 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/aKhurana.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/aKhurana.jpg" alt="Ashish Khurana">
 										</div>
 										<div class="chair-info">
 											<h3>Ashish Khurana</h3>
-											<p> MBA (Boston University) <br> MS (BITS Pilani)</p>
+											<p>MBA (Boston University) <br> MS (BITS Pilani)</p>
 										</div>
 									</div>
 								</div>
@@ -1602,7 +1552,7 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/pChris.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/pChris.jpg" alt="Christopher Presto">
 										</div>
 										<div class="chair-info">
 											<h3>Christopher Presto</h3>
@@ -1611,16 +1561,29 @@ Majan University College for a transformative conference exploring the latest a
 									</div>
 								</div>
 							</div>
-							<!-- Duplicate slides -->
 							<div class="carousel-slide">
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/pZenn.png" alt="S. innamoratti">
+											<img src="assets/img/proff/fm.jpeg" alt="Fabrizio Maturo">
+										</div>
+										<div class="chair-info">
+											<h3>Fabrizio Maturo</h3>
+											<p>Universitas Mercatorum, Rome, Italy</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Duplicate slides for seamless loop -->
+							<div class="carousel-slide">
+								<div class="chair-card">
+									<div class="chair-content">
+										<div class="chair-img">
+											<img src="assets/img/proff/pZenn.png" alt="Mauro Zannetti">
 										</div>
 										<div class="chair-info">
 											<h3>Mauro Zannetti</h3>
-											<p>University of L’Aquila, Italy</p>
+											<p>University of L'Aquila, Italy</p>
 										</div>
 									</div>
 								</div>
@@ -1629,11 +1592,11 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/aKhurana.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/aKhurana.jpg" alt="Ashish Khurana">
 										</div>
 										<div class="chair-info">
 											<h3>Ashish Khurana</h3>
-											<p> MBA (Boston University) <br> MS (BITS Pilani)</p>
+											<p>MBA (Boston University) <br> MS (BITS Pilani)</p>
 										</div>
 									</div>
 								</div>
@@ -1642,11 +1605,11 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/pChris.jpg" alt="S. innamoratti">
+											<img src="assets/img/proff/pChris.jpg" alt="Christopher Presto">
 										</div>
 										<div class="chair-info">
 											<h3>Christopher Presto</h3>
-											<p>CEO, Mimir's Well LLC</p>
+											<p>CEO, Mooshly LLC, Japan</p>
 										</div>
 									</div>
 								</div>
@@ -1655,37 +1618,11 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="chair-card">
 									<div class="chair-content">
 										<div class="chair-img">
-											<img src="assets/img/proff/pZenn.png" alt="S. innamoratti">
+											<img src="assets/img/proff/fm.jpeg" alt="Fabrizio Maturo">
 										</div>
 										<div class="chair-info">
-											<h3>Mauro Zannetti</h3>
-											<p>University of L’Aquila, Italy</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/aKhurana.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>Ashish Khurana</h3>
-											<p> MBA (Boston University) <br> MS (BITS Pilani)</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-slide">
-								<div class="chair-card">
-									<div class="chair-content">
-										<div class="chair-img">
-											<img src="assets/img/proff/pChris.jpg" alt="S. innamoratti">
-										</div>
-										<div class="chair-info">
-											<h3>Christopher Presto</h3>
-											<p>CEO, Mimir's Well LLC</p>
+											<h3>Fabrizio Maturo</h3>
+											<p>Universitas Mercatorum, Rome, Italy</p>
 										</div>
 									</div>
 								</div>
@@ -1791,7 +1728,7 @@ Majan University College for a transformative conference exploring the latest a
 						<div>
 							<h3 class="fs-4 fw-semibold mb-2" style="color: #019087;">Location</h3>
 							<p class="text-secondary mb-0">
-								Majan University College, Muscat, Oman
+								Majan University College, Muscat, Oman
 							</p>
 						</div>
 					</div>
@@ -1971,7 +1908,7 @@ Majan University College for a transformative conference exploring the latest a
 								</a>
 							</li>
 							<li>
-								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />128A D-Mall, NSP, Delhi, India 
+								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College, Muscat, Sultanate of Oman 
 								</a>
 							</li>
 							<li>
@@ -2046,7 +1983,7 @@ Majan University College for a transformative conference exploring the latest a
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="copyright">
-						<p>&copy; Copyright 2025 - Traveon Ventures LLP. All Right Reserved</p>
+						<p>&copy; Copyright 2025 - Traveon Ventures LLP. All Right Reserved</p>
 					</div>
 				</div>
 			</div>
@@ -2250,6 +2187,44 @@ Majan University College for a transformative conference exploring the latest a
 				submitBtn.disabled = false;
 			}
 		}
+
+		// Smooth infinite carousel for Conference Co-Chairs
+		(function() {
+			const carousel = document.getElementById('co-chairs-carousel');
+			if (!carousel) return;
+			const track = carousel.querySelector('.carousel-track');
+			const slides = Array.from(track.children);
+			const slideCount = slides.length;
+			const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(track).gap || 20, 10);
+
+			// Clone slides for seamless looping
+			slides.forEach(slide => {
+				const clone = slide.cloneNode(true);
+				clone.classList.add('clone');
+				track.appendChild(clone);
+			});
+
+			let position = 0;
+			let rafId;
+			const speed = 0.5; // px per frame, adjust for speed
+
+			function animate() {
+				position -= speed;
+				// When we've scrolled past the original slides, reset position
+				if (Math.abs(position) >= slideWidth * slideCount) {
+					position = 0;
+				}
+				track.style.transform = `translateX(${position}px)`;
+				rafId = requestAnimationFrame(animate);
+			}
+
+			// Pause on hover
+			carousel.addEventListener('mouseenter', () => cancelAnimationFrame(rafId));
+			carousel.addEventListener('mouseleave', () => animate());
+
+			// Start animation
+			animate();
+		})();
 	</script>
 </body>
 
