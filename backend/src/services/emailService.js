@@ -412,6 +412,16 @@ const speakerReviewCommitteeTemplate = (speakerData, committeeMember) => `
         <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #019087;">
           <h3 style="color: #019087; margin-bottom: 15px;">Review Actions Required</h3>
           <p style="margin-bottom: 20px;">Please review the presenter application and provide your recommendation:</p>
+          
+          <div style="margin-bottom: 20px;">
+            <a href="https://www.icmmcs.org/paper-review.html?id=${speakerData.id}" class="cta-button" style="background: #019087; margin-bottom: 10px;">
+              📋 View Full Paper Details
+            </a>
+            <p style="font-size: 12px; color: #666; margin-top: 5px;">
+              Click above to access the complete paper submission with all details, files, and review interface
+            </p>
+          </div>
+          
           <div>
             <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter%20Review%20-%20APPROVED%20-${speakerData.name}&body=Presenter%20Name:${speakerData.name}%0D%0APaper%20Title:%20${speakerData.paperTitle}%0D%0ARecommendation:APPROVED%0D%0AComments:" class="cta-button" style="background: #28a745;">
               ✅ APPROVE
@@ -419,7 +429,7 @@ const speakerReviewCommitteeTemplate = (speakerData, committeeMember) => `
             <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter%20Review%20-%20NEEDS%20REVISION%20-${speakerData.name}&body=Presenter%20Name:${speakerData.name}%0D%0APaper%20Title:%20${speakerData.paperTitle}%0D%0ARecommendation:NEEDS%20REVISION%0D%0AComments:" class="cta-button" style="background: #ffc107; color: #000;">
               📝 NEEDS REVISION
             </a>
-            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter Review - REJECTED - ${speakerData.name}&body=Presenter Name: ${speakerData.name}%0D%0APaper Title : ${speakerData.paperTitle}%0D%0ARecommendation: REJECTED%0D%0AComments:" class="cta-button" style="background: #dc3545;">
+            <a href="mailto:${process.env.ADMIN_EMAIL}?subject=Presenter%20Review%20-%20REJECTED%20-%20${speakerData.name}&body=Presenter%20Name:%20${speakerData.name}%0D%0APaper%20Title:%20${speakerData.paperTitle}%0D%0ARecommendation:%20REJECTED%0D%0AComments:" class="cta-button" style="background: #dc3545;">
               ❌ REJECT
             </a>
           </div>

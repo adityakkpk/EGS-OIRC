@@ -1535,7 +1535,7 @@
 			const statsContainer = document.getElementById('statsContainer');
 			const statsCards = [
 				{ title: 'Total Registrations', value: stats.registrations || 0, icon: 'fas fa-users', color: 'bg-primary' },
-				{ title: 'Total Speakers', value: stats.speakers || 0, icon: 'fas fa-microphone', color: 'bg-success' },
+				{ title: 'Total Presenters', value: stats.speakers || 0, icon: 'fas fa-microphone', color: 'bg-success' },
 				{ title: 'Keynote Speakers', value: stats.keynoteSpeakers || 0, icon: 'fas fa-star', color: 'bg-purple' },
 				{ title: 'Total Sponsors', value: stats.sponsors || 0, icon: 'fas fa-handshake', color: 'bg-warning' },
 				{ title: 'Total Admins', value: stats.admins || 0, icon: 'fas fa-user-shield', color: 'bg-info' }
@@ -1547,9 +1547,9 @@
 					<div class="col-lg-2 col-md-4 col-sm-6 mb-4">
 						<div class="stats-card">
 							<div class="d-flex align-items-center">
-								<div class="stats-icon ${card.color}">
+								<!-- <div class="stats-icon ${card.color}">
 									<i class="${card.icon}"></i>
-								</div>
+								</div> -->
 								<div class="ms-3">
 									<h3 class="mb-0">${card.value}</h3>
 									<p class="text-muted mb-0">${card.title}</p>
