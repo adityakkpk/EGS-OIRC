@@ -4,21 +4,18 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Contact Us | ICMMCS 2025</title>
+	<title>Event Policies - ICMMCS 2025</title>
 	<meta name="description"
-		content="Join us at ICMMCS 2025 on 10th November 2025
-Majan University College for a transformative conference exploring the latest advancements in mathematics, management, and computer science.">
+		content="Event Policies for ICMMCS 2025 - Guidelines and policies for conference participation, registration, and conduct.">
 	<meta property="og:image" content="assets/img/sponsors_log/3.png" />
-	<meta property="og:title" content="ICMMCS 2025" />
+	<meta property="og:title" content="Event Policies - ICMMCS 2025" />
 	<meta property="og:description"
-		content="Join us at ICMMCS 2025 on 10th November 2025
-Majan University College for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
-	<meta property="og:url" content="https://www.icmmcs.org/faq.html" />
+		content="Event Policies for ICMMCS 2025 - Guidelines and policies for conference participation, registration, and conduct." />
+	<meta property="og:url" content="https://www.icmmcs.org/event-policy.html" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="ICMMCS 2025" />
+	<meta name="twitter:title" content="Event Policies - ICMMCS 2025" />
 	<meta name="twitter:description"
-		content="Join us at ICMMCS 2025 on 10th November 2025
-Majan University College for a transformative conference exploring the latest advancements in mathematics, management, and computer science." />
+		content="Event Policies for ICMMCS 2025 - Guidelines and policies for conference participation, registration, and conduct." />
 	<meta name="twitter:image" content="assets/img/sponsors_logo/3.png" />
 
 	<!--=====FAB ICON=======-->
@@ -37,16 +34,225 @@ Majan University College for a transformative conference exploring the latest a
 	<link rel="stylesheet" href="assets/css/vendor/odometer.css" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
-	<!--=====  JS SCRIPT LINK =======-->
-	<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-
 	<style>
-		.contact-card:hover {
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-			transform: scale(1.05);
+		.policy-section {
+			padding: 80px 0;
+			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		}
+
+		.policy-container {
+			max-width: 900px;
+			margin: 0 auto;
+			background: white;
+			border-radius: 20px;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+
+		.policy-header {
+			background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+			color: white;
+			padding: 60px 40px;
+			text-align: center;
+			position: relative;
+		}
+
+		.policy-header::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('assets/img/bg/header-bg1.png') center/cover;
+			opacity: 0.1;
+		}
+
+		.policy-header h1 {
+			font-size: 3rem;
+			font-weight: 700;
+			margin-bottom: 20px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.policy-header p {
+			font-size: 1.2rem;
+			opacity: 0.9;
+			position: relative;
+			z-index: 1;
+		}
+
+		.policy-content {
+			padding: 60px 40px;
+		}
+
+		.policy-intro {
+			background: #f8f9fa;
+			padding: 30px;
+			border-radius: 15px;
+			margin-bottom: 40px;
+			border-left: 5px solid #28a745;
+		}
+
+		.policy-intro p {
+			font-size: 1.1rem;
+			line-height: 1.8;
+			margin: 0;
+			color: #495057;
+		}
+
+		.policy-item {
+			margin-bottom: 40px;
+			padding: 30px;
+			border-radius: 15px;
+			background: white;
+			border: 1px solid #e9ecef;
 			transition: all 0.3s ease;
 		}
+
+		.policy-item:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+			border-color: #28a745;
+		}
+
+		.policy-item h3 {
+			color: #28a745;
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+		}
+
+		.policy-item h3::before {
+			content: '';
+			width: 30px;
+			height: 3px;
+			background: #28a745;
+			margin-right: 15px;
+			border-radius: 2px;
+		}
+
+		.policy-item ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.policy-item li {
+			padding: 12px 0;
+			border-bottom: 1px solid #f1f3f4;
+			position: relative;
+			padding-left: 25px;
+			font-size: 1rem;
+			line-height: 1.6;
+			color: #495057;
+		}
+
+		.policy-item li:last-child {
+			border-bottom: none;
+		}
+
+		.policy-item li::before {
+			content: '•';
+			color: #28a745;
+			font-weight: bold;
+			font-size: 1.2rem;
+			position: absolute;
+			left: 0;
+			top: 12px;
+		}
+
+		.policy-footer {
+			background: #f8f9fa;
+			padding: 40px;
+			text-align: center;
+			border-top: 1px solid #e9ecef;
+		}
+
+		.policy-footer p {
+			font-size: 1.1rem;
+			color: #495057;
+			margin-bottom: 20px;
+		}
+
+		.policy-footer .highlight {
+			color: #28a745;
+			font-weight: 600;
+		}
+
+		.back-to-top {
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+			width: 50px;
+			height: 50px;
+			background: #28a745;
+			color: white;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			z-index: 1000;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.back-to-top:hover {
+			background: #20c997;
+			transform: translateY(-3px);
+			color: white;
+		}
+
+		.back-to-top.show {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		@media (max-width: 768px) {
+			.policy-header {
+				padding: 40px 20px;
+			}
+
+			.policy-header h1 {
+				font-size: 2rem;
+			}
+
+			.policy-content {
+				padding: 40px 20px;
+			}
+
+			.policy-item {
+				padding: 20px;
+			}
+
+			.policy-item h3 {
+				font-size: 1.3rem;
+			}
+
+			.policy-footer {
+				padding: 30px 20px;
+			}
+		}
+
+		.animate-fade-in {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: all 0.6s ease;
+		}
+
+		.animate-fade-in.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	</style>
+
+	<!--=====  JS SCRIPT LINK =======-->
+	<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
 </head>
 
 <body class="homepage4-body">
@@ -86,16 +292,6 @@ Majan University College for a transformative conference exploring the latest a
 									<li>
 										<a href="index.html">Home </a>
 									</li>
-									<!-- <li>
-										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
-										<ul class="dropdown-padding">
-											<li><a href="about.html">About Conference</a></li>
-											<li><a href="paper.html">Call For Papers</a></li>
-											<li><a href="agenda.html">Conference Agenda</a></li>
-											<li><a href="keynote-speaker-register.html">Keynote Speaker Registration</a></li>
-											<li><a href="faq.html">FAQs</a></li>
-										</ul>
-									</li> -->
 									<li>
 										<a href="#">Conference <i class="fa-solid fa-angle-down"></i></a>
 										<ul class="dropdown-padding">
@@ -112,9 +308,6 @@ Majan University College for a transformative conference exploring the latest a
 									<li>
 										<a href="exhibition.html">Exhibition</a>
 									</li>
-									<!-- <li>
-										<a href="sponsors.html">Sponsors</a>
-									</li> -->
 									<li>
 										<a href="contact.html">Contact Us</a>
 									</li>
@@ -185,7 +378,6 @@ Majan University College for a transformative conference exploring the latest a
 				<li>
 					<a href="contact.html">Contact Us</a>
 				</li>
-
 			</ul>
 			<div class="allmobilesection">
 				<a class="vl-btn4" href="contact.html"><span class="demo">Contact Us</span></a>
@@ -197,7 +389,7 @@ Majan University College for a transformative conference exploring the latest a
 								<span><i class="fa-solid fa-phone-volume"></i></span>
 							</div>
 							<div class="contact-info-text">
-								<a href="tel:+919540111207">+91-9540111207</a>
+								<a href="tel:9540111207">+968 93391308, <br>+91-9540111207</a>
 							</div>
 						</div>
 						<div class="contact-info-single">
@@ -216,7 +408,7 @@ Majan University College for a transformative conference exploring the latest a
 								</div>
 								<div class="contact-info-text">
 									<a href="#">
-										Majan University College, Muscat, Oman </a>
+										Majan University College, Muscat, Oman </a>
 								</div>
 							</div>
 						</div>
@@ -227,184 +419,77 @@ Majan University College for a transformative conference exploring the latest a
 	</div>
 	<!--===== MOBILE HEADER ENDS =======-->
 
-	<!--===== HERO AREA STARTS =======-->
-	<div class="inner-page-header" style="background-color: #019087;">
+	<!--===== EVENT POLICIES SECTION STARTS =======-->
+	<section class="policy-section">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-9 m-auto">
-					<div class="heading1 text-center">
-						<h1>Contact Us</h1>
-						<!-- <div class="space20"></div>
-						<a href="index.html">Home <i class="fa-solid fa-angle-right"></i> <span>Frequently Asked Question</span></a> -->
+			<div class="policy-container">
+				<div class="policy-header">
+					<h1>EVENT POLICIES</h1>
+					<p>ICMMCS 2025 - Guidelines for Conference Participation and Conduct</p>
+				</div>
+
+				<div class="policy-content">
+					<div class="policy-intro animate-fade-in">
+						<p><strong>ICMMCS 2025</strong> is committed to providing a seamless, professional, and inclusive conference experience. To ensure the smooth execution of the event, all participants must adhere to the following policies:</p>
 					</div>
+
+					<div class="policy-item animate-fade-in">
+						<h3>1. Registration & Access</h3>
+						<ul>
+							<li>All attendees must complete the official registration process before accessing the event.</li>
+							<li>Badges must be worn at all times for security and identification purposes.</li>
+						</ul>
+					</div>
+
+					<div class="policy-item animate-fade-in">
+						<h3>2. Attendance & Participation</h3>
+						<ul>
+							<li>Sessions, workshops, and networking events must be attended punctually.</li>
+							<li>Unauthorized distribution of promotional materials is not permitted.</li>
+						</ul>
+					</div>
+
+					<div class="policy-item animate-fade-in">
+						<h3>3. Content & Recording</h3>
+						<ul>
+							<li>Unauthorized recording, live streaming, or distribution of event content is prohibited.</li>
+							<li>Speakers and presenters must obtain consent before sharing any confidential or sensitive information.</li>
+						</ul>
+					</div>
+
+					<div class="policy-item animate-fade-in">
+						<h3>4. Health & Safety</h3>
+						<ul>
+							<li>Attendees must comply with all venue safety regulations and emergency protocols.</li>
+							<li>Any health concerns should be reported to the event organizers or venue personnel immediately.</li>
+						</ul>
+					</div>
+
+					<div class="policy-item animate-fade-in">
+						<h3>5. Cancellation & Refunds</h3>
+						<ul>
+							<li>Registration fees are non-refundable, except under special circumstances outlined in our Cancellation Policy.</li>
+							<li>Sponsorship and exhibitor agreements are subject to individual contractual terms.</li>
+						</ul>
+					</div>
+
+					<div class="policy-item animate-fade-in">
+						<h3>6. Compliance with Venue Rules</h3>
+						<ul>
+							<li>All attendees must respect the venue's regulations, including property protection and waste disposal.</li>
+							<li>Any damage caused to the venue by an attendee will be their sole responsibility.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="policy-footer">
+					<p>By participating in <strong>ICMMCS 2025</strong>, you agree to comply with these event policies, ensuring a smooth and enjoyable experience for all.</p>
+					<p class="highlight">🔹 Thank you for your cooperation in making this conference a success!</p>
 				</div>
 			</div>
-		</div>
-	</div>
-	<!--===== HERO AREA ENDS =======-->
-
-	<!--===== CONTACT SECTION START =======-->
-	<section class="contact-section section-padding">
-		<div class="container p-5">
-			<div class="d-flex justify-content-center" style="gap: 12px;border-radius: 8px;">
-				<div class="col-lg-4 col-md-6 contact-card"
-					style="background-color: white;padding: 12px 0;border-radius: 10px;border: 1px solid #019087;"
-					data-aos="zoom-in" data-aos-duration="1000">
-					<div class="contact-info-box text-center">
-						<div class="d-flex align-items-center justify-content-center gap-2"
-							style="color: #019087; font-size: 32px;">
-							<div class="icon">
-								<i class="fas fa-phone"></i>
-							</div>
-							<h4 style="font-weight: bold; font-size: 32px;">Phone Numbers</h4>
-						</div>
-						<div class="mt-3 d-flex align-items-center" style="font-size: 24px;flex-direction: column; ">
-							<!-- <p><strong>Oman : </strong><a href="tel:+96893391308">+968 93391308</a></p> -->
-							<p>
-								<!-- <strong>India : </strong> -->
-								<a href="tel:+919540111207">+91-9540111207</a>
-							</p>
-							<p>
-								<!-- <strong>Oman : </strong> -->
-								<a href="tel:+96895143144">+968 9514 3144</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 contact-card"
-					style="background-color: white;padding: 12px 0 0 0;border-radius: 10px;border: 1px solid #019087;"
-					data-aos="zoom-in" data-aos-duration="1000">
-					<div class="contact-info-box text-center">
-						<div class="d-flex align-items-center justify-content-center gap-2"
-							style="color: #019087; font-size: 32px;">
-							<div class="icon">
-								<i class="fas fa-map-marker-alt"></i>
-							</div>
-							<h4 style="font-weight: bold; font-size: 32px;">Corporate Office</h4>
-						</div>
-						<div class="m-3 d-flex align-items-center" style="font-size: 24px;flex-direction: column; ">
-							<!-- <p style="text-align: start; width: 100%;"><strong>Oman Office : </strong>
-								<span>To be announced</span>
-							</p> -->
-							<p style="text-align: start; width: 100%;">
-								<!-- <strong>Corporate Office : </strong> -->
-								<span>128, D-Mall, NSP, Delhi-110034, India </span>
-							</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 contact-card"
-					style="background-color: white;padding: 12px 0;border-radius: 10px;border: 1px solid #019087;"
-					data-aos="zoom-in" data-aos-duration="1000">
-					<div class="contact-info-box text-center">
-						<div class="d-flex align-items-center justify-content-center gap-2"
-							style="color: #019087; font-size: 32px;">
-							<div class="icon">
-								<i class="fas fa-envelope"></i>
-							</div>
-							<h4 style="font-weight: bold; font-size: 32px;">Email Address</h4>
-						</div>
-						<div class="mt-3 d-flex align-items-center" style="font-size: 24px;flex-direction: column; ">
-							<p>
-								<!-- <strong>Email : </strong> -->
-								<a href="mailto:info@icmmcs.org">info@icmmcs.org</a>
-							</p>
-							<!-- <p><strong>Website : </strong><a href="http://www.icmmcs.org" target="_blank">www.icmmcs.org</a></p> -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- <div class="row mt-5">
-				<div class="col-lg-12" style="padding: 12px 0;">
-					<div class="contact-info-box text-center">
-						<div class="d-flex align-items-center justify-content-center gap-2"
-							style="color: #019087; font-size: 32px;">
-							<div class="icon">
-								<i class="fas fa-map-marker-alt"></i>
-							</div>
-							<h4 style="font-weight: bold; font-size: 32px;">Conference Location</h4>
-						</div>
-						<div class="mt-3">
-							Majan University College, Muscat, Oman
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</section>
-	<!--===== CONTACT SECTION END =======-->
-
-	<!--===== Contact AREA STARTS =======-->
-	<div class="contact-inner-section sp1" style="background-color: antiquewhite;">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h3 class="text-anime-style-3 text-center" style="color: #019087;text-transform: none;">Any questions or
-						remarks? Please fill out the form below</h3>
-					<div class="space28"></div>
-					<div class="space28"></div>
-				</div>
-				<div class="col-lg-6">
-					<div class="img1 image-anime">
-						<img src="assets/img/elements/contactNew.jpeg" alt="" />
-					</div>
-				</div>
-
-				<div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
-					<div class="contact4-boxarea">
-						<h3 class="text-anime-style-3" style="color: #019087;text-transform: none;">Get In Touch Now</h3>
-						<div class="space8"></div>
-						<form id="contactForm" onsubmit="handleSubmit(event)">
-							<div class="row">
-								<div class="col-lg-6 col-md-6">
-									<div class="input-area">
-										<input type="text" id="name" name="name" placeholder="Name" required />
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="input-area">
-										<input type="tel" id="phone" name="phone" placeholder="Phone" required />
-									</div>
-								</div>
-
-								<div class="col-lg-12 col-md-6">
-									<div class="input-area">
-										<input type="email" id="email" name="email" placeholder="Email" required />
-									</div>
-								</div>
-								<div class="col-lg-12 col-md-6">
-									<div class="input-area">
-										<input type="text" id="subject" name="subject" placeholder="Subject" required />
-									</div>
-								</div>
-
-								<div class="col-lg-12">
-									<div class="input-area">
-										<textarea name="message" id="message" placeholder="Write Message" required></textarea>
-									</div>
-								</div>
-
-								<div class="col-lg-12">
-									<div class="space24"></div>
-									<div class="input-area text-end">
-										<button type="submit" id="submitBtn" class="vl-btn1">Send Message</button>
-									</div>
-								</div>
-							</div>
-						</form>
-						<div id="successMessage" style="display: none; color: green; margin-top: 10px;">
-							Thank you for your message! We'll get back to you soon.
-						</div>
-						<div id="errorMessage" style="display: none; color: red; margin-top: 10px;">
-							There was an error sending your message. Please try again.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--===== Contact AREA ENDS =======-->
+	<!--===== EVENT POLICIES SECTION ENDS =======-->
 
 	<!--===== FOOTER AREA STARTS =======-->
 	<div class="footer4-sertion-area">
@@ -421,20 +506,6 @@ Majan University College for a transformative conference exploring the latest a
 						<p>We are committed to provide the Intersection of Mathematical Insight, Management Excellence, and
 							Technological Innovation.</p>
 						<div class="space24"></div>
-						<!-- <ul>
-							<li>
-								<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa-brands fa-instagram"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-							</li>
-							<li>
-								<a href="#" class="m-0"><i class="fa-brands fa-pinterest-p"></i></a>
-							</li>
-						</ul> -->
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-6">
@@ -446,7 +517,6 @@ Majan University College for a transformative conference exploring the latest a
 							<li><a href="exhibition.html">Events</a></li>
 							<li><a href="register.html">Register</a></li>
 							<li><a href="sponsors.html">Sponsors</a></li>
-
 						</ul>
 					</div>
 				</div>
@@ -461,12 +531,12 @@ Majan University College for a transformative conference exploring the latest a
 									<div class="">
 										<span>+91-9540111207</span> <br>
 										<span style="margin-right: 10px;">+91-9540111307</span>
-										<!-- <span style="margin-right: 10px;">+968 9514 3144</span> -->
 									</div>
 								</a>
 							</li>
 							<li>
-								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College, Muscat, Sultanate of Oman 
+								<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College,
+									Muscat, Sultanate of Oman
 								</a>
 							</li>
 							<li>
@@ -482,12 +552,13 @@ Majan University College for a transformative conference exploring the latest a
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="footer-social-box">
-						<h3>Images of Host City</h3>
+						<h3>Muscat Visuals</h3>
 						<div class="space12"></div>
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134198441-rkztmg.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134198441-rkztmg.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -495,7 +566,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134290684-u36yz8.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134290684-u36yz8.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -503,7 +575,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134309987-89nqj3.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134309987-89nqj3.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -511,7 +584,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134324458-18ytpl.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134324458-18ytpl.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -519,7 +593,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134351489-auc026.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134351489-auc026.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -543,15 +618,25 @@ Majan University College for a transformative conference exploring the latest a
 					<div class="copyright">
 						<p>&copy; Copyright 2025 - Traveon Ventures LLP. All Right Reserved</p>
 					</div>
-          <div class="privacy" style="display: flex; justify-content: end; gap: 20px;">
+<div class="privacy" style="display: flex; justify-content: end; gap: 20px;">
 						<a href="event-policy.html">Event Policies</a> |
 						<a href="code-of-conduct.html">Code Of Conduct</a>
+					</div>
+					<div class="privacy" style="display: flex; justify-content: end; gap: 20px;">
+						<a href="event-policy.html">Event Policies</a> |
+						<a href="code-of-conduct.html">Code of Conduct</a> |
+						<a href="https://www.traveonventures.com/privacy-policy" target="_blank">Privacy Policy</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!--===== FOOTER AREA ENDS =======-->
+
+	<!-- Back to Top Button -->
+	<a href="#" class="back-to-top" id="backToTop">
+		<i class="fa-solid fa-arrow-up"></i>
+	</a>
 
 	<!--===== JS SCRIPT LINK =======-->
 	<script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -571,49 +656,48 @@ Majan University College for a transformative conference exploring the latest a
 	<script src="assets/js/vendor/slick-slider.js"></script>
 	<script src="assets/js/vendor/circle-progress.js"></script>
 	<script src="assets/js/main.js"></script>
+
 	<script>
-		async function handleSubmit(event) {
-			event.preventDefault();
+		// Animation for sections
+		function handleScroll() {
+			const sections = document.querySelectorAll('.animate-fade-in');
 
-			const submitBtn = document.getElementById('submitBtn');
-			const successMessage = document.getElementById('successMessage');
-			const errorMessage = document.getElementById('errorMessage');
+			sections.forEach(section => {
+				const sectionTop = section.getBoundingClientRect().top;
+				const windowHeight = window.innerHeight;
 
-			submitBtn.disabled = true;
-			successMessage.style.display = 'none';
-			errorMessage.style.display = 'none';
-
-			const formData = {
-				name: document.getElementById('name').value,
-				phone: document.getElementById('phone').value,
-				email: document.getElementById('email').value,
-				subject: document.getElementById('subject').value,
-				message: document.getElementById('message').value
-			};
-
-			try {
-				const response = await fetch('https://egsconferencebackend-production.up.railway.app/api/contact', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(formData)
-				});
-
-				if (response.ok) {
-					document.getElementById('contactForm').reset();
-					successMessage.style.display = 'block';
-				} else {
-					throw new Error('Failed to send message');
+				if (sectionTop < windowHeight * 0.85) {
+					section.classList.add('visible');
 				}
-			} catch (error) {
-				console.error('Error:', error);
-				errorMessage.style.display = 'block';
-			} finally {
-				submitBtn.disabled = false;
+			});
+		}
+
+		// Back to top functionality
+		function handleBackToTop() {
+			const backToTop = document.getElementById('backToTop');
+			
+			if (window.pageYOffset > 300) {
+				backToTop.classList.add('show');
+			} else {
+				backToTop.classList.remove('show');
 			}
 		}
+
+		// Smooth scroll to top
+		document.getElementById('backToTop').addEventListener('click', function(e) {
+			e.preventDefault();
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+
+		// Initialize animations
+		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('scroll', handleBackToTop);
+		window.addEventListener('load', handleScroll);
+		window.addEventListener('load', handleBackToTop);
 	</script>
 </body>
 
-</html>
+</html> 
