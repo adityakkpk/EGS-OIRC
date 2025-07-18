@@ -589,6 +589,7 @@
 							<th style="min-width: 120px;">Subject Area</th>
 							<th style="min-width: 100px;">Country</th>
 							<th style="min-width: 130px;">Review Status</th>
+							<th style="min-width: 150px;">Referred By</th>
 							<th style="min-width: 150px;">Actions</th>
 						</tr>
 					</thead>
@@ -621,6 +622,7 @@
 							<th>Keynote Title</th>
 							<th>Status</th>
 							<th>Registered</th>
+							<th>Referred By</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
@@ -1848,7 +1850,10 @@
 						responsivePriority: 7,
 						className: 'd-none d-xl-table-cell',
 						render: function(data) {
-							return data ? data.email : '-';
+							if (data && data.email) {
+								return `<span title="${data.email}">${data.email}</span>`;
+							}
+							return '<span class="text-muted">-</span>';
 						}
 					},
 					{ 
@@ -2168,6 +2173,18 @@
 							return getReviewStatusBadge(data);
 						}
 					},
+					{ 
+						data: 'referredBy',
+						title: 'Referred By',
+						responsivePriority: 8,
+						className: 'd-none d-xl-table-cell',
+						render: function(data) {
+							if (data && data.email) {
+								return `<span title="${data.email}">${data.email}</span>`;
+							}
+							return '<span class="text-muted">-</span>';
+						}
+					},
 					{
 						data: null,
 						title: 'Actions',
@@ -2217,7 +2234,8 @@
 					{ width: "150px", targets: 5 },
 					{ width: "120px", targets: 6 },
 					{ width: "130px", targets: 7 },
-					{ width: "150px", targets: 8 }
+					{ width: "150px", targets: 8 },
+					{ width: "150px", targets: 9 }
 				],
 				dom: 'Bfrtip',
 				buttons: [
@@ -2703,6 +2721,16 @@
 							return data ? new Date(data).toLocaleDateString() : 'N/A';
 						}
 					},
+					{ 
+						data: 'referredBy',
+						title: 'Referred By',
+						render: function(data) {
+							if (data && data.email) {
+								return `<span title="${data.email}">${data.email}</span>`;
+							}
+							return '<span class="text-muted">-</span>';
+						}
+					},
 					{
 						data: null,
 						title: 'Actions',
@@ -2722,7 +2750,7 @@
 				],
 				responsive: true,
 				pageLength: 25,
-				order: [[5, 'desc']], // Sort by registration date descending
+				order: [[6, 'desc']], // Sort by registration date descending
 				dom: 'Bfrtip',
 				buttons: [
 					{
