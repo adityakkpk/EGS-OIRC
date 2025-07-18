@@ -6,9 +6,11 @@ export const registerUser = async (req, res) => {
     const { referralCode } = registerUserData;
 
     try {
+        let admin = null;
+        
         // If referral code is provided, verify it exists
         if (referralCode) {
-            const admin = await prisma.Admin.findUnique({
+            admin = await prisma.Admin.findUnique({
                 where: { referralCode }
             });
 
@@ -28,25 +30,13 @@ export const registerUser = async (req, res) => {
                 phone: registerUserData.phone,
                 earlyBird: registerUserData.earlyBird,
                 regFee: registerUserData.regFee,
-                isPaid: registerUserData.isPaid
+                isPaid: registerUserData.isPaid,
+                referralCode: referralCode || null,
+                referredById: admin?.id || null
             }
         });
 
-        // If referral code exists, create the user record with admin reference
-        if (referralCode) {
-            const admin = await prisma.Admin.findUnique({
-                where: { referralCode }
-            });
 
-            await prisma.user.create({
-                data: {
-                    name: registerUserData.name,
-                    email: registerUserData.email,
-                    referredBy: referralCode,
-                    adminId: admin.id
-                }
-            });
-        }
 
         // Send confirmation emails
         await sendUserRegisterEmail(registerUserData);
