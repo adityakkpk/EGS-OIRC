@@ -262,6 +262,11 @@
 					<i class="fas fa-link me-2"></i> My Referrals
 				</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="showSection('contacts')">
+					<i class="fas fa-envelope me-2"></i> Contact Queries
+				</a>
+			</li>
 			<li class="nav-item mt-3">
 				<a class="nav-link text-warning" href="#" onclick="logout()">
 					<i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -613,6 +618,36 @@
 										<th>Name</th>
 										<th>Email</th>
 										<th>Registration Date</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Contact Queries Section -->
+			<div id="contacts" class="content-section">
+				<div class="d-flex justify-content-between align-items-center mb-4">
+					<h2>Contact Form Submissions</h2>
+					<button class="btn btn-success" onclick="exportData('contacts')">
+						<i class="fas fa-download me-2"></i>Export
+					</button>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="contactsTable" class="table table-striped table-hover" style="width: 100%;">
+								<thead>
+									<tr>
+										<th style="min-width: 120px;">Name</th>
+										<th style="min-width: 180px;">Email</th>
+										<th style="min-width: 120px;">Phone</th>
+										<th style="min-width: 200px;">Subject</th>
+										<th style="min-width: 300px;">Message</th>
+										<th style="min-width: 120px;">Date</th>
+										<th style="min-width: 100px;">Actions</th>
 									</tr>
 								</thead>
 								<tbody></tbody>
@@ -1297,6 +1332,9 @@
 					break;
 				case 'referrals':
 					loadReferredUsers();
+					break;
+				case 'contacts':
+					loadContacts();
 					break;
 			}
 		}
@@ -2483,30 +2521,238 @@
 			}
 		});
 
-		// Add this to your existing JavaScript
-		async function loadContacts() {
-			try {
-				const response = await fetch('/api/contact');
-				const contacts = await response.json();
-				
-				const tableBody = document.getElementById('contactsTableBody');
-				tableBody.innerHTML = contacts.map(contact => `
-					<tr>
-						<td>${contact.name}</td>
-						<td>${contact.email}</td>
-						<td>${contact.phone}</td>
-						<td>${contact.subject}</td>
-						<td>${contact.message}</td>
-						<td>${new Date(contact.createdAt).toLocaleDateString()}</td>
-					</tr>
-				`).join('');
-			} catch (error) {
-				console.error('Error loading contacts:', error);
+		// Contact Management Functions
+		function loadContacts() {
+			const token = localStorage.getItem('adminToken');
+			
+			// Destroy existing DataTable if it exists
+			if ($.fn.DataTable.isDataTable('#contactsTable')) {
+				$('#contactsTable').DataTable().destroy();
 			}
+
+			fetch(`${API_BASE_URL}/contact`, {
+				headers: {
+					'Authorization': `Bearer ${token}`
+				}
+			})
+			.then(response => response.json())
+			.then(data => {
+				// Initialize DataTable with responsive configuration
+				$('#contactsTable').DataTable({
+					data: data,
+					columns: [
+						{ 
+							data: 'name',
+							title: 'Name',
+							responsivePriority: 1
+						},
+						{ 
+							data: 'email',
+							title: 'Email',
+							responsivePriority: 2,
+							render: function(data) {
+								return `<a href="mailto:${data}" class="text-decoration-none">${data}</a>`;
+							}
+						},
+						{ 
+							data: 'phone',
+							title: 'Phone',
+							responsivePriority: 3,
+							render: function(data) {
+								return `<a href="tel:${data}" class="text-decoration-none">${data}</a>`;
+							}
+						},
+						{ 
+							data: 'subject',
+							title: 'Subject',
+							responsivePriority: 4,
+							render: function(data) {
+								if (data && data.length > 50) {
+									return `<span title="${data}">${data.substring(0, 50)}...</span>`;
+								}
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'message',
+							title: 'Message',
+							responsivePriority: 5,
+							className: 'text-wrap',
+							render: function(data) {
+								if (data && data.length > 100) {
+									return `<span title="${data}">${data.substring(0, 100)}...</span>`;
+								}
+								return data || '-';
+							}
+						},
+						{ 
+							data: 'createdAt',
+							title: 'Date',
+							responsivePriority: 6,
+							render: function(data) {
+								return new Date(data).toLocaleDateString();
+							}
+						},
+						{
+							data: null,
+							title: 'Actions',
+							responsivePriority: 1,
+							className: 'text-center',
+							orderable: false,
+							render: function(data, type, row) {
+								return `
+									<div class="btn-group">
+										<button class="btn btn-sm btn-info me-1" onclick="viewContactDetails('${row.id}')" title="View Details">
+											<i class="fas fa-eye"></i>
+										</button>
+										<button class="btn btn-sm btn-danger" onclick="deleteContact('${row.id}')" title="Delete">
+											<i class="fas fa-trash"></i>
+										</button>
+									</div>
+								`;
+							}
+						}
+					],
+					responsive: {
+						details: {
+							type: 'column',
+							target: 'tr'
+						}
+					},
+					pageLength: 25,
+					order: [[5, 'desc']], // Sort by date (newest first)
+					scrollX: true,
+					autoWidth: false,
+					columnDefs: [
+						{ width: "120px", targets: 0 },
+						{ width: "180px", targets: 1 },
+						{ width: "120px", targets: 2 },
+						{ width: "200px", targets: 3 },
+						{ width: "300px", targets: 4 },
+						{ width: "120px", targets: 5 },
+						{ width: "100px", targets: 6 }
+					],
+					dom: 'Bfrtip',
+					buttons: [
+						{
+							extend: 'csv',
+							text: '<i class="fas fa-download"></i> CSV',
+							className: 'btn btn-success btn-sm'
+						}
+					],
+					language: {
+						emptyTable: "No contact queries found",
+						info: "Showing _START_ to _END_ of _TOTAL_ queries",
+						infoEmpty: "Showing 0 to 0 of 0 queries",
+						infoFiltered: "(filtered from _MAX_ total queries)"
+					}
+				});
+			})
+			.catch(error => {
+				console.error('Error loading contacts:', error);
+				alert('Error loading contacts: ' + error.message);
+			});
 		}
 
-		// Call loadContacts when the page loads
-		document.addEventListener('DOMContentLoaded', loadContacts);
+		function viewContactDetails(contactId) {
+			const token = localStorage.getItem('adminToken');
+			
+			fetch(`${API_BASE_URL}/contact`, {
+				headers: {
+					'Authorization': `Bearer ${token}`
+				}
+			})
+			.then(response => response.json())
+			.then(contacts => {
+				const contact = contacts.find(c => c.id === contactId);
+				if (!contact) {
+					alert('Contact not found');
+					return;
+				}
+
+				const content = `
+					<div class="row">
+						<div class="col-md-6">
+							<h6 class="text-primary mb-3">Contact Information</h6>
+							<table class="table table-sm">
+								<tr><td><strong>Name:</strong></td><td>${contact.name}</td></tr>
+								<tr><td><strong>Email:</strong></td><td><a href="mailto:${contact.email}">${contact.email}</a></td></tr>
+								<tr><td><strong>Phone:</strong></td><td><a href="tel:${contact.phone}">${contact.phone}</a></td></tr>
+								<tr><td><strong>Subject:</strong></td><td>${contact.subject}</td></tr>
+								<tr><td><strong>Date:</strong></td><td>${new Date(contact.createdAt).toLocaleString()}</td></tr>
+							</table>
+						</div>
+						<div class="col-md-6">
+							<h6 class="text-primary mb-3">Message</h6>
+							<div class="border rounded p-3 bg-light">
+								${contact.message.replace(/\n/g, '<br>')}
+							</div>
+						</div>
+					</div>
+				`;
+
+				// Create a modal to show contact details
+				const modal = document.createElement('div');
+				modal.className = 'modal fade';
+				modal.id = 'contactDetailsModal';
+				modal.innerHTML = `
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title"><i class="fas fa-envelope me-2"></i>Contact Query Details</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+							</div>
+							<div class="modal-body">
+								${content}
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				`;
+
+				document.body.appendChild(modal);
+				const bootstrapModal = new bootstrap.Modal(modal);
+				bootstrapModal.show();
+
+				// Remove modal from DOM after it's hidden
+				modal.addEventListener('hidden.bs.modal', () => {
+					document.body.removeChild(modal);
+				});
+			})
+			.catch(error => {
+				console.error('Error loading contact details:', error);
+				alert('Error loading contact details: ' + error.message);
+			});
+		}
+
+		function deleteContact(contactId) {
+			if (!confirm('Are you sure you want to delete this contact query? This action cannot be undone.')) return;
+
+			const token = localStorage.getItem('adminToken');
+			
+			fetch(`${API_BASE_URL}/contact/${contactId}`, {
+				method: 'DELETE',
+				headers: {
+					'Authorization': `Bearer ${token}`
+				}
+			})
+			.then(response => {
+				if (!response.ok) {
+					throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+				}
+				return response.json();
+			})
+			.then(data => {
+				alert('Contact query deleted successfully!');
+				loadContacts(); // Reload the table
+			})
+			.catch(error => {
+				console.error('Error deleting contact query:', error);
+				alert('Error deleting contact query: ' + error.message);
+			});
+		}
 	</script>
 </body>
 

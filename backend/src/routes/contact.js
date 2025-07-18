@@ -88,4 +88,28 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Add route to delete a contact
+router.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        const contact = await prisma.contact.findUnique({
+            where: { id }
+        });
+        
+        if (!contact) {
+            return res.status(404).json({ error: 'Contact not found' });
+        }
+        
+        await prisma.contact.delete({
+            where: { id }
+        });
+        
+        res.json({ message: 'Contact deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting contact:', error);
+        res.status(500).json({ error: 'Failed to delete contact' });
+    }
+});
+
 export default router;
