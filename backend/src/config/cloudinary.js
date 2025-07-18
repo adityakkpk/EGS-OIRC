@@ -52,14 +52,22 @@ export const upload = multer({
     
     // Different allowed types for different file fields
     if (file.fieldname === 'paperFile') {
-      // Paper file - strict PDF only
-      const allowedTypes = ['application/pdf'];
-      const allowedExts = ['.pdf'];
+      // Paper file - PDF, DOCX, and LaTeX
+      const allowedTypes = [
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/x-tex',
+        'text/x-tex',
+        'application/x-latex',
+        'text/x-latex',
+        'text/plain'  // Some systems send .tex files as text/plain
+      ];
+      const allowedExts = ['.pdf', '.docx', '.tex', '.latex'];
       
       if (allowedTypes.includes(file.mimetype) || allowedExts.includes(fileExtension)) {
         cb(null, true);
       } else {
-        cb(new Error('Paper file must be in PDF format!'), false);
+        cb(new Error('Paper file must be in PDF, DOCX, or LaTeX (.tex, .latex) format!'), false);
       }
     } else if (file.fieldname === 'supplementaryFile') {
       // Supplementary files - various document formats
