@@ -1,6 +1,8 @@
 import express from 'express';
 import { transporter } from '../config/email.js';
+import { PrismaClient } from '@prisma/client';
 
+const prisma = new PrismaClient();
 const router = express.Router();
 
 router.post('/', async (req, res) => {
@@ -18,11 +20,16 @@ router.post('/', async (req, res) => {
             return res.status(400).json({ error: 'Invalid email format' });
         }
 
-        // Phone validation (10 digits)
-        const phoneRegex = /^\d{10}$/;
-        if (!phoneRegex.test(phone)) {
-            return res.status(400).json({ error: 'Invalid phone number format' });
-        }
+        // Save contact submission to database
+        await prisma.contact.create({
+            data: {
+                name,
+                email,
+                phone,
+                subject,
+                message
+            }
+        });
 
         // Send email to admin
         await transporter.sendMail({
@@ -63,6 +70,21 @@ router.post('/', async (req, res) => {
     } catch (error) {
         console.error('Contact form error:', error);
         res.status(500).json({ error: 'Failed to send message' });
+    }
+});
+
+// Add route to get all contacts
+router.get('/', async (req, res) => {
+    try {
+        const contacts = await prisma.contact.findMany({
+            orderBy: {
+                createdAt: 'desc'
+            }
+        });
+        res.json(contacts);
+    } catch (error) {
+        console.error('Error fetching contacts:', error);
+        res.status(500).json({ error: 'Failed to fetch contacts' });
     }
 });
 

@@ -2482,6 +2482,31 @@
 				document.getElementById('sidebar').classList.remove('show');
 			}
 		});
+
+		// Add this to your existing JavaScript
+		async function loadContacts() {
+			try {
+				const response = await fetch('/api/contact');
+				const contacts = await response.json();
+				
+				const tableBody = document.getElementById('contactsTableBody');
+				tableBody.innerHTML = contacts.map(contact => `
+					<tr>
+						<td>${contact.name}</td>
+						<td>${contact.email}</td>
+						<td>${contact.phone}</td>
+						<td>${contact.subject}</td>
+						<td>${contact.message}</td>
+						<td>${new Date(contact.createdAt).toLocaleDateString()}</td>
+					</tr>
+				`).join('');
+			} catch (error) {
+				console.error('Error loading contacts:', error);
+			}
+		}
+
+		// Call loadContacts when the page loads
+		document.addEventListener('DOMContentLoaded', loadContacts);
 	</script>
 </body>
 
