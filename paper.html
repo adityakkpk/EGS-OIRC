@@ -129,6 +129,38 @@ Majan University College for a transformative conference exploring the latest a
 			max-height: 80vh;
 			overflow-y: auto;
 		}
+
+		/* Fix for select inputs */
+		select.form-control {
+			display: block !important;
+			width: 100% !important;
+			padding: 0.375rem 0.75rem !important;
+			font-size: 1rem !important;
+			font-weight: 400 !important;
+			line-height: 1.5 !important;
+			color: #212529 !important;
+			background-color: #fff !important;
+			background-clip: padding-box !important;
+			border: 1px solid #ced4da !important;
+			border-radius: 0.25rem !important;
+			transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+			-webkit-appearance: auto !important;
+			-moz-appearance: auto !important;
+			appearance: auto !important;
+		}
+
+		/* Fix for nice-select plugin conflicts */
+		.nice-select {
+			display: none !important;
+		}
+
+		/* Mobile responsiveness for select inputs */
+		@media (max-width: 768px) {
+			select.form-control {
+				font-size: 16px !important; /* Prevents zoom on mobile */
+				padding: 0.5rem 0.75rem !important;
+			}
+		}
 	</style>
 
 	<!--=====  JS SCRIPT LINK =======-->
@@ -870,7 +902,7 @@ Majan University College for a transformative conference exploring the latest a
 							<!-- Additional Declarations Section -->
 							<div class="mb-4">
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
-									<i class="fa-solid fa-shield-alt me-2"></i>Additional Declarations
+									<i class="fa-solid fa-shield-alt me-2"></i>Additional Declarations (Select for 'Yes' and leave blank for 'No')
 								</h4>
 								<div class="mb-3">
 									<div class="form-check">
@@ -890,19 +922,6 @@ Majan University College for a transformative conference exploring the latest a
 								</div>
 								<div class="mb-3">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" id="preprintPolicy">
-										<label class="form-check-label" for="preprintPolicy">
-											This work has been previously published as a preprint (e.g., on arXiv, bioRxiv, etc.)
-										</label>
-									</div>
-								</div>
-								<div class="mb-3" id="preprintDetails" style="display: none;">
-									<label for="preprintUrl" class="form-label">Preprint URL*</label>
-									<input type="url" class="form-control" id="preprintUrl" placeholder="https://arxiv.org/abs/...">
-									<small class="form-text text-muted">Please provide the direct link to your preprint</small>
-								</div>
-								<div class="mb-3">
-									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="conflictOfInterest">
 										<label class="form-check-label" for="conflictOfInterest">
 											I declare that there are no conflicts of interest related to this submission
@@ -914,8 +933,21 @@ Majan University College for a transformative conference exploring the latest a
 							<!-- Supplementary Questions Section -->
 							<div class="mb-4">
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
-									<i class="fa-solid fa-question-circle me-2"></i>Supplementary Questions
+									<i class="fa-solid fa-question-circle me-2"></i>Supplementary Questions (Select for 'Yes' and leave blank for 'No')
 								</h4>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="preprintPolicy">
+										<label class="form-check-label" for="preprintPolicy">
+											Has this work been previously published as a preprint (e.g., on arXiv, bioRxiv, etc.)?
+										</label>
+									</div>
+								</div>
+								<div class="mb-3" id="preprintDetails" style="display: none;">
+									<label for="preprintUrl" class="form-label">Preprint URL*</label>
+									<input type="url" class="form-control" id="preprintUrl" placeholder="https://arxiv.org/abs/...">
+									<small class="form-text text-muted">Please provide the direct link to your preprint</small>
+								</div>
 								<div class="mb-3">
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="previouslySubmitted">
@@ -923,10 +955,6 @@ Majan University College for a transformative conference exploring the latest a
 											Has this paper been previously submitted to another conference or journal?
 										</label>
 									</div>
-								</div>
-								<div class="mb-3" id="previousSubmissionDetails" style="display: none;">
-									<label for="previousSubmissionInfo" class="form-label">Please provide details about the previous submission</label>
-									<textarea class="form-control" id="previousSubmissionInfo" rows="3" placeholder="Conference/journal name, submission date, and outcome..."></textarea>
 								</div>
 								<div class="mb-3">
 									<div class="form-check">
@@ -964,7 +992,7 @@ Majan University College for a transformative conference exploring the latest a
 							<!-- Agreement Section -->
 							<div class="mb-4">
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
-									<i class="fa-solid fa-handshake me-2"></i>Agreement to Terms
+									<i class="fa-solid fa-handshake me-2"></i>Agreement to Terms (Select for 'Yes' and leave blank for 'No')
 								</h4>
 								<div class="mb-3">
 									<div class="form-check">
@@ -1148,7 +1176,7 @@ Majan University College for a transformative conference exploring the latest a
 				</div>
 			</div>
 
-			<div class="mb-5 animate__animated animate__fadeIn">
+			<!-- <div class="mb-5 animate__animated animate__fadeIn">
 				<h2 class="producers pb-2 mb-4" style="color: #019087;">Publication Partners:</h2>
 				<div class="row g-4">
 					<div class="col-6 col-md-3 col-lg-2 mb-3">
@@ -1236,7 +1264,7 @@ Majan University College for a transformative conference exploring the latest a
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	</div>

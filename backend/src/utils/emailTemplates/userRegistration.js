@@ -175,7 +175,7 @@ export const speakerConfirmationTemplate = (speakerData) => `
         <h3>📅 Important Dates</h3>
         <ul>
           <li><strong>Conference Dates:</strong> November 10-11, 2025</li>
-          <li><strong>Paper Review Deadline:</strong> October 15, 2025</li>
+          <li><strong>Paper Review Deadline:</strong> Within 10 business days after submission</li>
           <li><strong>Final Paper Submission:</strong> October 30, 2025</li>
           <li><strong>Registration Deadline:</strong> November 1, 2025</li>
         </ul>
