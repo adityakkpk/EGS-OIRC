@@ -476,14 +476,14 @@ Majan University College for a transformative conference exploring the latest a
 								</h4>
 								<div class="mb-3 dropdown-input">
 									<label for="conference-title" class="form-label">Select Conference*</label>
-									<select class="" id="conference-title" required>
+									<select class="form-control" id="conference-title" required>
 										<option value="" disabled>Select Conference title</option>
 										<option value="ICMMCS" selected>ICMMCS 2025</option>
 									</select>
 								</div>
 								<div class="mb-3 dropdown-input">
 									<label for="place-date" class="form-label">Conference place & Date*</label>
-									<select class="" id="place-date" required>
+									<select class="form-control" id="place-date" required>
 										<option value="" disabled>Select your country</option>
 										<option value="MUC - 10 November 2025" selected>Majan University College, Muscat, Oman (10 November 2025)</option>
 									</select>
@@ -955,6 +955,11 @@ Majan University College for a transformative conference exploring the latest a
 											Has this paper been previously submitted to another conference or journal?
 										</label>
 									</div>
+								</div>
+								<div class="mb-3" id="previousSubmissionDetails" style="display: none;">
+									<label for="previousSubmissionInfo" class="form-label">Please provide details about the previous submission*</label>
+									<textarea class="form-control" id="previousSubmissionInfo" rows="3" placeholder="Please specify the conference/journal name, submission date, and outcome (accepted, rejected, under review, etc.)..."></textarea>
+									<small class="form-text text-muted">This information helps us understand the submission history and avoid conflicts</small>
 								</div>
 								<div class="mb-3">
 									<div class="form-check">
@@ -2253,7 +2258,7 @@ Majan University College for a transformative conference exploring the latest a
 			}
 
 			try {
-				const response = await fetch('https://egsconferencebackend-production.up.railway.app/api/speaker/register', {
+				const response = await fetch('https://icmmcs-backend-production.up.railway.app/api/speaker/register', {
 				// const response = await fetch('http://localhost:5000/api/speaker/register', {
 					method: 'POST',
 					body: formData

@@ -844,7 +844,7 @@
 
 		async function loadPaperDetails(id) {
 			try {
-				const response = await fetch(`https://egsconferencebackend-production.up.railway.app/api/speaker/speakers/${id}`);
+				const response = await fetch(`https://icmmcs-backend-production.up.railway.app/api/speaker/speakers/${id}`);
 				
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
