@@ -1,0 +1,153 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options nosniff
+    
+    # Enable XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.icmmcs.org;"
+    
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Video
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+    
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # Data
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+</IfModule>
+
+# URL Rewriting Rules
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|pdf)$
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Force HTTPS (uncomment if you have SSL certificate)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Custom error pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Prevent access to sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to backup files
+<FilesMatch "\.(bak|backup|old|orig|save|swp|tmp)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to hidden files
+<FilesMatch "^\.">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# API Proxy (if backend is hosted separately)
+# Uncomment and modify the following section if you want to proxy API requests to your Node.js backend
+# RewriteCond %{REQUEST_URI} ^/api/
+# RewriteRule ^api/(.*)$ https://your-backend-domain.com/api/$1 [P,L]
+
+# Prevent hotlinking of images
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?icmmcs\.org [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?localhost [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
+
+# Enable Keep-Alive
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Handle PDF files
+<FilesMatch "\.pdf$">
+    Header set Content-Disposition "inline"
+</FilesMatch>
+
+# Custom MIME types
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+AddType image/svg+xml .svg
+AddType application/json .json
+
+# Performance optimizations
+<IfModule mod_headers.c>
+    # Enable HTTP/2 Server Push (if supported)
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2)$">
+        Header set Link "</assets/css/main.css>; rel=preload; as=style"
+    </FilesMatch>
+</IfModule> 
