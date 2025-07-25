@@ -159,12 +159,72 @@ Majan University College for a transformative conference exploring the latest a
 			display: none !important;
 		}
 
+		/* Enhanced form validation styles */
+		.form-control.is-valid {
+			border-color: #28a745 !important;
+			box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+		}
+
+		.form-control.is-invalid {
+			border-color: #dc3545 !important;
+			box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+		}
+
+		.invalid-feedback {
+			display: block !important;
+			color: #dc3545;
+			font-size: 0.875rem;
+			margin-top: 0.25rem;
+		}
+
+		.valid-feedback {
+			display: block !important;
+			color: #28a745;
+			font-size: 0.875rem;
+			margin-top: 0.25rem;
+		}
+
+		/* Loading state styles */
+		.btn:disabled {
+			opacity: 0.65;
+			cursor: not-allowed;
+		}
+
+		/* Modal improvements */
+		.modal-content {
+			border: none;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+		}
+
+		.btn-close {
+			background: transparent;
+			border: none;
+			font-size: 1.5rem;
+			cursor: pointer;
+			padding: 0;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.btn-close:hover {
+			background-color: rgba(0, 0, 0, 0.1);
+			border-radius: 50%;
+		}
+
 		/* Mobile responsiveness for select inputs */
 		@media (max-width: 768px) {
 			select.form-control {
 				font-size: 16px !important;
 				/* Prevents zoom on mobile */
 				padding: 0.5rem 0.75rem !important;
+			}
+
+			.modal-content {
+				margin: 1rem;
+				max-width: calc(100% - 2rem);
 			}
 		}
 	</style>
@@ -540,9 +600,9 @@ Majan University College for a transformative conference exploring the latest a
 									<label for="keywords" class="form-label">Keywords*</label>
 									<input type="text" class="form-control" id="keywords"
 										placeholder="Enter keywords separated by commas (e.g., machine learning, data science, algorithms)"
-										required>
+										maxlength="1000" required>
 									<small class="form-text text-muted">Enter 3-6 keywords that best describe your paper. These will be
-										used for indexing and search purposes.</small>
+										used for indexing and search purposes. <span id="keywordsCount">0</span>/1000 characters</small>
 								</div>
 							</div>
 
@@ -1136,6 +1196,19 @@ Majan University College for a transformative conference exploring the latest a
 									<i class="fa-solid fa-spinner fa-spin"></i> Processing...
 								</span>
 							</button>
+
+							<!-- Help Information -->
+							<div class="alert alert-info mt-4">
+								<h6><i class="fa-solid fa-info-circle me-2"></i>Submission Tips:</h6>
+								<ul class="mb-0" style="font-size: 0.9rem;">
+									<li>Ensure all required fields (marked with *) are completed</li>
+									<li>Paper file must be in PDF, DOCX, or LaTeX format (max 10MB)</li>
+									<li>Abstract should be between 50-500 words</li>
+									<li>Use a stable internet connection for file uploads</li>
+									<li>If you encounter issues, try refreshing the page and resubmitting</li>
+									<li>For technical support, contact: <a href="mailto:info@icmmcs.org">info@icmmcs.org</a></li>
+								</ul>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -1149,11 +1222,17 @@ Majan University College for a transformative conference exploring the latest a
 			<div class="modal-content" style="border-radius: 10px; border: none;">
 				<div class="modal-header" style="border-bottom: none; padding: 2rem 2rem 1rem;">
 					<h5 id="modalTitle" class="modal-title" style="font-weight: 600;"></h5>
+					<button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
 				</div>
 				<div class="modal-body" style="padding: 1rem 2rem 2rem;">
 					<p id="modalMessage"></p>
+					<div id="modalDetails" style="display: none; margin-top: 1rem; padding: 1rem; background-color: #f8f9fa; border-radius: 5px; font-size: 0.9rem;">
+						<strong>Technical Details:</strong>
+						<div id="modalErrorDetails"></div>
+					</div>
 				</div>
 				<div class="modal-footer" style="border-top: none; padding: 1rem 2rem 2rem;">
+					<button type="button" class="btn btn-secondary" onclick="toggleErrorDetails()" id="toggleDetailsBtn" style="display: none;">Show Technical Details</button>
 					<button type="button" class="btn btn-primary-custom" onclick="closeModal()">Close</button>
 				</div>
 			</div>
@@ -1578,6 +1657,25 @@ Majan University College for a transformative conference exploring the latest a
 				});
 			}
 
+			// Keywords character counter
+			const keywordsInput = document.getElementById('keywords');
+			const keywordsCountSpan = document.getElementById('keywordsCount');
+
+			if (keywordsInput && keywordsCountSpan) {
+				keywordsInput.addEventListener('input', function () {
+					const charCount = this.value.length;
+					keywordsCountSpan.textContent = charCount;
+
+					if (charCount > 800) {
+						keywordsCountSpan.style.color = '#dc3545';
+					} else if (charCount > 600) {
+						keywordsCountSpan.style.color = '#ffc107';
+					} else {
+						keywordsCountSpan.style.color = '#6c757d';
+					}
+				});
+			}
+
 			// Co-author functionality
 			const addCoAuthorBtn = document.getElementById('addCoAuthor');
 			if (addCoAuthorBtn) {
@@ -1625,18 +1723,85 @@ Majan University College for a transformative conference exploring the latest a
 				});
 			}
 
-			// Real-time validation
-			document.querySelectorAll('input, textarea, select').forEach(element => {
-				element.addEventListener('input', function () {
-					if (this.classList.contains('is-invalid')) {
-						this.classList.remove('is-invalid');
-						const errorDiv = this.parentNode.querySelector('.invalid-feedback');
-						if (errorDiv) {
-							errorDiv.remove();
-						}
+					// Real-time validation with enhanced feedback
+		document.querySelectorAll('input, textarea, select').forEach(element => {
+			element.addEventListener('input', function () {
+				// Clear previous errors
+				if (this.classList.contains('is-invalid')) {
+					this.classList.remove('is-invalid');
+					const errorDiv = this.parentNode.querySelector('.invalid-feedback');
+					if (errorDiv) {
+						errorDiv.remove();
 					}
-				});
+				}
+
+				// Add success state for completed fields
+				if (this.value.trim() && this.hasAttribute('required')) {
+					this.classList.add('is-valid');
+				} else if (this.classList.contains('is-valid')) {
+					this.classList.remove('is-valid');
+				}
+
+				// Special validation for email fields
+				if (this.type === 'email' && this.value.trim()) {
+					if (validateEmail(this.value)) {
+						this.classList.add('is-valid');
+						this.classList.remove('is-invalid');
+					} else {
+						this.classList.add('is-invalid');
+						this.classList.remove('is-valid');
+						showError('Please enter a valid email address', this);
+					}
+				}
+
+				// Special validation for phone fields
+				if (this.type === 'tel' && this.value.trim()) {
+					if (validatePhone(this.value)) {
+						this.classList.add('is-valid');
+						this.classList.remove('is-invalid');
+					} else {
+						this.classList.add('is-invalid');
+						this.classList.remove('is-valid');
+						showError('Please enter a valid phone number', this);
+					}
+				}
+
+				// Special validation for ORCID fields
+				if (this.id.includes('Orcid') && this.value.trim()) {
+					if (validateOrcid(this.value)) {
+						this.classList.add('is-valid');
+						this.classList.remove('is-invalid');
+					} else {
+						this.classList.add('is-invalid');
+						this.classList.remove('is-valid');
+						showError('Please enter a valid ORCID ID (format: 0000-0000-0000-0000)', this);
+					}
+				}
 			});
+
+			// Add blur event for immediate validation
+			element.addEventListener('blur', function () {
+				if (this.hasAttribute('required') && !this.value.trim()) {
+					this.classList.add('is-invalid');
+					this.classList.remove('is-valid');
+					showError('This field is required', this);
+				}
+			});
+		});
+
+		// Add form progress indicator
+		function updateFormProgress() {
+			const requiredFields = document.querySelectorAll('input[required], textarea[required], select[required]');
+			const completedFields = document.querySelectorAll('input[required].is-valid, textarea[required].is-valid, select[required].is-valid');
+			const progress = (completedFields.length / requiredFields.length) * 100;
+			
+			// You can add a progress bar here if needed
+			console.log(`Form completion: ${Math.round(progress)}%`);
+		}
+
+		// Update progress on any field change
+		document.addEventListener('input', updateFormProgress);
+		document.addEventListener('change', updateFormProgress);
 		}
 
 		function addCoAuthor() {
@@ -2029,10 +2194,214 @@ Majan University College for a transformative conference exploring the latest a
 			modal.classList.add('show');
 		}
 
+		// Enhanced error handling function
+		function handleSubmissionError(error, response = null) {
+			console.error('Submission error details:', {
+				error: error.message,
+				response: response,
+				timestamp: new Date().toISOString()
+			});
+
+			let errorTitle = 'Submission Error';
+			let errorMessage = 'An unexpected error occurred. Please try again.';
+			let showTechnicalDetails = false;
+			let technicalDetails = '';
+
+			// Handle different types of errors
+			if (error.name === 'TypeError' && error.message.includes('fetch')) {
+				errorTitle = 'Network Connection Error';
+				errorMessage = 'Unable to connect to the server. Please check your internet connection and try again.';
+				showTechnicalDetails = true;
+				technicalDetails = `Error: ${error.message}\nType: Network Connection Failed\nTime: ${new Date().toLocaleString()}`;
+			} else if (error.name === 'AbortError') {
+				errorTitle = 'Request Timeout';
+				errorMessage = 'The request took too long to complete. Please try again with a better internet connection.';
+				showTechnicalDetails = true;
+				technicalDetails = `Error: Request timeout after 60 seconds\nType: AbortError\nTime: ${new Date().toLocaleString()}`;
+			} else if (response) {
+				// Handle server response errors
+				switch (response.status) {
+					case 400:
+						errorTitle = 'Validation Error';
+						errorMessage = 'Please check your form data and try again.';
+						showTechnicalDetails = true;
+						technicalDetails = `Status: ${response.status} Bad Request\nError: ${error.message}\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 401:
+						errorTitle = 'Authentication Error';
+						errorMessage = 'Please refresh the page and try again.';
+						technicalDetails = `Status: ${response.status} Unauthorized\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 403:
+						errorTitle = 'Access Denied';
+						errorMessage = 'You do not have permission to perform this action.';
+						technicalDetails = `Status: ${response.status} Forbidden\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 404:
+						errorTitle = 'Service Not Found';
+						errorMessage = 'The submission service is currently unavailable. Please try again later.';
+						showTechnicalDetails = true;
+						technicalDetails = `Status: ${response.status} Not Found\nError: Service endpoint not available\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 413:
+						errorTitle = 'File Too Large';
+						errorMessage = 'One or more files exceed the maximum allowed size. Please compress your files and try again.';
+						technicalDetails = `Status: ${response.status} Payload Too Large\nError: File size exceeds limit\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 429:
+						errorTitle = 'Too Many Requests';
+						errorMessage = 'You have submitted too many requests. Please wait a few minutes and try again.';
+						technicalDetails = `Status: ${response.status} Too Many Requests\nError: Rate limit exceeded\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 500:
+						errorTitle = 'Server Error';
+						errorMessage = 'The server encountered an error. Please try again later or contact support if the problem persists.';
+						showTechnicalDetails = true;
+						technicalDetails = `Status: ${response.status} Internal Server Error\nError: ${error.message}\nTime: ${new Date().toLocaleString()}`;
+						break;
+					case 502:
+					case 503:
+					case 504:
+						errorTitle = 'Service Unavailable';
+						errorMessage = 'The submission service is temporarily unavailable. Please try again in a few minutes.';
+						showTechnicalDetails = true;
+						technicalDetails = `Status: ${response.status} Service Unavailable\nError: Backend service temporarily down\nTime: ${new Date().toLocaleString()}`;
+						break;
+					default:
+						errorTitle = 'Submission Failed';
+						errorMessage = 'An error occurred while processing your submission. Please try again.';
+						showTechnicalDetails = true;
+						technicalDetails = `Status: ${response.status}\nError: ${error.message}\nTime: ${new Date().toLocaleString()}`;
+				}
+			} else {
+				showTechnicalDetails = true;
+				technicalDetails = `Error: ${error.message}\nType: ${error.name || 'Unknown'}\nTime: ${new Date().toLocaleString()}`;
+			}
+
+			// Show modal with technical details if needed
+			showModalWithDetails(errorTitle, errorMessage, 'error', showTechnicalDetails, technicalDetails);
+		}
+
+		function showModalWithDetails(title, message, type, showDetails = false, technicalDetails = '') {
+			const modal = document.getElementById('responseModal');
+			const modalTitle = document.getElementById('modalTitle');
+			const modalMessage = document.getElementById('modalMessage');
+			const modalDetails = document.getElementById('modalDetails');
+			const modalErrorDetails = document.getElementById('modalErrorDetails');
+			const toggleDetailsBtn = document.getElementById('toggleDetailsBtn');
+
+			modalTitle.textContent = title;
+			modalMessage.textContent = message;
+
+			// Style based on type
+			if (type === 'success') {
+				modalTitle.style.color = '#28a745';
+			} else {
+				modalTitle.style.color = '#dc3545';
+			}
+
+			// Handle technical details
+			if (showDetails && technicalDetails) {
+				modalErrorDetails.textContent = technicalDetails;
+				toggleDetailsBtn.style.display = 'inline-block';
+				modalDetails.style.display = 'none'; // Start hidden
+			} else {
+				toggleDetailsBtn.style.display = 'none';
+				modalDetails.style.display = 'none';
+			}
+
+			// Add retry button for certain error types
+			const modalFooter = modal.querySelector('.modal-footer');
+			const existingRetryBtn = modalFooter.querySelector('.btn-retry');
+			if (existingRetryBtn) {
+				existingRetryBtn.remove();
+			}
+
+			if (type === 'error' && (title.includes('Network') || title.includes('Timeout') || title.includes('Server Error') || title.includes('Service Unavailable'))) {
+				const retryBtn = document.createElement('button');
+				retryBtn.className = 'btn btn-warning me-2';
+				retryBtn.textContent = 'Retry Submission';
+				retryBtn.onclick = function() {
+					closeModal();
+					// Trigger form submission again
+					setTimeout(() => {
+						document.getElementById('registrationForm').dispatchEvent(new Event('submit'));
+					}, 500);
+				};
+				modalFooter.insertBefore(retryBtn, modalFooter.firstChild);
+			}
+
+			modal.style.display = 'block';
+			modal.classList.add('show');
+		}
+
+		// Function to validate file uploads
+		function validateFileUploads() {
+			const paperFile = document.getElementById('paperFile');
+			const supplementaryFile = document.getElementById('supplementaryFile');
+			const sourceCodeFile = document.getElementById('sourceCodeFile');
+
+			// Check if paper file is uploaded
+			if (!paperFile.files[0]) {
+				showModal('File Upload Error', 'Please upload your paper file (PDF, DOCX, or LaTeX format).', 'error');
+				return false;
+			}
+
+			// Validate paper file size (10MB limit)
+			const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+			if (paperFile.files[0].size > maxSize) {
+				showModal('File Size Error', 'Paper file size must be less than 10MB. Please compress your file and try again.', 'error');
+				return false;
+			}
+
+			// Validate paper file type
+			const allowedTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword', 'text/plain'];
+			if (!allowedTypes.includes(paperFile.files[0].type) && !paperFile.files[0].name.endsWith('.tex')) {
+				showModal('File Type Error', 'Paper file must be in PDF, DOCX, DOC, or LaTeX format.', 'error');
+				return false;
+			}
+
+			// Validate supplementary file if uploaded
+			if (supplementaryFile.files[0]) {
+				if (supplementaryFile.files[0].size > 20 * 1024 * 1024) { // 20MB limit
+					showModal('File Size Error', 'Supplementary file size must be less than 20MB. Please compress your file and try again.', 'error');
+					return false;
+				}
+			}
+
+			// Validate source code file if uploaded
+			if (sourceCodeFile.files[0]) {
+				if (sourceCodeFile.files[0].size > 50 * 1024 * 1024) { // 50MB limit
+					showModal('File Size Error', 'Source code file size must be less than 50MB. Please compress your file and try again.', 'error');
+					return false;
+				}
+			}
+
+			return true;
+		}
+
 		function closeModal() {
 			const modal = document.getElementById('responseModal');
 			modal.style.display = 'none';
 			modal.classList.remove('show');
+			
+			// Reset modal state
+			document.getElementById('modalDetails').style.display = 'none';
+			document.getElementById('toggleDetailsBtn').style.display = 'none';
+			document.getElementById('toggleDetailsBtn').textContent = 'Show Technical Details';
+		}
+
+		function toggleErrorDetails() {
+			const detailsDiv = document.getElementById('modalDetails');
+			const toggleBtn = document.getElementById('toggleDetailsBtn');
+			
+			if (detailsDiv.style.display === 'none') {
+				detailsDiv.style.display = 'block';
+				toggleBtn.textContent = 'Hide Technical Details';
+			} else {
+				detailsDiv.style.display = 'none';
+				toggleBtn.textContent = 'Show Technical Details';
+			}
 		}
 
 		// Form submission handler
@@ -2105,6 +2474,11 @@ Majan University College for a transformative conference exploring the latest a
 
 			if (!keywords.value.trim()) {
 				showModal('Validation Error', 'Please enter keywords.', 'error');
+				return;
+			}
+
+			if (keywords.value.length > 1000) {
+				showModal('Validation Error', 'Keywords must not exceed 1000 characters. Please shorten your keywords list.', 'error');
 				return;
 			}
 
@@ -2236,6 +2610,11 @@ Majan University College for a transformative conference exploring the latest a
 				}
 			}
 
+			// Validate file uploads before proceeding
+			if (!validateFileUploads()) {
+				return;
+			}
+
 			// Show loading state
 			submitText.style.display = 'none';
 			loadingText.style.display = 'inline';
@@ -2330,21 +2709,65 @@ Majan University College for a transformative conference exploring the latest a
 			}
 
 			try {
+				// Create AbortController for timeout handling
+				const controller = new AbortController();
+				const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+
 				const response = await fetch('https://icmmcs-backend-production.up.railway.app/api/speaker/register', {
-					// const response = await fetch('http://localhost:5000/api/speaker/register', {
 					method: 'POST',
 					body: formData,
-					timeout: 30000 // 30 second timeout
+					signal: controller.signal
 				});
+
+				clearTimeout(timeoutId);
 
 				console.log('Response status:', response.status);
 				console.log('Response ok:', response.ok);
 
 				// Check if the response is ok (status 200-299)
 				if (!response.ok) {
-					const errorData = await response.json().catch(() => ({ message: 'Server error occurred' }));
-					console.error('Server error response:', errorData);
-					showModal('Registration Failed', errorData.message || `Server error: ${response.status}`, 'error');
+					let errorMessage = 'Server error occurred';
+					
+					try {
+						const errorData = await response.json();
+						console.error('Server error response:', errorData);
+						
+						// Handle specific backend validation errors
+						if (errorData.message) {
+							if (errorData.message.includes('Missing required fields')) {
+								errorMessage = 'Please fill in all required fields marked with *.';
+							} else if (errorData.message.includes('Invalid email format')) {
+								errorMessage = 'Please enter a valid email address.';
+							} else if (errorData.message.includes('Invalid phone number format')) {
+								errorMessage = 'Please enter a valid phone number.';
+							} else if (errorData.message.includes('Invalid ORCID format')) {
+								errorMessage = 'Please enter a valid ORCID ID (format: 0000-0000-0000-0000).';
+							} else if (errorData.message.includes('Abstract must be at least 50 words')) {
+								errorMessage = 'Your abstract must be at least 50 words long.';
+							} else if (errorData.message.includes('Abstract must not exceed 500 words')) {
+								errorMessage = 'Your abstract must not exceed 500 words.';
+							} else if (errorData.message.includes('Speaker already registered')) {
+								errorMessage = 'A submission with this email address already exists. Please use a different email or contact support.';
+							} else if (errorData.message.includes('Invalid referral code')) {
+								errorMessage = 'The referral code you entered is invalid. Please check and try again.';
+							} else if (errorData.message.includes('Co-author')) {
+								errorMessage = 'Please complete all co-author information or remove incomplete entries.';
+							} else if (errorData.message.includes('Preprint URL is required')) {
+								errorMessage = 'Please provide the preprint URL when you select the preprint policy option.';
+							} else if (errorData.message.includes('AI content description is required')) {
+								errorMessage = 'Please describe the AI-generated content when you select that option.';
+							} else if (errorData.message.includes('too long') || errorData.message.includes('data that is too long')) {
+								errorMessage = 'One or more fields contain data that is too long. Please check your keywords, abstract, or other text fields and shorten them if necessary.';
+							} else {
+								errorMessage = errorData.message;
+							}
+						}
+					} catch (parseError) {
+						console.error('Error parsing response:', parseError);
+						errorMessage = `Server error (${response.status}): Unable to process response`;
+					}
+					
+					handleSubmissionError(new Error(errorMessage), response);
 					return;
 				}
 
@@ -2377,13 +2800,18 @@ Majan University College for a transformative conference exploring the latest a
 					document.getElementById('preprintUrl').required = false;
 					document.getElementById('aiContentDescription').required = false;
 				} else {
-					showModal('Registration Failed', result.message || 'An error occurred during registration. Please try again.', 'error');
+					handleSubmissionError(new Error(result.message || 'An error occurred during registration. Please try again.'), response);
 				}
 
 			} catch (error) {
 				console.error('Registration error:', error);
 				console.error('Error details:', error.message);
-				showModal('Network Error', error.message, 'error');
+				
+				if (error.name === 'AbortError') {
+					handleSubmissionError(new Error('Request timeout - the submission took too long to complete. Please check your internet connection and try again.'), null);
+				} else {
+					handleSubmissionError(error, null);
+				}
 			} finally {
 				// Reset button state
 				submitText.style.display = 'inline';

@@ -52,7 +52,7 @@ model speaker {
   // Paper Information
   paperTitle      String
   paperAbstract   String       @db.Text
-  keywords        String
+  keywords        String       @db.Text
   
   // Primary Author Information
   name            String

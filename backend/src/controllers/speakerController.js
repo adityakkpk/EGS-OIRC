@@ -269,8 +269,31 @@ export const registerSpeaker = async (req, res) => {
     });
   } catch (error) {
     console.error('Speaker registration error:', error);
+    
+    // Handle specific Prisma errors
+    if (error.code === 'P2000') {
+      return res.status(400).json({
+        message: "One or more fields contain data that is too long. Please check your input and try again.",
+        success: false
+      });
+    }
+    
+    if (error.code === 'P2002') {
+      return res.status(400).json({
+        message: "A submission with this email address already exists. Please use a different email or contact support.",
+        success: false
+      });
+    }
+    
+    if (error.code === 'P2003') {
+      return res.status(400).json({
+        message: "Invalid reference data. Please check your form and try again.",
+        success: false
+      });
+    }
+    
     res.status(500).json({
-      message: "Error submitting paper",
+      message: "Error submitting paper. Please try again later or contact support if the problem persists.",
       error: error.message,
       success: false,
     });
