@@ -2383,7 +2383,7 @@ Majan University College for a transformative conference exploring the latest a
 			} catch (error) {
 				console.error('Registration error:', error);
 				console.error('Error details:', error.message);
-				showModal('Network Error', 'Unable to submit registration. Please check your connection and try again.', 'error');
+				showModal('Network Error', error.message, 'error');
 			} finally {
 				// Reset button state
 				submitText.style.display = 'inline';
