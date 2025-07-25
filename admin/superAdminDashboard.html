@@ -473,9 +473,9 @@
 			<h2 class="section-title">Conference Registrations</h2>
 			<div class="d-flex justify-content-between align-items-center mb-3">
 				<div class="d-flex gap-2">
-					<button class="btn btn-success" onclick="exportData('registrations')">
+					<!-- <button class="btn btn-success" onclick="exportData('registrations')">
 						<i class="fas fa-download me-2"></i>Export CSV
-					</button>
+					</button> -->
 					<select class="form-select" style="width: auto;" onchange="filterRegistrations(this.value)">
 						<option value="all">All Registrations</option>
 						<option value="paid">Paid Only</option>
@@ -515,9 +515,9 @@
 					<button class="btn btn-info me-2" onclick="showSpeakerStats()">
 						<i class="fas fa-chart-bar me-2"></i>Statistics
 					</button>
-					<button class="btn btn-success" onclick="exportData('speakers')">
+					<!-- <button class="btn btn-success" onclick="exportData('speakers')">
 						<i class="fas fa-download me-2"></i>Export CSV
-					</button>
+					</button> -->
 				</div>
 				<div class="d-flex align-items-center">
 					<span class="me-2">Total:</span>
@@ -603,9 +603,9 @@
 			<h2 class="section-title">Conference Keynote Speakers</h2>
 			<div class="d-flex justify-content-between align-items-center mb-3">
 				<div class="d-flex gap-2">
-					<button class="btn btn-success" onclick="exportData('keynote-speakers')">
+					<!-- <button class="btn btn-success" onclick="exportData('keynote-speakers')">
 						<i class="fas fa-download me-2"></i>Export CSV
-					</button>
+					</button> -->
 				</div>
 				<div class="d-flex align-items-center">
 					<span class="me-2">Total:</span>
@@ -636,9 +636,9 @@
 			<h2 class="section-title">Conference Sponsors</h2>
 			<div class="d-flex justify-content-between align-items-center mb-3">
 				<div class="d-flex gap-2">
-					<button class="btn btn-success" onclick="exportData('sponsors')">
+					<!-- <button class="btn btn-success" onclick="exportData('sponsors')">
 						<i class="fas fa-download me-2"></i>Export CSV
-					</button>
+					</button> -->
 				</div>
 				<div class="d-flex align-items-center">
 					<span class="me-2">Total:</span>
@@ -672,9 +672,9 @@
 					<button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#createCommitteeModal">
 						<i class="fas fa-plus me-2"></i>Add Committee Member
 					</button>
-					<button class="btn btn-success" onclick="exportCommitteeMembers()">
+					<!-- <button class="btn btn-success" onclick="exportCommitteeMembers()">
 						<i class="fas fa-download me-2"></i>Export CSV
-					</button>
+					</button> -->
 				</div>
 				<div class="d-flex align-items-center gap-3">
 					<span class="me-2">Active Members:</span>
@@ -805,9 +805,9 @@
 			<h2 class="section-title">Contact Form Submissions</h2>
 			<div class="d-flex justify-content-between align-items-center mb-3">
 				<div class="d-flex gap-2">
-					<button class="btn btn-success" onclick="exportData('contacts')">
+					<!-- <button class="btn btn-success" onclick="exportData('contacts')">
 						<i class="fas fa-download me-2"></i>Export CSV
-					</button>
+					</button> -->
 				</div>
 				<div class="d-flex align-items-center">
 					<span class="me-2">Total:</span>
@@ -1563,7 +1563,7 @@
 				}
 				
 				const stats = await response.json();
-				console.log('Super Admin Dashboard stats received:', stats); // Debug log
+				// console.log('Super Admin Dashboard stats received:', stats); // Debug log
 				displayDashboardStats(stats);
 				loadRecentActivity();
 			} catch (error) {
@@ -2033,18 +2033,18 @@
 		// Load active committee members for dropdown
 		async function loadActiveCommitteeMembers() {
 			try {
-				console.log('Loading active committee members...');
+				// console.log('Loading active committee members...');
 				const response = await fetch(`${API_BASE}/reviewing-committee/active-members`, {
 					headers: getAuthHeaders()
 				});
 				
-				console.log('Active committee response status:', response.status);
+				// console.log('Active committee response status:', response.status);
 				
 				if (response.ok) {
 					const result = await response.json();
-					console.log('Active committee members response:', result);
+					// console.log('Active committee members response:', result);
 					committeeMembers = result.data || [];
-					console.log('Stored committee members:', committeeMembers);
+					// console.log('Stored committee members:', committeeMembers);
 				} else {
 					const errorText = await response.text();
 					console.error('Active committee API Error:', response.status, errorText);
@@ -2061,9 +2061,9 @@
 					headers: getAuthHeaders()
 				});
 				const speakers = await response.json();
-				console.log('Raw speakers data:', speakers);
+				// console.log('Raw speakers data:', speakers);
 				currentData.speakers = speakers;
-				console.log('Processed speakers data:', currentData.speakers);
+				// console.log('Processed speakers data:', currentData.speakers);
 				
 				// Load committee members for the send to committee functionality
 				await loadActiveCommitteeMembers();
@@ -2205,11 +2205,11 @@
 						orderable: false,
 						render: function(data, type, row) {
 							// Debug logging to check the values
-							console.log('Speaker data:', {
-								id: row.id,
-								reviewStatus: row.reviewStatus,
-								sentToCommittee: row.sentToCommittee
-							});
+							// console.log('Speaker data:', {
+							// 	id: row.id,
+							// 	reviewStatus: row.reviewStatus,
+							// 	sentToCommittee: row.sentToCommittee
+							// });
 							
 							// Check if speaker can be sent to committee using helper function
 							const canSendToCommittee = canSendSpeakerToCommittee(row);
@@ -3074,12 +3074,12 @@
 		async function loadCommitteeMembers() {
 			try {
 				showLoading();
-				console.log('Loading committee members with URL:', `${API_BASE}/reviewing-committee/members`);
+				// console.log('Loading committee members with URL:', `${API_BASE}/reviewing-committee/members`);
 				const response = await fetch(`${API_BASE}/reviewing-committee/members`, {
 					headers: getAuthHeaders()
 				});
 				
-				console.log('Committee response status:', response.status);
+				// console.log('Committee response status:', response.status);
 				
 				if (!response.ok) {
 					const errorText = await response.text();
@@ -3088,7 +3088,7 @@
 				}
 				
 				const result = await response.json();
-				console.log('Committee members response:', result);
+				// console.log('Committee members response:', result);
 				
 				if (result.success && result.data) {
 					currentData.committeeMembers = result.data;
@@ -3110,7 +3110,7 @@
 
 		async function loadCommitteeStats() {
 			try {
-				console.log('Loading committee stats...');
+				// console.log('Loading committee stats...');
 				const response = await fetch(`${API_BASE}/reviewing-committee/stats`, {
 					headers: getAuthHeaders()
 				});
@@ -3122,7 +3122,7 @@
 				}
 				
 				const result = await response.json();
-				console.log('Committee stats response:', result);
+				// console.log('Committee stats response:', result);
 				
 				if (result.success && result.data) {
 					const stats = result.data;
@@ -3159,8 +3159,8 @@
 		}
 
 		function displayCommitteeMembers(members) {
-			console.log('Displaying committee members:', members);
-			console.log('Number of members:', members ? members.length : 0);
+			// console.log('Displaying committee members:', members);
+			// console.log('Number of members:', members ? members.length : 0);
 			
 			if ($.fn.DataTable.isDataTable('#committeeTable')) {
 				$('#committeeTable').DataTable().destroy();

@@ -1364,7 +1364,7 @@
 			})
 			.then(response => response.json())
 			.then(data => {
-				console.log('Dashboard data received:', data); // Debug log
+				// console.log('Dashboard data received:', data); // Debug log
 				// Update stats (backend now returns direct format)
 				document.getElementById('registrationsCount').textContent = data.registrations || 0;
 				document.getElementById('speakersCount').textContent = data.speakers || 0;
@@ -1562,9 +1562,9 @@
 			})
 			.then(response => response.json())
 			.then(data => {
-				console.log('Raw speakers data:', data);
+				// console.log('Raw speakers data:', data);
 				currentSpeakers = data.speakers || data; // Store speakers for reference
-				console.log('Processed speakers data:', currentSpeakers);
+				// console.log('Processed speakers data:', currentSpeakers);
 				
 				// Initialize DataTable with responsive configuration
 				$('#speakersTable').DataTable({
@@ -1676,11 +1676,11 @@
 							orderable: false,
 							render: function(data, type, row) {
 								// Debug logging to check the values
-								console.log('Speaker data:', {
-									id: row.id,
-									reviewStatus: row.reviewStatus,
-									sentToCommittee: row.sentToCommittee
-								});
+								// console.log('Speaker data:', {
+								// 	id: row.id,
+								// 	reviewStatus: row.reviewStatus,
+								// 	sentToCommittee: row.sentToCommittee
+								// });
 								
 								// Check if speaker can be sent to committee using helper function
 								const canSendToCommittee = canSendSpeakerToCommittee(row);
