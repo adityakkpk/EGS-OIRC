@@ -113,13 +113,13 @@ Majan University College for a transformative conference exploring the latest a
 			width: 100%;
 			height: 100%;
 		}
-		
+
 		.modal.show {
 			display: flex !important;
 			align-items: center;
 			justify-content: center;
 		}
-		
+
 		.modal-content {
 			background: white;
 			border-radius: 12px;
@@ -143,7 +143,7 @@ Majan University College for a transformative conference exploring the latest a
 			background-clip: padding-box !important;
 			border: 1px solid #ced4da !important;
 			border-radius: 0.25rem !important;
-			transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+			transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
 			-webkit-appearance: auto !important;
 			-moz-appearance: auto !important;
 			appearance: auto !important;
@@ -154,10 +154,16 @@ Majan University College for a transformative conference exploring the latest a
 			display: none !important;
 		}
 
+		/* Prevent preloader from reappearing */
+		.preloader.hidden {
+			display: none !important;
+		}
+
 		/* Mobile responsiveness for select inputs */
 		@media (max-width: 768px) {
 			select.form-control {
-				font-size: 16px !important; /* Prevents zoom on mobile */
+				font-size: 16px !important;
+				/* Prevents zoom on mobile */
 				padding: 0.5rem 0.75rem !important;
 			}
 		}
@@ -370,22 +376,27 @@ Majan University College for a transformative conference exploring the latest a
 						<h2 class="text-anime-style-3" style="color: #019087; font-weight: 600;">Paper Submission Guidelines</h2>
 						<div class="mt-3" style="width: 60px; height: 3px; background-color: #019087; margin: 0 auto;"></div>
 					</div>
-					
+
 					<div class="row g-4">
 						<!-- Submission Format -->
 						<div class="col-md-6">
 							<div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #019087 !important;">
 								<div class="card-body p-4">
 									<div class="d-flex align-items-center mb-3">
-										<div class="me-3" style="background: linear-gradient(135deg, #019087, #00a3a3); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
-												<path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
-												<path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+										<div class="me-3"
+											style="background: linear-gradient(135deg, #019087, #00a3a3); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+												class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+												<path
+													d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
+												<path
+													d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
 											</svg>
 										</div>
 										<h4 class="mb-0" style="color: #019087; font-weight: 600;">Submission Format</h4>
 									</div>
-									<p class="text-muted mb-0">Authors are invited to submit original, unpublished research work in the form of full papers (8-15 pages) in DOCX/PDF/LaTeX format (less than 10MB).</p>
+									<p class="text-muted mb-0">Authors are invited to submit original, unpublished research work in the
+										form of full papers (8-15 pages) in DOCX/PDF/LaTeX format (less than 10MB).</p>
 								</div>
 							</div>
 						</div>
@@ -395,15 +406,20 @@ Majan University College for a transformative conference exploring the latest a
 							<div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #00a3a3 !important;">
 								<div class="card-body p-4">
 									<div class="d-flex align-items-center mb-3">
-										<div class="me-3" style="background: linear-gradient(135deg, #00a3a3, #019087); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cloud-upload" viewBox="0 0 16 16">
-												<path fill-rule="evenodd" d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383"/>
-												<path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z"/>
+										<div class="me-3"
+											style="background: linear-gradient(135deg, #00a3a3, #019087); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+												class="bi bi-cloud-upload" viewBox="0 0 16 16">
+												<path fill-rule="evenodd"
+													d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383" />
+												<path fill-rule="evenodd"
+													d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z" />
 											</svg>
 										</div>
 										<h4 class="mb-0" style="color: #019087; font-weight: 600;">Submission Portal</h4>
 									</div>
-									<p class="text-muted mb-3">Submissions should be made through the official conference submission portal</p>
+									<p class="text-muted mb-3">Submissions should be made through the official conference submission
+										portal</p>
 									<a href="#form" class="btn btn-outline-primary btn-sm" style="border-color: #019087; color: #019087;">
 										https://ICMMCS.ORG/paper.html
 									</a>
@@ -416,14 +432,18 @@ Majan University College for a transformative conference exploring the latest a
 							<div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #20B2AA !important;">
 								<div class="card-body p-4">
 									<div class="d-flex align-items-center mb-3">
-										<div class="me-3" style="background: linear-gradient(135deg, #20B2AA, #019087); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-search" viewBox="0 0 16 16">
-												<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+										<div class="me-3"
+											style="background: linear-gradient(135deg, #20B2AA, #019087); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-search"
+												viewBox="0 0 16 16">
+												<path
+													d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
 											</svg>
 										</div>
 										<h4 class="mb-0" style="color: #019087; font-weight: 600;">Review Process</h4>
 									</div>
-									<p class="text-muted mb-0">All submissions will undergo a rigorous peer review process by an expert panel. Papers will be evaluated based on originality, significance and quality.</p>
+									<p class="text-muted mb-0">All submissions will undergo a rigorous peer review process by an expert
+										panel. Papers will be evaluated based on originality, significance and quality.</p>
 								</div>
 							</div>
 						</div>
@@ -433,15 +453,20 @@ Majan University College for a transformative conference exploring the latest a
 							<div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #FF6B6B !important;">
 								<div class="card-body p-4">
 									<div class="d-flex align-items-center mb-3">
-										<div class="me-3" style="background: linear-gradient(135deg, #FF6B6B, #019087); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-person-check" viewBox="0 0 16 16">
-												<path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
-												<path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+										<div class="me-3"
+											style="background: linear-gradient(135deg, #FF6B6B, #019087); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+												class="bi bi-person-check" viewBox="0 0 16 16">
+												<path
+													d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+												<path
+													d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
 											</svg>
 										</div>
 										<h4 class="mb-0" style="color: #019087; font-weight: 600;">Requirement</h4>
 									</div>
-									<p class="text-muted mb-0">Accepted papers must be presented at the conference by at least one of the authors.</p>
+									<p class="text-muted mb-0">Accepted papers must be presented at the conference by at least one of the
+										authors.</p>
 								</div>
 							</div>
 						</div>
@@ -485,7 +510,8 @@ Majan University College for a transformative conference exploring the latest a
 									<label for="place-date" class="form-label">Conference place & Date*</label>
 									<select class="form-control" id="place-date" required>
 										<option value="" disabled>Select your country</option>
-										<option value="MUC - 10 November 2025" selected>Majan University College, Muscat, Oman (10 November 2025)</option>
+										<option value="MUC - 10 November 2025" selected>Majan University College, Muscat, Oman (10 November
+											2025)</option>
 									</select>
 								</div>
 							</div>
@@ -497,18 +523,26 @@ Majan University College for a transformative conference exploring the latest a
 								</h4>
 								<div class="mb-3">
 									<label for="paperTitle" class="form-label">Paper Title*</label>
-									<input type="text" class="form-control" id="paperTitle" placeholder="Enter the full title of your paper" required>
-									<small class="form-text text-muted">Use a clear, descriptive title that accurately reflects your research</small>
+									<input type="text" class="form-control" id="paperTitle"
+										placeholder="Enter the full title of your paper" required>
+									<small class="form-text text-muted">Use a clear, descriptive title that accurately reflects your
+										research</small>
 								</div>
 								<div class="mb-3">
 									<label for="paperAbstract" class="form-label">Abstract*</label>
-									<textarea class="form-control" id="paperAbstract" rows="8" placeholder="Provide a comprehensive summary of your paper including: background, objectives, methodology, results, and conclusions (250-500 words)" required></textarea>
-									<small class="form-text text-muted">Word count: <span id="abstractWordCount">0</span>/500 | <span id="abstractStatus">Please enter your abstract</span></small>
+									<textarea class="form-control" id="paperAbstract" rows="8"
+										placeholder="Provide a comprehensive summary of your paper including: background, objectives, methodology, results, and conclusions (250-500 words)"
+										required></textarea>
+									<small class="form-text text-muted">Word count: <span id="abstractWordCount">0</span>/500 | <span
+											id="abstractStatus">Please enter your abstract</span></small>
 								</div>
 								<div class="mb-3">
 									<label for="keywords" class="form-label">Keywords*</label>
-									<input type="text" class="form-control" id="keywords" placeholder="Enter keywords separated by commas (e.g., machine learning, data science, algorithms)" required>
-									<small class="form-text text-muted">Enter 3-6 keywords that best describe your paper. These will be used for indexing and search purposes.</small>
+									<input type="text" class="form-control" id="keywords"
+										placeholder="Enter keywords separated by commas (e.g., machine learning, data science, algorithms)"
+										required>
+									<small class="form-text text-muted">Enter 3-6 keywords that best describe your paper. These will be
+										used for indexing and search purposes.</small>
 								</div>
 							</div>
 
@@ -517,7 +551,7 @@ Majan University College for a transformative conference exploring the latest a
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
 									<i class="fa-solid fa-users me-2"></i>Author Information
 								</h4>
-								
+
 								<!-- Primary Author -->
 								<div class="card mb-3" style="border-left: 4px solid #019087;">
 									<div class="card-header bg-light">
@@ -527,17 +561,20 @@ Majan University College for a transformative conference exploring the latest a
 										<div class="row">
 											<div class="col-md-6 mb-3">
 												<label for="authorName" class="form-label">Full Name*</label>
-												<input type="text" class="form-control" id="authorName" placeholder="Enter your full name" required>
+												<input type="text" class="form-control" id="authorName" placeholder="Enter your full name"
+													required>
 											</div>
 											<div class="col-md-6 mb-3">
 												<label for="authorEmail" class="form-label">Email Address*</label>
-												<input type="email" class="form-control" id="authorEmail" placeholder="Enter your email address" required>
+												<input type="email" class="form-control" id="authorEmail" placeholder="Enter your email address"
+													required>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-6 mb-3">
 												<label for="authorInstitution" class="form-label">Institution/Affiliation*</label>
-												<input type="text" class="form-control" id="authorInstitution" placeholder="Enter your institution or organization" required>
+												<input type="text" class="form-control" id="authorInstitution"
+													placeholder="Enter your institution or organization" required>
 											</div>
 											<div class="col-md-6 mb-3">
 												<label for="authorCountry" class="form-label">Country*</label>
@@ -752,7 +789,8 @@ Majan University College for a transformative conference exploring the latest a
 										<div class="row">
 											<div class="col-md-6 mb-3">
 												<label for="authorOrcid" class="form-label">ORCID ID (Optional)</label>
-												<input type="text" class="form-control" id="authorOrcid" placeholder="e.g., 0000-0000-0000-0000">
+												<input type="text" class="form-control" id="authorOrcid"
+													placeholder="e.g., 0000-0000-0000-0000">
 												<small class="form-text text-muted">Your ORCID identifier if you have one</small>
 											</div>
 											<div class="col-md-6 mb-3">
@@ -772,7 +810,8 @@ Majan University College for a transformative conference exploring the latest a
 									<button type="button" class="btn btn-outline-primary btn-sm" id="addCoAuthor">
 										<i class="fa-solid fa-plus me-2"></i>Add Co-author (Optional)
 									</button>
-									<small class="form-text text-muted d-block mt-1">You can optionally add up to 5 co-authors. Each co-author will receive a copy of the submission confirmation.</small>
+									<small class="form-text text-muted d-block mt-1">You can optionally add up to 5 co-authors. Each
+										co-author will receive a copy of the submission confirmation.</small>
 								</div>
 								<div id="coAuthorsContainer"></div>
 							</div>
@@ -803,11 +842,13 @@ Majan University College for a transformative conference exploring the latest a
 										<option value="information_systems">Information Systems</option>
 										<option value="other">Other</option>
 									</select>
-									<small class="form-text text-muted">This will be used for initial review assignment and session planning</small>
+									<small class="form-text text-muted">This will be used for initial review assignment and session
+										planning</small>
 								</div>
 								<div class="mb-3">
 									<label class="form-label">Additional Subject Areas (Optional)</label>
-									<small class="form-text text-muted d-block mb-2">Select all relevant areas that apply to your research</small>
+									<small class="form-text text-muted d-block mb-2">Select all relevant areas that apply to your
+										research</small>
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-check">
@@ -878,37 +919,45 @@ Majan University College for a transformative conference exploring the latest a
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
 									<i class="fa-solid fa-upload me-2"></i>File Upload
 								</h4>
-								                                <div class="mb-3">
+								<div class="mb-3">
 									<label for="paperFile" class="form-label">Paper File (PDF/DOCX/LaTeX)*</label>
 									<input type="file" accept=".pdf,.docx,.doc,.tex" id="paperFile" class="form-control" required />
-									<small class="form-text text-muted">Upload your paper in PDF, DOCX, or LaTeX format (max 10MB). Ensure the paper is properly formatted and includes all sections.</small>
+									<small class="form-text text-muted">Upload your paper in PDF, DOCX, or LaTeX format (max 10MB). Ensure
+										the paper is properly formatted and includes all sections.</small>
 								</div>
 								<div class="mb-3">
 									<label for="supplementaryFile" class="form-label">Supplementary Material (Optional)</label>
 									<input type="file" accept=".pdf,.zip,.rar,.doc,.docx" id="supplementaryFile" class="form-control" />
-									<small class="form-text text-muted">Additional data, code, appendices, or extended results (max 20MB). This will be made available to reviewers.</small>
+									<small class="form-text text-muted">Additional data, code, appendices, or extended results (max 20MB).
+										This will be made available to reviewers.</small>
 								</div>
 								<div class="mb-3">
-									<label for="sourceCodeFile" class="form-label">Source Code / Reproducibility Artifacts (Optional)</label>
-									<input type="file" accept=".zip,.rar,.tar.gz,.py,.java,.cpp,.c,.js,.html,.css" id="sourceCodeFile" class="form-control" />
-									<small class="form-text text-muted">Source code, datasets, or reproducibility materials. This helps reviewers verify your results and promotes open science.</small>
+									<label for="sourceCodeFile" class="form-label">Source Code / Reproducibility Artifacts
+										(Optional)</label>
+									<input type="file" accept=".zip,.rar,.tar.gz,.py,.java,.cpp,.c,.js,.html,.css" id="sourceCodeFile"
+										class="form-control" />
+									<small class="form-text text-muted">Source code, datasets, or reproducibility materials. This helps
+										reviewers verify your results and promotes open science.</small>
 								</div>
 								<div class="alert alert-info">
 									<i class="fa-solid fa-info-circle me-2"></i>
-									<strong>File Requirements:</strong> All files should be properly named and virus-free. Large files may take longer to upload.
+									<strong>File Requirements:</strong> All files should be properly named and virus-free. Large files may
+									take longer to upload.
 								</div>
 							</div>
 
 							<!-- Additional Declarations Section -->
 							<div class="mb-4">
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
-									<i class="fa-solid fa-shield-alt me-2"></i>Additional Declarations (Select for 'Yes' and leave blank for 'No')
+									<i class="fa-solid fa-shield-alt me-2"></i>Additional Declarations (Select for 'Yes' and leave blank
+									for 'No')
 								</h4>
 								<div class="mb-3">
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="ethicsCompliance" required>
 										<label class="form-check-label" for="ethicsCompliance">
-											I confirm that this research complies with ethical standards and guidelines, including data privacy and human subject protection where applicable*
+											I confirm that this research complies with ethical standards and guidelines, including data
+											privacy and human subject protection where applicable*
 										</label>
 									</div>
 								</div>
@@ -916,7 +965,8 @@ Majan University College for a transformative conference exploring the latest a
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="dataAvailability">
 										<label class="form-check-label" for="dataAvailability">
-											I confirm that datasets and code used in this research are available for reproducibility (if applicable)
+											I confirm that datasets and code used in this research are available for reproducibility (if
+											applicable)
 										</label>
 									</div>
 								</div>
@@ -933,7 +983,8 @@ Majan University College for a transformative conference exploring the latest a
 							<!-- Supplementary Questions Section -->
 							<div class="mb-4">
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
-									<i class="fa-solid fa-question-circle me-2"></i>Supplementary Questions (Select for 'Yes' and leave blank for 'No')
+									<i class="fa-solid fa-question-circle me-2"></i>Supplementary Questions (Select for 'Yes' and leave
+									blank for 'No')
 								</h4>
 								<div class="mb-3">
 									<div class="form-check">
@@ -957,9 +1008,12 @@ Majan University College for a transformative conference exploring the latest a
 									</div>
 								</div>
 								<div class="mb-3" id="previousSubmissionDetails" style="display: none;">
-									<label for="previousSubmissionInfo" class="form-label">Please provide details about the previous submission*</label>
-									<textarea class="form-control" id="previousSubmissionInfo" rows="3" placeholder="Please specify the conference/journal name, submission date, and outcome (accepted, rejected, under review, etc.)..."></textarea>
-									<small class="form-text text-muted">This information helps us understand the submission history and avoid conflicts</small>
+									<label for="previousSubmissionInfo" class="form-label">Please provide details about the previous
+										submission*</label>
+									<textarea class="form-control" id="previousSubmissionInfo" rows="3"
+										placeholder="Please specify the conference/journal name, submission date, and outcome (accepted, rejected, under review, etc.)..."></textarea>
+									<small class="form-text text-muted">This information helps us understand the submission history and
+										avoid conflicts</small>
 								</div>
 								<div class="mb-3">
 									<div class="form-check">
@@ -968,7 +1022,8 @@ Majan University College for a transformative conference exploring the latest a
 											Are you willing to serve as a reviewer for this conference?
 										</label>
 									</div>
-									<small class="form-text text-muted">Reviewers receive priority consideration for future submissions and conference benefits</small>
+									<small class="form-text text-muted">Reviewers receive priority consideration for future submissions
+										and conference benefits</small>
 								</div>
 								<div class="mb-3">
 									<div class="form-check">
@@ -980,8 +1035,10 @@ Majan University College for a transformative conference exploring the latest a
 								</div>
 								<div class="mb-3" id="aiContentDetails" style="display: none;">
 									<label for="aiContentDescription" class="form-label">Please describe the AI-generated content*</label>
-									<textarea class="form-control" id="aiContentDescription" rows="3" placeholder="Describe how AI was used in your research, including tools, models, and extent of AI assistance..."></textarea>
-									<small class="form-text text-muted">This information helps ensure transparency and proper attribution</small>
+									<textarea class="form-control" id="aiContentDescription" rows="3"
+										placeholder="Describe how AI was used in your research, including tools, models, and extent of AI assistance..."></textarea>
+									<small class="form-text text-muted">This information helps ensure transparency and proper
+										attribution</small>
 								</div>
 								<div class="mb-3">
 									<div class="form-check">
@@ -990,14 +1047,16 @@ Majan University College for a transformative conference exploring the latest a
 											Is this a student paper (primary author is a student)?
 										</label>
 									</div>
-									<small class="form-text text-muted">Student papers may be eligible for special recognition and reduced fees</small>
+									<small class="form-text text-muted">Student papers may be eligible for special recognition and reduced
+										fees</small>
 								</div>
 							</div>
 
 							<!-- Agreement Section -->
 							<div class="mb-4">
 								<h4 class="text-teal mb-3" style="border-bottom: 2px solid #019087; padding-bottom: 8px;">
-									<i class="fa-solid fa-handshake me-2"></i>Agreement to Terms (Select for 'Yes' and leave blank for 'No')
+									<i class="fa-solid fa-handshake me-2"></i>Agreement to Terms (Select for 'Yes' and leave blank for
+									'No')
 								</h4>
 								<div class="mb-3">
 									<div class="form-check">
@@ -1027,7 +1086,8 @@ Majan University College for a transformative conference exploring the latest a
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" id="agreeReview" required>
 										<label class="form-check-label" for="agreeReview">
-											I understand that my paper will undergo peer review and I agree to address reviewer comments if requested*
+											I understand that my paper will undergo peer review and I agree to address reviewer comments if
+											requested*
 										</label>
 									</div>
 								</div>
@@ -1041,7 +1101,8 @@ Majan University College for a transformative conference exploring the latest a
 								</div>
 								<div class="alert alert-warning">
 									<i class="fa-solid fa-exclamation-triangle me-2"></i>
-									<strong>Important:</strong> By submitting this form, you acknowledge that all information provided is accurate and complete. False or misleading information may result in rejection of your submission.
+									<strong>Important:</strong> By submitting this form, you acknowledge that all information provided is
+									accurate and complete. False or misleading information may result in rejection of your submission.
 								</div>
 							</div>
 
@@ -1056,12 +1117,15 @@ Majan University College for a transformative conference exploring the latest a
 								</div>
 								<div class="mb-3">
 									<label for="message" class="form-label">Additional Comments (Optional)</label>
-									<textarea class="form-control" id="message" rows="3" placeholder="Any additional information or special requests..."></textarea>
+									<textarea class="form-control" id="message" rows="3"
+										placeholder="Any additional information or special requests..."></textarea>
 								</div>
 								<div class="mb-3">
 									<label for="referralCode" class="form-label">Referral Code (Optional)</label>
-									<input type="text" class="form-control" id="referralCode" placeholder="Enter referral code if you have one">
-									<small class="form-text text-muted">If you were referred by an admin, please enter their referral code here.</small>
+									<input type="text" class="form-control" id="referralCode"
+										placeholder="Enter referral code if you have one">
+									<small class="form-text text-muted">If you were referred by an admin, please enter their referral code
+										here.</small>
 								</div>
 							</div>
 
@@ -1112,7 +1176,8 @@ Majan University College for a transformative conference exploring the latest a
 							<h5 class="mb-0">Organized by: Traveon</h5>
 						</div>
 						<div class="mt-4">
-							<a href="https://www.google.com/maps/place/Majan+University+College/@23.5900001,58.3900001,15z/data=!4m6!3m5!1s0x3e8f900000000000:0x7176092047777777!8m2!3d23.5900001!4d58.3900001!16s%2Fg%2F11c40000000000000000000000000000?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-light">View Location on Map</a>
+							<a href="https://www.google.com/maps/place/Majan+University+College/@23.5900001,58.3900001,15z/data=!4m6!3m5!1s0x3e8f900000000000:0x7176092047777777!8m2!3d23.5900001!4d58.3900001!16s%2Fg%2F11c40000000000000000000000000000?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D"
+								target="_blank" class="btn btn-light">View Location on Map</a>
 
 						</div>
 					</div>
@@ -1332,8 +1397,9 @@ Majan University College for a transformative conference exploring the latest a
 									</div>
 								</a>
 							</li>
-							<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College, Muscat, Sultanate of Oman 
-								</a>
+							<a href="#" target="_blank"><img src="assets/img/icons/location1.svg" alt="" />Majan University College,
+								Muscat, Sultanate of Oman
+							</a>
 							<li>
 								<a href="mailto:info@icmmcs.org" target="_blank"><img src="assets/img/icons/mail1.svg"
 										alt="" />info@icmmcs.org</a>
@@ -1352,7 +1418,8 @@ Majan University College for a transformative conference exploring the latest a
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134198441-rkztmg.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134198441-rkztmg.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -1360,7 +1427,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134290684-u36yz8.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134290684-u36yz8.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -1368,7 +1436,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134309987-89nqj3.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134309987-89nqj3.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -1376,7 +1445,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134324458-18ytpl.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134324458-18ytpl.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -1384,7 +1454,8 @@ Majan University College for a transformative conference exploring the latest a
 							</div>
 							<div class="col-lg-4 col-md-4 col-4">
 								<div class="img1">
-									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134351489-auc026.jpg" alt="" />
+									<img src="https://xclusive-oman.s3.amazonaws.com/traveon/packageImg-1752134351489-auc026.jpg"
+										alt="" />
 									<div class="icons">
 										<a href="https://www.instagram.com/traveonventures/"><i class="fa-brands fa-instagram"></i></a>
 									</div>
@@ -1408,7 +1479,7 @@ Majan University College for a transformative conference exploring the latest a
 					<div class="copyright">
 						<p>&copy; Copyright 2025 - Traveon Ventures LLP. All Right Reserved</p>
 					</div>
-          <div class="privacy" style="display: flex; justify-content: end; gap: 20px;">
+					<div class="privacy" style="display: flex; justify-content: end; gap: 20px;">
 						<a href="event-policy.html">Event Policies</a> |
 						<a href="code-of-conduct.html">Code Of Conduct</a>
 					</div>
@@ -1445,10 +1516,10 @@ Majan University College for a transformative conference exploring the latest a
 		const maxCoAuthors = 5;
 
 		// Get referral code from URL if present and populate the field
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function () {
 			const urlParams = new URLSearchParams(window.location.search);
 			const referralCodeFromUrl = urlParams.get('ref');
-			
+
 			if (referralCodeFromUrl) {
 				const referralCodeInput = document.getElementById('referralCode');
 				if (referralCodeInput) {
@@ -1463,26 +1534,26 @@ Majan University College for a transformative conference exploring the latest a
 		function initializeForm() {
 			// Initialize corresponding author state
 			updateCorrespondingAuthorStates();
-			
+
 			// Add event listener to primary author's corresponding author checkbox
 			const primaryAuthorCheckbox = document.getElementById('correspondingAuthor');
 			if (primaryAuthorCheckbox) {
-				primaryAuthorCheckbox.addEventListener('change', function() {
+				primaryAuthorCheckbox.addEventListener('change', function () {
 					handleCorrespondingAuthorChange(this);
 				});
 			}
-			
+
 			// Abstract word counter with enhanced feedback
 			const abstractTextarea = document.getElementById('paperAbstract');
 			const wordCountSpan = document.getElementById('abstractWordCount');
 			const abstractStatusSpan = document.getElementById('abstractStatus');
-			
+
 			if (abstractTextarea && wordCountSpan && abstractStatusSpan) {
-				abstractTextarea.addEventListener('input', function() {
+				abstractTextarea.addEventListener('input', function () {
 					const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
 					const wordCount = words.length;
 					wordCountSpan.textContent = wordCount;
-					
+
 					if (wordCount === 0) {
 						wordCountSpan.style.color = '#6c757d';
 						abstractStatusSpan.textContent = 'Please enter your abstract';
@@ -1516,9 +1587,9 @@ Majan University College for a transformative conference exploring the latest a
 			// Conditional fields
 			const preprintCheckbox = document.getElementById('preprintPolicy');
 			const preprintDetails = document.getElementById('preprintDetails');
-			
+
 			if (preprintCheckbox && preprintDetails) {
-				preprintCheckbox.addEventListener('change', function() {
+				preprintCheckbox.addEventListener('change', function () {
 					preprintDetails.style.display = this.checked ? 'block' : 'none';
 					const preprintUrl = document.getElementById('preprintUrl');
 					if (this.checked && preprintUrl) {
@@ -1531,9 +1602,9 @@ Majan University College for a transformative conference exploring the latest a
 
 			const aiContentCheckbox = document.getElementById('aiGeneratedContent');
 			const aiContentDetails = document.getElementById('aiContentDetails');
-			
+
 			if (aiContentCheckbox && aiContentDetails) {
-				aiContentCheckbox.addEventListener('change', function() {
+				aiContentCheckbox.addEventListener('change', function () {
 					aiContentDetails.style.display = this.checked ? 'block' : 'none';
 					const aiDescription = document.getElementById('aiContentDescription');
 					if (this.checked && aiDescription) {
@@ -1547,16 +1618,16 @@ Majan University College for a transformative conference exploring the latest a
 			// Previous submission details
 			const previouslySubmittedCheckbox = document.getElementById('previouslySubmitted');
 			const previousSubmissionDetails = document.getElementById('previousSubmissionDetails');
-			
+
 			if (previouslySubmittedCheckbox && previousSubmissionDetails) {
-				previouslySubmittedCheckbox.addEventListener('change', function() {
+				previouslySubmittedCheckbox.addEventListener('change', function () {
 					previousSubmissionDetails.style.display = this.checked ? 'block' : 'none';
 				});
 			}
 
 			// Real-time validation
 			document.querySelectorAll('input, textarea, select').forEach(element => {
-				element.addEventListener('input', function() {
+				element.addEventListener('input', function () {
 					if (this.classList.contains('is-invalid')) {
 						this.classList.remove('is-invalid');
 						const errorDiv = this.parentNode.querySelector('.invalid-feedback');
@@ -1576,7 +1647,7 @@ Majan University College for a transformative conference exploring the latest a
 
 			coAuthorCount++;
 			const container = document.getElementById('coAuthorsContainer');
-			
+
 			const coAuthorDiv = document.createElement('div');
 			coAuthorDiv.className = 'card mb-3';
 			coAuthorDiv.style.borderLeft = '4px solid #00a3a3';
@@ -1829,7 +1900,7 @@ Majan University College for a transformative conference exploring the latest a
 					</div>
 				</div>
 			`;
-			
+
 			container.appendChild(coAuthorDiv);
 			updateCorrespondingAuthorStates();
 		}
@@ -1837,7 +1908,7 @@ Majan University College for a transformative conference exploring the latest a
 		function removeCoAuthor(button) {
 			button.closest('.card').remove();
 			coAuthorCount--;
-			
+
 			// Renumber remaining co-authors
 			const coAuthorCards = document.querySelectorAll('#coAuthorsContainer .card');
 			coAuthorCards.forEach((card, index) => {
@@ -1846,7 +1917,7 @@ Majan University College for a transformative conference exploring the latest a
 					header.textContent = `Co-author ${index + 1}`;
 				}
 			});
-			
+
 			// Update corresponding author states after removal
 			updateCorrespondingAuthorStates();
 		}
@@ -1869,11 +1940,11 @@ Majan University College for a transformative conference exploring the latest a
 		function updateCorrespondingAuthorStates() {
 			const primaryAuthorCheckbox = document.getElementById('correspondingAuthor');
 			const coAuthorCheckboxes = document.querySelectorAll('.corresponding-author-checkbox');
-			
+
 			// Check if any corresponding author is selected
-			const anyCorrespondingSelected = primaryAuthorCheckbox.checked || 
+			const anyCorrespondingSelected = primaryAuthorCheckbox.checked ||
 				Array.from(coAuthorCheckboxes).some(checkbox => checkbox.checked);
-			
+
 			if (anyCorrespondingSelected) {
 				// Disable unchecked checkboxes
 				if (!primaryAuthorCheckbox.checked) {
@@ -1915,13 +1986,13 @@ Majan University College for a transformative conference exploring the latest a
 				console.error('Invalid element provided to showError');
 				return;
 			}
-			
+
 			// Remove existing error for this element
 			const existingError = element.parentNode.querySelector('.invalid-feedback');
 			if (existingError) {
 				existingError.remove();
 			}
-			
+
 			const errorDiv = document.createElement('div');
 			errorDiv.className = 'invalid-feedback';
 			errorDiv.textContent = message;
@@ -1943,21 +2014,21 @@ Majan University College for a transformative conference exploring the latest a
 			const modal = document.getElementById('responseModal');
 			const modalTitle = document.getElementById('modalTitle');
 			const modalMessage = document.getElementById('modalMessage');
-			
+
 			modalTitle.textContent = title;
 			modalMessage.textContent = message;
-			
+
 			// Style based on type
 			if (type === 'success') {
 				modalTitle.style.color = '#28a745';
 			} else {
 				modalTitle.style.color = '#dc3545';
 			}
-			
+
 			modal.style.display = 'block';
 			modal.classList.add('show');
 		}
-		
+
 		function closeModal() {
 			const modal = document.getElementById('responseModal');
 			modal.style.display = 'none';
@@ -1967,13 +2038,14 @@ Majan University College for a transformative conference exploring the latest a
 		// Form submission handler
 		document.getElementById('registrationForm').addEventListener('submit', async function (event) {
 			event.preventDefault();
+			event.stopPropagation();
 			clearErrors();
 
 			// Get submit button references
 			const submitButton = this.querySelector('button[type="submit"]');
 			const submitText = document.getElementById('submitText');
 			const loadingText = document.getElementById('loadingText');
-			
+
 			// Check if already submitting
 			if (submitButton.disabled) {
 				return;
@@ -2099,7 +2171,7 @@ Majan University College for a transformative conference exploring the latest a
 			// Validate new agreement fields
 			const agreeReview = document.getElementById('agreeReview');
 			const agreeDataSharing = document.getElementById('agreeDataSharing');
-			
+
 			if (!agreeReview.checked) {
 				showModal('Validation Error', 'You must agree to the peer review process.', 'error');
 				return;
@@ -2113,7 +2185,7 @@ Majan University College for a transformative conference exploring the latest a
 			// Validate conditional fields
 			const preprintPolicy = document.getElementById('preprintPolicy');
 			const preprintUrl = document.getElementById('preprintUrl');
-			
+
 			if (preprintPolicy.checked && !preprintUrl.value.trim()) {
 				showModal('Validation Error', 'Please provide the preprint URL.', 'error');
 				return;
@@ -2121,7 +2193,7 @@ Majan University College for a transformative conference exploring the latest a
 
 			const aiGeneratedContent = document.getElementById('aiGeneratedContent');
 			const aiContentDescription = document.getElementById('aiContentDescription');
-			
+
 			if (aiGeneratedContent.checked && !aiContentDescription.value.trim()) {
 				showModal('Validation Error', 'Please describe the AI-generated content.', 'error');
 				return;
@@ -2132,7 +2204,7 @@ Majan University College for a transformative conference exploring the latest a
 			for (const card of coAuthorCards) {
 				const inputs = card.querySelectorAll('input[required], select[required]');
 				const hasValue = Array.from(inputs).some(input => input.value.trim());
-				
+
 				// If any field is filled, validate all required fields
 				if (hasValue) {
 					const name = card.querySelector('input[name^="coAuthorName"]');
@@ -2140,7 +2212,7 @@ Majan University College for a transformative conference exploring the latest a
 					const institution = card.querySelector('input[name^="coAuthorInstitution"]');
 					const country = card.querySelector('select[name^="coAuthorCountry"]');
 					const orcid = card.querySelector('input[name^="coAuthorOrcid"]');
-					
+
 					if (!name.value.trim()) {
 						showModal('Validation Error', 'Please enter the name for all co-authors or remove incomplete entries.', 'error');
 						return;
@@ -2185,7 +2257,7 @@ Majan University College for a transformative conference exploring the latest a
 			formData.append('primarySubject', primarySubject.value);
 			formData.append('phone', phone.value);
 			formData.append('message', message.value);
-			
+
 			// Add files
 			if (paperFile.files[0]) {
 				formData.append('paperFile', paperFile.files[0]);
@@ -2219,7 +2291,7 @@ Majan University College for a transformative conference exploring the latest a
 					});
 				}
 			});
-			
+
 			// Add co-authors as JSON string
 			if (coAuthorsArray.length > 0) {
 				formData.append('coAuthors', JSON.stringify(coAuthorsArray));
@@ -2251,7 +2323,7 @@ Majan University College for a transformative conference exploring the latest a
 			formData.append('agreePublication', agreePublication.checked.toString());
 			formData.append('agreeReview', agreeReview.checked.toString());
 			formData.append('agreeDataSharing', agreeDataSharing.checked.toString());
-			
+
 			// Add referral code if provided
 			if (referralCode.value.trim()) {
 				formData.append('referralCode', referralCode.value.trim());
@@ -2259,14 +2331,15 @@ Majan University College for a transformative conference exploring the latest a
 
 			try {
 				const response = await fetch('https://icmmcs-backend-production.up.railway.app/api/speaker/register', {
-				// const response = await fetch('http://localhost:5000/api/speaker/register', {
+					// const response = await fetch('http://localhost:5000/api/speaker/register', {
 					method: 'POST',
-					body: formData
+					body: formData,
+					timeout: 30000 // 30 second timeout
 				});
 
 				console.log('Response status:', response.status);
 				console.log('Response ok:', response.ok);
-				
+
 				// Check if the response is ok (status 200-299)
 				if (!response.ok) {
 					const errorData = await response.json().catch(() => ({ message: 'Server error occurred' }));
@@ -2274,32 +2347,32 @@ Majan University College for a transformative conference exploring the latest a
 					showModal('Registration Failed', errorData.message || `Server error: ${response.status}`, 'error');
 					return;
 				}
-				
+
 				const result = await response.json();
 				console.log('Response data:', result);
-				
+
 				if (result.success) {
-					showModal('Registration Successful!', 
-						'Thank you for your paper submission. We will review your submission and get back to you within 10 business days.', 
+					showModal('Registration Successful!',
+						'Thank you for your paper submission. We will review your submission and get back to you within 10 business days.',
 						'success');
 					this.reset();
 					this.classList.remove('was-validated');
-					
+
 					// Reset co-authors
 					document.getElementById('coAuthorsContainer').innerHTML = '';
 					coAuthorCount = 0;
-					
+
 					// Reset word count and status
 					document.getElementById('abstractWordCount').textContent = '0';
 					document.getElementById('abstractStatus').textContent = 'Please enter your abstract';
 					document.getElementById('abstractWordCount').style.color = '#6c757d';
 					document.getElementById('abstractStatus').style.color = '#6c757d';
-					
+
 					// Hide conditional fields
 					document.getElementById('preprintDetails').style.display = 'none';
 					document.getElementById('aiContentDetails').style.display = 'none';
 					document.getElementById('previousSubmissionDetails').style.display = 'none';
-					
+
 					// Reset conditional field requirements
 					document.getElementById('preprintUrl').required = false;
 					document.getElementById('aiContentDescription').required = false;

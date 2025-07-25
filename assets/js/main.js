@@ -612,11 +612,24 @@ $('.testimonial-reviews-area2').slick({
 });
 
 //========== PRELOADER ============= //
-$(window).on("load", function (event) {
-  setTimeout(function () {
-    $(".preloader").fadeToggle();
-  }, 200);
+let preloaderHidden = false;
+$(document).ready(function() {
+  // Hide preloader if page is already loaded
+  if (document.readyState === 'complete') {
+    if (!preloaderHidden) {
+      preloaderHidden = true;
+      $(".preloader").fadeOut().addClass('hidden');
+    }
+  }
+});
 
+$(window).on("load", function (event) {
+  if (!preloaderHidden) {
+    preloaderHidden = true;
+    setTimeout(function () {
+      $(".preloader").fadeOut().addClass('hidden');
+    }, 200);
+  }
 });
 
 
