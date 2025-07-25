@@ -840,9 +840,9 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-success" onclick="showUpdateSpeakerStatusModal()">
+					<!-- <button type="button" class="btn btn-success" onclick="showUpdateSpeakerStatusModal()">
 						<i class="fas fa-edit me-2"></i>Update Status
-					</button>
+					</button> -->
 				</div>
 			</div>
 		</div>
@@ -880,6 +880,12 @@
 				'NEEDS_REVISION': 'Needs Revision'
 			};
 			return `<span class="badge ${statusClasses[status] || 'bg-secondary'}">${statusText[status] || status}</span>`;
+		}
+
+		// Helper function to check if speaker can be sent to committee
+		function canSendSpeakerToCommittee(speaker) {
+			return (speaker.sentToCommittee === false || speaker.sentToCommittee === null || speaker.sentToCommittee === undefined) && 
+				   speaker.reviewStatus === 'PENDING';
 		}
 
 		// Load committee members for dropdown
@@ -998,10 +1004,14 @@
 		// Show update speaker status modal
 		function showUpdateSpeakerStatusModal(speakerId) {
 			const speaker = currentSpeakers.find(s => s.id === speakerId);
-			if (!speaker) return;
+			if (!speaker) {
+				console.error('Speaker not found:', speakerId);
+				return;
+			}
 
 			document.getElementById('updateStatusSpeakerId').value = speakerId;
-			document.getElementById('speakerReviewStatus').value = speaker.reviewStatus;
+			document.getElementById('speakerReviewStatus').value = speaker.reviewStatus || 'PENDING';
+			document.getElementById('speakerStatusNotes').value = '';
 
 			new bootstrap.Modal(document.getElementById('updateSpeakerStatusModal')).show();
 		}
@@ -1014,6 +1024,11 @@
 
 			if (!reviewStatus) {
 				alert('Please select a review status');
+				return;
+			}
+
+			if (!speakerId) {
+				alert('Speaker ID not found');
 				return;
 			}
 
@@ -1547,7 +1562,9 @@
 			})
 			.then(response => response.json())
 			.then(data => {
+				console.log('Raw speakers data:', data);
 				currentSpeakers = data.speakers || data; // Store speakers for reference
+				console.log('Processed speakers data:', currentSpeakers);
 				
 				// Initialize DataTable with responsive configuration
 				$('#speakersTable').DataTable({
@@ -1644,7 +1661,11 @@
 							title: 'Review Status',
 							responsivePriority: 2,
 							render: function(data, type, row) {
-								return getReviewStatusBadge(data);
+								const statusBadge = getReviewStatusBadge(data);
+								const debugInfo = row.sentToCommittee !== undefined ? 
+									`<br><small class="text-muted">Sent: ${row.sentToCommittee ? 'Yes' : 'No'}</small>` : 
+									`<br><small class="text-danger">sentToCommittee: undefined</small>`;
+								return statusBadge + debugInfo;
 							}
 						},
 						{
@@ -1654,7 +1675,15 @@
 							className: 'text-center',
 							orderable: false,
 							render: function(data, type, row) {
-								const canSendToCommittee = !row.sentToCommittee && row.reviewStatus === 'PENDING';
+								// Debug logging to check the values
+								console.log('Speaker data:', {
+									id: row.id,
+									reviewStatus: row.reviewStatus,
+									sentToCommittee: row.sentToCommittee
+								});
+								
+								// Check if speaker can be sent to committee using helper function
+								const canSendToCommittee = canSendSpeakerToCommittee(row);
 								
 								return `
 									<div class="btn-group">
