@@ -1587,9 +1587,6 @@ Majan University College for a transformative conference exploring the latest a
 	<script src="assets/js/vendor/circle-progress.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
 	<script>
 		let coAuthorCount = 0;
 		const maxCoAuthors = 5;
@@ -2194,6 +2191,64 @@ Majan University College for a transformative conference exploring the latest a
 			modal.classList.add('show');
 		}
 
+		// Function to clear all field errors
+		function clearFieldErrors() {
+			document.querySelectorAll('.is-invalid').forEach(element => {
+				element.classList.remove('is-invalid');
+			});
+			document.querySelectorAll('.invalid-feedback').forEach(element => {
+				element.remove();
+			});
+		}
+
+		// Function to display field-specific errors
+		function displayFieldErrors(fieldErrors) {
+			Object.keys(fieldErrors).forEach(fieldName => {
+				const errorMessage = fieldErrors[fieldName];
+				
+				// Map backend field names to form field IDs
+				const fieldIdMap = {
+					'name': 'authorName',
+					'email': 'authorEmail',
+					'phone': 'phone',
+					'institutionName': 'authorInstitution',
+					'country': 'authorCountry',
+					'orcidId': 'authorOrcid',
+					'paperTitle': 'paperTitle',
+					'paperAbstract': 'paperAbstract',
+					'keywords': 'keywords',
+					'primarySubject': 'primarySubject',
+					'conferenceTitle': 'conference-title',
+					'placeDate': 'place-date',
+					'preprintUrl': 'preprintUrl',
+					'aiContentDescription': 'aiContentDescription',
+					'referralCode': 'referralCode',
+					'coAuthors': 'coAuthorsContainer',
+					'general': 'general'
+				};
+				
+				const fieldId = fieldIdMap[fieldName];
+				if (fieldId && fieldId !== 'general') {
+					const field = document.getElementById(fieldId);
+					if (field) {
+						field.classList.add('is-invalid');
+						
+						// Remove existing error message
+						const existingError = field.parentNode.querySelector('.invalid-feedback');
+						if (existingError) {
+							existingError.remove();
+						}
+						
+						// Add new error message
+						const errorDiv = document.createElement('div');
+						errorDiv.className = 'invalid-feedback';
+						errorDiv.textContent = errorMessage;
+						field.parentNode.appendChild(errorDiv);
+					}
+				}
+			});
+		}
+
 		// Enhanced error handling function
 		function handleSubmissionError(error, response = null) {
 			console.error('Submission error details:', {
@@ -2409,6 +2464,7 @@ Majan University College for a transformative conference exploring the latest a
 			event.preventDefault();
 			event.stopPropagation();
 			clearErrors();
+			clearFieldErrors();
 
 			// Get submit button references
 			const submitButton = this.querySelector('button[type="submit"]');
@@ -2726,48 +2782,55 @@ Majan University College for a transformative conference exploring the latest a
 
 				// Check if the response is ok (status 200-299)
 				if (!response.ok) {
-					let errorMessage = 'Server error occurred';
-					
 					try {
 						const errorData = await response.json();
 						console.error('Server error response:', errorData);
 						
-						// Handle specific backend validation errors
-						if (errorData.message) {
-							if (errorData.message.includes('Missing required fields')) {
-								errorMessage = 'Please fill in all required fields marked with *.';
-							} else if (errorData.message.includes('Invalid email format')) {
-								errorMessage = 'Please enter a valid email address.';
-							} else if (errorData.message.includes('Invalid phone number format')) {
-								errorMessage = 'Please enter a valid phone number.';
-							} else if (errorData.message.includes('Invalid ORCID format')) {
-								errorMessage = 'Please enter a valid ORCID ID (format: 0000-0000-0000-0000).';
-							} else if (errorData.message.includes('Abstract must be at least 50 words')) {
-								errorMessage = 'Your abstract must be at least 50 words long.';
-							} else if (errorData.message.includes('Abstract must not exceed 500 words')) {
-								errorMessage = 'Your abstract must not exceed 500 words.';
-							} else if (errorData.message.includes('Speaker already registered')) {
-								errorMessage = 'A submission with this email address already exists. Please use a different email or contact support.';
-							} else if (errorData.message.includes('Invalid referral code')) {
-								errorMessage = 'The referral code you entered is invalid. Please check and try again.';
-							} else if (errorData.message.includes('Co-author')) {
-								errorMessage = 'Please complete all co-author information or remove incomplete entries.';
-							} else if (errorData.message.includes('Preprint URL is required')) {
-								errorMessage = 'Please provide the preprint URL when you select the preprint policy option.';
-							} else if (errorData.message.includes('AI content description is required')) {
-								errorMessage = 'Please describe the AI-generated content when you select that option.';
-							} else if (errorData.message.includes('too long') || errorData.message.includes('data that is too long')) {
-								errorMessage = 'One or more fields contain data that is too long. Please check your keywords, abstract, or other text fields and shorten them if necessary.';
-							} else {
-								errorMessage = errorData.message;
+						// Handle field-specific errors from the updated speakerController
+						if (errorData.fieldErrors) {
+							// Display field-specific errors
+							displayFieldErrors(errorData.fieldErrors);
+							showModal('Submission Failed', errorData.message || 'Please correct the errors below and try again.', 'error');
+						} else {
+							// Handle legacy error messages for backward compatibility
+							let errorMessage = 'Server error occurred';
+							
+							if (errorData.message) {
+								if (errorData.message.includes('Missing required fields')) {
+									errorMessage = 'Please fill in all required fields marked with *.';
+								} else if (errorData.message.includes('Invalid email format')) {
+									errorMessage = 'Please enter a valid email address.';
+								} else if (errorData.message.includes('Invalid phone number format')) {
+									errorMessage = 'Please enter a valid phone number.';
+								} else if (errorData.message.includes('Invalid ORCID format')) {
+									errorMessage = 'Please enter a valid ORCID ID (format: 0000-0000-0000-0000).';
+								} else if (errorData.message.includes('Abstract must be at least 50 words')) {
+									errorMessage = 'Your abstract must be at least 50 words long.';
+								} else if (errorData.message.includes('Abstract must not exceed 500 words')) {
+									errorMessage = 'Your abstract must not exceed 500 words.';
+								} else if (errorData.message.includes('Speaker already registered')) {
+									errorMessage = 'A submission with this email address already exists. Please use a different email or contact support.';
+								} else if (errorData.message.includes('Invalid referral code')) {
+									errorMessage = 'The referral code you entered is invalid. Please check and try again.';
+								} else if (errorData.message.includes('Co-author')) {
+									errorMessage = 'Please complete all co-author information or remove incomplete entries.';
+								} else if (errorData.message.includes('Preprint URL is required')) {
+									errorMessage = 'Please provide the preprint URL when you select the preprint policy option.';
+								} else if (errorData.message.includes('AI content description is required')) {
+									errorMessage = 'Please describe the AI-generated content when you select that option.';
+								} else if (errorData.message.includes('too long') || errorData.message.includes('data that is too long')) {
+									errorMessage = 'One or more fields contain data that is too long. Please check your keywords, abstract, or other text fields and shorten them if necessary.';
+								} else {
+									errorMessage = errorData.message;
+								}
 							}
+							
+							showModal('Submission Failed', errorMessage, 'error');
 						}
 					} catch (parseError) {
 						console.error('Error parsing response:', parseError);
-						errorMessage = `Server error (${response.status}): Unable to process response`;
+						showModal('Submission Failed', `Server error (${response.status}): Unable to process response`, 'error');
 					}
-					
-					handleSubmissionError(new Error(errorMessage), response);
 					return;
 				}
 
@@ -2780,6 +2843,7 @@ Majan University College for a transformative conference exploring the latest a
 						'success');
 					this.reset();
 					this.classList.remove('was-validated');
+					clearFieldErrors();
 
 					// Reset co-authors
 					document.getElementById('coAuthorsContainer').innerHTML = '';
@@ -2800,7 +2864,15 @@ Majan University College for a transformative conference exploring the latest a
 					document.getElementById('preprintUrl').required = false;
 					document.getElementById('aiContentDescription').required = false;
 				} else {
-					handleSubmissionError(new Error(result.message || 'An error occurred during registration. Please try again.'), response);
+					// Handle field-specific errors from the updated speakerController
+					if (result.fieldErrors) {
+						// Display field-specific errors
+						displayFieldErrors(result.fieldErrors);
+						showModal('Submission Failed', result.message || 'Please correct the errors below and try again.', 'error');
+					} else {
+						// Handle legacy error messages for backward compatibility
+						handleSubmissionError(new Error(result.message || 'An error occurred during registration. Please try again.'), response);
+					}
 				}
 
 			} catch (error) {

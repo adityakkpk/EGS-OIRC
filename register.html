@@ -1564,7 +1564,6 @@ Majan University College for a transformative experience in mathematics, manage
 	<script src="assets/js/vendor/circle-progress.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script>
 		// Form validation and submission
 		; (() => {
@@ -1596,6 +1595,9 @@ Majan University College for a transformative experience in mathematics, manage
 						submitText.style.display = 'none';
 						loadingText.style.display = 'inline';
 						submitButton.disabled = true;
+
+						// Clear previous errors
+						clearFieldErrors();
 
 						// Collect form data
 						const formData = {
@@ -1629,10 +1631,18 @@ Majan University College for a transformative experience in mathematics, manage
 									'Thank you for your conference registration. You will receive a confirmation email shortly. And for the further process our team will contact you soon.', 
 									'success');
 							} else {
-								// Handle error response
-								showModal('Registration Failed', result.error || result.message || 'An error occurred during registration. Please try again.', 'error');
+								// Handle error response with field-specific errors
+								if (result.fieldErrors) {
+									// Display field-specific errors
+									displayFieldErrors(result.fieldErrors);
+									showModal('Registration Failed', result.message || 'Please correct the errors below and try again.', 'error');
+								} else {
+									// Display general error
+									showModal('Registration Failed', result.message || 'An error occurred during registration. Please try again.', 'error');
+								}
 							}
 						} catch (error) {
+							console.error('Registration error:', error);
 							showModal('Network Error', 'Unable to submit registration. Please check your connection and try again.', 'error');
 						} finally {
 							// Reset button state
@@ -1706,6 +1716,54 @@ Majan University College for a transformative experience in mathematics, manage
 		// Check hotel availability function
 		function checkAvailability(hotel) {
 			alert(`Checking availability for ${hotel}...\nPlease contact our travel desk for immediate assistance with booking.`)
+		}
+
+		// Function to clear all field errors
+		function clearFieldErrors() {
+			document.querySelectorAll('.is-invalid').forEach(element => {
+				element.classList.remove('is-invalid');
+			});
+			document.querySelectorAll('.invalid-feedback').forEach(element => {
+				element.remove();
+			});
+		}
+
+		// Function to display field-specific errors
+		function displayFieldErrors(fieldErrors) {
+			Object.keys(fieldErrors).forEach(fieldName => {
+				const errorMessage = fieldErrors[fieldName];
+				
+				// Map backend field names to form field IDs
+				const fieldIdMap = {
+					'name': 'firstName', // We'll show error on firstName field
+					'email': 'email',
+					'phone': 'phone',
+					'registrationType': 'regType',
+					'institutionName': 'institutionName',
+					'country': 'country',
+					'referralCode': 'referralCode'
+				};
+				
+				const fieldId = fieldIdMap[fieldName];
+				if (fieldId) {
+					const field = document.getElementById(fieldId);
+					if (field) {
+						field.classList.add('is-invalid');
+						
+						// Remove existing error message
+						const existingError = field.parentNode.querySelector('.invalid-feedback');
+						if (existingError) {
+							existingError.remove();
+						}
+						
+						// Add new error message
+						const errorDiv = document.createElement('div');
+						errorDiv.className = 'invalid-feedback';
+						errorDiv.textContent = errorMessage;
+						field.parentNode.appendChild(errorDiv);
+					}
+				}
+			});
 		}
 
 		// Function to show modal messages to the user
