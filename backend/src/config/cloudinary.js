@@ -39,7 +39,7 @@ const paperStorage = new CloudinaryStorage({
 export const upload = multer({ 
   storage: paperStorage,
   limits: {
-    fileSize: 20 * 1024 * 1024, // 20MB limit for supplementary files
+    fileSize: 50 * 1024 * 1024, // 50MB limit for supplementary files
   },
   fileFilter: (req, file, cb) => {
     console.log('Paper submission file upload attempt:', {
@@ -132,7 +132,7 @@ const legacyStorage = new CloudinaryStorage({
 export const legacyUpload = multer({ 
   storage: legacyStorage,
   limits: {
-    fileSize: 10 * 1024 * 1024, // 10MB limit
+    fileSize: 50 * 1024 * 1024, // 50MB limit
   },
   fileFilter: (req, file, cb) => {
     const allowedMimeTypes = [
@@ -190,7 +190,7 @@ const keynoteStorage = new CloudinaryStorage({
 export const keynoteUpload = multer({
   storage: keynoteStorage,
   limits: {
-    fileSize: 10 * 1024 * 1024, // 10MB limit
+    fileSize: 50 * 1024 * 1024, // 50MB limit
   },
   fileFilter: (req, file, cb) => {
     console.log('Keynote file upload attempt:', {

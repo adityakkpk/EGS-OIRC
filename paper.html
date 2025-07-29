@@ -456,7 +456,7 @@ Majan University College for a transformative conference exploring the latest a
 										<h4 class="mb-0" style="color: #019087; font-weight: 600;">Submission Format</h4>
 									</div>
 									<p class="text-muted mb-0">Authors are invited to submit original, unpublished research work in the
-										form of full papers (8-15 pages) in DOCX/PDF/LaTeX format (less than 10MB).</p>
+										form of full papers (8-15 pages) in DOCX/PDF/LaTeX format (less than 50MB).</p>
 								</div>
 							</div>
 						</div>
@@ -982,13 +982,13 @@ Majan University College for a transformative conference exploring the latest a
 								<div class="mb-3">
 									<label for="paperFile" class="form-label">Paper File (PDF/DOCX/LaTeX)*</label>
 									<input type="file" accept=".pdf,.docx,.doc,.tex" id="paperFile" class="form-control" required />
-									<small class="form-text text-muted">Upload your paper in PDF, DOCX, or LaTeX format (max 10MB). Ensure
+									<small class="form-text text-muted">Upload your paper in PDF, DOCX, or LaTeX format (max 50MB). Ensure
 										the paper is properly formatted and includes all sections.</small>
 								</div>
 								<div class="mb-3">
 									<label for="supplementaryFile" class="form-label">Supplementary Material (Optional)</label>
 									<input type="file" accept=".pdf,.zip,.rar,.doc,.docx" id="supplementaryFile" class="form-control" />
-									<small class="form-text text-muted">Additional data, code, appendices, or extended results (max 20MB).
+									<small class="form-text text-muted">Additional data, code, appendices, or extended results (max 50MB).
 										This will be made available to reviewers.</small>
 								</div>
 								<div class="mb-3">
@@ -1202,7 +1202,7 @@ Majan University College for a transformative conference exploring the latest a
 								<h6><i class="fa-solid fa-info-circle me-2"></i>Submission Tips:</h6>
 								<ul class="mb-0" style="font-size: 0.9rem;">
 									<li>Ensure all required fields (marked with *) are completed</li>
-									<li>Paper file must be in PDF, DOCX, or LaTeX format (max 10MB)</li>
+									<li>Paper file must be in PDF, DOCX, or LaTeX format (max 50MB)</li>
 									<li>Abstract should be between 50-500 words</li>
 									<li>Use a stable internet connection for file uploads</li>
 									<li>If you encounter issues, try refreshing the page and resubmitting</li>
@@ -2402,10 +2402,10 @@ Majan University College for a transformative conference exploring the latest a
 				return false;
 			}
 
-			// Validate paper file size (10MB limit)
-			const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+			// Validate paper file size (50MB limit)
+const maxSize = 50 * 1024 * 1024; // 50MB in bytes
 			if (paperFile.files[0].size > maxSize) {
-				showModal('File Size Error', 'Paper file size must be less than 10MB. Please compress your file and try again.', 'error');
+				showModal('File Size Error', 'Paper file size must be less than 50MB. Please compress your file and try again.', 'error');
 				return false;
 			}
 
@@ -2418,8 +2418,8 @@ Majan University College for a transformative conference exploring the latest a
 
 			// Validate supplementary file if uploaded
 			if (supplementaryFile.files[0]) {
-				if (supplementaryFile.files[0].size > 20 * 1024 * 1024) { // 20MB limit
-					showModal('File Size Error', 'Supplementary file size must be less than 20MB. Please compress your file and try again.', 'error');
+				if (supplementaryFile.files[0].size > 50 * 1024 * 1024) { // 50MB limit
+showModal('File Size Error', 'Supplementary file size must be less than 50MB. Please compress your file and try again.', 'error');
 					return false;
 				}
 			}

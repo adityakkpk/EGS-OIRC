@@ -41,7 +41,7 @@ const handleUploadError = (err, req, res, next) => {
     if (err.code === 'LIMIT_FILE_SIZE') {
       return res.status(400).json({
         message: "File too large",
-        error: "File size must be less than 10MB",
+        error: "File size must be less than 50MB",
         success: false
       });
     }

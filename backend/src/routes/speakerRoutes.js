@@ -31,7 +31,7 @@ const handleUploadError = (err, req, res, next) => {
     if (err.code === 'LIMIT_FILE_SIZE') {
       return res.status(400).json({
         message: "File too large",
-        error: "File size must be less than 10MB for paper file and 20MB for supplementary files",
+        error: "File size must be less than 50MB for paper file and 50MB for supplementary files",
         success: false
       });
     }
