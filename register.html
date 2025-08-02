@@ -597,12 +597,12 @@ Majan University College for a transformative experience in mathematics, manage
 										<li>🇲🇻 Maldives</li>
 									</ul>
 								</td>
+								<td class="fee-amount text-nowrap">$120</td>
 								<td class="fee-amount text-nowrap">$110</td>
-								<td class="fee-amount text-nowrap">$100</td>
-								<td class="fee-amount text-nowrap">$145</td>
-								<td class="fee-amount text-nowrap">$125</td>
-								<td class="fee-amount text-nowrap">$180</td>
-								<td class="fee-amount text-nowrap">$170</td>
+								<td class="fee-amount text-nowrap">$150</td>
+								<td class="fee-amount text-nowrap">$140</td>
+								<td class="fee-amount text-nowrap">$200</td>
+								<td class="fee-amount text-nowrap">$190</td>
 							</tr>
 
 							<tr>
@@ -628,8 +628,8 @@ Majan University College for a transformative experience in mathematics, manage
 								<td class="fee-amount text-nowrap">$200</td>
 								<td class="fee-amount text-nowrap">$320</td>
 								<td class="fee-amount text-nowrap">$300</td>
+								<td class="fee-amount text-nowrap">$420</td>
 								<td class="fee-amount text-nowrap">$400</td>
-								<td class="fee-amount text-nowrap">$380</td>
 							</tr>
 
 							<tr>
@@ -638,16 +638,23 @@ Majan University College for a transformative experience in mathematics, manage
 										<span>🌍 Rest of the World</span>
 									</div>
 								</td>
-								<td class="fee-amount text-nowrap">$280</td>
-								<td class="fee-amount text-nowrap">$250</td>
-								<td class="fee-amount text-nowrap">$350</td>
 								<td class="fee-amount text-nowrap">$320</td>
+								<td class="fee-amount text-nowrap">$300</td>
 								<td class="fee-amount text-nowrap">$400</td>
-								<td class="fee-amount text-nowrap">$380</td>
+								<td class="fee-amount text-nowrap">$370</td>
+								<td class="fee-amount text-nowrap">$500</td>
+								<td class="fee-amount text-nowrap">$480</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
+			</div>
+			
+			<!-- Tax Information -->
+			<div class="text-center mt-4">
+				<p class="text-muted" style="font-size: 1rem; font-style: italic;">
+					* All applicable taxes are included
+				</p>
 			</div>
 		</div>
 	</section>
@@ -1664,15 +1671,15 @@ Majan University College for a transformative experience in mathematics, manage
 
 		function updatePrice() {
 			const prices = {
-				'student-saarc': { normal: 100, early: 100 },
-				'academician-saarc': { normal: 145, early: 125 },
-				'industrialist-saarc': { normal: 180, early: 170 },
+				'student-saarc': { normal: 120, early: 110 },
+				'academician-saarc': { normal: 150, early: 140 },
+				'industrialist-saarc': { normal: 200, early: 190 },
 				'student-gcc': { normal: 220, early: 200 },
 				'academician-gcc': { normal: 320, early: 300 },
-				'industrialist-gcc': { normal: 400, early: 380 },
-				'student-world': { normal: 280, early: 250 },
-				'academician-world': { normal: 350, early: 320 },
-				'industrialist-world': { normal: 500, early: 450 }
+				'industrialist-gcc': { normal: 420, early: 400 },
+				'student-world': { normal: 320, early: 300 },
+				'academician-world': { normal: 400, early: 370 },
+				'industrialist-world': { normal: 500, early: 480 }
 			};
 
 			const selected = regType.value
