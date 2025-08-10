@@ -368,7 +368,7 @@ export const sponsorConfirmationTemplate = (sponsorData) => `
           <li>Premium brand visibility throughout the conference</li>
           <li>Logo placement on all conference materials and website</li>
           <li>Complimentary conference passes for your team</li>
-          <li>Dedicated exhibition space (based on sponsorship level)</li>
+          <li>Dedicated Sponsors space (based on sponsorship level)</li>
           <li>Speaking opportunities and networking sessions</li>
           <li>Access to conference proceedings and participant database</li>
           <li>Social media promotion and press coverage</li>
@@ -382,7 +382,7 @@ export const sponsorConfirmationTemplate = (sponsorData) => `
           <li>You'll receive detailed payment instructions and invoice</li>
           <li>Upon payment confirmation, we'll activate your sponsorship package</li>
           <li>We'll collaborate on marketing materials and brand placement</li>
-          <li>Exhibition setup details will be shared closer to the event</li>
+          <li>Sponsors setup details will be shared closer to the event</li>
         </ul>
       </div>
       
@@ -483,10 +483,10 @@ export const sponsorAdminNotificationTemplate = (sponsorData) => `
         <div class="value">
           <ul style="margin: 0; padding-left: 20px;">
             <li><strong>Send Payment Instructions:</strong> Provide invoice and payment details</li>
-            <li><strong>Prepare Sponsorship Package:</strong> Logo requirements, exhibition details</li>
+            <li><strong>Prepare Sponsorship Package:</strong> Logo requirements, Sponsors details</li>
             <li><strong>Schedule Partnership Meeting:</strong> Discuss marketing collaboration</li>
             <li><strong>Update Sponsor Database:</strong> Add to conference systems</li>
-            <li><strong>Confirm Exhibition Space:</strong> Reserve area based on sponsorship level</li>
+            <li><strong>Confirm Sponsors Space:</strong> Reserve area based on sponsorship level</li>
           </ul>
         </div>
       </div>
